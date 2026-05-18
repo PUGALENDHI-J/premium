@@ -1,5 +1,5 @@
 /* ============================================
-   SHAKTHI FOUNDATION — MAIN JS
+   HARINI FOUNDATION — MAIN JS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {

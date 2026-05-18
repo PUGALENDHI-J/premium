@@ -1,4 +1,4 @@
-SHAKTHI FOUNDATION — IMAGES FOLDER
+HARINI FOUNDATION — IMAGES FOLDER
 ====================================
 
 Place your NGO images here with these filenames:

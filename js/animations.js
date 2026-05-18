@@ -1,5 +1,5 @@
 /* ============================================
-   SHAKTHI FOUNDATION — ANIMATIONS JS
+   HARINI FOUNDATION — ANIMATIONS JS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
