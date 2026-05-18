@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Shakthi Foundation — Our story, vision, mission, and the team driving change across Bangalore communities." />
+  <title>About Us | Shakthi Foundation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    /* ── ABOUT-SPECIFIC STYLES ── */
+    .vision-mission { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px; }
+    .vm-card {
+      background: linear-gradient(135deg, rgba(28,38,57,0.9), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .vm-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .vm-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-gold); }
+    .vm-icon { font-size: 2.8rem; margin-bottom: 20px; }
+    .vm-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .vm-card p, 
+    .vm-card .section-body, 
+    .vm-card .highlight-band p, 
+    .vm-card li {
+      color: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding: 40px 0; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 calc(50% + 48px) 56px 0;
+      position: relative;
+    }
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding: 0 0 56px calc(50% + 48px);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      transform: translateX(-50%);
+      width: 18px; height: 18px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.2);
+      z-index: 1;
+    }
+    .timeline-content {
+      background: rgba(28,38,57,0.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      max-width: 380px;
+      transition: transform var(--transition);
+    }
+    .timeline-content:hover { transform: translateY(-4px); }
+    .timeline-year {
+      font-family: var(--font-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .timeline-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--ivory);
+      margin-bottom: 8px;
+    }
+    .timeline-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* Team Cards */
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .team-card {
+      background: rgba(28,38,57,0.7);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+      backdrop-filter: blur(10px);
+    }
+    .team-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-gold); }
+    .team-avatar {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      border: 3px solid rgba(201,168,76,0.3);
+    }
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--ivory);
+      margin-bottom: 6px;
+    }
+    .team-role {
+      font-size: 0.8rem;
+      font-family: var(--font-accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* Strengths */
+    .strength-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .strength-card {
+      text-align: center;
+      padding: 36px 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(28,38,57,0.5);
+      transition: transform var(--transition), background var(--transition);
+    }
+    .strength-card:hover {
+      transform: translateY(-6px);
+      background: rgba(201,168,76,0.08);
+    }
+    .strength-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .strength-card h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ivory);
+      margin-bottom: 8px;
+    }
+    .strength-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Split layout */
+    .split-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .split-content.reverse { direction: rtl; }
+    .split-content.reverse > * { direction: ltr; }
+
+    @media (max-width: 900px) {
+      .vision-mission { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .strength-grid { grid-template-columns: 1fr 1fr; }
+      .split-content { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .strength-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">Shakthi <span>Foundation</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+<div class="page-transition"></div>
+<div class="cursor-glow"></div>
+
+<!-- ═══ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Shakthi Foundation Home">
+      <div class="nav-logo-icon">SF</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Shakthi Foundation</span>
+        <span class="nav-logo-tag">Empowering Lives</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="about.html"    class="nav-link active">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="impact.html"   class="nav-link">Impact</a></li>
+      <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      <li><a href="contact.html"  class="nav-cta">Donate Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile Navigation">
+  <a href="index.html"    class="mobile-nav-link">Home <span>→</span></a>
+  <a href="about.html"    class="mobile-nav-link active">About <span>→</span></a>
+  <a href="services.html" class="mobile-nav-link">Services <span>→</span></a>
+  <a href="impact.html"   class="mobile-nav-link">Impact <span>→</span></a>
+  <a href="contact.html"  class="mobile-nav-link">Contact <span>→</span></a>
+  <div class="mobile-cta">
+    <a href="contact.html" class="btn btn--gold w-100" style="justify-content:center;">Donate Now ♥</a>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═════════════════════════════ -->
+<section class="page-hero" aria-label="About Hero">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1800&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <div class="glow-orb glow-orb--gold" style="width:400px;height:400px;top:-80px;right:-80px;"></div>
+  <div class="container hero-content" style="padding-top:0;">
+    <div class="hero-eyebrow">✦ Our Story</div>
+    <h1 class="hero-title" style="font-size:clamp(2.2rem,5vw,3.8rem);">
+      Who We Are &amp;<br><em>Why We Exist</em>
+    </h1>
+    <p class="hero-subtitle" style="max-width:600px;">
+      Born from compassion and driven by purpose — Shakthi Foundation is a registered NGO committed to empowering lives across Bangalore and beyond since 2018.
+    </p>
+  </div>
+  <div class="scroll-indicator" onclick="document.getElementById('who-we-are').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ WHO WE ARE ═════════════════════════════ -->
+<section class="section section--mid" id="who-we-are">
+  <div class="container">
+    <div class="split-content">
+      <div data-reveal="left">
+        <span class="section-eyebrow">Who We Are</span>
+        <h2 class="section-title">A Legacy of <span>Compassion</span></h2>
+        <div class="gold-divider"></div>
+        <p class="section-body" style="margin-bottom:20px;">
+          Shakthi Foundation was founded in 2018 by a group of dedicated social workers, educators, and entrepreneurs who witnessed the stark inequalities in Bangalore's urban communities. Seeing children denied education, families struggling for food, and talented individuals lacking opportunity — they resolved to act.
+        </p>
+        <p class="section-body" style="margin-bottom:20px;">
+          The name "Shakthi" means strength in Sanskrit — embodying our core belief that every human being possesses the innate power to rise, when given the right support, opportunity, and dignity.
+        </p>
+        <p class="section-body">
+          Today, we operate across seven transformative programs, having impacted over 12,000 lives with a passionate network of 500+ volunteers, partner organizations, and generous donors.
+        </p>
+      </div>
+      <div data-reveal="right" style="position:relative;">
+        <div class="img-frame" style="height:500px;">
+          <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=800&q=80" alt="Shakthi Foundation founders" loading="lazy" />
+        </div>
+        <div class="img-badge">
+          <div class="img-badge-num">2018</div>
+          <div class="img-badge-text">Founded</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION & MISSION ═══════════════════════ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="text-center mb-60" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">Our Purpose</span>
+      <h2 class="section-title">Vision, Mission <span>&amp; Values</span></h2>
+    </div>
+    <div class="vision-mission">
+      <div class="vm-card" data-reveal="up" data-delay="100">
+        <div class="vm-icon">🔭</div>
+        <h3>Our Vision</h3>
+        <p class="section-body">
+          A society where every individual — regardless of birth, circumstance, or background — has access to education, dignified employment, healthcare, and the opportunity to build a meaningful life.
+        </p>
+        <div class="highlight-band" style="margin-top:24px;">
+          <p>"An India where no child is left behind, no family goes hungry, no potential is wasted."</p>
+        </div>
+      </div>
+      <div class="vm-card" data-reveal="up" data-delay="200">
+        <div class="vm-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p class="section-body">
+          To empower underprivileged individuals and communities through holistic, sustainable programs covering education, employment, entrepreneurship, healthcare, food security, clothing, shelter, and child welfare.
+        </p>
+        <ul style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+          <li style="font-size:0.9rem;color:var(--text-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Provide equitable access to quality education</li>
+          <li style="font-size:0.9rem;color:var(--text-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Create employment & entrepreneurship pathways</li>
+          <li style="font-size:0.9rem;color:var(--text-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Ensure food, healthcare & basic welfare for all</li>
+          <li style="font-size:0.9rem;color:var(--text-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--gold);flex-shrink:0;">✦</span> Protect and uplift children in need</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUR STRENGTH ═══════════════════════════ -->
+<section class="section section--mid">
+  <div class="container">
+    <div class="text-center mb-60" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">What Makes Us Different</span>
+      <h2 class="section-title">Our <span>Strengths</span></h2>
+      <p class="section-body" style="margin:0 auto;">The pillars that make Shakthi Foundation a force for lasting, meaningful change.</p>
+    </div>
+    <div class="strength-grid">
+      <div class="strength-card" data-reveal="up" data-delay="100">
+        <div class="strength-icon">🤝</div>
+        <h4>Community-Rooted</h4>
+        <p>We live and work within the communities we serve — our approach is human-first, not top-down.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="200">
+        <div class="strength-icon">📊</div>
+        <h4>Impact-Driven</h4>
+        <p>Every program is measured by real outcomes — lives changed, not just activities completed.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="300">
+        <div class="strength-icon">🌱</div>
+        <h4>Sustainable Focus</h4>
+        <p>We build self-reliance rather than dependency — teaching skills and creating lasting pathways.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="400">
+        <div class="strength-icon">🔗</div>
+        <h4>Strong Partnerships</h4>
+        <p>Network of 80+ partner organizations, corporate CSR supporters, and institutional collaborators.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="100">
+        <div class="strength-icon">💡</div>
+        <h4>Innovation in Welfare</h4>
+        <p>Combining traditional welfare with modern skill-building, digital literacy, and entrepreneurship.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="200">
+        <div class="strength-icon">🛡️</div>
+        <h4>Transparency & Trust</h4>
+        <p>Full financial accountability with annual reports, donor dashboards, and third-party audits.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="300">
+        <div class="strength-icon">👩‍🏫</div>
+        <h4>Expert Volunteers</h4>
+        <p>500+ professionals — doctors, lawyers, educators, and entrepreneurs — giving back meaningfully.</p>
+      </div>
+      <div class="strength-card" data-reveal="up" data-delay="400">
+        <div class="strength-icon">🌍</div>
+        <h4>Holistic Approach</h4>
+        <p>Seven integrated programs that address the full spectrum of human need — not just isolated issues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STORY TIMELINE ══════════════════════════ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="text-center mb-60" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">Our Journey</span>
+      <h2 class="section-title">The Story <span>So Far</span></h2>
+      <p class="section-body" style="margin:0 auto;">Six years of relentless service — milestone by milestone, life by life.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-reveal="left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2018 · FOUNDING</div>
+          <h4>Shakthi Foundation Established</h4>
+          <p>Founded in Bangalore by a team of 8 social workers and educators with a seed fund of ₹2 lakhs and a vision to serve 500 families in the first year.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2019 · EXPANSION</div>
+          <h4>Education & Food Programs Launched</h4>
+          <p>Opened first education center serving 120 children. Initiated weekly food distribution drives reaching 300 families across 3 localities in Bangalore.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020 · RESILIENCE</div>
+          <h4>COVID Relief &amp; Digital Education</h4>
+          <p>Distributed ration kits to 2,000+ families during lockdown. Launched digital learning program with donated devices for children unable to access school.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2021 · GROWTH</div>
+          <h4>Healthcare &amp; Women Empowerment</h4>
+          <p>First free healthcare camp organized — 800 patients screened. Women's entrepreneurship program launched with 60 participants and ₹15 lakh in micro-grants disbursed.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2022 · SCALE</div>
+          <h4>Child Welfare &amp; Orphanage Support</h4>
+          <p>Partnered with 12 orphanages across Karnataka. Launched child welfare program covering education, nutrition, mental health, and skill development for 400+ children.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2023 · IMPACT</div>
+          <h4>10,000 Lives Milestone Achieved</h4>
+          <p>Crossed the landmark of 10,000 direct beneficiaries. Secured major CSR partnerships with 3 Bangalore-based tech companies for sustained annual funding.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-reveal="left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2024 · TODAY</div>
+          <h4>12,000+ Lives &amp; Growing</h4>
+          <p>Operating 7 active programs, 500+ volunteers, and expanding into rural Karnataka districts. Laying groundwork for a dedicated Shakthi Foundation community center.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEAM ════════════════════════════════════ -->
+<section class="section section--mid">
+  <div class="container">
+    <div class="text-center mb-60" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">The Changemakers</span>
+      <h2 class="section-title">Our <span>Leadership Team</span></h2>
+      <p class="section-body" style="margin:0 auto;">Driven by purpose, guided by compassion — the people steering Shakthi Foundation's mission.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" data-reveal="up" data-delay="100">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Ananya Krishnamurthy</div>
+        <div class="team-role">Founder &amp; Executive Director</div>
+        <p class="team-bio">15 years in social work and community development. Former UNICEF field associate. Ananya drives the strategic vision and field operations of the foundation.</p>
+      </div>
+      <div class="team-card" data-reveal="up" data-delay="200">
+        <div class="team-avatar">R</div>
+        <div class="team-name">Rajesh Venkataraman</div>
+        <div class="team-role">Co-Founder &amp; Operations Head</div>
+        <p class="team-bio">Serial entrepreneur turned social entrepreneur. Manages day-to-day operations, volunteer coordination, and corporate partnerships across all programs.</p>
+      </div>
+      <div class="team-card" data-reveal="up" data-delay="300">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Dr. Sunita Mehta</div>
+        <div class="team-role">Healthcare Program Director</div>
+        <p class="team-bio">MBBS, MPH from NIMHANS. Leads all healthcare camps, medical partnerships, and community health outreach programs across Bangalore.</p>
+      </div>
+      <div class="team-card" data-reveal="up" data-delay="100">
+        <div class="team-avatar">P</div>
+        <div class="team-name">Prakash Iyer</div>
+        <div class="team-role">Education Program Lead</div>
+        <p class="team-bio">Former school principal with 20 years in education reform. Oversees scholarship programs, tutoring centers, and digital learning initiatives.</p>
+      </div>
+      <div class="team-card" data-reveal="up" data-delay="200">
+        <div class="team-avatar">F</div>
+        <div class="team-name">Fatima Begum</div>
+        <div class="team-role">Women Empowerment Lead</div>
+        <p class="team-bio">Women's rights advocate and microfinance specialist. Manages entrepreneurship training, skill-building workshops, and women's self-help groups.</p>
+      </div>
+      <div class="team-card" data-reveal="up" data-delay="300">
+        <div class="team-avatar">K</div>
+        <div class="team-name">Kiran Babu</div>
+        <div class="team-role">Finance &amp; Compliance Director</div>
+        <p class="team-bio">Chartered Accountant and governance expert. Ensures full financial transparency, FCRA compliance, and audit readiness across all foundation activities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <div data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">Be Part of the Story</span>
+      <h2>Join Us in <em style="color:var(--gold);font-style:italic;">Building Better Futures</em></h2>
+      <p>Every volunteer, donor, and partner adds a new chapter to our story. Be part of something that truly matters.</p>
+      <div class="cta-actions">
+        <a href="impact.html"  class="btn btn--gold">Volunteer With Us <span class="btn-icon">→</span></a>
+        <a href="contact.html" class="btn btn--outline">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">SF</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Shakthi Foundation</span>
+            <span class="nav-logo-tag">Empowering Lives</span>
+          </div>
+        </a>
+        <p>Transforming lives through education, employment, and entrepreneurship. Serving communities across Bangalore since 2018.</p>
+        <div class="footer-tagline">"Hope · Humanity · Empowerment"</div>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">→ Home</a></li>
+          <li><a href="about.html"    class="footer-link">→ About Us</a></li>
+          <li><a href="services.html" class="footer-link">→ Our Services</a></li>
+          <li><a href="impact.html"   class="footer-link">→ Impact &amp; Volunteer</a></li>
+          <li><a href="contact.html"  class="footer-link">→ Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Programs</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">→ Education Support</a></li>
+          <li><a href="services.html" class="footer-link">→ Employment Support</a></li>
+          <li><a href="services.html" class="footer-link">→ Entrepreneurship</a></li>
+          <li><a href="services.html" class="footer-link">→ Food &amp; Welfare</a></li>
+          <li><a href="services.html" class="footer-link">→ Healthcare Services</a></li>
+          <li><a href="services.html" class="footer-link">→ Child Welfare</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Subscribe to our newsletter for impact stories and updates.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <div style="margin-top:20px;">
+          <p style="font-size:0.82rem;color:var(--text-muted);">📍 Bangalore, Karnataka, India</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">✉ info@shakthifoundation.org</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">🕐 Mon–Sat · 10AM – 6PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Shakthi Foundation. All rights reserved. | Registered NGO, India</p>
+      <p class="footer-tagline">Together We Can Transform Lives</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

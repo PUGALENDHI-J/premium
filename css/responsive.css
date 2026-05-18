@@ -1,0 +1,138 @@
+/* ============================================
+   SHAKTHI FOUNDATION — RESPONSIVE STYLES
+   Breakpoints: 1200 / 1024 / 768 / 540 / 400
+   ============================================ */
+
+/* ─── TABLET ─────────────────────────────────── */
+@media (max-width: 1100px) {
+  :root { --section-pad: 80px; }
+
+  .container { padding: 0 28px; }
+  .grid-2 { grid-template-columns: 1fr; gap: 48px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+  .timeline::before { left: 24px; }
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding: 0 0 0 64px;
+    justify-content: flex-start;
+  }
+  .timeline-dot { left: 24px; transform: translateX(-50%); }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 1; height: 260px; }
+  .gallery-item:nth-child(2) { grid-column: span 1; }
+  .gallery-item { height: 200px; }
+
+  .hero-stats { gap: 20px; }
+  .testimonial-card { padding: 36px 40px; }
+}
+
+@media (max-width: 860px) {
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+
+  /* Mobile nav drawer */
+  .mobile-nav {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 300px;
+    background: rgba(10,14,26,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255,255,255,0.08);
+    padding: 100px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+    z-index: 998;
+  }
+  .mobile-nav.open { transform: translateX(0); }
+  .mobile-nav-link {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    transition: color var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile-nav-link:hover, .mobile-nav-link.active { color: var(--gold); }
+  .mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 997;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+  .mobile-nav-overlay.open { opacity: 1; pointer-events: all; }
+  .mobile-cta { margin-top: auto; }
+
+  .hero-title { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .hero-stats { gap: 14px; }
+  .hero-stat { padding: 16px 20px; }
+  .hero-stat-num { font-size: 1.8rem; }
+
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .section-title { font-size: clamp(1.7rem, 5vw, 2.4rem); }
+}
+
+@media (max-width: 600px) {
+  :root { --section-pad: 60px; }
+  .container { padding: 0 20px; }
+
+  .hero { min-height: 100svh; }
+  .hero-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats { flex-direction: column; gap: 12px; }
+  .hero-stat { width: 100%; }
+
+  .page-hero { padding: 150px 0 70px; }
+
+  .testimonial-card { padding: 28px 24px; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+
+  .map-wrapper { height: 280px; }
+  .newsletter-form { flex-direction: column; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 160px;
+  }
+  .gallery-item:first-child { grid-column: span 2; height: 200px; }
+  .gallery-item:nth-child(2) { grid-column: span 1; }
+
+  .timeline-content { padding: 20px 22px; }
+
+  #back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+
+  .mobile-nav { width: 100%; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.7rem; }
+  .section-title { font-size: 1.6rem; }
+  .stat-num { font-size: 2.4rem; }
+  .glass-card { padding: 28px 22px; }
+}
+
+/* ─── LARGE SCREENS ──────────────────────────── */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+  :root { --section-pad: 130px; }
+}

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shakthi Foundation Impact — Real numbers, real stories, volunteer opportunities and community change across Bangalore." />
+  <title>Impact & Volunteer | Shakthi Foundation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    /* ── IMPACT-SPECIFIC STYLES ── */
+
+    /* Stats bar */
+    .impact-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+    }
+    .isb-item {
+      background: rgba(17,24,39,0.96);
+      border: 1px solid var(--border);
+      padding: 36px 28px;
+      text-align: center;
+      transition: background var(--transition);
+    }
+    .isb-item:first-child  { border-radius: var(--radius) 0 0 var(--radius); }
+    .isb-item:last-child   { border-radius: 0 var(--radius) var(--radius) 0; }
+    .isb-item:hover { background: rgba(28,38,57,0.98); }
+    .isb-num {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .isb-label {
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Story cards */
+    .story-card {
+      background: linear-gradient(135deg, rgba(28,38,57,0.9), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .story-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-gold); }
+    .story-img {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    .story-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .story-card:hover .story-img img { transform: scale(1.07); }
+    .story-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,14,26,0.55), transparent);
+    }
+    .story-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      z-index: 2;
+      font-family: var(--font-accent);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 100px;
+      padding: 4px 14px;
+    }
+    .story-body { padding: 30px 28px; }
+    .story-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--ivory);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .story-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
+    .story-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      padding-left: 16px;
+      border-left: 2px solid var(--gold);
+      line-height: 1.6;
+    }
+
+    /* Volunteer cards */
+    .volunteer-card {
+      background: linear-gradient(135deg, rgba(28,38,57,0.85), rgba(17,24,39,0.9));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 34px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .volunteer-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: left;
+    }
+    .volunteer-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-gold); border-color: rgba(201,168,76,0.3); }
+    .volunteer-card:hover::before { transform: scaleX(1); }
+    .vol-icon {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .volunteer-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--ivory);
+      margin-bottom: 12px;
+    }
+    .volunteer-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
+    .vol-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .vol-tag {
+      font-family: var(--font-accent);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 100px;
+      padding: 3px 12px;
+    }
+
+    /* Gallery masonry */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,14,26,0.5) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .gallery-item:first-child  { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(4) { grid-column: span 2; }
+
+    /* Timeline */
+    .impact-timeline { position: relative; padding: 20px 0 40px; }
+    .impact-timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+    }
+    .it-item {
+      display: flex;
+      gap: 40px;
+      padding: 0 0 48px 76px;
+      position: relative;
+    }
+    .it-dot {
+      position: absolute;
+      left: 20px;
+      top: 4px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.2);
+    }
+    .it-year {
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      padding-top: 2px;
+      min-width: 40px;
+    }
+    .it-content {
+      background: linear-gradient(135deg, rgba(28,38,57,0.9), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      flex: 1;
+      transition: border-color var(--transition);
+    }
+    .it-content:hover { border-color: rgba(201,168,76,0.35); }
+    .it-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--ivory);
+      margin-bottom: 8px;
+    }
+    .it-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* Donation CTA */
+    .donate-banner {
+      background: linear-gradient(135deg, rgba(28,38,57,0.95), rgba(17,24,39,0.98));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 70px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .donate-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08), transparent 70%);
+    }
+    .donate-amounts {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 32px 0;
+    }
+    .donate-amount-btn {
+      font-family: var(--font-accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: var(--radius);
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .donate-amount-btn:hover,
+    .donate-amount-btn.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .impact-stats-bar { grid-template-columns: repeat(2,1fr); margin-top: 0; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: span 2; height: 240px; }
+      .gallery-item:nth-child(4) { grid-column: span 1; }
+      .gallery-item { height: 180px; }
+      .donate-banner { padding: 48px 28px; }
+    }
+    @media (max-width: 600px) {
+      .impact-stats-bar { grid-template-columns: 1fr 1fr; }
+      .isb-item:first-child  { border-radius: var(--radius) 0 0 0; }
+      .isb-item:last-child   { border-radius: 0 0 var(--radius) 0; }
+      .impact-timeline::before { left: 16px; }
+      .it-item { padding-left: 52px; }
+      .it-dot { left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">Shakthi <span>Foundation</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Page Transition -->
+<div class="page-transition"></div>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow"></div>
+
+<!-- ═══ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Shakthi Foundation Home">
+      <div class="nav-logo-icon">SF</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Shakthi Foundation</span>
+        <span class="nav-logo-tag">Empowering Lives</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="about.html"    class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="impact.html"   class="nav-link active">Impact</a></li>
+      <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      <li><a href="contact.html"  class="nav-cta">Donate Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile Navigation">
+  <a href="index.html"    class="mobile-nav-link">Home <span>→</span></a>
+  <a href="about.html"    class="mobile-nav-link">About <span>→</span></a>
+  <a href="services.html" class="mobile-nav-link">Services <span>→</span></a>
+  <a href="impact.html"   class="mobile-nav-link active">Impact <span>→</span></a>
+  <a href="contact.html"  class="mobile-nav-link">Contact <span>→</span></a>
+  <div class="mobile-cta">
+    <a href="contact.html" class="btn btn--gold w-100" style="justify-content:center;">Donate Now ♥</a>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ══════════════════════════════ -->
+<section class="page-hero" aria-label="Impact page hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1800&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="glow-orb glow-orb--gold" style="width:460px;height:460px;top:-80px;right:-60px;"></div>
+  <div class="container page-hero-content" style="position:relative;z-index:2;">
+    <div class="section-eyebrow" data-reveal="up">✦ Our Impact</div>
+    <h1 class="display-title" style="font-size:clamp(2.4rem,5vw,4rem);color:var(--ivory);margin-bottom:20px;" data-reveal="up" data-delay="100">
+      Measuring the <em style="color:var(--gold);font-style:italic;">Change</em> We Create
+    </h1>
+    <p style="font-size:1.05rem;color:var(--text-muted);max-width:560px;line-height:1.8;" data-reveal="up" data-delay="200">
+      Every number represents a transformed life. Explore the real-world difference Shakthi Foundation has made since 2018 — and discover how you can be part of the mission.
+    </p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;" data-reveal="up" data-delay="300">
+      <a href="#volunteer" class="btn btn--gold">Volunteer With Us</a>
+      <a href="#donate"    class="btn btn--outline">Make a Donation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPACT STATS BAR ═══════════════════════ -->
+<section style="background:var(--navy-mid);padding-bottom:var(--section-pad);" aria-label="Impact statistics">
+  <div class="container">
+    <div class="impact-stats-bar" data-reveal="up">
+      <div class="isb-item">
+        <div class="isb-num" data-count="12500" data-suffix="+">0</div>
+        <div class="isb-label">Lives Impacted</div>
+      </div>
+      <div class="isb-item">
+        <div class="isb-num" data-count="3200" data-suffix="+">0</div>
+        <div class="isb-label">Students Supported</div>
+      </div>
+      <div class="isb-item">
+        <div class="isb-num" data-count="850" data-suffix="+">0</div>
+        <div class="isb-label">Women Empowered</div>
+      </div>
+      <div class="isb-item">
+        <div class="isb-num" data-count="6" data-suffix=" yrs">0</div>
+        <div class="isb-label">Years of Service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUCCESS STORIES ═════════════════════════ -->
+<section class="section" style="background:var(--navy);" aria-label="Success stories">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 64px;" data-reveal="up">
+      <div class="section-eyebrow" style="justify-content:center;">✦ Real People, Real Change</div>
+      <h2 class="section-title">Success <em>Stories</em></h2>
+      <p class="section-body" style="margin:0 auto;">Behind every statistic is a human story. These are just a few of the individuals whose lives have been transformed by the Shakthi Foundation community.</p>
+    </div>
+
+    <div class="grid-3" data-stagger>
+      <!-- Story 1 -->
+      <div class="story-card" data-reveal="up" data-delay="100">
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Education support story" loading="lazy" />
+          <span class="story-badge">Education</span>
+        </div>
+        <div class="story-body">
+          <h3>From Dropout to Graduate — Priya's Journey</h3>
+          <p>Forced to leave school at 14, Priya received full scholarship support from Shakthi Foundation and completed her graduation in Computer Science at age 22.</p>
+          <blockquote class="story-quote">"They didn't just give me books — they gave me back my future."</blockquote>
+        </div>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-card" data-reveal="up" data-delay="200">
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Women empowerment story" loading="lazy" />
+          <span class="story-badge">Entrepreneurship</span>
+        </div>
+        <div class="story-body">
+          <h3>Razia Turned Homemaker Into Business Owner</h3>
+          <p>Through our entrepreneurship training and seed-funding program, Razia launched a tailoring enterprise that now employs 6 other women in her neighbourhood.</p>
+          <blockquote class="story-quote">"I used to depend on others. Now others depend on me."</blockquote>
+        </div>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-card" data-reveal="up" data-delay="300">
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" alt="Community support story" loading="lazy" />
+          <span class="story-badge">Employment</span>
+        </div>
+        <div class="story-body">
+          <h3>Karthik Found His Career Through Skill Training</h3>
+          <p>After years of casual labour, Karthik enrolled in our digital skills program. He is now a junior software developer at a Bangalore tech company earning a stable income.</p>
+          <blockquote class="story-quote">"One program changed my entire life trajectory."</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY GALLERY ═══════════════════════ -->
+<section class="section" style="background:var(--navy-mid);" aria-label="Community gallery">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px;" data-reveal="up">
+      <div>
+        <div class="section-eyebrow">✦ On the Ground</div>
+        <h2 class="section-title">Our Community <em>in Action</em></h2>
+      </div>
+      <p class="section-body" style="max-width:400px;">A glimpse into the daily work of our volunteers, beneficiaries, and programs across Bangalore.</p>
+    </div>
+
+    <div class="gallery-grid" data-reveal="scale">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=800&q=80" alt="Volunteers helping community" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education session" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1594708767771-a5e9d3012f3e?w=600&q=80" alt="Healthcare camp" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1609450527796-3c0f71a37437?w=600&q=80" alt="Food distribution" loading="lazy" />
+      </div>
+      <div class="gallery-item" style="grid-column:span 2;">
+        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=900&q=80" alt="Community gathering" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IMPACT TIMELINE ══════════════════════════ -->
+<section class="section" style="background:var(--navy);" aria-label="Impact timeline">
+  <div class="container">
+    <div class="grid-2" style="gap:80px;align-items:start;">
+      <div data-reveal="left">
+        <div class="section-eyebrow">✦ Our Journey</div>
+        <h2 class="section-title">Six Years of <em>Continuous</em> Impact</h2>
+        <p class="section-body" style="margin-bottom:40px;">From a small volunteer group to a registered NGO serving thousands, our growth reflects the trust communities have placed in us.</p>
+        <div class="impact-timeline">
+          <div class="it-item">
+            <div class="it-dot"></div>
+            <div class="it-year">2018</div>
+            <div class="it-content">
+              <h4>Foundation Established</h4>
+              <p>Shakthi Foundation was registered in Bangalore with a core team of 5 volunteers focused on education support for underprivileged children.</p>
+            </div>
+          </div>
+          <div class="it-item">
+            <div class="it-dot"></div>
+            <div class="it-year">2019</div>
+            <div class="it-content">
+              <h4>First 100 Scholarships</h4>
+              <p>Launched the first scholarship cohort, supporting 100 students across 8 government schools in Bangalore's north and east zones.</p>
+            </div>
+          </div>
+          <div class="it-item">
+            <div class="it-dot"></div>
+            <div class="it-year">2020</div>
+            <div class="it-content">
+              <h4>COVID Relief Operations</h4>
+              <p>Pivoted during the pandemic to distribute food kits to over 2,000 families and facilitated remote learning for 600+ students.</p>
+            </div>
+          </div>
+          <div class="it-item">
+            <div class="it-dot"></div>
+            <div class="it-year">2022</div>
+            <div class="it-content">
+              <h4>Women Empowerment Wing</h4>
+              <p>Launched dedicated entrepreneurship and skills training for women, enabling over 400 women to gain financial independence within 18 months.</p>
+            </div>
+          </div>
+          <div class="it-item">
+            <div class="it-dot"></div>
+            <div class="it-year">2024</div>
+            <div class="it-content">
+              <h4>12,500+ Lives Impacted</h4>
+              <p>Crossed a milestone of 12,500 direct beneficiaries across education, employment, healthcare, and social welfare programmes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional stats panel -->
+      <div data-reveal="right">
+        <div class="section-eyebrow">✦ By the Numbers</div>
+        <h2 class="section-title">Impact That <em>Matters</em></h2>
+        <div style="display:flex;flex-direction:column;gap:24px;margin-top:40px;">
+          <!-- Stat bar items -->
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--ivory);">Education Support</span>
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--gold);">78%</span>
+            </div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:78%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--ivory);">Women Empowerment</span>
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--gold);">62%</span>
+            </div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:62%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--ivory);">Healthcare Camps</span>
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--gold);">54%</span>
+            </div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:54%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--ivory);">Food & Shelter Relief</span>
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--gold);">85%</span>
+            </div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:85%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--ivory);">Employment Placement</span>
+              <span style="font-family:var(--font-accent);font-size:0.82rem;color:var(--gold);">71%</span>
+            </div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;">
+              <div style="height:100%;width:71%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large quote -->
+        <div style="margin-top:48px;padding:36px;background:linear-gradient(135deg,rgba(28,38,57,0.9),rgba(17,24,39,0.95));border:1px solid var(--border);border-radius:var(--radius-lg);position:relative;">
+          <div style="position:absolute;top:20px;left:28px;font-size:4rem;color:var(--gold);opacity:0.25;font-family:var(--font-display);line-height:1;">"</div>
+          <p style="font-family:var(--font-display);font-style:italic;font-size:1.1rem;color:var(--ivory);line-height:1.65;padding-top:20px;">We measure success not in rupees raised, but in lives permanently changed and communities empowered to sustain themselves.</p>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:20px;">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:0.8rem;font-weight:700;color:var(--navy);">SF</div>
+            <div>
+              <div style="font-family:var(--font-accent);font-size:0.78rem;font-weight:600;color:var(--ivory);">Founder, Shakthi Foundation</div>
+              <div style="font-family:var(--font-accent);font-size:0.7rem;color:var(--text-muted);">Bangalore, 2018</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VOLUNTEER SECTION ════════════════════════ -->
+<section class="section" id="volunteer" style="background:var(--navy-mid);" aria-label="Volunteer opportunities">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 64px;" data-reveal="up">
+      <div class="section-eyebrow" style="justify-content:center;">✦ Join Our Mission</div>
+      <h2 class="section-title">Volunteer <em>Opportunities</em></h2>
+      <p class="section-body" style="margin:0 auto;">Your time and skills can change a life. Choose a volunteering role that matches your passion and availability.</p>
+    </div>
+
+    <div class="grid-3" data-stagger>
+      <div class="volunteer-card" data-reveal="up" data-delay="100">
+        <span class="vol-icon">📚</span>
+        <h3>Education Volunteer</h3>
+        <p>Teach academic subjects, mentor students, or help with digital literacy programmes in local schools and community centres.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Weekend</span>
+          <span class="vol-tag">In-person</span>
+          <span class="vol-tag">All Ages</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+
+      <div class="volunteer-card" data-reveal="up" data-delay="200">
+        <span class="vol-icon">💼</span>
+        <h3>Career Mentor</h3>
+        <p>Share your professional experience to guide unemployed youth through career planning, resume building, and interview preparation.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Flexible</span>
+          <span class="vol-tag">Online / Offline</span>
+          <span class="vol-tag">Professionals</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+
+      <div class="volunteer-card" data-reveal="up" data-delay="300">
+        <span class="vol-icon">🍱</span>
+        <h3>Food & Relief Drives</h3>
+        <p>Assist with food preparation, distribution logistics, and supply chain coordination during our monthly community relief camps.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Monthly</span>
+          <span class="vol-tag">In-person</span>
+          <span class="vol-tag">No Experience Needed</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+
+      <div class="volunteer-card" data-reveal="up" data-delay="400">
+        <span class="vol-icon">🏥</span>
+        <h3>Healthcare Camp Support</h3>
+        <p>Doctors, nurses, and paramedics are invited to join our quarterly free healthcare camps serving underserved rural and urban communities.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Quarterly</span>
+          <span class="vol-tag">Medical Background</span>
+          <span class="vol-tag">Field</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+
+      <div class="volunteer-card" data-reveal="up" data-delay="500">
+        <span class="vol-icon">📱</span>
+        <h3>Digital & Media Skills</h3>
+        <p>Help us with social media, content creation, photography, or website management to amplify our reach and impact online.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Remote</span>
+          <span class="vol-tag">Creative Roles</span>
+          <span class="vol-tag">Ongoing</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+
+      <div class="volunteer-card" data-reveal="up" data-delay="600">
+        <span class="vol-icon">👩‍💼</span>
+        <h3>Women Empowerment Trainer</h3>
+        <p>Lead workshops on entrepreneurship, financial literacy, or vocational skills for women from low-income households.</p>
+        <div class="vol-meta">
+          <span class="vol-tag">Bi-weekly</span>
+          <span class="vol-tag">In-person</span>
+          <span class="vol-tag">Trainers Welcome</span>
+        </div>
+        <a href="contact.html" class="btn btn--gold" style="font-size:0.85rem;padding:10px 22px;">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DONATION CTA ═════════════════════════════ -->
+<section class="section" id="donate" style="background:var(--navy);" aria-label="Donate">
+  <div class="container">
+    <div class="donate-banner" data-reveal="scale">
+      <div class="glow-orb glow-orb--gold" style="width:400px;height:400px;top:-100px;left:50%;transform:translateX(-50%);"></div>
+      <div style="position:relative;z-index:1;">
+        <div class="section-eyebrow" style="justify-content:center;">✦ Make a Difference Today</div>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);max-width:580px;margin:0 auto 20px;">
+          Every Rupee You Give <em>Transforms</em> a Life
+        </h2>
+        <p style="font-size:1rem;color:var(--text-muted);max-width:520px;margin:0 auto;line-height:1.8;">
+          Your donation directly funds education scholarships, food relief, healthcare camps, and women's empowerment programmes.
+        </p>
+
+        <div class="donate-amounts" role="group" aria-label="Donation amount options">
+          <button class="donate-amount-btn active" onclick="setActive(this)">₹500</button>
+          <button class="donate-amount-btn" onclick="setActive(this)">₹1,000</button>
+          <button class="donate-amount-btn" onclick="setActive(this)">₹2,500</button>
+          <button class="donate-amount-btn" onclick="setActive(this)">₹5,000</button>
+          <button class="donate-amount-btn" onclick="setActive(this)">Custom</button>
+        </div>
+
+        <a href="contact.html" class="btn btn--gold pulse-gold" style="font-size:1rem;padding:16px 44px;">
+          Donate Now ♥
+        </a>
+
+        <p style="margin-top:20px;font-size:0.8rem;color:var(--text-muted);">
+          🔒 Secure · 80G Tax Exemption Eligible · Registered NGO India
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">SF</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Shakthi Foundation</span>
+            <span class="nav-logo-tag">Empowering Lives</span>
+          </div>
+        </a>
+        <p>Transforming lives through education, employment, and entrepreneurship. Serving communities across Bangalore since 2018.</p>
+        <div class="footer-tagline">"Hope · Humanity · Empowerment"</div>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">→ Home</a></li>
+          <li><a href="about.html"    class="footer-link">→ About Us</a></li>
+          <li><a href="services.html" class="footer-link">→ Our Services</a></li>
+          <li><a href="impact.html"   class="footer-link">→ Impact & Volunteer</a></li>
+          <li><a href="contact.html"  class="footer-link">→ Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Programs</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">→ Education Support</a></li>
+          <li><a href="services.html" class="footer-link">→ Employment Support</a></li>
+          <li><a href="services.html" class="footer-link">→ Entrepreneurship</a></li>
+          <li><a href="services.html" class="footer-link">→ Food & Welfare</a></li>
+          <li><a href="services.html" class="footer-link">→ Healthcare Services</a></li>
+          <li><a href="services.html" class="footer-link">→ Child Welfare</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Subscribe to our newsletter for impact stories and updates.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <div style="margin-top:20px;">
+          <p style="font-size:0.82rem;color:var(--text-muted);">📍 Bangalore, Karnataka, India</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">✉ info@shakthifoundation.org</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">🕐 Mon–Sat · 10AM – 6PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Shakthi Foundation. All rights reserved. | Registered NGO, India</p>
+      <p class="footer-tagline">Together We Can Transform Lives</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script>
+  // Donate amount toggle
+  function setActive(btn) {
+    document.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

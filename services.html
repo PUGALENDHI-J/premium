@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shakthi Foundation Services — Education, Employment, Entrepreneurship, Healthcare, Food, Child Welfare and more." />
+  <title>Our Services | Shakthi Foundation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌟</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    /* ── SERVICES-SPECIFIC STYLES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .svc-card {
+      background: linear-gradient(135deg, rgba(28,38,57,0.9), rgba(17,24,39,0.95));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      cursor: default;
+    }
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06), transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .svc-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-gold); border-color: rgba(201,168,76,0.4); }
+    .svc-card:hover::before { opacity: 1; }
+
+    .svc-icon-wrap {
+      width: 72px; height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    .svc-card:hover .svc-icon-wrap {
+      background: linear-gradient(135deg, rgba(201,168,76,0.3), rgba(201,168,76,0.1));
+      box-shadow: 0 0 20px rgba(201,168,76,0.2);
+    }
+    .svc-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--ivory);
+      margin-bottom: 14px;
+      transition: color var(--transition);
+    }
+    .svc-card:hover h3 { color: var(--gold-light); }
+    .svc-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; }
+    .svc-tag {
+      display: inline-block;
+      font-family: var(--font-accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+    }
+    .svc-card .btn { font-size: 0.85rem; padding: 10px 22px; }
+
+    /* Detail sections */
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: var(--section-pad) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail.reverse > *:first-child { order: 2; }
+    .service-detail.reverse > *:last-child { order: 1; }
+
+    .svc-detail-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 380px;
+      position: relative;
+    }
+    .svc-detail-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .svc-detail-img:hover img { transform: scale(1.05); }
+    .svc-detail-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,14,26,0.4), transparent);
+    }
+
+    .svc-detail-content { }
+    .svc-detail-content .svc-icon-wrap { width: 60px; height: 60px; font-size: 1.6rem; }
+    .svc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0 28px;
+    }
+    .svc-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .svc-list li::before {
+      content: '✦';
+      color: var(--gold);
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-detail { grid-template-columns: 1fr; gap: 36px; }
+      .service-detail.reverse > *:first-child { order: unset; }
+      .service-detail.reverse > *:last-child { order: unset; }
+    }
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">Shakthi <span>Foundation</span></div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<div id="progress-bar"></div>
+<div class="page-transition"></div>
+<div class="cursor-glow"></div>
+
+<!-- ═══ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <div class="container">
+    <a href="index.html" class="nav-logo" aria-label="Shakthi Foundation Home">
+      <div class="nav-logo-icon">SF</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Shakthi Foundation</span>
+        <span class="nav-logo-tag">Empowering Lives</span>
+      </div>
+    </a>
+    <ul class="nav-menu" role="list">
+      <li><a href="index.html"    class="nav-link">Home</a></li>
+      <li><a href="about.html"    class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link active">Services</a></li>
+      <li><a href="impact.html"   class="nav-link">Impact</a></li>
+      <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      <li><a href="contact.html"  class="nav-cta">Donate Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay"></div>
+<nav class="mobile-nav" aria-label="Mobile Navigation">
+  <a href="index.html"    class="mobile-nav-link">Home <span>→</span></a>
+  <a href="about.html"    class="mobile-nav-link">About <span>→</span></a>
+  <a href="services.html" class="mobile-nav-link active">Services <span>→</span></a>
+  <a href="impact.html"   class="mobile-nav-link">Impact <span>→</span></a>
+  <a href="contact.html"  class="mobile-nav-link">Contact <span>→</span></a>
+  <div class="mobile-cta">
+    <a href="contact.html" class="btn btn--gold w-100" style="justify-content:center;">Donate Now ♥</a>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═════════════════════════════ -->
+<section class="page-hero" aria-label="Services Hero">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1800&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <div class="glow-orb glow-orb--gold" style="width:450px;height:450px;top:-100px;left:-100px;"></div>
+  <div class="container hero-content" style="padding-top:0;">
+    <div class="hero-eyebrow">✦ Seven Pillars of Change</div>
+    <h1 class="hero-title" style="font-size:clamp(2.2rem,5vw,3.8rem);">
+      Programs That <em>Transform</em><br>Lives &amp; Communities
+    </h1>
+    <p class="hero-subtitle" style="max-width:620px;">
+      Each of our seven core programs is designed to address a fundamental human need — from education and healthcare to food security and economic empowerment.
+    </p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn btn--gold">Get Involved <span class="btn-icon">→</span></a>
+      <a href="impact.html"  class="btn btn--outline">See Our Impact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE CARDS GRID ═════════════════════ -->
+<section class="section section--mid">
+  <div class="container">
+    <div class="text-center mb-60" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">What We Offer</span>
+      <h2 class="section-title">Our <span>Core Programs</span></h2>
+      <p class="section-body" style="margin:0 auto;">Seven comprehensive programs built around the real, lived needs of underserved communities.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card" data-reveal="up" data-delay="100">
+        <div class="svc-icon-wrap">📚</div>
+        <div class="svc-tag">Education</div>
+        <h3>Education Support</h3>
+        <p>Scholarships, tutoring centers, school supplies, digital literacy, and educational counseling for underprivileged children and youth across Bangalore.</p>
+        <a href="#education" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="200">
+        <div class="svc-icon-wrap">💼</div>
+        <div class="svc-tag">Employment</div>
+        <h3>Employment Support</h3>
+        <p>Job placement assistance, resume building, interview preparation, skill certification, and connections to employment opportunities for youth and adults.</p>
+        <a href="#employment" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="300">
+        <div class="svc-icon-wrap">🚀</div>
+        <div class="svc-tag">Entrepreneurship</div>
+        <h3>Entrepreneurship Development</h3>
+        <p>Business mentorship, micro-grants, startup training workshops, financial literacy, and women's self-help group formation for aspiring entrepreneurs.</p>
+        <a href="#entrepreneurship" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="100">
+        <div class="svc-icon-wrap">🍱</div>
+        <div class="svc-tag">Food &amp; Welfare</div>
+        <h3>Food &amp; Welfare Services</h3>
+        <p>Weekly food distribution drives, nutrition programs for children, emergency ration kits for crisis-affected families, and community meals during festivals.</p>
+        <a href="#food" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="200">
+        <div class="svc-icon-wrap">👗</div>
+        <div class="svc-tag">Clothing &amp; Shelter</div>
+        <h3>Clothing &amp; Shelter Support</h3>
+        <p>Seasonal clothing drives, blanket distribution for homeless communities, emergency shelter access, and transitional housing partnerships for displaced families.</p>
+        <a href="#shelter" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="300">
+        <div class="svc-icon-wrap">🏥</div>
+        <div class="svc-tag">Healthcare</div>
+        <h3>Medical &amp; Healthcare Services</h3>
+        <p>Free healthcare camps, diagnostic screenings, prescription medicine drives, mental health workshops, and partnerships with doctors volunteering their expertise.</p>
+        <a href="#healthcare" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+      <div class="svc-card" data-reveal="up" data-delay="100" style="grid-column: 1 / -1; max-width: 420px; margin: 0 auto;">
+        <div class="svc-icon-wrap">👶</div>
+        <div class="svc-tag">Child Welfare</div>
+        <h3>Orphanage &amp; Child Welfare Support</h3>
+        <p>Educational and emotional support for orphaned children, partnership with 12+ orphanages in Karnataka, nutrition programs, and long-term mentorship for at-risk youth.</p>
+        <a href="#childwelfare" class="btn btn--ghost btn--sm">Learn More <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE DETAILS ══════════════════════════ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="text-center mb-80" data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">Deep Dive</span>
+      <h2 class="section-title">Program <span>Details</span></h2>
+    </div>
+
+    <!-- Education -->
+    <div class="service-detail" id="education">
+      <div class="svc-detail-img" data-reveal="left">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Children studying" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="right">
+        <div class="svc-icon-wrap">📚</div>
+        <span class="section-eyebrow">Program 01</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Education <span>Support</span></h2>
+        <p class="section-body" style="margin-bottom:0;">Ensuring every child has access to quality education — regardless of economic background. We believe education is the single most powerful tool for generational change.</p>
+        <ul class="svc-list">
+          <li>Full and partial scholarships for school and college students</li>
+          <li>After-school tutoring centers in 6 Bangalore localities</li>
+          <li>Free school supplies, uniforms, and textbooks distribution</li>
+          <li>Digital literacy classes with donated laptops and tablets</li>
+          <li>Counseling for dropout prevention and student mental health</li>
+          <li>Career guidance and higher education application support</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+    <!-- Employment -->
+    <div class="service-detail reverse" id="employment">
+      <div class="svc-detail-img" data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Job training session" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="left">
+        <div class="svc-icon-wrap">💼</div>
+        <span class="section-eyebrow">Program 02</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Employment <span>Support</span></h2>
+        <p class="section-body" style="margin-bottom:0;">Bridging the gap between opportunity and talent — our employment support program connects capable individuals with dignified, sustainable jobs.</p>
+        <ul class="svc-list">
+          <li>Job placement assistance across 80+ partner employers</li>
+          <li>Resume writing, interview coaching, and grooming sessions</li>
+          <li>Industry-specific skill certification programs</li>
+          <li>Soft skills and workplace communication training</li>
+          <li>Internship placement for youth aged 18–25</li>
+          <li>Post-placement follow-up and workplace support</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+    <!-- Entrepreneurship -->
+    <div class="service-detail" id="entrepreneurship">
+      <div class="svc-detail-img" data-reveal="left">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Women entrepreneurs" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="right">
+        <div class="svc-icon-wrap">🚀</div>
+        <span class="section-eyebrow">Program 03</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Entrepreneurship <span>Development</span></h2>
+        <p class="section-body" style="margin-bottom:0;">We believe in teaching people to fish, not giving them fish. Our entrepreneurship program turns dreams into viable, sustainable businesses.</p>
+        <ul class="svc-list">
+          <li>Micro-grants ranging from ₹10,000 to ₹1 lakh for startups</li>
+          <li>12-week intensive business skills bootcamp</li>
+          <li>Women's Self-Help Groups (SHGs) formation and support</li>
+          <li>Market linkage support and product promotion</li>
+          <li>Financial literacy and bookkeeping workshops</li>
+          <li>Mentorship from experienced entrepreneurs and industry leaders</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+    <!-- Food -->
+    <div class="service-detail reverse" id="food">
+      <div class="svc-detail-img" data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Food distribution" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="left">
+        <div class="svc-icon-wrap">🍱</div>
+        <span class="section-eyebrow">Program 04</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Food &amp; <span>Welfare Services</span></h2>
+        <p class="section-body" style="margin-bottom:0;">No child should sleep hungry. Our food programs ensure nutritious meals reach the most vulnerable families and communities across Bangalore.</p>
+        <ul class="svc-list">
+          <li>Weekly food drives reaching 300+ families</li>
+          <li>Daily mid-day meal support for 5 community schools</li>
+          <li>Emergency ration kits during floods, drought, and crises</li>
+          <li>Festival community meals — Eid, Diwali, Christmas</li>
+          <li>Child nutrition programs with balanced diet awareness</li>
+          <li>Partnership with hotels and restaurants for surplus food redistribution</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+    <!-- Healthcare -->
+    <div class="service-detail" id="healthcare">
+      <div class="svc-detail-img" data-reveal="left">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Healthcare camp" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="right">
+        <div class="svc-icon-wrap">🏥</div>
+        <span class="section-eyebrow">Program 05</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Medical &amp; <span>Healthcare Services</span></h2>
+        <p class="section-body" style="margin-bottom:0;">Health is wealth — and no community should be denied it. Our healthcare program brings professional medical care directly to underserved communities.</p>
+        <ul class="svc-list">
+          <li>Quarterly free healthcare camps with specialist doctors</li>
+          <li>Blood pressure, diabetes, and cancer screening drives</li>
+          <li>Free prescription medicines through pharmacy partnerships</li>
+          <li>Mental health awareness workshops and counseling sessions</li>
+          <li>Maternal and child health programs</li>
+          <li>Eye check-up camps with free spectacles distribution</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+    <!-- Child Welfare -->
+    <div class="service-detail reverse" id="childwelfare">
+      <div class="svc-detail-img" data-reveal="right">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Children at orphanage" loading="lazy" />
+      </div>
+      <div class="svc-detail-content" data-reveal="left">
+        <div class="svc-icon-wrap">👶</div>
+        <span class="section-eyebrow">Program 06 &amp; 07</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">Child Welfare &amp; <span>Shelter Support</span></h2>
+        <p class="section-body" style="margin-bottom:0;">Every child deserves love, safety, and opportunity. We work with orphanages, schools, and families to ensure no child is left behind.</p>
+        <ul class="svc-list">
+          <li>Education and emotional support for 400+ orphaned children</li>
+          <li>Partnership with 12+ orphanages across Karnataka</li>
+          <li>Long-term mentorship programs for at-risk youth</li>
+          <li>Seasonal clothing drives — winter blankets, school uniforms</li>
+          <li>Emergency shelter access for homeless families</li>
+          <li>Transitional housing partnerships for displaced individuals</li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold">Support This Program <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <div data-reveal="up">
+      <span class="section-eyebrow" style="justify-content:center;">Support a Cause</span>
+      <h2>Choose a Program, <em style="color:var(--gold);font-style:italic;">Change a Life</em></h2>
+      <p>Your donation or volunteer hours directly fund these programs. Every rupee makes a difference.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn--gold">Donate Now <span class="btn-icon">→</span></a>
+        <a href="impact.html"  class="btn btn--outline">Volunteer With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon">SF</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Shakthi Foundation</span>
+            <span class="nav-logo-tag">Empowering Lives</span>
+          </div>
+        </a>
+        <p>Transforming lives through education, employment, and entrepreneurship. Serving communities across Bangalore since 2018.</p>
+        <div class="footer-tagline">"Hope · Humanity · Empowerment"</div>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">→ Home</a></li>
+          <li><a href="about.html"    class="footer-link">→ About Us</a></li>
+          <li><a href="services.html" class="footer-link">→ Our Services</a></li>
+          <li><a href="impact.html"   class="footer-link">→ Impact &amp; Volunteer</a></li>
+          <li><a href="contact.html"  class="footer-link">→ Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Programs</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#education"       class="footer-link">→ Education Support</a></li>
+          <li><a href="services.html#employment"      class="footer-link">→ Employment Support</a></li>
+          <li><a href="services.html#entrepreneurship" class="footer-link">→ Entrepreneurship</a></li>
+          <li><a href="services.html#food"            class="footer-link">→ Food &amp; Welfare</a></li>
+          <li><a href="services.html#healthcare"      class="footer-link">→ Healthcare Services</a></li>
+          <li><a href="services.html#childwelfare"    class="footer-link">→ Child Welfare</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:16px;">Subscribe to our newsletter for impact stories and updates.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <div style="margin-top:20px;">
+          <p style="font-size:0.82rem;color:var(--text-muted);">📍 Bangalore, Karnataka, India</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">✉ info@shakthifoundation.org</p>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:6px;">🕐 Mon–Sat · 10AM – 6PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2024 Shakthi Foundation. All rights reserved. | Registered NGO, India</p>
+      <p class="footer-tagline">Together We Can Transform Lives</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
