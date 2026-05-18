@@ -3,6 +3,12 @@
    Breakpoints: 1200 / 1024 / 768 / 540 / 400
    ============================================ */
 
+/* ENFORCE LAYOUT AND SCROLL INTEGRITY ON ALL VIEWPORTS */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
 /* ─── TABLET ─────────────────────────────────── */
 @media (max-width: 1100px) {
   :root { --section-pad: 80px; }
@@ -51,10 +57,11 @@
     flex-direction: column;
     gap: 28px;
     transform: translateX(100%);
-    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+    visibility: hidden; /* Prevent horizontal scrollbar on mobile when closed */
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), visibility 0.5s;
     z-index: 998;
   }
-  .mobile-nav.open { transform: translateX(0); }
+  .mobile-nav.open { transform: translateX(0); visibility: visible; }
   .mobile-nav-link {
     font-family: var(--font-display);
     font-size: 1.6rem;
