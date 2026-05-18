@@ -176,6 +176,16 @@
       .team-grid { grid-template-columns: 1fr 1fr; }
       .strength-grid { grid-template-columns: 1fr 1fr; }
       .split-content { grid-template-columns: 1fr; gap: 40px; }
+
+      /* Timeline mobile view — place details on the right side */
+      .timeline::before { left: 24px !important; transform: none !important; }
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        padding: 0 0 44px 54px !important;
+        justify-content: flex-start !important;
+      }
+      .timeline-dot { left: 24px !important; transform: translateX(-50%) !important; }
+      .timeline-content { max-width: 100% !important; }
     }
     @media (max-width: 600px) {
       .team-grid { grid-template-columns: 1fr; }
