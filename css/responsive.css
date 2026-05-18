@@ -85,6 +85,7 @@ html, body {
   .mobile-nav-overlay.open { opacity: 1; pointer-events: all; }
   .mobile-cta { margin-top: auto; }
 
+  .hero-content { padding-top: 160px !important; }
   .hero-title { font-size: clamp(2rem, 8vw, 3.2rem); }
   .hero-stats { gap: 14px; }
   .hero-stat { padding: 16px 20px; }
