@@ -136,3 +136,101 @@
   .container { max-width: 1320px; }
   :root { --section-pad: 130px; }
 }
+
+
+/* ==========================================================================
+   HARINI FOUNDATION -- EXTRA MOBILE RESPONSIVENESS & DEVICE OPTIMIZATIONS
+   ========================================================================== */
+
+/* --- TRANSPARENT NAVBAR HIGH CONTRAST ON DARK HEROES --- */
+.navbar:not(.scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+.navbar:not(.scrolled) .nav-logo-name {
+  color: #ffffff !important;
+}
+.navbar:not(.scrolled) .hamburger span {
+  background: #ffffff !important;
+}
+.navbar:not(.scrolled) .nav-link:hover,
+.navbar:not(.scrolled) .nav-link.active {
+  color: var(--gold-light) !important;
+}
+
+/* --- STRENGTH & TEAM GRID RESPONSIVENESS ON SMALL PHONES (MAX-WIDTH: 480px) --- */
+@media (max-width: 480px) {
+  .strength-grid, 
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .vm-card {
+    padding: 32px 24px !important;
+  }
+}
+
+/* --- IMPACT STATS BAR OPTIMIZATION (MAX-WIDTH: 480px) --- */
+@media (max-width: 480px) {
+  .impact-stats-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin-top: 0 !important;
+    gap: 2px !important;
+  }
+  .isb-item {
+    padding: 24px 12px !important;
+  }
+  .isb-num {
+    font-size: 1.8rem !important;
+  }
+  .isb-label {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.08em !important;
+  }
+  
+  /* Quick contact bar optimization */
+  .contact-info-bar {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .cib-item {
+    border-radius: var(--radius) !important;
+    padding: 24px 20px !important;
+  }
+}
+
+/* --- SOCIAL GRID ADAPTABILITY FOR SMALL SCREENS --- */
+@media (max-width: 480px) {
+  .social-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  .social-card {
+    padding: 12px 6px !important;
+  }
+}
+
+/* --- EXTRA SMALL PHONE OPTIMIZATION (MAX-WIDTH: 360px) --- */
+@media (max-width: 360px) {
+  .hero-title, 
+  .display-title {
+    font-size: 1.5rem !important;
+  }
+  .section-title {
+    font-size: 1.4rem !important;
+  }
+  .hero-actions {
+    width: 100% !important;
+  }
+  .hero-actions .btn {
+    padding: 12px 16px !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* --- LAYOUT SAFETY AND FIXES --- */
+img, video, iframe, embed, object {
+  max-width: 100% !important;
+}
+input, select, textarea {
+  max-width: 100% !important;
+}
