@@ -1,0 +1,31 @@
+/* ============================================
+   ZACAYA — HOME PAGE JS
+============================================ */
+
+// Hero stat counter on visible
+document.addEventListener('DOMContentLoaded', () => {
+  // Stat counters in hero (not using data-counter for inline spans)
+  const heroStats = document.querySelectorAll('.hero-stat-num');
+  heroStats.forEach(el => {
+    const text = el.textContent;
+    const num = parseInt(text);
+    const suffix = text.replace(/[0-9]/g, '');
+    let done = false;
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !done) {
+        done = true;
+        let start = null;
+        const dur = 1800;
+        const step = ts => {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.innerHTML = Math.floor(eased * num) + (p >= 1 ? suffix : '') + '<span style="color:var(--accent)">' + '' + '</span>';
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
+    }, { threshold: 0.5 });
+    obs.observe(el);
+  });
+});
