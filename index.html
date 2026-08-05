@@ -27,6 +27,13 @@
 <script src="js/store.js"></script>
 <script src="js/main.js"></script>
 
+<div class="top-ticker" aria-hidden="true">
+  <div class="top-ticker-track">
+    <span>Complimentary Shipping over &#8377;2,999</span><i>&#10022;</i><span>Easy 7-Day Returns</span><i>&#10022;</i><span>100% Handloom Certified</span><i>&#10022;</i><span>Trusted by 12,000+ Customers</span><i>&#10022;</i><span>COD Available Across India</span><i>&#10022;</i>
+    <span>Complimentary Shipping over &#8377;2,999</span><i>&#10022;</i><span>Easy 7-Day Returns</span><i>&#10022;</i><span>100% Handloom Certified</span><i>&#10022;</i><span>Trusted by 12,000+ Customers</span><i>&#10022;</i><span>COD Available Across India</span><i>&#10022;</i>
+  </div>
+</div>
+
 <header class="site" id="siteHeader">
   <div class="wrap nav">
     <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles&reg;</a>
@@ -71,23 +78,40 @@
       <source src="assets/video/hero-video.mp4" type="video/mp4">
     </video>
   </div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-texture" aria-hidden="true"></div>
   <button class="mute-btn hero-mute" id="muteBtn" aria-label="Unmute video" onclick="toggleMute()">
     <svg class="mute-icon" id="muteIconOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
     <svg class="mute-icon hidden" id="muteIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
   </button>
-  <div class="hero-rating-chip"><span class="stars">★★★★★</span><div><b>4.9/5</b><span>12,000+ happy customers</span></div></div>
+  <div class="hero-frame" aria-hidden="true"><i class="c c-tl"></i><i class="c c-tr"></i><i class="c c-bl"></i><i class="c c-br"></i></div>
   <div class="wrap hero-content reveal in">
-    <span class="hero-kicker"><span class="dot"></span>Heritage Edition · Traditional &amp; Western Wear</span>
-    <h1><span class="hw" style="animation-delay:.05s">Timeless</span> <span class="hw" style="animation-delay:.16s">Weaves,</span><br><span class="hw" style="animation-delay:.27s">Modern</span> <span class="hw" style="animation-delay:.38s" id="heroRotate">Grace.</span></h1>
+    <div class="hero-ornament" aria-hidden="true"><i></i><span class="dia">&#9670;</span><span class="lotus">&#10022;</span><span class="dia">&#9670;</span><i></i></div>
+    <span class="hero-kicker"><span class="dot"></span>Heritage Collection 2026 · Handloom Certified</span>
+    <h1><span class="hw" style="animation-delay:.05s">The</span> <em class="hw hero-script" style="animation-delay:.16s">Art</em> <span class="hw" style="animation-delay:.27s">of the</span> <span class="hw" style="animation-delay:.38s">Drape</span><br><span class="hw" style="animation-delay:.49s">Modern</span> <span class="hw hero-gold" style="animation-delay:.6s" id="heroRotate">Grace.</span></h1>
     <p>Hastavam Textiles brings you the timeless grace of traditional Indian craftsmanship alongside a thoughtfully chosen western wear range — handpicked fabrics, handwoven sarees, and everyday styles for the woman who never forgets her roots.</p>
     <div class="btnrow">
-      <a class="btn btn-primary" href="collections.html">Shop Now</a>
-      <a class="btn btn-ghost" href="about.html">Our Story</a>
+      <a class="btn btn-primary btn-shine" href="collections.html"><span>Shop the Collection</span></a>
+      <a class="btn btn-glass" href="about.html">Explore Our Craft</a>
     </div>
-    <div class="trust">
-      <span>✔ Pan-India Delivery</span><span>✔ 100% Handloom Certified</span><span>✔ Direct-from-Artisan</span>
+    <div class="hero-trust">
+      <span><i>&#10003;</i>100% Handloom Certified</span>
+      <span><i>&#10003;</i>Direct from Artisan Looms</span>
+      <span><i>&#10003;</i>Pan-India Delivery</span>
     </div>
   </div>
+
+  <div class="hero-float hero-float-l" aria-hidden="true">
+    <span class="hero-float-tag">New Drop</span>
+    <div class="hero-float-img"><img src="assets/images/products/saree-01-red-gold-petals.jpg" alt=""></div>
+    <div class="hero-float-meta"><b>Bridal Trousseau</b><span>Handwoven · Banarasi Silk</span></div>
+  </div>
+  <div class="hero-float hero-float-r" aria-hidden="true">
+    <div class="hero-float-img"><img src="assets/images/products/saree-03-red-temple-border.jpg" alt=""></div>
+    <div class="hero-float-meta"><b>Kanjivaram Silk</b><span>&#9733;&#9733;&#9733;&#9733;&#9733; 4.9 · 12,000+ happy customers</span></div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
 </div>
 
 <div class="wrap">
@@ -99,13 +123,12 @@
   </div>
 </div>
 
-<section class="fan-showcase">
-  <div class="wrap">
-    <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Style in Motion</p><h2>Signature Drapes, Fanned Out</h2></div>
-    <div class="fan-stage" id="fanStage"></div>
-    <p class="fan-hint">Hover a drape to bring it forward — tap to shop that collection</p>
+<div class="hero-ticker" aria-hidden="true">
+  <div class="hero-ticker-track">
+    <span>Banarasi Silk</span><i>&#10022;</i><span>Kanjivaram</span><i>&#10022;</i><span>Chanderi</span><i>&#10022;</i><span>Bandhani</span><i>&#10022;</i><span>Paithani</span><i>&#10022;</i><span>Bridal Couture</span><i>&#10022;</i><span>Western Edit</span><i>&#10022;</i>
+    <span>Banarasi Silk</span><i>&#10022;</i><span>Kanjivaram</span><i>&#10022;</i><span>Chanderi</span><i>&#10022;</i><span>Bandhani</span><i>&#10022;</i><span>Paithani</span><i>&#10022;</i><span>Bridal Couture</span><i>&#10022;</i><span>Western Edit</span><i>&#10022;</i>
   </div>
-</section>
+</div>
 
 <section class="alt-cream">
   <div class="wrap">
@@ -232,78 +255,13 @@ function toggleMute(){
 (function(){
   const el = document.getElementById("heroRotate");
   if(!el) return;
-  const words = ["Grace.","Heart.","Pride.","Style."];
+  const words = ["Grace.","Elegance.","Heritage.","Love."];
   let i = 0;
   setInterval(()=>{
     i = (i+1) % words.length;
     el.style.opacity = 0;
     setTimeout(()=>{ el.textContent = words[i]; el.style.opacity = 1; }, 300);
   }, 2600);
-})();
-
-(function(){
-  const stage = document.getElementById("fanStage");
-  if(!stage || typeof gsap === "undefined") return;
-  const FAN_CARDS = [
-    { imgUrl:"assets/images/products/saree-02-banarasi-pink.jpg",      alt:"Banarasi silk saree",       cat:"banarasi" },
-    { imgUrl:"assets/images/products/saree-03-red-temple-border.jpg", alt:"Kanjivaram silk saree",      cat:"kanjivaram" },
-    { imgUrl:"assets/images/products/saree-01-red-gold-petals.jpg",   alt:"Bridal trousseau saree",     cat:"bridal" },
-    { imgUrl:"assets/images/products/saree-09-mauve-floral.jpg",      alt:"Chanderi cotton-silk saree", cat:"chanderi" },
-    { imgUrl:"assets/images/products/saree-14-orange-navy-floral.jpg",alt:"Bandhani tie-dye drape",     cat:"bandhani" },
-    { imgUrl:"assets/images/products/saree-07-peach-pink-border.jpg", alt:"Everyday handloom saree",    cat:"everyday" },
-    { imgUrl:"assets/images/products/saree-13-purple-pink-pleats.jpg",alt:"Western wear ensemble",      cat:"western" },
-  ];
-  const FAN_POSITIONS = [
-    { rot:-22, scale:0.72, x:-13.2, y:3.4, zIndex:1 },
-    { rot:-15, scale:0.80, x:-9.7,  y:2.0, zIndex:2 },
-    { rot:-7,  scale:0.90, x:-4.9,  y:0.7, zIndex:3 },
-    { rot:0,   scale:1.0,  x:0,     y:0,   zIndex:10 },
-    { rot:7,   scale:0.90, x:4.9,   y:0.7, zIndex:3 },
-    { rot:15,  scale:0.80, x:9.7,   y:2.0, zIndex:2 },
-    { rot:22,  scale:0.72, x:13.2,  y:3.4, zIndex:1 },
-  ];
-  function respMult(w){ if(w<480) return .56; if(w<640) return .7; if(w<900) return .82; if(w<1100) return .9; return 1; }
-  FAN_CARDS.forEach(c=>{
-    const el = document.createElement("a");
-    el.className = "fan-card";
-    el.href = "collections.html?cat=" + c.cat;
-    el.innerHTML = `<img src="${c.imgUrl}" alt="${c.alt}" loading="lazy">`;
-    stage.appendChild(el);
-  });
-  const cardEls = Array.from(stage.querySelectorAll(".fan-card"));
-  let entered = false, activeIdx = null;
-  function layout(hoverIdx){
-    const mult = respMult(window.innerWidth);
-    cardEls.forEach((el,i)=>{
-      const p = FAN_POSITIONS[i];
-      let x = p.x*mult, y = p.y*mult, rot = p.rot, scale = p.scale, z = p.zIndex;
-      if(hoverIdx !== null){
-        if(i === hoverIdx){ y -= 1.8*mult; scale = Math.min(scale*1.12, 1.08); z = 50; }
-        else { const dist = i - hoverIdx; x += 2.6*mult*Math.sign(dist); rot += dist > 0 ? 3 : -3; }
-      }
-      gsap.to(el, { x:`${x}rem`, y:`${y}rem`, rotation:rot, scale, zIndex:z, duration:.55, ease:"elastic.out(1,.8)", overwrite:"auto" });
-    });
-  }
-  cardEls.forEach((el,i)=>{
-    el.addEventListener("mouseenter", ()=>{ if(!entered) return; activeIdx = i; layout(i); });
-    el.addEventListener("focus", ()=>{ if(!entered) return; activeIdx = i; layout(i); });
-  });
-  stage.addEventListener("mouseleave", ()=>{ if(!entered) return; activeIdx = null; layout(null); });
-  window.addEventListener("resize", ()=>{ if(entered) layout(activeIdx); });
-  const fanIo = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting && !entered){
-        entered = true;
-        const mult = respMult(window.innerWidth);
-        cardEls.forEach((el,i)=>{
-          gsap.set(el, { x:0, y:"7rem", rotation:0, scale:.5, opacity:0, zIndex:0 });
-          gsap.to(el, { x:`${FAN_POSITIONS[i].x*mult}rem`, y:`${FAN_POSITIONS[i].y*mult}rem`, rotation:FAN_POSITIONS[i].rot, scale:FAN_POSITIONS[i].scale, opacity:1, zIndex:FAN_POSITIONS[i].zIndex, duration:1.1, ease:"elastic.out(1,.75)", delay:i*0.07 });
-        });
-        fanIo.unobserve(stage);
-      }
-    });
-  }, { threshold:.25 });
-  fanIo.observe(stage);
 })();
 </script>
 

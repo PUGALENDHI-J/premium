@@ -120,7 +120,58 @@ function renderProductGrid(containerId, products, emptyMessage){
     return;
   }
   el.innerHTML = products.map(productCardHTML).join("");
+  animateGridIn(el);
+  bindGridTilt();
 }
+
+/* ---------- premium grid entrance (staggered) ---------- */
+function animateGridIn(el){
+  if(typeof el === "string") el = document.getElementById(el);
+  if(!el || !el.classList.contains("grid-products")) return;
+  if(el.__gridObs) el.__gridObs.disconnect();
+  Array.from(el.querySelectorAll(".pcard")).forEach((c,i)=>{
+    c.style.setProperty("--d", Math.min(i*85, 760)+"ms");
+    c.classList.remove("done");
+  });
+  el.__gridObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        el.classList.add("in-view");
+        el.__gridObs.disconnect();
+      }
+    });
+  },{threshold:.1});
+  el.__gridObs.observe(el);
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+  document.querySelectorAll(".grid-products").forEach(g=>animateGridIn(g));
+});
+document.addEventListener("animationend", e=>{
+  if(e.animationName === "pcardIn" && e.target.classList && e.target.classList.contains("pcard")){
+    e.target.classList.add("done");
+  }
+});
+
+/* ---------- 3D cursor tilt on product cards ---------- */
+function bindGridTilt(){
+  document.querySelectorAll(".grid-products").forEach(grid=>{
+    if(grid.__tilt) return;
+    grid.__tilt = true;
+    grid.addEventListener("mousemove", e=>{
+      if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const card = e.target.closest(".pcard");
+      if(!card || !card.classList.contains("done")) return;
+      const r = card.getBoundingClientRect();
+      const dx = (e.clientX - r.left)/r.width - .5;
+      const dy = (e.clientY - r.top)/r.height - .5;
+      card.style.transform = `perspective(900px) rotateX(${(-dy*5).toFixed(2)}deg) rotateY(${(dx*7).toFixed(2)}deg) translateY(-8px)`;
+    });
+    grid.addEventListener("mouseleave", ()=>{
+      grid.querySelectorAll(".pcard").forEach(c=>{ c.style.transform=""; });
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", bindGridTilt);
 
 /* ---------- newsletter / contact demo forms ---------- */
 function fakeSubmit(formEl, successMessage){
