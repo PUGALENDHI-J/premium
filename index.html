@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hastavam Textiles | Traditional & Western Women's Wear</title>
+<meta name="description" content="Shop authentic handwoven sarees, Banarasi silk, Kanjivaram and curated western wear from Hastavam Textiles — cart, wishlist and checkout included.">
+<link rel="canonical" href="https://www.hastavamtextiles.com/index.html">
+<meta property="og:title" content="Hastavam Textiles | Traditional & Western Women's Wear">
+<meta property="og:description" content="Shop authentic handwoven sarees, Banarasi silk, Kanjivaram and curated western wear from Hastavam Textiles — cart, wishlist and checkout included.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/hastavam-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B5654A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!-- Shared libraries load first: page-specific scripts below (inside the
+     fragments) call Store / PRODUCTS / renderProductGrid synchronously,
+     so these must be parsed before any page content. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles&reg;</a>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="collections.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navicons">
+      <a class="navicon" href="search.html" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></a>
+      <a class="navicon" href="compare.html" aria-label="Compare products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg><span class="badge" data-compare-count>0</span></a>
+      <a class="navicon" href="wishlist.html" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="badge" data-wishlist-count>0</span></a>
+      <a class="navicon" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="badge" data-cart-count>0</span></a>
+      <a class="navsignin" data-auth-state href="login.html">Sign In</a>
+    </div>
+    <button class="burger" aria-label="Open menu" onclick="toggleMobileMenu(true)">&#9776;</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu">
+  <div class="top">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="">Hastavam</a>
+    <button class="mclose" onclick="toggleMobileMenu(false)" aria-label="Close menu">&#10005;</button>
+  </div>
+  <a class="mlink" href="index.html">Home</a>
+  <a class="mlink" href="collections.html">Shop</a>
+  <a class="mlink" href="about.html">About</a>
+  <a class="mlink" href="faq.html">FAQ</a>
+  <a class="mlink" href="contact.html">Contact</a>
+  <a class="mlink" href="cart.html">Cart</a>
+  <a class="mlink" href="wishlist.html">Wishlist</a>
+  <a class="mlink" href="track-order.html">Track Order</a>
+  <a class="mlink" data-auth-state href="login.html">Sign In</a>
+</div>
+
+<main>
+<div class="hero">
+  <div class="hero-bg">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-label="Hastavam Textiles handwoven saree showcase">
+      <source src="assets/video/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button class="mute-btn hero-mute" id="muteBtn" aria-label="Unmute video" onclick="toggleMute()">
+    <svg class="mute-icon" id="muteIconOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <svg class="mute-icon hidden" id="muteIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+  <div class="hero-rating-chip"><span class="stars">★★★★★</span><div><b>4.9/5</b><span>12,000+ happy customers</span></div></div>
+  <div class="wrap hero-content reveal in">
+    <span class="hero-kicker"><span class="dot"></span>Heritage Edition · Traditional &amp; Western Wear</span>
+    <h1><span class="hw" style="animation-delay:.05s">Timeless</span> <span class="hw" style="animation-delay:.16s">Weaves,</span><br><span class="hw" style="animation-delay:.27s">Modern</span> <span class="hw" style="animation-delay:.38s" id="heroRotate">Grace.</span></h1>
+    <p>Hastavam Textiles brings you the timeless grace of traditional Indian craftsmanship alongside a thoughtfully chosen western wear range — handpicked fabrics, handwoven sarees, and everyday styles for the woman who never forgets her roots.</p>
+    <div class="btnrow">
+      <a class="btn btn-primary" href="collections.html">Shop Now</a>
+      <a class="btn btn-ghost" href="about.html">Our Story</a>
+    </div>
+    <div class="trust">
+      <span>✔ Pan-India Delivery</span><span>✔ 100% Handloom Certified</span><span>✔ Direct-from-Artisan</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hero-stats reveal in">
+    <div class="hstat"><b>5</b><span>Weaving Regions</span></div>
+    <div class="hstat"><b>220+</b><span>Artisan Families</span></div>
+    <div class="hstat"><b>100%</b><span>Handloom Certified</span></div>
+    <div class="hstat"><b>7</b><span>Signature Collections</span></div>
+  </div>
+</div>
+
+<section class="fan-showcase">
+  <div class="wrap">
+    <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Style in Motion</p><h2>Signature Drapes, Fanned Out</h2></div>
+    <div class="fan-stage" id="fanStage"></div>
+    <p class="fan-hint">Hover a drape to bring it forward — tap to shop that collection</p>
+  </div>
+</section>
+
+<section class="alt-cream">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <div><p class="eyebrow">Explore Our Craft</p><h2>Traditional &amp; Western Collections</h2></div>
+      <a class="link" href="collections.html">View All Collections →</a>
+    </div>
+    <div class="grid4c reveal">
+      <a class="ccard" href="collections.html?cat=banarasi">
+        <div class="ccard-img"><img src="assets/images/products/saree-02-banarasi-pink.jpg" alt="Banarasi silk saree"></div>
+        <div class="ccard-body"><h3>Banarasi Elegance</h3><span>Timeless silk sarees for weddings &amp; celebrations</span></div>
+      </a>
+      <a class="ccard" href="collections.html?cat=everyday">
+        <div class="ccard-img"><img src="assets/images/products/saree-07-peach-pink-border.jpg" alt="Everyday handloom wear"></div>
+        <div class="ccard-body"><h3>Everyday Handloom</h3><span>Breathable cotton wear for daily grace</span></div>
+      </a>
+      <a class="ccard" href="collections.html?cat=bridal">
+        <div class="ccard-img"><img src="assets/images/products/saree-01-red-gold-petals.jpg" alt="Bridal trousseau"></div>
+        <div class="ccard-body"><h3>Bridal Trousseau</h3><span>Curated ensembles for tradition, not trends</span></div>
+      </a>
+      <a class="ccard" href="collections.html?cat=kanjivaram">
+        <div class="ccard-img"><img src="assets/images/products/saree-03-red-temple-border.jpg" alt="Kanjivaram silk saree"></div>
+        <div class="ccard-body"><h3>Kanjivaram Silk</h3><span>Exquisite border-rich silks from the south</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead reveal">
+      <div><p class="eyebrow">Shop Bestsellers</p><h2>Loved, Reordered, Trusted</h2></div>
+      <a class="link" href="collections.html?sort=bestseller">View All →</a>
+    </div>
+    <div class="grid-products reveal" id="homeProductGrid"></div>
+  </div>
+</section>
+
+<section class="alt-cream">
+  <div class="wrap">
+    <div class="sechead reveal">
+      <div><p class="eyebrow">Just In</p><h2>New Arrivals</h2></div>
+      <a class="link" href="collections.html?sort=new">View All →</a>
+    </div>
+    <div class="grid-products reveal" id="newArrivalsGrid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead center reveal" style="display:block;"><p class="eyebrow">Why Hastavam</p><h2>A Promise in Every Thread</h2></div>
+    <div class="grid4 reveal">
+      <div class="valuecard"><div class="num">01</div><h3>Handcrafted, Always</h3><p>Every saree, kurti and western top passes through human hands before it reaches yours.</p></div>
+      <div class="valuecard"><div class="num">02</div><h3>Rooted in Ethics</h3><p>We partner directly with weaver communities and makers — fair wages, honest craft, sustainable practice.</p></div>
+      <div class="valuecard"><div class="num">03</div><h3>Traditional, Meet Western</h3><p>From Banarasi silks to Kanjivaram, Chanderi to Bandhani, and everyday western staples — a curated journey.</p></div>
+      <div class="valuecard"><div class="num">04</div><h3>Designed for Real Women</h3><p>Comfort-first silhouettes that celebrate every body, every age, every occasion.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-cream">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><b class="counter" data-target="5">0</b><span>Weaving Regions Partnered</span></div>
+      <div class="stat"><b class="counter" data-target="220">0</b><span>Artisan Families Supported</span></div>
+      <div class="stat"><b class="counter" data-target="100">0</b><span>% Handloom Certified</span></div>
+      <div class="stat"><b class="counter" data-target="7">0</b><span>Signature Weave Collections</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead reveal"><div><p class="eyebrow">From Thread to Drape</p><h2>Craftsmanship Preview</h2></div>
+      <a class="link" href="about.html">Read Our Story →</a></div>
+    <div class="timeline reveal">
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-06-stack-jewel.jpg" alt="Sourcing raw silk"></div><div class="tstep-body"><span class="num">01</span><h4>Sourcing</h4></div></div>
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-08-stack-pastel.jpg" alt="Handweaving on the loom"></div><div class="tstep-body"><span class="num">02</span><h4>Weaving</h4></div></div>
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-14-orange-navy-floral.jpg" alt="Traditional dyeing"></div><div class="tstep-body"><span class="num">03</span><h4>Dyeing</h4></div></div>
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-01-red-gold-petals.jpg" alt="Hand finishing"></div><div class="tstep-body"><span class="num">04</span><h4>Finishing</h4></div></div>
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-03-red-temple-border.jpg" alt="Quality assurance check"></div><div class="tstep-body"><span class="num">05</span><h4>Quality</h4></div></div>
+      <div class="tstep"><div class="tstep-img"><img src="assets/images/products/saree-12-stack-assorted.jpg" alt="Packed with care"></div><div class="tstep-body"><span class="num">06</span><h4>Packed</h4></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <div class="sechead reveal" style="display:block;"><p class="eyebrow">Kind Words</p><h2>Testimonials</h2></div>
+    <div class="testi-wrap reveal">
+      <div class="tcard"><span class="quote">"</span><p>I wore a Hastavam Kanjivaram to my sister's wedding — I have never received so many compliments on a saree in my life.</p><div class="who">Anjali R., Kochi</div></div>
+      <div class="tcard"><span class="quote">"</span><p>Finally, a brand that doesn't compromise on authenticity. You can feel the difference in the fabric.</p><div class="who">Meera S., Bengaluru</div></div>
+      <div class="tcard"><span class="quote">"</span><p>The new checkout made reordering so easy — saved addresses, tracked delivery, all of it just worked.</p><div class="who">Priya N., Delhi</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="newsletter reveal">
+      <div><h3>Ready for your next drape?</h3><p>Browse all seven signature collections, or pick up where you left off in your wishlist.</p></div>
+      <div class="btnrow">
+        <a class="btn btn-primary" href="collections.html">Shop Collections</a>
+        <a class="btn btn-outline-light" href="wishlist.html">View Wishlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const HOME_PICKS = ["b2","k3","e1","c1","d2","g3","f1","w2"];
+const NEW_PICKS = PRODUCTS.filter(p=>p.tags.includes("new")).slice(0,4);
+renderProductGrid("homeProductGrid", HOME_PICKS.map(getProduct));
+renderProductGrid("newArrivalsGrid", NEW_PICKS);
+
+function toggleMute(){
+  const v = document.getElementById("heroVideo");
+  v.muted = !v.muted;
+  document.getElementById("muteIconOff").classList.toggle("hidden", !v.muted);
+  document.getElementById("muteIconOn").classList.toggle("hidden", v.muted);
+  document.getElementById("muteBtn").setAttribute("aria-label", v.muted ? "Unmute video" : "Mute video");
+}
+
+(function(){
+  const el = document.getElementById("heroRotate");
+  if(!el) return;
+  const words = ["Grace.","Heart.","Pride.","Style."];
+  let i = 0;
+  setInterval(()=>{
+    i = (i+1) % words.length;
+    el.style.opacity = 0;
+    setTimeout(()=>{ el.textContent = words[i]; el.style.opacity = 1; }, 300);
+  }, 2600);
+})();
+
+(function(){
+  const stage = document.getElementById("fanStage");
+  if(!stage || typeof gsap === "undefined") return;
+  const FAN_CARDS = [
+    { imgUrl:"assets/images/products/saree-02-banarasi-pink.jpg",      alt:"Banarasi silk saree",       cat:"banarasi" },
+    { imgUrl:"assets/images/products/saree-03-red-temple-border.jpg", alt:"Kanjivaram silk saree",      cat:"kanjivaram" },
+    { imgUrl:"assets/images/products/saree-01-red-gold-petals.jpg",   alt:"Bridal trousseau saree",     cat:"bridal" },
+    { imgUrl:"assets/images/products/saree-09-mauve-floral.jpg",      alt:"Chanderi cotton-silk saree", cat:"chanderi" },
+    { imgUrl:"assets/images/products/saree-14-orange-navy-floral.jpg",alt:"Bandhani tie-dye drape",     cat:"bandhani" },
+    { imgUrl:"assets/images/products/saree-07-peach-pink-border.jpg", alt:"Everyday handloom saree",    cat:"everyday" },
+    { imgUrl:"assets/images/products/saree-13-purple-pink-pleats.jpg",alt:"Western wear ensemble",      cat:"western" },
+  ];
+  const FAN_POSITIONS = [
+    { rot:-22, scale:0.72, x:-13.2, y:3.4, zIndex:1 },
+    { rot:-15, scale:0.80, x:-9.7,  y:2.0, zIndex:2 },
+    { rot:-7,  scale:0.90, x:-4.9,  y:0.7, zIndex:3 },
+    { rot:0,   scale:1.0,  x:0,     y:0,   zIndex:10 },
+    { rot:7,   scale:0.90, x:4.9,   y:0.7, zIndex:3 },
+    { rot:15,  scale:0.80, x:9.7,   y:2.0, zIndex:2 },
+    { rot:22,  scale:0.72, x:13.2,  y:3.4, zIndex:1 },
+  ];
+  function respMult(w){ if(w<480) return .56; if(w<640) return .7; if(w<900) return .82; if(w<1100) return .9; return 1; }
+  FAN_CARDS.forEach(c=>{
+    const el = document.createElement("a");
+    el.className = "fan-card";
+    el.href = "collections.html?cat=" + c.cat;
+    el.innerHTML = `<img src="${c.imgUrl}" alt="${c.alt}" loading="lazy">`;
+    stage.appendChild(el);
+  });
+  const cardEls = Array.from(stage.querySelectorAll(".fan-card"));
+  let entered = false, activeIdx = null;
+  function layout(hoverIdx){
+    const mult = respMult(window.innerWidth);
+    cardEls.forEach((el,i)=>{
+      const p = FAN_POSITIONS[i];
+      let x = p.x*mult, y = p.y*mult, rot = p.rot, scale = p.scale, z = p.zIndex;
+      if(hoverIdx !== null){
+        if(i === hoverIdx){ y -= 1.8*mult; scale = Math.min(scale*1.12, 1.08); z = 50; }
+        else { const dist = i - hoverIdx; x += 2.6*mult*Math.sign(dist); rot += dist > 0 ? 3 : -3; }
+      }
+      gsap.to(el, { x:`${x}rem`, y:`${y}rem`, rotation:rot, scale, zIndex:z, duration:.55, ease:"elastic.out(1,.8)", overwrite:"auto" });
+    });
+  }
+  cardEls.forEach((el,i)=>{
+    el.addEventListener("mouseenter", ()=>{ if(!entered) return; activeIdx = i; layout(i); });
+    el.addEventListener("focus", ()=>{ if(!entered) return; activeIdx = i; layout(i); });
+  });
+  stage.addEventListener("mouseleave", ()=>{ if(!entered) return; activeIdx = null; layout(null); });
+  window.addEventListener("resize", ()=>{ if(entered) layout(activeIdx); });
+  const fanIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !entered){
+        entered = true;
+        const mult = respMult(window.innerWidth);
+        cardEls.forEach((el,i)=>{
+          gsap.set(el, { x:0, y:"7rem", rotation:0, scale:.5, opacity:0, zIndex:0 });
+          gsap.to(el, { x:`${FAN_POSITIONS[i].x*mult}rem`, y:`${FAN_POSITIONS[i].y*mult}rem`, rotation:FAN_POSITIONS[i].rot, scale:FAN_POSITIONS[i].scale, opacity:1, zIndex:FAN_POSITIONS[i].zIndex, duration:1.1, ease:"elastic.out(1,.75)", delay:i*0.07 });
+        });
+        fanIo.unobserve(stage);
+      }
+    });
+  }, { threshold:.25 });
+  fanIo.observe(stage);
+})();
+</script>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles&reg;</a>
+        <p style="margin-top:14px;">Traditional Indian style &amp; culture. Woven by hand, worn with heart.</p>
+        <form data-newsletter-form>
+          <div class="newsletter-row">
+            <input type="email" required placeholder="Your email" aria-label="Email for newsletter">
+            <button class="btn btn-primary" type="submit">Join</button>
+          </div>
+        </form>
+      </div>
+      <div><h4>Shop</h4><ul>
+        <li><a href="collections.html">All Collections</a></li>
+        <li><a href="collections.html?cat=bridal">Bridal Edit</a></li>
+        <li><a href="collections.html?sort=new">New Arrivals</a></li>
+        <li><a href="collections.html?sort=bestseller">Best Sellers</a></li>
+      </ul></div>
+      <div><h4>Customer Care</h4><ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="track-order.html">Track Order</a></li>
+        <li><a href="faq.html">Shipping &amp; Returns</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div><h4>Policies</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="footYear">2026</span> Hastavam Textiles&reg;. All rights reserved.</span>
+      <span>Handwoven with heart in India.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919800000000" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg>
+</a>
+
+<div id="toastHost" class="toast-host"></div>
+
+</body>
+</html>

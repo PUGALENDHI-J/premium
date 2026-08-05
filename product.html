@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details | Hastavam Textiles</title>
+<meta name="description" content="View product details, specifications, reviews and delivery estimates, and add to cart or buy now.">
+<link rel="canonical" href="https://www.hastavamtextiles.com/product.html">
+<meta property="og:title" content="Product Details | Hastavam Textiles">
+<meta property="og:description" content="View product details, specifications, reviews and delivery estimates, and add to cart or buy now.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/hastavam-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B5654A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!-- Shared libraries load first: page-specific scripts below (inside the
+     fragments) call Store / PRODUCTS / renderProductGrid synchronously,
+     so these must be parsed before any page content. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles&reg;</a>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="collections.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="navicons">
+      <a class="navicon" href="search.html" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></a>
+      <a class="navicon" href="compare.html" aria-label="Compare products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg><span class="badge" data-compare-count>0</span></a>
+      <a class="navicon" href="wishlist.html" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span class="badge" data-wishlist-count>0</span></a>
+      <a class="navicon" href="cart.html" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="badge" data-cart-count>0</span></a>
+      <a class="navsignin" data-auth-state href="login.html">Sign In</a>
+    </div>
+    <button class="burger" aria-label="Open menu" onclick="toggleMobileMenu(true)">&#9776;</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mmenu">
+  <div class="top">
+    <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="">Hastavam</a>
+    <button class="mclose" onclick="toggleMobileMenu(false)" aria-label="Close menu">&#10005;</button>
+  </div>
+  <a class="mlink" href="index.html">Home</a>
+  <a class="mlink" href="collections.html">Shop</a>
+  <a class="mlink" href="about.html">About</a>
+  <a class="mlink" href="faq.html">FAQ</a>
+  <a class="mlink" href="contact.html">Contact</a>
+  <a class="mlink" href="cart.html">Cart</a>
+  <a class="mlink" href="wishlist.html">Wishlist</a>
+  <a class="mlink" href="track-order.html">Track Order</a>
+  <a class="mlink" data-auth-state href="login.html">Sign In</a>
+</div>
+
+<main>
+<div id="productRoot"></div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const productId = params.get("id") || "b1";
+const product = getProduct(productId) || PRODUCTS[0];
+Store.addRecent(product.id);
+
+function buyboxHTML(sticky){
+  return `
+  <div class="pd-buybox-actions">
+    <button class="btn btn-ghost" onclick="addQty()">Add to Cart</button>
+    <button class="btn btn-primary" onclick="buyNow()">Buy Now</button>
+  </div>`;
+}
+
+document.getElementById("productRoot").innerHTML = `
+<div class="pageband">
+  <div class="wrap">
+    <div class="breadcrumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="collections.html?cat=${product.cat}">${getCategory(product.cat).title}</a><span class="sep">/</span>
+      <span>${product.name}</span>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:40px;">
+  <div class="wrap">
+    <div class="pd-layout">
+      <div class="pd-gallery">
+        <div class="pd-main-img" id="pdMainImgWrap"><img id="pdMainImg" src="${product.images[0]}" alt="${product.name}"></div>
+        <div class="pd-thumbs" id="pdThumbs">
+          ${product.images.map((img,i)=>`<div class="pd-thumb ${i===0?'active':''}" data-i="${i}"><img src="${img}" alt="${product.name} view ${i+1}"></div>`).join("")}
+        </div>
+      </div>
+
+      <div class="pd-info" id="buyboxTrigger">
+        <div class="fab">${getCategory(product.cat).title} · ${product.fabric}</div>
+        <h1>${product.name}</h1>
+        <div class="pd-rating">${starsHTML(product.rating)} <span>${product.rating}</span> <a href="#reviews">${product.reviewCount} reviews</a></div>
+        <div class="pd-price-row">
+          <span class="now">${currency(product.price)}</span>
+          ${discountPct(product)>0?`<span class="mrp">${currency(product.mrp)}</span><span class="pct">${discountPct(product)}% off</span>`:""}
+        </div>
+        <p class="pd-desc">${product.desc}</p>
+
+        <div class="pd-block">
+          <h5>Colour</h5>
+          <div class="color-row" id="colorRow">
+            ${product.colors.map((c,i)=>`<button class="color-pill ${i===0?'active':''}" data-c="${c}">${c}</button>`).join("")}
+          </div>
+        </div>
+
+        <div class="pd-block">
+          <h5>Quantity</h5>
+          <div class="qty-stepper">
+            <button onclick="changeQty(-1)" aria-label="Decrease quantity">−</button>
+            <span id="qtyVal">1</span>
+            <button onclick="changeQty(1)" aria-label="Increase quantity">+</button>
+          </div>
+          <div class="stock-badge ${product.stock>5?'in':product.stock>0?'low':'out'}" style="margin-top:10px;">
+            ${product.stock>5?`In Stock`:product.stock>0?`Only ${product.stock} left — order soon`:`Out of Stock`}
+          </div>
+        </div>
+
+        <div id="buyboxActions">${buyboxHTML(false)}</div>
+        <div class="btnrow" style="margin-top:12px;">
+          <button class="btn-icon ${Store.isWishlisted(product.id)?'active':''}" id="wishBtn" aria-label="Toggle wishlist" onclick="toggleWish()">
+            <svg viewBox="0 0 24 24" fill="${Store.isWishlisted(product.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+          </button>
+          <button class="btn-icon ${Store.getCompare().includes(product.id)?'active':''}" id="cmpBtn" aria-label="Add to compare" onclick="toggleCmp()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </button>
+          <a class="btn-icon" href="https://wa.me/919800000000?text=${encodeURIComponent('Hi, I have a question about the '+product.name)}" target="_blank" rel="noopener" aria-label="Ask on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          </a>
+        </div>
+
+        <div class="pd-meta-row">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="7" width="15" height="13" rx="2"/><path d="M16 10h3l4 4v4a1 1 0 0 1-1 1h-1"/><circle cx="6" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg> Free delivery over ₹5,000</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0Z"/><path d="M12 7v5l3 3"/></svg> Dispatched in 2–3 days</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-6-8.5"/><path d="M21 3v6h-6"/></svg> Easy 7-day returns</span>
+        </div>
+        <div class="delivery-check">
+          <input type="text" id="pinInput" placeholder="Enter pincode to check delivery" maxlength="6">
+          <button class="btn btn-ghost btn-sm" onclick="checkPin()">Check</button>
+        </div>
+        <div class="coupon-note" id="pinResult"></div>
+      </div>
+    </div>
+
+    <div class="pd-tabs">
+      <button class="pd-tab active" data-tab="desc">Description</button>
+      <button class="pd-tab" data-tab="specs">Specifications</button>
+      <button class="pd-tab" data-tab="reviews" id="reviews">Reviews (${product.reviewCount})</button>
+    </div>
+    <div class="pd-tabpanel active" data-panel="desc">
+      <p style="max-width:70ch;color:var(--earth-brown);">${product.desc} Each piece is inspected thread by thread before it leaves our studio, and arrives wrapped as if sent to family.</p>
+      <p style="max-width:70ch;color:var(--earth-brown);"><b>Care:</b> Dry clean recommended. Store folded in muslin cloth away from direct sunlight.</p>
+    </div>
+    <div class="pd-tabpanel" data-panel="specs">
+      <table class="spec-table">
+        <tr><td>Fabric</td><td>${product.fabric}</td></tr>
+        <tr><td>Colour options</td><td>${product.colors.join(", ")}</td></tr>
+        <tr><td>Dimensions</td><td>${product.dims}</td></tr>
+        <tr><td>SKU</td><td>${product.sku}</td></tr>
+        <tr><td>Care instructions</td><td>Dry clean recommended</td></tr>
+        <tr><td>Country of origin</td><td>India</td></tr>
+      </table>
+    </div>
+    <div class="pd-tabpanel" data-panel="reviews">
+      <div class="review-summary">
+        <div class="review-score"><b>${product.rating}</b>${starsHTML(product.rating)}<div class="coupon-note">${product.reviewCount} ratings</div></div>
+        <div class="review-bars">
+          ${[5,4,3,2,1].map(n=>{
+            const pct = n===Math.round(product.rating) ? 62 : n===Math.round(product.rating)-1 ? 24 : 5;
+            return `<div class="review-bar-row"><span>${n}★</span><div class="bar"><div class="fill" style="width:${pct}%"></div></div><span>${pct}%</span></div>`;
+          }).join("")}
+        </div>
+      </div>
+      <div id="reviewList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-cream">
+  <div class="wrap">
+    <div class="sechead reveal in"><h2>You May Also Like</h2></div>
+    <div class="grid-products" id="relatedGrid"></div>
+  </div>
+</section>
+
+<section id="recentSection" style="display:none;">
+  <div class="wrap">
+    <div class="sechead reveal in"><h2>Recently Viewed</h2></div>
+    <div class="grid-products" id="recentGrid"></div>
+  </div>
+</section>
+
+<div class="sticky-buybox" id="stickyBuybox">
+  <div class="wrap inner">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <img src="${product.images[0]}" alt="">
+      <div><div class="name">${product.name}</div><div class="price">${currency(product.price)}</div></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn btn-ghost btn-sm" onclick="addQty()">Add to Cart</button>
+      <button class="btn btn-primary btn-sm" onclick="buyNow()">Buy Now</button>
+    </div>
+  </div>
+</div>
+`;
+
+let qty = 1;
+function changeQty(d){ qty = Math.max(1, Math.min(product.stock||10, qty+d)); document.getElementById("qtyVal").textContent = qty; }
+function addQty(){ Store.addToCart(product.id, qty); }
+function buyNow(){ Store.addToCart(product.id, qty); location.href = "checkout.html"; }
+function toggleWish(){
+  Store.toggleWishlist(product.id);
+  document.getElementById("wishBtn").classList.toggle("active");
+}
+function toggleCmp(){
+  Store.toggleCompare(product.id);
+  document.getElementById("cmpBtn").classList.toggle("active");
+}
+function checkPin(){
+  const v = document.getElementById("pinInput").value.trim();
+  const el = document.getElementById("pinResult");
+  if(!/^\d{6}$/.test(v)){ el.textContent = "Enter a valid 6-digit pincode."; return; }
+  const days = 2 + (parseInt(v[0])%4);
+  el.textContent = `Delivers to ${v} in ${days}–${days+2} business days.`;
+}
+
+document.getElementById("pdThumbs").addEventListener("click", (e)=>{
+  const t = e.target.closest(".pd-thumb");
+  if(!t) return;
+  document.querySelectorAll(".pd-thumb").forEach(x=>x.classList.remove("active"));
+  t.classList.add("active");
+  document.getElementById("pdMainImg").src = product.images[+t.dataset.i];
+});
+document.getElementById("colorRow").addEventListener("click", (e)=>{
+  const b = e.target.closest(".color-pill");
+  if(!b) return;
+  document.querySelectorAll(".color-pill").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active");
+});
+document.querySelectorAll(".pd-tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".pd-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".pd-tabpanel").forEach(p=>p.classList.remove("active"));
+    tab.classList.add("active");
+    document.querySelector(`.pd-tabpanel[data-panel="${tab.dataset.tab}"]`).classList.add("active");
+  });
+});
+
+document.getElementById("reviewList").innerHTML = demoReviews(product).map(r=>`
+  <div class="review-card">
+    <span class="rname">${r.name}</span><span class="rdate">${r.date}</span>
+    <div style="margin-top:4px;">${starsHTML(r.rating)}</div>
+    <p>${r.body}</p>
+  </div>`).join("");
+
+renderProductGrid("relatedGrid", relatedProducts(product, 4));
+const recentIds = Store.getRecent(product.id);
+if(recentIds.length){
+  document.getElementById("recentSection").style.display = "block";
+  renderProductGrid("recentGrid", recentIds.map(getProduct).filter(Boolean).slice(0,4));
+}
+</script>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <a href="index.html" class="logo"><img class="logo-mark" src="assets/images/hastavam-logo.png" alt="Hastavam Textiles logo">Hastavam Textiles&reg;</a>
+        <p style="margin-top:14px;">Traditional Indian style &amp; culture. Woven by hand, worn with heart.</p>
+        <form data-newsletter-form>
+          <div class="newsletter-row">
+            <input type="email" required placeholder="Your email" aria-label="Email for newsletter">
+            <button class="btn btn-primary" type="submit">Join</button>
+          </div>
+        </form>
+      </div>
+      <div><h4>Shop</h4><ul>
+        <li><a href="collections.html">All Collections</a></li>
+        <li><a href="collections.html?cat=bridal">Bridal Edit</a></li>
+        <li><a href="collections.html?sort=new">New Arrivals</a></li>
+        <li><a href="collections.html?sort=bestseller">Best Sellers</a></li>
+      </ul></div>
+      <div><h4>Customer Care</h4><ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="track-order.html">Track Order</a></li>
+        <li><a href="faq.html">Shipping &amp; Returns</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul></div>
+      <div><h4>Policies</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="footYear">2026</span> Hastavam Textiles&reg;. All rights reserved.</span>
+      <span>Handwoven with heart in India.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919800000000" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M16.004 2.667c-7.363 0-13.333 5.97-13.333 13.333 0 2.353.615 4.646 1.783 6.665L2.667 29.333l6.822-1.789a13.27 13.27 0 0 0 6.515 1.72h.006c7.362 0 13.333-5.97 13.333-13.333 0-3.561-1.387-6.909-3.905-9.428a13.246 13.246 0 0 0-9.434-3.836Zm0 24.4a11.02 11.02 0 0 1-5.616-1.537l-.403-.24-4.05 1.062 1.08-3.947-.263-.405a11.04 11.04 0 0 1-1.7-5.9c0-6.112 4.973-11.084 11.088-11.084a11 11 0 0 1 7.844 3.257 11 11 0 0 1 3.246 7.834c-.005 6.113-4.978 11.06-11.226 11.06Zm6.08-8.294c-.333-.167-1.97-.973-2.276-1.083-.306-.11-.529-.166-.752.167-.222.333-.86 1.083-1.055 1.306-.194.222-.388.25-.72.083-.334-.167-1.409-.52-2.684-1.657-.992-.885-1.663-1.978-1.858-2.311-.194-.334-.02-.514.146-.68.15-.15.334-.39.5-.584.167-.194.223-.333.334-.556.111-.222.056-.417-.028-.583-.083-.167-.751-1.813-1.03-2.482-.271-.652-.546-.564-.751-.574l-.64-.011a1.23 1.23 0 0 0-.892.417c-.306.334-1.167 1.14-1.167 2.78s1.195 3.226 1.362 3.448c.166.222 2.352 3.591 5.698 5.036.796.344 1.417.549 1.901.703.799.254 1.526.218 2.101.132.641-.096 1.97-.805 2.248-1.583.278-.778.278-1.445.194-1.584-.083-.138-.305-.222-.639-.389Z"/></svg>
+</a>
+
+<div id="toastHost" class="toast-host"></div>
+
+</body>
+</html>
