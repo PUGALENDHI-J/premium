@@ -494,3 +494,14 @@ nav ul{gap:28px}
 .sc .more{margin-top:auto;font-weight:700;color:var(--ind)}.sc .more span{display:inline-block;transition:transform .25s}.sc:hover .more span{transform:translateX(6px)}
 @media(max-width:1000px){.sg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.sg{grid-template-columns:1fr;gap:20px;padding:0 4px}.sc .bd{padding:20px 18px 22px}.sc p{font-size:15px}.sc .more{padding:10px 0}}
+/* home hero background video: covers the hero at every screen size */
+.hero.hv{position:relative;isolation:isolate;color:#fff;background:var(--navy);min-height:min(88vh,860px);display:flex;align-items:center}
+.hero.hv>.wrap{width:100%}
+.hvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2;pointer-events:none}
+.hero.hv::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(11,13,18,.82) 0%,rgba(15,23,51,.62) 50%,rgba(15,23,51,.35) 100%)}
+.hero.hv .lead,.hero.hv .loc{color:rgba(255,255,255,.86)}
+.hero.hv .btn.s{color:#fff;border-color:#fff}.hero.hv .btn.s:hover{background:#fff;color:var(--ind)}
+.hero.hv .hc{background:rgba(255,255,255,.92);color:var(--ink);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+html[data-theme=dark] .hero.hv .hc{background:rgba(23,31,51,.88);color:var(--ink)}
+@media(max-width:900px){.hero.hv{min-height:auto}.hero.hv::before{background:linear-gradient(180deg,rgba(11,13,18,.78),rgba(15,23,51,.7))}}
+@media(prefers-reduced-motion:reduce){.hvid{display:none}}
