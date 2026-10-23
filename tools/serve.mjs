@@ -9,7 +9,8 @@ const PORT = +process.argv[2] || 4321; // 8080 is often taken by other local ser
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".xml": "application/xml", ".txt": "text/plain", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".ico": "image/x-icon", ".mp4": "video/mp4", ".svg": "image/svg+xml" };
 
 createServer(async (req, res) => {
-  let p = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  let p;
+  try { p = decodeURIComponent(new URL(req.url.replace(/^\/+/, "/"), "http://x").pathname) } catch { res.writeHead(400).end(); return }
   let file = path.join(ROOT, p);
   if (!file.startsWith(ROOT)) { res.writeHead(403).end(); return }
   try {
