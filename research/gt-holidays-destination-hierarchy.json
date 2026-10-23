@@ -1,0 +1,827 @@
+{
+ "source": "Breadcrumbs of fetched /packages/ listing pages",
+ "generated_at": "2026-10-23T18:14:32+00:00",
+ "tree": {
+  "International Tour Packages": {
+   "url": "https://www.gtholidays.in/packages/international/",
+   "package_links_on_page": 12,
+   "children": {
+    "Canada Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/canada-tour-packages/",
+     "package_links_on_page": 16
+    },
+    "USA Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/usa-tour-packages/",
+     "package_links_on_page": 22
+    },
+    "Educational Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/educational-tour-packages/",
+     "package_links_on_page": 23
+    },
+    "International Honeymoon Packages": {
+     "url": "https://www.gtholidays.in/packages/international/honeymoon-packages/",
+     "package_links_on_page": 25
+    },
+    "Africa Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/africa/",
+     "package_links_on_page": 33,
+     "children": {
+      "South Africa Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/south-africa-tour-packages/",
+       "package_links_on_page": 18
+      },
+      "Kenya Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/kenya-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Tanzania Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/tanzania-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Zimbabwe Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/zimbabwe-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Seychelles Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/seychelles-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Morocco Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/africa/morocco-tour-packages/",
+       "package_links_on_page": 11
+      }
+     }
+    },
+    "Pacific Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/pacific/",
+     "package_links_on_page": 40,
+     "children": {
+      "Australia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/pacific/australia-tour-packages/",
+       "package_links_on_page": 27
+      },
+      "New Zealand Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/pacific/new-zealand-tour-packages/",
+       "package_links_on_page": 22
+      },
+      "Fiji Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/pacific/fiji-tour-packages/",
+       "package_links_on_page": 20
+      }
+     }
+    },
+    "Island Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/island/",
+     "package_links_on_page": 40,
+     "children": {
+      "Maldives Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/island/maldives-tour-packages/",
+       "package_links_on_page": 32
+      },
+      "Sri Lanka Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/island/sri-lanka-tour-packages/",
+       "package_links_on_page": 27
+      },
+      "Madagascar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/island/madagascar-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Reunion Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/island/reunion-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Mauritius Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/island/mauritius-tour-packages/",
+       "package_links_on_page": 16
+      }
+     }
+    },
+    "America Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/america/",
+     "package_links_on_page": 40,
+     "children": {
+      "North America Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/north-america-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Alaska Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/alaska-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Canada Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/canada-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "South America Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/south-america-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Central America Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/central-america-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "USA Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/america/usa-tour-packages/",
+       "package_links_on_page": 22
+      }
+     }
+    },
+    "Europe Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/europe/",
+     "package_links_on_page": 16,
+     "children": {
+      "UK Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/united-kingdom-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Switzerland Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/swiss-tour-packages/",
+       "package_links_on_page": 33
+      },
+      "Romania Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/romania-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Greenland Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/greenland-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Hungary Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/hungary-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Denmark Republic Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/denmark-republic-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Belgium Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/belgium-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Netherlands Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/netherlands-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Sweden Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/sweden-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Austria Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/austria-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Ireland Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/ireland-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Finland Republic Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/finland-republic-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Iceland Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/iceland-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Greece Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/greece-tour-packages/",
+       "package_links_on_page": 22
+      },
+      "Turkey Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/turkey-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Norway Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/norway-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Germany Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/germany-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Armenia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/armenia-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Portugal Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/portugal-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Slovakia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/slovakia-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Bulgaria Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/bulgaria-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "London Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/london-tour-packages/",
+       "package_links_on_page": 14
+      },
+      "Spain Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/spain-tour-packages/",
+       "package_links_on_page": 29
+      },
+      "Croatia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/croatia-tour-packages/",
+       "package_links_on_page": 14
+      },
+      "France Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/france-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Czech Republic Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/czech-republic-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Italy Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/italy-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Russia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/europe/russia-tour-packages/",
+       "package_links_on_page": 12
+      }
+     }
+    },
+    "Asia Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/asia/",
+     "package_links_on_page": 40,
+     "children": {
+      "Singapore Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/singapore-tour-packages/",
+       "package_links_on_page": 28
+      },
+      "Dubai Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/dubai-tour-packages/",
+       "package_links_on_page": 32
+      },
+      "Thailand Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/thailand-tour-packages/",
+       "package_links_on_page": 34
+      },
+      "Vietnam Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/vietnam-tour-packages/",
+       "package_links_on_page": 18
+      },
+      "Malaysia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/malaysia-tour-packages/",
+       "package_links_on_page": 19
+      },
+      "Hong Kong Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/hong-kong-tour-packages/",
+       "package_links_on_page": 22
+      },
+      "Indonesia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/indonesia-tour-packages/",
+       "package_links_on_page": 24
+      },
+      "Kazakhstan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/kazakhstan-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Taiwan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/taiwan-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "South Korea Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/south-korea-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Uzbekistan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/uzbekistan-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "China Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/china-tour-packages/",
+       "package_links_on_page": 25
+      },
+      "Philippines Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/philippines-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Bali Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/bali-tour-packages/",
+       "package_links_on_page": 23
+      },
+      "Japan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/japan-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Cambodia Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/asia/cambodia-tour-packages/",
+       "package_links_on_page": 19
+      }
+     }
+    },
+    "Middle East Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/international/middle-east/",
+     "package_links_on_page": 40,
+     "children": {
+      "Egypt Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/egypt-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Qatar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/qatar-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "UAE Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/uae-tour-packages/",
+       "package_links_on_page": 18
+      },
+      "Israel Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/israel-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Jordan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/jordan-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Oman Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/international/middle-east/oman-tour-packages/",
+       "package_links_on_page": 12
+      }
+     }
+    }
+   }
+  },
+  "India Tour Packages": {
+   "url": "https://www.gtholidays.in/packages/india/",
+   "package_links_on_page": 11,
+   "children": {
+    "India Honeymoon Packages": {
+     "url": "https://www.gtholidays.in/packages/india/honeymoon-packages/",
+     "package_links_on_page": 19
+    },
+    "Educational Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/educational-tour-packages/",
+     "package_links_on_page": 34
+    },
+    "North India Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/north-india/",
+     "package_links_on_page": 40,
+     "children": {
+      "Pahalgam Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/pahalgam-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Haridwar &#038; Rishikesh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/haridwar-and-rishikesh-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Amritsar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/amritsar-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Chandigarh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/chandigarh-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Gulmarg Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/gulmarg-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Himachal Pradesh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/himachal-pradesh-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Lucknow Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/lucknow-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Mussoorie Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/mussoorie-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Srinagar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/srinagar-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Auli Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/auli-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Vrindavan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/vrindavan-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Jaisalmer Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/jaisalmer-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Punjab Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/punjab-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Varanasi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/varanasi-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Ayodhya Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/ayodhya-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Delhi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/delhi-tour-packages/",
+       "package_links_on_page": 24
+      },
+      "Agra Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/agra-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Shimla Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/shimla-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Jaipur Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/jaipur-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Manali Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/manali-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Ladakh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/leh-ladakh-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Jammu and Kashmir Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/jammu-and-kashmir-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Uttarakhand Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/uttarakhand-tour-packages/",
+       "package_links_on_page": 18
+      },
+      "Nainital Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/nainital-tour-packages/",
+       "package_links_on_page": 17
+      },
+      "Dharamshala Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/dharamshala-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Uttar Pradesh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-india/uttar-pradesh-tour-packages/",
+       "package_links_on_page": 13
+      }
+     }
+    },
+    "South India Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/south-india/",
+     "package_links_on_page": 40,
+     "children": {
+      "Madurai Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/madurai-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Alleppey Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/alleppey-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Araku Valley Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/araku-valley-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Chennai Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/chennai-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Coorg Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/coorg-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Karnataka Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/karnataka-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Munnar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/munnar-tour-packages/",
+       "package_links_on_page": 12
+      },
+      "Thekkady Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/thekkady-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Vizag Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/vizag-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Chettinad Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/chettinad-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Pondicherry Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/pondicherry-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Badami Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/badami-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Hampi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/hampi-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Yercaud Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/yercaud-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Wayanad Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/wayanad-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Tamil Nadu Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/tamil-nadu-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Kanyakumari Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/kanyakumari-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Tirupati Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/tirupati-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Bangalore Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/bangalore-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Mysore Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/mysore-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Kochi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/kochi-tour-packages/",
+       "package_links_on_page": 15
+      },
+      "Hyderabad Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/hyderabad-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Rameswaram Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/rameswaram-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Kerala Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/kerala-tour-packages/",
+       "package_links_on_page": 19
+      },
+      "Ooty Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/ooty-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Chikmagalur Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/chikmagalur-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Telangana Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/south-india/telangana-tour-packages/",
+       "package_links_on_page": 8
+      }
+     }
+    },
+    "East India Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/east-india/",
+     "package_links_on_page": 18,
+     "children": {
+      "Puri Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/puri-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "West Bengal Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/west-bengal-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Bihar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/bihar-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Jharkhand Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/jharkhand-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Darjeeling Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/darjeeling-tour-packages/",
+       "package_links_on_page": 16
+      },
+      "Odisha Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/odisha-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Kolkata Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/east-india/kolkata-tour-packages/",
+       "package_links_on_page": 9
+      }
+     }
+    },
+    "West India Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/west-india/",
+     "package_links_on_page": 27,
+     "children": {
+      "Jodhpur Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/jodhpur-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Mahabaleshwar Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/mahabaleshwar-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Nashik Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/nashik-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Shirdi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/shirdi-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Vadodara Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/vadodara-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Pune Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/pune-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Maharashtra Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/maharashtra-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Goa Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/goa-tour-packages/",
+       "package_links_on_page": 10
+      },
+      "Mumbai Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/mumbai-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Rajasthan Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/rajasthan-tour-packages/",
+       "package_links_on_page": 13
+      },
+      "Ahmedabad Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/ahmedabad-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Gujarat Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/gujarat-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Udaipur Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/udaipur-tour-packages/",
+       "package_links_on_page": 11
+      },
+      "Dwarka Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/west-india/dwarka-tour-packages/",
+       "package_links_on_page": 9
+      }
+     }
+    },
+    "North East Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/north-east/",
+     "package_links_on_page": 17,
+     "children": {
+      "Guwahati Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/guwahati-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Tawang Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/tawang-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Shillong Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/shillong-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Meghalaya Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/meghalaya-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Assam Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/assam-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Arunachal Pradesh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/arunachal-pradesh-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Manipur Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/manipur-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Gangtok Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/gangtok-tour-packages/",
+       "package_links_on_page": 17
+      },
+      "Pelling Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/pelling-tour-packages/",
+       "package_links_on_page": 9
+      },
+      "Sikkim Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/sikkim-tour-packages/",
+       "package_links_on_page": 17
+      },
+      "Nagaland Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/north-east/nagaland-tour-packages/",
+       "package_links_on_page": 8
+      }
+     }
+    },
+    "Central India Tour Packages": {
+     "url": "https://www.gtholidays.in/packages/india/central-india/",
+     "package_links_on_page": 8,
+     "children": {
+      "Bhopal Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/bhopal-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Chhattisgarh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/chhattisgarh-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Pachmarhi Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/pachmarhi-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Ujjain Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/ujjain-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Gwalior Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/gwalior-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Indore Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/indore-tour-packages/",
+       "package_links_on_page": 8
+      },
+      "Madhya Pradesh Tour Packages": {
+       "url": "https://www.gtholidays.in/packages/india/central-india/madhya-pradesh-tour-packages/",
+       "package_links_on_page": 8
+      }
+     }
+    }
+   }
+  }
+ },
+ "honeymoon_listings": [
+  "https://www.gtholidays.in/honeymoon-packages/",
+  "https://www.gtholidays.in/honeymoon-packages/India/",
+  "https://www.gtholidays.in/honeymoon-packages/andaman/",
+  "https://www.gtholidays.in/honeymoon-packages/australia/",
+  "https://www.gtholidays.in/honeymoon-packages/bali/",
+  "https://www.gtholidays.in/honeymoon-packages/chennai/",
+  "https://www.gtholidays.in/honeymoon-packages/coorg/",
+  "https://www.gtholidays.in/honeymoon-packages/croatia/",
+  "https://www.gtholidays.in/honeymoon-packages/darjeeling/",
+  "https://www.gtholidays.in/honeymoon-packages/dubai/",
+  "https://www.gtholidays.in/honeymoon-packages/europe/",
+  "https://www.gtholidays.in/honeymoon-packages/goa/",
+  "https://www.gtholidays.in/honeymoon-packages/greece/",
+  "https://www.gtholidays.in/honeymoon-packages/himachal/",
+  "https://www.gtholidays.in/honeymoon-packages/india/",
+  "https://www.gtholidays.in/honeymoon-packages/international/",
+  "https://www.gtholidays.in/honeymoon-packages/italy/",
+  "https://www.gtholidays.in/honeymoon-packages/kashmir/",
+  "https://www.gtholidays.in/honeymoon-packages/kerala/",
+  "https://www.gtholidays.in/honeymoon-packages/kodaikanal/",
+  "https://www.gtholidays.in/honeymoon-packages/koh-samui/",
+  "https://www.gtholidays.in/honeymoon-packages/krabi/",
+  "https://www.gtholidays.in/honeymoon-packages/langkawi/",
+  "https://www.gtholidays.in/honeymoon-packages/malaysia/",
+  "https://www.gtholidays.in/honeymoon-packages/maldives/",
+  "https://www.gtholidays.in/honeymoon-packages/manali/",
+  "https://www.gtholidays.in/honeymoon-packages/mauritius/",
+  "https://www.gtholidays.in/honeymoon-packages/munnar/",
+  "https://www.gtholidays.in/honeymoon-packages/ooty/",
+  "https://www.gtholidays.in/honeymoon-packages/paris/",
+  "https://www.gtholidays.in/honeymoon-packages/phuket/",
+  "https://www.gtholidays.in/honeymoon-packages/seychelles/",
+  "https://www.gtholidays.in/honeymoon-packages/shimla/",
+  "https://www.gtholidays.in/honeymoon-packages/singapore/",
+  "https://www.gtholidays.in/honeymoon-packages/south-africa/",
+  "https://www.gtholidays.in/honeymoon-packages/spain/",
+  "https://www.gtholidays.in/honeymoon-packages/sri-lanka/",
+  "https://www.gtholidays.in/honeymoon-packages/switzerland/",
+  "https://www.gtholidays.in/honeymoon-packages/thailand/"
+ ],
+ "destination_wedding_listings": [
+  "https://www.gtholidays.in/destination-wedding/",
+  "https://www.gtholidays.in/destination-wedding/agra/",
+  "https://www.gtholidays.in/destination-wedding/andaman/",
+  "https://www.gtholidays.in/destination-wedding/bali/",
+  "https://www.gtholidays.in/destination-wedding/dubai/",
+  "https://www.gtholidays.in/destination-wedding/goa/",
+  "https://www.gtholidays.in/destination-wedding/india/",
+  "https://www.gtholidays.in/destination-wedding/international/",
+  "https://www.gtholidays.in/destination-wedding/jaipur/",
+  "https://www.gtholidays.in/destination-wedding/jaisalmer/",
+  "https://www.gtholidays.in/destination-wedding/jodhpur/",
+  "https://www.gtholidays.in/destination-wedding/kerala/",
+  "https://www.gtholidays.in/destination-wedding/malaysia/",
+  "https://www.gtholidays.in/destination-wedding/sri-lanka/",
+  "https://www.gtholidays.in/destination-wedding/thailand/",
+  "https://www.gtholidays.in/destination-wedding/udaipur/"
+ ]
+}

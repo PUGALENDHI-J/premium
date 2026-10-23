@@ -1,0 +1,14 @@
+{
+  "name": "nexara-holidays-website",
+  "private": true,
+  "type": "module",
+  "description": "Nexara Holidays static site. index.html is hand-made; content pages are generated from content/*.mjs.",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "validate": "node tools/validate.mjs",
+    "check": "node tools/build.mjs && node tools/validate.mjs",
+    "serve": "node tools/serve.mjs",
+    "crawl:reference": "python tools/crawl_reference.py && python tools/analyse_reference.py"
+  },
+  "engines": { "node": ">=20" }
+}

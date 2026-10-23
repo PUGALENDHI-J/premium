@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /research/
+Disallow: /tools/
+Disallow: /content/
+Disallow: /nexara-redesign.html
+Disallow: /assets/Nexara_Holidays_Thailand_travel___20261022134034_frames/
+
+Sitemap: https://nexaraholidays.com/sitemap.xml

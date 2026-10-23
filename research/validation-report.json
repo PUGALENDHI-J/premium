@@ -1,0 +1,1397 @@
+{
+ "summary": {
+  "checked_pages": 1138,
+  "sitemap_urls": 1137,
+  "errors": 0,
+  "warnings": 342,
+  "pages_with_single_inbound_link": 0,
+  "most_similar_pairs": [
+   "66% /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
+   "64% /packages/international/japan/japan-cherry-blossom-tour-8-days/ ~ /packages/international/japan/japan-honeymoon-8-days/",
+   "64% /packages/international/singapore/singapore-extended-stay-6-days/ ~ /packages/international/singapore/singapore-family-holiday-5-days/",
+   "64% /packages/india/delhi/golden-triangle-and-varanasi-8-days/ ~ /packages/india/delhi/golden-triangle-tour-6-days/",
+   "63% /packages/international/kenya/great-migration-safari-5-days/ ~ /packages/international/kenya/kenya-safari-6-days/",
+   "63% /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-short-break-4-days/",
+   "63% /packages/international/turkey/turkey-grand-tour-8-days/ ~ /packages/international/turkey/turkey-highlights-7-days/",
+   "63% /packages/india/ladakh/ladakh-family-holiday-6-days/ ~ /packages/india/ladakh/leh-ladakh-explorer-7-days/",
+   "63% /packages/india/kerala/kerala-family-holiday-7-days/ ~ /packages/india/kerala/kerala-highlights-munnar-thekkady-and-alleppey-6-days/",
+   "63% /packages/india/himachal-pradesh/shimla-and-manali-family-trip-5-days/ ~ /packages/india/himachal-pradesh/shimla-and-manali-holiday-6-days/",
+   "63% /packages/international/thailand/chiang-mai-and-chiang-rai-northern-trail-6-days/ ~ /packages/international/thailand/northern-thailand-and-sukhothai-6-days/",
+   "63% /packages/international/singapore/singapore-and-langkawi-family-trip-7-days/ ~ /packages/international/singapore/singapore-family-holiday-5-days/",
+   "62% /packages/international/uae/dubai-classic-holiday-5-days/ ~ /packages/international/uae/dubai-shopping-festival-trip-7-days/",
+   "62% /packages/international/iceland/iceland-northern-lights-6-days/ ~ /packages/international/iceland/iceland-short-break-5-days/",
+   "62% /packages/international/indonesia/bali-and-nusa-penida-6-days/ ~ /packages/international/indonesia/bali-photography-trip-8-days/"
+  ]
+ },
+ "errors": [],
+ "warnings": [
+  {
+   "page": "/blog/how-to-check-visa-rules-for-indian-passport-holders/",
+   "msg": "title length 79"
+  },
+  {
+   "page": "/destinations/india/himachal-pradesh/kasol/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/india/jammu-and-kashmir/pahalgam/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/india/jammu-and-kashmir/sonamarg/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/india/jammu-and-kashmir/srinagar/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/india/sikkim/lachung/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/international/africa/egypt/aswan/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/central-america/mexico/cancun/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/east-asia/japan/hiroshima/",
+   "msg": "title length 78"
+  },
+  {
+   "page": "/destinations/international/east-asia/japan/mount-fuji/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/international/east-asia/japan/sapporo/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/europe/austria/innsbruck/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/international/europe/germany/munich/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/europe/italy/florence/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/europe/norway/bergen/",
+   "msg": "title length 78"
+  },
+  {
+   "page": "/destinations/international/europe/spain/seville/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/international/europe/switzerland/interlaken/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/middle-east/oman/nizwa/",
+   "msg": "title length 77"
+  },
+  {
+   "page": "/destinations/international/north-america/canada/banff/",
+   "msg": "title length 78"
+  },
+  {
+   "page": "/destinations/international/north-america/canada/toronto-niagara/",
+   "msg": "title length 78"
+  },
+  {
+   "page": "/destinations/international/oceania/australia/gold-coast/",
+   "msg": "title length 76"
+  },
+  {
+   "page": "/destinations/international/oceania/",
+   "msg": "title length 83"
+  },
+  {
+   "page": "/destinations/international/southeast-asia/indonesia/bali/",
+   "msg": "meta description length 172"
+  },
+  {
+   "page": "/packages/india/telangana/hyderabad-heritage-and-food-4-days/",
+   "msg": "meta description length 171"
+  },
+  {
+   "page": "/packages/international/australia/australia-highlights-10-days/",
+   "msg": "meta description length 171"
+  },
+  {
+   "page": "/packages/international/austria/austria-highlights-7-days/",
+   "msg": "meta description length 173"
+  },
+  {
+   "page": "/packages/international/canada/canada-east-and-west-9-days/",
+   "msg": "meta description length 171"
+  },
+  {
+   "page": "/packages/international/china/china-highlights-beijing-xi-an-and-shanghai-8-days/",
+   "msg": "meta description length 173"
+  },
+  {
+   "page": "/packages/international/japan/japan-highlights-tokyo-kyoto-and-osaka-8-days/",
+   "msg": "meta description length 171"
+  },
+  {
+   "page": "/packages/international/jordan/jordan-and-egypt-9-days/",
+   "msg": "meta description length 178"
+  },
+  {
+   "page": "/packages/international/oman/oman-grand-tour-9-days/",
+   "msg": "meta description length 172"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-and-vietnam-8-days/",
+   "msg": "meta description length 175"
+  },
+  {
+   "page": "/packages/international/spain/spain-and-portugal-8-days/",
+   "msg": "meta description length 172"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-and-egypt-8-days/",
+   "msg": "meta description length 176"
+  },
+  {
+   "page": "/",
+   "msg": "has 9 <h1> elements (pre-existing home page: hero slides and hidden views)"
+  },
+  {
+   "page": "/",
+   "msg": "meta description length 205"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/",
+   "msg": "content 66% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-cherry-blossom-tour-8-days/",
+   "msg": "content 64% similar to /packages/international/japan/japan-honeymoon-8-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-extended-stay-6-days/",
+   "msg": "content 64% similar to /packages/international/singapore/singapore-family-holiday-5-days/"
+  },
+  {
+   "page": "/packages/india/delhi/golden-triangle-and-varanasi-8-days/",
+   "msg": "content 64% similar to /packages/india/delhi/golden-triangle-tour-6-days/"
+  },
+  {
+   "page": "/packages/international/kenya/great-migration-safari-5-days/",
+   "msg": "content 63% similar to /packages/international/kenya/kenya-safari-6-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/",
+   "msg": "content 63% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-grand-tour-8-days/",
+   "msg": "content 63% similar to /packages/international/turkey/turkey-highlights-7-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-family-holiday-6-days/",
+   "msg": "content 63% similar to /packages/india/ladakh/leh-ladakh-explorer-7-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kerala-family-holiday-7-days/",
+   "msg": "content 63% similar to /packages/india/kerala/kerala-highlights-munnar-thekkady-and-alleppey-6-days/"
+  },
+  {
+   "page": "/packages/india/himachal-pradesh/shimla-and-manali-family-trip-5-days/",
+   "msg": "content 63% similar to /packages/india/himachal-pradesh/shimla-and-manali-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/thailand/chiang-mai-and-chiang-rai-northern-trail-6-days/",
+   "msg": "content 63% similar to /packages/international/thailand/northern-thailand-and-sukhothai-6-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-and-langkawi-family-trip-7-days/",
+   "msg": "content 63% similar to /packages/international/singapore/singapore-family-holiday-5-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
+   "msg": "content 62% similar to /packages/international/uae/dubai-shopping-festival-trip-7-days/"
+  },
+  {
+   "page": "/packages/international/iceland/iceland-northern-lights-6-days/",
+   "msg": "content 62% similar to /packages/international/iceland/iceland-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-nusa-penida-6-days/",
+   "msg": "content 62% similar to /packages/international/indonesia/bali-photography-trip-8-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-photography-tour-8-days/",
+   "msg": "content 62% similar to /packages/india/ladakh/leh-ladakh-explorer-7-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-and-london-7-days/",
+   "msg": "content 62% similar to /packages/international/united-kingdom/london-paris-and-amsterdam-9-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-senior-friendly-holiday-6-days/",
+   "msg": "content 62% similar to /packages/international/indonesia/bali-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/bhutan/bhutan-by-road-from-bagdogra-7-days/",
+   "msg": "content 61% similar to /packages/international/bhutan/bhutan-highlights-6-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-nature-holiday-6-days/",
+   "msg": "content 61% similar to /packages/international/seychelles/seychelles-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
+   "msg": "content 61% similar to /packages/international/switzerland/switzerland-and-paris-8-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-and-abu-dhabi-6-days/",
+   "msg": "content 61% similar to /packages/international/uae/dubai-classic-holiday-5-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-group-tour-3-days/",
+   "msg": "content 61% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-adventure-week-6-days/",
+   "msg": "content 61% similar to /packages/international/nepal/nepal-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-group-tour-6-days/",
+   "msg": "content 61% similar to /packages/international/turkey/turkey-highlights-7-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/switzerland-and-paris-8-days/",
+   "msg": "content 61% similar to /packages/international/switzerland/switzerland-germany-and-france-8-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-adventure-week-6-days/",
+   "msg": "content 60% similar to /packages/international/nepal/pashupatinath-and-muktinath-yatra-6-days/"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-grand-tour-8-days/",
+   "msg": "content 60% similar to /packages/international/turkey/turkey-group-tour-6-days/"
+  },
+  {
+   "page": "/packages/india/uttarakhand/kedarnath-and-badrinath-do-dham-yatra-7-days/",
+   "msg": "content 60% similar to /packages/india/uttarakhand/kedarnath-yatra-4-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-group-tour-5-days/",
+   "msg": "content 60% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-island-hopping-7-days/",
+   "msg": "content 60% similar to /packages/international/seychelles/seychelles-nature-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-and-abu-dhabi-6-days/",
+   "msg": "content 60% similar to /packages/international/uae/dubai-stopover-3-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/kanha-and-bandhavgarh-tiger-safari-7-days/",
+   "msg": "content 60% similar to /packages/india/madhya-pradesh/kanha-jungle-book-safari-4-days/"
+  },
+  {
+   "page": "/packages/international/thailand/bangkok-pattaya-and-phuket-8-days/",
+   "msg": "content 60% similar to /packages/international/thailand/thailand-and-singapore-8-days/"
+  },
+  {
+   "page": "/packages/international/united-kingdom/london-holiday-6-days/",
+   "msg": "content 60% similar to /packages/international/united-kingdom/london-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/egypt/egypt-family-holiday-6-days/",
+   "msg": "content 60% similar to /packages/international/egypt/egypt-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/west-bengal/darjeeling-and-gangtok-holiday-6-days/",
+   "msg": "content 60% similar to /packages/india/west-bengal/darjeeling-kalimpong-and-gangtok-6-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-extended-stay-6-days/",
+   "msg": "content 60% similar to /packages/international/singapore/singapore-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
+   "msg": "content 59% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-adventure-week-6-days/",
+   "msg": "content 59% similar to /packages/international/nepal/nepal-highlights-kathmandu-and-pokhara-5-days/"
+  },
+  {
+   "page": "/packages/international/kenya/kenya-family-safari-5-days/",
+   "msg": "content 59% similar to /packages/international/kenya/kenya-safari-6-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-honeymoon-5-days/",
+   "msg": "content 59% similar to /packages/international/maldives/maldives-short-escape-4-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
+   "msg": "content 59% similar to /packages/international/malaysia/malaysia-luxury-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-highlights-kathmandu-and-pokhara-5-days/",
+   "msg": "content 59% similar to /packages/international/nepal/pashupatinath-and-muktinath-yatra-6-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/jaipur-and-ranthambore-5-days/",
+   "msg": "content 59% similar to /packages/india/rajasthan/rajasthan-forts-and-tigers-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-short-break-4-days/",
+   "msg": "content 59% similar to /packages/international/uae/dubai-stopover-3-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-and-disneyland-family-trip-7-days/",
+   "msg": "content 59% similar to /packages/international/france/paris-short-break-5-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-family-holiday-6-days/",
+   "msg": "content 59% similar to /packages/india/ladakh/ladakh-photography-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/sri-lanka/galle-and-south-coast-escape-5-days/",
+   "msg": "content 59% similar to /packages/international/sri-lanka/sri-lanka-beach-break-6-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-honeymoon-6-days/",
+   "msg": "content 59% similar to /packages/international/indonesia/bali-luxury-villas-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-senior-friendly-holiday-7-days/",
+   "msg": "content 59% similar to /packages/international/uae/uae-luxury-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-senior-friendly-holiday-7-days/",
+   "msg": "content 59% similar to /packages/international/uae/dubai-stopover-3-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-family-holiday-7-days/",
+   "msg": "content 59% similar to /packages/india/jammu-and-kashmir/kashmir-honeymoon-with-houseboat-6-days/"
+  },
+  {
+   "page": "/packages/international/bhutan/bhutan-festival-trip-6-days/",
+   "msg": "content 59% similar to /packages/international/bhutan/bhutan-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-island-hopping-7-days/",
+   "msg": "content 59% similar to /packages/international/seychelles/seychelles-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-family-holiday-5-days/",
+   "msg": "content 58% similar to /packages/international/singapore/singapore-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/puducherry/pondicherry-and-auroville-weekend-3-days/",
+   "msg": "content 58% similar to /packages/india/puducherry/pondicherry-slow-stay-5-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/",
+   "msg": "content 58% similar to /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-honeymoon-6-days/",
+   "msg": "content 58% similar to /packages/international/mauritius/mauritius-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
+   "msg": "content 58% similar to /packages/international/uae/dubai-group-tour-3-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-honeymoon-7-days/",
+   "msg": "content 58% similar to /packages/india/ladakh/leh-ladakh-explorer-7-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
+   "msg": "content 58% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-honeymoon-6-days/",
+   "msg": "content 58% similar to /packages/international/nepal/pashupatinath-and-muktinath-yatra-6-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-family-holiday-6-days/",
+   "msg": "content 58% similar to /packages/india/ladakh/ladakh-honeymoon-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-stopover-3-days/",
+   "msg": "content 58% similar to /packages/international/uae/uae-luxury-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-family-resort-holiday-6-days/",
+   "msg": "content 58% similar to /packages/international/maldives/maldives-short-escape-4-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-and-krabi-beach-holiday-6-days/",
+   "msg": "content 58% similar to /packages/international/thailand/phuket-beach-break-5-days/"
+  },
+  {
+   "page": "/packages/international/thailand/bangkok-and-pattaya-classic-5-days/",
+   "msg": "content 58% similar to /packages/international/thailand/thailand-budget-holiday-4-days/"
+  },
+  {
+   "page": "/packages/international/hong-kong/hong-kong-disneyland-family-trip-5-days/",
+   "msg": "content 58% similar to /packages/international/hong-kong/hong-kong-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/peru/machu-picchu-and-cusco-5-days/",
+   "msg": "content 58% similar to /packages/international/peru/peru-grand-tour-7-days/"
+  },
+  {
+   "page": "/packages/international/new-zealand/new-zealand-grand-tour-9-days/",
+   "msg": "content 58% similar to /packages/international/new-zealand/new-zealand-highlights-8-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-shivaratri-pilgrimage-4-days/",
+   "msg": "content 57% similar to /packages/international/mauritius/mauritius-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-highlights-kathmandu-and-pokhara-5-days/",
+   "msg": "content 57% similar to /packages/international/nepal/nepal-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-family-holiday-7-days/",
+   "msg": "content 57% similar to /packages/international/turkey/turkey-honeymoon-7-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-budget-local-island-stay-7-days/",
+   "msg": "content 57% similar to /packages/international/maldives/maldives-short-escape-4-days/"
+  },
+  {
+   "page": "/packages/india/goa/goa-friends-getaway-4-days/",
+   "msg": "content 57% similar to /packages/india/goa/goa-weekend-escape-3-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-family-holiday-7-days/",
+   "msg": "content 57% similar to /packages/international/mauritius/mauritius-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-budget-trip-5-days/",
+   "msg": "content 57% similar to /packages/international/indonesia/bali-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-friends-trip-5-days/",
+   "msg": "content 57% similar to /packages/international/indonesia/bali-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-family-holiday-7-days/",
+   "msg": "content 57% similar to /packages/india/jammu-and-kashmir/kashmir-paradise-tour-7-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-and-langkawi-family-trip-7-days/",
+   "msg": "content 57% similar to /packages/international/singapore/singapore-honeymoon-7-days/"
+  },
+  {
+   "page": "/packages/international/vietnam/vietnam-grand-tour-10-days/",
+   "msg": "content 57% similar to /packages/international/vietnam/vietnam-highlights-8-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-budget-trip-5-days/",
+   "msg": "content 57% similar to /packages/international/indonesia/bali-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
+   "msg": "content 57% similar to /packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/",
+   "msg": "content 57% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/delhi/golden-triangle-and-varanasi-8-days/",
+   "msg": "content 57% similar to /packages/india/delhi/golden-triangle-with-amritsar-8-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-family-holiday-7-days/",
+   "msg": "content 57% similar to /packages/international/mauritius/mauritius-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-autumn-colours-6-days/",
+   "msg": "content 57% similar to /packages/india/jammu-and-kashmir/kashmir-tulip-festival-trip-5-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-beach-break-5-days/",
+   "msg": "content 57% similar to /packages/international/thailand/phuket-family-beach-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-shopping-festival-trip-7-days/",
+   "msg": "content 57% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kerala-highlights-munnar-thekkady-and-alleppey-6-days/",
+   "msg": "content 56% similar to /packages/india/kerala/kochi-and-munnar-extended-stay-5-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-group-tour-5-days/",
+   "msg": "content 56% similar to /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-family-holiday-7-days/",
+   "msg": "content 56% similar to /packages/international/mauritius/mauritius-shivaratri-pilgrimage-4-days/"
+  },
+  {
+   "page": "/packages/india/karnataka/hampi-and-badami-heritage-trail-4-days/",
+   "msg": "content 56% similar to /packages/india/karnataka/hampi-short-break-3-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-autumn-colours-9-days/",
+   "msg": "content 56% similar to /packages/international/japan/japan-honeymoon-8-days/"
+  },
+  {
+   "page": "/packages/international/china/beijing-and-shanghai-7-days/",
+   "msg": "content 56% similar to /packages/international/china/china-highlights-beijing-xi-an-and-shanghai-8-days/"
+  },
+  {
+   "page": "/packages/international/bhutan/bhutan-honeymoon-6-days/",
+   "msg": "content 56% similar to /packages/international/bhutan/bhutan-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/cambodia/angkor-wat-explorer-4-days/",
+   "msg": "content 56% similar to /packages/international/cambodia/cambodia-discovery-6-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/rajasthan-honeymoon-special-6-days/",
+   "msg": "content 56% similar to /packages/india/rajasthan/udaipur-romantic-getaway-4-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-family-resort-holiday-6-days/",
+   "msg": "content 56% similar to /packages/international/maldives/maldives-honeymoon-5-days/"
+  },
+  {
+   "page": "/packages/international/norway/scandinavian-highlights-7-days/",
+   "msg": "content 56% similar to /packages/international/sweden/stockholm-and-norway-s-fjords-6-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-honeymoon-6-days/",
+   "msg": "content 56% similar to /packages/international/france/paris-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/malaysia-family-fun-5-days/",
+   "msg": "content 56% similar to /packages/international/malaysia/malaysia-highlights-8-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
+   "msg": "content 56% similar to /packages/india/andaman-and-nicobar/andaman-group-tour-5-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/rajasthan-luxury-palaces-8-days/",
+   "msg": "content 56% similar to /packages/india/rajasthan/rajasthan-school-heritage-tour-6-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
+   "msg": "content 56% similar to /packages/international/malaysia/malaysia-highlights-8-days/"
+  },
+  {
+   "page": "/packages/international/uae/abu-dhabi-culture-and-theme-parks-4-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-and-abu-dhabi-6-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-and-abu-dhabi-6-days/",
+   "msg": "content 55% similar to /packages/international/uae/uae-luxury-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-nusa-penida-6-days/",
+   "msg": "content 55% similar to /packages/international/indonesia/bali-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-group-tour-3-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-shopping-festival-trip-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/",
+   "msg": "content 55% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-luxury-escape-8-days/",
+   "msg": "content 55% similar to /packages/international/seychelles/seychelles-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-honeymoon-6-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-singapore-family-combo-8-days/",
+   "msg": "content 55% similar to /packages/international/indonesia/bali-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-budget-local-island-stay-7-days/",
+   "msg": "content 55% similar to /packages/international/maldives/maldives-family-resort-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/",
+   "msg": "content 55% similar to /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-budget-local-island-stay-7-days/",
+   "msg": "content 55% similar to /packages/international/maldives/maldives-honeymoon-5-days/"
+  },
+  {
+   "page": "/packages/india/himachal-pradesh/manali-adventure-week-6-days/",
+   "msg": "content 55% similar to /packages/india/himachal-pradesh/manali-honeymoon-5-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-honeymoon-7-days/",
+   "msg": "content 55% similar to /packages/india/ladakh/ladakh-photography-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-extended-island-stay-9-days/",
+   "msg": "content 55% similar to /packages/international/mauritius/mauritius-shivaratri-pilgrimage-4-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-group-tour-3-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/west-bengal/kolkata-durga-puja-special-5-days/",
+   "msg": "content 55% similar to /packages/india/west-bengal/kolkata-heritage-and-food-3-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-luxury-escape-8-days/",
+   "msg": "content 55% similar to /packages/international/seychelles/seychelles-nature-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/swiss-family-adventure-8-days/",
+   "msg": "content 55% similar to /packages/international/switzerland/switzerland-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/iceland/iceland-northern-lights-6-days/",
+   "msg": "content 55% similar to /packages/international/iceland/iceland-summer-road-trip-8-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-group-tour-3-days/",
+   "msg": "content 55% similar to /packages/international/uae/dubai-stopover-3-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-friends-trip-5-days/",
+   "msg": "content 55% similar to /packages/international/indonesia/bali-senior-friendly-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/bihar/bodh-gaya-pilgrimage-4-days/",
+   "msg": "content 55% similar to /packages/india/uttar-pradesh/buddhist-circuit-varanasi-to-bodh-gaya-6-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
+   "msg": "content 55% similar to /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/uttarakhand/haridwar-and-rishikesh-pilgrimage-4-days/",
+   "msg": "content 55% similar to /packages/india/uttarakhand/kedarnath-yatra-4-days/"
+  },
+  {
+   "page": "/packages/india/uttar-pradesh/kashi-and-ayodhya-yatra-4-days/",
+   "msg": "content 55% similar to /packages/india/uttar-pradesh/varanasi-spiritual-retreat-3-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
+   "msg": "content 55% similar to /packages/international/switzerland/grand-european-tour-15-days/"
+  },
+  {
+   "page": "/packages/international/iceland/iceland-short-break-5-days/",
+   "msg": "content 55% similar to /packages/international/iceland/iceland-summer-road-trip-8-days/"
+  },
+  {
+   "page": "/packages/international/hungary/budapest-short-break-4-days/",
+   "msg": "content 54% similar to /packages/international/portugal/lisbon-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-and-abu-dhabi-6-days/",
+   "msg": "content 54% similar to /packages/international/uae/dubai-senior-friendly-holiday-7-days/"
+  },
+  {
+   "page": "/packages/india/telangana/hyderabad-family-fun-break-3-days/",
+   "msg": "content 54% similar to /packages/india/telangana/hyderabad-heritage-and-food-4-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-autumn-colours-9-days/",
+   "msg": "content 54% similar to /packages/international/japan/japan-cherry-blossom-tour-8-days/"
+  },
+  {
+   "page": "/packages/india/bihar/bodh-gaya-and-varanasi-5-days/",
+   "msg": "content 54% similar to /packages/india/bihar/bodh-gaya-pilgrimage-4-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-honeymoon-6-days/",
+   "msg": "content 54% similar to /packages/international/mauritius/mauritius-shivaratri-pilgrimage-4-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kerala-and-kanyakumari-grand-tour-9-days/",
+   "msg": "content 54% similar to /packages/india/kerala/kerala-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/india/uttar-pradesh/lucknow-nawabi-food-trail-3-days/",
+   "msg": "content 54% similar to /packages/india/west-bengal/kolkata-heritage-and-food-3-days/"
+  },
+  {
+   "page": "/packages/international/kenya/kenya-and-tanzania-safari-8-days/",
+   "msg": "content 54% similar to /packages/international/tanzania/serengeti-migration-safari-6-days/"
+  },
+  {
+   "page": "/packages/international/south-korea/korea-k-culture-trip-6-days/",
+   "msg": "content 54% similar to /packages/international/south-korea/seoul-short-break-5-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
+   "msg": "content 54% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/malaysia-group-tour-6-days/",
+   "msg": "content 54% similar to /packages/international/malaysia/malaysia-highlights-8-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
+   "msg": "content 54% similar to /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
+   "msg": "content 54% similar to /packages/international/malaysia/malaysia-family-fun-5-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-grand-tour-10-days/",
+   "msg": "content 54% similar to /packages/international/nepal/nepal-with-chitwan-safari-7-days/"
+  },
+  {
+   "page": "/packages/international/costa-rica/costa-rica-honeymoon-7-days/",
+   "msg": "content 54% similar to /packages/international/costa-rica/costa-rica-nature-adventure-9-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/gulmarg-snow-and-ski-holiday-5-days/",
+   "msg": "content 54% similar to /packages/india/jammu-and-kashmir/kashmir-senior-friendly-tour-6-days/"
+  },
+  {
+   "page": "/packages/india/sikkim/darjeeling-gangtok-and-pelling-7-days/",
+   "msg": "content 54% similar to /packages/india/west-bengal/darjeeling-and-gangtok-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/rajasthan-grand-heritage-tour-11-days/",
+   "msg": "content 54% similar to /packages/india/rajasthan/royal-rajasthan-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-extended-island-stay-9-days/",
+   "msg": "content 54% similar to /packages/international/mauritius/mauritius-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-budget-trip-5-days/",
+   "msg": "content 54% similar to /packages/international/indonesia/bali-senior-friendly-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/java-temples-and-bali-7-days/",
+   "msg": "content 54% similar to /packages/international/indonesia/yogyakarta-heritage-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-grand-tour-11-days/",
+   "msg": "content 54% similar to /packages/international/japan/japan-luxury-journey-9-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
+   "msg": "content 54% similar to /packages/international/malaysia/malaysia-group-tour-6-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-and-singapore-8-days/",
+   "msg": "content 54% similar to /packages/international/singapore/singapore-and-bali-8-days/"
+  },
+  {
+   "page": "/packages/international/thailand/bangkok-pattaya-and-phuket-8-days/",
+   "msg": "content 54% similar to /packages/international/thailand/thailand-grand-tour-10-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-and-dubai-7-days/",
+   "msg": "content 54% similar to /packages/international/maldives/maldives-and-singapore-8-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-family-holiday-7-days/",
+   "msg": "content 53% similar to /packages/international/indonesia/bali-friends-trip-5-days/"
+  },
+  {
+   "page": "/packages/international/united-kingdom/london-holiday-6-days/",
+   "msg": "content 53% similar to /packages/international/united-kingdom/uk-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/india/assam/assam-tea-rhinos-and-river-islands-6-days/",
+   "msg": "content 53% similar to /packages/india/assam/kaziranga-rhino-safari-4-days/"
+  },
+  {
+   "page": "/packages/international/croatia/dubrovnik-short-break-4-days/",
+   "msg": "content 53% similar to /packages/international/indonesia/bali-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-and-phi-phi-island-stay-5-days/",
+   "msg": "content 53% similar to /packages/international/thailand/phuket-beach-break-5-days/"
+  },
+  {
+   "page": "/packages/international/hong-kong/hong-kong-and-macau-6-days/",
+   "msg": "content 53% similar to /packages/international/hong-kong/hong-kong-disneyland-family-trip-5-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kochi-and-munnar-extended-stay-5-days/",
+   "msg": "content 53% similar to /packages/india/kerala/kochi-munnar-and-vagamon-hills-5-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-and-dubai-7-days/",
+   "msg": "content 53% similar to /packages/international/uae/dubai-and-oman-7-days/"
+  },
+  {
+   "page": "/packages/india/delhi/golden-triangle-tour-6-days/",
+   "msg": "content 53% similar to /packages/india/delhi/golden-triangle-with-amritsar-8-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-cherry-blossom-tour-8-days/",
+   "msg": "content 53% similar to /packages/international/japan/japan-luxury-journey-9-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-autumn-colours-9-days/",
+   "msg": "content 53% similar to /packages/international/japan/japan-luxury-journey-9-days/"
+  },
+  {
+   "page": "/packages/international/sri-lanka/kandy-and-nuwara-eliya-short-trip-5-days/",
+   "msg": "content 53% similar to /packages/international/sri-lanka/sri-lanka-ramayana-trail-6-days/"
+  },
+  {
+   "page": "/packages/india/telangana/hyderabad-and-warangal-kakatiya-trail-4-days/",
+   "msg": "content 53% similar to /packages/india/telangana/hyderabad-heritage-and-food-4-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kerala-family-holiday-7-days/",
+   "msg": "content 53% similar to /packages/india/kerala/kerala-senior-citizens-easy-tour-6-days/"
+  },
+  {
+   "page": "/packages/india/kerala/alleppey-houseboat-and-kumarakom-weekend-3-days/",
+   "msg": "content 53% similar to /packages/india/kerala/kochi-and-alleppey-short-break-3-days/"
+  },
+  {
+   "page": "/packages/international/thailand/bangkok-and-chiang-mai-culture-trip-6-days/",
+   "msg": "content 53% similar to /packages/international/thailand/bangkok-ayutthaya-and-kanchanaburi-heritage-6-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-extended-island-stay-9-days/",
+   "msg": "content 53% similar to /packages/international/mauritius/mauritius-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-and-krabi-beach-holiday-6-days/",
+   "msg": "content 53% similar to /packages/international/thailand/phuket-krabi-and-koh-samui-islands-9-days/"
+  },
+  {
+   "page": "/packages/international/vietnam/hanoi-and-ha-long-bay-short-break-4-days/",
+   "msg": "content 53% similar to /packages/international/vietnam/vietnam-budget-trip-6-days/"
+  },
+  {
+   "page": "/packages/international/mauritius/mauritius-extended-island-stay-9-days/",
+   "msg": "content 53% similar to /packages/international/mauritius/mauritius-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/international/cambodia/angkor-and-singapore-7-days/",
+   "msg": "content 53% similar to /packages/international/uae/dubai-and-singapore-7-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/langkawi-honeymoon-5-days/",
+   "msg": "content 53% similar to /packages/international/singapore/singapore-honeymoon-7-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-singapore-family-combo-8-days/",
+   "msg": "content 52% similar to /packages/international/singapore/singapore-family-holiday-5-days/"
+  },
+  {
+   "page": "/packages/international/croatia/dubrovnik-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/vietnam/da-nang-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-family-holiday-8-days/",
+   "msg": "content 52% similar to /packages/international/japan/tokyo-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/italy/italy-food-and-culture-trip-7-days/",
+   "msg": "content 52% similar to /packages/international/italy/rome-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/seychelles/seychelles-island-hopping-7-days/",
+   "msg": "content 52% similar to /packages/international/seychelles/seychelles-luxury-escape-8-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-honeymoon-6-days/",
+   "msg": "content 52% similar to /packages/international/uae/dubai-shopping-festival-trip-7-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/cameron-highlands-and-kuala-lumpur-5-days/",
+   "msg": "content 52% similar to /packages/international/malaysia/kuala-lumpur-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-budget-trip-5-days/",
+   "msg": "content 52% similar to /packages/international/indonesia/bali-friends-trip-5-days/"
+  },
+  {
+   "page": "/packages/india/uttar-pradesh/buddhist-circuit-varanasi-to-bodh-gaya-6-days/",
+   "msg": "content 52% similar to /packages/india/uttar-pradesh/varanasi-spiritual-retreat-3-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-the-gili-islands-7-days/",
+   "msg": "content 52% similar to /packages/international/indonesia/bali-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/uttarakhand/auli-snow-and-skiing-5-days/",
+   "msg": "content 52% similar to /packages/india/uttarakhand/rishikesh-yoga-and-rafting-4-days/"
+  },
+  {
+   "page": "/packages/international/maldives/maldives-and-dubai-7-days/",
+   "msg": "content 52% similar to /packages/international/uae/dubai-and-turkey-9-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/united-kingdom/london-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/vietnam/vietnam-budget-trip-6-days/",
+   "msg": "content 52% similar to /packages/international/vietnam/vietnam-honeymoon-10-days/"
+  },
+  {
+   "page": "/packages/india/bihar/bodh-gaya-and-varanasi-5-days/",
+   "msg": "content 52% similar to /packages/india/uttar-pradesh/varanasi-spiritual-retreat-3-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/",
+   "msg": "content 52% similar to /packages/india/uttar-pradesh/varanasi-spiritual-retreat-3-days/"
+  },
+  {
+   "page": "/packages/international/thailand/pattaya-weekend-escape-4-days/",
+   "msg": "content 52% similar to /packages/international/thailand/thailand-budget-holiday-4-days/"
+  },
+  {
+   "page": "/packages/international/south-korea/seoul-short-break-5-days/",
+   "msg": "content 52% similar to /packages/international/usa/new-york-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/bhutan/bhutan-festival-trip-6-days/",
+   "msg": "content 52% similar to /packages/international/bhutan/bhutan-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/pachmarhi-hill-weekend-3-days/",
+   "msg": "content 52% similar to /packages/india/tamil-nadu/yercaud-weekend-from-chennai-3-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/united-kingdom/london-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/assam/kaziranga-rhino-safari-4-days/",
+   "msg": "content 52% similar to /packages/india/meghalaya/kaziranga-and-meghalaya-7-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/bandhavgarh-safari-break-4-days/",
+   "msg": "content 52% similar to /packages/india/madhya-pradesh/kanha-jungle-book-safari-4-days/"
+  },
+  {
+   "page": "/packages/international/thailand/bangkok-and-pattaya-classic-5-days/",
+   "msg": "content 52% similar to /packages/international/thailand/thailand-group-tour-7-days/"
+  },
+  {
+   "page": "/packages/india/uttarakhand/haridwar-and-rishikesh-pilgrimage-4-days/",
+   "msg": "content 52% similar to /packages/india/uttarakhand/kedarnath-and-badrinath-do-dham-yatra-7-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
+   "msg": "content 52% similar to /packages/international/uae/dubai-stopover-3-days/"
+  },
+  {
+   "page": "/packages/international/japan/japan-family-holiday-8-days/",
+   "msg": "content 52% similar to /packages/international/japan/japan-highlights-tokyo-kyoto-and-osaka-8-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-singapore-family-combo-8-days/",
+   "msg": "content 52% similar to /packages/international/thailand/thailand-and-singapore-8-days/"
+  },
+  {
+   "page": "/packages/india/goa/goa-and-gokarna-beach-hop-5-days/",
+   "msg": "content 52% similar to /packages/india/goa/goa-beach-holiday-5-days/"
+  },
+  {
+   "page": "/packages/india/delhi/delhi-city-break-3-days/",
+   "msg": "content 52% similar to /packages/india/maharashtra/mumbai-city-break-3-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-nusa-penida-6-days/",
+   "msg": "content 52% similar to /packages/international/indonesia/bali-luxury-villas-7-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-honeymoon-with-houseboat-6-days/",
+   "msg": "content 52% similar to /packages/india/jammu-and-kashmir/kashmir-senior-friendly-tour-6-days/"
+  },
+  {
+   "page": "/packages/international/turkey/istanbul-short-break-5-days/",
+   "msg": "content 52% similar to /packages/international/turkey/turkey-family-holiday-7-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/vietnam/da-nang-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/oman/muscat-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-and-disneyland-family-trip-7-days/",
+   "msg": "content 52% similar to /packages/international/france/paris-honeymoon-6-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/",
+   "msg": "content 52% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/czech-republic/prague-short-break-4-days/",
+   "msg": "content 52% similar to /packages/international/hungary/budapest-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/macau/macau-weekend-3-days/",
+   "msg": "content 51% similar to /packages/international/sri-lanka/colombo-weekend-3-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/nepal/nepal-highlights-kathmandu-and-pokhara-5-days/"
+  },
+  {
+   "page": "/packages/international/morocco/marrakech-short-break-5-days/",
+   "msg": "content 51% similar to /packages/international/spain/barcelona-short-break-5-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
+   "msg": "content 51% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/oman/muscat-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/united-kingdom/london-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/rajasthan-school-heritage-tour-6-days/",
+   "msg": "content 51% similar to /packages/india/rajasthan/royal-rajasthan-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/czech-republic/prague-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/portugal/lisbon-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/south-korea/seoul-short-break-5-days/",
+   "msg": "content 51% similar to /packages/international/turkey/istanbul-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-the-gili-islands-7-days/",
+   "msg": "content 51% similar to /packages/international/indonesia/bali-grand-tour-10-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/uae/dubai-and-abu-dhabi-6-days/",
+   "msg": "content 51% similar to /packages/international/uae/dubai-shopping-festival-trip-7-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-group-tour-5-days/",
+   "msg": "content 51% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/brazil/rio-and-iguazu-7-days/",
+   "msg": "content 51% similar to /packages/international/brazil/south-america-highlights-9-days/"
+  },
+  {
+   "page": "/packages/international/south-korea/korea-honeymoon-7-days/",
+   "msg": "content 51% similar to /packages/international/south-korea/south-korea-highlights-8-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-and-krabi-beach-holiday-6-days/",
+   "msg": "content 51% similar to /packages/international/thailand/phuket-and-phi-phi-island-stay-5-days/"
+  },
+  {
+   "page": "/packages/india/uttarakhand/nainital-and-jim-corbett-5-days/",
+   "msg": "content 51% similar to /packages/india/uttarakhand/uttarakhand-grand-tour-9-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/thailand/bangkok-city-break-4-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/kuala-lumpur-and-bali-7-days/",
+   "msg": "content 51% similar to /packages/international/singapore/singapore-and-bali-8-days/"
+  },
+  {
+   "page": "/packages/india/tamil-nadu/nilgiris-and-coorg-hill-circuit-6-days/",
+   "msg": "content 51% similar to /packages/india/tamil-nadu/ooty-and-coonoor-nilgiri-escape-4-days/"
+  },
+  {
+   "page": "/packages/international/sri-lanka/ella-and-tea-country-train-journey-6-days/",
+   "msg": "content 51% similar to /packages/international/sri-lanka/sri-lanka-honeymoon-8-days/"
+  },
+  {
+   "page": "/packages/india/meghalaya/meghalaya-explorer-6-days/",
+   "msg": "content 51% similar to /packages/india/meghalaya/shillong-and-cherrapunji-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-and-london-7-days/",
+   "msg": "content 51% similar to /packages/international/switzerland/grand-european-tour-15-days/"
+  },
+  {
+   "page": "/packages/international/new-zealand/new-zealand-grand-tour-9-days/",
+   "msg": "content 51% similar to /packages/international/new-zealand/new-zealand-north-island-6-days/"
+  },
+  {
+   "page": "/packages/international/turkey/turkey-family-holiday-7-days/",
+   "msg": "content 51% similar to /packages/international/turkey/turkey-grand-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/china/china-grand-tour-with-guilin-10-days/",
+   "msg": "content 51% similar to /packages/international/china/china-highlights-beijing-xi-an-and-shanghai-8-days/"
+  },
+  {
+   "page": "/packages/india/sikkim/gangtok-and-north-sikkim-snow-trip-5-days/",
+   "msg": "content 51% similar to /packages/india/sikkim/sikkim-explorer-8-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/",
+   "msg": "content 51% similar to /packages/india/maharashtra/shirdi-and-nashik-pilgrimage-3-days/"
+  },
+  {
+   "page": "/packages/india/lakshadweep/lakshadweep-island-hopping-5-days/",
+   "msg": "content 51% similar to /packages/india/lakshadweep/lakshadweep-lagoon-escape-4-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-short-break-5-days/",
+   "msg": "content 51% similar to /packages/international/hungary/budapest-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/south-korea/korea-autumn-foliage-tour-6-days/",
+   "msg": "content 51% similar to /packages/international/south-korea/seoul-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/cameron-highlands-and-kuala-lumpur-5-days/",
+   "msg": "content 51% similar to /packages/international/malaysia/malaysia-family-fun-5-days/"
+  },
+  {
+   "page": "/packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/",
+   "msg": "content 51% similar to /packages/india/andaman-and-nicobar/andaman-group-tour-5-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-luxury-villas-7-days/",
+   "msg": "content 51% similar to /packages/international/indonesia/bali-photography-trip-8-days/"
+  },
+  {
+   "page": "/packages/international/hong-kong/hong-kong-and-macau-6-days/",
+   "msg": "content 51% similar to /packages/international/hong-kong/hong-kong-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-short-break-5-days/",
+   "msg": "content 51% similar to /packages/international/morocco/marrakech-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/oman/muscat-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/maharashtra/shirdi-and-nashik-pilgrimage-3-days/",
+   "msg": "content 51% similar to /packages/india/punjab/amritsar-golden-temple-weekend-3-days/"
+  },
+  {
+   "page": "/packages/india/maharashtra/shirdi-and-nashik-pilgrimage-3-days/",
+   "msg": "content 51% similar to /packages/india/uttar-pradesh/varanasi-spiritual-retreat-3-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-tulip-festival-trip-5-days/",
+   "msg": "content 51% similar to /packages/india/jammu-and-kashmir/srinagar-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/karnataka/chikmagalur-trekking-break-4-days/",
+   "msg": "content 51% similar to /packages/india/kerala/wayanad-adventure-and-nature-4-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-grand-tour-10-days/",
+   "msg": "content 51% similar to /packages/international/indonesia/bali-photography-trip-8-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/united-kingdom/london-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/singapore/singapore-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/cambodia/angkor-and-bangkok-6-days/",
+   "msg": "content 51% similar to /packages/international/cambodia/cambodia-discovery-6-days/"
+  },
+  {
+   "page": "/packages/india/himachal-pradesh/shimla-weekend-3-days/",
+   "msg": "content 51% similar to /packages/india/madhya-pradesh/pachmarhi-hill-weekend-3-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/swiss-family-adventure-8-days/",
+   "msg": "content 51% similar to /packages/international/switzerland/swiss-highlights-7-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/bandhavgarh-safari-break-4-days/",
+   "msg": "content 51% similar to /packages/india/madhya-pradesh/kanha-and-bandhavgarh-tiger-safari-7-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 51% similar to /packages/international/nepal/pashupatinath-and-muktinath-yatra-6-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-short-break-5-days/",
+   "msg": "content 50% similar to /packages/international/portugal/lisbon-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/rajasthan-luxury-palaces-8-days/",
+   "msg": "content 50% similar to /packages/india/rajasthan/royal-rajasthan-tour-8-days/"
+  },
+  {
+   "page": "/packages/international/indonesia/bali-and-the-gili-islands-7-days/",
+   "msg": "content 50% similar to /packages/international/indonesia/bali-luxury-villas-7-days/"
+  },
+  {
+   "page": "/packages/international/sri-lanka/ella-and-tea-country-train-journey-6-days/",
+   "msg": "content 50% similar to /packages/international/sri-lanka/kandy-and-nuwara-eliya-short-trip-5-days/"
+  },
+  {
+   "page": "/packages/india/goa/goa-honeymoon-by-the-sea-5-days/",
+   "msg": "content 50% similar to /packages/india/goa/goa-monsoon-and-dudhsagar-trip-4-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/vaishno-devi-yatra-3-days/",
+   "msg": "content 50% similar to /packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/"
+  },
+  {
+   "page": "/packages/international/cambodia/angkor-and-bangkok-6-days/",
+   "msg": "content 50% similar to /packages/international/cambodia/angkor-wat-explorer-4-days/"
+  },
+  {
+   "page": "/packages/india/uttar-pradesh/ayodhya-darshan-short-trip-3-days/",
+   "msg": "content 50% similar to /packages/india/uttar-pradesh/kashi-and-ayodhya-yatra-4-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-and-langkawi-family-trip-7-days/",
+   "msg": "content 50% similar to /packages/international/singapore/singapore-extended-stay-6-days/"
+  },
+  {
+   "page": "/packages/international/malaysia/malaysia-family-fun-5-days/",
+   "msg": "content 50% similar to /packages/international/malaysia/malaysia-group-tour-6-days/"
+  },
+  {
+   "page": "/packages/india/andhra-pradesh/tirupati-and-chennai-temple-tour-5-days/",
+   "msg": "content 50% similar to /packages/india/andhra-pradesh/tirupati-balaji-darshan-tour-3-days/"
+  },
+  {
+   "page": "/packages/international/vietnam/vietnam-budget-trip-6-days/",
+   "msg": "content 50% similar to /packages/international/vietnam/vietnam-highlights-8-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-short-break-4-days/",
+   "msg": "content 50% similar to /packages/international/uae/dubai-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-with-chitwan-safari-7-days/",
+   "msg": "content 50% similar to /packages/international/nepal/pashupatinath-and-muktinath-yatra-6-days/"
+  },
+  {
+   "page": "/packages/international/oman/muscat-short-break-4-days/",
+   "msg": "content 50% similar to /packages/international/singapore/singapore-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/oman/salalah-khareef-holiday-5-days/",
+   "msg": "content 50% similar to /packages/international/uae/dubai-classic-holiday-5-days/"
+  },
+  {
+   "page": "/packages/international/cambodia/angkor-and-singapore-7-days/",
+   "msg": "content 50% similar to /packages/international/hong-kong/hong-kong-macau-and-singapore-8-days/"
+  },
+  {
+   "page": "/packages/international/thailand/phuket-and-krabi-beach-holiday-6-days/",
+   "msg": "content 50% similar to /packages/international/thailand/phuket-family-beach-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/kashmir-autumn-colours-6-days/",
+   "msg": "content 50% similar to /packages/india/jammu-and-kashmir/kashmir-honeymoon-with-houseboat-6-days/"
+  },
+  {
+   "page": "/packages/india/himachal-pradesh/amritsar-dharamshala-and-dalhousie-6-days/",
+   "msg": "content 50% similar to /packages/india/himachal-pradesh/dharamshala-and-dalhousie-5-days/"
+  },
+  {
+   "page": "/packages/india/rajasthan/jaipur-and-ranthambore-5-days/",
+   "msg": "content 50% similar to /packages/india/rajasthan/ranthambore-tiger-safari-break-4-days/"
+  },
+  {
+   "page": "/packages/international/france/paris-short-break-5-days/",
+   "msg": "content 50% similar to /packages/international/spain/barcelona-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/south-africa/south-africa-highlights-8-days/",
+   "msg": "content 50% similar to /packages/international/south-africa/south-africa-honeymoon-8-days/"
+  },
+  {
+   "page": "/packages/international/singapore/singapore-honeymoon-7-days/",
+   "msg": "content 50% similar to /packages/international/singapore/singapore-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/gujarat/dwarka-and-somnath-pilgrimage-4-days/",
+   "msg": "content 50% similar to /packages/india/maharashtra/shirdi-and-nashik-pilgrimage-3-days/"
+  },
+  {
+   "page": "/packages/international/nepal/everest-flight-and-kathmandu-short-break-4-days/",
+   "msg": "content 50% similar to /packages/international/nepal/nepal-adventure-week-6-days/"
+  },
+  {
+   "page": "/packages/india/goa/goa-beach-holiday-5-days/",
+   "msg": "content 50% similar to /packages/india/karnataka/gokarna-and-goa-beach-trail-5-days/"
+  },
+  {
+   "page": "/packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/",
+   "msg": "content 50% similar to /packages/india/punjab/amritsar-golden-temple-weekend-3-days/"
+  },
+  {
+   "page": "/packages/international/italy/rome-short-break-5-days/",
+   "msg": "content 50% similar to /packages/international/qatar/doha-stopover-3-days/"
+  },
+  {
+   "page": "/packages/international/kenya/great-migration-safari-5-days/",
+   "msg": "content 50% similar to /packages/international/kenya/kenya-family-safari-5-days/"
+  },
+  {
+   "page": "/packages/international/egypt/cairo-short-break-4-days/",
+   "msg": "content 50% similar to /packages/international/egypt/egypt-family-holiday-6-days/"
+  },
+  {
+   "page": "/packages/international/nepal/nepal-highlights-kathmandu-and-pokhara-5-days/",
+   "msg": "content 50% similar to /packages/international/nepal/nepal-with-chitwan-safari-7-days/"
+  },
+  {
+   "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
+   "msg": "content 50% similar to /packages/international/switzerland/switzerland-germany-and-france-8-days/"
+  },
+  {
+   "page": "/packages/international/morocco/marrakech-short-break-5-days/",
+   "msg": "content 50% similar to /packages/international/portugal/lisbon-short-break-4-days/"
+  },
+  {
+   "page": "/packages/international/china/guilin-and-yangshuo-scenic-trip-5-days/",
+   "msg": "content 50% similar to /packages/international/norway/norway-fjords-5-days/"
+  },
+  {
+   "page": "/packages/international/hong-kong/hong-kong-short-break-4-days/",
+   "msg": "content 50% similar to /packages/international/malaysia/kuala-lumpur-short-break-4-days/"
+  },
+  {
+   "page": "/packages/india/kerala/kerala-family-holiday-7-days/",
+   "msg": "content 50% similar to /packages/india/kerala/kochi-and-munnar-extended-stay-5-days/"
+  }
+ ]
+}
