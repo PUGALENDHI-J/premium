@@ -45,7 +45,7 @@ Commands (needs Node.js 20 or newer)
   npm run build      regenerate all pages after editing anything in content/ or index.html's CSS
   npm run validate   check titles, canonicals, broken links, sitemap, orphans, near-duplicates
   npm run check      both of the above
-  npm run serve      preview at http://localhost:8080/  (sub-pages do NOT work by double-clicking files)
+  npm run serve      preview at http://localhost:4321/  (sub-pages do NOT work by double-clicking files)
 
 Quality gate
   Records that are too thin (short intros, missing details, short articles) are held back as drafts
