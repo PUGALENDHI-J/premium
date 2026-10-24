@@ -54,7 +54,9 @@ export function motifFor(tags = "", key = "") {
   const g = GR[m][hash(key || tags) % GR[m].length];
   return { m, g };
 }
-export const media = (v, alt) => v.img ? `<img src="${v.img}" alt="${esc(alt)}" loading="lazy">` : MO[v.m];
+export const media = (v, alt) => v.img ? `<img src="${v.sm || v.img}" alt="${esc(alt)}" loading="lazy">` : MO[v.m];
+/** Attribution for a Wikimedia Commons photo: author (linked to the file page) and licence. */
+export const photoCredit = p => { const who = esc(p.author.length > 60 ? p.author.slice(0, 57) + "…" : p.author); return `Photo: ${p.source ? `<a href="${p.source}" target="_blank" rel="noopener">${who}</a>` : who}, ${p.licenseUrl ? `<a href="${p.licenseUrl}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` };
 
 /* ---------- shell ---------- */
 const FONTS = "https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Playfair+Display:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap";
@@ -77,16 +79,16 @@ function footer() {
 <div><h5>Company</h5><a href="/about-us/">About us</a><a href="/custom-tour/">Custom tour enquiry</a><a href="/faqs/">FAQs</a><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms and conditions</a><a href="/cancellation-policy/">Cancellation and refunds</a><a href="/sitemap/">Site map</a></div>
 <div class="fc"><h5>Get in touch</h5><a href="tel:${SITE.tel}">${IC.call}${SITE.phone}</a><a href="mailto:${SITE.email}">${IC.mail}${SITE.email}</a><a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">${IC.wa}WhatsApp chat</a><a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>@${SITE.insta}</a></div></div>
 ${footLinks(MENU)}
-<div class="fb2">© <span class="yr">${new Date().getFullYear()}</span> Nexara Holidays, Chennai. Prices, availability and inclusions are confirmed only in your written quote. An enquiry is not a booking.</div><p class="credits">Thailand photos via Wikimedia Commons; full credits on the <a href="/">home page</a>. Pages without a licensed photo use illustrated artwork.</p></div></footer>`;
+<div class="fb2">© <span class="yr">${new Date().getFullYear()}</span> Nexara Holidays, Chennai. Prices, availability and inclusions are confirmed only in your written quote. An enquiry is not a booking.</div>${SITE.photos == "gt" ? "" : `<p class="credits">Some destination photos via Wikimedia Commons under free licences; see <a href="/photo-credits/">photo credits</a>.</p>`}</div></footer>`;
 }
 
 /** Full page. crumbs: [[name, url]] ending with the current page (url may be omitted). */
-export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, body, jsonld = [], robots, active, ogType = "website", headExtra = "" }) {
+export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, heroAside = "", body, jsonld = [], robots, active, ogType = "website", headExtra = "" }) {
   const canonical = abs(path);
   const ld = [...jsonld];
   if (crumbs.length > 1) ld.push({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: crumbs.map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: abs(u || path) })) });
   const crumbHtml = crumbs.length > 1 ? `<div class="crumb" role="navigation" aria-label="Breadcrumb">${crumbs.map(([n, u], i) => i < crumbs.length - 1 ? `<a href="${u}">${esc(n)}</a>` : `<span aria-current="page">${esc(n)}</span>`).join(" / ")}</div>` : "";
-  const bg = hero.img ? ` style="background-image:url(${hero.img})"` : hero.g ? ` style="background:linear-gradient(135deg,${hero.g})"` : "";
+  const bg = hero.img ? "" : hero.g ? ` style="background:linear-gradient(135deg,${hero.g})"` : "";
   return `<!DOCTYPE html>
 <html lang="en-IN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
@@ -100,11 +102,15 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta property="og:image" content="${abs(hero.img || SITE.ogImage)}"><meta name="twitter:card" content="summary_large_image">
 ${ld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="${FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css">${headExtra}
+<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css">${headExtra}
 </head><body class="sub">
 ${header(path)}
 <main id="main">
-<div class="pgh${hero.img ? "" : " mo"}"${bg}>${hero.img ? "" : MO[hero.m || "temple"]}${crumbHtml}${scr ? `<span class="scr">${esc(scr)}</span>` : ""}<h1>${esc(h1)}</h1>${sub ? `<p>${sub}</p>` : ""}</div>
+${hero.img
+  // GT-style header: title, then a large photo with the facts panel beside it
+  ? `<section class="ph2"><div class="ph2w">${crumbHtml}<div class="ph2h">${scr ? `<span class="scr">${esc(scr)}</span>` : ""}<h1>${esc(h1)}</h1>${sub ? `<p>${sub}</p>` : ""}</div><div class="ph2g${heroAside ? "" : " one"}"><figure class="ph2f"><img src="${hero.img}" alt="${esc(h1)}" fetchpriority="high">${hero.credit?.license ? `<p class="pcred">${photoCredit(hero.credit)}</p>` : ""}</figure>${heroAside ? `<aside class="ph2a">${heroAside}</aside>` : ""}</div></div></section>`
+  // the wave/hill/temple artwork only appears where the page sets a motif (destinations, regions, packages)
+  : `<div class="pgh mo"${bg}>${hero.m ? MO[hero.m] : ""}${crumbHtml}${scr ? `<span class="scr">${esc(scr)}</span>` : ""}<h1>${esc(h1)}</h1>${sub ? `<p>${sub}</p>` : ""}</div>`}
 ${body}
 </main>
 ${footer()}
@@ -114,6 +120,7 @@ ${footer()}
 ${WA_BTN}
 <script src="/assets/js/nexara-pages.js" defer></script>
 <script src="/assets/js/nexara-menu.js" defer></script>
+<script src="/assets/js/nexara-ui.js" defer></script>
 </body></html>`;
 }
 

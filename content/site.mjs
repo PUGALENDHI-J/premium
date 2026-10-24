@@ -11,4 +11,6 @@ export const SITE = {
   // date the generated content was written / last editorially reviewed
   reviewed: "2026-10-23",
   ogImage: "/assets/og-image.jpg",
+  // destination photos: "gt" = GT Holidays library only; "gt+commons" = GT first, Wikimedia Commons fills gaps; "commons" = Commons only
+  photos: "gt",
 };

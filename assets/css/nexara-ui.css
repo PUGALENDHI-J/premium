@@ -1,0 +1,154 @@
+/* Visual layer for inner pages: GT-style page header (title, large photo, facts panel), photo-top cards,
+   galleries, lightbox and scroll reveals. Flat and square: no rounded corners, gradients or gloss.
+   Loaded after nexara-base/pages/menu.css; nexara-flat.css then squares off everything else. */
+
+/* ---------- page header with photo ---------- */
+.ph2{background:#fff;border-bottom:1px solid var(--line)}
+.ph2w{max-width:1240px;margin:0 auto;padding:28px 5vw 40px}
+.ph2 .crumb{font-size:.82rem;color:var(--mut);margin-bottom:14px}
+.ph2 .crumb a{color:var(--mut);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.ph2 .crumb a:hover{color:var(--red)}
+.ph2h{border-left:4px solid var(--red);padding:2px 0 2px 18px;margin-bottom:22px}
+.ph2h .scr{display:block;font:600 .78rem Poppins,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.ph2h h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.1;margin:6px 0 0;color:var(--ink)}
+.ph2h p{margin:10px 0 0;max-width:820px;color:var(--mut);font-size:1rem}
+.ph2h .meta{display:flex;flex-wrap:wrap;gap:6px 20px}.ph2h .meta span{display:inline-flex;align-items:center;gap:6px}.ph2h .meta svg{color:var(--red)}
+.ph2g{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(280px,1fr);gap:24px;align-items:stretch}
+.ph2g.one{grid-template-columns:1fr}
+.ph2f{position:relative;align-self:start;width:100%;margin:0;aspect-ratio:1.85/1;overflow:hidden;background:#eee}
+.ph2g.one .ph2f{aspect-ratio:2.6/1}
+.ph2f img{width:100%;height:100%;object-fit:cover;display:block;animation:fadein .8s ease both}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.ph2f .pcred{position:absolute;right:0;bottom:0;margin:0;padding:4px 8px;font-size:.66rem;color:#fff;background:rgba(0,0,0,.55)}
+.ph2f .pcred a{color:#fff;text-decoration:underline}
+.ph2a{display:flex;flex-direction:column;background:#f6f6f6;border:1px solid var(--line);padding:22px}
+.hf{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
+.hf div{display:flex;flex-direction:column-reverse;gap:2px;min-width:0}
+.hf b{font:500 1.12rem/1.3 Poppins,sans-serif;color:var(--ink);overflow-wrap:anywhere}
+.hf small{font-size:.76rem;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.hf div.hfw{grid-column:1/-1}
+.hfn{font-size:.78rem;color:var(--mut);margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.hfb{display:grid;gap:10px;margin-top:auto;padding-top:22px}
+.hfb .btn{display:block;text-align:center;margin:0}
+@media(max-width:900px){.ph2g{grid-template-columns:1fr}.ph2f,.ph2g.one .ph2f{aspect-ratio:1.6/1}}
+
+/* ---------- spacing ---------- */
+body.sub main>section,body.sub .alt>section{padding-top:clamp(52px,6vw,84px);padding-bottom:clamp(52px,6vw,84px)}
+body.sub section.tight{padding-top:44px;padding-bottom:44px}
+body.sub section>.h{margin-bottom:8px}
+body.sub section>.h h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+.lay{padding:clamp(44px,5vw,72px) 5vw;gap:clamp(28px,4vw,56px)}
+.prose p,.prose li{line-height:1.8}
+.prose h2{margin:44px 0 14px}.prose h2:first-child{margin-top:0}
+
+/* ---------- cards: photo on top, text below ---------- */
+body.sub .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:26px;width:auto;margin-top:30px;animation:none}
+body.sub .dgrid.sm{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:22px}
+body.sub .dgrid .dc{position:relative;display:flex;flex-direction:column;width:auto;height:auto;min-height:0;margin:0;overflow:hidden;background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none;transition:border-color .25s,transform .25s}
+body.sub .dgrid .dc:hover{transform:translateY(-4px);border-color:var(--red);box-shadow:none}
+body.sub .dgrid .dc:before,body.sub .dgrid .dc:after{display:none}
+body.sub .dgrid .dm{position:relative;inset:auto;height:auto;aspect-ratio:1.85/1;flex:none}
+body.sub .dgrid .dm:after{display:none}
+body.sub .dc .dm img{transition:transform .8s var(--ease)}
+body.sub .dc:hover .dm img{transform:scale(1.05)}
+body.sub .dgrid .db{position:static;display:flex;flex:1;flex-direction:column;padding:18px 20px 18px}
+body.sub .dgrid .db h3{color:var(--ink);text-shadow:none;font-size:1.35rem;margin:10px 0 6px}
+body.sub .dgrid .db p{color:var(--mut);-webkit-line-clamp:3}
+body.sub .dgrid .dcat span{color:var(--red);background:#fff0ed;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+body.sub .dgrid .dbest{max-height:none;opacity:1;font-size:.8rem;color:var(--mut);margin-top:10px}
+body.sub .dgrid .dbest b{color:var(--red);margin-right:6px}
+body.sub .dgrid .dgo{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);color:var(--red)}
+body.sub .dgrid .dr{position:absolute;top:0;left:0;right:auto;bottom:auto;z-index:2;display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:var(--red);color:#fff;font-size:.72rem}
+body.sub .dgrid .dn{position:absolute;top:0;right:0;left:auto;z-index:2;background:#111;color:#fff;font-size:.8rem;padding:5px 10px}
+
+/* ---------- attraction gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0 22px}
+.gal figure{margin:0;overflow:hidden;background:#fff;border:1px solid var(--line);transition:border-color .25s}
+.gal figure:hover{border-color:var(--red)}
+.gal figure>a{display:block;position:relative;aspect-ratio:1.85/1;overflow:hidden;cursor:zoom-in}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{padding:12px 14px 14px;display:grid;gap:3px}
+.gal figcaption b{font:600 1rem Poppins,sans-serif;color:var(--ink)}
+.gal figcaption span{font-size:.88rem;color:var(--mut);line-height:1.5}
+.gal figcaption small{font-size:.66rem;color:#a39690;margin-top:4px}
+.gal figcaption small a{color:inherit;text-decoration:underline}
+.gal:has(figure:only-child){grid-template-columns:1fr}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+
+/* ---------- package photo strip ---------- */
+.pstrip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;max-width:1240px;margin:0 auto;padding:24px 5vw 0}
+.pstrip a{position:relative;aspect-ratio:1.85/1;overflow:hidden;color:#fff}
+.pstrip img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.pstrip a:hover img{transform:scale(1.05)}
+.pstrip span{position:absolute;left:0;bottom:0;z-index:1;padding:6px 12px;background:rgba(0,0,0,.65);font:600 .95rem Poppins,sans-serif}
+@media(max-width:700px){.pstrip{grid-auto-flow:row;grid-template-columns:1fr 1fr}}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:4vh 4vw;background:rgba(10,6,4,.92);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.lb.on{opacity:1;visibility:visible;transition:opacity .3s}
+.lb figure{margin:0;max-width:min(1400px,100%);text-align:center}
+.lb img{max-width:100%;max-height:80vh}
+.lb figcaption{color:#fff;margin-top:14px;font:500 1rem Poppins,sans-serif}
+.lb button{position:absolute;width:48px;height:48px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;font-size:1.4rem;cursor:pointer}
+.lb button:hover{background:var(--red);border-color:var(--red)}
+.lb .lbx{top:18px;right:18px}.lb .lbp{left:18px;top:50%;margin-top:-24px}.lb .lbn{right:18px;top:50%;margin-top:-24px}
+
+/* ---------- scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ph2f img{animation:none}}
+/* header tweaks: photo fills the row height, facts top-aligned, tighter gap to the body */
+.ph2g{align-items:stretch}
+.ph2g:not(.one) .ph2f{align-self:stretch;aspect-ratio:auto;min-height:clamp(320px,34vw,480px)}
+.hf{align-items:start}
+.hf div{flex-direction:column;justify-content:flex-start}
+.hf small{order:-1}
+.hfn{margin-top:auto}
+.ph2a .hfb{margin-top:0}
+.ph2+.lay,.ph2+section,.ph2+.pstrip{padding-top:44px}
+.ph2+.lay{border-top:0}
+body.sub main>section.ph2{max-width:none;margin:0;padding:0}
+
+/* ---------- destination template sections ---------- */
+.sh{font:600 1.05rem Poppins,sans-serif;margin:26px 0 12px;color:var(--ink)}
+.hint2{font-size:.82rem;color:var(--mut);margin:10px 0 0}
+/* essential tips */
+.etips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:14px;margin-top:24px}
+.etip{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);padding:18px}
+.etip i{flex:none;width:42px;height:42px;display:grid;place-items:center;background:#fff0ed;color:var(--red)}
+.etip b{display:block;font:600 .98rem Poppins,sans-serif;margin-bottom:4px}
+.etip p{margin:0;font-size:.88rem;line-height:1.6;color:#3b3b3b}
+/* map */
+.mapw{position:relative;aspect-ratio:2.2/1;border:1px solid var(--line);background:#eef2f4;margin-top:22px}
+.mapw iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.maplink{font-size:.85rem;color:var(--mut);margin:10px 0 0}.maplink a{color:var(--red);font-weight:600}
+.mpl{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px 18px}
+.mpl li{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:.88rem}
+.mpl a{font-weight:500}.mpl a:hover{color:var(--red)}.mpl small{color:var(--mut)}
+@media(max-width:700px){.mapw{aspect-ratio:1.2/1}}
+/* traveller types */
+.ttg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:12px;margin-top:22px}
+.tt{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--red);background:#fff;transition:border-color .2s}
+.tt:hover{border-color:var(--red)}.tt b{font:600 1rem Poppins,sans-serif}.tt span{font-size:.82rem;color:var(--mut)}
+/* departure cities */
+.depg{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.dep{border:1px solid var(--line);background:#fff;padding:10px 16px;font:500 .9rem Poppins,sans-serif;cursor:pointer;color:var(--ink)}
+.dep:hover{background:var(--red);border-color:var(--red);color:#fff}
+/* item cards (heritage, wildlife, nature, attractions without photos) */
+.icards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:12px;margin-top:16px}
+.icard{display:flex;flex-direction:column;gap:4px;padding:16px;background:#fff;border:1px solid var(--line)}
+.icard b{font:600 .98rem Poppins,sans-serif}.icard span{font-size:.86rem;color:var(--mut);line-height:1.5}
+.icard a{margin-top:auto;padding-top:6px;font-size:.82rem;font-weight:600;color:var(--red)}
+.gal.g3{grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr))}
+.gal .figl{font-size:.82rem;font-weight:600;color:var(--red);margin-top:4px}
+/* outdoor activities */
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:12px;margin-top:22px}
+.act{display:flex;flex-direction:column;justify-content:space-between;gap:10px;padding:16px;background:#fff;border:1px solid var(--line)}
+.act b{font:600 .95rem Poppins,sans-serif}
+.act button{align-self:flex-start;border:0;background:none;padding:0;color:var(--red);font:600 .82rem Poppins,sans-serif;cursor:pointer}
+.act button:hover{text-decoration:underline}
+/* travel tips + inline enquiry form */
+.tt2{max-width:880px}.tt2 h3{margin-top:26px}
+.dform #ctf{max-width:880px}
+@media(max-width:700px){#facts .gl2{grid-template-columns:1fr 1fr;gap:8px}#facts .gl2>div{padding:12px}#facts .gl2 i{display:none}}

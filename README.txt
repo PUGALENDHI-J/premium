@@ -45,6 +45,29 @@ Folders
                     GENERATED. Do not edit by hand; they are rewritten on every build.
   sitemap.xml, sitemap-*.xml, robots.txt, 404.html   GENERATED.
 
+Destination photos
+  Source is set in content/site.mjs (photos:): "gt" = GT Holidays library only (current), "gt+commons" = GT first
+  with Wikimedia Commons filling gaps, "commons" = Commons only.
+  GT Holidays (owner-licensed, same owner as Nexara)
+    assets/gtholidays/      the raw GT image library (642 MB; kept out of git and Vercel)
+    assets/photos/gt/       web-sized copies used by the site (gt/sm/ = card size); content/photos-gt.json = index
+    Refresh:  node tools/place-list.mjs  then  python tools/gt_photos.py  then  npm run build
+    The matcher skips staff/customer photos, logos, maps, icons, blog graphics and text-overlay banners.
+  Wikimedia Commons (free licences, credited on /photo-credits/ when used)
+    assets/photos/ (+ sm/, a/), content/photos.json, content/photo-overrides.json
+    Refresh:  node tools/photo-targets.mjs  then  python tools/fetch_photos.py  then  npm run build
+
+Destination page template (every state, country and place page)
+  One template in tools/build.mjs (section 7) renders: header photo + facts panel, quick facts, essential tips,
+  OpenStreetMap map, who it suits, plan-from-your-city buttons, overview, packages, places, top attractions,
+  wildlife or nature, culture, outdoor activities, travel tips, FAQs, related destinations, guides, enquiry form.
+  Sections without data for that destination are left out. Country practicals (calling code, driving side,
+  plugs, emergency numbers, tipping, water) live in content/country-facts.mjs; update FACTS_REVIEWED when you review them.
+  Visitor statistics are deliberately not shown: no verified source has been added yet.
+
+New destinations
+  content/places-added.mjs  states, cities, countries and itineraries added in October 2026 (merged by build.mjs)
+
 Commands (needs Node.js 20 or newer)
   npm run build      regenerate all pages after editing anything in content/ or index.html's CSS
   npm run validate   check titles, canonicals, broken links, sitemap, orphans, near-duplicates

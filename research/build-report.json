@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-24T01:31:51.764Z",
+ "built_at": "2026-10-24T05:38:05.637Z",
  "drafts": [
   {
    "kind": "tour-type",
@@ -10,28 +10,28 @@
  "warnings": [],
  "missingLinks": [],
  "counts": {
-  "sitemap_urls_total": 1137,
+  "sitemap_urls_total": 1195,
   "by_sitemap": {
    "pages": 44,
-   "destinations": 372,
-   "packages": 511,
+   "destinations": 404,
+   "packages": 537,
    "guides": 99,
    "blog": 111
   },
   "destinations": {
    "india_hub": 1,
    "india_regions": 6,
-   "states": 28,
-   "india_places": 121,
+   "states": 32,
+   "india_places": 131,
    "intl_hub": 1,
-   "intl_regions": 11,
-   "countries": 56,
-   "intl_places": 148,
+   "intl_regions": 12,
+   "countries": 72,
+   "intl_places": 149,
    "directory": 1
   },
   "packages": {
-   "india": 189,
-   "international": 322,
+   "india": 198,
+   "international": 339,
    "signature": 3,
    "listings": 3
   },
@@ -40,7 +40,7 @@
   "blog_posts": 100,
   "blog_topics": 10,
   "drafts": 1,
-  "files_written": 1145
+  "files_written": 1203
  },
  "articleWords": {
   "guide": [

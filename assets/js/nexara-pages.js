@@ -64,12 +64,12 @@
   enq.querySelector(".x").onclick = () => enq.close(); enq.onclick = e => { if (e.target == enq) enq.close() };
   $("#eb").addEventListener("keydown", e => { if (e.key == "Enter" && e.target.tagName == "INPUT") { e.preventDefault(); $("#nx").click() } });
   $$("#enq .fl input").forEach(i => i.addEventListener("input", () => { if (i.type == "tel") { const d = digits(i.value); i.value = d.length > 5 ? d.slice(0, 5) + " " + d.slice(5) : d } const f = i.parentNode; f.classList.remove("bad"); f.classList.toggle("valid", i.type == "tel" ? okPh(i.value) : i.value.trim().length > 1) }));
-  function openEnq(trip, dur) {
+  function openEnq(trip, dur, city) {
     if (enq.open) return; $("#eb").classList.remove("sent");
     if (trip) $("#tr").value = trip; else if (!$("#tr").value) $("#tr").value = document.body.dataset.trip || "";
-    if (dur) $("#du").value = dur; setStep(0); enq.showModal(); setTimeout(() => $("#n").focus(), 50);
+    if (dur) $("#du").value = dur; if (city) $("#c").value = city; setStep(0); enq.showModal(); setTimeout(() => $("#n").focus(), 50);
   }
-  document.addEventListener("click", e => { const q = e.target.closest("[data-enq]"); if (!q) return; e.preventDefault(); openEnq(q.dataset.trip, q.dataset.dur) });
+  document.addEventListener("click", e => { const q = e.target.closest("[data-enq]"); if (!q) return; e.preventDefault(); openEnq(q.dataset.trip, q.dataset.dur, q.dataset.city) });
 
   /* contact / custom tour form */
   const cf = $("#ctf");
@@ -78,7 +78,7 @@
     $("#cfn").parentNode.classList.toggle("bad", !n); $("#cfp").parentNode.classList.toggle("bad", !pOk);
     if (!n || !pOk) { shake(cf); toast(!n ? "Please enter your name." : "Enter a valid 10-digit mobile number."); (!n ? $("#cfn") : $("#cfp")).focus(); return }
     const v = id => { const el = $("#" + id); return el ? el.value.trim() : "" };
-    const lines = [["Name", n], ["Phone", ph], ["Destination", v("cfd")], ["Travellers", v("cft")], ["Departure", v("cfdt")], ["Duration", v("cfdu")], ["Budget", v("cfb")], ["Trip type", v("cfk")], ["Message", v("cfm")]].filter(x => x[1]);
+    const lines = [["Name", n], ["Phone", ph], ["City", v("cfc")], ["Destination", v("cfd")], ["Travellers", v("cft")], ["Departure", v("cfdt")], ["Duration", v("cfdu")], ["Budget", v("cfb")], ["Trip type", v("cfk")], ["Message", v("cfm")], ["Page", location.href]].filter(x => x[1]);
     const m = "Hi Nexara Holidays, I would like a quote (enquiry, not a booking yet).\n" + lines.map(x => x[0] + ": " + x[1]).join("\n");
     window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(m), "_blank", "noopener");
     toast("Opening WhatsApp with your message. Press send there to reach us.");

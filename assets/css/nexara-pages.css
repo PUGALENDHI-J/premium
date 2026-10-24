@@ -96,3 +96,12 @@ a.dc{color:inherit}
 /* 404 */
 .nf{text-align:center}.nf .btn{margin:6px}
 @media(max-width:560px){.lay{padding:40px 5vw}.box{padding:20px}}
+
+/* Script ("Mr Dafoe") lettering is kept for the page banner and the closing call-to-action only.
+   Section eyebrows inside the page use a small uppercase label, which reads cleaner in long pages. */
+.sub section .h .eye{display:inline-flex;align-items:center;gap:10px;width:auto;rotate:0deg;margin:0 0 10px;font:600 .74rem/1.4 Poppins,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--red);-webkit-text-fill-color:currentColor;background:none;filter:none;text-shadow:none}
+.sub section .h .eye:before{content:"";display:block;width:28px;height:2px;background:var(--gold)}
+.sub section .h.c .eye{justify-content:center}
+.sub .alt section .h .eye{color:var(--red)}
+/* the call-to-action band is red, so its script line needs a light colour (overrides the flat theme's red text) */
+.sub .cta .eye{color:#ffd9a8!important;-webkit-text-fill-color:#ffd9a8!important;display:block;margin:0 auto 4px}

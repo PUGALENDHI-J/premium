@@ -1,0 +1,3 @@
+node_modules/
+# third-party images: not licensed for use on this site, never commit or deploy
+assets/gtholidays/

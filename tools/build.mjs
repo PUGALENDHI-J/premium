@@ -15,12 +15,23 @@ import { TYPES } from "../content/tour-types.mjs";
 import { GUIDES, GUIDE_CATS } from "../content/guides/index.mjs";
 import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
 import { PAGES, FAQS } from "../content/pages.mjs";
-import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu } from "./lib/html.mjs";
+import { COUNTRY_FACTS, INDIA_FACTS, INDIA_TZ, FACTS_REVIEWED } from "../content/country-facts.mjs";
+import { ADD_STATES, ADD_IN_CITIES, ADD_W_REGIONS, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
+import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit } from "./lib/html.mjs";
 import { buildMenu, menuLinks, topbar } from "./lib/menu.mjs";
 import { renderMd } from "./lib/md.mjs";
 
+// destinations added later live in their own file; merge them before anything is built
+for (const s of ADD_STATES) { STATES.push(s); IN_REGIONS.find(r => r.s == s.region).states.push(s.s) }
+W_REGIONS.splice(W_REGIONS.findIndex(r => r.s == "south-asia") + 1, 0, ...ADD_W_REGIONS);
+IN_CITIES.push(...ADD_IN_CITIES); COUNTRIES.push(...ADD_COUNTRIES); W_CITIES.push(...ADD_W_CITIES); PK_IN.push(...ADD_PK_IN); PK_W.push(...ADD_PK_W);
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = ROOT, MANIFEST = path.join(ROOT, "research", ".generated-files.json");
+// destination photos: GT Holidays library (tools/gt_photos.py) and/or Wikimedia Commons (tools/fetch_photos.py), per SITE.photos
+const readJson = f => existsSync(path.join(ROOT, "content", f)) ? JSON.parse(readFileSync(path.join(ROOT, "content", f), "utf8")) : {};
+const GT_PHOTOS = readJson("photos-gt.json"), COMMONS = readJson("photos.json");
+const PHOTOS = SITE.photos == "commons" ? COMMONS : SITE.photos == "gt+commons" ? { ...COMMONS, ...GT_PHOTOS } : GT_PHOTOS;
 const report = { built_at: new Date().toISOString(), drafts: [], warnings: [], missingLinks: [], counts: {} };
 const warn = m => report.warnings.push(m);
 const draft = (kind, id, why) => report.drafts.push({ kind, id, why });
@@ -46,12 +57,16 @@ for (const c of [...IN_CITIES.map(x => ({ ...x, dom: true })), ...W_CITIES.map(x
   addNode({ ...c, kind: "city", url: `${p.url}${c.s}/`, parent: p });
 }
 for (const r of inReg) for (const s of r.states) if (!N.has(s)) throw new Error("region state " + s);
+const smOf = img => img.replace(/\/([^/]+)$/, "/sm/$1");
+for (const n of N.values()) { const ph = PHOTOS[n.s]; if (ph && !n.img) { n.img = ph.img; n.sm = smOf(ph.img); n.photo = ph } }
+// regions borrow the photo of their first state or country that has one
+for (const r of [...inReg, ...wReg]) { const kid = (r.kind == "inregion" ? r.states : COUNTRIES.filter(c => c.rg == r.s).map(c => c.s)).map(x => N.get(x)).find(x => x?.photo); if (kid) Object.assign(r, { img: kid.img, sm: kid.sm, photo: kid.photo }) }
 const isPlace = n => n.kind == "city" || n.self; // a place with attractions
 const top = n => n.kind == "city" ? n.parent : n; // state or country
 const kids = p => [...N.values()].filter(n => n.kind == "city" && n.parent === p);
 const placesIn = p => p.self ? [p] : kids(p);
 const vis = n => {
-  if (n.img) return { img: n.img };
+  if (n.img) return { img: n.img, sm: n.sm, credit: n.photo };
   const mo = motifFor(n.t || (n.k || []).join(" "), n.s);
   return { m: mo.m, g: mo.g };
 };
@@ -167,11 +182,13 @@ function emit(urlPath, html, group, { index = true } = {}) {
 const placeCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.kind == "city" ? n.parent.n : (n.region?.n || ""), tags: (n.t || "").split(" ").filter(Boolean).map(x => x[0].toUpperCase() + x.slice(1)), text: firstSentence(n.d), best: n.b, t: n.t || "" });
 const topCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.region?.n || (n.dom ? "India" : ""), tags: (n.k || []).slice(0, 3), text: firstSentence(n.d), best: n.bt?.[0], bestLabel: "Best time", go: "Explore" });
 const pkgCard = p => ({ url: p.url, name: p.name, ...pkgVis(p), badge: `${p.days}D / ${p.nights}N`, loc: p.stops.map(([n]) => n.n).filter((v, i, a) => a.indexOf(v) == i).slice(0, 4).join(" · "), tags: p.themes.filter(t => !["short-breaks", "long-stays", "weekend-getaways", "private-tours"].includes(t)).slice(0, 2).map(t => THEME_LABEL[t]), text: p.sum, go: "View itinerary", t: p.themes.join(" ") + (p.dom ? " india" : " international") });
-function pkgVis(p) { const img = p.img || p.stops.map(([n]) => n.img).find(Boolean); if (img) return { img }; const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); return { m: mo.m, g: mo.g } }
+function pkgVis(p) { if (p.img) return { img: p.img }; const s = [...p.stops].filter(([n]) => n.img).sort((x, y) => y[1] - x[1])[0]?.[0]; /* photo of the longest stay */ if (s) return { img: s.img, sm: s.sm, credit: s.photo }; const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); return { m: mo.m, g: mo.g } }
 function firstSentence(s = "") { const m = String(s).match(/^.*?[.!?](\s|$)/); return (m ? m[0] : s).trim() }
 const monthsOf = n => n.bt?.[0] || "";
 const artCards = (arr, label) => arr.length ? `<div class="acards">${arr.map(a => `<a class="acard" href="${a.url}"><small>${esc(label(a))}</small><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p><span>Read →</span></a>`).join("")}</div>` : "";
 const quoteBox = (trip, extra = "") => `<div class="box"><h3>Plan this trip</h3><p class="quote-p">Request a customised quote</p><p class="quote-s">Prices depend on dates, hotel category and group size, so we quote each trip individually.</p>${extra}<a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a><a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">${IC.wa} WhatsApp us</a><a class="btn ghost2" href="tel:${SITE.tel}">${IC.call} Call ${SITE.phone}</a></div>`;
+// facts panel beside the header photo (GT style): big value, small label, then action buttons
+const heroFacts = (rows, trip, { packages = false, note = "" } = {}) => `<div class="hf">${rows.filter(r => r && r[1]).map(([k, v, wide]) => `<div${wide ? ' class="hfw"' : ""}><b>${esc(v)}</b><small>${esc(k)}</small></div>`).join("")}</div>${note ? `<p class="hfn">${note}</p>` : ""}<div class="hfb"><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a>${packages ? `<a class="btn ghost2" href="#packages">View packages</a>` : `<a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">WhatsApp us</a>`}</div>`;
 const kv = rows => `<dl class="kv">${rows.filter(r => r && r[1]).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
 const crumbsOf = n => {
   const c = [["Home", "/"], ["Destinations", "/destinations/"]];
@@ -185,72 +202,273 @@ const crumbsOf = n => {
 const destLd = n => ({ "@context": "https://schema.org", "@type": "TouristDestination", name: n.n, description: firstSentence(n.d), url: abs(n.url), ...(n.ll ? { geo: { "@type": "GeoCoordinates", latitude: n.ll[0], longitude: n.ll[1] } } : {}), containedInPlace: { "@type": n.kind == "city" ? (n.dom ? "State" : "Country") : "Country", name: n.kind == "city" ? n.parent.n : (n.dom ? "India" : n.n) } });
 
 /* ---------- 6. place sections (city pages and self-contained states/countries) ---------- */
-function placeMain(n) {
-  const near = [...N.values()].filter(x => isPlace(x) && x !== n && !x.draft && x.dom === n.dom).map(x => [x, hav(n, x)]).sort((a, b) => a[1] - b[1]).slice(0, 6).filter(([, d]) => d < (n.dom ? 450 : 900));
-  const [air, rail, road] = n.r;
-  const main = `<div class="prose">
-<h2 id="about">About ${esc(n.n)}</h2><p class="lede">${esc(n.d)}</p>
-<h2 id="attractions">Top things to see in ${esc(n.n)}</h2>${dat(n.a)}
-<h2 id="activities">Things to do</h2>${tags(n.ac)}
-${n.f?.length ? `<h2 id="food">What to eat</h2><ul>${n.f.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
-<h2 id="best-time">Best time to visit ${esc(n.n)}</h2><p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>
-<h2 id="how-to-reach">How to reach ${esc(n.n)}</h2><ul><li><strong>By air:</strong> ${esc(air)}</li>${rail ? `<li><strong>By rail:</strong> ${esc(rail)}</li>` : ""}${road ? `<li><strong>By road:</strong> ${esc(road)}</li>` : ""}</ul>
-${n.tip ? `<h2 id="tips">Planner's tip</h2><p>${esc(n.tip)}</p>` : ""}
-</div>`;
-  const aside = `<aside><div class="box"><h3>${esc(n.n)} at a glance</h3>${kv([["Region", esc(n.kind == "city" ? `${n.parent.n}, ${n.dom ? "India" : n.parent.region?.n || ""}` : n.region?.n || "")], ["Best time", esc(n.bt[0])], ["Ideal stay", n.days ? esc(n.days + " days") : ""], ["Best for", esc(n.b || "")]])}</div>${quoteBox(n.n + " holiday")}${near.length ? `<div class="box"><h3>Nearby places</h3>${linkList(near.map(([x]) => [x.n, x.url, x.kind == "city" ? x.parent.n : ""]), "one")}</div>` : ""}</aside>`;
+// attractions with a licensed photo become a gallery; the rest stay a list
+function attractions(n) {
+  const all = n.a.map(([a, note]) => [a, note, PHOTOS[`${n.s}--${slugify(a)}`]]), shot = all.filter(x => x[2]), rest = all.filter(x => !x[2]);
+  const gal = shot.length ? `<div class="gal">${shot.map(([a, note, p]) => `<figure><a href="${p.img}" data-lb data-cap="${esc(a)}"><img src="${p.img}" alt="${esc(a)}, ${esc(n.n)}" loading="lazy" width="960" height="640"></a><figcaption><b>${esc(a)}</b><span>${esc(note)}</span>${p.license ? `<small>${photoCredit(p)}</small>` : ""}</figcaption></figure>`).join("")}</div>` : "";
+  return gal + (rest.length ? dat(rest.map(([a, note]) => [a, note])) : "");
+}
+const photoStrip = places => { const ps = places.filter(n => n.img).slice(0, 4); return ps.length > 1 ? `<div class="pstrip">${ps.map(n => `<a href="${n.url}"><img src="${n.img}" alt="${esc(n.n)}" loading="lazy"><span>${esc(n.n)}</span></a>`).join("")}</div>` : "" };
+/* ---------- 7. destination pages: one template for places, states and countries ----------
+   Every section is built from the destination's own record (content/*.mjs + content/country-facts.mjs).
+   A section is left out when the destination has no data for it; nothing is filled with generic text. */
+const factsOf = n => n.dom ? INDIA_FACTS : COUNTRY_FACTS[top(n).s] || null;
+const placesOf = n => isPlace(n) ? [n] : placesIn(n).filter(x => !x.draft);
+const pkgsFor = n => isPlace(n) && n.kind == "city" ? pkgsAt(n) : pkgsIn(n);
+const RX = {
+  wild: /national park|wildlife|sanctuary|safari|game|reserve|bird|tiger|elephant|rhino|whale|dolphin|lemur|turtle|penguin|leopard|lion|zoo|marine|reef|migration|crater floor/i,
+  nature: /lake|falls|waterfall|valley|beach|peak|mountain|glacier|forest|garden|island|canyon|gorge|lagoon|cliffs?|meadow|hills?\b|cave|river|coast|dunes?|desert|fjord|volcano|terraces/i,
+  culture: /temple|fort|palace|museum|church|cathedral|mosque|monastery|old town|old city|heritage|market|bazaar|tomb|castle|ruins|square|quarter|basilica|shrine|stupa|gompa|dzong|haveli|ghat|abbey|citadel|medina|souq|souk|mahal|memorial|gallery|theatre|library|mansion|village|wat\b|pagoda|cathedral|synagogue|amphitheatre|colosseum|acropolis/i,
+  cultAct: /festival|cooking|market|dance|show|craft|workshop|music|ceremony|aarti|darshan|tasting|food|shopping|performance|lantern|heritage|museum|puja|parade|carnival|tea\b|wine/i,
+  outdoor: /trek|hik|raft|kayak|div(e|ing)|snorkel|ski|cycl|bik|camp|safari|boat|cruise|paraglid|surf|climb|zip|jeep|cable car|gondola|horse|swim|beach|sunrise|sunset|drive|sail|canoe|fishing|balloon|ropeway|houseboat|shikara|game drive|walk/i,
+};
+const PERMIT = new Set(["arunachal-pradesh", "nagaland", "manipur", "sikkim", "ladakh", "lakshadweep", "andaman-and-nicobar"]);
+const DEPART = ["Chennai", "Bengaluru", "Mumbai", "Delhi", "Hyderabad", "Kochi", "Coimbatore", "Kolkata", "Ahmedabad", "Pune"];
+const SMALL_COUNTRY = { singapore: .25, "hong-kong": .3, macau: .08, maldives: 1.5, qatar: .9, bhutan: 1.2, fiji: 1.6, seychelles: .6, mauritius: .5, reunion: .45 };
+const tagsOf = n => " " + [n.t, top(n).t].filter(Boolean).join(" ") + " ";
+const itemCards = items => `<div class="icards">${items.map(x => `<div class="icard"><b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ""}${x.p ? `<a href="${x.p.url}">${esc(x.p.n)} →</a>` : ""}</div>`).join("")}</div>`;
+const tipCards = items => `<div class="etips">${items.filter(x => x && x[2]).map(([ic, h, t]) => `<div class="etip"><i>${IC[ic] || IC.tip}</i><div><b>${esc(h)}</b><p>${t}</p></div></div>`).join("")}</div>`;
+const firstOf = (arr, k) => arr.find(x => x[k])?.[k];
+
+function quickFacts(n) {
+  const F = factsOf(n), T = top(n), city = n.kind == "city";
+  const rows = [
+    ["pin", city ? "Location" : "Region", city ? `${T.n}, ${n.dom ? "India" : T.region?.n || ""}` : n.dom ? `${n.region?.n || ""}, India` : T.region?.n],
+    !city && ["pin", "Capital", T.cap],
+    ["clock", "Time zone", n.dom ? INDIA_TZ : T.tz],
+    F && ["route", "Driving side", F.dr],
+    F && ["call", "Calling code", F.cc],
+    ["cash", "Currency", n.dom ? "Indian rupee (INR)" : T.cur],
+    ["talk", "Languages", T.lang],
+    ["sun", "Best time to visit", n.bt[0]],
+    isPlace(n) && n.days && ["cal", "Ideal stay", n.days + " days"],
+    isPlace(n) && n.r?.[0] && ["plane", "Getting there", n.r[0]],
+    F && !n.dom && ["tip", "Power plugs", F.plug],
+    F && F.em && ["doc", "Emergency", F.em],
+  ].filter(r => r && r[2]).map(([ic, b, s]) => [ic, b, esc(s)]);
+  return sec("Quick facts", `${n.n} at a glance`, facts(rows), { cls: "tight", id: "facts" });
+}
+
+function essentialTips(n) {
+  const F = factsOf(n), T = top(n);
+  if (!F) return "";
+  const lowV = /1[012]\d V/.test(F.plug);
+  const plug = n.dom ? "" : `${F.plug}. ${/\bC\b/.test(F.plug) ? "Indian two-pin plugs usually fit; carry an adapter for three-pin chargers." : "Indian plugs will not fit; carry a universal adapter."}${lowV ? " Check that your chargers accept 100–240 V." : ""}`;
+  const money = n.dom ? "UPI and cards are widely accepted in cities and hotels; keep some cash for small shops, rural areas, hill towns and tips."
+    : `${esc(T.cur)}. Carry some local currency for markets, small shops and tips, and ask your bank about international card charges before you travel.`;
+  const tips = [...(T.tips || []), n !== T && n.tip].filter(Boolean);
+  return sec("Before you go", `Essential tips for travelling to ${n.n}`, tipCards([
+    ["cash", "Currency and payments", money],
+    ["star", "Tipping", esc(F.tip)],
+    ["food", "Drinking water", esc(F.water)],
+    ["tip", "Power plugs", plug],
+    ["doc", "Emergency numbers", esc(F.em || "")],
+    ["talk", "Language", T.lang ? `Languages spoken: ${esc(T.lang)}.` : ""],
+    ["route", "Getting around", esc(T.go || "")],
+    ...tips.map(t => ["tip", "Planner's tip", esc(t)]),
+  ]) + note(`General guidance, reviewed ${FACTS_REVIEWED}. Local rules and services change; we confirm details for your dates.`), { id: "tips" });
+}
+
+function mapSection(n) {
+  const pts = placesOf(n).filter(p => p.ll);
+  if (!pts.length) return "";
+  let d, c;
+  if (pts.length == 1 && (n.kind == "city" || n.self)) {
+    c = pts[0].ll; d = n.kind == "city" || n.dom ? .12 : SMALL_COUNTRY[n.s] || 2.2;
+    var [s, w, nn, e] = [c[0] - d * .6, c[1] - d, c[0] + d * .6, c[1] + d];
+  } else {
+    const la = pts.map(p => p.ll[0]), lo = pts.map(p => p.ll[1]), pad = Math.max(.3, (Math.max(...la) - Math.min(...la)) * .15);
+    var [s, w, nn, e] = [Math.min(...la) - pad, Math.min(...lo) - pad * 1.4, Math.max(...la) + pad, Math.max(...lo) + pad * 1.4];
+    c = [(s + nn) / 2, (w + e) / 2];
+  }
+  const f = x => x.toFixed(4), mk = pts.length == 1 ? `&marker=${f(pts[0].ll[0])},${f(pts[0].ll[1])}` : "";
+  const zoom = pts.length == 1 && n.kind == "city" ? 12 : 6;
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${f(w)},${f(s)},${f(e)},${f(nn)}&layer=mapnik${mk}`;
+  const big = `https://www.openstreetmap.org/?mlat=${f(c[0])}&mlon=${f(c[1])}#map=${zoom}/${f(c[0])}/${f(c[1])}`;
+  const list = pts.length > 1 ? `<ul class="mpl">${pts.map(p => `<li><a href="${p.url}">${esc(p.n)}</a><small>${p.ll[0].toFixed(2)}°, ${p.ll[1].toFixed(2)}°</small></li>`).join("")}</ul>` : "";
+  return sec("Map", `Where is ${n.n}?`, `<div class="mapw"><iframe src="${src}" title="Map of ${esc(n.n)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p class="maplink"><a href="${big}" target="_blank" rel="noopener">Open a larger map →</a>${pts.length > 1 ? ` · The map frames the ${pts.length} places we cover in ${esc(n.n)}.` : ""}</p>${list}`, { id: "map" });
+}
+
+const TT = [["honeymoon", "Honeymooners", /honeymoon/], ["couples", "Couples", /honeymoon|couple/], ["family-holidays", "Families", /family/], ["group-tours", "Friends and groups", null],
+  ["solo-travel", "Solo travellers", null], ["adventure", "Adventure seekers", /adventure|trek/], ["wildlife-safaris", "Wildlife lovers", /wildlife|safari/], ["cultural-holidays", "Culture and heritage lovers", /heritage|culture/],
+  ["pilgrimage-tours", "Pilgrims", /pilgrimage/], ["beach-holidays", "Beach lovers", /beach|island/], ["hill-stations", "Hill-station lovers", /\bhill\b/], ["luxury-holidays", "Luxury travellers", null],
+  ["budget-holidays", "Budget-conscious travellers", null], ["educational-tours", "School and college groups", null], ["senior-friendly", "Senior travellers", null], ["photography-tours", "Photographers", null]];
+const liveType = s => { const t = TYPE_BY[s]; return t && !t.draft && pkgsOfType(s).length >= 3 };
+function travellerTypes(n) {
+  const ps = pkgsFor(n), tg = tagsOf(n);
+  const rows = TT.filter(([s]) => liveType(s)).map(([s, label, rx]) => [s, label, ps.filter(p => p.themes.includes(s)).length, rx && rx.test(tg)]).filter(r => r[2] || r[3]);
+  if (rows.length < 2) return "";
+  return sec("Who it suits", `Who should visit ${n.n}?`, `<div class="ttg">${rows.map(([s, label, k]) => `<a class="tt" href="/tour-types/${s}/"><b>${esc(label)}</b><span>${k ? `${k} ${n.n} itinerar${k == 1 ? "y" : "ies"} in this style` : `${esc(THEME_LABEL[s])} across our destinations`}</span></a>`).join("")}</div>`, { cls: "tight" });
+}
+
+function departure(n) {
+  const cities = DEPART.filter(c => c.toLowerCase() != n.n.toLowerCase());
+  return sec("Plan from your city", n.dom ? `Plan your ${n.n} trip` : `Plan your ${n.n} trip from India`,
+    `<p>Choose the city you are travelling from and we include ${n.dom ? "trains or flights" : "flights"} from there in your quote.</p><div class="depg">${cities.map(c => `<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday" data-city="${c}">From ${c}</button>`).join("")}<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday">Another city</button></div>`, { cls: "tight" });
+}
+
+function everything(n) {
+  const places = placesOf(n), ps = pkgsFor(n), T = top(n);
+  const attr = places.flatMap(p => p.a.slice(0, isPlace(n) ? 4 : 1).map(a => a[0])).slice(0, 5);
+  const food = [...new Set(places.flatMap(p => p.f || []))].slice(0, 4);
+  const paras = String(n.d).split(/\n\n+/).map((p, i) => `<p${i ? "" : ' class="lede"'}>${esc(p)}</p>`).join("");
+  const more = [
+    !isPlace(n) && places.length ? `We plan trips to ${places.length} destination${places.length == 1 ? "" : "s"} in ${esc(n.n)}: ${esc(list(places.slice(0, 6).map(p => p.n)))}${places.length > 6 ? " and more" : ""}.` : "",
+    attr.length ? `Highlights include ${esc(list(attr))}.` : "",
+    food.length ? `Local food worth trying: ${esc(list(food))}.` : "",
+    isPlace(n) && n.days ? `Plan ${esc(n.days)} days here${n.b ? `; it suits ${esc(n.b.toLowerCase())}` : ""}.` : "",
+    ps.length ? `Our ${esc(n.n)} itineraries run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days and every one can be changed to suit you.` : "",
+  ].filter(Boolean).join(" ");
+  const [air, rail, road] = isPlace(n) ? n.r : [];
+  const main = `<div class="prose"><h2 id="about">Everything you need to know about ${esc(n.n)}</h2>${paras}${more ? `<p>${more}</p>` : ""}
+<h3>When to go</h3><p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>
+${air ? `<h3>How to reach ${esc(n.n)}</h3><ul><li><strong>By air:</strong> ${esc(air)}</li>${rail ? `<li><strong>By rail:</strong> ${esc(rail)}</li>` : ""}${road ? `<li><strong>By road:</strong> ${esc(road)}</li>` : ""}</ul>` : ""}
+${!isPlace(n) && T.go ? `<h3>Getting around</h3><p>${esc(T.go)}</p>` : ""}</div>`;
+  const aside = `<aside>${quoteBox(n.n + " holiday")}${places.length > 1 ? `<div class="box"><h3>Places in ${esc(n.n)}</h3>${linkList(places.map(x => [x.n, x.url, x.bt[0]]), "one")}</div>` : ""}</aside>`;
   return `<div class="lay"><div>${main}</div>${aside}</div>`;
 }
-function placeFaq(n) {
-  const q = [[`What is the best time to visit ${n.n}?`, `${esc(n.bt[0])}. ${esc(n.bt[1] || "")}`]];
-  if (n.days) q.push([`How many days are enough for ${n.n}?`, `Plan ${esc(n.days)} days to see the main sights without rushing. ${pkgsAt(n).length ? `Our ${n.n} itineraries range from ${Math.min(...pkgsAt(n).map(p => p.days))} to ${Math.max(...pkgsAt(n).map(p => p.days))} days in total, usually combined with nearby places.` : "We can combine it with nearby places for a longer holiday."}`]);
-  q.push([`How do I reach ${n.n}?`, esc(n.r[0]) + (n.r[1] ? ". " + esc(n.r[1]) : "") + "."]);
-  q.push([`Can Nexara Holidays plan a ${n.n} trip from ${SITE.city}?`, `Yes. Tell us your dates, group size and budget and we send a day-by-day plan with a price. Flights or trains from ${SITE.city} can be included on request.`]);
-  return q;
-}
 
-/* ---------- 7. pages: destinations ---------- */
-const placePkgs = n => { const ps = pkgsAt(n); return ps.length ? sec("Ready-made routes", `${n.n} tour packages`, cards(ps.map(pkgCard)), { p: `Every itinerary is a starting point. We adjust hotels, pace and dates to suit you.` }) : sec("Custom trips", `Plan a ${n.n} holiday`, `<p>We don't have a fixed itinerary featuring ${esc(n.n)} yet, but we plan custom trips here. Share your dates and we'll send a route.</p><p><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(n.n)} holiday">Plan my ${esc(n.n)} trip</a></p>`) };
-const relGuides = n => { const a = [...relTo(G, n).map(g => ({ ...g, lab: "Travel guide" })), ...relTo(B, n).map(b => ({ ...b, lab: "Blog" }))].slice(0, 6); return a.length ? sec("Read before you go", `${n.n} guides and articles`, artCards(a, x => x.lab)) : "" };
-
-for (const n of N.values()) {
-  if (n.draft) continue;
-  if (n.kind == "city") {
-    const v = vis(n);
-    emit(n.url, page({
-      path: n.url, active: "/destinations/", title: fitTitle(`${n.n}, ${n.parent.n}: Travel Guide & Packages | Nexara Holidays`, `${n.n} Travel Guide & Tour Packages | Nexara Holidays`, `${n.n} Travel Guide & Packages | Nexara`, `${n.n} Travel Guide | Nexara Holidays`, `${n.n} | Nexara Holidays`),
-      desc: clip(`${firstSentence(n.d)} Best time: ${n.bt[0]}. Top sights, things to do and ${n.n} packages from ${SITE.city}.`),
-      h1: `${n.n}`, scr: n.parent.n, sub: `${IC.sun} Best time: ${esc(n.bt[0])}${n.days ? ` &nbsp;·&nbsp; Ideal stay: ${esc(n.days)} days` : ""}`, crumbs: crumbsOf(n), hero: v,
-      jsonld: [destLd(n)],
-      body: placeMain(n) + placePkgs(n) + relGuides(n) + sec("Good to know", `${n.n} FAQs`, faq(placeFaq(n)), { cls: "tight" }) + cta(`Plan your ${n.n} trip`, `Tell us your dates and we reply on WhatsApp with a day-by-day plan and a price.`, n.n + " holiday"),
-    }), "destinations");
-  }
-}
-
-function topPage(n) {
-  const places = placesIn(n).filter(x => !x.draft);
-  const ps = pkgsIn(n);
+function packagesSec(n) {
+  const ps = pkgsFor(n);
+  if (!ps.length) return sec("Custom trips", `Plan a ${n.n} holiday`, `<p>We don't have a ready-made itinerary for ${esc(n.n)} yet, but we plan custom trips here. Share your dates and we'll send a route with a price.</p><p><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(n.n)} holiday">Plan my ${esc(n.n)} trip</a></p>`, { id: "packages" });
   const themes = [...new Set(ps.flatMap(p => p.themes))].filter(t => THEME_LABEL[t] && ps.filter(p => p.themes.includes(t)).length >= 2).slice(0, 6);
-  const f = n.dom
-    ? [["pin", "Capital", esc(n.cap || "")], ["talk", "Languages", esc(n.lang || "")], ["sun", "Best time", esc(n.bt[0])], ["route", "Places covered", `${places.length} destination${places.length == 1 ? "" : "s"} · ${ps.length} itineraries`]]
-    : [["pin", "Capital", esc(n.cap || "")], ["cash", "Currency", esc(n.cur || "")], ["talk", "Languages", esc(n.lang || "")], ["clock", "Time vs India", esc(n.tz || "")], ["sun", "Best time", esc(n.bt[0])], ["doc", "Entry rules", "Visa and entry rules for Indian passport holders change. We check the official source when you book."]];
-  const intro = `<div class="lay"><div class="prose"><h2 id="overview">${esc(n.n)} overview</h2>${String(n.d).split(/\n\n+/).map(p => `<p${p === String(n.d).split(/\n\n+/)[0] ? ' class="lede"' : ""}>${esc(p)}</p>`).join("")}
-<h2 id="best-time">When to go</h2><p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>
-${n.go ? `<h2 id="getting-around">Getting around</h2><p>${esc(n.go)}</p>` : ""}
-${n.tips?.length ? `<h2 id="tips">Tips from our planners</h2><ul>${n.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
-</div><aside>${quoteBox(n.n + " holiday")}${places.length > 1 ? `<div class="box"><h3>Places in ${esc(n.n)}</h3>${linkList(places.map(x => [x.n, x.url, x.bt[0]]), "one")}</div>` : ""}</aside></div>`;
-  const qa = [[`What is the best time to visit ${n.n}?`, `${esc(n.bt[0])}. ${esc(n.bt[1] || "")}`], [`Which places should I include on a first trip to ${n.n}?`, places.length ? `Most first-time visitors pick ${list(places.slice(0, 4).map(x => x.n))}. ${ps.length ? `Our shortest ${n.n} itinerary is ${Math.min(...ps.map(p => p.days))} days.` : ""}` : "Ask us and we suggest a route for your dates."]];
-  if (!n.dom) qa.push([`Do Indian citizens need a visa for ${n.n}?`, `Entry rules for Indian passport holders vary and change, including visa-free, visa-on-arrival and e-visa schemes. Check the official government or embassy website before you travel, and we confirm the current rules when you book with us.`], [`What currency is used in ${n.n}?`, esc(n.cur || "")]);
-  return intro + sec("Facts", `${n.n} at a glance`, facts(f), { cls: "tight" }) +
-    (n.self ? `<div class="alt">${placeMain(n)}</div>` : sec("Where to go", `Destinations in ${n.n}`, cards(places.map(placeCard)))) +
-    (ps.length ? sec("Itineraries", `${n.n} tour packages`, (themes.length ? filterTabs([["all", "All"], ...themes.map(t => [t, THEME_LABEL[t]])]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itineraries</p>`, { p: "Private, customisable itineraries. Request a quote for your dates." }) : "") +
-    relGuides(n) + sec("Good to know", `${n.n} travel FAQs`, faq(qa), { cls: "tight" }) + cta(`Plan your ${n.n} holiday`, `Share your dates and group size and we send a plan with a price on WhatsApp.`, n.n + " holiday");
+  return sec("Tour packages", `View all ${n.n} packages`, (themes.length && ps.length > 4 ? filterTabs([["all", "All"], ...themes.map(t => [t, THEME_LABEL[t]])]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itinerar${ps.length == 1 ? "y" : "ies"}</p>`, { id: "packages", p: "Private, customisable itineraries with prices quoted for your dates, hotel category and group size." });
 }
+
+function subdest(n) {
+  if (n.kind == "city") { const sib = kids(n.parent).filter(x => x !== n && !x.draft).slice(0, 8); return sib.length ? sec("Nearby in " + n.parent.n, `More places in ${n.parent.n}`, cards(sib.map(placeCard), "sm")) : "" }
+  if (n.self) return "";
+  const places = placesOf(n);
+  return places.length ? sec("Where to go", `Places to visit in ${n.n}`, cards(places.map(placeCard))) : "";
+}
+
+function topAttractions(n) {
+  if (isPlace(n)) return sec("Top attractions", `Top things to see in ${n.n}`, attractions(n), { id: "attractions" });
+  const items = placesOf(n).flatMap(p => p.a.slice(0, 2).map(([a, nt]) => ({ a, nt, p, ph: PHOTOS[`${p.s}--${slugify(a)}`] })));
+  const shot = items.filter(x => x.ph).slice(0, 8), rest = items.filter(x => !x.ph).slice(0, Math.max(0, 12 - shot.length));
+  if (!items.length) return "";
+  return sec("Top attractions", `Top attractions in ${n.n}`, (shot.length ? `<div class="gal g3">${shot.map(x => `<figure><a href="${x.ph.img}" data-lb data-cap="${esc(x.a)}, ${esc(x.p.n)}"><img src="${x.ph.img}" alt="${esc(x.a)}, ${esc(x.p.n)}" loading="lazy"></a><figcaption><b>${esc(x.a)}</b><span>${esc(x.nt)}</span><a class="figl" href="${x.p.url}">${esc(x.p.n)} →</a></figcaption></figure>`).join("")}</div>` : "") + (rest.length ? itemCards(rest.map(x => ({ name: x.a, note: x.nt, p: x.p }))) : ""), { id: "attractions" });
+}
+
+function wildNature(n) {
+  const multi = !isPlace(n), all = placesOf(n).flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null })));
+  const acts = [...new Set(placesOf(n).flatMap(p => p.ac || []))];
+  const wild = all.filter(x => RX.wild.test(x.name + " " + x.note)), wildAct = acts.filter(a => RX.wild.test(a));
+  if (wild.length || wildAct.length) return sec("Wildlife", `Wildlife in ${n.n}`, (wild.length ? itemCards(wild.slice(0, 9)) : "") + (wildAct.length ? `<h3 class="sh">Wildlife experiences</h3>${tags(wildAct)}` : "") + note("Sightings depend on season and luck and are never guaranteed. Keep your distance, stay with licensed guides and never feed wild animals."));
+  const nat = all.filter(x => RX.nature.test(x.name + " " + x.note) && !RX.culture.test(x.name));
+  return nat.length >= 2 ? sec("Nature", `Nature and landscapes of ${n.n}`, itemCards(nat.slice(0, 9))) : "";
+}
+
+function culture(n) {
+  const multi = !isPlace(n), places = placesOf(n);
+  const sites = places.flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null }))).filter(x => RX.culture.test(x.name + " " + x.note) && !RX.wild.test(x.name));
+  const acts = [...new Set(places.flatMap(p => p.ac || []))].filter(a => RX.cultAct.test(a) && !RX.outdoor.test(a));
+  const food = [...new Set(places.flatMap(p => p.f || []))];
+  if (!sites.length && !acts.length && !food.length) return "";
+  return sec("Culture", `Cultural experiences in ${n.n}`, (sites.length ? `<h3 class="sh">Heritage and landmarks</h3>${itemCards(sites.slice(0, 9))}` : "") +
+    (acts.length ? `<h3 class="sh">Experiences</h3>${tags(acts)}${acts.some(a => /\(|festival/i.test(a)) ? `<p class="hint2">Festivals and events marked with months happen only at those times of year; dates vary, so ask us before you plan around one.</p>` : ""}` : "") +
+    (food.length ? `<h3 class="sh">Food to try</h3>${tags(food.slice(0, 12))}` : ""));
+}
+
+function outdoor(n) {
+  const acts = [...new Set(placesOf(n).flatMap(p => p.ac || []))].filter(a => RX.outdoor.test(a));
+  if (!acts.length) return "";
+  return sec("Outdoors", `Outdoor activities in ${n.n}`, `<div class="acts">${acts.slice(0, 12).map(a => `<div class="act"><b>${esc(a)}</b><button type="button" data-enq data-trip="${esc(n.n)} holiday with ${esc(a.replace(/\s*\(.*?\)/, "").toLowerCase())}">Add to my trip →</button></div>`).join("")}</div>` + note(`Many activities are seasonal. Best time for ${esc(n.n)}: ${esc(n.bt[0])}. We check operating seasons for your dates.`));
+}
+
+function travelTips(n) {
+  const F = factsOf(n), T = top(n), tg = tagsOf(n), permit = PERMIT.has(T.s);
+  const visa = n.dom ? `<p>Indian citizens do not need a visa; carry a government photo ID such as Aadhaar or a passport for hotels and flights.${permit ? ` Parts of ${esc(T.n)} need an Inner Line Permit or Protected Area Permit for visitors; we arrange these as part of your trip.` : ""}</p>`
+    : `<p>Entry rules for Indian passport holders change, including visa-free, visa-on-arrival and e-visa schemes, so confirm the current rules on the official government or embassy website for ${esc(T.n)} before booking flights. Most countries require a passport valid for at least six months beyond your return date. We check the current requirements when we prepare your quote; we cannot guarantee visa approval.</p>`;
+  const high = /\b(mountain|snow)\b/.test(tg) || /ladakh|spiti|sikkim|tawang|nubra|pangong/.test(n.s + " " + T.s);
+  const health = `<p>${n.dom ? "Travel insurance is a good idea, especially for adventure activities." : "Buy travel insurance that covers medical treatment and evacuation; healthcare abroad can be expensive."} Carry prescription medicines in their original packaging with a copy of the prescription.${high ? " Some places here are at high altitude: rest on arrival, drink plenty of water and ascend gradually." : ""}${n.dom ? "" : ` For current safety advice, check the travel advisories published by the Government of India and the embassy in ${esc(T.n)}.`}</p>`;
+  const pack = [/\b(snow|mountain)\b/.test(tg) && "warm layers, a down jacket and gloves", /\bhill\b/.test(tg) && "a light jacket or sweater for cool evenings", /\b(beach|island)\b/.test(tg) && "sunscreen, sunglasses, a hat and swimwear",
+    /\b(pilgrimage|heritage)\b/.test(tg) && "modest clothing that covers shoulders and knees for religious sites", /monsoon|rain|wet/i.test(n.bt[1] || "") && "a compact umbrella or rain jacket",
+    "comfortable walking shoes", !n.dom && F && !/\bC\b/.test(F.plug) && "a universal travel adapter"].filter(Boolean);
+  const etiquette = [/\b(pilgrimage|heritage|culture)\b/.test(tg) && "Dress modestly at temples, churches and mosques, and remove footwear where asked.", "Ask before photographing people, and follow photography rules at religious sites and museums.", ...(T.tips || []).filter(t => /dress|respect|cover|photograph|etiquette|quiet|shoes|modest/i.test(t))].filter(Boolean);
+  const remote = /\b(mountain|snow|wildlife|nature|desert|island)\b/.test(tg);
+  const conn = n.dom ? `<p>Mobile data is good in towns and cities.${remote ? " Coverage can be patchy in remote, hill and forest areas, so download offline maps before you set off." : ""}</p>`
+    : `<p>Indian mobile operators sell international roaming packs, or you can buy a local SIM or eSIM on arrival with your passport. Check that your phone is unlocked and supports eSIM before you travel.</p>`;
+  const body = `<div class="prose tt2">
+<h3>Visa and entry</h3>${visa}
+<h3>Health and safety</h3>${health}
+${F ? `<h3>Currency and tipping</h3><p>${n.dom ? "The currency is the Indian rupee (INR)." : `The currency is the ${esc(T.cur)}.`} ${esc(F.tip)}</p>` : ""}
+<h3>Best time to visit</h3><p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>
+${T.go || (isPlace(n) && n.r) ? `<h3>Getting around</h3><p>${esc(T.go || n.r.filter(Boolean).join(". "))}</p>` : ""}
+<h3>Local etiquette</h3><ul>${etiquette.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+<h3>What to pack</h3><p>Pack ${esc(list(pack))}.</p>
+<h3>Phone and internet</h3>${conn}
+<h3>Budget</h3><p>We don't publish fixed prices because the season, hotel category, flights and group size change the cost. Your written quote lists exactly what is included, so you can compare like for like.</p></div>`;
+  return sec("Travel tips", `${n.n} travel tips`, body, { id: "travel-tips" });
+}
+
+function destFaq(n) {
+  const F = factsOf(n), T = top(n), places = placesOf(n), ps = pkgsFor(n), city = n.kind == "city";
+  const famous = isPlace(n) ? n.a.slice(0, 4).map(a => a[0]) : (T.k || []).length ? T.k : places.slice(0, 4).map(p => p.n);
+  const q = [
+    [`What is ${n.n} famous for?`, `${esc(n.n)} is known for ${esc(list(famous))}. ${esc(firstSentence(n.d))}`],
+    !n.dom && !city && [`Where is ${n.n}?`, `${esc(n.n)} is in ${esc(T.region?.n || "")}. Its capital is ${esc(T.cap || "")}.`],
+    [`What is the best time to visit ${n.n}?`, `${esc(n.bt[0])}. ${esc(n.bt[1] || "")}`],
+    isPlace(n) && n.days && [`How many days are enough for ${n.n}?`, `Plan ${esc(n.days)} days to see the main sights without rushing.${ps.length ? ` Our itineraries that include ${esc(n.n)} run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days, usually combined with nearby places.` : ""}`],
+    !isPlace(n) && ps.length && [`How many days do I need for ${n.n}?`, `Our ${esc(n.n)} itineraries run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days. ${places.length > 1 ? `A first trip usually covers ${esc(list(places.slice(0, 3).map(p => p.n)))}.` : ""}`],
+    isPlace(n) && n.r?.[0] && [`How do I reach ${n.n}?`, esc(n.r.filter(Boolean).join(". ")) + "."],
+    !n.dom && [`What currency is used in ${n.n}?`, `${esc(T.cur || "")}.${F ? ` ${esc(F.tip)}` : ""}`],
+    !n.dom && T.lang && [`What languages are spoken in ${n.n}?`, esc(T.lang) + "."],
+    !n.dom && F && [`What plug type does ${T.n} use?`, `${esc(F.plug)}. ${/\bC\b/.test(F.plug) ? "Indian two-pin plugs usually fit; bring an adapter for three-pin chargers." : "Indian plugs do not fit, so carry a universal adapter."}`],
+    F && [`Is tap water safe to drink in ${T.n}?`, esc(F.water)],
+    !n.dom && T.tz && [`What is the time difference between India and ${T.n}?`, `${esc(T.n)} is ${esc(T.tz)}.`],
+    !n.dom && [`Do Indian citizens need a visa for ${T.n}?`, `Rules for Indian passport holders vary and change, including visa-free, visa-on-arrival and e-visa schemes. Check the official government or embassy website before you travel; we confirm the current rules when you book with us.`],
+    n.dom && PERMIT.has(T.s) && [`Do I need a permit to visit ${n.n}?`, `Parts of ${esc(T.n)} require an Inner Line Permit or Protected Area Permit for visitors. Requirements depend on where you go; we arrange the permits for your route.`],
+    F && F.em && [`What are the emergency numbers in ${T.n}?`, esc(F.em) + "."],
+    [`How much does a ${n.n} tour package cost?`, `It depends on your travel month, hotel category, the number of travellers and whether flights are included, so we quote every trip individually. Share your dates and we send a day-by-day plan with a price on WhatsApp.`],
+    [`Can Nexara Holidays plan a ${n.n} trip from ${SITE.city}?`, `Yes. We plan trips from ${SITE.city} and other Indian cities, including ${n.dom ? "trains or flights" : "flights"}, hotels, transfers and sightseeing.`],
+  ].filter(Boolean);
+  return sec("FAQs", `${n.n} FAQs`, faq(q), { cls: "tight", id: "faqs" });
+}
+
+function related(n) {
+  let rel = [], h = "";
+  if (n.kind == "city") { rel = [...N.values()].filter(x => isPlace(x) && x !== n && !x.draft && x.dom === n.dom && x.parent !== n.parent).map(x => [x, hav(n, x)]).sort((a, b) => a[1] - b[1]).slice(0, 6).filter(([, d]) => d < (n.dom ? 600 : 1500)).map(([x]) => placeCard(x)); h = `Destinations near ${n.n}` }
+  else if (n.kind == "country") { rel = COUNTRIES.filter(c => c.rg == n.region.s && c.s != n.s).map(c => N.get(c.s)).filter(c => !c.draft).slice(0, 6).map(topCard); h = `More destinations in ${n.region.n}` }
+  else { rel = (n.region?.states || []).filter(s => s != n.s).map(s => N.get(s)).filter(s => s && !s.draft).slice(0, 6).map(topCard); h = `More destinations in ${n.region?.n || "India"}` }
+  return rel.length ? sec("Related destinations", h, cards(rel, "sm")) : "";
+}
+
+const opt2 = a => a.map(v => `<option>${v}</option>`).join("");
+const destForm = n => `<section id="enquire" class="dform"><div class="h"><span class="eye">Enquire now</span><h2>Plan your ${esc(n.n)} holiday</h2><p>Fill this in and WhatsApp opens with your enquiry ready to send. Nothing is stored on this website.</p></div>
+<form id="ctf" novalidate>
+<div class="fl"><input id="cfn" placeholder=" " autocomplete="name"><label for="cfn">Your name</label><span class="ok">✓</span></div>
+<div class="fl"><input id="cfp" type="tel" inputmode="tel" placeholder=" " autocomplete="tel"><label for="cfp">Mobile number (WhatsApp)</label><span class="ok">✓</span></div>
+<div class="fl"><input id="cfc" placeholder=" " autocomplete="address-level2"><label for="cfc">City you live in</label></div>
+<div class="fl"><input id="cfd" placeholder=" " value="${esc(n.n)}"><label for="cfd">Destination</label></div>
+<div class="fl"><input id="cfdt" type="month" placeholder=" "><label for="cfdt">Approximate travel month</label></div>
+<div class="fl"><input id="cft" type="number" min="1" max="99" placeholder=" "><label for="cft">Number of travellers</label></div>
+<div class="fl f"><select id="cfk">${opt2(["Not sure yet", "Honeymoon", "Family holiday", "Friends or group trip", "Pilgrimage", "Adventure", "Luxury holiday", "School or college tour", "Corporate trip"])}</select><label for="cfk">Type of trip</label></div>
+<div class="fl f"><textarea id="cfm" placeholder=" " rows="3"></textarea><label for="cfm">Anything else we should know? (optional)</label></div>
+<button class="btn red f" type="submit">Send on WhatsApp →</button></form>
+<p class="note">Sending opens WhatsApp on your device; your enquiry reaches us only when you press send there. An enquiry is not a booking.</p></section>`;
+
+function destBody(n) {
+  return quickFacts(n) + `<div class="alt">${essentialTips(n)}</div>` + mapSection(n) + travellerTypes(n) + `<div class="alt">${departure(n)}</div>` +
+    everything(n) + `<div class="alt">${packagesSec(n)}</div>` + subdest(n) + topAttractions(n) + `<div class="alt">${wildNature(n)}</div>` + culture(n) +
+    `<div class="alt">${outdoor(n)}</div>` + travelTips(n) + `<div class="alt">${destFaq(n)}</div>` + related(n) + relGuides(n) + `<div class="alt">${destForm(n)}</div>`;
+}
+const relGuides = n => { const a = [...relTo(G, n).map(g => ({ ...g, lab: "Travel guide" })), ...relTo(B, n).map(b => ({ ...b, lab: "Blog" }))].slice(0, 6); return a.length ? sec("Read before you go", `${n.n} guides and articles`, artCards(a, x => x.lab)) : "" };
+const destH1 = n => pkgsFor(n).length ? `${n.n} Tour Packages` : `${n.n} Travel Guide`;
+
 for (const n of N.values()) {
-  if (n.draft || (n.kind != "state" && n.kind != "country")) continue;
+  if (n.draft || !["city", "state", "country"].includes(n.kind)) continue;
+  const city = n.kind == "city", ps = pkgsFor(n), T = top(n), F = factsOf(n);
   emit(n.url, page({
-    path: n.url, active: "/destinations/", title: fitTitle(`${n.n} Tour Packages & Travel Guide | Nexara Holidays`, `${n.n} Tour Packages & Travel Guide | Nexara`, `${n.n} Holidays | Nexara Holidays`), desc: clip(`${firstSentence(n.d)} Best time ${n.bt[0]}. ${pkgsIn(n).length} itineraries from ${SITE.city}, customised to your dates.`),
-    h1: n.dom ? `${n.n} tourism & tour packages` : `${n.n} holidays & tour packages`, scr: n.dom ? "India" : n.region.n, sub: esc(firstSentence(n.d)), crumbs: crumbsOf(n), hero: vis(n),
-    jsonld: n.self ? [destLd(n)] : [], body: topPage(n),
+    path: n.url, active: "/destinations/",
+    title: city ? fitTitle(`${n.n}, ${n.parent.n}: Travel Guide & Packages | Nexara Holidays`, `${n.n} Travel Guide & Tour Packages | Nexara Holidays`, `${n.n} Travel Guide & Packages | Nexara`, `${n.n} Travel Guide | Nexara Holidays`, `${n.n} | Nexara Holidays`)
+      : fitTitle(`${n.n} Tour Packages${n.dom ? "" : " from India"} & Travel Guide | Nexara Holidays`, `${n.n} Tour Packages & Travel Guide | Nexara Holidays`, `${n.n} Tour Packages & Travel Guide | Nexara`, `${n.n} Holidays | Nexara Holidays`),
+    desc: clip(city ? `${firstSentence(n.d)} Best time: ${n.bt[0]}. Top sights, travel tips and ${n.n} packages from ${SITE.city}.` : `${firstSentence(n.d)} Best time ${n.bt[0]}. ${ps.length} ${n.n} tour packages${n.dom ? "" : " from India"}, travel tips and FAQs.`),
+    h1: destH1(n), scr: city ? n.parent.n : n.dom ? "India" : n.region.n, sub: city ? `${IC.sun} Best time: ${esc(n.bt[0])}${n.days ? ` &nbsp;·&nbsp; Ideal stay: ${esc(n.days)} days` : ""}` : esc(firstSentence(n.d)), crumbs: crumbsOf(n), hero: vis(n),
+    heroAside: city ? heroFacts([["Best time", n.bt[0]], ["Ideal stay", n.days ? n.days + " days" : ""], ["Region", n.parent.n], ["Best for", n.b || "", true]], n.n + " holiday", { packages: ps.length > 0 })
+      : n.dom ? heroFacts([["Capital", n.cap || ""], ["Languages", n.lang || ""], ["Best time", n.bt[0]], ["Places covered", placesOf(n).length + " destinations"]], n.n + " holiday", { packages: ps.length > 0 })
+      : heroFacts([["Currency", n.cur || ""], ["Best time", n.bt[0]], ["Languages", n.lang || ""], ["Capital", n.cap || ""], ["Time vs India", n.tz || "", true]], n.n + " holiday", { packages: ps.length > 0, note: "Visa and entry rules for Indian passport holders change; we check the official source when you book." }),
+    jsonld: isPlace(n) ? [destLd(n)] : [], body: destBody(n),
   }), "destinations");
 }
 
@@ -260,7 +478,7 @@ for (const r of inReg) {
   const table = `<div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>State</th><th>Best time</th><th>Known for</th></tr></thead><tbody>${st.map(s => `<tr><td><a href="${s.url}">${esc(s.n)}</a></td><td>${esc(s.bt[0])}</td><td>${esc((s.k || []).join(", "))}</td></tr>`).join("")}</tbody></table></div>`;
   emit(r.url, page({
     path: r.url, active: "/destinations/", title: `${r.n} Tour Packages & Destinations | Nexara Holidays`, desc: clip(`${firstSentence(r.d)} Explore ${st.length} states and ${ps.length} itineraries across ${r.n}.`),
-    h1: `${r.n} holidays`, scr: "India", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", "/destinations/india/"], [r.n, r.url]], hero: { m: r.m || "temple", g: r.g },
+    h1: `${r.n} holidays`, scr: "India", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", "/destinations/india/"], [r.n, r.url]], hero: r.img ? { img: r.img, credit: r.photo } : { m: r.m || "temple", g: r.g },
     body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("States", `States in ${r.n}`, cards(st.map(topCard))) + sec("Plan by season", "When to visit each state", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Pick one state or combine a few. We build the route around your dates.", r.n + " holiday"),
   }), "destinations");
 }
@@ -270,7 +488,7 @@ for (const r of wReg) {
   const table = `<div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Country</th><th>Best time</th><th>Time vs India</th></tr></thead><tbody>${cs.map(s => `<tr><td><a href="${s.url}">${esc(s.n)}</a></td><td>${esc(s.bt[0])}</td><td>${esc(s.tz || "")}</td></tr>`).join("")}</tbody></table></div>`;
   emit(r.url, page({
     path: r.url, active: "/destinations/", title: `${r.n} Tour Packages from India | Nexara Holidays`, desc: clip(`${firstSentence(r.d)} ${cs.length} countries and ${ps.length} itineraries, planned from ${SITE.city}.`),
-    h1: `${r.n} holidays`, scr: "International", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", "/destinations/international/"], [r.n, r.url]], hero: { m: r.m || "sea", g: r.g },
+    h1: `${r.n} holidays`, scr: "International", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", "/destinations/international/"], [r.n, r.url]], hero: r.img ? { img: r.img, credit: r.photo } : { m: r.m || "sea", g: r.g },
     body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Countries", `Countries in ${r.n}`, cards(cs.map(topCard))) + sec("Plan by season", "Best time for each country", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Single-country or multi-country, we build the route around your dates.", r.n + " holiday"),
   }), "destinations");
 }
@@ -279,14 +497,14 @@ for (const r of wReg) {
   const sts = STATES.map(s => N.get(s.s)).filter(s => !s.draft);
   emit(hubIN.url, page({
     path: hubIN.url, active: "/destinations/", title: "India Tour Packages & Destinations | Nexara Holidays", desc: clip(`Explore ${sts.length} Indian states and ${[...N.values()].filter(n => n.dom && isPlace(n) && !n.draft).length} destinations: hill stations, beaches, heritage and wildlife. Itineraries planned from ${SITE.city}.`),
-    h1: "Incredible India, planned for you", scr: "Domestic holidays", sub: esc(firstSentence(INDIA.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", hubIN.url]], hero: { m: "temple", g: "#5a2a1e,#b3562b,#ff8a3d" },
-    body: `<section><div class="prose">${INDIA.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "India's regions", cards(inReg.map(r => ({ url: r.url, name: r.n, ...motifFor(r.m == "sea" ? "beach" : r.m == "peak" ? "hill" : "heritage", r.s), g: r.g || motifFor("heritage", r.s).g, m: r.m || "temple", text: firstSentence(r.d), best: r.states.map(s => N.get(s).n).join(", "), bestLabel: "States", go: "Explore" })))) + sec("All states", "States and union territories", cards(sts.map(topCard))) + cta("Plan an India holiday", "Tell us what you enjoy and we suggest the right region for the season.", "India holiday"),
+    h1: "Incredible India, planned for you", scr: "Domestic holidays", sub: esc(firstSentence(INDIA.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", hubIN.url]], hero: N.get("kerala")?.img ? { img: N.get("kerala").img, credit: N.get("kerala").photo } : { m: "temple", g: "#5a2a1e,#b3562b,#ff8a3d" },
+    body: `<section><div class="prose">${INDIA.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "India's regions", cards(inReg.map(r => ({ url: r.url, name: r.n, ...motifFor(r.m == "sea" ? "beach" : r.m == "peak" ? "hill" : "heritage", r.s), g: r.g || motifFor("heritage", r.s).g, m: r.m || "temple", img: r.img, sm: r.sm, text: firstSentence(r.d), best: r.states.map(s => N.get(s).n).join(", "), bestLabel: "States", go: "Explore" })))) + sec("All states", "States and union territories", cards(sts.map(topCard))) + cta("Plan an India holiday", "Tell us what you enjoy and we suggest the right region for the season.", "India holiday"),
   }), "destinations");
   const cs = COUNTRIES.map(c => N.get(c.s)).filter(c => !c.draft);
   emit(hubW.url, page({
     path: hubW.url, active: "/destinations/", title: "International Tour Packages from India | Nexara Holidays", desc: clip(`${cs.length} countries across ${wReg.length} regions, from Thailand and Bali to Europe and Japan. International holidays planned from ${SITE.city}.`),
     h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/hero/maya-bay.webp" },
-    body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
+    body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", img: r.img, sm: r.sm, g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
   }), "destinations");
   emit("/destinations/", page({
     path: "/destinations/", active: "/destinations/", title: "Destinations: India & International Holidays | Nexara Holidays", desc: clip(`Browse every destination we plan: ${sts.length} Indian states and ${cs.length} countries, with best times to visit, top sights and ready itineraries.`),
@@ -398,7 +616,8 @@ for (const p of PK) {
   emit(p.url, page({
     path: p.url, active: "/tour-packages/", title: clipT(`${p.name} – ${p.days} Days ${p.nights} Nights | Nexara Holidays`), desc: clip(`${p.days}-day ${p.name} itinerary: ${uniq.map(n => n.n).join(", ")}. ${p.sum}`),
     h1: p.name, scr, sub: `<span class="meta"><span>${IC.cal}${p.days} days / ${p.nights} nights</span><span>${IC.pin}${esc(uniq.map(n => n.n).join(" · "))}</span><span>${IC.sun}${esc(bts[0])}</span></span>`, crumbs, hero: pkgVis(p), jsonld: [ld],
-    body: `<div class="lay"><div>${main}</div>${aside}</div>` + sec("FAQs", "Questions about this trip", faq(qa), { cls: "tight" }) + (rel.length ? `<div class="alt">${sec("You may also like", "Similar itineraries", cards(rel.map(pkgCard)))}</div>` : "") + sec("Destinations on this trip", "Read more about each stop", cards(uniq.map(placeCard), "sm")) + cta(`Ready for ${p.name}?`, "Share your dates and we send a quote with hotels and a price on WhatsApp.", p.name),
+    heroAside: heroFacts([["Duration", `${p.days} days / ${p.nights} nights`], ["Best time", bts[0]], ["Route", uniq.map(n => n.n).join(" · "), true], ["Package code", p.id]], p.name),
+    body: photoStrip(uniq) + `<div class="lay"><div>${main}</div>${aside}</div>` + sec("FAQs", "Questions about this trip", faq(qa), { cls: "tight" }) + (rel.length ? `<div class="alt">${sec("You may also like", "Similar itineraries", cards(rel.map(pkgCard)))}</div>` : "") + sec("Destinations on this trip", "Read more about each stop", cards(uniq.map(placeCard), "sm")) + cta(`Ready for ${p.name}?`, "Share your dates and we send a quote with hotels and a price on WhatsApp.", p.name),
   }), "packages");
 }
 function clip(s, n = 158) { s = s.replace(/\s+/g, " ").trim(); if (s.length <= n) return s; const c = s.slice(0, n - 1); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:.\-–]$/, "") + "…" }
@@ -472,7 +691,9 @@ function articlePage(a, kind) {
   const toc = a.r.toc.length > 2 ? `<div class="toc" role="navigation" aria-label="On this page"><b>On this page</b><ol>${a.r.toc.map(([t, id]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join("")}</ol></div>` : "";
   const label = kind == "guide" ? GUIDE_CATS[a.cat] : CLUSTERS[a.cluster]?.n;
   const crumbs = kind == "guide" ? [["Home", "/"], ["Travel guides", "/travel-guides/"], [a.title, a.url]] : [["Home", "/"], ["Blog", "/blog/"], [CLUSTERS[a.cluster].n, `/blog/topic/${a.cluster}/`], [a.title, a.url]];
-  const hero = a.img ? { img: a.img } : relNodes[0] ? vis(relNodes[0]) : { m: "temple", g: "#5a2a1e,#b3562b,#ff8a3d" };
+  // articles: a photo if there is one, otherwise a plain gradient (the wave artwork is kept for place pages)
+  const v0 = relNodes[0] ? vis(relNodes[0]) : null;
+  const hero = a.img ? { img: a.img } : v0?.img ? { img: v0.img } : { g: v0?.g || "#5a2a1e,#b3562b,#ff8a3d" };
   return page({
     path: a.url, active: kind == "guide" ? "/travel-guides/" : "/blog/", ogType: "article", title: clipT(`${a.title} | Nexara Holidays`), desc: clip(a.desc), h1: a.title, scr: label, sub: `${esc(a.desc)}`, crumbs, hero, jsonld: [articleLd(a, kind)],
     body: `<div class="lay"><article class="prose"><p class="byline">By the Nexara Holidays travel desk · Updated ${new Date(a.updated || a.date || SITE.reviewed).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · ${Math.max(2, Math.round(a.r.words / 220))} min read</p>${a.r.html}${a.facts ? note(a.facts) : ""}</article><aside>${toc}${quoteBox(a.trip || (relNodes[0] ? relNodes[0].n + " holiday" : "Holiday"))}${relNodes.length ? `<div class="box"><h3>Destinations in this ${kind == "guide" ? "guide" : "article"}</h3>${linkList(relNodes.map(n => [n.n, n.url]), "one")}</div>` : ""}</aside></div>` +
@@ -489,7 +710,7 @@ emit("/travel-guides/", page({
 for (const [k, c] of Object.entries(CLUSTERS)) {
   const a = B.filter(b => b.cluster == k); if (!a.length) { draft("blog-topic", k, "no published posts"); continue }
   const u = `/blog/topic/${k}/`;
-  emit(u, page({ path: u, active: "/blog/", title: `${c.n}: Travel Blog | Nexara Holidays`, desc: clip(c.d), h1: c.n, scr: "Travel blog", sub: esc(c.d), crumbs: [["Home", "/"], ["Blog", "/blog/"], [c.n, u]], hero: { m: c.m || "temple", g: c.g }, body: sec(`${a.length} articles`, `Articles on ${c.n.toLowerCase()}`, artCards(a, () => c.n)) + cta("Planning a trip?", "Tell us where you want to go and we send a plan with a price.", "") }), "blog");
+  emit(u, page({ path: u, active: "/blog/", title: `${c.n}: Travel Blog | Nexara Holidays`, desc: clip(c.d), h1: c.n, scr: "Travel blog", sub: esc(c.d), crumbs: [["Home", "/"], ["Blog", "/blog/"], [c.n, u]], hero: { g: c.g }, body: sec(`${a.length} articles`, `Articles on ${c.n.toLowerCase()}`, artCards(a, () => c.n)) + cta("Planning a trip?", "Tell us where you want to go and we send a plan with a price.", "") }), "blog");
 }
 emit("/blog/", page({
   path: "/blog/", active: "/blog/", title: "Travel Blog: Ideas, Comparisons & Planning Tips | Nexara Holidays", desc: clip(`${B.length} articles on honeymoons, family travel, budgets, seasons and destination comparisons, written by the Nexara Holidays travel desk in Chennai.`),
@@ -501,7 +722,7 @@ emit("/blog/", page({
 for (const pg of PAGES) {
   const r = renderMd(pg.body, resolveSlug, m => report.missingLinks.push({ page: "page:" + pg.s, missing: [m] }));
   const u = `/${pg.s}/`;
-  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : { m: "temple" }, body: (pg.pre || "") + `<section><div class="prose">${r.html}</div></section>` + (pg.post || "") + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
+  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : {}, body: (pg.pre || "") + `<section><div class="prose">${r.html}</div></section>` + (pg.post || "") + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
 }
 emit("/faqs/", page({
   path: "/faqs/", title: "FAQs: Booking, Payments, Visas & Travel | Nexara Holidays", desc: "Answers to common questions about planning, quotes, payments, visas, flights from Chennai, changes and travelling with Nexara Holidays.",
@@ -510,17 +731,28 @@ emit("/faqs/", page({
 }), "pages");
 
 /* ---------- 12. html sitemap, 404, xml sitemaps, robots ---------- */
+{
+  const rows = Object.entries(PHOTOS).filter(([, p]) => p.license).sort(([a], [b]) => a.localeCompare(b)).map(([k, p]) => {
+    const [place, attr] = k.split("--"), n = N.get(place), what = attr ? (n?.a || []).find(([a]) => slugify(a) == attr)?.[0] : n?.n;
+    return n && !n.draft && what ? `<tr><td>${n.url ? `<a href="${n.url}">${esc(what)}</a>` : esc(what)}${attr ? ` <small>(${esc(n.n)})</small>` : ""}</td><td>${photoCredit(p)}</td></tr>` : "";
+  }).filter(Boolean);
+  if (rows.length) emit("/photo-credits/", page({
+    path: "/photo-credits/", title: "Photo Credits | Nexara Holidays", desc: "Credits and licences for the destination photographs used on Nexara Holidays, sourced from Wikimedia Commons under free licences.",
+    h1: "Photo credits", scr: "Thank you, photographers", sub: `${rows.length} photographs from Wikimedia Commons, used under free licences.`, crumbs: [["Home", "/"], ["Photo credits", "/photo-credits/"]], hero: N.get("thailand")?.img ? { img: N.get("thailand").img } : {},
+    body: sec("Credits", "Destination photographs", `<p>Photos are resized and cropped from the originals on Wikimedia Commons. Each is used under the licence shown; follow the links for the original file, author and licence terms.</p><div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Photo</th><th>Author and licence</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`),
+  }), "pages");
+}
 const allUrls = Object.values(sitemap).flat();
 emit("/sitemap/", page({
   path: "/sitemap/", title: "Site Map | Nexara Holidays", desc: "Every page on Nexara Holidays: destinations, tour packages, holiday themes, travel guides, blog articles and company information.",
-  h1: "Site map", scr: "All pages", sub: `${allUrls.length + 2} pages`, crumbs: [["Home", "/"], ["Site map", "/sitemap/"]], hero: { m: "temple" },
+  h1: "Site map", scr: "All pages", sub: `${allUrls.length + 2} pages`, crumbs: [["Home", "/"], ["Site map", "/sitemap/"]], hero: {},
   body: sec("Main", "Main pages", linkList([["Home", "/"], ["All tour packages", "/tour-packages/"], ["India packages", "/tour-packages/india/"], ["International packages", "/tour-packages/international/"], ["Destinations", "/destinations/"], ["Holiday themes", "/tour-types/"], ["Travel guides", "/travel-guides/"], ["Blog", "/blog/"], ...PAGES.map(p => [p.n, `/${p.s}/`]), ["FAQs", "/faqs/"]])) +
     sec("", "Holiday themes", linkList(TYPES.filter(t => t.url).map(t => [t.n, t.url]))) +
     sec("", "Tour packages", `<div class="groups">${pkgGroups(PK, p => p.home).map(([h, ps]) => `<div><h3>${esc(h.n)}</h3>${linkList(ps.map(p => [p.name, p.url, `${p.days} days`]))}</div>`).join("")}</div>`) +
     (G.length ? sec("", "Travel guides", linkList(G.map(g => [g.title, g.url]))) : "") + (B.length ? sec("", "Blog", linkList(B.map(b => [b.title, b.url]))) : ""),
 }), "pages");
 emit("/404.html", page({
-  path: "/404.html", robots: "noindex, follow", title: "Page not found | Nexara Holidays", desc: "This page does not exist. Browse destinations, tour packages and travel guides instead.", h1: "Page not found", scr: "Lost?", sub: "The page you were looking for has moved or does not exist.", hero: { m: "sea" },
+  path: "/404.html", robots: "noindex, follow", title: "Page not found | Nexara Holidays", desc: "This page does not exist. Browse destinations, tour packages and travel guides instead.", h1: "Page not found", scr: "Lost?", sub: "The page you were looking for has moved or does not exist.", hero: {},
   body: `<section class="nf"><p>Try one of these instead:</p><p><a class="btn red" href="/">Home</a><a class="btn ghost2" href="/tour-packages/">Tour packages</a><a class="btn ghost2" href="/destinations/">Destinations</a><a class="btn ghost2" href="/sitemap/">Site map</a></p></section>`,
 }).replace(/<link rel="canonical"[^>]*>\n/, ""), null, { index: false });
 

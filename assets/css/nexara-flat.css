@@ -1,0 +1,56 @@
+/* Flat, square style for the whole site (home page and generated pages). Loaded last.
+   Square corners everywhere, no gloss: no shine sweeps, gradient buttons, gradient text, glass blur or drop shadows.
+   Kept round on purpose: the circular logo and the floating WhatsApp button. */
+:root{--grad:#f20000}
+
+/* square corners */
+*,*:before,*:after{border-radius:0!important}
+header .brand img,.flogo img,a.wa{border-radius:50%!important}
+
+/* no glass, no drop shadows, no glow text */
+*{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important}
+h1,h2,h3,.btn,nav a{text-shadow:none!important}
+header,header.sc{background:#fff!important}
+header:after{background:var(--red)!important;opacity:1!important;height:2px!important}
+
+/* no shine sweeps */
+.btn:before,nav a.ph:before,.card:before,.card:after,#dgrid .dc:before,#dgrid .dc:after,.dc:before{display:none!important;animation:none!important}
+
+/* solid buttons */
+.btn,.btn.red,nav a.ph,.enq,nav .nl .mega a.mall{background:var(--red)!important;color:#fff!important;border:1px solid var(--red)!important}
+.btn:hover,.btn.red:hover,nav a.ph:hover,.enq:hover,nav .nl .mega a.mall:hover{background:#c70000!important;border-color:#c70000!important;transform:none!important}
+.btn.ghost2,.btn.glass{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important}
+.btn.ghost2:hover,.btn.glass:hover{border-color:var(--red)!important;color:var(--red)!important}
+.hero .sl .btn.glass{background:transparent!important;color:#fff!important;border-color:#fff!important}
+nav a.ph i{background:#fff!important;color:var(--red)!important}
+nav a.ph:hover i{transform:none!important}
+
+/* menu: square tabs, solid current item */
+.nl{background:#fff!important;border:1px solid var(--line)!important}
+nav .nl a.cur,nav .nl a.cur:hover{background:var(--red)!important;color:#fff!important}
+.tabs .ind,.ftabs button.on,.opt button.on{background:var(--red)!important;color:#fff!important}
+
+/* flat text: no gradient-filled headings */
+.sl small,.eye,.scr,.sct,.fcta h3 em,.bw i{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--red)!important;filter:none!important}
+.pgh .scr,.hero .sl small,.sl small{color:#ffb15c!important}
+.bw i{color:#ff7a2f!important}
+
+/* flat panels */
+.cta,.fcta{background:var(--red)!important}
+.cta:before,.cta:after,.fin:before,.glance:before{display:none!important}
+.fin{background:#f6f6f6!important}
+.pgh.mo{background:#a80000!important}
+.stat,.stat b{background:none!important}
+#prog{background:var(--red)!important}
+.top{background:#a80000!important}
+
+/* tag chips and badges: square, flat */
+.dcat span,.tg span,.route a,.route span,.tbl>a:not(.tmail){border-radius:0!important}
+.tbl>a:not(.tmail):hover{background:var(--red)!important;color:#fff!important}
+nav .nl .mega li a:before{background:var(--red)!important}
+.mega{box-shadow:none!important;border:1px solid var(--line)!important;border-top:3px solid var(--red)!important}
+/* buttons on red panels */
+.cta .btn,.fcta .btn{background:#fff!important;color:var(--red)!important;border-color:#fff!important}
+.cta .btn.glass,.fcta .btn.glass{background:transparent!important;color:#fff!important;border-color:#fff!important}
+.cta .btn:hover,.fcta .btn:hover{background:#111!important;color:#fff!important;border-color:#111!important}
+.stat b{-webkit-text-fill-color:currentColor!important;color:var(--red)!important}

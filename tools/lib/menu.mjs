@@ -41,7 +41,7 @@ export function buildMenu({ N, PK, TYPES, inReg }) {
       label: "Packages", url: "/tour-packages/international/", match: ["/tour-packages/", "/packages/international/", "/destinations/international/"],
       cols: [
         [g("Africa", W("africa"), countries("africa")), g("America", null, countries("north-america", "central-america", "south-america")), g("Pacific", W("oceania"), countries("oceania"))],
-        [g("Asia", null, countries("southeast-asia", "east-asia", "south-asia"))],
+        [g("Asia", null, countries("southeast-asia", "east-asia", "south-asia", "central-asia"))],
         [g("Europe", W("europe"), countries("europe"))],
         [g("Island", W("indian-ocean"), countries("indian-ocean")), g("Middle East", W("middle-east"), countries("middle-east")), cruise && g("Cruises", cruise && `/tour-types/${cruise.s}/`, [["Cruise holidays", `/tour-types/${cruise.s}/`]])],
         [g("Honeymoon", "/tour-types/honeymoon/", honeyLinks(honey.filter(p => !p.dom), 18))],
