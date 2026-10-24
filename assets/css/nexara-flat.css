@@ -6,6 +6,22 @@
 /* square corners */
 *,*:before,*:after{border-radius:0!important}
 header .brand img,.flogo img,a.wa{border-radius:50%!important}
+.more-pl{border-radius:24px!important}
+.mpi{border-radius:999px!important}
+.mpi i,.mpi:after{border-radius:50%!important}
+.mpi i{overflow:hidden}.mpi i img{width:100%;height:100%;object-fit:cover;display:block}
+/* kept rounded: package cards, destination cards, trip finder, video reel */
+.card,.dc,.tfr,.rp{border-radius:22px!important;overflow:hidden}
+.opt button{border-radius:16px!important}
+.card .dd button,.card .btn,.tfr .btn,.tfr .match,.rside .btn,.chips button,.chips a,.rside .tg span,.dc .dcat span,.dc .dn,.dc .dr,.rp .vb{border-radius:10px!important}
+.opt button.on:after,.rov button{border-radius:50%!important}
+.tfn>button{border-radius:50%!important}.tfd button{border-radius:99px!important}
+/* readable text: white on the trip finder photo and on selected (red) options */
+.tfi h3,.tfi p{color:#fff!important}
+.opt button.on,.opt button.on i{color:#fff!important}
+.opt button.on small{color:rgba(255,255,255,.85)!important}
+.opt button.on:after{background:#fff!important;color:var(--red)!important}
+.tfi .btn{margin:0 8px 0 0!important;vertical-align:middle}
 
 /* no glass, no drop shadows, no glow text */
 *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important}
@@ -54,3 +70,54 @@ nav .nl .mega li a:before{background:var(--red)!important}
 .cta .btn.glass,.fcta .btn.glass{background:transparent!important;color:#fff!important;border-color:#fff!important}
 .cta .btn:hover,.fcta .btn:hover{background:#111!important;color:#fff!important;border-color:#111!important}
 .stat b{-webkit-text-fill-color:currentColor!important;color:var(--red)!important}
+
+/* ---------- three-colour scheme (like GT: brand colour + white + charcoal) ----------
+   white pages · Nexara red for buttons, active menu and accents · charcoal footer · light-grey copyright bar */
+:root{--char:#1e1e1e;--char2:#2a2a2a;--bar:#efefef}
+.sky{display:none!important}
+footer{color:#cfcfcf!important;background:var(--char)}
+.fin{background:var(--char)!important;padding:56px 5vw 0!important}
+.fin:before,.fin:after,.fcta:after{display:none!important}
+.fcta{background:var(--red)!important;padding:30px 36px!important;margin-bottom:48px!important;border:0!important}
+.fcta h3,.fcta h3 em{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.fcta p{color:rgba(255,255,255,.88)!important}
+.fg{background:transparent!important;border:0!important;padding:0!important}
+footer h5{color:#fff!important;font:400 1.5rem "Playfair Display",Georgia,serif!important;letter-spacing:0!important;text-transform:none!important;padding-bottom:14px!important}
+footer h5:after{background:var(--red)!important;width:44px!important;height:2px!important}
+.fg a,.fbrand p,.frow p a{color:#cfcfcf!important}
+.fg a:hover,.frow p a:hover{color:#fff!important}
+.fc svg{color:var(--red)!important}
+.soc a{border:1px solid rgba(255,255,255,.25)!important;color:#fff!important}
+.soc a:hover{background:var(--red)!important;border-color:var(--red)!important}
+.flinks{border-top:1px solid rgba(255,255,255,.12)!important}
+.frow h5{font:600 .74rem Poppins,sans-serif!important;letter-spacing:.16em!important;text-transform:uppercase!important;padding:0!important}
+.frow h5:after{display:none!important}
+.frow h5 a{color:#fff!important}
+.frow p a:not(:last-child):after{color:#555!important}
+/* light-grey copyright bar, full width */
+.fb2{max-width:none!important;margin:48px -5vw 0!important;padding:22px 5vw!important;background:var(--bar)!important;border:0!important;color:#333!important;font-size:.85rem!important}
+.fb2 a{color:#333!important}.fb2 a:hover{color:var(--red)!important}
+footer .credits{max-width:none!important;margin:0 -5vw!important;padding:0 5vw 96px!important;background:var(--bar)!important;color:#666!important;opacity:1!important}
+footer .credits a{color:#666!important}
+/* footer CTA button: white on red */
+.fcta .btn{background:#fff!important;color:var(--red)!important;border-color:#fff!important}
+.fcta .btn:hover{background:var(--char)!important;color:#fff!important;border-color:var(--char)!important}
+.soc a,footer .soc a{background:transparent!important;color:#fff!important}
+.soc a svg{color:#fff!important;stroke:#fff}
+.soc a:hover svg{color:#fff!important}
+.fb2{padding-bottom:84px!important}
+footer .fb2+.credits{margin-top:-62px!important;padding-bottom:84px!important}
+
+/* GT Holidays-style type: light serif headings, light grey Poppins body, bold uppercase nav */
+body{font-family:Poppins,system-ui,sans-serif;font-weight:300;color:#3d3d3d}
+h1,h2,h3,h4,h5{font-family:"Playfair Display",Georgia,serif!important;font-weight:400!important;color:#222;letter-spacing:0}
+h1{line-height:1.15}
+p,li,td,dd{font-weight:300;color:#555}
+b,strong,th,dt,label{font-weight:500}
+small,.sub,.lead{color:#666}
+nav .nl>a,nav .nl .mdd>a{font-family:Poppins,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:.86rem}
+.btn,.enq,nav a.ph{font-family:Poppins,sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+/* hero slides: keep text white over the photos */
+.sl,.sl h1,.sl h2,.sl p,.sl li,.sl .kick,.hf li{color:#fff!important}
+/* scroll story captions: keep text white over the film */
+.scap h2,.scap p,#sqcaps h2,#sqcaps p{color:#fff!important}

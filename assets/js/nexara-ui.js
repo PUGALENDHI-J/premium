@@ -43,3 +43,19 @@
   addEventListener("keydown", e => { if (!lb.classList.contains("on")) return; if (e.key == "Escape") close(); if (e.key == "ArrowLeft") show(i - 1); if (e.key == "ArrowRight") show(i + 1) });
   links.length < 2 && lb.querySelectorAll(".lbp,.lbn").forEach(b => b.hidden = true);
 })();
+
+/* 3D tilt on cards that follows the pointer (mouse only) */
+(() => {
+  if (matchMedia("(prefers-reduced-motion:reduce)").matches || !matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+  document.querySelectorAll("body.sub .dgrid .dc").forEach(c => {
+    let raf = 0;
+    c.addEventListener("pointermove", e => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.transform = `translateY(-8px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 9).toFixed(2)}deg)`;
+      });
+    });
+    c.addEventListener("pointerleave", () => { cancelAnimationFrame(raf); c.style.transform = "" });
+  });
+})();

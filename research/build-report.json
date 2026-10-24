@@ -1,5 +1,5 @@
 {
- "built_at": "2026-10-24T05:38:05.637Z",
+ "built_at": "2026-10-24T10:03:34.696Z",
  "drafts": [
   {
    "kind": "tour-type",
@@ -10,9 +10,9 @@
  "warnings": [],
  "missingLinks": [],
  "counts": {
-  "sitemap_urls_total": 1195,
+  "sitemap_urls_total": 1196,
   "by_sitemap": {
-   "pages": 44,
+   "pages": 45,
    "destinations": 404,
    "packages": 537,
    "guides": 99,
@@ -40,7 +40,7 @@
   "blog_posts": 100,
   "blog_topics": 10,
   "drafts": 1,
-  "files_written": 1203
+  "files_written": 1204
  },
  "articleWords": {
   "guide": [

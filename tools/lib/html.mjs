@@ -31,6 +31,24 @@ export const IC = {
   globe: SVG('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
   route: SVG('<circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/>'),
   doc: SVG('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>'),
+  arrow: SVG('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  flag: SVG('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>'),
+  car: SVG('<path d="M5 17h14v-5l-2-5H7l-2 5zM5 12h14"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/>'),
+  plug: SVG('<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>'),
+  drop: SVG('<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>'),
+  shield: SVG('<path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M12 8v5M12 16h.01"/>'),
+  heart: SVG('<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>'),
+  compass: SVG('<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>'),
+  mountain: SVG('<path d="m2 20 7-12 4 6 3-4 6 10z"/><path d="m7.5 10.5 1.5 1.5 1.5-1.5"/>'),
+  leaf: SVG('<path d="M5 20c0-9 6-15 15-15 0 9-6 15-15 15z"/><path d="M5 20l8-8"/>'),
+  temple: SVG('<path d="M12 3 4 8h16z"/><path d="M6 8v11M18 8v11M10 12v7M14 12v7M3 20h18"/>'),
+  wave: SVG('<path d="M2 15c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 19c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><circle cx="16" cy="7" r="3"/>'),
+  camera: SVG('<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>'),
+  boat: SVG('<path d="M3 15h18l-3 5H6z"/><path d="M12 3v12M12 4l6 9h-6"/>'),
+  tent: SVG('<path d="M3 20 12 4l9 16zM9 20l3-6 3 6"/>'),
+  bike: SVG('<circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="m6 16 4-7h5l3 7M10 9l2 7M14 6h2"/>'),
+  wind: SVG('<path d="M3 9h11a3 3 0 1 0-3-3M3 15h15a3 3 0 1 1-3 3M3 12h7"/>'),
+  snow: SVG('<path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17"/>'),
 };
 
 // SVG motifs from index.html (const MO): the site's fallback when no licensed photo exists
@@ -59,7 +77,7 @@ export const media = (v, alt) => v.img ? `<img src="${v.sm || v.img}" alt="${esc
 export const photoCredit = p => { const who = esc(p.author.length > 60 ? p.author.slice(0, 57) + "…" : p.author); return `Photo: ${p.source ? `<a href="${p.source}" target="_blank" rel="noopener">${who}</a>` : who}, ${p.licenseUrl ? `<a href="${p.licenseUrl}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` };
 
 /* ---------- shell ---------- */
-const FONTS = "https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Playfair+Display:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap";
+const FONTS = "https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Playfair+Display:wght@400;500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap";
 // menu data comes from the destination graph; build.mjs sets it before the first page is rendered
 let MENU = null;
 export const setMenu = m => { MENU = m };
@@ -95,6 +113,7 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="${robots || "index, follow"}">
 <meta name="theme-color" content="#f20000">
+<script>try{var t=+sessionStorage.getItem("nx-pt");sessionStorage.removeItem("nx-pt");if(Date.now()-t<4e3&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("pt-in")}catch(e){}</script>
 <link rel="canonical" href="${canonical}">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Nexara Holidays"><meta property="og:locale" content="en_IN">
@@ -102,11 +121,14 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta property="og:image" content="${abs(hero.img || SITE.ogImage)}"><meta name="twitter:card" content="summary_large_image">
 ${ld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="${FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css">${headExtra}
+<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css"><link rel="stylesheet" href="/assets/css/nexara-dest.css">${headExtra}
 </head><body class="sub">
 ${header(path)}
 <main id="main">
-${hero.img
+${hero.spot
+  // spotlight header (destination, package and theme pages): facts beside a photo slider
+  ? hero.spot(crumbHtml)
+  : hero.img
   // GT-style header: title, then a large photo with the facts panel beside it
   ? `<section class="ph2"><div class="ph2w">${crumbHtml}<div class="ph2h">${scr ? `<span class="scr">${esc(scr)}</span>` : ""}<h1>${esc(h1)}</h1>${sub ? `<p>${sub}</p>` : ""}</div><div class="ph2g${heroAside ? "" : " one"}"><figure class="ph2f"><img src="${hero.img}" alt="${esc(h1)}" fetchpriority="high">${hero.credit?.license ? `<p class="pcred">${photoCredit(hero.credit)}</p>` : ""}</figure>${heroAside ? `<aside class="ph2a">${heroAside}</aside>` : ""}</div></div></section>`
   // the wave/hill/temple artwork only appears where the page sets a motif (destinations, regions, packages)
@@ -119,12 +141,28 @@ ${footer()}
 <button class="btn red enq" data-enq><i></i>Enquire now</button>
 ${WA_BTN}
 <script src="/assets/js/nexara-pages.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
 <script src="/assets/js/nexara-menu.js" defer></script>
 <script src="/assets/js/nexara-ui.js" defer></script>
+<script src="/assets/js/nexara-transition.js" defer></script>
 </body></html>`;
 }
 
 /* ---------- components ---------- */
+/** Spotlight header: an "at a glance" facts grid beside a photo slider (styles in nexara-dest.css, slider in nexara-pages.js).
+    o = { eye, h1 (html), desc (html), label, facts: [[icon, label, value]], best, btns (html), slides: [{ img, cap }], g, m }.
+    Returns a function of the breadcrumb html, which page() fills in. */
+export const spotlight = o => crumbHtml => {
+  const sl = o.slides || [], f = (o.facts || []).filter(r => r && r[2]);
+  const scr = `<span class="spscr" aria-hidden="true">Explore<br>Experience<br>Travel Better</span>`;
+  const media = sl.length
+    ? `<div class="sps">${sl.map((s, i) => `<figure${i ? "" : ' class="on"'} data-cap="${esc(s.cap)}"><img src="${s.img}" alt="${esc(s.cap)}"${i ? ' loading="lazy"' : ' fetchpriority="high"'}></figure>`).join("")}${scr}<div class="spc"><b>${esc(sl[0].cap)}</b>${sl.length > 1 ? `<button type="button" aria-label="Next photo">${IC.arrow}</button>` : ""}</div></div>` +
+      (sl.length > 1 ? `<div class="spdots">${sl.map((s, i) => `<button type="button" aria-label="Photo ${i + 1}: ${esc(s.cap)}"${i ? "" : ' class="on" aria-current="true"'}></button>`).join("")}</div>` : "")
+    : `<div class="sps sp0"${o.g ? ` style="background:linear-gradient(135deg,${o.g})"` : ""}>${o.m ? MO[o.m] : ""}${scr}</div>`;
+  return `<section class="spot"><div class="spw">${crumbHtml}<div class="spg"><div class="spl"><span class="spe">${esc(o.eye)}</span><h1>${o.h1}</h1>${o.desc ? `<p class="spd">${o.desc}</p>` : ""}` +
+    (f.length ? `${o.label ? `<p class="spk">${esc(o.label)}</p>` : ""}<ul class="spf">${f.map(([ic, k, v]) => `<li><i>${IC[ic] || IC.star}</i><span><small>${esc(k)}</small><b>${esc(v)}</b></span></li>`).join("")}</ul>` : "") +
+    `${o.best ? `<p class="spt">${IC.sun}<span>Best time to visit: <b>${esc(o.best)}</b></span></p>` : ""}<div class="spb">${o.btns}</div></div><div class="spr" data-sps>${media}</div></div></div></section>`;
+};
 export const sec = (eye, h2, inner, { id, cls = "", p } = {}) => `<section${id ? ` id="${id}"` : ""}${cls ? ` class="${cls}"` : ""}><div class="h">${eye ? `<span class="eye">${esc(eye)}</span>` : ""}<h2>${esc(h2)}</h2>${p ? `<p>${p}</p>` : ""}</div>${inner}</section>`;
 
 /** Card linking to a page; v = {url, name, img|m+g, badge, loc, tags[], text, best, go, t(filter tags)} */

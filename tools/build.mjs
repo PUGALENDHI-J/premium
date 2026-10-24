@@ -17,7 +17,7 @@ import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
 import { PAGES, FAQS } from "../content/pages.mjs";
 import { COUNTRY_FACTS, INDIA_FACTS, INDIA_TZ, FACTS_REVIEWED } from "../content/country-facts.mjs";
 import { ADD_STATES, ADD_IN_CITIES, ADD_W_REGIONS, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
-import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit } from "./lib/html.mjs";
+import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit, spotlight } from "./lib/html.mjs";
 import { buildMenu, menuLinks, topbar } from "./lib/menu.mjs";
 import { renderMd } from "./lib/md.mjs";
 
@@ -30,7 +30,16 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = ROOT, MANIFEST = path.join(ROOT, "research", ".generated-files.json");
 // destination photos: GT Holidays library (tools/gt_photos.py) and/or Wikimedia Commons (tools/fetch_photos.py), per SITE.photos
 const readJson = f => existsSync(path.join(ROOT, "content", f)) ? JSON.parse(readFileSync(path.join(ROOT, "content", f), "utf8")) : {};
-const GT_PHOTOS = readJson("photos-gt.json"), COMMONS = readJson("photos.json");
+const GT_PHOTOS = readJson("photos-gt.json"), COMMONS_ALL = readJson("photos.json");
+// a Commons photo is used only when the Wikipedia article it came from names the same attraction (or place, for a place photo);
+// loose matches such as a nearby park or a district article are dropped so a card never shows the wrong sight
+const GEN = new Set("the of and in at on to de la le du da del national park city old new town temple island islands beach lake fort palace district state river valley hill hills mount museum street market sri saint st san jungle safari safaris walk walks tour tours drive drives game zone view views point cruise boat ride rides trip visit area region list day night big five centre center square road garden gardens bay sea coast falls waterfall wildlife sanctuary reserve camp trek trail india".split(" "));
+const tokOf = s => String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").split(/[^a-z0-9]+/).filter(x => x.length > 2 && !GEN.has(x));
+const squash = s => String(s).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
+const sameSight = (name, page) => { const a = tokOf(name), b = tokOf(page); return (squash(page).length > 3 && (squash(name).includes(squash(page)) || squash(page).includes(squash(name)))) || a.some(x => b.some(y => x == y || (x.length > 4 && y.length > 4 && (x.startsWith(y.slice(0, 5)) || y.startsWith(x.slice(0, 5)))))) };
+const COMMONS = Object.fromEntries(Object.entries(COMMONS_ALL).filter(([k, p]) => { const [pl, at] = k.split("--"); return sameSight((at || pl).replace(/-/g, " "), p.page || "") }));
+// topic photos for card sections (money, water, trekking, ...): tools/fetch_topic_photos.py
+const TOPIC = readJson("photos-topics.json");
 const PHOTOS = SITE.photos == "commons" ? COMMONS : SITE.photos == "gt+commons" ? { ...COMMONS, ...GT_PHOTOS } : GT_PHOTOS;
 const report = { built_at: new Date().toISOString(), drafts: [], warnings: [], missingLinks: [], counts: {} };
 const warn = m => report.warnings.push(m);
@@ -168,10 +177,78 @@ const G = GUIDES.map(g => ({ ...g, r: article(g, "guide") })).filter(g => g.r).m
 const B = POSTS.map(b => ({ ...b, r: article(b, "blog") })).filter(b => b.r).map(b => ({ ...b, url: `/blog/${b.s}/` }));
 const relTo = (arr, n) => arr.filter(a => (a.rel || []).includes(n.s) || (n.kind == "city" && (a.rel || []).includes(n.parent.s)));
 
+/* ---------- 4b. one photo per page ---------- */
+// cards, header slides and galleries pick photos independently, so a page could show one picture several times.
+// Each photo is kept once per page (galleries first, then header slides, then cards in page order); a repeat is swapped
+// for an unused photo of the card's own package stops or place, then its state/country, its region, then all of India
+// or abroad. A repeated topic picture becomes its icon.
+const canon = src => src.replace(/\/sm\/([^/]+)$/, "/$1");
+const PH_INFO = new Map(), PH_OF = new Map(); // full img -> { n, cap, of }; place slug -> [full img]
+// GT replaces the Commons photo of a place; the Commons one is kept here as a spare
+const SPARE = SITE.photos == "gt+commons" ? Object.entries(COMMONS).filter(([k]) => !k.includes("--") && GT_PHOTOS[k]).map(([k, p]) => [k, p]) : [];
+for (const [k, p] of [...Object.entries(PHOTOS).sort(([a], [b]) => a.includes("--") - b.includes("--")), ...SPARE]) {
+  const [pl, at] = k.split("--"), n = N.get(pl), a = at && (n?.a || []).find(([x]) => slugify(x) == at)?.[0];
+  if (!n || n.draft || (at && !a) || PH_INFO.has(p.img) || !existsSync(path.join(ROOT, p.img))) continue;
+  PH_INFO.set(p.img, { n, of: n.n, cap: a ? `${a} – ${n.n}` : n.kind == "city" ? `${n.n}, ${n.parent.n}` : n.n });
+  if (!PH_OF.has(n.s)) PH_OF.set(n.s, []);
+  PH_OF.get(n.s).push(p.img);
+}
+const NEAR = new Map(), BY_URL = new Map([...N.values()].map(n => [n.url, n])), PK_BY_URL = new Map(PK.map(p => [p.url, p]));
+const nearImgs = n => {
+  if (!NEAR.has(n.s)) {
+    const t = top(n), reg = t.region, all = [...N.values()];
+    const order = [n, t, ...kids(t), ...(reg ? all.filter(x => top(x).region === reg) : []), ...all.filter(x => !!x.dom == !!n.dom)];
+    NEAR.set(n.s, [...new Set(order.flatMap(x => PH_OF.get(x.s) || []))]);
+  }
+  return NEAR.get(n.s);
+};
+const smIf = img => existsSync(path.join(ROOT, smOf(img))) ? smOf(img) : img;
+function onePhotoEach(html) {
+  const occ = [], rx = /<img\b[^>]*?\ssrc="(\/assets\/photos\/[^"]+)"[^>]*>/g;
+  for (let m; (m = rx.exec(html));) {
+    const i = m.index, aOpen = html.lastIndexOf("<a ", i), aTag = aOpen > html.lastIndexOf("</a>", i) ? html.slice(aOpen, html.indexOf(">", aOpen) + 1) : "";
+    const kind = / data-lb/.test(aTag) ? 0 : html.lastIndexOf("<div", i) == html.lastIndexOf('<div class="sps">', i) ? 1 : 2;
+    occ.push({ i, tag: m[0], src: m[1], key: canon(m[1]), kind, aOpen, aTag, href: aTag.match(/href="([^"]+)"/)?.[1] });
+  }
+  const used = new Set(), edits = [];
+  for (const o of [...occ].sort((a, b) => a.kind - b.kind || a.i - b.i)) {
+    if (!used.has(o.key)) { used.add(o.key); continue }
+    if (o.src.startsWith("/assets/photos/t/")) {
+      // repeated topic photo: another photo of the same topic (planner, planner-2, ...), else the icon
+      const base = o.src.match(/\/t\/(.+?)(-\d)?\.webp$/)[1], alt = ["", "-2", "-3", "-4", "-5", "-6"].map(v => TOPIC[base + v]?.img).find(x => x && !used.has(canon(x)));
+      if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]); continue }
+      const f =html.lastIndexOf('<figure class="cph"', o.i), ic = html.slice(f, o.i).match(/data-ic="([^"]+)"/)?.[1], end = html.indexOf("</figure>", o.i) + 9;
+      if (ic) edits.push([f, end, `<i>${IC[ic] || IC.tip}</i>`]);
+      continue;
+    }
+    const pk = PK_BY_URL.get(o.href), at = BY_URL.get(o.href);
+    const seeds = pk ? pk.stops.map(([n]) => n) : at ? [at] : PH_INFO.get(o.key) ? [PH_INFO.get(o.key).n] : [];
+    const pick = [...new Set(seeds.flatMap(n => PH_OF.get(n.s) || [])), ...(seeds[0] ? nearImgs(seeds[0]) : [])].find(x => !used.has(x));
+    if (!pick) continue;
+    used.add(pick);
+    const old = PH_INFO.get(o.key), nu = PH_INFO.get(pick), src = o.src.includes("/sm/") ? smIf(pick) : pick;
+    let tag = o.tag.replace(`src="${o.src}"`, `src="${src}"`);
+    if (old) tag = tag.replace(/alt="([^"]*)"/, (s, alt) => alt == esc(old.cap) ? `alt="${esc(nu.cap)}"` : alt == esc(old.of) || alt.startsWith(esc(old.of) + ",") ? `alt="${esc(nu.of)}"` : s);
+    edits.push([o.i, o.i + o.tag.length, tag]);
+    if (o.kind == 0) edits.push([o.aOpen, o.aOpen + o.aTag.length, o.aTag.replace(`href="${o.src}"`, `href="${pick}"`)]);
+    if (o.kind == 1) {
+      const f = html.lastIndexOf("<figure", o.i), fTag = html.slice(f, o.i);
+      edits.push([f, o.i, fTag.replace(/data-cap="[^"]*"/, `data-cap="${esc(nu.cap)}"`)]);
+      if (fTag.includes('class="on"')) { const b = html.indexOf('<div class="spc"><b>', o.i) + 20; edits.push([b, html.indexOf("</b>", b), esc(nu.cap)]) }
+    }
+    // place label on an attraction card's photo
+    const after = o.i + o.tag.length, lab = html.slice(after, after + 600).match(/^<span>(<svg[\s\S]*?<\/svg>)([^<]*)<\/span>/);
+    if (lab && old && lab[2] == esc(old.of)) edits.push([after, after + lab[0].length, `<span>${lab[1]}${esc(nu.of)}</span>`]);
+  }
+  for (const [s, e, t] of edits.sort((a, b) => b[0] - a[0])) html = html.slice(0, s) + t + html.slice(e);
+  return html;
+}
+
 /* ---------- 5. writer ---------- */
 const written = [], sitemap = { pages: [], destinations: [], packages: [], guides: [], blog: [] };
 function emit(urlPath, html, group, { index = true } = {}) {
   const file = urlPath.endsWith("/") ? path.join(OUT, urlPath, "index.html") : path.join(OUT, urlPath);
+  if (html.includes("<main")) html = onePhotoEach(html);
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
   written.push(path.relative(ROOT, file).replace(/\\/g, "/"));
@@ -182,10 +259,25 @@ function emit(urlPath, html, group, { index = true } = {}) {
 const placeCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.kind == "city" ? n.parent.n : (n.region?.n || ""), tags: (n.t || "").split(" ").filter(Boolean).map(x => x[0].toUpperCase() + x.slice(1)), text: firstSentence(n.d), best: n.b, t: n.t || "" });
 const topCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.region?.n || (n.dom ? "India" : ""), tags: (n.k || []).slice(0, 3), text: firstSentence(n.d), best: n.bt?.[0], bestLabel: "Best time", go: "Explore" });
 const pkgCard = p => ({ url: p.url, name: p.name, ...pkgVis(p), badge: `${p.days}D / ${p.nights}N`, loc: p.stops.map(([n]) => n.n).filter((v, i, a) => a.indexOf(v) == i).slice(0, 4).join(" · "), tags: p.themes.filter(t => !["short-breaks", "long-stays", "weekend-getaways", "private-tours"].includes(t)).slice(0, 2).map(t => THEME_LABEL[t]), text: p.sum, go: "View itinerary", t: p.themes.join(" ") + (p.dom ? " india" : " international") });
-function pkgVis(p) { if (p.img) return { img: p.img }; const s = [...p.stops].filter(([n]) => n.img).sort((x, y) => y[1] - x[1])[0]?.[0]; /* photo of the longest stay */ if (s) return { img: s.img, sm: s.sm, credit: s.photo }; const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); return { m: mo.m, g: mo.g } }
+// package photo: varied per package (seeded by its slug) from its stops' own photos and their attraction photos,
+// so packages sharing a stop don't all show the same picture
+const usedPkgImg = new Map();
+function pkgVis(p) {
+  if (p.img) return { img: p.img };
+  if (usedPkgImg.has(p.slug)) return usedPkgImg.get(p.slug);
+  const pool = p.stops.flatMap(([n]) => [n.img && { img: n.img, sm: n.sm, credit: n.photo }, ...(n.a || []).map(([a]) => PHOTOS[`${n.s}--${slugify(a)}`]).filter(Boolean).map(ph => ({ img: ph.img, credit: ph }))]).filter(Boolean);
+  let v;
+  if (pool.length) { const h = [...p.slug].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7); v = pool[h % pool.length] }
+  else { const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); v = { m: mo.m, g: mo.g } }
+  usedPkgImg.set(p.slug, v);
+  return v;
+}
 function firstSentence(s = "") { const m = String(s).match(/^.*?[.!?](\s|$)/); return (m ? m[0] : s).trim() }
 const monthsOf = n => n.bt?.[0] || "";
-const artCards = (arr, label) => arr.length ? `<div class="acards">${arr.map(a => `<a class="acard" href="${a.url}"><small>${esc(label(a))}</small><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p><span>Read →</span></a>`).join("")}</div>` : "";
+// article photo: its own, else the first related destination with a photo, else a destination photo picked by its slug (decorative)
+const ALL_IMG = [...new Set(Object.values(PHOTOS).map(p => p.img))];
+const artImg = a => a.img || (a.rel || []).map(s => N.get(s)).map(n => n && (n.img || top(n)?.img)).find(Boolean) || ALL_IMG[[...(a.slug || a.url)].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % ALL_IMG.length];
+const artCards = (arr, label) => arr.length ? `<div class="acards ph">${arr.map(a => `<a class="acard" href="${a.url}"><img class="aci" src="${artImg(a)}" alt="" loading="lazy"><small>${esc(label(a))}</small><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p><span>Read →</span></a>`).join("")}</div>` : "";
 const quoteBox = (trip, extra = "") => `<div class="box"><h3>Plan this trip</h3><p class="quote-p">Request a customised quote</p><p class="quote-s">Prices depend on dates, hotel category and group size, so we quote each trip individually.</p>${extra}<a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a><a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">${IC.wa} WhatsApp us</a><a class="btn ghost2" href="tel:${SITE.tel}">${IC.call} Call ${SITE.phone}</a></div>`;
 // facts panel beside the header photo (GT style): big value, small label, then action buttons
 const heroFacts = (rows, trip, { packages = false, note = "" } = {}) => `<div class="hf">${rows.filter(r => r && r[1]).map(([k, v, wide]) => `<div${wide ? ' class="hfw"' : ""}><b>${esc(v)}</b><small>${esc(k)}</small></div>`).join("")}</div>${note ? `<p class="hfn">${note}</p>` : ""}<div class="hfb"><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a>${packages ? `<a class="btn ghost2" href="#packages">View packages</a>` : `<a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">WhatsApp us</a>`}</div>`;
@@ -206,7 +298,7 @@ const destLd = n => ({ "@context": "https://schema.org", "@type": "TouristDestin
 function attractions(n) {
   const all = n.a.map(([a, note]) => [a, note, PHOTOS[`${n.s}--${slugify(a)}`]]), shot = all.filter(x => x[2]), rest = all.filter(x => !x[2]);
   const gal = shot.length ? `<div class="gal">${shot.map(([a, note, p]) => `<figure><a href="${p.img}" data-lb data-cap="${esc(a)}"><img src="${p.img}" alt="${esc(a)}, ${esc(n.n)}" loading="lazy" width="960" height="640"></a><figcaption><b>${esc(a)}</b><span>${esc(note)}</span>${p.license ? `<small>${photoCredit(p)}</small>` : ""}</figcaption></figure>`).join("")}</div>` : "";
-  return gal + (rest.length ? dat(rest.map(([a, note]) => [a, note])) : "");
+  return gal + (rest.length ? itemCards(rest.map(([a, note]) => ({ name: a, note, at: n }))) : "");
 }
 const photoStrip = places => { const ps = places.filter(n => n.img).slice(0, 4); return ps.length > 1 ? `<div class="pstrip">${ps.map(n => `<a href="${n.url}"><img src="${n.img}" alt="${esc(n.n)}" loading="lazy"><span>${esc(n.n)}</span></a>`).join("")}</div>` : "" };
 /* ---------- 7. destination pages: one template for places, states and countries ----------
@@ -226,27 +318,77 @@ const PERMIT = new Set(["arunachal-pradesh", "nagaland", "manipur", "sikkim", "l
 const DEPART = ["Chennai", "Bengaluru", "Mumbai", "Delhi", "Hyderabad", "Kochi", "Coimbatore", "Kolkata", "Ahmedabad", "Pune"];
 const SMALL_COUNTRY = { singapore: .25, "hong-kong": .3, macau: .08, maldives: 1.5, qatar: .9, bhutan: 1.2, fiji: 1.6, seychelles: .6, mauritius: .5, reunion: .45 };
 const tagsOf = n => " " + [n.t, top(n).t].filter(Boolean).join(" ") + " ";
-const itemCards = items => `<div class="icards">${items.map(x => `<div class="icard"><b>${esc(x.name)}</b>${x.note ? `<span>${esc(x.note)}</span>` : ""}${x.p ? `<a href="${x.p.url}">${esc(x.p.n)} →</a>` : ""}</div>`).join("")}</div>`;
-const tipCards = items => `<div class="etips">${items.filter(x => x && x[2]).map(([ic, h, t]) => `<div class="etip"><i>${IC[ic] || IC.tip}</i><div><b>${esc(h)}</b><p>${t}</p></div></div>`).join("")}</div>`;
+// photo for an attraction card: its own licensed photo, else a photo of the place it is in (labelled with that place).
+// A fallback photo is used at most twice per grid; a card with no photo is left out.
+function itemCards(items, cls = "") {
+  const used = new Map(), rows = [];
+  for (const x of items) {
+    const own = PHOTOS[`${x.at.s}--${slugify(x.name)}`];
+    let ph = own && { img: own.img, of: x.at.n, alt: `${x.name}, ${x.at.n}` };
+    if (!ph) for (const f of [x.at, top(x.at), x.at.region].filter(Boolean)) if (f.img && (used.get(f.img) || 0) < 2) { ph = { img: f.img, of: f.n, alt: f.n }; break }
+    if (!ph) continue;
+    used.set(ph.img, (used.get(ph.img) || 0) + 1); rows.push({ ...x, ph });
+  }
+  return rows.length ? `<div class="ipc${cls ? " " + cls : ""}">${rows.map(x => `<div><figure><img src="${x.ph.img}" alt="${esc(x.ph.alt)}" loading="lazy"><span>${IC.pin}${esc(x.ph.of)}</span></figure><div><b>${esc(x.name)}</b>${x.note ? `<p>${esc(x.note)}</p>` : ""}${x.p ? `<a href="${x.p.url}">${esc(x.p.n)} →</a>` : ""}</div></div>`).join("")}</div>` : "";
+}
+// card picture: the topic photo for an icon key, else the icon itself
+const TOPIC_OF = { cash: "currency", star: "tipping", drop: "water", plug: "plug", shield: "emergency", talk: "language", route: "transport", tip: "planner", sun: "season", plane: "flight",
+  wave: "dive", mountain: "trek", boat: "boat", snow: "ski", bike: "cycle", tent: "camp", leaf: "safari", wind: "air", compass: "outdoors" };
+const pic = (ic, key = TOPIC_OF[ic]) => TOPIC[key] ? `<figure class="cph" data-ic="${ic}"><img src="${TOPIC[key].img}" alt="" loading="lazy"></figure>` : `<i>${IC[ic] || IC.tip}</i>`;
+const tipCards = items => `<div class="et2">${items.filter(x => x && x[2]).map(([ic, h, t, cls]) => `<div${cls ? ` class="${cls}"` : ""}><i>${IC[ic] || IC.tip}</i><b>${esc(h)}</b><p>${t}</p></div>`).join("")}</div>`;
+const waLink = txt => `https://wa.me/${SITE.wa}?text=${encodeURIComponent(txt)}`;
+const clipV = (s, n = 46) => { s = String(s || ""); if (s.length <= n) return s; const c = s.slice(0, n); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:(\-–\s]+$/, "") + "…" };
+// opening sentences of a description, up to about max characters
+const leadOf = (s, max = 250) => { const ss = String(s).split(/\n\n+/)[0].match(/[^.!?]+[.!?]+(\s|$)/g) || [String(s)]; let out = ""; for (const x of ss) { if (out && (out + x).length > max) break; out += x } return out.trim() };
+// header slides: the place's own photo, then attraction photos taken in turn from each place
+function slidesOf(n, max = 4) {
+  const out = [], add = (img, cap) => { if (img && !out.some(o => o.img == img)) out.push({ img, cap }) };
+  if (n.img) add(n.img, n.kind == "city" ? `${n.n}, ${n.parent.n}` : n.n);
+  const ls = placesOf(n).map(p => p.a.map(([a]) => [PHOTOS[`${p.s}--${slugify(a)}`]?.img, `${a} – ${p.n}`]).filter(x => x[0]));
+  for (let i = 0; out.length < max && ls.some(l => l[i]); i++) for (const l of ls) if (l[i]) add(...l[i]);
+  return out.slice(0, max);
+}
+// the name inside a heading shown in red
+const hiName = (text, name) => { const e = esc(text), k = esc(name), i = e.toLowerCase().indexOf(k.toLowerCase()); return i < 0 ? e : `${e.slice(0, i)}<em>${e.slice(i, i + k.length)}</em>${e.slice(i + k.length)}` };
 const firstOf = (arr, k) => arr.find(x => x[k])?.[k];
 
-function quickFacts(n) {
+// facts for the spotlight header, in the order of a country fact sheet; best time is shown on its own line
+function glanceRows(n) {
   const F = factsOf(n), T = top(n), city = n.kind == "city";
-  const rows = [
+  return [
     ["pin", city ? "Location" : "Region", city ? `${T.n}, ${n.dom ? "India" : T.region?.n || ""}` : n.dom ? `${n.region?.n || ""}, India` : T.region?.n],
-    !city && ["pin", "Capital", T.cap],
+    !city && ["flag", "Capital", T.cap],
     ["clock", "Time zone", n.dom ? INDIA_TZ : T.tz],
-    F && ["route", "Driving side", F.dr],
+    F && ["car", "Driving side", F.dr],
     F && ["call", "Calling code", F.cc],
     ["cash", "Currency", n.dom ? "Indian rupee (INR)" : T.cur],
     ["talk", "Languages", T.lang],
-    ["sun", "Best time to visit", n.bt[0]],
+    F && !n.dom && ["plug", "Power plugs", F.plug],
     isPlace(n) && n.days && ["cal", "Ideal stay", n.days + " days"],
     isPlace(n) && n.r?.[0] && ["plane", "Getting there", n.r[0]],
-    F && !n.dom && ["tip", "Power plugs", F.plug],
-    F && F.em && ["doc", "Emergency", F.em],
-  ].filter(r => r && r[2]).map(([ic, b, s]) => [ic, b, esc(s)]);
-  return sec("Quick facts", `${n.n} at a glance`, facts(rows), { cls: "tight", id: "facts" });
+    F && F.em && ["shield", "Emergency", F.em],
+  ].filter(r => r && r[2]).slice(0, 8).map(([ic, k, v]) => [ic, k, clipV(v)]);
+}
+function destSpot(n, ps) {
+  return spotlight({
+    eye: n.kind == "city" ? `Destination spotlight · ${n.parent.n}` : "Destination spotlight",
+    h1: hiName(destH1(n), n.n), desc: esc(leadOf(n.d)), label: `${n.n} at a glance`, facts: glanceRows(n), best: n.bt[0],
+    btns: (ps.length ? `<a class="spbtn" href="#packages">Explore ${esc(n.n)} packages <span>${IC.arrow}</span></a>` : `<a class="spbtn" href="/custom-tour/" data-enq data-trip="${esc(n.n)} holiday">Plan my ${esc(n.n)} trip <span>${IC.arrow}</span></a>`) +
+      `<a class="spwa" href="${waLink(`Hi Nexara Holidays, I would like to plan a trip to ${n.n}.`)}" target="_blank" rel="noopener"><i>${IC.wa}</i>Ask on WhatsApp</a>`,
+    slides: slidesOf(n), ...vis(n),
+  });
+}
+// four photo cards under the header, one per travel style where possible
+const GENERIC_T = new Set(["short-breaks", "long-stays", "weekend-getaways", "private-tours"]);
+const styleOf = p => THEME_LABEL[p.themes.find(t => !GENERIC_T.has(t) && THEME_LABEL[t])] || "";
+const tpCard = p => { const v = pkgVis(p), b = styleOf(p), at = [...new Set(p.stops.map(([s]) => s.n))].join(" · ");
+  return `<a class="tpc" href="${p.url}">${v.img ? `<img src="${v.img}" alt="${esc(p.name)}" loading="lazy">` : `<span class="tpf" style="background:linear-gradient(135deg,${v.g})"></span>`}${b ? `<span class="tpb">${esc(b)}</span>` : ""}<span class="tpi"><small>${IC.pin}${esc(clipV(at, 40))}</small><b>${esc(p.name)}</b><span>${p.days} Days | ${p.nights} Nights</span></span><i class="tpa">${IC.arrow}</i></a>` };
+function topPkgs(n, ps) {
+  if (ps.length < 2) return "";
+  const pick = [], seen = new Set();
+  for (const p of ps) { if (pick.length == 4) break; const s = styleOf(p); if (s && !seen.has(s)) { seen.add(s); pick.push(p) } }
+  for (const p of ps) { if (pick.length == 4) break; if (!pick.includes(p)) pick.push(p) }
+  return `<section class="tps"><div class="h tph"><div><span class="eye">Popular packages</span><h2>Top ${esc(n.n)} travel packages</h2><p>A few of our ${esc(n.n)} itineraries in different travel styles. Every one is private and can be changed to suit you.</p></div>${ps.length > 4 ? `<a class="tpl" href="#packages">View all ${ps.length} packages ${IC.arrow}</a>` : ""}</div><div class="tpg">${pick.map(tpCard).join("")}</div></section>`;
 }
 
 function essentialTips(n) {
@@ -260,12 +402,12 @@ function essentialTips(n) {
   return sec("Before you go", `Essential tips for travelling to ${n.n}`, tipCards([
     ["cash", "Currency and payments", money],
     ["star", "Tipping", esc(F.tip)],
-    ["food", "Drinking water", esc(F.water)],
-    ["tip", "Power plugs", plug],
-    ["doc", "Emergency numbers", esc(F.em || "")],
+    ["drop", "Drinking water", esc(F.water)],
+    ["plug", "Power plugs", plug],
+    ["shield", "Emergency numbers", esc(F.em || "")],
     ["talk", "Language", T.lang ? `Languages spoken: ${esc(T.lang)}.` : ""],
     ["route", "Getting around", esc(T.go || "")],
-    ...tips.map(t => ["tip", "Planner's tip", esc(t)]),
+    ...tips.map(t => ["tip", "Planner's tip", esc(t), "pt"]),
   ]) + note(`General guidance, reviewed ${FACTS_REVIEWED}. Local rules and services change; we confirm details for your dates.`), { id: "tips" });
 }
 
@@ -293,18 +435,22 @@ const TT = [["honeymoon", "Honeymooners", /honeymoon/], ["couples", "Couples", /
   ["solo-travel", "Solo travellers", null], ["adventure", "Adventure seekers", /adventure|trek/], ["wildlife-safaris", "Wildlife lovers", /wildlife|safari/], ["cultural-holidays", "Culture and heritage lovers", /heritage|culture/],
   ["pilgrimage-tours", "Pilgrims", /pilgrimage/], ["beach-holidays", "Beach lovers", /beach|island/], ["hill-stations", "Hill-station lovers", /\bhill\b/], ["luxury-holidays", "Luxury travellers", null],
   ["budget-holidays", "Budget-conscious travellers", null], ["educational-tours", "School and college groups", null], ["senior-friendly", "Senior travellers", null], ["photography-tours", "Photographers", null]];
+const TT_IC = { honeymoon: "heart", couples: "heart", "family-holidays": "user", "group-tours": "user", "solo-travel": "compass", adventure: "mountain", "wildlife-safaris": "leaf", "cultural-holidays": "temple", "pilgrimage-tours": "temple", "beach-holidays": "wave", "hill-stations": "mountain", "luxury-holidays": "star", "budget-holidays": "cash", "educational-tours": "doc", "senior-friendly": "user", "photography-tours": "camera" };
 const liveType = s => { const t = TYPE_BY[s]; return t && !t.draft && pkgsOfType(s).length >= 3 };
 function travellerTypes(n) {
   const ps = pkgsFor(n), tg = tagsOf(n);
   const rows = TT.filter(([s]) => liveType(s)).map(([s, label, rx]) => [s, label, ps.filter(p => p.themes.includes(s)).length, rx && rx.test(tg)]).filter(r => r[2] || r[3]);
   if (rows.length < 2) return "";
-  return sec("Who it suits", `Who should visit ${n.n}?`, `<div class="ttg">${rows.map(([s, label, k]) => `<a class="tt" href="/tour-types/${s}/"><b>${esc(label)}</b><span>${k ? `${k} ${n.n} itinerar${k == 1 ? "y" : "ies"} in this style` : `${esc(THEME_LABEL[s])} across our destinations`}</span></a>`).join("")}</div>`, { cls: "tight" });
+  const used = new Set(), own = [n, ...placesOf(n)].map(x => x.img).filter(Boolean);
+  const photo = s => { const img = [...ps.filter(p => p.themes.includes(s)).map(p => pkgVis(p).img), ...own, TOPIC[`tt-${s}`]?.img].find(x => x && !used.has(x)); if (img) used.add(img); return img };
+  return sec("Who it suits", `Who should visit ${n.n}?`, `<div class="ppl">${rows.map(r => [...r, photo(r[0])]).map(([s, label, k, , img]) => `<a href="/tour-types/${s}/">${img ? `<figure class="cph"><img src="${img}" alt="" loading="lazy"></figure>` : `<i>${IC[TT_IC[s]] || IC.user}</i>`}<b>${esc(label)}</b><span>${k ? `${k} ${esc(n.n)} itinerar${k == 1 ? "y" : "ies"} in this style` : `${esc(THEME_LABEL[s])} across our destinations`}</span><small>Explore ${IC.arrow}</small></a>`).join("")}</div>`, { cls: "tight" });
 }
 
+const IATA = { Chennai: "MAA", Bengaluru: "BLR", Mumbai: "BOM", Delhi: "DEL", Hyderabad: "HYD", Kochi: "COK", Coimbatore: "CJB", Kolkata: "CCU", Ahmedabad: "AMD", Pune: "PNQ" };
 function departure(n) {
-  const cities = DEPART.filter(c => c.toLowerCase() != n.n.toLowerCase());
+  const cities = DEPART.filter(c => c.toLowerCase() != n.n.toLowerCase()), by = n.dom ? "Train or flight" : "Flights";
   return sec("Plan from your city", n.dom ? `Plan your ${n.n} trip` : `Plan your ${n.n} trip from India`,
-    `<p>Choose the city you are travelling from and we include ${n.dom ? "trains or flights" : "flights"} from there in your quote.</p><div class="depg">${cities.map(c => `<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday" data-city="${c}">From ${c}</button>`).join("")}<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday">Another city</button></div>`, { cls: "tight" });
+    `<div class="dpbd"><div class="dpbh"><b>${IC.plane} Departures to ${esc(n.n)}</b><span>Pick the city you travel from and we include ${n.dom ? "trains or flights" : "flights"} from there in your quote.</span></div><div class="dpbg">${cities.map(c => `<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday" data-city="${c}"><b>${IATA[c]}</b><span>${c}</span><small>${by} · get a quote</small></button>`).join("")}<button type="button" class="dep" data-enq data-trip="${esc(n.n)} holiday"><b>+</b><span>Another city</span><small>Tell us where you start</small></button></div></div>`, { cls: "tight" });
 }
 
 function everything(n) {
@@ -320,10 +466,12 @@ function everything(n) {
     ps.length ? `Our ${esc(n.n)} itineraries run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days and every one can be changed to suit you.` : "",
   ].filter(Boolean).join(" ");
   const [air, rail, road] = isPlace(n) ? n.r : [];
-  const main = `<div class="prose"><h2 id="about">Everything you need to know about ${esc(n.n)}</h2>${paras}${more ? `<p>${more}</p>` : ""}
-<h3>When to go</h3><p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>
-${air ? `<h3>How to reach ${esc(n.n)}</h3><ul><li><strong>By air:</strong> ${esc(air)}</li>${rail ? `<li><strong>By rail:</strong> ${esc(rail)}</li>` : ""}${road ? `<li><strong>By road:</strong> ${esc(road)}</li>` : ""}</ul>` : ""}
-${!isPlace(n) && T.go ? `<h3>Getting around</h3><p>${esc(T.go)}</p>` : ""}</div>`;
+  const info = [
+    ["sun", "When to go", `<p><strong>${esc(n.bt[0])}.</strong> ${esc(n.bt[1] || "")}</p>`],
+    air && ["plane", `How to reach ${esc(n.n)}`, `<ul><li><strong>By air:</strong> ${esc(air)}</li>${rail ? `<li><strong>By rail:</strong> ${esc(rail)}</li>` : ""}${road ? `<li><strong>By road:</strong> ${esc(road)}</li>` : ""}</ul>`],
+    !isPlace(n) && T.go && ["route", "Getting around", `<p>${esc(T.go)}</p>`],
+  ].filter(Boolean);
+  const main = `<div class="prose evr"><h2 id="about">Everything you need to know about ${esc(n.n)}</h2>${paras}${more ? `<p>${more}</p>` : ""}</div><div class="kc3">${info.map(([ic, h, body]) => `<div>${pic(ic)}<h3>${h}</h3>${body}</div>`).join("")}</div>`;
   const aside = `<aside>${quoteBox(n.n + " holiday")}${places.length > 1 ? `<div class="box"><h3>Places in ${esc(n.n)}</h3>${linkList(places.map(x => [x.n, x.url, x.bt[0]]), "one")}</div>` : ""}</aside>`;
   return `<div class="lay"><div>${main}</div>${aside}</div>`;
 }
@@ -343,37 +491,60 @@ function subdest(n) {
 }
 
 function topAttractions(n) {
-  if (isPlace(n)) return sec("Top attractions", `Top things to see in ${n.n}`, attractions(n), { id: "attractions" });
+  if (isPlace(n)) { const h = attractions(n); return h ? sec("Top attractions", `Top things to see in ${n.n}`, h, { id: "attractions" }) : "" }
   const items = placesOf(n).flatMap(p => p.a.slice(0, 2).map(([a, nt]) => ({ a, nt, p, ph: PHOTOS[`${p.s}--${slugify(a)}`] })));
   const shot = items.filter(x => x.ph).slice(0, 8), rest = items.filter(x => !x.ph).slice(0, Math.max(0, 12 - shot.length));
-  if (!items.length) return "";
-  return sec("Top attractions", `Top attractions in ${n.n}`, (shot.length ? `<div class="gal g3">${shot.map(x => `<figure><a href="${x.ph.img}" data-lb data-cap="${esc(x.a)}, ${esc(x.p.n)}"><img src="${x.ph.img}" alt="${esc(x.a)}, ${esc(x.p.n)}" loading="lazy"></a><figcaption><b>${esc(x.a)}</b><span>${esc(x.nt)}</span><a class="figl" href="${x.p.url}">${esc(x.p.n)} →</a></figcaption></figure>`).join("")}</div>` : "") + (rest.length ? itemCards(rest.map(x => ({ name: x.a, note: x.nt, p: x.p }))) : ""), { id: "attractions" });
+  const restHtml = rest.length ? itemCards(rest.map(x => ({ name: x.a, note: x.nt, p: x.p, at: x.p }))) : "";
+  if (!shot.length && !restHtml) return "";
+  return sec("Top attractions", `Top attractions in ${n.n}`, (shot.length ? `<div class="gal g3">${shot.map(x => `<figure><a href="${x.ph.img}" data-lb data-cap="${esc(x.a)}, ${esc(x.p.n)}"><img src="${x.ph.img}" alt="${esc(x.a)}, ${esc(x.p.n)}" loading="lazy"></a><figcaption><b>${esc(x.a)}</b><span>${esc(x.nt)}</span><a class="figl" href="${x.p.url}">${esc(x.p.n)} →</a></figcaption></figure>`).join("")}</div>` : "") + restHtml, { id: "attractions" });
 }
 
 function wildNature(n) {
-  const multi = !isPlace(n), all = placesOf(n).flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null })));
+  const multi = !isPlace(n), all = placesOf(n).flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null, at: p })));
   const acts = [...new Set(placesOf(n).flatMap(p => p.ac || []))];
   const wild = all.filter(x => RX.wild.test(x.name + " " + x.note)), wildAct = acts.filter(a => RX.wild.test(a));
-  if (wild.length || wildAct.length) return sec("Wildlife", `Wildlife in ${n.n}`, (wild.length ? itemCards(wild.slice(0, 9)) : "") + (wildAct.length ? `<h3 class="sh">Wildlife experiences</h3>${tags(wildAct)}` : "") + note("Sightings depend on season and luck and are never guaranteed. Keep your distance, stay with licensed guides and never feed wild animals."));
+  const wildHtml = wild.length ? itemCards(wild.slice(0, 9)) : "";
+  if (wildHtml || wildAct.length) return sec("Wildlife", `Wildlife in ${n.n}`, wildHtml + (wildAct.length ? `<h3 class="sh">Wildlife experiences</h3>${tags(wildAct)}` : "") + note("Sightings depend on season and luck and are never guaranteed. Keep your distance, stay with licensed guides and never feed wild animals."));
   const nat = all.filter(x => RX.nature.test(x.name + " " + x.note) && !RX.culture.test(x.name));
-  return nat.length >= 2 ? sec("Nature", `Nature and landscapes of ${n.n}`, itemCards(nat.slice(0, 9))) : "";
+  const natHtml = nat.length >= 2 ? itemCards(nat.slice(0, 9)) : "";
+  return natHtml ? sec("Nature", `Nature and landscapes of ${n.n}`, natHtml) : "";
 }
 
 function culture(n) {
   const multi = !isPlace(n), places = placesOf(n);
-  const sites = places.flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null }))).filter(x => RX.culture.test(x.name + " " + x.note) && !RX.wild.test(x.name));
+  const sites = places.flatMap(p => p.a.map(([a, nt]) => ({ name: a, note: nt, p: multi ? p : null, at: p }))).filter(x => RX.culture.test(x.name + " " + x.note) && !RX.wild.test(x.name));
   const acts = [...new Set(places.flatMap(p => p.ac || []))].filter(a => RX.cultAct.test(a) && !RX.outdoor.test(a));
   const food = [...new Set(places.flatMap(p => p.f || []))];
-  if (!sites.length && !acts.length && !food.length) return "";
-  return sec("Culture", `Cultural experiences in ${n.n}`, (sites.length ? `<h3 class="sh">Heritage and landmarks</h3>${itemCards(sites.slice(0, 9))}` : "") +
-    (acts.length ? `<h3 class="sh">Experiences</h3>${tags(acts)}${acts.some(a => /\(|festival/i.test(a)) ? `<p class="hint2">Festivals and events marked with months happen only at those times of year; dates vary, so ask us before you plan around one.</p>` : ""}` : "") +
-    (food.length ? `<h3 class="sh">Food to try</h3>${tags(food.slice(0, 12))}` : ""));
+  const siteHtml = sites.length ? itemCards(sites.slice(0, 9), "num") : "";
+  if (!siteHtml && !acts.length && !food.length) return "";
+  return sec("Culture", `Cultural experiences in ${n.n}`, (siteHtml ? `<h3 class="sh">${IC.temple} Heritage and landmarks</h3>${siteHtml}` : "") +
+    (acts.length || food.length ? `<div class="cx2${acts.length && food.length ? "" : " cx1"}">${acts.length ? `<div class="cxe"><h3>${IC.star} Experiences</h3><ul>${acts.slice(0, 12).map(a => `<li>${esc(a)}</li>`).join("")}</ul>${acts.some(a => /\(|festival/i.test(a)) ? `<p class="hint2">Festivals and events marked with months happen only at those times of year; dates vary, so ask us before you plan around one.</p>` : ""}</div>` : ""}` +
+      `${food.length ? `<div class="cxm"><h3><span>On the menu</span>Food to try</h3><ul>${food.slice(0, 12).map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>` : ""}</div>` : ""));
 }
 
+const OUT_IC = [[/jet ski/i, "wave"], [/trek|hik|walk|climb/i, "mountain"], [/raft|kayak|canoe|boat|cruise|sail|shikara|houseboat|ferry/i, "boat"], [/div(e|ing)|snorkel|swim|surf|beach|fishing|jet ski/i, "wave"], [/ski|snow/i, "snow"], [/cycl|bik/i, "bike"], [/camp/i, "tent"], [/safari|game drive|jeep/i, "leaf"], [/paraglid|balloon|zip|cable car|gondola|ropeway/i, "wind"], [/sunrise|sunset/i, "sun"], [/drive/i, "route"]];
+const outIc = a => (OUT_IC.find(([rx]) => rx.test(a)) || [0, "compass"])[1];
+const OUT_PH = [[/husky|sled/i, "husky"], [/balloon/i, "balloon"], [/paraglid|parasail|skydiv/i, "air"], [/zip|cable car|gondola|ropeway|skywalk/i, "cablecar"], [/camel|dune|desert/i, "desert"],
+  [/horse/i, "horse"], [/raft(?!-house)/i, "rafting"], [/kayak|canoe/i, "boat"], [/houseboat|backwater/i, "houseboat"], [/shikara/i, "shikara"], [/cruise|boat|sail|shikara|houseboat|ferry|catamaran|dhow|raft-house/i, "cruise"],
+  [/snorkel|div(e|ing)|undersea|sea walk/i, "dive"], [/surf|jet ski|water sport/i, "surf"], [/safari|game drive|jeep|bush walk/i, "safari"], [/beach|swim|cenote/i, "beach"],
+  [/ski|snow/i, "ski"], [/cycl|bik/i, "cycle"], [/camp/i, "camp"], [/sunrise|sunset/i, "sunset"], [/climb|trek|hik/i, "trek"], [/food|market/i, "foodwalk"], [/village/i, "village"], [/temple|monastery|parikrama|pilgrim/i, "temple"],
+  [/(nature|forest|meadow|valley|waterfall|ridge|tea|coffee|garden|birdwatch|lemur|wildlife|lake|river|trail).*walk/i, "naturewalk"], [/walk/i, "walk"], [/drive/i, "drive"]];
+const GENERIC = /^(Boat|Boating|Sunset|Sunrise|Trek|Walk|Hike|Hiking|Cycling|Jeep|River|Lake|Village|Temple|Heritage|Old|City|Fort|Beach|Island|Day|Night|Morning|Dawn|Guided|Scenic|Snorkelling|Diving|Camping|Rafting|White|Hot|Cable|Desert|Camel|Mountain|Nature|Forest|Short|Food|Market|Street|Glass|Swim|Visit|Speedboat|Climb|Drive|Bike)$/;
+const outPh = a => (OUT_PH.find(([rx]) => rx.test(a)) || [0, "outdoors"])[1];
 function outdoor(n) {
-  const acts = [...new Set(placesOf(n).flatMap(p => p.ac || []))].filter(a => RX.outdoor.test(a));
+  const places = placesOf(n), acts = [...new Set(places.flatMap(p => p.ac || []))].filter(a => RX.outdoor.test(a));
   if (!acts.length) return "";
-  return sec("Outdoors", `Outdoor activities in ${n.n}`, `<div class="acts">${acts.slice(0, 12).map(a => `<div class="act"><b>${esc(a)}</b><button type="button" data-enq data-trip="${esc(n.n)} holiday with ${esc(a.replace(/\s*\(.*?\)/, "").toLowerCase())}">Add to my trip →</button></div>`).join("")}</div>` + note(`Many activities are seasonal. Best time for ${esc(n.n)}: ${esc(n.bt[0])}. We check operating seasons for your dates.`));
+  // an activity that names a sight ("Boating at Mattupetty") gets that sight's photo; others get a topic photo,
+  // rotating through its variants (cruise, cruise-2, ...) so a grid repeats a photo as little as possible
+  const shots = places.flatMap(p => p.a.map(([a]) => [a.split(/\W+/), PHOTOS[`${p.s}--${slugify(a)}`]?.img])).filter(x => x[1]), used = new Map();
+  const photo = a => {
+    const names = (a.replace(/\(.*?\)/g, "").match(/\b[A-Z][\w'-]{3,}/g) || []).filter(w => !GENERIC.test(w));
+    const own = names.length ? shots.find(([ws, img]) => !used.has(img) && names.some(w => ws.includes(w)))?.[1] : null;
+    const key = outPh(a), img = own || [key, "outdoors"].flatMap(k => ["", "-2", "-3"].map(v => TOPIC[k + v]?.img)).find(x => x && !used.has(x));
+    if (img) used.set(img, (used.get(img) || 0) + 1);
+    return img ? `<figure class="cph" data-ic="${outIc(a)}"><img src="${img}" alt="" loading="lazy"></figure>` : `<i>${IC[outIc(a)]}</i>`;
+  };
+  return sec("Outdoors", `Outdoor activities in ${n.n}`, `<div class="oat">${acts.slice(0, 12).map(a => `<div>${photo(a)}<b>${esc(a)}</b><button type="button" data-enq data-trip="${esc(n.n)} holiday with ${esc(a.replace(/\s*\(.*?\)/, "").toLowerCase())}">Add to my trip <span>+</span></button></div>`).join("")}</div>` + note(`Many activities are seasonal. Best time for ${esc(n.n)}: ${esc(n.bt[0])}. We check operating seasons for your dates.`));
 }
 
 function travelTips(n) {
@@ -449,7 +620,7 @@ const destForm = n => `<section id="enquire" class="dform"><div class="h"><span 
 <p class="note">Sending opens WhatsApp on your device; your enquiry reaches us only when you press send there. An enquiry is not a booking.</p></section>`;
 
 function destBody(n) {
-  return quickFacts(n) + `<div class="alt">${essentialTips(n)}</div>` + mapSection(n) + travellerTypes(n) + `<div class="alt">${departure(n)}</div>` +
+  return topPkgs(n, pkgsFor(n)) + `<div class="alt">${essentialTips(n)}</div>` + mapSection(n) + travellerTypes(n) + `<div class="alt">${departure(n)}</div>` +
     everything(n) + `<div class="alt">${packagesSec(n)}</div>` + subdest(n) + topAttractions(n) + `<div class="alt">${wildNature(n)}</div>` + culture(n) +
     `<div class="alt">${outdoor(n)}</div>` + travelTips(n) + `<div class="alt">${destFaq(n)}</div>` + related(n) + relGuides(n) + `<div class="alt">${destForm(n)}</div>`;
 }
@@ -464,10 +635,7 @@ for (const n of N.values()) {
     title: city ? fitTitle(`${n.n}, ${n.parent.n}: Travel Guide & Packages | Nexara Holidays`, `${n.n} Travel Guide & Tour Packages | Nexara Holidays`, `${n.n} Travel Guide & Packages | Nexara`, `${n.n} Travel Guide | Nexara Holidays`, `${n.n} | Nexara Holidays`)
       : fitTitle(`${n.n} Tour Packages${n.dom ? "" : " from India"} & Travel Guide | Nexara Holidays`, `${n.n} Tour Packages & Travel Guide | Nexara Holidays`, `${n.n} Tour Packages & Travel Guide | Nexara`, `${n.n} Holidays | Nexara Holidays`),
     desc: clip(city ? `${firstSentence(n.d)} Best time: ${n.bt[0]}. Top sights, travel tips and ${n.n} packages from ${SITE.city}.` : `${firstSentence(n.d)} Best time ${n.bt[0]}. ${ps.length} ${n.n} tour packages${n.dom ? "" : " from India"}, travel tips and FAQs.`),
-    h1: destH1(n), scr: city ? n.parent.n : n.dom ? "India" : n.region.n, sub: city ? `${IC.sun} Best time: ${esc(n.bt[0])}${n.days ? ` &nbsp;·&nbsp; Ideal stay: ${esc(n.days)} days` : ""}` : esc(firstSentence(n.d)), crumbs: crumbsOf(n), hero: vis(n),
-    heroAside: city ? heroFacts([["Best time", n.bt[0]], ["Ideal stay", n.days ? n.days + " days" : ""], ["Region", n.parent.n], ["Best for", n.b || "", true]], n.n + " holiday", { packages: ps.length > 0 })
-      : n.dom ? heroFacts([["Capital", n.cap || ""], ["Languages", n.lang || ""], ["Best time", n.bt[0]], ["Places covered", placesOf(n).length + " destinations"]], n.n + " holiday", { packages: ps.length > 0 })
-      : heroFacts([["Currency", n.cur || ""], ["Best time", n.bt[0]], ["Languages", n.lang || ""], ["Capital", n.cap || ""], ["Time vs India", n.tz || "", true]], n.n + " holiday", { packages: ps.length > 0, note: "Visa and entry rules for Indian passport holders change; we check the official source when you book." }),
+    h1: destH1(n), crumbs: crumbsOf(n), hero: { img: n.img, spot: destSpot(n, ps) },
     jsonld: isPlace(n) ? [destLd(n)] : [], body: destBody(n),
   }), "destinations");
 }
@@ -587,6 +755,21 @@ function itinerary(p) {
 const DEF_IN = { dom: ["Hotel stay for {n} nights with daily breakfast (hotel category as per your quote)", "Private air-conditioned vehicle for transfers and sightseeing as per the itinerary", "Pick-up and drop at the arrival and departure point", "Driver allowances, tolls, parking and fuel for the itinerary route", "Trip support from our Chennai team on WhatsApp"], intl: ["Hotel stay for {n} nights with daily breakfast (hotel category as per your quote)", "Airport transfers and sightseeing as per the itinerary (private or shared, stated in your quote)", "Entry tickets for the sightseeing listed in your quote", "Visa documentation guidance before you travel", "Trip support from our Chennai team on WhatsApp"] };
 const DEF_EX = { dom: ["Flights or train tickets unless added to your quote", "Lunch and dinner unless stated", "Entry tickets, camera fees and optional activities unless stated", "Personal expenses such as laundry, tips and shopping", "Travel insurance", "GST as applicable"], intl: ["International flights unless added to your quote", "Visa fees and travel insurance", "Lunch and dinner unless stated", "Optional activities and personal expenses", "City or tourism taxes payable at hotels where applicable", "GST and TCS as applicable under Indian tax rules"] };
 
+// package header: the package photo first, then each stop and its attractions
+function pkgSpot(p, uniq, eye, forWho, bts) {
+  const v = pkgVis(p), pool = [];
+  const add = (img, cap) => { if (img && !pool.some(o => o.img == img)) pool.push({ img, cap }) };
+  for (const n of uniq) { add(n.img, n.kind == "city" ? `${n.n}, ${n.parent.n}` : n.n); for (const [a] of n.a.slice(0, 3)) add(PHOTOS[`${n.s}--${slugify(a)}`]?.img, `${a} – ${n.n}`) }
+  const first = pool.find(o => o.img == v.img), slides = (first ? [first, ...pool.filter(o => o !== first)] : pool).slice(0, 4);
+  const T = top(p.home);
+  return spotlight({
+    eye, h1: hiName(p.name, [p.home, ...uniq].find(n => p.name.toLowerCase().includes(n.n.toLowerCase()))?.n || p.home.n), desc: esc(p.sum), label: "Trip at a glance", best: bts[0],
+    facts: [["cal", "Duration", `${p.days} days / ${p.nights} nights`], ["plane", "Starts in", uniq[0].n], ["route", "Route", clipV(uniq.map(n => n.n).join(" · "))], ["pin", "Places", `${uniq.length} destination${uniq.length == 1 ? "" : "s"}`],
+      ["globe", p.dom ? "State" : "Country", p.dom ? `${T.n}, India` : T.n], ["heart", "Ideal for", forWho.slice(0, 2).join(", ")], ["star", "Trip style", p.sig ? p.style || "Group departure" : "Private, customisable"], ["doc", "Package code", p.id]],
+    btns: `<a class="spbtn" href="/custom-tour/" data-enq data-trip="${esc(p.name)}">Request a quote <span>${IC.arrow}</span></a><a class="spwa" href="#itinerary"><i>${IC.cal}</i>See the day-by-day plan</a>`,
+    slides, ...(v.img ? {} : v),
+  });
+}
 for (const p of PK) {
   const dd = itinerary(p), places = p.stops.map(([n]) => n);
   const uniq = [...new Map(places.map(n => [n.s, n])).values()];
@@ -615,9 +798,8 @@ for (const p of PK) {
   const ld = { "@context": "https://schema.org", "@type": "TouristTrip", name: p.name, description: p.sum, url: abs(p.url), touristType: forWho.slice(0, 4), itinerary: { "@type": "ItemList", numberOfItems: uniq.length, itemListElement: uniq.map((n, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "TouristDestination", name: n.n, url: abs(n.url) } })) }, provider: { "@type": "TravelAgency", name: SITE.name, url: SITE.origin + "/" } };
   emit(p.url, page({
     path: p.url, active: "/tour-packages/", title: clipT(`${p.name} – ${p.days} Days ${p.nights} Nights | Nexara Holidays`), desc: clip(`${p.days}-day ${p.name} itinerary: ${uniq.map(n => n.n).join(", ")}. ${p.sum}`),
-    h1: p.name, scr, sub: `<span class="meta"><span>${IC.cal}${p.days} days / ${p.nights} nights</span><span>${IC.pin}${esc(uniq.map(n => n.n).join(" · "))}</span><span>${IC.sun}${esc(bts[0])}</span></span>`, crumbs, hero: pkgVis(p), jsonld: [ld],
-    heroAside: heroFacts([["Duration", `${p.days} days / ${p.nights} nights`], ["Best time", bts[0]], ["Route", uniq.map(n => n.n).join(" · "), true], ["Package code", p.id]], p.name),
-    body: photoStrip(uniq) + `<div class="lay"><div>${main}</div>${aside}</div>` + sec("FAQs", "Questions about this trip", faq(qa), { cls: "tight" }) + (rel.length ? `<div class="alt">${sec("You may also like", "Similar itineraries", cards(rel.map(pkgCard)))}</div>` : "") + sec("Destinations on this trip", "Read more about each stop", cards(uniq.map(placeCard), "sm")) + cta(`Ready for ${p.name}?`, "Share your dates and we send a quote with hotels and a price on WhatsApp.", p.name),
+    h1: p.name, crumbs, hero: { img: pkgVis(p).img, spot: pkgSpot(p, uniq, scr, forWho, bts) }, jsonld: [ld],
+    body: `<div class="lay"><div>${main}</div>${aside}</div>` + sec("FAQs", "Questions about this trip", faq(qa), { cls: "tight" }) + (rel.length ? `<div class="alt">${sec("You may also like", "Similar itineraries", cards(rel.map(pkgCard)))}</div>` : "") + sec("Destinations on this trip", "Read more about each stop", cards(uniq.map(placeCard), "sm")) + cta(`Ready for ${p.name}?`, "Share your dates and we send a quote with hotels and a price on WhatsApp.", p.name),
   }), "packages");
 }
 function clip(s, n = 158) { s = s.replace(/\s+/g, " ").trim(); if (s.length <= n) return s; const c = s.slice(0, n - 1); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:.\-–]$/, "") + "…" }
@@ -655,6 +837,20 @@ function pkgGroups(arr, keyFn) {
 }
 
 /* ---------- 9. tour types ---------- */
+function typeSpot(t, ps, pd, pi, places) {
+  const slides = [], add = (img, cap) => { if (img && !slides.some(o => o.img == img)) slides.push({ img, cap }) };
+  add(t.img, t.n); for (const p of ps) { if (slides.length == 4) break; add(pkgVis(p).img, p.name) }
+  const days = ps.map(p => p.days);
+  return spotlight({
+    eye: t.scr || "Holiday themes", h1: hiName(t.h1 || t.n, t.n), desc: esc(t.sub || t.desc), label: `${t.n} at a glance`,
+    facts: [["route", t.sample ? "Sample itineraries" : "Itineraries", ps.length ? String(ps.length) : ""], ["pin", "In India", pd.length ? `${pd.length} itineraries` : ""], ["plane", "Abroad", pi.length ? `${pi.length} itineraries` : ""],
+      ["globe", "Destinations", places.length ? `${places.length} places` : ""], ["cal", "Trip lengths", days.length ? `${Math.min(...days)} to ${Math.max(...days)} days` : ""], ["star", "Trip style", "Private, customisable"],
+      ["user", "Best suited to", clipV(t.who?.[0] || "")], ["heart", "Also suits", clipV(t.who?.[1] || "")]],
+    btns: (ps.length ? `<a class="spbtn" href="#itineraries">See the itineraries <span>${IC.arrow}</span></a>` : `<a class="spbtn" href="/custom-tour/" data-enq data-trip="${esc(t.n)}">Plan my trip <span>${IC.arrow}</span></a>`) +
+      `<a class="spwa" href="${waLink(`Hi Nexara Holidays, I would like to plan a trip: ${t.n}.`)}" target="_blank" rel="noopener"><i>${IC.wa}</i>Ask on WhatsApp</a>`,
+    slides, m: t.m || "temple", g: t.g,
+  });
+}
 for (const t of TYPES) {
   const sampled = t.sample ? [...new Map(PK.filter(p => !p.sig).map(p => [p.home, p])).values()].filter((_, i, a) => i % Math.max(1, Math.floor(a.length / t.sample)) == 0).slice(0, t.sample) : [];
   const ps = t.sample ? sampled : pkgsOfType(t.s);
@@ -666,9 +862,9 @@ for (const t of TYPES) {
   t.url = `/tour-types/${t.s}/`;
   emit(t.url, page({
     path: t.url, active: "/tour-types/", title: clipT(`${t.title || t.n + " Packages"} | Nexara Holidays`), desc: clip(t.desc),
-    h1: t.h1 || t.n, scr: t.scr || "Holiday themes", sub: esc(t.sub || ""), crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"], [t.n, t.url]], hero: t.img ? { img: t.img } : { m: t.m || "temple", g: t.g },
+    h1: t.h1 || t.n, crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"], [t.n, t.url]], hero: { img: t.img, spot: typeSpot(t, ps, pd, pi, places) },
     body: `<div class="lay"><div class="prose">${r.html}</div><aside>${quoteBox(t.n)}${t.who ? `<div class="box"><h3>Best suited to</h3><ul class="dat">${t.who.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}</aside></div>` +
-      (ps.length ? sec("Itineraries", t.sample ? "Itineraries to start from" : `${t.n}: ${ps.length} itineraries`, (pd.length && pi.length ? filterTabs([["all", "All"], ["india", `India (${pd.length})`], ["international", `International (${pi.length})`]]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itineraries</p>`) : "") +
+      (ps.length ? sec("Itineraries", t.sample ? "Itineraries to start from" : `${t.n}: ${ps.length} itineraries`, (pd.length && pi.length ? filterTabs([["all", "All"], ["india", `India (${pd.length})`], ["international", `International (${pi.length})`]]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itineraries</p>`, { id: "itineraries" }) : "") +
       (places.length ? `<div class="alt">${sec("Where to go", `Destinations for ${t.n.toLowerCase()}`, cards(places.slice(0, 24).map(placeCard), "sm"))}</div>` : "") +
       (t.faq?.length ? sec("FAQs", `${t.n} FAQs`, faq(t.faq.map(([q, a]) => [q, esc(a)])), { cls: "tight" }) : "") + cta(`Plan your ${t.n.toLowerCase()} trip`, "Tell us your dates and budget and we send a plan with a price.", t.n),
   }), "pages");
@@ -678,7 +874,7 @@ for (const t of TYPES) {
   emit("/tour-types/", page({
     path: "/tour-types/", active: "/tour-types/", title: "Holiday Themes: Honeymoon, Family, Adventure & More | Nexara Holidays", desc: clip(`Browse ${live.length} holiday themes, from honeymoons and family trips to safaris, pilgrimages, cruises and train journeys, with matching itineraries.`),
     h1: "Holidays by theme", scr: "Travel your way", sub: "Pick the kind of trip you want and see itineraries that fit.", crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"]], hero: { img: "/assets/img-e3d4227e.webp" },
-    body: sec("Themes", "Choose a travel style", `<div class="acards">${live.map(t => `<a class="acard" href="${t.url}"><small>${pkgsOfType(t.s).length} itineraries</small><h3>${esc(t.n)}</h3><p>${esc(t.desc)}</p><span>Explore →</span></a>`).join("")}</div>`) + cta("Mixing styles?", "Honeymoon with adventure, family with wildlife: we plan combinations too.", ""),
+    body: sec("Themes", "Choose a travel style", `<div class="acards ph">${live.map(t => `<a class="acard" href="${t.url}">${(t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)) ? `<img class="aci" src="${t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)}" alt="" loading="lazy">` : ""}<small>${pkgsOfType(t.s).length} itineraries</small><h3>${esc(t.n)}</h3><p>${esc(t.desc)}</p><span>Explore →</span></a>`).join("")}</div>`) + cta("Mixing styles?", "Honeymoon with adventure, family with wildlife: we plan combinations too.", ""),
   }), "pages");
 }
 
@@ -732,14 +928,20 @@ emit("/faqs/", page({
 
 /* ---------- 12. html sitemap, 404, xml sitemaps, robots ---------- */
 {
-  const rows = Object.entries(PHOTOS).filter(([, p]) => p.license).sort(([a], [b]) => a.localeCompare(b)).map(([k, p]) => {
+  const rows = [...Object.entries(PHOTOS), ...SPARE].filter(([, p]) => p.license).sort(([a], [b]) => a.localeCompare(b)).map(([k, p]) => {
     const [place, attr] = k.split("--"), n = N.get(place), what = attr ? (n?.a || []).find(([a]) => slugify(a) == attr)?.[0] : n?.n;
     return n && !n.draft && what ? `<tr><td>${n.url ? `<a href="${n.url}">${esc(what)}</a>` : esc(what)}${attr ? ` <small>(${esc(n.n)})</small>` : ""}</td><td>${photoCredit(p)}</td></tr>` : "";
   }).filter(Boolean);
+  const LABEL = { currency: "Currency and payments", tipping: "Tipping", water: "Drinking water", plug: "Power plugs", emergency: "Emergency numbers", language: "Language", transport: "Getting around", planner: "Planner's tip", season: "When to go", flight: "How to reach",
+    trek: "Trekking", boat: "Kayaking and boat trips", dive: "Snorkelling and diving", ski: "Skiing", cycle: "Cycling", camp: "Camping", safari: "Safaris", air: "Paragliding and balloon rides", sunset: "Sunrise and sunset", drive: "Scenic drives", outdoors: "Outdoor activities",
+    husky: "Husky safaris", balloon: "Hot-air balloon rides", cablecar: "Cable cars and ropeways", desert: "Desert and camel safaris", horse: "Horse riding", rafting: "Rafting", cruise: "Cruises and boat rides", surf: "Surfing and water sports",
+    beach: "Beach time", foodwalk: "Food and market walks", walk: "Heritage and city walks", naturewalk: "Nature walks", village: "Village walks", temple: "Temple walks", houseboat: "Houseboat stays", shikara: "Shikara rides" };
+  const topicRows = Object.entries(TOPIC).filter(([, p]) => p.license).map(([k, p]) => `<tr><td>${esc(k.startsWith("tt-") ? THEME_LABEL[k.slice(3)] || k : LABEL[k.replace(/-\d$/, "")] || k)}</td><td>${photoCredit(p)}</td></tr>`);
   if (rows.length) emit("/photo-credits/", page({
     path: "/photo-credits/", title: "Photo Credits | Nexara Holidays", desc: "Credits and licences for the destination photographs used on Nexara Holidays, sourced from Wikimedia Commons under free licences.",
-    h1: "Photo credits", scr: "Thank you, photographers", sub: `${rows.length} photographs from Wikimedia Commons, used under free licences.`, crumbs: [["Home", "/"], ["Photo credits", "/photo-credits/"]], hero: N.get("thailand")?.img ? { img: N.get("thailand").img } : {},
-    body: sec("Credits", "Destination photographs", `<p>Photos are resized and cropped from the originals on Wikimedia Commons. Each is used under the licence shown; follow the links for the original file, author and licence terms.</p><div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Photo</th><th>Author and licence</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`),
+    h1: "Photo credits", scr: "Thank you, photographers", sub: `${rows.length + topicRows.length} photographs from Wikimedia Commons, used under free licences.`, crumbs: [["Home", "/"], ["Photo credits", "/photo-credits/"]], hero: N.get("thailand")?.img ? { img: N.get("thailand").img } : {},
+    body: sec("Credits", "Destination photographs", `<p>Photos are resized and cropped from the originals on Wikimedia Commons. Each is used under the licence shown; follow the links for the original file, author and licence terms.</p><div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Photo</th><th>Author and licence</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`) +
+      (topicRows.length ? sec("Topics", "Travel tips and activity photographs", `<div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Used for</th><th>Author and licence</th></tr></thead><tbody>${topicRows.join("")}</tbody></table></div>`) : ""),
   }), "pages");
 }
 const allUrls = Object.values(sitemap).flat();

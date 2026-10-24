@@ -15,7 +15,6 @@
   function onS() { const y = scrollY, h = document.documentElement.scrollHeight - innerHeight, p = h > 0 ? Math.min(1, y / h) : 0; hd && hd.classList.toggle("sc", y > 40); document.body.classList.toggle("scd", y > innerHeight * .6); const pr = $("#prog"); if (pr) pr.style.transform = `scaleX(${p})`; if (bt) { bt.classList.toggle("on", y > 500); bc.style.strokeDashoffset = 145 * (1 - p) } }
   addEventListener("scroll", onS, { passive: true }); onS();
   bt && (bt.onclick = () => scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }));
-  const bg = $(".burger"); bg && (bg.onclick = () => { const o = $("nav").classList.toggle("open"); bg.setAttribute("aria-expanded", o) });
 
   /* itinerary accordions */
   $$(".days .day h3").forEach(h => { h.tabIndex = 0; h.setAttribute("role", "button"); const t = () => { const d = h.parentNode; d.classList.toggle("open"); h.setAttribute("aria-expanded", d.classList.contains("open")) }; h.setAttribute("aria-expanded", h.parentNode.classList.contains("open")); h.onclick = t; h.onkeydown = e => { if (e.key == "Enter" || e.key == " ") { e.preventDefault(); t() } } });
@@ -83,4 +82,25 @@
     window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(m), "_blank", "noopener");
     toast("Opening WhatsApp with your message. Press send there to reach us.");
   };
+})();
+
+/* spotlight header slider: fades between photos, dots and the arrow move it, pauses on hover */
+(function () {
+  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-sps]").forEach(s => {
+    const f = [...s.querySelectorAll("figure")], d = [...s.querySelectorAll(".spdots button")], cap = s.querySelector(".spc b");
+    if (f.length < 2) return;
+    let i = 0, t;
+    const go = k => {
+      i = (k + f.length) % f.length;
+      f.forEach((x, j) => x.classList.toggle("on", j == i));
+      d.forEach((x, j) => { x.classList.toggle("on", j == i); j == i ? x.setAttribute("aria-current", "true") : x.removeAttribute("aria-current") });
+      if (cap) cap.textContent = f[i].dataset.cap;
+    };
+    const auto = () => { clearInterval(t); if (!RM) t = setInterval(() => go(i + 1), 5500) };
+    d.forEach((x, j) => x.onclick = () => { go(j); auto() });
+    const nx = s.querySelector(".spc button"); if (nx) nx.onclick = () => { go(i + 1); auto() };
+    s.onmouseenter = () => clearInterval(t); s.onmouseleave = auto;
+    auto();
+  });
 })();
