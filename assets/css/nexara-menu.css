@@ -1,0 +1,81 @@
+/* Top bar, mega menu dropdowns and footer destination links. Shared by index.html and every generated page.
+   Markup comes from tools/lib/menu.mjs. Loaded after nexara-base.css, so equal-specificity rules here win. */
+
+/* ---------- top bar ---------- */
+.tbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:7px 4vw;background:#160b08;color:#f3e6e1;font:500 .8rem/1.2 Poppins,sans-serif;position:relative;z-index:51}
+.tbar a{display:inline-flex;align-items:center;gap:7px;color:inherit;transition:color .25s}
+.tbar a:hover{color:#ffa63b}
+.tbl,.tbr{display:flex;align-items:center;gap:14px}
+.tbl>a:not(.tmail){width:28px;height:28px;justify-content:center;border-radius:50%;background:rgba(255,255,255,.08);color:#ffa63b}
+.tbl>a:not(.tmail):hover{background:linear-gradient(135deg,#ff4d2e,#ffa63b);color:#fff}
+.tbl i{width:1px;height:18px;background:rgba(255,255,255,.18)}
+.tbar svg{color:#ffa63b;flex:none}
+.tnote{opacity:.7}
+.tcall b{font-weight:600;letter-spacing:.06em}
+@media(max-width:700px){.tnote,.tbl i{display:none}.tmail span{display:none}.tbar{padding:6px 16px}}
+
+/* ---------- desktop menu ---------- */
+@media(max-width:1500px){.hc{display:none}}
+nav .nl a{padding:9px 14px;font-size:.88rem}
+nav .nl .mdd{display:inline-flex;align-items:center;border-radius:99px}
+nav .nl .mdd>a{padding-right:4px}
+.ddt{display:grid;place-items:center;width:22px;height:30px;margin:0 6px 0 0;padding:0;border:0;border-radius:99px;background:none;color:inherit;cursor:pointer}
+.ddt svg{transition:transform .3s var(--ease)}
+.mdd:hover>.ddt svg,.mdd.open>.ddt svg{transform:rotate(180deg)}
+nav .nl .mdd:hover>a{color:var(--red);background:#fff;box-shadow:0 2px 8px rgba(242,0,0,.08)}
+nav .nl .mdd>a.cur{color:#fff}
+
+.mega{position:absolute;left:4vw;right:4vw;top:100%;z-index:60;padding:22px 26px 20px;background:#fff;border-radius:0 0 20px 20px;box-shadow:inset 0 3px 0 #ff4d2e,0 26px 50px rgba(17,17,17,.16);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .3s var(--ease),visibility 0s linear .2s;text-align:left}
+.mega:before{content:"";position:absolute;left:0;right:0;top:-28px;height:28px} /* hover bridge from the menu item */
+.mdd:hover>.mega,.mdd:focus-within>.mega,.mdd.open>.mega{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.mdd.shut>.mega{opacity:0!important;visibility:hidden!important}
+.mdd.msm{position:relative}
+.mdd.msm>.mega{left:50%;right:auto;top:calc(100% + 14px);width:max-content;max-width:min(760px,92vw);border-radius:18px;transform:translate(-50%,10px)}
+.mdd.msm:hover>.mega,.mdd.msm:focus-within>.mega,.mdd.msm.open>.mega{transform:translate(-50%,0)}
+.mdd.msm>.mega:before{top:-16px;height:16px}
+.mcols{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:4px 30px;max-height:calc(100vh - 190px);overflow-y:auto;overscroll-behavior:contain}
+.mdd.msm .mcols{grid-auto-columns:minmax(170px,auto)}
+.mg+.mg{margin-top:14px}
+.mg h6{margin:0 0 8px;padding-bottom:7px;border-bottom:1px solid #f3dcd3;font:700 .95rem Poppins,sans-serif;color:var(--ink)}
+.mg ul{list-style:none;margin:0;padding:0}
+.mg li{padding:2px 0}
+nav .nl .mega a{display:inline;padding:0;border-radius:0;background:none;box-shadow:none;white-space:normal;font:400 .87rem/1.4 Poppins,sans-serif;color:#3b302c;transition:color .2s}
+nav .nl .mega a:hover{color:var(--red);background:none;box-shadow:none}
+nav .nl .mega h6 a{font-weight:700;font-size:.95rem;color:var(--ink)}
+nav .nl .mega li a:before{content:"";display:inline-block;width:5px;height:5px;margin-right:9px;border-radius:50%;background:linear-gradient(135deg,#ff4d2e,#ffa63b);vertical-align:2px;transition:transform .2s}
+nav .nl .mega li a:hover:before{transform:scale(1.6)}
+nav .nl .mega a.mall{display:inline-flex;margin-top:14px;padding:10px 22px;border-radius:99px;background:linear-gradient(135deg,#ff1f1f,#c70000);color:#fff;font-weight:600;box-shadow:0 8px 18px rgba(242,0,0,.25)}
+nav .nl .mega a.mall:hover{color:#fff;box-shadow:0 12px 24px rgba(242,0,0,.35)}
+
+/* ---------- burger menu (phones, tablets and small laptops) ---------- */
+@media(max-width:1180px){
+  .burger{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,122,47,.55);background:#fff;color:var(--red)}
+  nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:6px;padding:12px 5vw 18px;background:rgba(255,255,255,.98);box-shadow:0 14px 24px rgba(0,0,0,.12);max-height:calc(100vh - 80px);overflow-y:auto}
+  nav.open{display:flex}
+  .nl{flex-direction:column;align-items:stretch;margin:0;padding:6px;border-radius:18px}
+  nav .nl a{display:block;border-radius:12px;padding:12px 16px;font-size:1rem}
+  nav a.ph{justify-content:space-between;margin:8px 0 0}
+  nav .nl .mdd{display:flex;flex-wrap:wrap;border-radius:12px}
+  nav .nl .mdd>a{flex:1;padding-right:16px}
+  .ddt{width:44px;height:44px;margin:0}
+  .mdd:hover>.ddt svg{transform:none}.mdd.open>.ddt svg{transform:rotate(180deg)}
+  .mega,.mdd.msm>.mega{position:static;flex-basis:100%;width:auto;max-width:none;display:none;margin:2px 0 8px;padding:14px 16px;border-radius:14px;background:#fff7f4;box-shadow:none;opacity:1;visibility:visible;transform:none!important;transition:none}
+  .mega:before{display:none}
+  .mdd.open>.mega{display:block}
+  .mdd.shut>.mega{opacity:1!important;visibility:visible!important}
+  .mcols{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));grid-auto-columns:auto;max-height:none;overflow:visible}
+  nav .nl .mega a{display:inline!important;padding:0}
+  nav .nl .mega a.mall{display:inline-flex!important;padding:10px 22px}
+  .mg li{padding:4px 0}
+}
+
+/* ---------- footer destination links ---------- */
+.flinks{display:grid;gap:14px;max-width:1240px;margin:26px auto 0;padding:22px 0 4px;border-top:1px solid rgba(40,70,110,.12);text-align:left}
+.frow h5{margin:0 0 4px;font:600 .74rem Poppins,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.frow h5 a{color:var(--red)}
+.frow p{margin:0;font-size:.85rem;line-height:1.95}
+.frow p a{display:inline-block;white-space:nowrap;color:var(--mut);transition:color .2s}
+.frow p a:hover{color:var(--red)}
+.frow p a:not(:last-child):after{content:"·";margin:0 8px;color:#c9b7b0}
+.mg h6.h0{border-color:transparent} /* continuation column: keeps links level with the first column */
+@media(max-width:1180px){.mg h6.h0{display:none}}

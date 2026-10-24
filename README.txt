@@ -34,6 +34,10 @@ Folders
   content/          the data you edit: site.mjs (phone, email, domain), india*.mjs and world*.mjs
                     (destinations), packages-*.mjs (itineraries), tour-types.mjs (themes),
                     guides/ and blog/ (articles), pages.mjs (about, contact, policies, FAQs)
+  tools/lib/menu.mjs  the top bar, mega menu (Packages, India, Honeymoon, Themes, Company) and footer
+                    destination links. Built from the destination and package data, so new countries, states
+                    and honeymoon itineraries appear in the menu automatically. index.html gets the same menu
+                    between its <!--TOPBAR--> and <!--MENU--> markers on every build. Styles: assets/css/nexara-menu.css
   tools/            build.mjs (makes the pages), validate.mjs (quality checks), serve.mjs (local preview),
                     crawl_reference.py + analyse_reference.py (the GT Holidays research crawl)
   research/         audit, crawl inventory and reports, build-report.json, validation-report.json

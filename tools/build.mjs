@@ -15,7 +15,8 @@ import { TYPES } from "../content/tour-types.mjs";
 import { GUIDES, GUIDE_CATS } from "../content/guides/index.mjs";
 import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
 import { PAGES, FAQS } from "../content/pages.mjs";
-import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs } from "./lib/html.mjs";
+import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu } from "./lib/html.mjs";
+import { buildMenu, menuLinks, topbar } from "./lib/menu.mjs";
 import { renderMd } from "./lib/md.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -110,6 +111,18 @@ for (const s of SIGNATURE) {
 const pkgsAt = n => PK.filter(p => p.stops.some(([x]) => x === n));
 const pkgsIn = t => PK.filter(p => p.home === t || p.stops.some(([x]) => top(x) === t));
 const pkgsOfType = s => PK.filter(p => p.themes.includes(s));
+
+/* ---------- 3b. site menu: generated pages and the home page share it ---------- */
+const MENU = buildMenu({ N, PK, TYPES, inReg });
+setMenu(MENU);
+{
+  // index.html is hand-made; only the regions between the MENU markers are rewritten
+  let home = indexHtml;
+  const put = (name, html) => { const rx = new RegExp(`(<!--${name}-->)[\\s\\S]*?(<!--/${name}-->)`); if (!rx.test(home)) throw new Error(`index.html: missing <!--${name}--> markers`); home = home.replace(rx, (_, a, b) => a + html + b) };
+  put("TOPBAR", topbar());
+  put("MENU", menuLinks(MENU, "/", { spa: true }));
+  if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
+}
 
 /* ---------- 4. guides & blog: resolver for [[slug]] links ---------- */
 const TYPE_BY = Object.fromEntries(TYPES.map(t => [t.s, t]));

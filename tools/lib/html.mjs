@@ -2,6 +2,7 @@
 // Markup and class names are copied from index.html so new pages use the existing design system.
 import { readFileSync } from "node:fs";
 import { SITE } from "../../content/site.mjs";
+import { menuLinks, topbar, footLinks } from "./menu.mjs";
 
 // the floating WhatsApp button is copied verbatim from the home page
 const WA_BTN = readFileSync(new URL("../../index.html", import.meta.url), "utf8").match(/<a class="wa"[\s\S]*?<\/a>/)[0].replace('href="https', 'target="_blank" rel="noopener" href="https');
@@ -57,11 +58,13 @@ export const media = (v, alt) => v.img ? `<img src="${v.img}" alt="${esc(alt)}" 
 
 /* ---------- shell ---------- */
 const FONTS = "https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Playfair+Display:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap";
-const NAV = [["/", "Home"], ["/tour-packages/", "Packages"], ["/destinations/", "Destinations"], ["/tour-types/", "Themes"], ["/travel-guides/", "Guides"], ["/blog/", "Blog"], ["/contact-us/", "Contact"]];
+// menu data comes from the destination graph; build.mjs sets it before the first page is rendered
+let MENU = null;
+export const setMenu = m => { MENU = m };
 
 function header(active) {
-  const nl = NAV.map(([u, n]) => `<a href="${u}"${active === u ? ' class="cur" aria-current="page"' : ""}><span class="lt">${n}</span></a>`).join("");
-  return `<header><a class="brand" href="/" aria-label="Nexara Holidays, home"><img src="/assets/logo-circle.webp" alt="" width="56" height="56"><span class="bw" aria-hidden="true"><b>NEXARA</b><i>Holidays</i></span></a><nav><span class="nl">${nl}</span><span class="hc"><a class="hcall" href="tel:${SITE.tel}"><i>${IC.call}</i><span><small>Talk to a planner</small><b>${SITE.phone}</b></span></a><a class="hmail" href="mailto:${SITE.email}" title="${SITE.email}" aria-label="Email ${SITE.email}">${IC.mail}</a></span><a class="ph" href="/custom-tour/" data-enq><span>Get a free quote</span><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></nav><button class="burger" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg></button></header>`;
+  const nl = menuLinks(MENU, active);
+  return `${topbar()}<header><a class="brand" href="/" aria-label="Nexara Holidays, home"><img src="/assets/logo-circle.webp" alt="" width="56" height="56"><span class="bw" aria-hidden="true"><b>NEXARA</b><i>Holidays</i></span></a><nav><span class="nl">${nl}</span><span class="hc"><a class="hcall" href="tel:${SITE.tel}"><i>${IC.call}</i><span><small>Talk to a planner</small><b>${SITE.phone}</b></span></a><a class="hmail" href="mailto:${SITE.email}" title="${SITE.email}" aria-label="Email ${SITE.email}">${IC.mail}</a></span><a class="ph" href="/custom-tour/" data-enq><span>Get a free quote</span><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></nav><button class="burger" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg></button></header>`;
 }
 
 function footer() {
@@ -73,6 +76,7 @@ function footer() {
 <div><h5>Popular</h5><a href="/tour-types/honeymoon/">Honeymoon packages</a><a href="/tour-types/family-holidays/">Family holidays</a><a href="/tour-types/group-tours/">Group tours</a><a href="/destinations/international/southeast-asia/thailand/">Thailand</a><a href="/destinations/india/kerala/">Kerala</a><a href="/destinations/international/indian-ocean/maldives/">Maldives</a></div>
 <div><h5>Company</h5><a href="/about-us/">About us</a><a href="/custom-tour/">Custom tour enquiry</a><a href="/faqs/">FAQs</a><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms and conditions</a><a href="/cancellation-policy/">Cancellation and refunds</a><a href="/sitemap/">Site map</a></div>
 <div class="fc"><h5>Get in touch</h5><a href="tel:${SITE.tel}">${IC.call}${SITE.phone}</a><a href="mailto:${SITE.email}">${IC.mail}${SITE.email}</a><a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">${IC.wa}WhatsApp chat</a><a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>@${SITE.insta}</a></div></div>
+${footLinks(MENU)}
 <div class="fb2">© <span class="yr">${new Date().getFullYear()}</span> Nexara Holidays, Chennai. Prices, availability and inclusions are confirmed only in your written quote. An enquiry is not a booking.</div><p class="credits">Thailand photos via Wikimedia Commons; full credits on the <a href="/">home page</a>. Pages without a licensed photo use illustrated artwork.</p></div></footer>`;
 }
 
@@ -96,9 +100,9 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta property="og:image" content="${abs(hero.img || SITE.ogImage)}"><meta name="twitter:card" content="summary_large_image">
 ${ld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="${FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css">${headExtra}
+<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css">${headExtra}
 </head><body class="sub">
-${header(active)}
+${header(path)}
 <main id="main">
 <div class="pgh${hero.img ? "" : " mo"}"${bg}>${hero.img ? "" : MO[hero.m || "temple"]}${crumbHtml}${scr ? `<span class="scr">${esc(scr)}</span>` : ""}<h1>${esc(h1)}</h1>${sub ? `<p>${sub}</p>` : ""}</div>
 ${body}
@@ -109,6 +113,7 @@ ${footer()}
 <button class="btn red enq" data-enq><i></i>Enquire now</button>
 ${WA_BTN}
 <script src="/assets/js/nexara-pages.js" defer></script>
+<script src="/assets/js/nexara-menu.js" defer></script>
 </body></html>`;
 }
 
