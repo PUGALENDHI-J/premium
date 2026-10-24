@@ -18,7 +18,7 @@
   const wrap = document.createElement("div");
   wrap.className = "ptx";
   wrap.setAttribute("aria-hidden", "true");
-  wrap.innerHTML = `<svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="ptx-g" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset=".2" stop-color="#f20000"/><stop offset=".8" stop-color="#ff8a3d"/></linearGradient></defs><path fill="url(#ptx-g)" d="${shape(100, 100)}"/></svg>`;
+  wrap.innerHTML = `<svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="ptx-g" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse"><stop offset=".2" stop-color="#9e0000"/><stop offset=".8" stop-color="#b3261e"/></linearGradient></defs><path fill="url(#ptx-g)" d="${shape(100, 100)}"/></svg>`;
   document.body.appendChild(wrap);
   const path = wrap.querySelector("path");
 

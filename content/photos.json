@@ -98,6 +98,34 @@
 "page": "Sabarmati Ashram",
 "source": "https://commons.wikimedia.org/wiki/File:GANDHI_ASHRAM_03.jpg"
 },
+"ajmer": {
+"author": "Pinakpani",
+"file": "Ajmer Sharif, Dargah of Mainuddin Chisti in Ajmer, Rajasthan 30.jpg",
+"img": "/assets/photos/ajmer.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Ajmer Sharif Dargah",
+"q": "Ajmer Sharif Dargah",
+"source": "https://commons.wikimedia.org/wiki/File:Ajmer_Sharif,_Dargah_of_Mainuddin_Chisti_in_Ajmer,_Rajasthan_30.jpg"
+},
+"ajmer--adhai-din-ka-jhonpra": {
+"author": "Varun Shiv Kapur from New Delhi, India",
+"file": "Adhai_Din-ka-Jhonpra_Screen_wall_(6133975257).jpg",
+"img": "/assets/photos/a/ajmer--adhai-din-ka-jhonpra.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Adhai Din Ka Jhonpra",
+"source": "https://commons.wikimedia.org/wiki/File:Adhai_Din-ka-Jhonpra_Screen_wall_(6133975257).jpg"
+},
+"ajmer--ajmer-sharif-dargah": {
+"author": "SUDHIR UPADHYAY JI",
+"file": "ADHAI_DIN_KA_JHONPRA.jpg",
+"img": "/assets/photos/a/ajmer--ajmer-sharif-dargah.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ajmer",
+"source": "https://commons.wikimedia.org/wiki/File:ADHAI_DIN_KA_JHONPRA.jpg"
+},
 "alaska": {
 "author": "Quintin Soloviev",
 "file": "Anchorage,_Alaska_skyline.jpg",
@@ -1497,6 +1525,25 @@
 "page": "Wat Rong Suea Ten",
 "source": "https://commons.wikimedia.org/wiki/File:Chiang_Rai_Blue_Temple_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99.jpg"
 },
+"chidambaram": {
+"author": "Anonymous0006",
+"file": "Thillai Nataraja Temple (Chidambaram Nataraja Temple).jpg",
+"img": "/assets/photos/chidambaram.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Thillai Nataraja Temple Chidambaram gopuram",
+"q": "Thillai Nataraja Temple Chidambaram gopuram",
+"source": "https://commons.wikimedia.org/wiki/File:Thillai_Nataraja_Temple_(Chidambaram_Nataraja_Temple).jpg"
+},
+"chidambaram--thillai-nataraja-temple": {
+"author": "Raghavendran",
+"file": "Natraja_Temple.jpg",
+"img": "/assets/photos/a/chidambaram--thillai-nataraja-temple.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Govindaraja Perumal Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Natraja_Temple.jpg"
+},
 "chikmagalur": {
 "author": "Anvesh1103",
 "file": "Mullayanagiri peak.jpg",
@@ -2242,6 +2289,15 @@
 "page": "Unawatuna",
 "source": "https://commons.wikimedia.org/wiki/File:Unawatuna.jpg"
 },
+"gangotri": {
+"author": "Dhwani Shree",
+"file": "Gangotri_(ganga_river).jpg",
+"img": "/assets/photos/gangotri.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Gangotri",
+"source": "https://commons.wikimedia.org/wiki/File:Gangotri_(ganga_river).jpg"
+},
 "gangtok": {
 "author": "Ashinpt at enwiki",
 "file": "Kangch-Goechala.jpg",
@@ -2542,6 +2598,15 @@
 "page": "Gulmarg Golf Club",
 "source": "https://commons.wikimedia.org/wiki/File:Gulmarg_Wildlife_Sanctuary.jpg"
 },
+"guruvayur": {
+"author": "Ms Sarah Welch",
+"file": "009392022_Guruvayur_temple,_Kerala_004.jpg",
+"img": "/assets/photos/guruvayur.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Guruvayur",
+"source": "https://commons.wikimedia.org/wiki/File:009392022_Guruvayur_temple,_Kerala_004.jpg"
+},
 "guwahati": {
 "author": "Rituraj Bhuyan from Guwahati, India",
 "file": "Guwahati_citysky.jpg",
@@ -2739,6 +2804,33 @@
 "licenseUrl": "",
 "page": "Suomenlinna",
 "source": "https://commons.wikimedia.org/wiki/File:Suomenlinna_aerial.JPG"
+},
+"hemkund-sahib": {
+"author": "Satbir 4",
+"file": "Hemkunt-003.jpg",
+"img": "/assets/photos/hemkund-sahib.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Gurdwara Hemkund Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:Hemkunt-003.jpg"
+},
+"hemkund-sahib--gurdwara-hemkund-sahib": {
+"author": "Satbir 4",
+"file": "Hemkunt-003.jpg",
+"img": "/assets/photos/a/hemkund-sahib--gurdwara-hemkund-sahib.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Gurdwara Hemkund Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:Hemkunt-003.jpg"
+},
+"hemkund-sahib--hemkund-lake": {
+"author": "Satbir 4",
+"file": "Hemkunt-003.jpg",
+"img": "/assets/photos/a/hemkund-sahib--hemkund-lake.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Gurdwara Hemkund Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:Hemkunt-003.jpg"
 },
 "himachal-pradesh": {
 "author": "ShashankSharma2511",
@@ -3365,6 +3457,34 @@
 "page": "Kutta",
 "source": "https://commons.wikimedia.org/wiki/File:Kutta,_Gonikoppal,_Mysore.jpg"
 },
+"kailash-mansarovar": {
+"author": "Jean-Marie Hullot",
+"file": "Kailash-Barkha.jpg",
+"img": "/assets/photos/kailash-mansarovar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Mount Kailash",
+"q": "Mount Kailash",
+"source": "https://commons.wikimedia.org/wiki/File:Kailash-Barkha.jpg"
+},
+"kailash-mansarovar--lake-mansarovar": {
+"author": "Jean-Marie Hullot",
+"file": "Yaks-Kailash-Manasarovar.jpg",
+"img": "/assets/photos/a/kailash-mansarovar--lake-mansarovar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Lake Manasarovar",
+"source": "https://commons.wikimedia.org/wiki/File:Yaks-Kailash-Manasarovar.jpg"
+},
+"kailash-mansarovar--mount-kailash": {
+"author": "Ondřej Žváček",
+"file": "Kailash_north.JPG",
+"img": "/assets/photos/a/kailash-mansarovar--mount-kailash.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"page": "Mount Kailash",
+"source": "https://commons.wikimedia.org/wiki/File:Kailash_north.JPG"
+},
 "kalimpong": {
 "author": "Bernard Gagnon",
 "file": "View_of_Kalimpong,_India.jpg",
@@ -3581,6 +3701,15 @@
 "licenseUrl": "",
 "page": "Bhairav (tantrik)",
 "source": "https://commons.wikimedia.org/wiki/File:Bhairav_Mandir.jpg"
+},
+"katra--mata-vaishno-devi-bhawan": {
+"author": "Vinayaraj",
+"file": "Katra_town1.JPG",
+"img": "/assets/photos/a/katra--mata-vaishno-devi-bhawan.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Katra, Jammu and Kashmir",
+"source": "https://commons.wikimedia.org/wiki/File:Katra_town1.JPG"
 },
 "kazakhstan": {
 "author": "BitLord~ruwiki",
@@ -4044,6 +4173,33 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Kerala backwaters",
 "source": "https://commons.wikimedia.org/wiki/File:House_Boat_DSW.jpg"
+},
+"kumbakonam": {
+"author": "Ssriram mt",
+"file": "Kumbeswarar_temple_01.jpg",
+"img": "/assets/photos/kumbakonam.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Adi Kumbeswarar Temple, Kumbakonam",
+"source": "https://commons.wikimedia.org/wiki/File:Kumbeswarar_temple_01.jpg"
+},
+"kumbakonam--airavatesvara-temple-darasuram": {
+"author": "Supraja kannan",
+"file": "A_different_view_of_Airavatesvara_Temple.jpg",
+"img": "/assets/photos/a/kumbakonam--airavatesvara-temple-darasuram.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Airavatesvara Temple",
+"source": "https://commons.wikimedia.org/wiki/File:A_different_view_of_Airavatesvara_Temple.jpg"
+},
+"kumbakonam--navagraha-temples": {
+"author": "Rasnaboy",
+"file": "Aalangudi_Temple.jpg",
+"img": "/assets/photos/a/kumbakonam--navagraha-temples.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Apatsahayesvarar Temple, Alangudi",
+"source": "https://commons.wikimedia.org/wiki/File:Aalangudi_Temple.jpg"
 },
 "kutch": {
 "author": "RajputLokesh",
@@ -4793,6 +4949,15 @@
 "page": "Coral reef",
 "source": "https://commons.wikimedia.org/wiki/File:Blue_Linckia_Starfish.JPG"
 },
+"maldives--overwater-villa-stay": {
+"author": "Mfield, Matthew Field, http://www.photography.mattfield.com",
+"file": "Galapagos_giant_tortoise_Geochelone_elephantopus.jpg",
+"img": "/assets/photos/a/maldives--overwater-villa-stay.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Galápagos tortoise",
+"source": "https://commons.wikimedia.org/wiki/File:Galapagos_giant_tortoise_Geochelone_elephantopus.jpg"
+},
 "manali": {
 "author": "Neerajsinghazm",
 "file": "Manali_City.jpg",
@@ -5040,13 +5205,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Mount_Abu.jpg"
 },
 "mount-abu--dilwara-temples": {
-"author": "Andreas Kleemann",
-"file": "Mount_Abu.jpg",
+"author": "Surohit",
+"file": "DILWADA TEMPLE.JPG",
 "img": "/assets/photos/a/mount-abu--dilwara-temples.webp",
-"license": "CC BY-SA 3.0 de",
-"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
-"page": "Abu Raj",
-"source": "https://commons.wikimedia.org/wiki/File:Mount_Abu.jpg"
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Dilwara Jain temple ceiling carving",
+"q": "Dilwara Jain temple ceiling carving",
+"source": "https://commons.wikimedia.org/wiki/File:DILWADA_TEMPLE.JPG"
 },
 "mount-abu--nakki-lake": {
 "author": "CorrectKnowledge",
@@ -5319,6 +5485,33 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Nalanda district",
 "source": "https://commons.wikimedia.org/wiki/File:Nalanda_Univercity.JPG"
+},
+"nanded": {
+"author": "Punjabeditorji",
+"file": "Takht_Sri_Hazur_Sahib.jpg",
+"img": "/assets/photos/nanded.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Hazur Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:Takht_Sri_Hazur_Sahib.jpg"
+},
+"nanded--gurdwara-nagina-ghat": {
+"author": "yagrawal07",
+"file": "Vishnupuri_temple_-_panoramio.jpg",
+"img": "/assets/photos/a/nanded--gurdwara-nagina-ghat.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Nanded",
+"source": "https://commons.wikimedia.org/wiki/File:Vishnupuri_temple_-_panoramio.jpg"
+},
+"nanded--takht-sachkhand-sri-hazur-sahib": {
+"author": "This picture has been taken by Oleg Yunakov. Contact e-mail: yunakovgmail.com. Image can be used in accordance with the terms of the СС-BY-SA license. Other photos can be seen here.",
+"file": "Hamandir_Sahib_(Golden_Temple).jpg",
+"img": "/assets/photos/a/nanded--takht-sachkhand-sri-hazur-sahib.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Sikhism",
+"source": "https://commons.wikimedia.org/wiki/File:Hamandir_Sahib_(Golden_Temple).jpg"
 },
 "nara": {
 "author": "Wiiii",
@@ -5829,6 +6022,52 @@
 "page": "Betaab Valley",
 "source": "https://commons.wikimedia.org/wiki/File:Betaab_Valley.jpg"
 },
+"palani": {
+"author": "Spsarvana",
+"file": "Palani Murugan Hill Temple.jpg",
+"img": "/assets/photos/palani.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Palani Murugan temple hill",
+"q": "Palani Murugan temple hill",
+"source": "https://commons.wikimedia.org/wiki/File:Palani_Murugan_Hill_Temple.jpg"
+},
+"palani--dhandayuthapani-swamy-temple": {
+"author": "Yaathuraa",
+"file": "பழநி_முருகன்_கோயில்.png",
+"img": "/assets/photos/a/palani--dhandayuthapani-swamy-temple.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Dhandayuthapani Swamy Temple",
+"source": "https://commons.wikimedia.org/wiki/File:%E0%AE%AA%E0%AE%B4%E0%AE%A8%E0%AE%BF_%E0%AE%AE%E0%AF%81%E0%AE%B0%E0%AF%81%E0%AE%95%E0%AE%A9%E0%AF%8D_%E0%AE%95%E0%AF%8B%E0%AE%AF%E0%AE%BF%E0%AE%B2%E0%AF%8D.png"
+},
+"palitana": {
+"author": "Munisuvrat",
+"file": "Palitana_Jain_Tirth.jpg",
+"img": "/assets/photos/palitana.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Palitana",
+"source": "https://commons.wikimedia.org/wiki/File:Palitana_Jain_Tirth.jpg"
+},
+"palitana--adinath-temple": {
+"author": "Tanweer Morshed",
+"file": "Adinath_temple_2.JPG",
+"img": "/assets/photos/a/palitana--adinath-temple.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Adinath Temple, Maheshkhali",
+"source": "https://commons.wikimedia.org/wiki/File:Adinath_temple_2.JPG"
+},
+"palitana--shatrunjaya-hill-temples": {
+"author": "Trinidade",
+"file": "Satrunjaya_Hill_Stairway.jpg",
+"img": "/assets/photos/a/palitana--shatrunjaya-hill-temples.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Shatrunjaya",
+"source": "https://commons.wikimedia.org/wiki/File:Satrunjaya_Hill_Stairway.jpg"
+},
 "pamukkale": {
 "author": "Biologg",
 "file": "Pamukkale,_Denizli_2026_68.jpg",
@@ -5928,6 +6167,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Paro Taktsang",
 "source": "https://commons.wikimedia.org/wiki/File:Paro_Taktsang,_Bhutan_(edited).jpg"
+},
+"patna": {
+"author": "Shivamsetu",
+"file": "Takht Sri Patna Sahib 02.jpg",
+"img": "/assets/photos/patna.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Takht Sri Patna Sahib",
+"q": "Takht Sri Patna Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:Takht_Sri_Patna_Sahib_02.jpg"
+},
+"patna--bihar-museum": {
+"author": "Shivam Setu",
+"file": "Bihar_Museum_Bailey_Road_02.jpg",
+"img": "/assets/photos/a/patna--bihar-museum.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Bihar Museum",
+"source": "https://commons.wikimedia.org/wiki/File:Bihar_Museum_Bailey_Road_02.jpg"
+},
+"patna--takht-sri-patna-sahib": {
+"author": "Harishu3011",
+"file": "TheJoyof350thAnniversary@IncredibleIndia.jpg",
+"img": "/assets/photos/a/patna--takht-sri-patna-sahib.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Takht Sri Patna Sahib",
+"source": "https://commons.wikimedia.org/wiki/File:TheJoyof350thAnniversary@IncredibleIndia.jpg"
 },
 "pattaya": {
 "author": "Sergey S. Dukachev",
@@ -6271,6 +6538,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Tourism in Portugal",
 "source": "https://commons.wikimedia.org/wiki/File:Lisbon_(36211706583).jpg"
+},
+"prayagraj": {
+"author": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
+"file": "Boat Pilgrims Triveni Sangam Allahabad Jan24 A7C 08513.jpg",
+"img": "/assets/photos/prayagraj.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Triveni Sangam Prayagraj",
+"q": "Triveni Sangam Prayagraj",
+"source": "https://commons.wikimedia.org/wiki/File:Boat_Pilgrims_Triveni_Sangam_Allahabad_Jan24_A7C_08513.jpg"
+},
+"prayagraj--bade-hanuman-mandir": {
+"author": "Dsrprj",
+"file": "Lete_Hanuman_Ji_Mandir.jpg",
+"img": "/assets/photos/a/prayagraj--bade-hanuman-mandir.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Bade Hanuman Mandir",
+"source": "https://commons.wikimedia.org/wiki/File:Lete_Hanuman_Ji_Mandir.jpg"
+},
+"prayagraj--triveni-sangam": {
+"author": "juggadery",
+"file": "Allahabad,_Triveni_Sangam_27_(39310070552).jpg",
+"img": "/assets/photos/a/prayagraj--triveni-sangam.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Prayagraj district",
+"source": "https://commons.wikimedia.org/wiki/File:Allahabad,_Triveni_Sangam_27_(39310070552).jpg"
 },
 "puducherry": {
 "author": "Karthik Easvur",
@@ -7108,6 +7403,33 @@
 "q": "Shirdi Sai Baba Samadhi Mandir",
 "source": "https://commons.wikimedia.org/wiki/File:Baba%27s_98th_Maha_Samadhi_Punya_Thithi_Pooja_at_Shirdi_Sai_Gurusthan_Mandir_Coimbatore.jpg"
 },
+"shravanabelagola": {
+"author": "Ananth H V",
+"file": "Shravanabelagola_Hillview.jpg",
+"img": "/assets/photos/shravanabelagola.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Shravanabelagola",
+"source": "https://commons.wikimedia.org/wiki/File:Shravanabelagola_Hillview.jpg"
+},
+"shravanabelagola--chandragiri-hill": {
+"author": "Dineshkannambadi at en.wikipedia",
+"file": "Old_Kannada_inscription_from_7th_century_at_Chandragiri_hill_in_Shravanabelagola.jpg",
+"img": "/assets/photos/a/shravanabelagola--chandragiri-hill.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Chandragiri Hill",
+"source": "https://commons.wikimedia.org/wiki/File:Old_Kannada_inscription_from_7th_century_at_Chandragiri_hill_in_Shravanabelagola.jpg"
+},
+"shravanabelagola--gommateshwara-statue": {
+"author": "Kuldeep S",
+"file": "Gommateshwara,_Shravanabelagola.jpg",
+"img": "/assets/photos/a/shravanabelagola--gommateshwara-statue.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Gommateshwara statue",
+"source": "https://commons.wikimedia.org/wiki/File:Gommateshwara,_Shravanabelagola.jpg"
+},
 "siem-reap": {
 "author": "Willuconquer",
 "file": "Front_porch_of_Wat_Damnak.jpg",
@@ -7697,6 +8019,51 @@
 "page": "Padmanabhaswamy Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Sree_Padmanabhaswamy_temple_01.jpg"
 },
+"tiruchendur": {
+"author": "எஸ்ஸார்",
+"file": "A_tourist_enjoy_the_sunrise,_Tiruchendur,_India.jpg",
+"img": "/assets/photos/tiruchendur.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Tiruchendur",
+"source": "https://commons.wikimedia.org/wiki/File:A_tourist_enjoy_the_sunrise,_Tiruchendur,_India.jpg"
+},
+"tiruchendur--arulmigu-subramaniya-swamy-temple": {
+"author": "Ssriram mt",
+"file": "Thiruchendur11.jpg",
+"img": "/assets/photos/a/tiruchendur--arulmigu-subramaniya-swamy-temple.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Subramaniya Swamy Temple, Tiruchendur",
+"source": "https://commons.wikimedia.org/wiki/File:Thiruchendur11.jpg"
+},
+"tiruchirappalli": {
+"author": "IM3847",
+"file": "Aerial_view_of_Sri_Rangam_temple_near_Tiruchirapalli_1.jpg",
+"img": "/assets/photos/tiruchirappalli.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Srirangam",
+"source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Sri_Rangam_temple_near_Tiruchirapalli_1.jpg"
+},
+"tiruchirappalli--jambukeswarar-temple-thiruvanaikaval": {
+"author": "Ssriram mt",
+"file": "Tiruvanaikaval5.jpg",
+"img": "/assets/photos/a/tiruchirappalli--jambukeswarar-temple-thiruvanaikaval.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jambukeswarar Temple, Thiruvanaikaval",
+"source": "https://commons.wikimedia.org/wiki/File:Tiruvanaikaval5.jpg"
+},
+"tiruchirappalli--sri-ranganathaswamy-temple-srirangam": {
+"author": "RUPESH MAURYA",
+"file": "Ranganathaswamy_temple_tiruchirappalli.jpg",
+"img": "/assets/photos/a/tiruchirappalli--sri-ranganathaswamy-temple-srirangam.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ranganathaswamy Temple, Srirangam",
+"source": "https://commons.wikimedia.org/wiki/File:Ranganathaswamy_temple_tiruchirappalli.jpg"
+},
 "tirupati": {
 "author": "Nikhilb239",
 "file": "Tirumala Venkateswara temple entrance 09062015.JPG",
@@ -7724,6 +8091,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Tirumala",
 "source": "https://commons.wikimedia.org/wiki/File:Tirumala_View_from_srivari_padalu.jpg"
+},
+"tiruvannamalai": {
+"author": "raguleo",
+"file": "ARUNACHALESWARAR - panoramio.jpg",
+"img": "/assets/photos/tiruvannamalai.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Arunachaleswarar Temple Tiruvannamalai",
+"q": "Arunachaleswarar Temple Tiruvannamalai",
+"source": "https://commons.wikimedia.org/wiki/File:ARUNACHALESWARAR_-_panoramio.jpg"
+},
+"tiruvannamalai--arunachaleswarar-temple": {
+"author": "Adarsh Pidugu",
+"file": "Arunachalam_temple_from_a_nearby_hill.jpg",
+"img": "/assets/photos/a/tiruvannamalai--arunachaleswarar-temple.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Arunachalesvara Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Arunachalam_temple_from_a_nearby_hill.jpg"
+},
+"tiruvannamalai--girivalam-path": {
+"author": "Mamallanpm",
+"file": "Bava_arts_(1).jpg",
+"img": "/assets/photos/a/tiruvannamalai--girivalam-path.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Bava Chelladurai",
+"source": "https://commons.wikimedia.org/wiki/File:Bava_arts_(1).jpg"
 },
 "tokyo": {
 "author": "Morio",
@@ -8141,6 +8536,33 @@
 "page": "Varkala",
 "source": "https://commons.wikimedia.org/wiki/File:Varkala_Beach,_Varkala,_Kerala.jpg"
 },
+"velankanni": {
+"author": "Rejoy2003",
+"file": "Velankanni_Church_2026.jpg",
+"img": "/assets/photos/velankanni.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Velankanni",
+"source": "https://commons.wikimedia.org/wiki/File:Velankanni_Church_2026.jpg"
+},
+"velankanni--basilica-of-our-lady-of-good-health": {
+"author": "balaboss",
+"file": "Our_lady_of_snows_basilica.JPG",
+"img": "/assets/photos/a/velankanni--basilica-of-our-lady-of-good-health.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Basilica of Our Lady of Snows, Thoothukudi",
+"source": "https://commons.wikimedia.org/wiki/File:Our_lady_of_snows_basilica.JPG"
+},
+"velankanni--our-lady-s-tank": {
+"author": "Jebulon",
+"file": "Saint_Peter's_Basilica_facade,_Rome,_Italy.jpg",
+"img": "/assets/photos/a/velankanni--our-lady-s-tank.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "List of largest church buildings",
+"source": "https://commons.wikimedia.org/wiki/File:Saint_Peter%27s_Basilica_facade,_Rome,_Italy.jpg"
+},
 "venice": {
 "author": "kallerna",
 "file": "Venezia_aerial_view.jpg",
@@ -8312,6 +8734,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Terracotta Army",
 "source": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg"
+},
+"yamunotri": {
+"author": "Atarax42",
+"file": "Yamunotri temple and ashram.jpg",
+"img": "/assets/photos/yamunotri.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Yamunotri temple",
+"q": "Yamunotri temple",
+"source": "https://commons.wikimedia.org/wiki/File:Yamunotri_temple_and_ashram.jpg"
+},
+"yamunotri--surya-kund": {
+"author": "Umang108",
+"file": "Vishram_Ghat.jpg",
+"img": "/assets/photos/a/yamunotri--surya-kund.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Yamuna",
+"source": "https://commons.wikimedia.org/wiki/File:Vishram_Ghat.jpg"
+},
+"yamunotri--yamunotri-temple": {
+"author": "Atarax42",
+"file": "Yamunotri_temple_and_ashram.jpg",
+"img": "/assets/photos/a/yamunotri--yamunotri-temple.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Yamunotri Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Yamunotri_temple_and_ashram.jpg"
 },
 "yercaud": {
 "author": "Riju K",

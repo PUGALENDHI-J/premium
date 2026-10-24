@@ -1,4 +1,4 @@
-// Site-wide top bar and mega menu (Packages / India / Honeymoon / Themes / Company dropdowns).
+// Site-wide top bar and mega menu (Packages / India / Honeymoon / Sacred / Themes / Services / Company dropdowns).
 // buildMenu() turns the destination graph and packages into plain link data; the render functions
 // are shared by generated pages (html.mjs) and the hand-made index.html (injected between markers by build.mjs).
 import { SITE } from "../../content/site.mjs";
@@ -20,8 +20,8 @@ function honeyLinks(ps, max = 99) {
   return out.sort((a, b) => b[2] - a[2]).slice(0, max).map(([l, u]) => [l, u]).sort((a, b) => a[0].localeCompare(b[0]));
 }
 
-/** N: destination graph, PK: packages, TYPES: tour types, inReg: India regions with state slugs. */
-export function buildMenu({ N, PK, TYPES, inReg }) {
+/** N: destination graph, PK: packages, TYPES: tour types, inReg: India regions with state slugs, SERVICES: travel services. */
+export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS = {}, SACRED = [], SACRED_GROUPS = {} }) {
   const live = s => { const n = N.get(s); return n && !n.draft ? n : null };
   const countries = (...rs) => [...N.values()].filter(n => n.kind == "country" && !n.draft && rs.includes(n.region.s)).sort(byName).map(n => [n.n, n.url]);
   const g = (h, url, links) => links.length ? { h, url, links } : null;
@@ -68,10 +68,23 @@ export function buildMenu({ N, PK, TYPES, inReg }) {
       all: ["All honeymoon packages", "/tour-types/honeymoon/"],
       small: true,
     },
+    sacred: {
+      label: "Sacred", url: "/sacred/", match: ["/sacred/"],
+      cols: Object.entries(SACRED_GROUPS).map(([k, h]) => [g(h, null, SACRED.filter(c => c.group == k).map(c => [c.n, `/sacred/${c.s}/`])),
+        k == "abroad" && g("India & abroad", null, [["Sacred journeys in India", "/sacred/india/"], ["Sacred journeys abroad", "/sacred/international/"]])]),
+      all: ["All sacred journeys", "/sacred/"],
+      small: true,
+    },
     themes: {
       label: "Themes", url: "/tour-types/", match: ["/tour-types/"],
       cols: (() => { const t = TYPES.filter(t => !t.draft && !["honeymoon", "group-tours"].includes(t.s)).map(t => [t.n, `/tour-types/${t.s}/`]), k = Math.ceil(t.length / 3); return [0, 1, 2].map(i => [g(i ? "" : "Holiday themes", null, t.slice(i * k, (i + 1) * k))]) })(),
       all: ["All holiday themes", "/tour-types/"],
+      small: true,
+    },
+    services: {
+      label: "Services", url: "/services/", match: ["/services/"],
+      cols: Object.entries(SERVICE_GROUPS).map(([k, h]) => [g(h, null, SERVICES.filter(v => v.grp == k).map(v => [v.n, `/services/${v.s}/`]))]),
+      all: ["All travel services", "/services/"],
       small: true,
     },
     company: {
@@ -99,7 +112,7 @@ export function menuLinks(M, active, { spa = false } = {}) {
   const dropdown = (k, m) => dd(k, m, k == best);
   const a = (u, n, on) => `<a href="${u}"${on ? ' class="cur" aria-current="page"' : ""}><span class="lt">${n}</span></a>`;
   return a(spa ? "#home" : "/", "Home", active == "/") + dropdown("company", M.company) + a("/tour-types/group-tours/", "Group Tours", active == "/tour-types/group-tours/") +
-    dropdown("packages", M.packages) + dropdown("india", M.india) + dropdown("honeymoon", M.honeymoon) + dropdown("themes", M.themes) +
+    dropdown("packages", M.packages) + dropdown("india", M.india) + dropdown("honeymoon", M.honeymoon) + (M.sacred.cols.length ? dropdown("sacred", M.sacred) : "") + dropdown("themes", M.themes) + (M.services.cols.length ? dropdown("services", M.services) : "") +
     a(spa ? "#contact" : "/contact-us/", "Contact", active == "/contact-us/");
 }
 
@@ -118,5 +131,5 @@ export function footLinks(M) {
   const row = (h, url, links) => `<div class="frow"><h5><a href="${url}">${h}</a></h5><p>${links.map(([n, u]) => `<a href="${u}">${esc(n)}</a>`).join("")}</p></div>`;
   const intl = flat(M.packages).filter(([, u]) => u.startsWith("/destinations/"));
   const india = M.india.cols.slice(0, 4).flat().filter(Boolean).flatMap(x => x.links);
-  return `<div class="flinks">${row("International holidays", "/tour-packages/international/", intl)}${row("India holidays", "/tour-packages/india/", india)}${row("Honeymoon packages", "/tour-types/honeymoon/", flat(M.honeymoon))}</div>`;
+  return `<div class="flinks">${row("International holidays", "/tour-packages/international/", intl)}${row("India holidays", "/tour-packages/india/", india)}${row("Honeymoon packages", "/tour-types/honeymoon/", flat(M.honeymoon))}${M.sacred.cols.length ? row("Sacred journeys", "/sacred/", flat(M.sacred)) : ""}${M.services.cols.length ? row("Travel services", "/services/", flat(M.services)) : ""}</div>`;
 }

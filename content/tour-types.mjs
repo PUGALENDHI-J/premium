@@ -341,6 +341,82 @@ Blossom in [[kyoto]] (late March), lanterns in [[chiang-mai]] (November), the Ra
 
 Pilgrimages to [[tirupati]], [[madurai]] and [[varanasi]]; hill stations like [[kodaikanal]] and [[munnar]]; and easy international trips to [[singapore]], [[dubai]] and [[colombo]].`,
     faq: [["Can you arrange wheelchair assistance at airports?", "Airlines provide wheelchair assistance on request; we help you request it when booking flights."], ["Are Kedarnath and Vaishno Devi possible for seniors?", "Many seniors do them with helicopters, ponies or palanquins. Please consult your doctor first, especially about altitude."]] },
+  { s: "kids-holidays", n: "Kids' holidays", title: "Kids' Holidays Abroad: Theme Parks, Zoos & Aquariums", h1: "Kids' holidays abroad", scr: "Made for little travellers", img: "/assets/photos/gt/orlando.webp", places: ["singapore", "dubai", "hong-kong", "tokyo", "orlando", "gold-coast", "london", "rovaniemi", "kuala-lumpur"], desc: "International holidays planned around children: theme parks, aquariums, zoos and science museums in Singapore, Dubai, Hong Kong, Tokyo, Orlando, the Gold Coast, London and Lapland.", sub: "World trips planned around what children love, at a pace they can keep.", who: ["Families with young children", "Parents planning a child's first trip abroad", "Grandparents travelling with grandchildren"],
+    body: `Kids' holidays are our international trips built around children: theme parks, aquariums, zoos, science museums and snow, with the days paced for small legs. All of them are abroad; for India trips with children, see [[t:family-holidays]].
+
+## How we plan for kids
+
+- **One big day, then an easy one.** A theme park day is followed by a slower morning or a pool afternoon.
+- **Fewer hotel changes,** with family rooms, connecting rooms or extra beds requested and confirmed in your quote.
+- **Short transfers** and flight times chosen to suit children's sleep where options exist.
+- **Tickets booked ahead** for parks and attractions that sell out or have timed entry.
+- **Food that works for kids,** with vegetarian and Indian meal options noted at each stop.
+
+Below are the big places every kid dreams of: every Disney resort, the Universal parks with their Jurassic Park and Jurassic World rides, theme parks from Germany to Korea, dinosaur parks and museums, theme-park islands, LEGOLAND and more. You will also find them on each destination's page. Tell us which ones your children want to see and we build the trip around them.
+
+## Good choices
+
+Theme parks in [[singapore]], [[hong-kong]], [[tokyo]] and [[orlando]]; water parks and Ferrari World in [[dubai]]; Sea World and Dreamworld on the [[gold-coast]]; museums and the Harry Potter studio tour in [[london]]; and Santa Claus Village in [[rovaniemi]].`,
+    // the big kids' places: [name, place slug, where, line, filter]
+    spots: [
+      ["Walt Disney World", "orlando", "Orlando, USA", "Four Disney parks, Magic Kingdom's castle and two water parks: the biggest Disney resort in the world.", "disney"],
+      ["Disneyland Resort", "los-angeles", "Anaheim, near Los Angeles, USA", "The original Disneyland, opened by Walt Disney himself, plus Disney California Adventure.", "disney"],
+      ["Disneyland Paris", "paris", "Near Paris, France", "Two parks, Sleeping Beauty's castle and Europe's only Disney resort, a short train ride from central Paris.", "disney"],
+      ["Tokyo Disneyland & DisneySea", "tokyo", "Tokyo, Japan", "Two parks side by side; DisneySea, with its volcano and harbour, is found nowhere else.", "disney"],
+      ["Hong Kong Disneyland", "hong-kong", "Lantau Island, Hong Kong", "A compact park that suits younger children, with Frozen and Marvel lands.", "disney"],
+      ["Shanghai Disneyland", "shanghai", "Shanghai, China", "The tallest Disney castle and a TRON coaster, with Zootopia land.", "disney"],
+      ["Universal Orlando", "orlando", "Orlando, USA", "Jurassic Park River Adventure, the VelociCoaster and the Wizarding World of Harry Potter.", "universal"],
+      ["Universal Studios Hollywood", "los-angeles", "Los Angeles, USA", "Jurassic World: The Ride and the famous studio tram tour through real film sets.", "universal"],
+      ["Universal Studios Japan", "osaka", "Osaka, Japan", "Jurassic Park's Flying Dinosaur coaster and Super Nintendo World with real-life Mario Kart.", "universal"],
+      ["Universal Studios Singapore", "singapore", "Sentosa Island, Singapore", "The Lost World zone with Jurassic Park Rapids Adventure, plus Transformers and Minions.", "universal"],
+      ["Universal Beijing Resort", "beijing", "Beijing, China", "Jurassic World Isla Nublar, Kung Fu Panda land and Hollywood in China's biggest Universal park.", "universal"],
+      ["Sentosa Island", "singapore", "Singapore", "A whole island of fun: the S.E.A. Aquarium, Adventure Cove water park, beaches and the cable car.", "islands"],
+      ["Yas Island", "abu-dhabi", "Abu Dhabi, UAE", "Ferrari World's record-breaking coaster, Yas Waterworld and Warner Bros. World on one island.", "islands"],
+      ["Ocean Park", "hong-kong", "Hong Kong", "Pandas, an aquarium, thrill rides and a cable car over the sea.", "islands"],
+      ["Atlantis Aquaventure", "dubai", "Palm Jumeirah, Dubai", "A giant water park with slides through shark lagoons, next to the Lost Chambers aquarium.", "islands"],
+      ["Sea World & Dreamworld", "gold-coast", "Gold Coast, Australia", "Dolphins, Movie World and Dreamworld's rides and koalas on Australia's theme park coast.", "islands"],
+      ["LEGOLAND Malaysia", "singapore", "Johor Bahru, about an hour from Singapore", "Asia's first LEGOLAND, with a LEGO water park and miniature cities built from bricks.", "lego"],
+      ["LEGOLAND Dubai", "dubai", "Dubai Parks and Resorts, UAE", "Rides, driving schools and a LEGO Miniland of Dubai's skyline, plus a water park.", "lego"],
+      ["LEGOLAND Windsor", "london", "Windsor, near London, UK", "LEGO rides and a Miniland of London, an easy day out from the city.", "lego"],
+      ["Harry Potter Studio Tour", "london", "Near London, UK", "Walk through the real Great Hall, Diagon Alley and Hogwarts Express sets from the films.", "more"],
+      ["Santa Claus Village", "rovaniemi", "Rovaniemi, Lapland, Finland", "Meet Santa on the Arctic Circle, then husky and reindeer sled rides through the snow.", "more"],
+      ["Europa-Park", "black-forest", "Rust, Black Forest, Germany", "Germany's biggest theme park, with a land for each European country and the Rulantica indoor water park.", "parks"],
+      ["Phantasialand", "germany", "Brühl, near Cologne, Germany", "Themed worlds from China to the Wild West, with rides for little ones and record-breaking coasters.", "parks"],
+      ["Movie Park Germany", "germany", "Bottrop, Germany", "Film-themed rides and a Nickelodeon land with SpongeBob and Paw Patrol for younger children.", "parks"],
+      ["Efteling", "netherlands", "Kaatsheuvel, Netherlands", "A fairy-tale forest of talking trees and storybook scenes, plus rides for every age.", "parks"],
+      ["Tivoli Gardens", "denmark", "Copenhagen, Denmark", "One of the world's oldest amusement parks, opened in 1843, glowing with lights in the heart of the city.", "parks"],
+      ["PortAventura World", "barcelona", "Salou, about an hour from Barcelona", "Six themed worlds, Ferrari Land and a Sesame Street area for small children.", "parks"],
+      ["Gardaland", "italy", "Lake Garda, Italy", "Italy's biggest theme park, with Peppa Pig Land and a LEGOLAND water park.", "parks"],
+      ["Liseberg", "sweden", "Gothenburg, Sweden", "Scandinavia's biggest amusement park, with a rabbit-themed kids' land.", "parks"],
+      ["Lotte World", "seoul", "Seoul, South Korea", "One of the world's largest indoor theme parks, joined to the outdoor Magic Island on a lake.", "parks"],
+      ["Everland", "seoul", "Yongin, near Seoul, South Korea", "Korea's biggest theme park, with a safari bus ride and giant pandas.", "parks"],
+      ["Chimelong Ocean Kingdom", "macau", "Zhuhai, China, next to Macau", "A giant ocean theme park with whale sharks, polar bears and huge aquarium tanks.", "parks"],
+      ["IMG Worlds of Adventure", "dubai", "Dubai, UAE", "One of the world's largest indoor theme parks, with Marvel and Cartoon Network zones.", "parks"],
+      ["Sun World Ba Na Hills", "da-nang", "Da Nang, Vietnam", "The Golden Bridge held up by giant stone hands, a long cable car ride and a French village with rides.", "parks"],
+      ["VinWonders Phu Quoc", "phu-quoc", "Phu Quoc, Vietnam", "Vietnam's biggest theme park, with a water park, an aquarium and the Vinpearl Safari next door.", "parks"],
+      ["Genting SkyWorlds", "genting-highlands", "Genting Highlands, Malaysia", "A hilltop theme park reached by cable car, with rides for small children and big thrills.", "parks"],
+      ["Sunway Lagoon", "kuala-lumpur", "Kuala Lumpur, Malaysia", "Water slides, a wave pool, a small zoo and rides in six zones in one park.", "parks"],
+      ["LEGOLAND Billund", "denmark", "Billund, Denmark", "The very first LEGOLAND, next to the LEGO House where the brick was born.", "lego"],
+      ["LEGOLAND Deutschland", "munich", "Günzburg, between Munich and Stuttgart, Germany", "LEGO rides, a Miniland of European cities and a LEGO Ninjago world.", "lego"],
+      ["LEGOLAND Japan", "japan", "Nagoya, Japan", "A LEGO park with a Miniland of Japanese cities, close to the bullet-train line.", "lego"],
+      ["LEGOLAND Korea", "seoul", "Chuncheon, about 90 minutes from Seoul", "Korea's LEGOLAND on an island in a lake, with a LEGO castle and boat rides.", "lego"],
+      ["Dinosaurier-Park Münchehagen", "germany", "Lower Saxony, Germany", "Hundreds of life-size dinosaur models along a forest trail, next to real dinosaur footprints.", "dino"],
+      ["Natural History Museum", "london", "London, UK", "A roaring animatronic T. rex and dinosaur skeletons in a cathedral-like hall. Entry is free.", "dino"],
+      ["American Museum of Natural History", "new-york", "New York, USA", "The giant Titanosaur and the T. rex from Night at the Museum.", "dino"],
+      ["Royal Tyrrell Museum", "canada", "Drumheller, Alberta, Canada", "One of the world's great dinosaur museums, in badlands where fossils are still dug up.", "dino"],
+      ["Fukui Prefectural Dinosaur Museum", "japan", "Katsuyama, Japan", "Moving dinosaur models and real skeletons in one of Asia's biggest dinosaur museums.", "dino"],
+      ["Ghibli Museum", "tokyo", "Mitaka, Tokyo, Japan", "Totoro and the Catbus at Studio Ghibli's own museum. Tickets sell out, so book early.", "more"],
+      ["Sanrio Puroland", "tokyo", "Tama, Tokyo, Japan", "Hello Kitty's indoor theme park, with shows, parades and gentle rides.", "more"],
+      ["Ski Dubai", "dubai", "Mall of the Emirates, Dubai", "Real snow, sledging and penguins, inside a shopping mall in the desert.", "more"],
+      ["Australia Zoo", "gold-coast", "Sunshine Coast, about two hours from the Gold Coast", "The Irwin family's zoo, with crocodile shows, kangaroos and koalas.", "more"],
+      ["Hobbiton Movie Set", "rotorua", "Matamata, about an hour from Rotorua", "Walk through the Shire and peek into hobbit holes from The Lord of the Rings films.", "more"],
+      ["Niagara Falls boat ride", "toronto-niagara", "Niagara Falls, Canada", "Sail right into the spray at the foot of the falls, in a free rain poncho.", "more"],
+      ["Moomin World", "finland", "Naantali, Finland", "Visit the Moomin family's blue house on an island. Open in summer.", "more"],
+      ["Kennedy Space Center", "orlando", "Florida, USA", "Real rockets, a space shuttle and astronaut stories, an hour from Orlando.", "more"],
+      ["Night Safari", "singapore", "Singapore", "The world's first nocturnal zoo, explored by tram after dark.", "more"],
+      ["Safari World", "bangkok", "Bangkok, Thailand", "A drive-through safari and marine park with dolphin and sea lion shows.", "more"],
+    ],
+    faq: [["What age are kids' holidays suited to?", "Most work well from about four years up; we suggest which parks and rides suit your children's ages and heights."], ["Do children need their own passport and visa?", "Yes. Every child needs their own passport, and visas where the country requires them. Check the official rules for each country; we help you prepare the documents."], ["Can you arrange a pushchair or child seat?", "We request child seats for transfers and note pushchair needs; availability is confirmed in your quote."]] },
   { s: "accessible-travel", n: "Accessible travel", draft: true, draftWhy: "Accessibility details for hotels, vehicles and sites have not been verified; held until confirmed with suppliers.", tags: [], desc: "Accessible travel planning.", body: "Held back until accessibility information is verified." },
   { s: "solo-travel", n: "Solo travel", title: "Solo Travel Holidays: Safe, Social & Flexible", h1: "Solo travel", scr: "Just you", img: "/assets/exp/walking-street.webp", places: ["rishikesh", "varkala", "hampi", "kasol", "dharamshala", "chiang-mai", "ubud", "luang-prabang", "kyoto", "lisbon"], desc: "Solo travel holidays in safe, sociable destinations: Rishikesh, Varkala, Hampi, Chiang Mai, Ubud, Kyoto and more, with support on WhatsApp.", sub: "Safe, sociable destinations with support when you need it.", who: ["First-time solo travellers", "Women travelling alone", "Professionals on a sabbatical"],
     body: `Solo travel is one of the best ways to see a place, and it is easier than many people think. We plan the logistics and stay reachable on WhatsApp throughout.

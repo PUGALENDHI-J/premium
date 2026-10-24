@@ -112,7 +112,7 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="${robots || "index, follow"}">
-<meta name="theme-color" content="#f20000">
+<meta name="theme-color" content="#ff0000">
 <script>try{var t=+sessionStorage.getItem("nx-pt");sessionStorage.removeItem("nx-pt");if(Date.now()-t<4e3&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("pt-in")}catch(e){}</script>
 <link rel="canonical" href="${canonical}">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -145,6 +145,7 @@ ${WA_BTN}
 <script src="/assets/js/nexara-menu.js" defer></script>
 <script src="/assets/js/nexara-ui.js" defer></script>
 <script src="/assets/js/nexara-transition.js" defer></script>
+<script src="/assets/js/nexara-grid.js" defer></script>
 </body></html>`;
 }
 

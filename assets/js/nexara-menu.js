@@ -34,7 +34,9 @@
   const ph = nav.querySelector(".ph"), wa = href('a[href*="wa.me"]');
   nav.insertAdjacentHTML("afterbegin", '<div class="mbg"></div>');
   nav.insertAdjacentHTML("beforeend", `<div class="mfeat mpanel"><small>Plan with a real person</small><div class="mfc"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-6-3-2-6 2-6-6H5l3 7-4 1-2-2H1z"/></svg></i><div><b>Your next holiday starts here</b><p>Tell us where you want to go. We reply on WhatsApp with a plan and a price.</p></div></div><div class="mfa"><a href="${ph ? ph.getAttribute("href") : "/custom-tour/"}" data-enq>Get a free quote</a>${wa ? `<a href="${wa}" target="_blank" rel="noopener">WhatsApp us</a>` : ""}</div></div><div class="mfoot mpanel"><ul>${li(href('a[href^="tel:"]'), "Call")}${li(wa, "WhatsApp", 1)}${li(href('a[href^="mailto:"]'), "Email")}${li(href('a[href*="instagram.com"]'), "Instagram", 1)}</ul><img src="/assets/logo-circle.webp" alt=""></div>`);
-  nav.querySelector(".nl").classList.add("mpanel");
+  const nl = nav.querySelector(".nl"), brand = document.querySelector("header>.brand");
+  nl.classList.add("mpanel");
+  if (brand) { const c = brand.cloneNode(true); c.classList.replace("brand", "mlogo"); c.tabIndex = -1; nl.prepend(c) }
   bt.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line class="bt1" x1="4" y1="8" x2="20" y2="8"/><line class="bt2" x1="8" y1="16" x2="20" y2="16"/></svg>';
 
   let open = false, tl = null, enterEnd = 0, speed = 1;
@@ -43,7 +45,7 @@
     if (o == open) return;
     open = o;
     bt.setAttribute("aria-expanded", o); bt.setAttribute("aria-label", o ? "Close menu" : "Menu");
-    if (o) { root.classList.add("mopen"); nav.style.setProperty("--mt", Math.max(56, document.querySelector("header").getBoundingClientRect().bottom) + "px") }
+    if (o) root.classList.add("mopen");
     if (!tl) { nav.classList.toggle("open", o); unlock(); return }
     if (o) tl.timeScale(speed)[tl.time() >= enterEnd ? "restart" : "play"]();
     else if (tl.time() < enterEnd) tl.timeScale(speed * 1.5).reverse();

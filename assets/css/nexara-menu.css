@@ -17,12 +17,13 @@
 /* ---------- desktop menu ---------- */
 @media(max-width:1500px){.hc{display:none}}
 nav .nl a{padding:9px 14px;font-size:.88rem}
+@media(min-width:1181px) and (max-width:1380px){nav .nl a{padding:9px 10px;font-size:.84rem}} /* nine top-level items on small laptops */
 nav .nl .mdd{display:inline-flex;align-items:center;border-radius:99px}
 nav .nl .mdd>a{padding-right:4px}
 .ddt{display:grid;place-items:center;width:22px;height:30px;margin:0 6px 0 0;padding:0;border:0;border-radius:99px;background:none;color:inherit;cursor:pointer}
 .ddt svg{transition:transform .3s var(--ease)}
 .mdd:hover>.ddt svg,.mdd.open>.ddt svg{transform:rotate(180deg)}
-nav .nl .mdd:hover>a{color:var(--red);background:#fff;box-shadow:0 2px 8px rgba(242,0,0,.08)}
+nav .nl .mdd:hover>a{color:var(--red);background:#fff;box-shadow:0 2px 8px rgba(255,0,0,.08)}
 nav .nl .mdd>a.cur{color:#fff}
 
 .mega{position:absolute;left:4vw;right:4vw;top:100%;z-index:60;padding:22px 26px 20px;background:#fff;border-radius:0 0 20px 20px;box-shadow:inset 0 3px 0 #ff4d2e,0 26px 50px rgba(17,17,17,.16);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .3s var(--ease),visibility 0s linear .2s;text-align:left}
@@ -44,8 +45,8 @@ nav .nl .mega a:hover{color:var(--red);background:none;box-shadow:none}
 nav .nl .mega h6 a{font-weight:700;font-size:.95rem;color:var(--ink)}
 nav .nl .mega li a:before{content:"";display:inline-block;width:5px;height:5px;margin-right:9px;border-radius:50%;background:linear-gradient(135deg,#ff4d2e,#ffa63b);vertical-align:2px;transition:transform .2s}
 nav .nl .mega li a:hover:before{transform:scale(1.6)}
-nav .nl .mega a.mall{display:inline-flex;margin-top:14px;padding:10px 22px;border-radius:99px;background:linear-gradient(135deg,#ff1f1f,#c70000);color:#fff;font-weight:600;box-shadow:0 8px 18px rgba(242,0,0,.25)}
-nav .nl .mega a.mall:hover{color:#fff;box-shadow:0 12px 24px rgba(242,0,0,.35)}
+nav .nl .mega a.mall{display:inline-flex;margin-top:14px;padding:10px 22px;border-radius:99px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;font-weight:600;box-shadow:0 8px 18px rgba(255,0,0,.25)}
+nav .nl .mega a.mall:hover{color:#fff;box-shadow:0 12px 24px rgba(255,0,0,.35)}
 
 /* ---------- burger menu (phones, tablets and small laptops) ---------- */
 @media(max-width:1180px){
@@ -100,22 +101,26 @@ nav .nl .mega a.mall:hover{color:#fff;box-shadow:0 12px 24px rgba(242,0,0,.35)}
 .ptx{position:fixed;inset:0;z-index:10050;pointer-events:none;visibility:hidden}
 .ptx.on{visibility:visible;pointer-events:auto}
 .ptx svg{display:block;width:100%;height:100%}
-html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:linear-gradient(135deg,#f20000 20%,#ff8a3d 80%)}
+html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:#9e0000}
 
 /* ---------- burger overlay: menu, quote and contact panels, animated by assets/js/nexara-menu.js ---------- */
-.mbg,.mfeat,.mfoot{display:none}
+.mbg,.mfeat,.mfoot,header>nav .nl>.mlogo{display:none}
 @media(max-width:1180px){
   html.mopen{overflow:hidden}
   html.mopen header{z-index:10000;transform:none!important}
-  header>.brand,header>.burger{position:relative;z-index:3}
+  header>.burger{position:relative;z-index:3}
+  html.mopen header>.burger{position:fixed;top:18px;right:max(5vw,20px)}
   header>nav{position:fixed;inset:0;z-index:2;display:flex;flex-direction:column;align-items:stretch;gap:8px;max-height:none;padding:12px;overflow:hidden;background:none;box-shadow:none;visibility:hidden;pointer-events:none}
   header>nav.open{visibility:visible;pointer-events:auto}
   header>nav>.hc,header>nav>.ph{display:none!important}
+  header>nav .nl>.mlogo{display:flex!important;text-transform:none;letter-spacing:0;align-items:center;gap:10px;height:44px;margin:0 0 12px;padding:0 4px;background:none!important}
+  header>nav .nl>.mlogo:after{display:none}
+  .mlogo img{height:44px!important;width:44px;border-radius:50%!important}
   .mbg{display:block;position:absolute;inset:0;background:rgba(17,17,17,.5);opacity:0}
   nav.open>.mbg{opacity:1}
   .mpanel{position:relative;width:100%;border:2px solid;border-radius:18px!important}
-  header>nav>.nl{flex:1;min-height:0;margin:0;padding:calc(var(--mt,80px) - 4px) 14px 14px;overflow-y:auto;overscroll-behavior:contain;background:#fff!important;border:2px solid #1e1e1e!important}
-  .mfeat{display:flex;flex-direction:column;flex:none;padding:18px 20px;background:linear-gradient(120deg,#f20000 15%,#ff4d2e 60%,#ffa63b);border-color:#a80000;color:#fff}
+  header>nav>.nl{flex:1;min-height:0;margin:0;padding:14px;overflow-y:auto;overscroll-behavior:contain;background:#fff!important;border:2px solid #1e1e1e!important}
+  .mfeat{display:flex;flex-direction:column;flex:none;padding:18px 20px;background:#9e0000;border-color:#7a0000;color:#fff}
   .mfeat small{margin-bottom:10px;font:600 .66rem Poppins,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8)}
   .mfc{display:flex;align-items:center;gap:14px}
   .mfc i{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:12px!important;background:rgba(0,0,0,.14)}
@@ -131,3 +136,26 @@ html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:line
   header>nav .mfa a:after,header>nav .mfoot a:after{display:none}
   .mfoot img{position:absolute;right:18px;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%!important}
 }
+
+/* desktop header fits the screen: logo, menu and quote button never run past the right edge.
+   Item spacing and text scale with the width; the phone block shows only where there is room. */
+@media(min-width:1181px){
+  header{padding-left:clamp(16px,3vw,64px);padding-right:clamp(16px,3vw,64px);gap:clamp(8px,1vw,18px)}
+  header>.brand{flex:none}
+  header>nav{min-width:0;gap:clamp(8px,.8vw,14px)}
+  header>nav .nl>a,header>nav .nl .mdd>a{padding:9px clamp(5px,.75vw - 2px,14px);font-size:clamp(.74rem,.5rem + .3vw,.86rem);letter-spacing:0;white-space:nowrap}
+  header>nav .nl .mdd>a{padding-right:2px}
+  header>nav>a.ph{margin-left:0;padding:6px 6px 6px clamp(12px,1vw,22px);gap:clamp(6px,.6vw,12px);font-size:clamp(.72rem,.5rem + .25vw,.84rem);letter-spacing:.06em}
+}
+@media(min-width:1181px) and (max-width:1799px){header>nav>.hc{display:none}}
+@media(min-width:1800px){header>nav>.hc{display:flex}}
+@media(min-width:1181px) and (max-width:1279px){header{padding-left:20px;padding-right:20px}header>nav .nl>a,header>nav .nl .mdd>a{padding-left:4px;padding-right:4px}header>nav .nl .mdd>a{padding-right:1px}}
+
+/* ten menu items (with Sacred): tighten the desktop menu just above the burger breakpoint so the quote button stays on screen */
+@media(min-width:1181px) and (max-width:1366px){
+  header>nav .nl>a,header>nav .nl .mdd>a{padding:9px 7px;font-size:.78rem}
+  header>nav .nl .mdd>a{padding-right:1px}
+  header>nav .ddt{width:16px;margin-right:3px}
+  header>nav a.ph{margin-left:6px}
+}
+@media(min-width:1181px) and (max-width:1300px){header>.brand .bw{display:none}}

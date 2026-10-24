@@ -1,7 +1,7 @@
 /* Flat, square style for the whole site (home page and generated pages). Loaded last.
    Square corners everywhere, no gloss: no shine sweeps, gradient buttons, gradient text, glass blur or drop shadows.
    Kept round on purpose: the circular logo and the floating WhatsApp button. */
-:root{--grad:#f20000}
+:root{--grad:#ff0000}
 
 /* square corners */
 *,*:before,*:after{border-radius:0!important}
@@ -34,7 +34,7 @@ header:after{background:var(--red)!important;opacity:1!important;height:2px!impo
 
 /* solid buttons */
 .btn,.btn.red,nav a.ph,.enq,nav .nl .mega a.mall{background:var(--red)!important;color:#fff!important;border:1px solid var(--red)!important}
-.btn:hover,.btn.red:hover,nav a.ph:hover,.enq:hover,nav .nl .mega a.mall:hover{background:#c70000!important;border-color:#c70000!important;transform:none!important}
+.btn:hover,.btn.red:hover,nav a.ph:hover,.enq:hover,nav .nl .mega a.mall:hover{background:#cc0000!important;border-color:#cc0000!important;transform:none!important}
 .btn.ghost2,.btn.glass{background:#fff!important;color:var(--ink)!important;border:1px solid var(--line)!important}
 .btn.ghost2:hover,.btn.glass:hover{border-color:var(--red)!important;color:var(--red)!important}
 .hero .sl .btn.glass{background:transparent!important;color:#fff!important;border-color:#fff!important}
@@ -55,10 +55,10 @@ nav .nl a.cur,nav .nl a.cur:hover{background:var(--red)!important;color:#fff!imp
 .cta,.fcta{background:var(--red)!important}
 .cta:before,.cta:after,.fin:before,.glance:before{display:none!important}
 .fin{background:#f6f6f6!important}
-.pgh.mo{background:#a80000!important}
+.pgh.mo{background:#b20000!important}
 .stat,.stat b{background:none!important}
 #prog{background:var(--red)!important}
-.top{background:#a80000!important}
+.top{background:#b20000!important}
 
 /* tag chips and badges: square, flat */
 .dcat span,.tg span,.route a,.route span,.tbl>a:not(.tmail){border-radius:0!important}
@@ -117,7 +117,20 @@ b,strong,th,dt,label{font-weight:500}
 small,.sub,.lead{color:#666}
 nav .nl>a,nav .nl .mdd>a{font-family:Poppins,sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:.86rem}
 .btn,.enq,nav a.ph{font-family:Poppins,sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+/* page banners, red call-to-action boxes and photo card captions: keep text white on the dark background */
+.pgh h1,.pgh h2,.cta h2,.cta h3,.fcta h2,.fcta h3{color:#fff}
+.pgh p,.pgh li,.cta p,.cta li,.cta small,.fcta p,.fcta li{color:rgba(255,255,255,.9)}
+.tpi small{color:rgba(255,255,255,.88)}
 /* hero slides: keep text white over the photos */
 .sl,.sl h1,.sl h2,.sl p,.sl li,.sl .kick,.hf li{color:#fff!important}
 /* scroll story captions: keep text white over the film */
 .scap h2,.scap p,#sqcaps h2,#sqcaps p{color:#fff!important}
+/* large red areas use a deeper red: full #ff0000 across a wide panel is tiring to look at. Buttons and accents keep --red */
+:root{--red-deep:#9e0000}
+.cta,.fcta{background:var(--red-deep)!important;box-shadow:none!important}
+.cta .btn,.fcta .btn{color:var(--red-deep)!important}
+.cta .btn.glass,.fcta .btn.glass{color:#fff!important}
+.cta .btn:hover,.fcta .btn:hover{color:#fff!important}
+.cta h2,.cta h3,.fcta h2,.fcta h3,.fcta h3 em{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.cta p,.cta li,.cta small,.fcta p,.fcta li{color:rgba(255,255,255,.88)!important}
+.cta .eye{color:#ffb38a!important}
