@@ -121,7 +121,7 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta property="og:image" content="${abs(hero.img || SITE.ogImage)}"><meta name="twitter:card" content="summary_large_image">
 ${ld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="${FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css"><link rel="stylesheet" href="/assets/css/nexara-dest.css">${headExtra}
+<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css"><link rel="stylesheet" href="/assets/css/nexara-dest.css"><link rel="stylesheet" href="/assets/css/nexara-brush.css">${headExtra}
 </head><body class="sub">
 ${header(path)}
 <main id="main">
@@ -176,5 +176,7 @@ export const dat = a => `<ul class="dat">${a.map(x => Array.isArray(x) ? `<li><b
 export const facts = a => `<div class="gl2">${a.filter(Boolean).map(([ic, b, s]) => `<div><i>${IC[ic] || IC.star}</i><b>${esc(b)}</b><span>${s}</span></div>`).join("")}</div>`;
 export const linkList = (a, cls = "") => `<ul class="lnk${cls ? " " + cls : ""}">${a.map(([n, u, s]) => `<li><a href="${u}">${esc(n)}</a>${s ? `<small>${esc(s)}</small>` : ""}</li>`).join("")}</ul>`;
 export const cta = (h, p, trip) => `<div class="cta"><span class="eye">Plan it with us</span><h2>${esc(h)}</h2><p>${esc(p)}</p><a class="btn" href="/custom-tour/" data-enq${trip ? ` data-trip="${esc(trip)}"` : ""}>Request a free quote →</a><a class="btn glass" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent(`Hi Nexara Holidays, I would like to plan a trip${trip ? ": " + trip : ""}.`)}" target="_blank" rel="noopener">Chat on WhatsApp</a></div>`;
+/** Photo tiles with the place name in script on an orange brush stroke. items: [{ url, name, img, sub? }] */
+export const brush = (items, cls = "") => items.length ? `<div class="brg${cls ? " " + cls : ""}">${items.map(v => `<a class="brt" href="${v.url}"><img src="${v.img}" alt="${esc(v.name)}" loading="lazy"><span class="brl"><b>${esc(v.name)}</b></span>${v.sub ? `<small>${esc(v.sub)}</small>` : ""}</a>`).join("")}</div>` : "";
 export const note = html => `<p class="note">${html}</p>`;
 export const filterTabs = (opts) => `<div class="tabs ftabs" role="toolbar" aria-label="Filter">${opts.map(([v, n], i) => `<button type="button"${i ? "" : ' class="on"'} data-f="${v}">${esc(n)}</button>`).join("")}</div>`;

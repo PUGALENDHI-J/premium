@@ -1,0 +1,22 @@
+/* Brush-label photo tiles: a destination photo with its name in white script on an orange brush stroke.
+   Used for popular-destination rows on the home page, destination hubs, region pages and "Nearby" lists. */
+.brg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.brg.sm{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.brt{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:18px!important;background:#1e2a33;isolation:isolate;box-shadow:0 14px 30px -20px rgba(0,0,0,.55)}
+.brt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s}
+.brt:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.25))}
+.brt:hover img,.brt:focus-visible img{transform:scale(1.07)}
+.brl{position:absolute;left:50%;bottom:16%;transform:translateX(-50%) rotate(-3deg);display:grid;place-items:center;width:max-content;max-width:92%;padding:6px 26px 10px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 90' preserveAspectRatio='none'%3E%3Cpath fill='%23ff6a2a' d='M8 22c18-9 49-12 80-13 22-1 41 2 60-1 30-4 63-3 95 0 18 2 37 1 49 7 5 3 0 8 4 12 3 4 2 9-1 13 3 5 4 11 0 15 3 6-1 11-6 14-13 7-34 6-52 8-26 3-52 1-78 3-21 2-41-1-62 1-26 3-53 4-77-2-8-2-14-6-12-12-3-4-3-9 0-13-4-5-3-11 1-15-3-6 0-12 6-15 0-1-9 2-7-2z'/%3E%3Cpath fill='%23ff8a3d' opacity='.55' d='M20 14c40-6 90-3 140-5 40-2 80 1 120 6-30 3-70 1-110 3-50 2-100 3-150-4z'/%3E%3Cpath fill='%23e2450f' opacity='.45' d='M14 70c50 6 110 4 170 3 35-1 70 0 100-4-30 9-80 10-130 11-50 1-100 0-140-10z'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  transition:transform .35s}
+.brt:hover .brl{transform:translateX(-50%) rotate(-1deg) scale(1.04)}
+.brl b{font:400 clamp(1.7rem,2.6vw,2.3rem)/1.05 "Mr Dafoe",cursive;color:#fff;text-align:center;text-shadow:0 2px 0 rgba(150,30,0,.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.brg.sm .brl b{font-size:clamp(1.4rem,2vw,1.8rem)}
+.brt small{position:absolute;left:12px;top:12px;padding:4px 10px;border-radius:99px!important;background:rgba(255,255,255,.92);font:600 .7rem Poppins,sans-serif;color:var(--ink,#111)}
+@media(max-width:600px){
+  .brg,.brg.sm{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:68%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px 10px;scroll-padding:16px;scrollbar-width:none}
+  .brg::-webkit-scrollbar{display:none}
+  .brt{scroll-snap-align:start}
+}
+@media(prefers-reduced-motion:reduce){.brt img,.brl{transition:none}}
+.brhome{max-width:1240px;margin:0 auto;padding:clamp(40px,6vw,70px) 5vw 10px}.brall{text-align:center;margin-top:24px}

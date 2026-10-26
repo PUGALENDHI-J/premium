@@ -21,7 +21,7 @@ import { PAGES, FAQS } from "../content/pages.mjs";
 import { SERVICES, SERVICE_GROUPS, SERVICE_FAQ } from "../content/services.mjs";
 import { COUNTRY_FACTS, INDIA_FACTS, INDIA_TZ, FACTS_REVIEWED } from "../content/country-facts.mjs";
 import { ADD_STATES, ADD_IN_CITIES, ADD_W_REGIONS, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
-import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit, spotlight } from "./lib/html.mjs";
+import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, brush, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit, spotlight } from "./lib/html.mjs";
 import { buildMenu, menuLinks, topbar } from "./lib/menu.mjs";
 import { renderMd } from "./lib/md.mjs";
 
@@ -210,6 +210,10 @@ const nearImgs = n => {
   return NEAR.get(n.s);
 };
 const smIf = img => existsSync(path.join(ROOT, smOf(img))) ? smOf(img) : img;
+// brush-label photo tiles: [slug, optional short name]
+const brushOf = list => list.map(x => Array.isArray(x) ? x : [x]).map(([s, name, sub]) => { const n = typeof s == "string" ? N.get(s) : s; return n && !n.draft && n.img ? { url: n.url, name: (name || n.n).replace(/\s*\(.*?\)/g, ""), img: smIf(n.img), sub } : null }).filter(Boolean);
+const POP_INTL = ["maldives", "bali", "dubai", "switzerland", "thailand", "singapore", "paris", "japan", "santorini", "mauritius", "london", "vietnam"];
+const POP_IN = ["kerala", ["jammu-and-kashmir", "Kashmir"], "goa", "ladakh", "munnar", "ooty", "manali", "jaipur", ["andaman-and-nicobar", "Andaman"], "rishikesh", "darjeeling", "coorg"];
 function onePhotoEach(html) {
   const occ = [], rx = /<img\b[^>]*?\ssrc="(\/assets\/photos\/[^"]+)"[^>]*>/g;
   for (let m; (m = rx.exec(html));) {
@@ -350,7 +354,10 @@ function itemCards(items, cls = "") {
 const TOPIC_OF = { cash: "currency", star: "tipping", drop: "water", plug: "plug", shield: "emergency", talk: "language", route: "transport", tip: "planner", sun: "season", plane: "flight",
   wave: "dive", mountain: "trek", boat: "boat", snow: "ski", bike: "cycle", tent: "camp", leaf: "safari", wind: "air", compass: "outdoors" };
 const pic = (ic, key = TOPIC_OF[ic]) => TOPIC[key] ? `<figure class="cph" data-ic="${ic}"><img src="${TOPIC[key].img}" alt="" loading="lazy"></figure>` : `<i>${IC[ic] || IC.tip}</i>`;
-const tipCards = items => `<div class="et2">${items.filter(x => x && x[2]).map(([ic, h, t, cls]) => `<div${cls ? ` class="${cls}"` : ""}>${pic(ic)}<b>${esc(h)}</b><p>${t}</p></div>`).join("")}</div>`;
+// photo cards in a grid; planner's tips ("pt") sit below it as dark full-width notes
+const tipCards = items => { const ok = items.filter(x => x && x[2]), pt = ok.filter(x => x[3] == "pt");
+  return `<div class="et2">${ok.filter(x => x[3] != "pt").map(([ic, h, t, cls]) => `<div${cls ? ` class="${cls}"` : ""}>${pic(ic)}<b>${esc(h)}</b><p>${t}</p></div>`).join("")}</div>` +
+    (pt.length ? `<div class="ptips">${pt.map(([, h, t]) => `<div><i>${IC.tip}</i><div><b>${esc(h)}</b><p>${t}</p></div></div>`).join("")}</div>` : "") };
 const waLink = txt => `https://wa.me/${SITE.wa}?text=${encodeURIComponent(txt)}`;
 const clipV = (s, n = 46) => { s = String(s || ""); if (s.length <= n) return s; const c = s.slice(0, n); return c.slice(0, c.lastIndexOf(" ")).replace(/[,;:(\-–\s]+$/, "") + "…" };
 // opening sentences of a description, up to about max characters
@@ -499,7 +506,7 @@ function packagesSec(n) {
 }
 
 function subdest(n) {
-  if (n.kind == "city") { const sib = kids(n.parent).filter(x => x !== n && !x.draft).slice(0, 8); return sib.length ? sec("Nearby in " + n.parent.n, `More places in ${n.parent.n}`, cards(sib.map(placeCard), "sm")) : "" }
+  if (n.kind == "city") { const sib = kids(n.parent).filter(x => x !== n && !x.draft).slice(0, 8); return sib.length ? sec("Nearby in " + n.parent.n, `More places in ${n.parent.n}`, (brushOf(sib).length == sib.length ? brush(brushOf(sib), "sm") : cards(sib.map(placeCard), "sm"))) : "" }
   if (n.self) return "";
   const places = placesOf(n);
   return places.length ? sec("Where to go", `Places to visit in ${n.n}`, cards(places.map(placeCard))) : "";
@@ -686,7 +693,7 @@ for (const r of inReg) {
   emit(r.url, page({
     path: r.url, active: "/destinations/", title: `${r.n} Tour Packages & Destinations | Nexara Holidays`, desc: clip(`${firstSentence(r.d)} Explore ${st.length} states and ${ps.length} itineraries across ${r.n}.`),
     h1: `${r.n} holidays`, scr: "India", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", "/destinations/india/"], [r.n, r.url]], hero: r.img ? { img: r.img, credit: r.photo } : { m: r.m || "temple", g: r.g },
-    body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("States", `States in ${r.n}`, cards(st.map(topCard))) + sec("Plan by season", "When to visit each state", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Pick one state or combine a few. We build the route around your dates.", r.n + " holiday"),
+    body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Explore", `Popular places in ${r.n}`, brush(brushOf(st.flatMap(c => [c, ...kids(c)]).filter(x => isPlace(x) && !x.draft).sort((a, b) => pkgsAt(b).length - pkgsAt(a).length).slice(0, 8)))) + sec("States", `States in ${r.n}`, cards(st.map(topCard))) + sec("Plan by season", "When to visit each state", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Pick one state or combine a few. We build the route around your dates.", r.n + " holiday"),
   }), "destinations");
 }
 // international regions
@@ -696,7 +703,7 @@ for (const r of wReg) {
   emit(r.url, page({
     path: r.url, active: "/destinations/", title: `${r.n} Tour Packages from India | Nexara Holidays`, desc: clip(`${firstSentence(r.d)} ${cs.length} countries and ${ps.length} itineraries, planned from ${SITE.city}.`),
     h1: `${r.n} holidays`, scr: "International", sub: esc(firstSentence(r.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", "/destinations/international/"], [r.n, r.url]], hero: r.img ? { img: r.img, credit: r.photo } : { m: r.m || "sea", g: r.g },
-    body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Countries", `Countries in ${r.n}`, cards(cs.map(topCard))) + sec("Plan by season", "Best time for each country", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Single-country or multi-country, we build the route around your dates.", r.n + " holiday"),
+    body: `<section><div class="prose">${r.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Explore", `Popular places in ${r.n}`, brush(brushOf(cs.flatMap(c => [c, ...kids(c)]).filter(x => isPlace(x) && !x.draft).sort((a, b) => pkgsAt(b).length - pkgsAt(a).length).slice(0, 8)))) + sec("Countries", `Countries in ${r.n}`, cards(cs.map(topCard))) + sec("Plan by season", "Best time for each country", table, { cls: "tight" }) + (ps.length ? sec("Itineraries", `${r.n} tour packages`, cards(ps.map(pkgCard))) : "") + cta(`Plan a ${r.n} holiday`, "Single-country or multi-country, we build the route around your dates.", r.n + " holiday"),
   }), "destinations");
 }
 // hubs
@@ -705,19 +712,19 @@ for (const r of wReg) {
   emit(hubIN.url, page({
     path: hubIN.url, active: "/destinations/", title: "India Tour Packages & Destinations | Nexara Holidays", desc: clip(`Explore ${sts.length} Indian states and ${[...N.values()].filter(n => n.dom && isPlace(n) && !n.draft).length} destinations: hill stations, beaches, heritage and wildlife. Itineraries planned from ${SITE.city}.`),
     h1: "Incredible India, planned for you", scr: "Domestic holidays", sub: esc(firstSentence(INDIA.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["India", hubIN.url]], hero: N.get("kerala")?.img ? { img: N.get("kerala").img, credit: N.get("kerala").photo } : { m: "temple", g: "#5a2a1e,#b3562b,#ff8a3d" },
-    body: `<section><div class="prose">${INDIA.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "India's regions", cards(inReg.map(r => ({ url: r.url, name: r.n, ...motifFor(r.m == "sea" ? "beach" : r.m == "peak" ? "hill" : "heritage", r.s), g: r.g || motifFor("heritage", r.s).g, m: r.m || "temple", img: r.img, sm: r.sm, text: firstSentence(r.d), best: r.states.map(s => N.get(s).n).join(", "), bestLabel: "States", go: "Explore" })))) + sec("All states", "States and union territories", cards(sts.map(topCard))) + cta("Plan an India holiday", "Tell us what you enjoy and we suggest the right region for the season.", "India holiday"),
+    body: `<section><div class="prose">${INDIA.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Popular", "Popular places in India", brush(brushOf(POP_IN))) + sec("By region", "India's regions", cards(inReg.map(r => ({ url: r.url, name: r.n, ...motifFor(r.m == "sea" ? "beach" : r.m == "peak" ? "hill" : "heritage", r.s), g: r.g || motifFor("heritage", r.s).g, m: r.m || "temple", img: r.img, sm: r.sm, text: firstSentence(r.d), best: r.states.map(s => N.get(s).n).join(", "), bestLabel: "States", go: "Explore" })))) + sec("All states", "States and union territories", cards(sts.map(topCard))) + cta("Plan an India holiday", "Tell us what you enjoy and we suggest the right region for the season.", "India holiday"),
   }), "destinations");
   const cs = COUNTRIES.map(c => N.get(c.s)).filter(c => !c.draft);
   emit(hubW.url, page({
     path: hubW.url, active: "/destinations/", title: "International Tour Packages from India | Nexara Holidays", desc: clip(`${cs.length} countries across ${wReg.length} regions, from Thailand and Bali to Europe and Japan. International holidays planned from ${SITE.city}.`),
     h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/hero/maya-bay.webp" },
-    body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", img: r.img, sm: r.sm, g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
+    body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Popular", "Popular destinations abroad", brush(brushOf(POP_INTL))) + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", img: r.img, sm: r.sm, g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
   }), "destinations");
   emit("/destinations/", page({
     path: "/destinations/", active: "/destinations/", title: "Destinations: India & International Holidays | Nexara Holidays", desc: clip(`Browse every destination we plan: ${sts.length} Indian states and ${cs.length} countries, with best times to visit, top sights and ready itineraries.`),
     h1: "Where do you want to go?", scr: "Destination directory", sub: "Every place we plan, from Indian hill stations to European capitals.", crumbs: [["Home", "/"], ["Destinations", "/destinations/"]], hero: { img: "/assets/hero/grand-palace.webp" },
-    body: sec("India", "Destinations in India", `<div class="groups">${inReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${r.states.length} states</small></h3>${linkList(r.states.map(s => N.get(s)).filter(s => !s.draft).flatMap(s => [[s.n, s.url, "State"], ...kids(s).filter(c => !c.draft).map(c => [c.n, c.url, s.n])]))}</div>`).join("")}</div>`) +
-      `<div class="alt">${sec("International", "Destinations abroad", `<div class="groups">${wReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${COUNTRIES.filter(c => c.rg == r.s).length} countries</small></h3>${linkList(COUNTRIES.filter(c => c.rg == r.s).map(c => N.get(c.s)).filter(c => !c.draft).flatMap(c => [[c.n, c.url, "Country"], ...kids(c).filter(x => !x.draft).map(x => [x.n, x.url, c.n])]))}</div>`).join("")}</div>`)}</div>` + cta("Not sure where to go?", "Tell us your budget, dates and travel style and we will suggest three options.", ""),
+    body: sec("Trending", "Trending destinations", brush(brushOf([...POP_INTL.slice(0, 6), ...POP_IN.slice(0, 6)]))) + `<div class="alt">` + sec("India", "Destinations in India", `<div class="groups">${inReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${r.states.length} states</small></h3>${linkList(r.states.map(s => N.get(s)).filter(s => !s.draft).flatMap(s => [[s.n, s.url, "State"], ...kids(s).filter(c => !c.draft).map(c => [c.n, c.url, s.n])]))}</div>`).join("")}</div>`) +
+      `</div>${sec("International", "Destinations abroad", `<div class="groups">${wReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${COUNTRIES.filter(c => c.rg == r.s).length} countries</small></h3>${linkList(COUNTRIES.filter(c => c.rg == r.s).map(c => N.get(c.s)).filter(c => !c.draft).flatMap(c => [[c.n, c.url, "Country"], ...kids(c).filter(x => !x.draft).map(x => [x.n, x.url, c.n])]))}</div>`).join("")}</div>`)}` + cta("Not sure where to go?", "Tell us your budget, dates and travel style and we will suggest three options.", ""),
   }), "pages");
 }
 
@@ -981,6 +988,13 @@ for (const t of TYPES) {
 
 /* ---------- 9c. travel experiences (/experiences/): business, heritage, education, cruises, yachts ---------- */
 buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard });
+{
+  // home page: popular destinations as brush-label photo tiles (between the BRUSH markers in index.html)
+  const f = path.join(ROOT, "index.html"), h = readFileSync(f, "utf8");
+  const html = `<section class="brhome"><div class="h rv"><span class="eye">Popular destinations</span><h2>Where will you go next?</h2></div>${brush(brushOf([...POP_INTL.slice(0, 4), ...POP_IN.slice(0, 4)]))}<p class="brall"><a class="btn ghost2" href="/destinations/">All destinations →</a></p></section>`;
+  const out = h.replace(/(<!--BRUSH-->)[\s\S]*?(<!--\/BRUSH-->)/, (_, a, b) => a + html + b);
+  if (out != h) writeFileSync(f, out);
+}
 
 /* ---------- 10. guides & blog ---------- */
 const articleLd = (a, kind) => ({ "@context": "https://schema.org", "@type": kind == "blog" ? "BlogPosting" : "Article", headline: a.title, description: a.desc, datePublished: a.date || SITE.reviewed, dateModified: a.updated || a.date || SITE.reviewed, mainEntityOfPage: abs(a.url), author: { "@type": "Organization", name: "Nexara Holidays travel desk", url: SITE.origin + "/about-us/" }, publisher: { "@type": "Organization", name: SITE.name, logo: { "@type": "ImageObject", url: abs("/assets/logo-circle.png") } }, image: abs(a.img || SITE.ogImage) });
