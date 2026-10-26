@@ -1,6 +1,7 @@
 {
  "_note": "Wikimedia Commons searches for the topic photos on destination cards (essential tips, key facts, outdoor activities). tools/fetch_topic_photos.py re-fetches a key whenever its search here changes; list rejected Commons files under _skip.",
  "_skip": [
+  "1990-02-23 Bezirk Leipzig Stadt Leipzig Hauptbahnhof (DDR) a.jpg",
   "1990-02-23 Bezirk Leipzig Stadt Leipzig Hauptbahnhof (DDR) e.jpg",
   "A Typical Rural House in Assam, India.jpg",
   "AMNHTitanosaur.jpg",
@@ -13,6 +14,7 @@
   "Brockville, Ontario (29441735304).jpg",
   "Btv1b530849639 plan du port et de la ville de Brest 1855 restored.jpg",
   "Buck Island Reef National Monument, Virgin Islands (06523f05-6c64-4c00-abe8-c14d9a46efab).jpg",
+  "CES Booth Babe.jpg",
   "CH.ZH.Zurich 2022-03-16 Zoo-Zurich (Australia-exhibit) 3233 OrigX-R.jpg",
   "Camp Desert Rock.jpg",
   "Camping in tent alone under the sky in night with dog (2) 17.jpg",
@@ -59,6 +61,7 @@
   "Universal Studios Hollywood globe base 1.JPG",
   "Universal Studios Hollywood main entrance banner.jpg",
   "Vertical Adventures 20230422 153305.jpg",
+  "Wave roof of Hall 3 at the Frankfurt Messe (2025).jpg",
   "Yachts sailing in the Solent at sunset 2.JPG",
   "Żabnica, Widok z Płone na Romankę i Rysiankę, jesień, październik 2022, KP.jpg"
  ],
@@ -211,7 +214,7 @@
  "kid-hobbiton-movie-set": "Hobbiton Movie Set",
  "kid-niagara-falls-boat-ride": "Maid of the Mist Niagara Falls",
  "kid-moomin-world": "Moomin World Naantali",
- "x-biz-hero": "Hannover Messe hall",
+ "x-biz-hero": "Canton Fair exhibition hall",
  "x-biz-sourcing": "factory production line workers",
  "x-biz-hubs": "container terminal cranes port",
  "x-biz-corporate": "conference room meeting people",
@@ -228,5 +231,17 @@
  "x-cru-deck": "cruise ship in port",
  "x-yac-hero": "superyacht",
  "x-yac-cat": "sailing catamaran",
- "x-yac-gulet": "gulet"
+ "x-yac-gulet": "gulet",
+ "_large": [
+  "hero-world",
+  "hero-honeymoon",
+  "x-biz-hero",
+  "x-biz-skyline",
+  "x-her-festival",
+  "x-edu-campus",
+  "x-cru-deck",
+  "x-yac-hero"
+ ],
+ "hero-world": "Oia Santorini sunset",
+ "hero-honeymoon": "couple beach sunset"
 }

@@ -349,6 +349,24 @@
 "source": "https://commons.wikimedia.org/wiki/File:Street_in_Old_Delhi,_India.jpg",
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Street_in_Old_Delhi%2C_India.jpg/1280px-Street_in_Old_Delhi%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
+"hero-honeymoon": {
+"author": "Marwenwafi",
+"file": "A couple silhouette at Ras jebel beach during a golden sunset.jpg",
+"img": "/assets/photos/t/hero-honeymoon.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "couple beach sunset",
+"source": "https://commons.wikimedia.org/wiki/File:A_couple_silhouette_at_Ras_jebel_beach_during_a_golden_sunset.jpg"
+},
+"hero-world": {
+"author": "User:Anna.Tsolidou",
+"file": "Oia - Santorini 2019.jpg",
+"img": "/assets/photos/t/hero-world.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Oia Santorini sunset",
+"source": "https://commons.wikimedia.org/wiki/File:Oia_-_Santorini_2019.jpg"
+},
 "horse": {
 "author": "Marek Ślusarczyk (Tupungato) Photo portfolio",
 "file": "10 Iceland tourism - Icelandic horses ride in Iceland, horseback riding tourists.jpg",
@@ -1500,14 +1518,13 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Commission_conference_room.jpg/1280px-Commission_conference_room.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "x-biz-hero": {
-"author": "Hauner",
-"file": "CeBIT 2009 Halle 13 Panorama.jpg",
+"author": "Paul Colin Hennig firstdorsal.eu",
+"file": "Wave roof of Hall 3 at the Frankfurt Messe (2025).jpg",
 "img": "/assets/photos/t/x-biz-hero.webp",
-"license": "CC BY-SA 3.0",
-"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-"q": "Hannover Messe hall",
-"source": "https://commons.wikimedia.org/wiki/File:CeBIT_2009_Halle_13_Panorama.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/CeBIT_2009_Halle_13_Panorama.jpg/1280px-CeBIT_2009_Halle_13_Panorama.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Messe Frankfurt exhibition hall",
+"source": "https://commons.wikimedia.org/wiki/File:Wave_roof_of_Hall_3_at_the_Frankfurt_Messe_(2025).jpg"
 },
 "x-biz-hubs": {
 "author": "H. Zell",
@@ -1526,8 +1543,7 @@
 "license": "CC BY-SA 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "q": "business district skyline dusk",
-"source": "https://commons.wikimedia.org/wiki/File:Skylines_of_the_Central_Business_District,_Singapore_at_dusk.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Skylines_of_the_Central_Business_District%2C_Singapore_at_dusk.jpg/1280px-Skylines_of_the_Central_Business_District%2C_Singapore_at_dusk.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"source": "https://commons.wikimedia.org/wiki/File:Skylines_of_the_Central_Business_District,_Singapore_at_dusk.jpg"
 },
 "x-biz-sourcing": {
 "author": "Shixart1985",
@@ -1546,8 +1562,7 @@
 "license": "CC BY 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "q": "cruise ship in port",
-"source": "https://commons.wikimedia.org/wiki/File:Cruise_ship_in_the_Port_of_Nagasaki,_20240814_0829_3199.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Cruise_ship_in_the_Port_of_Nagasaki%2C_20240814_0829_3199.jpg/1280px-Cruise_ship_in_the_Port_of_Nagasaki%2C_20240814_0829_3199.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"source": "https://commons.wikimedia.org/wiki/File:Cruise_ship_in_the_Port_of_Nagasaki,_20240814_0829_3199.jpg"
 },
 "x-cru-expedition": {
 "author": "Virtual-Pano",
@@ -1580,14 +1595,13 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/River_cruise_ships_on_the_Danube_in_Budapest.jpg/1280px-River_cruise_ships_on_the_Danube_in_Budapest.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "x-edu-campus": {
-"author": "Dennis Ludlow - Sharkshock",
-"file": "Students walking through UNC campus.jpg",
+"author": "Tulane Public Relations",
+"file": "Three walking students, Tulane University New Orleans, March 2008.jpg",
 "img": "/assets/photos/t/x-edu-campus.webp",
-"license": "CC BY-SA 4.0",
-"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "q": "university campus students walking",
-"source": "https://commons.wikimedia.org/wiki/File:Students_walking_through_UNC_campus.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Students_walking_through_UNC_campus.jpg/1280px-Students_walking_through_UNC_campus.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"source": "https://commons.wikimedia.org/wiki/File:Three_walking_students,_Tulane_University_New_Orleans,_March_2008.jpg"
 },
 "x-edu-hero": {
 "author": "Dhartley",
@@ -1616,8 +1630,7 @@
 "license": "CC BY-SA 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "q": "street festival procession traditional dress",
-"source": "https://commons.wikimedia.org/wiki/File:DFC_2973_A_traditionally_dressed_couple_holding_candles_and_participating_in_a_nighttime_cultural_procession_as_onlookers_watch_from_the_sidelines.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/DFC_2973_A_traditionally_dressed_couple_holding_candles_and_participating_in_a_nighttime_cultural_procession_as_onlookers_watch_from_the_sidelines.jpg/1280px-DFC_2973_A_traditionally_dressed_couple_holding_candles_and_participating_in_a_nighttime_cultural_procession_as_onlookers_watch_from_the_sidelines.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"source": "https://commons.wikimedia.org/wiki/File:DFC_2973_A_traditionally_dressed_couple_holding_candles_and_participating_in_a_nighttime_cultural_procession_as_onlookers_watch_from_the_sidelines.jpg"
 },
 "x-her-food": {
 "author": "Original: Mithun Kunwar Derivative work: Radomianin",
@@ -1660,13 +1673,12 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bodrum_02.jpg/1280px-Bodrum_02.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "x-yac-hero": {
-"author": "Ecuapromo",
-"file": "Stella-maris-luxury-yacht-gallery-10.jpg",
+"author": "Mygeorgianguide",
+"file": "Luxury yacht in Maldives.jpg",
 "img": "/assets/photos/t/x-yac-hero.webp",
 "license": "CC BY-SA 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "q": "superyacht",
-"source": "https://commons.wikimedia.org/wiki/File:Stella-maris-luxury-yacht-gallery-10.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Stella-maris-luxury-yacht-gallery-10.jpg/1280px-Stella-maris-luxury-yacht-gallery-10.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"source": "https://commons.wikimedia.org/wiki/File:Luxury_yacht_in_Maldives.jpg"
 }
 }
