@@ -160,6 +160,14 @@
     go(0);
   });
 
+  /* ---------- month chips above the trade-fair list: they drive the list's "When" filter ---------- */
+  $$(".xpmon").forEach(bar => {
+    const sel = bar.nextElementSibling && bar.nextElementSibling.querySelector('[data-k="when"]'); if (!sel) return;
+    const sync = () => $$("button", bar).forEach(b => b.classList.toggle("on", b.dataset.when == sel.value));
+    bar.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; sel.value = b.dataset.when; sel.dispatchEvent(new Event("change")); sync(); b.scrollIntoView({ behavior: RM ? "auto" : "smooth", inline: "center", block: "nearest" }) });
+    sel.addEventListener("change", sync); bar.nextElementSibling.querySelector("[data-clear]").addEventListener("click", sync);
+  });
+
   /* ---------- region tabs (Tamil Nadu on the roots page): arrows move between tabs, #tn-<id> opens one ---------- */
   $$("[data-tabs]").forEach(box => {
     const tabs = $$("[role=tab]", box);
