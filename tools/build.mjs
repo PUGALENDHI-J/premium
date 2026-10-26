@@ -430,7 +430,7 @@ function essentialTips(n) {
     ["talk", "Language", T.lang ? `Languages spoken: ${esc(T.lang)}.` : ""],
     ["route", "Getting around", esc(T.go || "")],
     ...tips.map(t => ["tip", "Planner's tip", esc(t), "pt"]),
-  ]) + note(`General guidance, reviewed ${FACTS_REVIEWED}. Local rules and services change; we confirm details for your dates.`), { id: "tips" });
+  ]) + note(`General guidance. Local rules and services change; we confirm details for your dates.`), { id: "tips" });
 }
 
 function mapSection(n) {
@@ -1010,7 +1010,7 @@ function articlePage(a, kind) {
   const hero = a.img ? { img: a.img } : v0?.img ? { img: v0.img } : { g: v0?.g || "#5a2a1e,#b3562b,#ff8a3d" };
   return page({
     path: a.url, active: kind == "guide" ? "/travel-guides/" : "/blog/", ogType: "article", title: clipT(`${a.title} | Nexara Holidays`), desc: clip(a.desc), h1: a.title, scr: label, sub: `${esc(a.desc)}`, crumbs, hero, jsonld: [articleLd(a, kind)],
-    body: `<div class="lay"><article class="prose"><p class="byline">By the Nexara Holidays travel desk · Updated ${new Date(a.updated || a.date || SITE.reviewed).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · ${Math.max(2, Math.round(a.r.words / 220))} min read</p>${a.r.html}${a.facts ? note(a.facts) : ""}</article><aside>${toc}${quoteBox(a.trip || (relNodes[0] ? relNodes[0].n + " holiday" : "Holiday"))}${relNodes.length ? `<div class="box"><h3>Destinations in this ${kind == "guide" ? "guide" : "article"}</h3>${linkList(relNodes.map(n => [n.n, n.url]), "one")}</div>` : ""}</aside></div>` +
+    body: `<div class="lay"><article class="prose"><p class="byline">By the Nexara Holidays travel desk · ${Math.max(2, Math.round(a.r.words / 220))} min read</p>${a.r.html}${a.facts ? note(a.facts) : ""}</article><aside>${toc}${quoteBox(a.trip || (relNodes[0] ? relNodes[0].n + " holiday" : "Holiday"))}${relNodes.length ? `<div class="box"><h3>Destinations in this ${kind == "guide" ? "guide" : "article"}</h3>${linkList(relNodes.map(n => [n.n, n.url]), "one")}</div>` : ""}</aside></div>` +
       (relP.length ? `<div class="alt">${sec("Itineraries", "Trips that match", cards(relP.map(pkgCard)))}</div>` : "") + (sib.length ? sec("Keep reading", "Related reading", artCards(sib, x => kind == "guide" ? GUIDE_CATS[x.cat] : CLUSTERS[x.cluster].n)) : "") + cta("Turn this into a trip", "Tell us your dates and we send a day-by-day plan with a price.", a.trip || ""),
   });
 }

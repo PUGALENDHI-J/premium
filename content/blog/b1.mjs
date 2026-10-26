@@ -374,7 +374,7 @@ body: `Winter is the main travel season for most of India. Here is where to go, 
 
 ## Festivals
 
-- Hornbill Festival in Nagaland (1–10 December).
+- Hornbill Festival in Nagaland (early December).
 - Christmas and New Year in Goa and Kerala.
 - Pongal and the kite festival in January.
 

@@ -180,7 +180,7 @@ The city becomes an open-air art gallery of elaborate pandals, with music, food 
 
 A huge livestock fair and festival at the edge of the desert, with folk music, competitions and ghat rituals. See [[pushkar]].
 
-## Hornbill Festival, Nagaland (1–10 December)
+## Hornbill Festival, Nagaland (early December)
 
 Nagaland's tribes come together for dances, music, food and crafts. See [[kohima]].
 

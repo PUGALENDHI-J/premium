@@ -486,7 +486,7 @@ Winter brings snow to high areas such as Zero Point and Tsomgo Lake; some routes
 
 ## Nagaland
 
-[[kohima]] is pleasant from October to May. The Hornbill Festival runs from 1 to 10 December every year and fills hotels months in advance.
+[[kohima]] is pleasant from October to May. The Hornbill Festival runs in early December every year and fills hotels months in advance.
 
 ## Permits
 

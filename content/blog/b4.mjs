@@ -336,7 +336,7 @@ This is low season for most of India, so hotels in Kerala, Goa and Rajasthan off
 
 ## Independence Day weekend
 
-The 15 August long weekend is popular for short trips; book early.` },
+The Independence Day long weekend is popular for short trips; book early.` },
 { s: "where-to-travel-for-puja-and-dussehra", cluster: "seasonal", date: D, rel: ["gangtok", "darjeeling", "rajasthan", "thailand", "kolkata"], title: "Where to travel during the Puja and Dussehra holidays", desc: "Holiday ideas for the Puja and Dussehra break in September or October, from the eastern Himalaya to Rajasthan, Kerala and Southeast Asia.",
 body: `The Puja and Dussehra holidays fall in September or October, as the monsoon ends. It is a great time to travel, but popular routes fill up fast.
 

@@ -79,7 +79,7 @@ Not sure where to go? Browse the [destination directory](/destinations/), [holid
 4. **You confirm** in writing and pay the deposit stated in your quote. Only then do we make bookings.
 
 There is no charge for a quote and no obligation to book. See [how custom planning works](/tour-types/private-tours/) for more detail.` },
-  { s: "privacy-policy", n: "Privacy policy", title: "Privacy Policy | Nexara Holidays", desc: "How Nexara Holidays collects, uses and protects the personal information you share when you enquire about or book a trip.", h1: "Privacy policy", scr: "Your information", sub: "Last updated 24 October 2026.", noCta: true,
+  { s: "privacy-policy", n: "Privacy policy", title: "Privacy Policy | Nexara Holidays", desc: "How Nexara Holidays collects, uses and protects the personal information you share when you enquire about or book a trip.", h1: "Privacy policy", scr: "Your information", sub: "How we collect, use and protect your details.", noCta: true,
     body: `This policy explains how Nexara Holidays ("we", "us") handles personal information when you use this website or plan a trip with us.
 
 ## What this website collects
@@ -117,7 +117,7 @@ You can ask us what information we hold about you, ask us to correct it, or ask 
 ## Changes
 
 We may update this policy. The date at the top shows when it was last changed.` },
-  { s: "terms-and-conditions", n: "Terms and conditions", title: "Terms and Conditions | Nexara Holidays", desc: "The terms that apply to quotes, bookings, payments, changes, travel documents and responsibilities when you book a trip with Nexara Holidays.", h1: "Terms and conditions", scr: "The fine print", sub: "Last updated 24 October 2026. Your written quote and booking confirmation take priority over this page where they differ.", noCta: true,
+  { s: "terms-and-conditions", n: "Terms and conditions", title: "Terms and Conditions | Nexara Holidays", desc: "The terms that apply to quotes, bookings, payments, changes, travel documents and responsibilities when you book a trip with Nexara Holidays.", h1: "Terms and conditions", scr: "The fine print", sub: "Your written quote and booking confirmation take priority over this page where they differ.", noCta: true,
     body: `These terms apply to trips booked with Nexara Holidays. Specific terms for your trip, including prices, inclusions, payment schedule and cancellation charges, are set out in your written quote and booking confirmation. Where those documents differ from this page, they take priority.
 
 ## Itineraries and information on this website
@@ -161,7 +161,7 @@ If something is not right during your trip, please tell us immediately on WhatsA
 ## Governing law
 
 These terms are governed by the laws of India, and the courts in Chennai have jurisdiction.` },
-  { s: "cancellation-policy", n: "Cancellation and refunds", title: "Cancellation & Refund Policy | Nexara Holidays", desc: "How cancellations, refunds, no-shows and changes work for trips booked with Nexara Holidays, and where to find the charges for your booking.", h1: "Cancellation and refund policy", scr: "If plans change", sub: "Last updated 24 October 2026. The exact charges for your trip are in your booking confirmation.", noCta: true,
+  { s: "cancellation-policy", n: "Cancellation and refunds", title: "Cancellation & Refund Policy | Nexara Holidays", desc: "How cancellations, refunds, no-shows and changes work for trips booked with Nexara Holidays, and where to find the charges for your booking.", h1: "Cancellation and refund policy", scr: "If plans change", sub: "The exact charges for your trip are in your booking confirmation.", noCta: true,
     body: `We understand plans change. This page explains how cancellations and refunds work. The **exact cancellation charges for your trip are listed in your written quote and booking confirmation**, because they depend on the airlines, hotels and other suppliers involved.
 
 ## If you cancel

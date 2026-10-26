@@ -797,7 +797,7 @@ body: `India's festivals are some of the most memorable reasons to travel. Many 
 ## January
 
 - **Pongal and Makar Sankranti** across South India mid-month, with kolams, cattle festivals and feasts.
-- **Kite festival (Uttarayan)** in Ahmedabad on 14 January.
+- **Kite festival (Uttarayan)** in Ahmedabad in mid-January.
 - **Jaipur Literature Festival.**
 
 ## February and March
@@ -836,7 +836,7 @@ body: `India's festivals are some of the most memorable reasons to travel. Many 
 
 ## December
 
-- **Hornbill Festival** near [[kohima]], 1 to 10 December.
+- **Hornbill Festival** near [[kohima]], early December.
 - **Christmas** in Goa and Kerala.
 - **Rann Utsav** in Kutch through the winter.
 

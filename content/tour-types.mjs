@@ -455,7 +455,7 @@ We note where vegetarian food is easy (India, Singapore, Malaysia, Thailand's ci
 
 - **Durga Puja** in [[kolkata]] (September or October).
 - **Pushkar Camel Fair** at [[pushkar]] (October or November).
-- **Hornbill Festival** near [[kohima]] (December 1–10).
+- **Hornbill Festival** near [[kohima]] (early December).
 - **Rann Utsav** in [[kutch]] (winter months).
 - **Holi** in [[mathura-vrindavan]] (February or March).
 
