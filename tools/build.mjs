@@ -13,6 +13,8 @@ import { PK_W } from "../content/packages-world.mjs";
 import { SIGNATURE } from "../content/packages-signature.mjs";
 import { TYPES } from "../content/tour-types.mjs";
 import { SACRED, SACRED_GROUPS, SACRED_HUB } from "../content/sacred.mjs";
+import { EXPERIENCES } from "../content/experiences.mjs";
+import { buildExperiences, homeExperiences } from "./lib/exp.mjs";
 import { GUIDES, GUIDE_CATS } from "../content/guides/index.mjs";
 import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
 import { PAGES, FAQS } from "../content/pages.mjs";
@@ -140,7 +142,7 @@ const pkgsIn = t => PK.filter(p => p.home === t || p.stops.some(([x]) => top(x) 
 const pkgsOfType = s => PK.filter(p => p.themes.includes(s));
 
 /* ---------- 3b. site menu: generated pages and the home page share it ---------- */
-const MENU = buildMenu({ N, PK, TYPES, inReg, SERVICES, SERVICE_GROUPS, SACRED, SACRED_GROUPS });
+const MENU = buildMenu({ N, PK, TYPES, inReg, SERVICES, SERVICE_GROUPS, SACRED, SACRED_GROUPS, EXPERIENCES });
 setMenu(MENU);
 {
   // index.html is hand-made; only the regions between the MENU markers are rewritten
@@ -148,6 +150,7 @@ setMenu(MENU);
   const put = (name, html) => { const rx = new RegExp(`(<!--${name}-->)[\\s\\S]*?(<!--/${name}-->)`); if (!rx.test(home)) throw new Error(`index.html: missing <!--${name}--> markers`); home = home.replace(rx, (_, a, b) => a + html + b) };
   put("TOPBAR", topbar());
   put("MENU", menuLinks(MENU, "/", { spa: true }));
+  put("EXPERIENCES", homeExperiences(TOPIC));
   if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
 }
 
@@ -976,6 +979,9 @@ for (const t of TYPES) {
   }), "pages");
 }
 
+/* ---------- 9c. travel experiences (/experiences/): business, heritage, education, cruises, yachts ---------- */
+buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard });
+
 /* ---------- 10. guides & blog ---------- */
 const articleLd = (a, kind) => ({ "@context": "https://schema.org", "@type": kind == "blog" ? "BlogPosting" : "Article", headline: a.title, description: a.desc, datePublished: a.date || SITE.reviewed, dateModified: a.updated || a.date || SITE.reviewed, mainEntityOfPage: abs(a.url), author: { "@type": "Organization", name: "Nexara Holidays travel desk", url: SITE.origin + "/about-us/" }, publisher: { "@type": "Organization", name: SITE.name, logo: { "@type": "ImageObject", url: abs("/assets/logo-circle.png") } }, image: abs(a.img || SITE.ogImage) });
 function articlePage(a, kind) {
@@ -1072,7 +1078,7 @@ const allUrls = Object.values(sitemap).flat();
 emit("/sitemap/", page({
   path: "/sitemap/", title: "Site Map | Nexara Holidays", desc: "Every page on Nexara Holidays: destinations, tour packages, holiday themes, travel guides, blog articles and company information.",
   h1: "Site map", scr: "All pages", sub: `${allUrls.length + 2} pages`, crumbs: [["Home", "/"], ["Site map", "/sitemap/"]], hero: {},
-  body: sec("Main", "Main pages", linkList([["Home", "/"], ["All tour packages", "/tour-packages/"], ["India packages", "/tour-packages/india/"], ["International packages", "/tour-packages/international/"], ["Destinations", "/destinations/"], ["Holiday themes", "/tour-types/"], ["Sacred journeys", "/sacred/"], ["Travel services", "/services/"], ["Travel guides", "/travel-guides/"], ["Blog", "/blog/"], ...PAGES.map(p => [p.n, `/${p.s}/`]), ["FAQs", "/faqs/"]])) +
+  body: sec("Main", "Main pages", linkList([["Home", "/"], ["All tour packages", "/tour-packages/"], ["India packages", "/tour-packages/india/"], ["International packages", "/tour-packages/international/"], ["Destinations", "/destinations/"], ["Holiday themes", "/tour-types/"], ["Travel experiences", "/experiences/"], ["Sacred journeys", "/sacred/"], ["Travel services", "/services/"], ["Travel guides", "/travel-guides/"], ["Blog", "/blog/"], ...PAGES.map(p => [p.n, `/${p.s}/`]), ["FAQs", "/faqs/"]])) +
     sec("", "Holiday themes", linkList(TYPES.filter(t => t.url).map(t => [t.n, t.url]))) +
     sec("", "Travel services", linkList(SERVICES.map(v => [v.n, `/services/${v.s}/`]))) +
     sec("", "Tour packages", `<div class="groups">${pkgGroups(PK, p => p.home).map(([h, ps]) => `<div><h3>${esc(h.n)}</h3>${linkList(ps.map(p => [p.name, p.url, `${p.days} days`]))}</div>`).join("")}</div>`) +

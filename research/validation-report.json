@@ -1,9 +1,9 @@
 {
  "summary": {
-  "checked_pages": 1295,
-  "sitemap_urls": 1294,
+  "checked_pages": 1301,
+  "sitemap_urls": 1300,
   "errors": 0,
-  "warnings": 349,
+  "warnings": 352,
   "pages_with_single_inbound_link": 0,
   "most_similar_pairs": [
    "64% /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
@@ -179,11 +179,23 @@
   },
   {
    "page": "/",
-   "msg": "has 9 <h1> elements (pre-existing home page: hero slides and hidden views)"
+   "msg": "has 10 <h1> elements (pre-existing home page: hero slides and hidden views)"
   },
   {
    "page": "/",
-   "msg": "meta description length 205"
+   "msg": "meta description length 242"
+  },
+  {
+   "page": "/experiences/cruise-holidays/",
+   "msg": "rupee amount in page text outside a signature package: check it is a real, current price"
+  },
+  {
+   "page": "/experiences/educational-trips/",
+   "msg": "rupee amount in page text outside a signature package: check it is a real, current price"
+  },
+  {
+   "page": "/experiences/luxury-yacht-experiences/",
+   "msg": "rupee amount in page text outside a signature package: check it is a real, current price"
   },
   {
    "page": "/packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/",

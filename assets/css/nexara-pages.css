@@ -105,3 +105,6 @@ a.dc{color:inherit}
 .sub .alt section .h .eye{color:var(--red)}
 /* the call-to-action band is red, so its script line needs a light colour (overrides the flat theme's red text) */
 .sub .cta .eye{color:#ffd9a8!important;-webkit-text-fill-color:#ffd9a8!important;display:block;margin:0 auto 4px}
+
+/* enquiry phone: an international number typed with + replaces the +91 prefix */
+.fl.tel.intl .cc{display:none}.fl.tel.intl input{padding-left:14px}.fl.tel.intl label{left:15px}

@@ -1,5 +1,5 @@
-NEXARA HOLIDAYS – THAILAND WEBSITE
-===================================
+NEXARA HOLIDAYS – INDIA AND INTERNATIONAL HOLIDAYS WEBSITE
+==========================================================
 Files
   index.html   the whole website (Home, Packages, 3 package pages, Experiences, Gallery, Contact, enquiry pop-up)
   assets/      photos (.webp) and videos (.mp4)
@@ -19,9 +19,13 @@ What to edit (open index.html in VS Code and search)
   hello@nexaraholidays.com   placeholder email
   Call for price    add prices for Honeymoon and Boys Unleashed (search: pr:"Call for price")
   2026-11-19T20:00  countdown date/time for the Nov 19 batch
-  const DS=         the 12 destinations on the home page (text, attractions, best for).
-                    Destinations with im:"..." use a photo; the rest use an illustration (m:"sea|karst|peak|temple").
+  const DS=         the 12 world destinations on the home page (text, attractions, best for, u: page link,
+                    ph: photo path under assets/, t: tabs "intl", "india", "honey").
   const MP=         the "More places to explore" tiles
+  const FP=         the "Popular holiday packages" cards and the trip finder (u: package page, r: intl or india,
+                    w: couple, family, friends). The Thailand group batch links to the #ultimate page.
+  const MQ=         the scrolling strip of highlights
+  Hero slides       search: <div class="sl  (photos in assets/hero/, keys w1–w4 in const IM=)
   Story captions    search: const CH=[  (frame ranges, chapter names and text for the scroll film)
 
 

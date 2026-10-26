@@ -1,7 +1,8 @@
-// Site-wide top bar and mega menu (Packages / India / Honeymoon / Sacred / Themes / Services / Company dropdowns).
+// Site-wide top bar and mega menu (Packages / Experiences / India / Honeymoon / Sacred / Themes / Services / Company dropdowns).
 // buildMenu() turns the destination graph and packages into plain link data; the render functions
 // are shared by generated pages (html.mjs) and the hand-made index.html (injected between markers by build.mjs).
 import { SITE } from "../../content/site.mjs";
+import { TN_ROOTS } from "../../content/experiences.mjs";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const byName = (a, b) => a.n.localeCompare(b.n);
@@ -21,7 +22,7 @@ function honeyLinks(ps, max = 99) {
 }
 
 /** N: destination graph, PK: packages, TYPES: tour types, inReg: India regions with state slugs, SERVICES: travel services. */
-export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS = {}, SACRED = [], SACRED_GROUPS = {} }) {
+export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS = {}, SACRED = [], SACRED_GROUPS = {}, EXPERIENCES = [] }) {
   const live = s => { const n = N.get(s); return n && !n.draft ? n : null };
   const countries = (...rs) => [...N.values()].filter(n => n.kind == "country" && !n.draft && rs.includes(n.region.s)).sort(byName).map(n => [n.n, n.url]);
   const g = (h, url, links) => links.length ? { h, url, links } : null;
@@ -68,6 +69,14 @@ export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS =
       all: ["All honeymoon packages", "/tour-types/honeymoon/"],
       small: true,
     },
+    experiences: {
+      label: "Experiences", url: "/experiences/", match: ["/experiences/"],
+      cols: [[g("Travel Experiences", "/experiences/", EXPERIENCES.map(e => [e.n, `/experiences/${e.s}/`]))],
+        [g("Business travel", null, [["Global trade fairs", "/experiences/business-trade-travel/#events"], ["Sourcing trips", "/experiences/business-trade-travel/#sourcing"], ["Industry tours", "/experiences/business-trade-travel/#hubs"], ["Corporate travel", "/experiences/business-trade-travel/#corporate"], ["Business trip planner", "/experiences/business-trade-travel/#planner"]])],
+        [g("Tamil Nadu roots", "/experiences/roots-heritage-journeys/#tamil-nadu", TN_ROOTS.areas.map(a => [a.name.split(":")[0], `/experiences/roots-heritage-journeys/#tn-${a.id}`]))]],
+      all: ["Search all experiences", "/experiences/"],
+      small: true,
+    },
     sacred: {
       label: "Sacred", url: "/sacred/", match: ["/sacred/"],
       cols: Object.entries(SACRED_GROUPS).map(([k, h]) => [g(h, null, SACRED.filter(c => c.group == k).map(c => [c.n, `/sacred/${c.s}/`])),
@@ -112,7 +121,7 @@ export function menuLinks(M, active, { spa = false } = {}) {
   const dropdown = (k, m) => dd(k, m, k == best);
   const a = (u, n, on) => `<a href="${u}"${on ? ' class="cur" aria-current="page"' : ""}><span class="lt">${n}</span></a>`;
   return a(spa ? "#home" : "/", "Home", active == "/") + dropdown("company", M.company) + a("/tour-types/group-tours/", "Group Tours", active == "/tour-types/group-tours/") +
-    dropdown("packages", M.packages) + dropdown("india", M.india) + dropdown("honeymoon", M.honeymoon) + (M.sacred.cols.length ? dropdown("sacred", M.sacred) : "") + dropdown("themes", M.themes) + (M.services.cols.length ? dropdown("services", M.services) : "") +
+    dropdown("packages", M.packages) + (M.experiences.cols[0][0] ? dropdown("experiences", M.experiences) : "") + dropdown("india", M.india) + dropdown("honeymoon", M.honeymoon) + (M.sacred.cols.length ? dropdown("sacred", M.sacred) : "") + dropdown("themes", M.themes) + (M.services.cols.length ? dropdown("services", M.services) : "") +
     a(spa ? "#contact" : "/contact-us/", "Contact", active == "/contact-us/");
 }
 
@@ -131,5 +140,5 @@ export function footLinks(M) {
   const row = (h, url, links) => `<div class="frow"><h5><a href="${url}">${h}</a></h5><p>${links.map(([n, u]) => `<a href="${u}">${esc(n)}</a>`).join("")}</p></div>`;
   const intl = flat(M.packages).filter(([, u]) => u.startsWith("/destinations/"));
   const india = M.india.cols.slice(0, 4).flat().filter(Boolean).flatMap(x => x.links);
-  return `<div class="flinks">${row("International holidays", "/tour-packages/international/", intl)}${row("India holidays", "/tour-packages/india/", india)}${row("Honeymoon packages", "/tour-types/honeymoon/", flat(M.honeymoon))}${M.sacred.cols.length ? row("Sacred journeys", "/sacred/", flat(M.sacred)) : ""}${M.services.cols.length ? row("Travel services", "/services/", flat(M.services)) : ""}</div>`;
+  return `<div class="flinks">${row("International holidays", "/tour-packages/international/", intl)}${row("India holidays", "/tour-packages/india/", india)}${row("Honeymoon packages", "/tour-types/honeymoon/", flat(M.honeymoon))}${M.experiences.cols[0][0] ? row("Travel experiences", "/experiences/", flat(M.experiences).filter(([, u]) => !u.includes("#"))) : ""}${M.sacred.cols.length ? row("Sacred journeys", "/sacred/", flat(M.sacred)) : ""}${M.services.cols.length ? row("Travel services", "/services/", flat(M.services)) : ""}</div>`;
 }

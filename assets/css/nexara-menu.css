@@ -159,3 +159,11 @@ html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:#9e0
   header>nav a.ph{margin-left:6px}
 }
 @media(min-width:1181px) and (max-width:1300px){header>.brand .bw{display:none}}
+
+/* eleven menu items (with Experiences): from 1181 to 1535px the quote button shows only its arrow
+   (the label stays available to screen readers), and the phone block waits until 1900px */
+@media(min-width:1181px) and (max-width:1535px){
+  header>nav>a.ph{padding:6px;gap:0;margin-left:4px}
+  header>nav>a.ph>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+@media(min-width:1800px) and (max-width:1899px){header>nav>.hc{display:none}}
