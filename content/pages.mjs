@@ -53,7 +53,7 @@ export const PAGES = [
 ## Get in touch
 
 Call or WhatsApp **${SITE.phone}**, email ${SITE.email} or follow us on Instagram at @${SITE.insta}. You can also visit our [contact page](/contact-us/).` },
-  { s: "contact-us", n: "Contact us", title: "Contact Nexara Holidays | Call or WhatsApp +91 73059 71481", desc: "Contact Nexara Holidays in Chennai by phone, WhatsApp, email or Instagram, or send a quick enquiry. We reply on WhatsApp with a plan and a price.", h1: "Contact us", scr: "Let's plan together", sub: "Call, WhatsApp or email. We usually reply the same day.", img: "/assets/img-e5898052.webp", noCta: true, pre: contactCards, post: form(false),
+  { s: "contact-us", n: "Contact us", title: "Contact Nexara Holidays | Call or WhatsApp +91 73059 71481", desc: "Contact Nexara Holidays in Chennai by phone, WhatsApp, email or Instagram, or send a quick enquiry. We reply on WhatsApp with a plan and a price.", h1: "Contact us", scr: "Let's plan together", sub: "Call, WhatsApp or email. We usually reply the same day.", img: "/assets/photos/gt/dubai.webp", noCta: true, pre: contactCards, post: form(false),
     body: `## The quickest ways to reach us
 
 **WhatsApp** is the fastest: message ${SITE.phone} with where you would like to go and your dates, and a planner will reply. You can also **call** the same number or email **${SITE.email}**.
@@ -71,7 +71,7 @@ It helps to have:
 - A rough budget per person
 
 Not sure where to go? Browse the [destination directory](/destinations/), [holiday themes](/tour-types/) or [travel guides](/travel-guides/) for ideas.` },
-  { s: "custom-tour", n: "Custom tour enquiry", title: "Plan a Custom Tour | Free Quote | Nexara Holidays", desc: "Request a free, no-obligation quote for a customised private tour in India or abroad. Share your dates, travellers and budget and we reply on WhatsApp.", h1: "Plan a custom tour", scr: "Made for you", sub: "Tell us your dates, travellers and budget. We reply with a plan and a price.", img: "/assets/hero/wat-arun-night.webp", noCta: true, post: form(true),
+  { s: "custom-tour", n: "Custom tour enquiry", title: "Plan a Custom Tour | Free Quote | Nexara Holidays", desc: "Request a free, no-obligation quote for a customised private tour in India or abroad. Share your dates, travellers and budget and we reply on WhatsApp.", h1: "Plan a custom tour", scr: "Made for you", sub: "Tell us your dates, travellers and budget. We reply with a plan and a price.", img: "/assets/photos/gt/bali.webp", noCta: true, post: form(true),
     body: `Every trip on this website can be changed, and many of our travellers start from a blank page. Fill in the form below and WhatsApp opens with your details ready to send.
 
 ## What happens next
@@ -204,7 +204,7 @@ export const FAQS = [
   ["Planning and quotes", [
     ["How do I get a quote?", "Send us your dates, number of travellers, the places you have in mind and a rough budget, on WhatsApp or through the [custom tour form](/custom-tour/). We reply with a written plan and a price."],
     ["Is there a charge for a quote?", "No. Quotes are free and there is no obligation to book."],
-    ["Why don't your itineraries show prices?", "Prices change with travel dates, hotel category, room sharing and group size, so we quote each trip individually rather than showing a figure that may not apply to you. Our fixed-date Thailand departures show prices where they are fixed."],
+    ["Why don't your itineraries show prices?", "Prices change with travel dates, hotel category, room sharing and group size, so we quote each trip individually rather than showing a figure that may not apply to you. Our fixed-date group departures show prices where they are fixed."],
     ["Can I change one of your itineraries?", "Yes. Every itinerary except our fixed-date group departures is a private tour that can be changed: add or remove nights, change hotels or swap sightseeing."],
     ["How far ahead should I plan?", "Two to three months is comfortable for most trips. Plan four to six months ahead for peak seasons, festivals, safaris in India and destinations like the Maldives or Switzerland in summer."],
   ]],
@@ -222,7 +222,7 @@ export const FAQS = [
   ]],
   ["During your trip", [
     ["Who do I contact if something goes wrong?", "Message your planner on WhatsApp at any time. Your confirmation also includes local contacts for your trip."],
-    ["Will someone meet me at the airport?", "Airport transfers are included in most of our itineraries. On our Thailand group departures, a Nexara representative meets the group."],
+    ["Will someone meet me at the airport?", "Airport transfers are included in most of our itineraries. On our group departures, a Nexara representative meets the group."],
     ["Is vegetarian food available?", "In most of our destinations, yes. Tell us your dietary needs and we note them for hotels and tours, and suggest restaurants."],
     ["Can you help with special occasions?", "Yes. Tell us about birthdays, anniversaries or proposals and we ask hotels what they can arrange."],
   ]],

@@ -716,13 +716,13 @@ for (const r of wReg) {
   }), "destinations");
   const cs = COUNTRIES.map(c => N.get(c.s)).filter(c => !c.draft);
   emit(hubW.url, page({
-    path: hubW.url, active: "/destinations/", title: "International Tour Packages from India | Nexara Holidays", desc: clip(`${cs.length} countries across ${wReg.length} regions, from Thailand and Bali to Europe and Japan. International holidays planned from ${SITE.city}.`),
-    h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/hero/maya-bay.webp" },
+    path: hubW.url, active: "/destinations/", title: "International Tour Packages from India | Nexara Holidays", desc: clip(`${cs.length} countries across ${wReg.length} regions, from Dubai and Bali to Europe and Japan. International holidays planned from ${SITE.city}.`),
+    h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/photos/gt/santorini.webp" },
     body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Popular", "Popular destinations abroad", brush(brushOf(POP_INTL))) + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", img: r.img, sm: r.sm, g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
   }), "destinations");
   emit("/destinations/", page({
     path: "/destinations/", active: "/destinations/", title: "Destinations: India & International Holidays | Nexara Holidays", desc: clip(`Browse every destination we plan: ${sts.length} Indian states and ${cs.length} countries, with best times to visit, top sights and ready itineraries.`),
-    h1: "Where do you want to go?", scr: "Destination directory", sub: "Every place we plan, from Indian hill stations to European capitals.", crumbs: [["Home", "/"], ["Destinations", "/destinations/"]], hero: { img: "/assets/hero/grand-palace.webp" },
+    h1: "Where do you want to go?", scr: "Destination directory", sub: "Every place we plan, from Indian hill stations to European capitals.", crumbs: [["Home", "/"], ["Destinations", "/destinations/"]], hero: { img: "/assets/photos/t/hero-world.webp" },
     body: sec("Trending", "Trending destinations", brush(brushOf([...POP_INTL.slice(0, 6), ...POP_IN.slice(0, 6)]))) + `<div class="alt">` + sec("India", "Destinations in India", `<div class="groups">${inReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${r.states.length} states</small></h3>${linkList(r.states.map(s => N.get(s)).filter(s => !s.draft).flatMap(s => [[s.n, s.url, "State"], ...kids(s).filter(c => !c.draft).map(c => [c.n, c.url, s.n])]))}</div>`).join("")}</div>`) +
       `</div>${sec("International", "Destinations abroad", `<div class="groups">${wReg.map(r => `<div><h3><a href="${r.url}">${esc(r.n)}</a><small>${COUNTRIES.filter(c => c.rg == r.s).length} countries</small></h3>${linkList(COUNTRIES.filter(c => c.rg == r.s).map(c => N.get(c.s)).filter(c => !c.draft).flatMap(c => [[c.n, c.url, "Country"], ...kids(c).filter(x => !x.draft).map(x => [x.n, x.url, c.n])]))}</div>`).join("")}</div>`)}` + cta("Not sure where to go?", "Tell us your budget, dates and travel style and we will suggest three options.", ""),
   }), "pages");
@@ -868,17 +868,17 @@ function pkgGroups(arr, keyFn) {
     body: sec("By state", "Choose a state", jump(dom) + gHtml(dom)) + cta("Can't find your route?", "Tell us where you want to go and we will build it.", "India holiday"),
   }), "pages");
   emit("/tour-packages/international/", page({
-    path: "/tour-packages/international/", active: "/tour-packages/", title: "International Tour Packages from Chennai | Nexara Holidays", desc: clip(`${intl.length} international itineraries in ${new Set(intl.map(p => p.home)).size} countries: Thailand, Bali, Singapore, Dubai, Europe, Japan and more, planned from Chennai.`),
-    h1: "International tour packages", scr: "Holidays abroad", sub: `${intl.length} customisable itineraries in ${new Set(intl.map(p => p.home)).size} countries.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["International", "/tour-packages/international/"]], hero: { img: "/assets/hero/phi-phi-longtail.webp" },
+    path: "/tour-packages/international/", active: "/tour-packages/", title: "International Tour Packages from Chennai | Nexara Holidays", desc: clip(`${intl.length} international itineraries in ${new Set(intl.map(p => p.home)).size} countries: Dubai, Bali, Europe, Japan, Singapore, Thailand and more, planned from Chennai.`),
+    h1: "International tour packages", scr: "Holidays abroad", sub: `${intl.length} customisable itineraries in ${new Set(intl.map(p => p.home)).size} countries.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["International", "/tour-packages/international/"]], hero: { img: "/assets/photos/gt/switzerland.webp" },
     body: sec("By country", "Choose a country", jump(intl) + gHtml(intl)) + cta("Planning a multi-country trip?", "We combine countries, flights and visas into one plan.", "International holiday"),
   }), "pages");
   const feat = TYPES.filter(t => !t.draft && pkgsOfType(t.s).length).slice(0, 12);
   emit("/tour-packages/", page({
     path: "/tour-packages/", active: "/tour-packages/", title: "All Tour Packages: India & International Holidays | Nexara Holidays", desc: clip(`${PK.length} itineraries in India and abroad, from 2-day getaways to 15-day tours. Honeymoon, family, group and adventure trips, planned from Chennai.`),
-    h1: "All tour packages", scr: "Handpicked journeys", sub: `${PK.length} itineraries: ${dom.length} in India and ${intl.length} abroad. Every one is private and customisable.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"]], hero: { img: "/assets/img-a02b9314.webp" },
-    body: sec("Signature departures", "Our Thailand group and honeymoon trips", cards(PK.filter(p => p.sig).map(pkgCard)), { p: "Fixed-date departures from Chennai with confirmed inclusions." }) +
-      sec("Holidays in India", `India: ${dom.length} itineraries`, `<p><a class="btn red" href="/tour-packages/india/">Browse India packages →</a></p>` + linkList(pkgGroups(dom, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/india/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
+    h1: "All tour packages", scr: "Handpicked journeys", sub: `${PK.length} itineraries: ${dom.length} in India and ${intl.length} abroad. Every one is private and customisable.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"]], hero: { img: "/assets/photos/gt/maldives.webp" },
+    body: sec("Holidays in India", `India: ${dom.length} itineraries`, `<p><a class="btn red" href="/tour-packages/india/">Browse India packages →</a></p>` + linkList(pkgGroups(dom, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/india/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
       sec("Holidays abroad", `International: ${intl.length} itineraries`, `<p><a class="btn red" href="/tour-packages/international/">Browse international packages →</a></p>` + linkList(pkgGroups(intl, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/international/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
+      sec("Signature departures", "Fixed-date group and honeymoon trips", cards(PK.filter(p => p.sig).map(pkgCard)), { p: "Departures from Chennai with confirmed inclusions." }) +
       `<div class="alt">${sec("By theme", "Find packages by travel style", linkList(feat.map(t => [t.n, `/tour-types/${t.s}/`, `${pkgsOfType(t.s).length} itineraries`])))}</div>` + cta("Want something different?", "Every trip is custom. Tell us your idea and we will price it.", ""),
   }), "pages");
 }
@@ -922,7 +922,7 @@ for (const t of TYPES) {
   const live = TYPES.filter(t => t.url);
   emit("/tour-types/", page({
     path: "/tour-types/", active: "/tour-types/", title: "Holiday Themes: Honeymoon, Family, Adventure & More | Nexara Holidays", desc: clip(`Browse ${live.length} holiday themes, from honeymoons and family trips to safaris, pilgrimages, cruises and train journeys, with matching itineraries.`),
-    h1: "Holidays by theme", scr: "Travel your way", sub: "Pick the kind of trip you want and see itineraries that fit.", crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"]], hero: { img: "/assets/img-e3d4227e.webp" },
+    h1: "Holidays by theme", scr: "Travel your way", sub: "Pick the kind of trip you want and see itineraries that fit.", crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"]], hero: { img: "/assets/photos/gt/cappadocia.webp" },
     body: sec("Themes", "Choose a travel style", `<div class="acards ph">${live.map(t => `<a class="acard" href="${t.url}">${(t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)) ? `<img class="aci" src="${t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)}" alt="" loading="lazy">` : ""}<small>${pkgsOfType(t.s).length} itineraries</small><h3>${esc(t.n)}</h3><p>${esc(t.desc)}</p><span>Explore →</span></a>`).join("")}</div>`) + cta("Mixing styles?", "Honeymoon with adventure, family with wildlife: we plan combinations too.", ""),
   }), "pages");
 }
@@ -1018,7 +1018,7 @@ for (const g of G) emit(g.url, articlePage(g, "guide"), "guides");
 for (const b of B) emit(b.url, articlePage(b, "blog"), "blog");
 emit("/travel-guides/", page({
   path: "/travel-guides/", active: "/travel-guides/", title: "Travel Guides: When to Go, How to Plan, What to Pack | Nexara Holidays", desc: clip(`${G.length} practical travel guides for India and abroad: best times to visit, sample itineraries, packing lists and planning advice from our travel desk.`),
-  h1: "Travel guides", scr: "Plan smarter", sub: "Practical answers to the questions travellers ask us most.", crumbs: [["Home", "/"], ["Travel guides", "/travel-guides/"]], hero: { img: "/assets/img-e5898052.webp" },
+  h1: "Travel guides", scr: "Plan smarter", sub: "Practical answers to the questions travellers ask us most.", crumbs: [["Home", "/"], ["Travel guides", "/travel-guides/"]], hero: { img: "/assets/photos/gt/kyoto.webp" },
   body: Object.entries(GUIDE_CATS).map(([k, n], i) => { const a = G.filter(g => g.cat == k); return a.length ? (i % 2 ? `<div class="alt">` : "<div>") + sec(`${a.length} guides`, n, artCards(a, () => n)) + "</div>" : "" }).join("") + cta("Have a question we haven't answered?", "Message us. A planner will reply on WhatsApp.", ""),
 }), "pages");
 for (const [k, c] of Object.entries(CLUSTERS)) {
@@ -1028,7 +1028,7 @@ for (const [k, c] of Object.entries(CLUSTERS)) {
 }
 emit("/blog/", page({
   path: "/blog/", active: "/blog/", title: "Travel Blog: Ideas, Comparisons & Planning Tips | Nexara Holidays", desc: clip(`${B.length} articles on honeymoons, family travel, budgets, seasons and destination comparisons, written by the Nexara Holidays travel desk in Chennai.`),
-  h1: "The Nexara travel blog", scr: "Stories and ideas", sub: "Honest planning advice, comparisons and seasonal ideas.", crumbs: [["Home", "/"], ["Blog", "/blog/"]], hero: { img: "/assets/img-d6812c89.webp" },
+  h1: "The Nexara travel blog", scr: "Stories and ideas", sub: "Honest planning advice, comparisons and seasonal ideas.", crumbs: [["Home", "/"], ["Blog", "/blog/"]], hero: { img: "/assets/photos/gt/venice.webp" },
   body: Object.entries(CLUSTERS).map(([k, c], i) => { const a = B.filter(b => b.cluster == k); return a.length ? (i % 2 ? `<div class="alt">` : "<div>") + sec(`${a.length} articles`, c.n, artCards(a.slice(0, 6), () => c.n) + (a.length > 6 ? `<p style="margin-top:18px"><a class="btn ghost2" href="/blog/topic/${k}/">All ${a.length} articles on ${esc(c.n.toLowerCase())} →</a></p>` : "")) + "</div>" : "" }).join(""),
 }), "blog");
 
@@ -1066,7 +1066,7 @@ Forex is supplied by RBI-authorised dealers and insurance by IRDAI-licensed insu
 
 emit("/faqs/", page({
   path: "/faqs/", title: "FAQs: Booking, Payments, Visas & Travel | Nexara Holidays", desc: "Answers to common questions about planning, quotes, payments, visas, flights from Chennai, changes and travelling with Nexara Holidays.",
-  h1: "Frequently asked questions", scr: "Good to know", sub: "How quotes, bookings, payments and trip support work.", crumbs: [["Home", "/"], ["FAQs", "/faqs/"]], hero: { img: "/assets/img-79cceb75.webp" },
+  h1: "Frequently asked questions", scr: "Good to know", sub: "How quotes, bookings, payments and trip support work.", crumbs: [["Home", "/"], ["FAQs", "/faqs/"]], hero: { img: "/assets/photos/gt/kerala.webp" },
   body: FAQS.map(([h, qa], i) => (i % 2 ? `<div class="alt">` : "<div>") + sec("", h, faq(qa.map(([q, a]) => [q, renderMd(a, resolveSlug).html]))) + "</div>").join("") + cta("Still have a question?", "Message us on WhatsApp or call. A planner will help.", ""),
 }), "pages");
 

@@ -1,9 +1,9 @@
 {
  "summary": {
-  "checked_pages": 1301,
-  "sitemap_urls": 1300,
+  "checked_pages": 1306,
+  "sitemap_urls": 1305,
   "errors": 0,
-  "warnings": 344,
+  "warnings": 347,
   "pages_with_single_inbound_link": 0,
   "most_similar_pairs": [
    "64% /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
@@ -526,6 +526,10 @@
    "msg": "content 57% similar to /packages/india/delhi/golden-triangle-with-amritsar-8-days/"
   },
   {
+   "page": "/packages/india/tamil-nadu/ooty-and-coonoor-honeymoon-5-days/",
+   "msg": "content 57% similar to /packages/india/tamil-nadu/valparai-and-coonoor-tea-country-honeymoon-5-days/"
+  },
+  {
    "page": "/packages/international/uae/dubai-classic-holiday-5-days/",
    "msg": "content 57% similar to /packages/international/uae/dubai-group-tour-3-days/"
   },
@@ -774,6 +778,10 @@
    "msg": "content 54% similar to /packages/india/ladakh/ladakh-photography-tour-8-days/"
   },
   {
+   "page": "/packages/india/tamil-nadu/yercaud-honeymoon-retreat-4-days/",
+   "msg": "content 54% similar to /packages/india/tamil-nadu/yercaud-weekend-from-chennai-3-days/"
+  },
+  {
    "page": "/packages/india/himachal-pradesh/manali-adventure-week-6-days/",
    "msg": "content 54% similar to /packages/india/himachal-pradesh/manali-honeymoon-5-days/"
   },
@@ -984,6 +992,10 @@
   {
    "page": "/packages/india/bihar/bodh-gaya-pilgrimage-4-days/",
    "msg": "content 53% similar to /packages/india/uttar-pradesh/buddhist-circuit-varanasi-to-bodh-gaya-6-days/"
+  },
+  {
+   "page": "/packages/india/tamil-nadu/ooty-and-coonoor-honeymoon-5-days/",
+   "msg": "content 53% similar to /packages/india/tamil-nadu/ooty-and-coonoor-nilgiri-escape-4-days/"
   },
   {
    "page": "/packages/international/uae/dubai-and-abu-dhabi-kids-holiday-8-days/",

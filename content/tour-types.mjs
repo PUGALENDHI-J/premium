@@ -1,7 +1,7 @@
 // Holiday themes (/tour-types/<s>/). Packages are matched by theme slug; places by `tags` (destination tags)
 // or an explicit `places` list. `sample: n` shows a cross-section of packages when the theme applies to all trips.
 export const TYPES = [
-  { s: "honeymoon", n: "Honeymoon packages", title: "Honeymoon Packages from Chennai: India & Abroad", h1: "Honeymoon packages", scr: "Just the two of you", img: "/assets/img-e3d4227e.webp", tags: ["honeymoon"], desc: "Honeymoon packages in India and abroad, from Kashmir and Kerala to Bali, the Maldives and Switzerland, planned privately from Chennai.", sub: "Private honeymoon itineraries with the romantic touches arranged for you.", who: ["Newly married couples", "Couples planning a delayed honeymoon", "Destination weddings followed by a trip"],
+  { s: "honeymoon", n: "Honeymoon packages", title: "Honeymoon Packages from Chennai: India & Abroad", h1: "Honeymoon packages", scr: "Just the two of you", img: "/assets/photos/t/tt-honeymoon.webp", tags: ["honeymoon"], desc: "Honeymoon packages in India and abroad, from Ooty, Kodaikanal and Pondicherry to Kashmir, Bali, the Maldives and Switzerland, planned privately from Chennai.", sub: "Private honeymoon itineraries with the romantic touches arranged for you.", who: ["Newly married couples", "Couples planning a delayed honeymoon", "Destination weddings followed by a trip"],
     body: `A honeymoon is usually the first big trip a couple plans together, and the most common mistake we see is trying to fit too much in. Two or three bases with time to do nothing is almost always better than five hotels in seven nights.
 
 ## How we plan a honeymoon
@@ -9,15 +9,29 @@ export const TYPES = [
 - **Pace first.** We limit hotel changes and avoid early-morning starts unless it is for something special, like sunrise at the Taj Mahal or a balloon over Cappadocia.
 - **One standout stay.** A water villa in the Maldives, a houseboat in Kashmir or a cave suite in Santorini; we suggest where to spend a little more.
 - **Small touches, on request.** Flower decoration, a cake, a candlelight dinner or a couple's massage can be added to most hotels. We confirm what each hotel actually offers rather than promising it in advance.
-- **Season matters.** Wedding season in India (November to February) lines up well with Thailand, Dubai, Rajasthan and Kerala; summer weddings suit Kashmir, Switzerland and Bali.
+- **Season matters.** Wedding season in India (November to February) lines up well with Dubai, the Maldives, Rajasthan and Kerala; summer weddings suit Kashmir, Switzerland and Bali.
 
 ## Popular honeymoon choices from Chennai
 
-Within India, [[srinagar]], [[munnar]], [[udaipur]], [[havelock]] and [[manali]] are favourites. Abroad, [[bali]], [[maldives]], [[phuket]], [[mauritius]] and [[santorini]] top the list, with [[t:luxury-holidays]] for couples who want to splurge.
+Within India, [[srinagar]], [[munnar]], [[udaipur]], [[havelock]], [[manali]] and [[ooty]] are favourites. Abroad, [[bali]], [[maldives]], [[santorini]], [[mauritius]] and [[switzerland]] top the list, with [[t:luxury-holidays]] for couples who want to splurge.
 
-Our own [[p:thailand-honeymoon-lantern-of-love-6-days]] is timed for Chiang Mai's lantern festival.`,
+Our own [[p:thailand-honeymoon-lantern-of-love-6-days]] is timed for Chiang Mai's lantern festival.
+
+## Honeymoon in Tamil Nadu, close to home
+
+If you would rather not take a long flight, Tamil Nadu has hills, beaches and heritage stays within a short drive, train or flight of Chennai. Things couples love to explore:
+
+- **The Nilgiris.** The toy train from Mettupalayam, Ooty's rose garden and lake, and tea-estate stays with Dolphin's Nose and Lamb's Rock views in [[coonoor]]. See [[p:ooty-and-coonoor-honeymoon-5-days]].
+- **Kodaikanal.** Misty mornings on Coaker's Walk, a cycle or boat ride around the star-shaped lake and pine-forest drives. See [[p:kodaikanal-honeymoon-getaway-4-days]].
+- **Yercaud.** The closest hill station to Chennai, with coffee estates, sunset at Lady's Seat and Yercaud Lake. See [[p:yercaud-honeymoon-retreat-4-days]].
+- **Valparai's tea country.** Forty hairpin bends into the Anaimalai Hills, hornbills, waterfalls and quiet estate bungalows. See [[p:valparai-and-coonoor-tea-country-honeymoon-5-days]].
+- **The East Coast Road.** Sunrise at the Shore Temple in [[mahabalipuram]], then [[puducherry]]'s French Quarter cafés, the Promenade at sunset and Auroville's beaches. See [[p:east-coast-road-beach-honeymoon-5-days]].
+- **Chettinad mansions.** A night-time visit to the Meenakshi temple in [[madurai]], then a heritage mansion stay in [[chettinad]] with tiled courtyards and a Chettinad feast. See [[p:chettinad-heritage-honeymoon-4-days]].
+- **Land's end.** Sunrise and sunset over three seas at [[kanyakumari]], easy to add to a Kerala honeymoon.
+
+The coast and Chettinad are most comfortable from November to February. The hills are pleasant most of the year and at their best from March to June, when the plains are hot. For two hill stations in one trip, try [[p:ooty-and-kodaikanal-hill-holiday-6-days]], or add [[munnar]] across the border in Kerala.`,
     faq: [["How far in advance should we book a honeymoon?", "Three to four months ahead is comfortable for most trips; six months for the Maldives in peak season or Kashmir in May and June."], ["Can you add surprises like a candlelight dinner?", "Yes. Tell us what you would like and we confirm with the hotel before including it in your quote."], ["What is a good honeymoon budget?", "It varies widely by destination and season. Share a per-couple figure and we suggest options that fit it."]] },
-  { s: "family-holidays", n: "Family holidays", title: "Family Tour Packages: Kid-Friendly Holidays", h1: "Family holidays", scr: "Holidays for all ages", img: "/assets/dest/pattaya.webp", tags: ["family"], desc: "Family tour packages with sensible pacing, kid-friendly hotels and attractions, from Ooty and Kerala to Singapore, Dubai and Thailand.", sub: "Itineraries paced for children, parents and grandparents together.", who: ["Families with young children", "Multi-generation groups", "Families with teenagers"],
+  { s: "family-holidays", n: "Family holidays", title: "Family Tour Packages: Kid-Friendly Holidays", h1: "Family holidays", scr: "Holidays for all ages", img: "/assets/photos/t/tt-family-holidays.webp", tags: ["family"], desc: "Family tour packages with sensible pacing, kid-friendly hotels and attractions, from Ooty and Kerala to Singapore, Dubai and Europe.", sub: "Itineraries paced for children, parents and grandparents together.", who: ["Families with young children", "Multi-generation groups", "Families with teenagers"],
     body: `A good family holiday works for the youngest and the oldest in the group at the same time. That means fewer early starts, shorter drives, a pool at the hotel and at least one activity each day that the children will remember.
 
 ## What makes a trip family-friendly
@@ -29,11 +43,11 @@ Our own [[p:thailand-honeymoon-lantern-of-love-6-days]] is timed for Chiang Mai'
 
 ## Destinations that suit families
 
-[[singapore]] and [[dubai]] are the easiest international family trips, with theme parks, aquariums and very short flights from Chennai. [[bangkok]] and [[pattaya]] mix shows, safaris and beaches. In India, [[ooty]], [[munnar]], [[srinagar]] and the [[port-blair|Andaman Islands]] are long-time favourites.
+[[singapore]] and [[dubai]] are the easiest international family trips, with theme parks, aquariums and very short flights from Chennai. [[paris]] has Disneyland, and [[bangkok]] mixes shows, safaris and markets. In India, [[ooty]], [[munnar]], [[srinagar]] and the [[port-blair|Andaman Islands]] are long-time favourites.
 
 Travelling with grandparents too? See [[t:senior-friendly]] for gentler routes.`,
-    faq: [["Do you arrange child seats in vehicles?", "We can request them; availability depends on the destination and supplier, and we confirm it in writing before you travel."], ["Which destination is best with toddlers?", "Places with short flights and familiar food, such as Singapore, Dubai, Thailand and Kerala, are easiest."], ["Do children get discounts?", "Many hotels and attractions charge less for children; the exact savings depend on ages and are shown in your quote."]] },
-  { s: "couples", n: "Couples' holidays", title: "Holidays for Couples: Anniversaries & Romantic Breaks", h1: "Holidays for couples", scr: "Time for two", img: "/assets/hero/maya-bay.webp", tags: ["honeymoon", "wellness"], desc: "Romantic breaks and anniversary trips for couples: quiet resorts, scenic train rides, island stays and cities for two, in India and abroad.", sub: "Anniversaries, babymoons and long-overdue time for two.", who: ["Couples celebrating an anniversary", "Babymoon trips", "Couples who travel together every year"],
+    faq: [["Do you arrange child seats in vehicles?", "We can request them; availability depends on the destination and supplier, and we confirm it in writing before you travel."], ["Which destination is best with toddlers?", "Places with short flights and familiar food, such as Singapore, Dubai, Sri Lanka and Kerala, are easiest."], ["Do children get discounts?", "Many hotels and attractions charge less for children; the exact savings depend on ages and are shown in your quote."]] },
+  { s: "couples", n: "Couples' holidays", title: "Holidays for Couples: Anniversaries & Romantic Breaks", h1: "Holidays for couples", scr: "Time for two", img: "/assets/photos/t/tt-couples.webp", tags: ["honeymoon", "wellness"], desc: "Romantic breaks and anniversary trips for couples: quiet resorts, scenic train rides, island stays and cities for two, in India and abroad.", sub: "Anniversaries, babymoons and long-overdue time for two.", who: ["Couples celebrating an anniversary", "Babymoon trips", "Couples who travel together every year"],
     body: `Not every romantic trip is a honeymoon. Many of our couples are celebrating a tenth anniversary, taking a babymoon or simply getting away from work and family for a few days. These trips are usually shorter and more focused than honeymoons.
 
 ## Ideas by trip length
@@ -50,12 +64,12 @@ We pick destinations with short flights, good medical facilities nearby and gent
 
 We can arrange a private dinner, a sunset cruise or a spa ritual and confirm each with the hotel. If it is an anniversary, tell us the date; some hotels add a small surprise.`,
     faq: [["Is a babymoon trip safe?", "Please check with your doctor first. We suggest destinations with short flights, no altitude and good healthcare access."], ["Can we combine a couples' trip with a work trip?", "Yes. Many couples add a few nights after a conference; we can plan around fixed dates."]] },
-  { s: "group-tours", n: "Group tours", title: "Group Tour Packages for Friends, Families & Teams", h1: "Group tours", scr: "Travel together", img: "/assets/img-f23d87e4.webp", tags: ["nightlife", "adventure"], desc: "Group tour packages for friends, extended families, clubs and colleagues, including Nexara's own Thailand group departures from Chennai.", sub: "From our fixed-date Thailand batches to private trips for your own group.", who: ["Friends' trips and reunions", "Extended families", "Clubs, associations and office teams"],
-    body: `There are two kinds of group trip. One is a **fixed-date departure** that you join, like our Thailand batches from Chennai with a tour manager. The other is a **private group** of your own friends, family or colleagues, where we plan the whole trip around you.
+  { s: "group-tours", n: "Group tours", title: "Group Tour Packages for Friends, Families & Teams", h1: "Group tours", scr: "Travel together", img: "/assets/photos/t/tt-group-tours.webp", tags: ["nightlife", "adventure"], desc: "Group tour packages for friends, extended families, clubs and colleagues, with group departures from Chennai to Dubai, Europe, Bali, Turkey, the Andamans and more.", sub: "Fixed-date departures you can join, or private trips planned around your own group.", who: ["Friends' trips and reunions", "Extended families", "Clubs, associations and office teams"],
+    body: `There are two kinds of group trip. One is a **fixed-date departure** that you join, with a set route, set dates and a tour manager from Chennai. The other is a **private group** of your own friends, family or colleagues, where we plan the whole trip around you.
 
 ## Our fixed-date departures
 
-Our [[p:thailand-ultimate-boys-escape-5-days]] and [[p:thailand-boys-unleashed-4-days]] trips leave Chennai on set dates with a Nexara representative, private transfers and pre-booked activities.
+We run set-date departures through the year, each with a Nexara representative, private transfers and pre-booked activities. Ask us which batches are open for your dates, from a [[p:europe-group-tour-10-days]], [[p:dubai-group-tour-3-days]] or [[p:turkey-group-tour-6-days]] to a [[p:bali-friends-trip-5-days]] or an [[p:andaman-group-tour-5-days]].
 
 ## Planning a private group
 
@@ -64,9 +78,9 @@ Our [[p:thailand-ultimate-boys-escape-5-days]] and [[p:thailand-boys-unleashed-4
 - **Coaches or tempo travellers.** Vehicle size matters for comfort; we size it with luggage in mind.
 - **Payment schedules.** For groups we usually confirm with a deposit and collect the balance closer to departure, as per the terms in your quote.
 
-Popular group destinations include [[pattaya]], [[dubai]], [[north-goa]], [[manali]] and [[bali]].`,
+Popular group destinations include [[dubai]], [[bali]], [[istanbul]], [[north-goa]], [[manali]], [[port-blair|the Andamans]] and [[kuala-lumpur]].`,
     faq: [["How many people make a group?", "We plan group logistics from about eight travellers, but we are happy to plan for smaller groups too."], ["Can group members fly from different cities?", "Yes. We can coordinate arrivals from different cities and meet everyone at the destination."]] },
-  { s: "educational-tours", n: "Educational tours", title: "Educational Tours for Schools & Colleges", h1: "Educational tours", scr: "Learning on the road", img: "/assets/dest/ayutthaya.webp", tags: ["heritage"], desc: "Educational tours for schools, colleges and study groups: heritage sites, science centres and cultural workshops in India and abroad.", sub: "Study trips with clear learning goals, safe logistics and supervised schedules.", who: ["School groups", "College and university study trips", "Teachers planning curriculum-linked travel"],
+  { s: "educational-tours", n: "Educational tours", title: "Educational Tours for Schools & Colleges", h1: "Educational tours", scr: "Learning on the road", img: "/assets/photos/t/tt-educational-tours.webp", tags: ["heritage"], desc: "Educational tours for schools, colleges and study groups: heritage sites, science centres and cultural workshops in India and abroad.", sub: "Study trips with clear learning goals, safe logistics and supervised schedules.", who: ["School groups", "College and university study trips", "Teachers planning curriculum-linked travel"],
     body: `An educational tour should connect to what students are studying. We start with your learning goals, then build the route, guides and activities around them.
 
 ## Examples of curriculum links
@@ -80,7 +94,7 @@ Popular group destinations include [[pattaya]], [[dubai]], [[north-goa]], [[mana
 
 We plan hotels with secure floors for groups, keep the teacher-to-student ratio you require, and share daily schedules, emergency contacts and dietary lists in advance. Parental consent forms and ID requirements are the school's responsibility, but we send a checklist.`,
     faq: [["Do you provide guides who can teach to a syllabus?", "We brief licensed guides on your learning goals and can add workshops or expert talks where available."], ["Can you plan international study tours?", "Yes, for example Japan's science museums or Singapore's gardens and research institutions, subject to visas."]] },
-  { s: "corporate-travel", n: "Corporate travel", title: "Corporate Travel & Team Offsites", h1: "Corporate travel and offsites", scr: "Teams on the move", img: "/assets/hero/grand-palace.webp", tags: ["city"], desc: "Corporate offsites, incentive trips and team outings planned from Chennai: venues, group flights, transfers and activities in India and abroad.", sub: "Offsites, incentive trips and conference add-ons for teams.", who: ["Team offsites and retreats", "Sales incentive trips", "Conference travel with leisure extensions"],
+  { s: "corporate-travel", n: "Corporate travel", title: "Corporate Travel & Team Offsites", h1: "Corporate travel and offsites", scr: "Teams on the move", img: "/assets/photos/t/x-biz-hero.webp", tags: ["city"], desc: "Corporate offsites, incentive trips and team outings planned from Chennai: venues, group flights, transfers and activities in India and abroad.", sub: "Offsites, incentive trips and conference add-ons for teams.", who: ["Team offsites and retreats", "Sales incentive trips", "Conference travel with leisure extensions"],
     body: `Corporate travel has different priorities from a holiday: a clear budget owner, fixed dates, invoicing and someone on call if plans change.
 
 ## What we handle
@@ -96,7 +110,7 @@ Within India, [[coorg]], [[udaipur]], [[north-goa]] and [[rishikesh]] work well 
 
 Tell us your headcount, dates and budget per person and we will send options with an itemised quote.`,
     faq: [["Do you issue GST invoices?", "Yes. Invoicing details are confirmed when you book."], ["Can you plan at short notice?", "Often, yes, especially for domestic offsites; international trips depend on visa timelines."]] },
-  { s: "luxury-holidays", n: "Luxury holidays", title: "Luxury Holidays & Premium Tour Packages", h1: "Luxury holidays", scr: "The finer details", img: "/assets/hero/wat-arun-night.webp", tags: ["luxury"], desc: "Luxury holidays with premium hotels, private guides and seamless transfers: Maldives water villas, Rajasthan palaces, Swiss mountain hotels and more.", sub: "Premium hotels, private guides and every transfer handled.", who: ["Couples marking a big occasion", "Travellers who value comfort and privacy", "Families who want suites and private guides"],
+  { s: "luxury-holidays", n: "Luxury holidays", title: "Luxury Holidays & Premium Tour Packages", h1: "Luxury holidays", scr: "The finer details", img: "/assets/photos/t/tt-luxury-holidays.webp", tags: ["luxury"], desc: "Luxury holidays with premium hotels, private guides and seamless transfers: Maldives water villas, Rajasthan palaces, Swiss mountain hotels and more.", sub: "Premium hotels, private guides and every transfer handled.", who: ["Couples marking a big occasion", "Travellers who value comfort and privacy", "Families who want suites and private guides"],
     body: `Luxury travel is less about thread counts and more about removing friction: the right room, a guide who knows when to talk and when not to, a car waiting when you land and no queues where they can be avoided.
 
 ## How a luxury trip differs
@@ -110,12 +124,12 @@ Tell us your headcount, dates and budget per person and we will send options wit
 
 [[rajasthan]]'s heritage palaces, [[kerala]]'s plantation bungalows and lake villas, Japan's ryokans near [[mount-fuji]], safari lodges in [[kruger]] and [[masai-mara]], and private-island resorts in the [[seychelles]].`,
     faq: [["Do luxury packages include flights?", "We can add business or premium economy flights from Chennai on request."], ["Can you book specific hotels we have in mind?", "Yes. Tell us the hotel and room type and we check availability and price."]] },
-  { s: "budget-holidays", n: "Budget holidays", title: "Budget Holidays: Good-Value Trips from Chennai", h1: "Budget holidays", scr: "More trip for your money", img: "/assets/dest/bangkok.webp", places: ["yercaud", "hampi", "kasol", "rishikesh", "bangkok", "pattaya", "bali", "hanoi", "kathmandu"], desc: "Good-value holidays that keep costs down without cutting corners: smart seasons, three-star stays and shared tours in India and Southeast Asia.", sub: "Smart choices on season, hotels and tours to stretch your budget.", who: ["Students and young travellers", "First international trips", "Families watching costs"],
+  { s: "budget-holidays", n: "Budget holidays", title: "Budget Holidays: Good-Value Trips from Chennai", h1: "Budget holidays", scr: "More trip for your money", img: "/assets/photos/t/tt-budget-holidays.webp", places: ["yercaud", "hampi", "kasol", "rishikesh", "bangkok", "pattaya", "bali", "hanoi", "kathmandu"], desc: "Good-value holidays that keep costs down without cutting corners: smart seasons, three-star stays and shared tours in India and Southeast Asia.", sub: "Smart choices on season, hotels and tours to stretch your budget.", who: ["Students and young travellers", "First international trips", "Families watching costs"],
     body: `A budget holiday is not a cheap holiday. It is one where the money goes to what matters to you, and where nothing is lost to bad planning.
 
 ## Where the savings come from
 
-- **Season.** Travelling just outside peak season (for example, Goa in early December or Thailand in late October) often saves a lot on hotels.
+- **Season.** Travelling just outside peak season (for example, Goa in early December or Bali in late September) often saves a lot on hotels.
 - **Hotel category.** Clean, well-located three-star hotels cost far less than resorts and are fine for sightseeing-heavy trips.
 - **Shared tours** instead of private ones for island trips and day excursions.
 - **Short flights.** From Chennai, [[bangkok]], [[colombo]], [[kuala-lumpur]] and [[singapore]] are all about two to four hours away.
@@ -123,9 +137,9 @@ Tell us your headcount, dates and budget per person and we will send options wit
 
 ## Good-value destinations
 
-In India, [[hampi]], [[rishikesh]], [[kasol]] and [[yercaud]]. Abroad, [[pattaya]], [[bali]], [[hanoi]] and [[kathmandu]] offer a lot for the money.`,
-    faq: [["What is the cheapest international trip from Chennai?", "Sri Lanka, Thailand and Malaysia are usually the best value, depending on season and flight fares."], ["Are budget hotels safe?", "We only use hotels with reliable reviews in good locations, and we tell you the hotel name in your quote."]] },
-  { s: "adventure", n: "Adventure holidays", title: "Adventure Holidays: Treks, Rafting, Diving & More", h1: "Adventure holidays", scr: "Get out there", img: "/assets/dest/krabi.webp", tags: ["adventure", "trek"], desc: "Adventure holidays with trekking, rafting, scuba diving, paragliding and desert safaris, from Ladakh and Rishikesh to Queenstown and Krabi.", sub: "Treks, rapids, reefs and big landscapes, with licensed operators.", who: ["Active couples and friends", "First-time divers and trekkers", "Experienced adventurers"],
+In India, [[hampi]], [[rishikesh]], [[kasol]] and [[yercaud]]. Abroad, [[colombo]], [[bali]], [[hanoi]], [[kathmandu]] and [[bangkok]] offer a lot for the money.`,
+    faq: [["What is the cheapest international trip from Chennai?", "Sri Lanka, Malaysia, Vietnam and Thailand are usually the best value, depending on season and flight fares."], ["Are budget hotels safe?", "We only use hotels with reliable reviews in good locations, and we tell you the hotel name in your quote."]] },
+  { s: "adventure", n: "Adventure holidays", title: "Adventure Holidays: Treks, Rafting, Diving & More", h1: "Adventure holidays", scr: "Get out there", img: "/assets/photos/t/tt-adventure.webp", tags: ["adventure", "trek"], desc: "Adventure holidays with trekking, rafting, scuba diving, paragliding and desert safaris, from Ladakh and Rishikesh to Queenstown and Cappadocia.", sub: "Treks, rapids, reefs and big landscapes, with licensed operators.", who: ["Active couples and friends", "First-time divers and trekkers", "Experienced adventurers"],
     body: `Adventure travel ranges from a gentle snorkel to a high-altitude trek. We match the trip to your fitness and experience, and we only use licensed, insured operators for activities.
 
 ## Popular adventures
@@ -141,7 +155,7 @@ In India, [[hampi]], [[rishikesh]], [[kasol]] and [[yercaud]]. Abroad, [[pattaya
 
 Altitude, weather and operator standards matter. We build in acclimatisation days for Ladakh and Spiti, recommend travel insurance that covers the activities you plan, and tell you honestly when a season is not right for an activity.`,
     faq: [["Do I need to be very fit?", "Most adventure activities we plan suit people of average fitness. We flag strenuous ones, like long treks, in advance."], ["Is travel insurance required?", "We strongly recommend insurance that specifically covers the adventure activities in your plan."]] },
-  { s: "wildlife-safaris", n: "Wildlife safaris", title: "Wildlife Safari Packages: India & Africa", h1: "Wildlife safaris", scr: "Into the wild", img: "/assets/dest/khao-sok.webp", tags: ["wildlife", "safari"], desc: "Wildlife safari packages for tigers in Ranthambore and Kanha, rhinos in Kaziranga, lions in Gir and the Great Migration in Kenya and Tanzania.", sub: "Tigers, rhinos, lions and the Great Migration, with safaris booked early.", who: ["Wildlife and photography enthusiasts", "Families with curious children", "Bucket-list travellers"],
+  { s: "wildlife-safaris", n: "Wildlife safaris", title: "Wildlife Safari Packages: India & Africa", h1: "Wildlife safaris", scr: "Into the wild", img: "/assets/photos/t/tt-wildlife-safaris.webp", tags: ["wildlife", "safari"], desc: "Wildlife safari packages for tigers in Ranthambore and Kanha, rhinos in Kaziranga, lions in Gir and the Great Migration in Kenya and Tanzania.", sub: "Tigers, rhinos, lions and the Great Migration, with safaris booked early.", who: ["Wildlife and photography enthusiasts", "Families with curious children", "Bucket-list travellers"],
     body: `Wildlife sightings are never guaranteed, but good planning improves the odds a lot: the right season, the right zone, enough safaris and a good naturalist.
 
 ## India's best parks
@@ -159,7 +173,7 @@ The Great Migration moves between the [[serengeti]] and the [[masai-mara]] throu
 
 Indian park permits open months in advance and sell out quickly, especially for popular zones. Book safaris as soon as your dates are fixed.`,
     faq: [["How many safaris should I book?", "At least three or four drives over two nights gives you a good chance of seeing the main species."], ["Is Africa safari suitable for children?", "Yes, with family-friendly lodges; some lodges set minimum ages for game drives, which we check."]] },
-  { s: "pilgrimage-tours", n: "Pilgrimage tours", title: "Pilgrimage Tours: Char Dham, Temples & Sacred Journeys", h1: "Pilgrimage tours", scr: "Journeys of faith", img: "/assets/img-d6812c89.webp", tags: ["pilgrimage"], desc: "Pilgrimage tours to Tirupati, Rameswaram, Varanasi, Kedarnath, Vaishno Devi, Bodh Gaya and more, with darshan bookings and comfortable pacing.", sub: "Temple circuits and sacred journeys, planned with darshan timings in mind.", who: ["Families travelling with elders", "Temple and spiritual travellers", "Community and association groups"],
+  { s: "pilgrimage-tours", n: "Pilgrimage tours", title: "Pilgrimage Tours: Char Dham, Temples & Sacred Journeys", h1: "Pilgrimage tours", scr: "Journeys of faith", img: "/assets/photos/t/tt-pilgrimage-tours.webp", tags: ["pilgrimage"], desc: "Pilgrimage tours to Tirupati, Rameswaram, Varanasi, Kedarnath, Vaishno Devi, Bodh Gaya and more, with darshan bookings and comfortable pacing.", sub: "Temple circuits and sacred journeys, planned with darshan timings in mind.", who: ["Families travelling with elders", "Temple and spiritual travellers", "Community and association groups"],
     body: `A pilgrimage is planned around darshan timings, rituals and festival dates, not just sightseeing. We book darshan slots where they can be reserved, plan around temple closing hours and keep the pace comfortable for elders.
 
 ## Popular pilgrimage circuits
@@ -174,7 +188,7 @@ Indian park permits open months in advance and sell out quickly, especially for 
 
 Many shrines need advance registration (Kedarnath, Badrinath, Vaishno Devi) or online darshan booking (Tirumala, Shirdi). Dress codes apply in most temples, and mobile phones are not allowed in some. We share these rules before you travel.`,
     faq: [["Can you arrange VIP or special darshan?", "Where temples offer official paid or special-entry darshan, we book it through the official channel. We do not use unofficial agents."], ["Are helicopter services available for Kedarnath?", "Yes, through the official booking portal. Seats are limited and depend on weather."]] },
-  { s: "cultural-holidays", n: "Cultural holidays", title: "Cultural & Heritage Holidays", h1: "Cultural and heritage holidays", scr: "Stories in stone", img: "/assets/dest/sukhothai.webp", tags: ["culture", "heritage"], desc: "Cultural holidays to UNESCO sites, living traditions and great museums: Rajasthan's forts, Hampi, Angkor, Kyoto, Rome, Egypt and more.", sub: "Monuments, museums, crafts and living traditions with expert guides.", who: ["History and architecture lovers", "Travellers who like guided tours", "Repeat visitors who want depth"],
+  { s: "cultural-holidays", n: "Cultural holidays", title: "Cultural & Heritage Holidays", h1: "Cultural and heritage holidays", scr: "Stories in stone", img: "/assets/photos/t/tt-cultural-holidays.webp", tags: ["culture", "heritage"], desc: "Cultural holidays to UNESCO sites, living traditions and great museums: Rajasthan's forts, Hampi, Angkor, Kyoto, Rome, Egypt and more.", sub: "Monuments, museums, crafts and living traditions with expert guides.", who: ["History and architecture lovers", "Travellers who like guided tours", "Repeat visitors who want depth"],
     body: `A cultural holiday works best with fewer places and more time, plus a guide who can tell the stories behind what you are seeing.
 
 ## Great cultural journeys
@@ -187,7 +201,7 @@ Many shrines need advance registration (Kedarnath, Badrinath, Vaishno Devi) or o
 
 Licensed local guides, timed tickets for sites that need them, craft workshops (block printing in Jaipur, silk weaving in Kanchipuram, cooking classes in Hoi An) and performances such as Kathakali in [[kochi]].`,
     faq: [["Do you provide guides in Tamil or Hindi?", "In many Indian destinations, yes. Abroad, English guides are standard and some destinations have Hindi-speaking guides on request."]] },
-  { s: "beach-holidays", n: "Beach holidays", title: "Beach Holiday Packages: India & Abroad", h1: "Beach holidays", scr: "Sun, sand and sea", img: "/assets/dest/phuket.webp", tags: ["beach"], desc: "Beach holiday packages to Goa, Kerala, the Andamans, Thailand, Bali, the Maldives, Mauritius and more, planned around the right season.", sub: "The right beach for the right month, from Goa to the Maldives.", who: ["Couples and honeymooners", "Families who want pool and sea", "Friends looking for water sports"],
+  { s: "beach-holidays", n: "Beach holidays", title: "Beach Holiday Packages: India & Abroad", h1: "Beach holidays", scr: "Sun, sand and sea", img: "/assets/photos/t/tt-beach-holidays.webp", tags: ["beach"], desc: "Beach holiday packages to Goa, Kerala, the Andamans, the Maldives, Bali, Mauritius, Thailand and more, planned around the right season.", sub: "The right beach for the right month, from Goa to the Maldives.", who: ["Couples and honeymooners", "Families who want pool and sea", "Friends looking for water sports"],
     body: `The most important decision for a beach holiday is the month, because monsoons affect coastlines very differently.
 
 ## Which beach, which month
@@ -200,13 +214,13 @@ Licensed local guides, timed tickets for sites that need them, craft workshops (
 
 ## Types of beach trip
 
-- **Lively:** [[north-goa]], [[pattaya]], [[bali]], [[mykonos]].
+- **Lively:** [[north-goa]], [[bali]], [[mykonos]], [[phuket]].
 - **Quiet and romantic:** [[south-goa]], [[neil-island]], [[langkawi]], [[seychelles]].
 - **Snorkelling and diving:** [[havelock]], [[maldives]], [[el-nido]], [[cairns]].
 
 See also [[t:island-holidays]] for island-only trips.`,
     faq: [["Which beaches have calm water for children?", "Palolem in South Goa, Kata in Phuket, Nusa Dua in Bali and most Maldives lagoons are calm in season."]] },
-  { s: "hill-stations", n: "Hill-station holidays", title: "Hill Station Holidays: Ooty, Munnar, Kashmir & More", h1: "Hill-station holidays", scr: "Cool air, green hills", img: "/assets/dest/chiang-rai.webp", tags: ["hill"], desc: "Hill-station holidays in Ooty, Kodaikanal, Munnar, Coorg, Shimla, Manali, Darjeeling and Kashmir, plus Asia's tea hills abroad.", sub: "Summer escapes and misty winter retreats in India's hills.", who: ["Families escaping summer heat", "Couples and honeymooners", "Senior travellers wanting a cool climate"],
+  { s: "hill-stations", n: "Hill-station holidays", title: "Hill Station Holidays: Ooty, Munnar, Kashmir & More", h1: "Hill-station holidays", scr: "Cool air, green hills", img: "/assets/photos/t/tt-hill-stations.webp", tags: ["hill"], desc: "Hill-station holidays in Ooty, Kodaikanal, Munnar, Coorg, Shimla, Manali, Darjeeling and Kashmir, plus Asia's tea hills abroad.", sub: "Summer escapes and misty winter retreats in India's hills.", who: ["Families escaping summer heat", "Couples and honeymooners", "Senior travellers wanting a cool climate"],
     body: `From Chennai, the nearest hills are a few hours away, and the classic Himalayan hill stations are a short flight plus a drive.
 
 ## South Indian hills
@@ -225,7 +239,7 @@ Sri Lanka's [[nuwara-eliya]], Malaysia's [[cameron-highlands]] and Vietnam's [[s
 
 Hill roads are slow; we plan realistic drive times. Pack layers even in summer, and a rain jacket in the monsoon months.`,
     faq: [["Which hill station is closest to Chennai?", "Yercaud and the Nilgiris (Ooty, Coonoor) are the nearest; Kodaikanal is also an easy overnight trip."]] },
-  { s: "weekend-getaways", n: "Weekend getaways", title: "Weekend Getaways from Chennai & Bengaluru", h1: "Weekend getaways", scr: "Two nights, well spent", img: "/assets/exp/coral-island.webp", places: ["puducherry", "mahabalipuram", "yercaud", "kodaikanal", "coorg", "north-goa", "colombo", "singapore"], desc: "Weekend getaways of two or three nights from Chennai and South Indian cities: Pondicherry, Yercaud, Coorg, Goa, and even Colombo or Singapore.", sub: "Two- and three-night trips that fit around a working week.", who: ["Working couples", "Friends with limited leave", "Families on a long weekend"],
+  { s: "weekend-getaways", n: "Weekend getaways", title: "Weekend Getaways from Chennai & Bengaluru", h1: "Weekend getaways", scr: "Two nights, well spent", img: "/assets/photos/gt/coorg.webp", places: ["puducherry", "mahabalipuram", "yercaud", "kodaikanal", "coorg", "north-goa", "colombo", "singapore"], desc: "Weekend getaways of two or three nights from Chennai and South Indian cities: Pondicherry, Yercaud, Coorg, Goa, and even Colombo or Singapore.", sub: "Two- and three-night trips that fit around a working week.", who: ["Working couples", "Friends with limited leave", "Families on a long weekend"],
     body: `A good weekend trip needs a short journey, one base and no more than two big activities. Anything longer than four or five hours each way usually eats into the fun.
 
 ## From Chennai by road or rail
@@ -240,7 +254,7 @@ Hill roads are slow; we plan realistic drive times. Pack layers even in summer, 
 
 With a Friday evening flight, [[colombo]], [[singapore]] and [[dubai]] all work for a long weekend from Chennai, as long as your visa and entry paperwork are ready in advance.`,
     faq: [["Can I do an international trip in a weekend?", "Yes, to Sri Lanka, Singapore, Malaysia, Thailand or Dubai, with a long weekend and the right flights."]] },
-  { s: "road-trips", n: "Road trips", title: "Road Trip Holidays in India & Abroad", h1: "Road trips", scr: "The journey is the point", img: "/assets/exp/transfers.webp", places: ["spiti-valley", "leh", "jaisalmer", "garden-route", "scottish-highlands", "iceland", "banff"], desc: "Road trip holidays with a car and driver or self-drive: Spiti, Ladakh, Rajasthan, Kerala's ghats, the Garden Route, Scotland and Iceland.", sub: "Itineraries where the drive is part of the experience.", who: ["Couples and friends who love scenery", "Photographers", "Repeat travellers"],
+  { s: "road-trips", n: "Road trips", title: "Road Trip Holidays in India & Abroad", h1: "Road trips", scr: "The journey is the point", img: "/assets/photos/t/drive.webp", places: ["spiti-valley", "leh", "jaisalmer", "garden-route", "scottish-highlands", "iceland", "banff"], desc: "Road trip holidays with a car and driver or self-drive: Spiti, Ladakh, Rajasthan, Kerala's ghats, the Garden Route, Scotland and Iceland.", sub: "Itineraries where the drive is part of the experience.", who: ["Couples and friends who love scenery", "Photographers", "Repeat travellers"],
     body: `Road trips are about the in-between: the passes, villages, dhabas and viewpoints between the famous stops.
 
 ## India by road
@@ -257,7 +271,7 @@ South Africa's [[garden-route]], the [[scottish-highlands]], [[iceland]]'s Ring 
 
 In India we always recommend a car with an experienced local driver. Abroad, self-drive is common; see [[t:self-drive]] for what is involved.`,
     faq: [["How many hours of driving per day is comfortable?", "Four to five hours on mountain roads, six on highways, with stops."]] },
-  { s: "self-drive", n: "Self-drive holidays", title: "Self-Drive Holidays Abroad", h1: "Self-drive holidays", scr: "Your own pace", img: "/assets/hero/grand-palace.webp", places: ["iceland", "queenstown", "rotorua", "garden-route", "scottish-highlands", "banff", "melbourne", "lake-como"], desc: "Self-drive holidays in New Zealand, Iceland, Scotland, South Africa, Canada and Australia: routes, car hire and hotels planned for you.", sub: "Pre-planned routes with car hire and hotels, driven by you.", who: ["Confident drivers", "Couples and families who like flexibility", "Repeat international travellers"],
+  { s: "self-drive", n: "Self-drive holidays", title: "Self-Drive Holidays Abroad", h1: "Self-drive holidays", scr: "Your own pace", img: "/assets/photos/gt/iceland.webp", places: ["iceland", "queenstown", "rotorua", "garden-route", "scottish-highlands", "banff", "melbourne", "lake-como"], desc: "Self-drive holidays in New Zealand, Iceland, Scotland, South Africa, Canada and Australia: routes, car hire and hotels planned for you.", sub: "Pre-planned routes with car hire and hotels, driven by you.", who: ["Confident drivers", "Couples and families who like flexibility", "Repeat international travellers"],
     body: `On a self-drive holiday we plan the route, book the car and hotels, and send you a day-by-day driving plan. You set the pace.
 
 ## Where self-drive works well
@@ -274,7 +288,7 @@ In India we always recommend a car with an experienced local driver. Abroad, sel
 
 Avoid winter self-drives in Iceland and the Rockies unless you are experienced on snow and ice; we suggest guided tours instead. Keep daily drives to four or five hours so you can stop at viewpoints.`,
     faq: [["Do I need an International Driving Permit?", "Most countries require or strongly recommend one with your Indian licence. Check with the car hire company and the destination's official guidance."]] },
-  { s: "cruise-holidays", n: "Cruise and houseboat holidays", title: "Cruise & Houseboat Holidays", h1: "Cruises and houseboats", scr: "Life on the water", img: "/assets/img-d6812c89.webp", places: ["alleppey", "kumarakom", "srinagar", "ha-long-bay", "luxor", "aswan", "bergen"], desc: "Holidays on the water: Kerala houseboats, Dal Lake houseboats, Ha Long Bay cruises, Nile cruises and Norway's fjords.", sub: "Houseboats, river cruises and bay cruises built into your trip.", who: ["Couples and families", "Senior travellers who prefer fewer hotel changes", "Photographers"],
+  { s: "cruise-holidays", n: "Cruise and houseboat holidays", title: "Cruise & Houseboat Holidays", h1: "Cruises and houseboats", scr: "Life on the water", img: "/assets/photos/t/x-cru-deck.webp", places: ["alleppey", "kumarakom", "srinagar", "ha-long-bay", "luxor", "aswan", "bergen"], desc: "Holidays on the water: Kerala houseboats, Dal Lake houseboats, Ha Long Bay cruises, Nile cruises and Norway's fjords.", sub: "Houseboats, river cruises and bay cruises built into your trip.", who: ["Couples and families", "Senior travellers who prefer fewer hotel changes", "Photographers"],
     body: `Some of the best travel experiences happen on the water, and they also save a hotel change.
 
 ## Houseboats in India
@@ -291,7 +305,7 @@ Avoid winter self-drives in Iceland and the Rockies unless you are experienced o
 
 We also plan around ocean cruise departures from Chennai and abroad on request; tell us the ship and dates and we add flights and hotels.`,
     faq: [["Do Kerala houseboats have air-conditioning?", "Most premium and deluxe boats have air-conditioned bedrooms, usually running at night. We confirm this for your booking."]] },
-  { s: "train-journeys", n: "Train journeys", title: "Scenic Train Journeys & Rail Holidays", h1: "Scenic train journeys", scr: "All aboard", img: "/assets/exp/train-market.webp", places: ["ooty", "darjeeling", "shimla", "araku-valley", "ella", "interlaken", "zermatt", "bergen", "tokyo"], desc: "Holidays built around scenic trains: the Nilgiri and Darjeeling toy trains, Sri Lanka's Kandy–Ella line, Swiss panoramic trains and Japan's bullet trains.", sub: "Toy trains, mountain railways and bullet trains.", who: ["Families with children", "Photographers", "Travellers who dislike long drives"],
+  { s: "train-journeys", n: "Train journeys", title: "Scenic Train Journeys & Rail Holidays", h1: "Scenic train journeys", scr: "All aboard", img: "/assets/photos/gt/switzerland.webp", places: ["ooty", "darjeeling", "shimla", "araku-valley", "ella", "interlaken", "zermatt", "bergen", "tokyo"], desc: "Holidays built around scenic trains: the Nilgiri and Darjeeling toy trains, Sri Lanka's Kandy–Ella line, Swiss panoramic trains and Japan's bullet trains.", sub: "Toy trains, mountain railways and bullet trains.", who: ["Families with children", "Photographers", "Travellers who dislike long drives"],
     body: `Some journeys are better by rail. These are the ones we build trips around.
 
 ## In India
@@ -312,7 +326,7 @@ We also plan around ocean cruise departures from Chennai and abroad on request; 
 
 Toy train and panoramic train seats sell out early; we book them as soon as you confirm. Reserved seats are often needed even with a rail pass.`,
     faq: [["Can you book Indian toy train tickets?", "We try to book through official channels as soon as they open; seats are limited and sometimes unavailable, so we plan a road alternative."]] },
-  { s: "photography-tours", n: "Photography holidays", title: "Photography Holidays & Scenic Tours", h1: "Photography holidays", scr: "Chasing the light", img: "/assets/img-e5898052.webp", places: ["pangong-lake", "jaisalmer", "varanasi", "hampi", "cappadocia", "santorini", "tromso", "iceland", "sapa"], desc: "Photography holidays timed for the best light and seasons: Ladakh, Varanasi, Rajasthan, Cappadocia, Iceland, Santorini and northern-lights trips.", sub: "Itineraries planned around light, season and the right viewpoints.", who: ["Amateur and serious photographers", "Instagrammers and content creators", "Couples who love scenery"],
+  { s: "photography-tours", n: "Photography holidays", title: "Photography Holidays & Scenic Tours", h1: "Photography holidays", scr: "Chasing the light", img: "/assets/photos/t/tt-photography-tours.webp", places: ["pangong-lake", "jaisalmer", "varanasi", "hampi", "cappadocia", "santorini", "tromso", "iceland", "sapa"], desc: "Photography holidays timed for the best light and seasons: Ladakh, Varanasi, Rajasthan, Cappadocia, Iceland, Santorini and northern-lights trips.", sub: "Itineraries planned around light, season and the right viewpoints.", who: ["Amateur and serious photographers", "Instagrammers and content creators", "Couples who love scenery"],
     body: `Photography trips need different planning: sunrise and sunset take priority, you stay closer to viewpoints and you need flexibility for weather.
 
 ## What changes on a photography trip
@@ -326,7 +340,7 @@ Toy train and panoramic train seats sell out early; we book them as soon as you 
 
 Blossom in [[kyoto]] (late March), lanterns in [[chiang-mai]] (November), the Rann of [[kutch]] under a full moon (winter) and golden rice terraces in [[sapa]] (September).`,
     faq: [["Can I fly a drone?", "Drone rules vary by country and site and are strictly enforced in many places. Check official rules before you travel; we can point you to them."]] },
-  { s: "senior-friendly", n: "Senior-friendly holidays", title: "Senior-Friendly Holidays & Tours", h1: "Senior-friendly holidays", scr: "Travel at your own pace", img: "/assets/exp/meet-greet.webp", places: ["kodaikanal", "munnar", "srinagar", "tirupati", "singapore", "dubai", "colombo"], desc: "Senior-friendly holidays with gentle pacing, short transfers and comfortable hotels, for pilgrimages, hill stations and easy international trips.", sub: "Gentle pacing, shorter transfers and comfortable stays.", who: ["Retired couples", "Parents travelling with adult children", "Pilgrimage groups with elders"],
+  { s: "senior-friendly", n: "Senior-friendly holidays", title: "Senior-Friendly Holidays & Tours", h1: "Senior-friendly holidays", scr: "Travel at your own pace", img: "/assets/photos/t/tt-senior-friendly.webp", places: ["kodaikanal", "munnar", "srinagar", "tirupati", "singapore", "dubai", "colombo"], desc: "Senior-friendly holidays with gentle pacing, short transfers and comfortable hotels, for pilgrimages, hill stations and easy international trips.", sub: "Gentle pacing, shorter transfers and comfortable stays.", who: ["Retired couples", "Parents travelling with adult children", "Pilgrimage groups with elders"],
     body: `Senior travellers often want the same destinations as everyone else, just at a kinder pace. We plan around energy, mobility and medical needs.
 
 ## How we adjust the trip
@@ -418,7 +432,7 @@ Theme parks in [[singapore]], [[hong-kong]], [[tokyo]] and [[orlando]]; water pa
     ],
     faq: [["What age are kids' holidays suited to?", "Most work well from about four years up; we suggest which parks and rides suit your children's ages and heights."], ["Do children need their own passport and visa?", "Yes. Every child needs their own passport, and visas where the country requires them. Check the official rules for each country; we help you prepare the documents."], ["Can you arrange a pushchair or child seat?", "We request child seats for transfers and note pushchair needs; availability is confirmed in your quote."]] },
   { s: "accessible-travel", n: "Accessible travel", draft: true, draftWhy: "Accessibility details for hotels, vehicles and sites have not been verified; held until confirmed with suppliers.", tags: [], desc: "Accessible travel planning.", body: "Held back until accessibility information is verified." },
-  { s: "solo-travel", n: "Solo travel", title: "Solo Travel Holidays: Safe, Social & Flexible", h1: "Solo travel", scr: "Just you", img: "/assets/exp/walking-street.webp", places: ["rishikesh", "varkala", "hampi", "kasol", "dharamshala", "chiang-mai", "ubud", "luang-prabang", "kyoto", "lisbon"], desc: "Solo travel holidays in safe, sociable destinations: Rishikesh, Varkala, Hampi, Chiang Mai, Ubud, Kyoto and more, with support on WhatsApp.", sub: "Safe, sociable destinations with support when you need it.", who: ["First-time solo travellers", "Women travelling alone", "Professionals on a sabbatical"],
+  { s: "solo-travel", n: "Solo travel", title: "Solo Travel Holidays: Safe, Social & Flexible", h1: "Solo travel", scr: "Just you", img: "/assets/photos/t/tt-solo-travel.webp", places: ["rishikesh", "varkala", "hampi", "kasol", "dharamshala", "chiang-mai", "ubud", "luang-prabang", "kyoto", "lisbon"], desc: "Solo travel holidays in safe, sociable destinations: Rishikesh, Varkala, Hampi, Chiang Mai, Ubud, Kyoto and more, with support on WhatsApp.", sub: "Safe, sociable destinations with support when you need it.", who: ["First-time solo travellers", "Women travelling alone", "Professionals on a sabbatical"],
     body: `Solo travel is one of the best ways to see a place, and it is easier than many people think. We plan the logistics and stay reachable on WhatsApp throughout.
 
 ## Good first solo destinations
@@ -435,7 +449,7 @@ Theme parks in [[singapore]], [[hong-kong]], [[tokyo]] and [[orlando]]; water pa
 
 Single rooms often cost almost the same as doubles; we show the single supplement clearly in your quote.`,
     faq: [["Is solo travel safe for women?", "Many of our destinations are popular with solo women travellers. We choose central hotels, arrange airport transfers and share local safety advice."]] },
-  { s: "food-tours", n: "Food and culinary holidays", title: "Food & Culinary Holidays", h1: "Food and culinary holidays", scr: "Taste the trip", img: "/assets/exp/floating-market.webp", tags: ["food"], desc: "Food holidays with street-food walks, cooking classes and market tours in Hyderabad, Lucknow, Kolkata, Bangkok, Penang, Hoi An, Japan and Italy.", sub: "Street food, markets and cooking classes as the heart of the trip.", who: ["Food lovers", "Couples and friends", "Home cooks who want to learn"],
+  { s: "food-tours", n: "Food and culinary holidays", title: "Food & Culinary Holidays", h1: "Food and culinary holidays", scr: "Taste the trip", img: "/assets/photos/t/foodwalk.webp", tags: ["food"], desc: "Food holidays with street-food walks, cooking classes and market tours in Hyderabad, Lucknow, Kolkata, Bangkok, Penang, Hoi An, Japan and Italy.", sub: "Street food, markets and cooking classes as the heart of the trip.", who: ["Food lovers", "Couples and friends", "Home cooks who want to learn"],
     body: `On a food holiday, meals are the sightseeing. We build days around markets, street-food walks and cooking classes, with time to rest in between.
 
 ## Great food cities
@@ -448,7 +462,7 @@ Single rooms often cost almost the same as doubles; we show the single supplemen
 
 We note where vegetarian food is easy (India, Singapore, Malaysia, Thailand's cities, Italy) and where it takes planning (parts of Japan, Korea and Vietnam), and we recommend restaurants accordingly.`,
     faq: [["Can you plan vegetarian food tours?", "Yes. Many cooking classes and food walks offer vegetarian versions; we confirm before booking."]] },
-  { s: "festival-trips", n: "Festival and seasonal trips", title: "Festival Trips & Seasonal Holidays", h1: "Festival and seasonal trips", scr: "Right place, right time", img: "/assets/img-e3d4227e.webp", tags: ["festival"], desc: "Trips timed for festivals and seasons: Yi Peng lanterns, Hornbill, Pushkar Camel Fair, Durga Puja, cherry blossom, tulips and the northern lights.", sub: "Festivals and natural seasons that are worth planning a trip around.", who: ["Culture and photography lovers", "Repeat travellers wanting something new", "Couples planning special trips"],
+  { s: "festival-trips", n: "Festival and seasonal trips", title: "Festival Trips & Seasonal Holidays", h1: "Festival and seasonal trips", scr: "Right place, right time", img: "/assets/photos/gt/rio-de-janeiro.webp", tags: ["festival"], desc: "Trips timed for festivals and seasons: Yi Peng lanterns, Hornbill, Pushkar Camel Fair, Durga Puja, cherry blossom, tulips and the northern lights.", sub: "Festivals and natural seasons that are worth planning a trip around.", who: ["Culture and photography lovers", "Repeat travellers wanting something new", "Couples planning special trips"],
     body: `Some trips are worth timing to the week. Festival dates often follow lunar calendars, so we confirm them each year before you book.
 
 ## Festivals in India
@@ -469,7 +483,7 @@ We note where vegetarian food is easy (India, Singapore, Malaysia, Thailand's ci
 
 Hotels near festivals fill up early and cost more, so plan three to six months ahead.`,
     faq: [["Are festival dates fixed?", "Many follow lunar calendars and change each year. We confirm the official dates before booking."]] },
-  { s: "multi-country-tours", n: "Multi-country tours", title: "Multi-Country Tour Packages", h1: "Multi-country tours", scr: "More than one stamp", img: "/assets/hero/phi-phi-longtail.webp", places: ["singapore", "bangkok", "kuala-lumpur", "paris", "lucerne", "rome", "dubai", "istanbul"], desc: "Multi-country tours combining two or more countries: Singapore with Malaysia and Thailand, Europe's classic circuits, Dubai with Turkey and more.", sub: "Two or more countries, one plan, one quote.", who: ["First-time international travellers wanting variety", "Families on long holidays", "Travellers with limited leave who want maximum value"],
+  { s: "multi-country-tours", n: "Multi-country tours", title: "Multi-Country Tour Packages", h1: "Multi-country tours", scr: "More than one stamp", img: "/assets/photos/gt/paris.webp", places: ["singapore", "bangkok", "kuala-lumpur", "paris", "lucerne", "rome", "dubai", "istanbul"], desc: "Multi-country tours combining two or more countries: Singapore with Malaysia and Thailand, Europe's classic circuits, Dubai with Turkey and more.", sub: "Two or more countries, one plan, one quote.", who: ["First-time international travellers wanting variety", "Families on long holidays", "Travellers with limited leave who want maximum value"],
     body: `Combining countries makes the most of a long flight, as long as the route is logical and visas are planned in advance.
 
 ## Classic combinations
@@ -484,7 +498,7 @@ Hotels near festivals fill up early and cost more, so plan three to six months a
 
 Each country has its own entry rules, and some (such as the Schengen area) cover several countries with one visa. We sequence applications and give you a document checklist.`,
     faq: [["Do I need separate visas for each country?", "It depends on the countries. A Schengen visa covers most of mainland Europe; Southeast Asian countries each have their own rules."]] },
-  { s: "short-breaks", n: "Short breaks", title: "Short Break Holidays (2–4 Days)", h1: "Short breaks", scr: "Quick escapes", img: "/assets/exp/alcazar.webp", places: ["puducherry", "coorg", "hampi", "colombo", "singapore", "bangkok", "dubai"], desc: "Short break holidays of two to four days in India and nearby countries, ideal for long weekends and limited leave.", sub: "Trips of two to four days, in India and a short flight away.", who: ["Working professionals with limited leave", "Couples", "Families on school holidays"],
+  { s: "short-breaks", n: "Short breaks", title: "Short Break Holidays (2–4 Days)", h1: "Short breaks", scr: "Quick escapes", img: "/assets/photos/gt/singapore.webp", places: ["puducherry", "coorg", "hampi", "colombo", "singapore", "bangkok", "dubai"], desc: "Short break holidays of two to four days in India and nearby countries, ideal for long weekends and limited leave.", sub: "Trips of two to four days, in India and a short flight away.", who: ["Working professionals with limited leave", "Couples", "Families on school holidays"],
     body: `A short break is about choosing well. One destination, one hotel and a plan that leaves time to relax.
 
 ## Rules of thumb
@@ -499,7 +513,7 @@ In India: [[puducherry]], [[coorg]], [[hampi]], [[munnar]] and [[udaipur]]. Abro
 
 All packages of four days or less appear below.`,
     faq: [["What is the best short trip from Chennai?", "For culture, Pondicherry or Mahabalipuram; for hills, Yercaud or the Nilgiris; abroad, Sri Lanka or Singapore."]] },
-  { s: "long-stays", n: "Long-stay holidays", title: "Long-Stay Holidays (10 Days or More)", h1: "Long-stay holidays", scr: "Take your time", img: "/assets/hero/maya-bay.webp", places: ["kovalam", "ubud", "chiang-mai", "lisbon"], desc: "Long holidays of ten days or more: grand tours of Rajasthan, Kerala, Sri Lanka, Europe, Japan, Australia and New Zealand.", sub: "Ten days or more, with time to slow down.", who: ["Retired travellers", "Families on long summer holidays", "Once-in-a-lifetime trips"],
+  { s: "long-stays", n: "Long-stay holidays", title: "Long-Stay Holidays (10 Days or More)", h1: "Long-stay holidays", scr: "Take your time", img: "/assets/photos/gt/ubud.webp", places: ["kovalam", "ubud", "chiang-mai", "lisbon"], desc: "Long holidays of ten days or more: grand tours of Rajasthan, Kerala, Sri Lanka, Europe, Japan, Australia and New Zealand.", sub: "Ten days or more, with time to slow down.", who: ["Retired travellers", "Families on long summer holidays", "Once-in-a-lifetime trips"],
     body: `A longer trip lets you see more without rushing, or go deep into one region.
 
 ## Two approaches
@@ -513,8 +527,8 @@ Build in rest days every four or five days, keep laundry stops in mind, and thin
 
 All itineraries of ten days or more appear below.`,
     faq: [["Can you plan trips of a month or longer?", "Yes. We plan long stays with serviced apartments or long-stay hotel rates where available."]] },
-  { s: "private-tours", n: "Customised private tours", title: "Customised Private Tours", h1: "Customised private tours", scr: "Made for you", img: "/assets/exp/transfers.webp", sample: 12, places: [], desc: "Every Nexara itinerary is a private, customisable tour: your own vehicle, your pace and your choice of hotels. Here is how custom planning works.", sub: "Every itinerary on this site is private and can be changed to suit you.", who: ["Anyone who prefers not to join a group", "Families and couples", "Travellers with specific needs or interests"],
-    body: `Apart from our fixed-date Thailand group departures, every itinerary on this website is a **private tour**: your own car and driver or private transfers, your own pace, and hotels chosen for you.
+  { s: "private-tours", n: "Customised private tours", title: "Customised Private Tours", h1: "Customised private tours", scr: "Made for you", img: "/assets/photos/gt/santorini.webp", sample: 12, places: [], desc: "Every Nexara itinerary is a private, customisable tour: your own vehicle, your pace and your choice of hotels. Here is how custom planning works.", sub: "Every itinerary on this site is private and can be changed to suit you.", who: ["Anyone who prefers not to join a group", "Families and couples", "Travellers with specific needs or interests"],
+    body: `Apart from our fixed-date group departures, every itinerary on this website is a **private tour**: your own car and driver or private transfers, your own pace, and hotels chosen for you.
 
 ## How custom planning works
 
@@ -529,7 +543,7 @@ Everything: the route, hotel category, room types, guides, activities, meal plan
 
 Below is a cross-section of itineraries to start from. Use the [custom tour form](/custom-tour/) if you prefer to start from scratch.`,
     faq: [["Is a private tour more expensive than a group tour?", "Not always. For families and groups of four or more, private tours are often similar in cost and far more flexible."], ["Can I start from one of your itineraries and change it?", "Yes, that is how most of our trips are planned."]] },
-  { s: "island-holidays", n: "Island holidays", title: "Island Holidays: Andamans, Maldives, Bali & More", h1: "Island holidays", scr: "Island time", img: "/assets/hero/phi-phi-longtail.webp", tags: ["island"], desc: "Island holidays in the Andamans, Lakshadweep, the Maldives, Mauritius, Seychelles, Bali, Phuket, Langkawi and the Greek islands.", sub: "From India's own islands to the Indian Ocean and beyond.", who: ["Honeymooners", "Divers and snorkellers", "Families who love the sea"],
+  { s: "island-holidays", n: "Island holidays", title: "Island Holidays: Andamans, Maldives, Bali & More", h1: "Island holidays", scr: "Island time", img: "/assets/photos/gt/seychelles.webp", tags: ["island"], desc: "Island holidays in the Andamans, Lakshadweep, the Maldives, Mauritius, Seychelles, Bali, Phuket, Langkawi and the Greek islands.", sub: "From India's own islands to the Indian Ocean and beyond.", who: ["Honeymooners", "Divers and snorkellers", "Families who love the sea"],
     body: `Island trips need a little more planning than beach trips on the mainland: ferries and seaplanes run to schedules, weather matters more and some islands need permits.
 
 ## India's islands

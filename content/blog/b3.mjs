@@ -765,7 +765,7 @@ See [[g:how-to-read-a-travel-quote]] and [[g:how-to-budget-a-holiday]].
 - What does the quote not include?
 
 A trustworthy planner answers clearly and puts it in writing.` },
-{ s: "how-group-discounts-work", cluster: "budget-premium", date: D, rel: ["pattaya", "goa", "dubai"], title: "How group discounts work on holidays", desc: "How group travel can lower costs per person, where the savings come from, what affects them and how to organise a group trip to benefit.",
+{ s: "how-group-discounts-work", cluster: "budget-premium", date: D, rel: ["dubai", "goa", "bali"], title: "How group discounts work on holidays", desc: "How group travel can lower costs per person, where the savings come from, what affects them and how to organise a group trip to benefit.",
 body: `Travelling as a group can reduce the cost per person, but the savings depend on how the trip is structured.
 
 ## Where the savings come from
@@ -791,7 +791,7 @@ body: `Travelling as a group can reduce the cost per person, but the savings dep
 
 ## Our group departures
 
-Our fixed-date Thailand batches from Chennai are priced as group trips, with shared transfers and a tour manager. See [[p:thailand-ultimate-boys-escape-5-days]] and [[pattaya]].
+Our fixed-date group departures from Chennai are priced as group trips, with shared transfers and a tour manager. See [[p:dubai-group-tour-3-days]], [[p:europe-group-tour-10-days]] and [[t:group-tours]].
 
 ## Organising your own group
 

@@ -203,7 +203,7 @@ Read the "not included" list carefully. Common exclusions are visas, insurance, 
 ## Our approach
 
 Our quotes list hotels, room types, meals, transfers, sightseeing, inclusions and exclusions, taxes and payment terms. If anything is unclear, ask us. See [[t:private-tours]] for how we plan.` },
-{ s: "how-to-plan-a-group-trip", cat: "planning", date: D, rel: ["pattaya", "north-goa", "dubai"], trip: "Group trip", title: "How to plan a group trip with friends or family without the stress", desc: "Practical steps for organising a group holiday: choosing dates and a destination, budgets, rooming, payments, decision-making and keeping everyone happy.",
+{ s: "how-to-plan-a-group-trip", cat: "planning", date: D, rel: ["dubai", "north-goa", "bali"], trip: "Group trip", title: "How to plan a group trip with friends or family without the stress", desc: "Practical steps for organising a group holiday: choosing dates and a destination, budgets, rooming, payments, decision-making and keeping everyone happy.",
 body: `Group trips are fun to take and tricky to organise. A few simple rules make them much easier.
 
 ## 1. Pick an organiser
@@ -220,7 +220,7 @@ Ask everyone for a comfortable budget per person, privately if needed. Plan to t
 
 ## 4. Choose a destination that suits the group
 
-- **Friends' trips:** [[pattaya]] and Bangkok, [[north-goa]], Bali or [[dubai]] for nightlife and activities.
+- **Friends' trips:** [[dubai]], [[north-goa]], [[bali]], [[istanbul]] or Thailand for nightlife and activities.
 - **Extended families:** Kerala, Singapore or Dubai for easy logistics and something for every age.
 - **Office teams:** short flights and venues for activities. See [[t:corporate-travel]].
 
@@ -246,7 +246,7 @@ Share the final itinerary, hotel names, emergency contacts and a packing list wi
 
 ## Our group departures
 
-If you would rather join a group than organise one, our Thailand batches from Chennai have fixed dates, a tour manager and pre-booked activities. See [[p:thailand-ultimate-boys-escape-5-days]] and [[t:group-tours]].` },
+If you would rather join a group than organise one, our group departures from Chennai have fixed dates, a tour manager and pre-booked activities, to places such as Dubai, Europe, Turkey, Bali and Thailand. See [[p:europe-group-tour-10-days]] and [[t:group-tours]].` },
 { s: "safety-tips-for-travelling-abroad", cat: "planning", date: D, rel: ["thailand", "europe", "dubai"], trip: "International holiday", title: "Safety tips for travelling abroad: scams, documents and emergencies", desc: "Practical safety advice for Indian travellers abroad: protecting documents and money, common tourist scams, transport, emergencies and staying in touch.",
 body: `Most popular holiday destinations are safe, but a few habits help you avoid common problems and handle emergencies calmly.
 
