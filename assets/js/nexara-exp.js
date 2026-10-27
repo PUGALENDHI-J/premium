@@ -15,8 +15,9 @@
   /* ---------- Leaflet, loaded once and only when a map scrolls into view ---------- */
   let leaflet;
   const loadLeaflet = () => leaflet || (leaflet = new Promise((ok, bad) => {
-    const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.appendChild(css);
-    const js = document.createElement("script"); js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; js.onload = () => ok(window.L); js.onerror = bad; document.head.appendChild(js);
+    let n = 0; const done = () => { if (++n == 2) ok(window.L) };
+    const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; css.onload = done; css.onerror = done; document.head.appendChild(css);
+    const js = document.createElement("script"); js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; js.onload = () => window.L ? done() : bad(); js.onerror = bad; document.head.appendChild(js);
   }));
 
   /* ---------- discovery ---------- */
@@ -49,7 +50,10 @@
     function syncMap() {
       const vis = [];
       marks.forEach((m, it) => { const on = !it.classList.contains("hide"); if (on) { layer.addLayer(m); vis.push(m.getLatLng()) } else layer.removeLayer(m) });
-      if (vis.length) map.fitBounds(window.L.latLngBounds(vis).pad(.25), { maxZoom: 6, animate: !RM });
+      map.invalidateSize();
+      if (vis.length == 1) map.setView(vis[0], 6, { animate: !RM });
+      else if (vis.length) map.fitBounds(window.L.latLngBounds(vis), { padding: [36, 36], maxZoom: 6, animate: !RM });
+      else map.setView([20, 15], map.getMinZoom(), { animate: !RM });
     }
     function focusItem(it) {
       it.classList.add("hl"); it.scrollIntoView({ behavior: RM ? "auto" : "smooth", block: "center" });
@@ -59,19 +63,27 @@
       const io = new IntersectionObserver(es => {
         if (!es.some(e => e.isIntersecting)) return; io.disconnect();
         loadLeaflet().then(L => {
-          mapEl.textContent = "";
-          map = L.map(mapEl, { scrollWheelZoom: false, worldCopyJump: true }).setView([20, 20], 2);
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+          mapEl.textContent = ""; mapEl.classList.add("on");
+          // zoomed out far enough to show every continent across the box; the box background matches the sea
+          const minZ = () => Math.max(.5, Math.floor(2 * Math.log2(mapEl.clientWidth / 300)) / 2);
+          map = L.map(mapEl, { scrollWheelZoom: false, worldCopyJump: true, minZoom: minZ(), maxBounds: [[-75, -400], [85, 400]], maxBoundsViscosity: 1, zoomSnap: .5 }).setView([20, 15], minZ());
+          L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
           layer = L.layerGroup().addTo(map);
+          const dot = { radius: 8, color: "#fff", weight: 2, fillColor: "#ff0000", fillOpacity: .9 }, big = { ...dot, radius: 12, fillColor: "#111" };
           items.forEach(it => {
             if (!it.dataset.ll) return;
             const ll = it.dataset.ll.split(",").map(Number);
-            const m = L.circleMarker(ll, { radius: 8, color: "#fff", weight: 2, fillColor: "#ff0000", fillOpacity: .9 });
+            const m = L.circleMarker(ll, dot).bindTooltip(it.dataset.name, { direction: "top", offset: [0, -8] });
             const pop = document.createElement("div"); pop.innerHTML = `<b>${esc(it.dataset.name)}</b><br><button type="button">Show details ↓</button>`;
             pop.querySelector("button").onclick = () => { map.closePopup(); focusItem(it) };
             m.bindPopup(pop); marks.set(it, m);
+            // pointing at a list entry lights up its dot on the map
+            it.addEventListener("mouseenter", () => { m.setStyle(big).bringToFront(); m.openTooltip() });
+            it.addEventListener("mouseleave", () => { m.setStyle(dot); m.closeTooltip() });
           });
           syncMap();
+          let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { map.setMinZoom(minZ()); map.invalidateSize() }, 200) });
+          if ("ResizeObserver" in window) new ResizeObserver(() => map.invalidateSize()).observe(mapEl);
         }).catch(() => { mapEl.textContent = "The map could not load. The list beside it has every destination." });
       }, { rootMargin: "200px" });
       io.observe(mapEl);
