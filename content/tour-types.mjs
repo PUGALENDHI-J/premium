@@ -150,11 +150,29 @@ In India, [[hampi]], [[rishikesh]], [[kasol]] and [[yercaud]]. Abroad, [[colombo
 - **Paragliding** at [[manali]]'s Solang Valley, [[pokhara]] and Bir.
 - **Bungee and jet boats** in [[queenstown]], the world's adventure capital.
 - **Desert camps** in [[jaisalmer]], [[wadi-rum]] and [[merzouga]].
+- **Tamil Nadu's hills:** forest treks around [[kodaikanal]] and [[valparai]] in the Western Ghats.
+
+## High-altitude treks and 5,000-metre camps
+
+From Ladakh's passes to Everest Base Camp, these treks climb high. Heights are approximate.
+
+| Trek | Highest point | Season | Days on trail |
+|---|---|---|---|
+| [[everest-base-camp]] (Nepal) | Kala Patthar, about 5,545 m; Base Camp about 5,364 m | March–May, October–November | 12 |
+| [[kilimanjaro]] (Tanzania) | Uhuru Peak, about 5,895 m | January–March, June–October | 7 |
+| [[markha-valley]] (Ladakh) | Kongmaru La, about 5,200 m | June–September | 6 |
+| Ladakh high passes by road | Khardung La, above 5,000 m; Pangong camps about 4,250 m | June–September | 7 |
+| [[annapurna-base-camp]] (Nepal) | About 4,130 m | March–May, October–November | 8 |
+| Hampta Pass (from [[manali]]) | About 4,270 m | June–September | 5 |
+| [[kedarkantha]] (Uttarakhand) | About 3,800 m | December–April | 5 |
+| [[zanskar]]: the Chadar frozen river | About 3,400 m, nights far below freezing | January–February | 6 |
+
+Above about 3,500 metres the air holds much less oxygen. Every high trek we plan starts with acclimatisation days, climbs gradually and uses licensed guides, and we ask for a medical check-up before you book. Altitude sickness can affect anyone, however fit: the rule on the mountain is to go down if symptoms get worse.
 
 ## Safety first
 
 Altitude, weather and operator standards matter. We build in acclimatisation days for Ladakh and Spiti, recommend travel insurance that covers the activities you plan, and tell you honestly when a season is not right for an activity.`,
-    faq: [["Do I need to be very fit?", "Most adventure activities we plan suit people of average fitness. We flag strenuous ones, like long treks, in advance."], ["Is travel insurance required?", "We strongly recommend insurance that specifically covers the adventure activities in your plan."]] },
+    faq: [["Do I need to be very fit?", "Most adventure activities we plan suit people of average fitness. We flag strenuous ones, like long treks, in advance."], ["Can a beginner trek to Everest Base Camp?", "Yes, if you are healthy and prepare. No climbing skills are needed, but you walk five to seven hours a day for about twelve days at altitude. Train with long walks and stair climbs for two to three months, and consider a shorter trek such as Kedarkantha or Annapurna Base Camp first."], ["Do you take care of permits?", "Yes. We arrange the permits each trek needs, such as Inner Line and protected-area permits in Ladakh, Sagarmatha National Park entry for Everest and Kilimanjaro park fees, and book licensed local guides."], ["Is travel insurance required?", "We strongly recommend insurance that specifically covers the adventure activities in your plan."]] },
   { s: "wildlife-safaris", n: "Wildlife safaris", title: "Wildlife Safari Packages: India & Africa", h1: "Wildlife safaris", scr: "Into the wild", img: "/assets/photos/t/tt-wildlife-safaris.webp", tags: ["wildlife", "safari"], desc: "Wildlife safari packages for tigers in Ranthambore and Kanha, rhinos in Kaziranga, lions in Gir and the Great Migration in Kenya and Tanzania.", sub: "Tigers, rhinos, lions and the Great Migration, with safaris booked early.", who: ["Wildlife and photography enthusiasts", "Families with curious children", "Bucket-list travellers"],
     body: `Wildlife sightings are never guaranteed, but good planning improves the odds a lot: the right season, the right zone, enough safaris and a good naturalist.
 

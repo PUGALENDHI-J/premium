@@ -20,3 +20,4 @@
 }
 @media(prefers-reduced-motion:reduce){.brt img,.brl{transition:none}}
 .brhome{max-width:1240px;margin:0 auto;padding:clamp(40px,6vw,70px) 5vw 10px}.brall{text-align:center;margin-top:24px}
+.tnlead{color:var(--mut);max-width:70ch;margin:-6px 0 20px}.tnmore{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}

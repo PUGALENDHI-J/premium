@@ -140,6 +140,8 @@ for (const s of SIGNATURE) {
 const pkgsAt = n => PK.filter(p => p.stops.some(([x]) => x === n));
 const pkgsIn = t => PK.filter(p => p.home === t || p.stops.some(([x]) => top(x) === t));
 const pkgsOfType = s => PK.filter(p => p.themes.includes(s));
+// a package that stops anywhere in Tamil Nadu
+const inTN = p => p.stops.some(([n]) => n && top(n).s == "tamil-nadu");
 
 /* ---------- 3b. site menu: generated pages and the home page share it ---------- */
 const MENU = buildMenu({ N, PK, TYPES, inReg, SERVICES, SERVICE_GROUPS, SACRED, SACRED_GROUPS, EXPERIENCES });
@@ -277,7 +279,7 @@ function emit(urlPath, html, group, { index = true } = {}) {
 /* ---------- helpers for cards ---------- */
 const placeCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.kind == "city" ? n.parent.n : (n.region?.n || ""), tags: (n.t || "").split(" ").filter(Boolean).map(x => x[0].toUpperCase() + x.slice(1)), text: firstSentence(n.d), best: n.b, t: n.t || "" });
 const topCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.region?.n || (n.dom ? "India" : ""), tags: (n.k || []).slice(0, 3), text: firstSentence(n.d), best: n.bt?.[0], bestLabel: "Best time", go: "Explore" });
-const pkgCard = p => ({ url: p.url, name: p.name, ...pkgVis(p), badge: `${p.days}D / ${p.nights}N`, loc: p.stops.map(([n]) => n.n).filter((v, i, a) => a.indexOf(v) == i).slice(0, 4).join(" · "), tags: p.themes.filter(t => !["short-breaks", "long-stays", "weekend-getaways", "private-tours"].includes(t)).slice(0, 2).map(t => THEME_LABEL[t]), text: p.sum, go: "View itinerary", t: p.themes.join(" ") + (p.dom ? " india" : " international") });
+const pkgCard = p => ({ url: p.url, name: p.name, ...pkgVis(p), badge: `${p.days}D / ${p.nights}N`, loc: p.stops.map(([n]) => n.n).filter((v, i, a) => a.indexOf(v) == i).slice(0, 4).join(" · "), tags: p.themes.filter(t => !["short-breaks", "long-stays", "weekend-getaways", "private-tours"].includes(t)).slice(0, 2).map(t => THEME_LABEL[t]), text: p.sum, go: "View itinerary", t: p.themes.join(" ") + (p.dom ? " india" : " international") + (inTN(p) ? " tamil-nadu" : "") });
 // package photo: varied per package (seeded by its slug) from its stops' own photos and their attraction photos,
 // so packages sharing a stop don't all show the same picture
 const usedPkgImg = new Map();
@@ -909,11 +911,17 @@ for (const t of TYPES) {
   t.url = `/tour-types/${t.s}/`;
   const spots = KID_SPOTS.filter(v => v.type === t);
   const spotSec = spots.length ? `<div class="alt">${sec("Must-see for kids", "The big kids' places around the world", spotTabs(spots) + cards(spots) + `<p class="fcount">${spots.length} places</p>`, { id: "places" })}</div>` : "";
+  // Tamil Nadu leads every theme: its trips in this style, else its places that fit, else the state's best-known places
+  const TN = N.get("tamil-nadu"), tnPk = ps.filter(inTN), tnPl = places.filter(n => top(n) === TN);
+  const tnTiles = brushOf((tnPl.length ? tnPl : kids(TN).filter(n => !n.draft).sort((a, b) => pkgsAt(b).length - pkgsAt(a).length)).slice(0, 8));
+  const tnSec = TN ? sec("Tamil Nadu", `${t.n} in Tamil Nadu`, (tnPk.length ? cards(tnPk.slice(0, 6).map(pkgCard)) : `<p class="tnlead">${tnPl.length ? `Places in Tamil Nadu that suit ${esc(t.n.toLowerCase())}. Tell us your dates and we plan the trip.` : `We plan ${esc(t.n.toLowerCase())} in Tamil Nadu on request. Start from one of these places, or tell us what you have in mind.`}</p>`) + (tnPk.length ? "" : brush(tnTiles)) +
+    `<p class="tnmore"><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(t.n)} in Tamil Nadu">Plan ${esc(t.n.toLowerCase())} in Tamil Nadu →</a> <a class="btn ghost2" href="${TN.url}">Explore Tamil Nadu</a></p>`, { id: "tamil-nadu" }) : "";
+  const tnN = tnPk.length;
   emit(t.url, page({
     path: t.url, active: "/tour-types/", title: clipT(`${t.title || t.n + " Packages"} | Nexara Holidays`), desc: clip(t.desc),
     h1: t.h1 || t.n, crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"], [t.n, t.url]], hero: { img: t.img, spot: typeSpot(t, ps, pd, pi, places) },
-    body: `<div class="lay"><div class="prose">${r.html}</div><aside>${quoteBox(t.n)}${t.who ? `<div class="box"><h3>Best suited to</h3><ul class="dat">${t.who.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}</aside></div>` + spotSec +
-      (ps.length ? sec("Itineraries", t.sample ? "Itineraries to start from" : `${t.n}: ${ps.length} itineraries`, (pd.length && pi.length ? filterTabs([["all", "All"], ["india", `India (${pd.length})`], ["international", `International (${pi.length})`]]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itineraries</p>`, { id: "itineraries" }) : "") +
+    body: `<div class="lay"><div class="prose">${r.html}</div><aside>${quoteBox(t.n)}${t.who ? `<div class="box"><h3>Best suited to</h3><ul class="dat">${t.who.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}</aside></div>` + `<div class="alt">${tnSec}</div>` + spotSec +
+      (ps.length ? sec("Itineraries", t.sample ? "Itineraries to start from" : `${t.n}: ${ps.length} itineraries`, (pd.length && pi.length || tnN ? filterTabs([["all", "All"], ...(tnN ? [["tamil-nadu", `Tamil Nadu (${tnN})`]] : []), ...(pd.length ? [["india", `India (${pd.length})`]] : []), ...(pi.length ? [["international", `International (${pi.length})`]] : [])]) : "") + cards(ps.map(pkgCard)) + `<p class="fcount">${ps.length} itineraries</p>`, { id: "itineraries" }) : "") +
       (places.length ? `<div class="alt">${sec("Where to go", `Destinations for ${t.n.toLowerCase()}`, cards(places.slice(0, 24).map(placeCard), "sm"))}</div>` : "") +
       (t.faq?.length ? sec("FAQs", `${t.n} FAQs`, faq(t.faq.map(([q, a]) => [q, esc(a)])), { cls: "tight" }) : "") + cta(`Plan your ${t.n.toLowerCase()} trip`, "Tell us your dates and budget and we send a plan with a price.", t.n),
   }), "pages");

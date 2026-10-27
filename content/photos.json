@@ -297,6 +297,33 @@
 "page": "Tourism in Andhra Pradesh",
 "source": "https://commons.wikimedia.org/wiki/File:Tirumala_090615.jpg"
 },
+"annapurna-base-camp": {
+"author": "Ummidnp",
+"file": "Under_stars_and_snows.jpg",
+"img": "/assets/photos/annapurna-base-camp.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Annapurna Circuit",
+"source": "https://commons.wikimedia.org/wiki/File:Under_stars_and_snows.jpg"
+},
+"annapurna-base-camp--annapurna-base-camp": {
+"author": "PrajwalMohan",
+"file": "South_Face_of_Annapurna_I_(Main).jpg",
+"img": "/assets/photos/a/annapurna-base-camp--annapurna-base-camp.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Annapurna",
+"source": "https://commons.wikimedia.org/wiki/File:South_Face_of_Annapurna_I_(Main).jpg"
+},
+"annapurna-base-camp--machapuchare-base-camp": {
+"author": "Carsten.nebel",
+"file": "Machapuchare_close-up_of_summit_ridge.jpg",
+"img": "/assets/photos/a/annapurna-base-camp--machapuchare-base-camp.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Machapuchare",
+"source": "https://commons.wikimedia.org/wiki/File:Machapuchare_close-up_of_summit_ridge.jpg"
+},
 "araku-valley": {
 "author": "Maina Tudu",
 "file": "Araku Valley, Visakhapatnam.jpg",
@@ -2071,6 +2098,15 @@
 "page": "Dwarka",
 "source": "https://commons.wikimedia.org/wiki/File:Dwarakadheesh_Temple,_2014.jpg"
 },
+"dwarka--dwarkadhish-temple": {
+"author": "History quester",
+"file": "Dwarkadhish_Temple_Gate_Kankroli.pdf",
+"img": "/assets/photos/a/dwarka--dwarkadhish-temple.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Dwarkadhish Kankroli",
+"source": "https://commons.wikimedia.org/wiki/File:Dwarkadhish_Temple_Gate_Kankroli.pdf"
+},
 "edinburgh": {
 "author": "Andrew Colin",
 "file": "Skyline_of_Edinburgh.jpg",
@@ -2160,6 +2196,33 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Nine Arch Bridge",
 "source": "https://commons.wikimedia.org/wiki/File:The_Nine_Arches_Bridge.jpg"
+},
+"everest-base-camp": {
+"author": "Peellden",
+"file": "Khumbutse.jpg",
+"img": "/assets/photos/everest-base-camp.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Everest base camps",
+"source": "https://commons.wikimedia.org/wiki/File:Khumbutse.jpg"
+},
+"everest-base-camp--everest-base-camp": {
+"author": "Maxwelljo40",
+"file": "Green_Boots.jpg",
+"img": "/assets/photos/a/everest-base-camp--everest-base-camp.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "1996 Indo-Tibetan Border Police expedition to Mount Everest",
+"source": "https://commons.wikimedia.org/wiki/File:Green_Boots.jpg"
+},
+"everest-base-camp--kala-patthar": {
+"author": "Peellden",
+"file": "Khumbutse.jpg",
+"img": "/assets/photos/a/everest-base-camp--kala-patthar.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Everest base camps",
+"source": "https://commons.wikimedia.org/wiki/File:Khumbutse.jpg"
 },
 "fes": {
 "author": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
@@ -3748,6 +3811,24 @@
 "page": "Kaziranga National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Beauty_of_Kaziranga_National_Park.jpg"
 },
+"kedarkantha": {
+"author": "Kanthi Kiran",
+"file": "Kedarkantha_Peak.jpg",
+"img": "/assets/photos/kedarkantha.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kedarkantha",
+"source": "https://commons.wikimedia.org/wiki/File:Kedarkantha_Peak.jpg"
+},
+"kedarkantha--kedarkantha-summit": {
+"author": "Himalayanwarrior",
+"file": "Base_of_Kedarkantha_trek.jpg",
+"img": "/assets/photos/a/kedarkantha--kedarkantha-summit.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Sankri",
+"source": "https://commons.wikimedia.org/wiki/File:Base_of_Kedarkantha_trek.jpg"
+},
 "kedarnath": {
 "author": "Shivam Kumar 766",
 "file": "Kedarnath_Temple_in_Rainy_season.jpg",
@@ -3874,6 +3955,33 @@
 "licenseUrl": "",
 "page": "Houseboat",
 "source": "https://commons.wikimedia.org/wiki/File:LakeUnionHouseboat.jpg"
+},
+"kilimanjaro": {
+"author": "Unknown author",
+"file": "Uhuru_Peak_Mt._Kilimanjaro_1.JPG",
+"img": "/assets/photos/kilimanjaro.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Kilimanjaro Region",
+"source": "https://commons.wikimedia.org/wiki/File:Uhuru_Peak_Mt._Kilimanjaro_1.JPG"
+},
+"kilimanjaro--barranco-wall": {
+"author": "tadekk",
+"file": "Barranco_District_Lima_Peru.jpg",
+"img": "/assets/photos/a/kilimanjaro--barranco-wall.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Barranco District",
+"source": "https://commons.wikimedia.org/wiki/File:Barranco_District_Lima_Peru.jpg"
+},
+"kilimanjaro--uhuru-peak": {
+"author": "Unknown author",
+"file": "Entrance_to_Kilimanjaro_National_Park.JPG",
+"img": "/assets/photos/a/kilimanjaro--uhuru-peak.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Kilimanjaro National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Kilimanjaro_National_Park.JPG"
 },
 "kochi": {
 "author": "Fsquares (The Ibrahims)",
@@ -4994,6 +5102,24 @@
 "page": "Loktak Lake",
 "q": "Loktak Lake",
 "source": "https://commons.wikimedia.org/wiki/File:Loktak_Lake_Manipur_01.jpg"
+},
+"markha-valley": {
+"author": "SlartibErtfass der bertige",
+"file": "Markha_Valley1.JPG",
+"img": "/assets/photos/markha-valley.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Markha River (India)",
+"source": "https://commons.wikimedia.org/wiki/File:Markha_Valley1.JPG"
+},
+"markha-valley--kongmaru-la": {
+"author": "Sundeep bhardwaj",
+"file": "13-10-08_217_CONFLUENCE_OF_INDUS_RIVER_N.jpg",
+"img": "/assets/photos/a/markha-valley--kongmaru-la.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Hemis National Park",
+"source": "https://commons.wikimedia.org/wiki/File:13-10-08_217_CONFLUENCE_OF_INDUS_RIVER_N.jpg"
 },
 "marrakech": {
 "author": "YoTuT from United States",
@@ -6921,6 +7047,15 @@
 "page": "Rishikesh",
 "source": "https://commons.wikimedia.org/wiki/File:Trayambakeshwar_Temple_VK.jpg"
 },
+"rishikesh--triveni-ghat": {
+"author": "Vanshiikaa",
+"file": "Pantoon_bridge_view_01.jpg",
+"img": "/assets/photos/a/rishikesh--triveni-ghat.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "2025 Prayag Maha Kumbh Mela",
+"source": "https://commons.wikimedia.org/wiki/File:Pantoon_bridge_view_01.jpg"
+},
 "romania": {
 "author": "Myrabella",
 "file": "Bran seen from Bran Castle.jpg",
@@ -7048,6 +7183,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Kremlin",
 "source": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_(8281675670).jpg"
+},
+"sabarimala": {
+"author": "rajaraman sundaram",
+"file": "MOUNTAINS_SABARIMALA_KERALA_-_panoramio.jpg",
+"img": "/assets/photos/sabarimala.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Sabarimala (place)",
+"source": "https://commons.wikimedia.org/wiki/File:MOUNTAINS_SABARIMALA_KERALA_-_panoramio.jpg"
+},
+"sabarimala--pathinettam-padi": {
+"author": "Malludirectionz",
+"file": "Sandeep_Pradeep_2026.jpg",
+"img": "/assets/photos/a/sabarimala--pathinettam-padi.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Sandeep Pradeep",
+"source": "https://commons.wikimedia.org/wiki/File:Sandeep_Pradeep_2026.jpg"
 },
 "salalah": {
 "author": "Bernhard Dunst",
@@ -8807,6 +8960,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Prambanan Temple Compounds",
 "source": "https://commons.wikimedia.org/wiki/File:Prambanan_Complex_1.jpg"
+},
+"zanskar": {
+"author": "Atulbhats",
+"file": "Chadar-Zanskar.jpg",
+"img": "/assets/photos/zanskar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chadar trek",
+"source": "https://commons.wikimedia.org/wiki/File:Chadar-Zanskar.jpg"
+},
+"zanskar--the-chadar": {
+"author": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
+"file": "Darcha_Padum_Road_Below_Shinku_La_Lahaul_Oct22_A7C_03533.jpg",
+"img": "/assets/photos/a/zanskar--the-chadar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Nimmu–Padum–Darcha road",
+"source": "https://commons.wikimedia.org/wiki/File:Darcha_Padum_Road_Below_Shinku_La_Lahaul_Oct22_A7C_03533.jpg"
 },
 "zanzibar": {
 "author": "Alex Petrenko",

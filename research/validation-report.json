@@ -1,11 +1,12 @@
 {
  "summary": {
-  "checked_pages": 1306,
-  "sitemap_urls": 1305,
+  "checked_pages": 1333,
+  "sitemap_urls": 1332,
   "errors": 0,
-  "warnings": 347,
+  "warnings": 354,
   "pages_with_single_inbound_link": 0,
   "most_similar_pairs": [
+   "77% /packages/india/himachal-pradesh/hampta-pass-trek-and-chandratal-7-days/ ~ /packages/india/himachal-pradesh/manali-adventure-week-6-days/",
    "64% /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
    "63% /packages/international/bhutan/bhutan-highlights-6-days/ ~ /packages/international/bhutan/bhutan-monasteries-and-tiger-s-nest-6-days/",
    "63% /packages/international/japan/japan-cherry-blossom-tour-8-days/ ~ /packages/international/japan/japan-honeymoon-8-days/",
@@ -19,8 +20,7 @@
    "62% /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-short-break-4-days/",
    "62% /packages/india/ladakh/ladakh-family-holiday-6-days/ ~ /packages/india/ladakh/leh-ladakh-explorer-7-days/",
    "61% /packages/india/ladakh/ladakh-photography-tour-8-days/ ~ /packages/india/ladakh/leh-ladakh-explorer-7-days/",
-   "61% /packages/international/indonesia/bali-and-nusa-penida-6-days/ ~ /packages/international/indonesia/bali-photography-trip-8-days/",
-   "61% /packages/international/singapore/singapore-and-langkawi-family-trip-7-days/ ~ /packages/international/singapore/singapore-family-holiday-5-days/"
+   "61% /packages/international/indonesia/bali-and-nusa-penida-6-days/ ~ /packages/international/indonesia/bali-photography-trip-8-days/"
   ]
  },
  "errors": [],
@@ -198,6 +198,10 @@
    "msg": "rupee amount in page text outside a signature package: check it is a real, current price"
   },
   {
+   "page": "/packages/india/himachal-pradesh/hampta-pass-trek-and-chandratal-7-days/",
+   "msg": "content 77% similar to /packages/india/himachal-pradesh/manali-adventure-week-6-days/"
+  },
+  {
    "page": "/packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/",
    "msg": "content 64% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
   },
@@ -270,8 +274,16 @@
    "msg": "content 60% similar to /packages/international/singapore/singapore-family-holiday-5-days/"
   },
   {
+   "page": "/packages/international/tanzania/kilimanjaro-climb-and-serengeti-safari-12-days/",
+   "msg": "content 60% similar to /packages/international/tanzania/kilimanjaro-climb-machame-route-9-days/"
+  },
+  {
    "page": "/packages/international/bhutan/bhutan-by-road-from-bagdogra-7-days/",
    "msg": "content 60% similar to /packages/international/bhutan/bhutan-highlights-6-days/"
+  },
+  {
+   "page": "/packages/india/kerala/erumeli-sabarimala-and-guruvayur-yatra-4-days/",
+   "msg": "content 60% similar to /packages/india/kerala/sabarimala-ayyappa-darshan-3-days/"
   },
   {
    "page": "/packages/international/france/paris-and-london-7-days/",
@@ -292,6 +304,10 @@
   {
    "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
    "msg": "content 60% similar to /packages/international/switzerland/switzerland-and-paris-8-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-high-passes-and-lakes-camping-9-days/",
+   "msg": "content 60% similar to /packages/india/ladakh/leh-ladakh-explorer-7-days/"
   },
   {
    "page": "/packages/india/uttarakhand/kedarnath-and-badrinath-do-dham-yatra-7-days/",
@@ -686,6 +702,10 @@
    "msg": "content 55% similar to /packages/international/mauritius/mauritius-shivaratri-pilgrimage-4-days/"
   },
   {
+   "page": "/packages/india/maharashtra/mumbai-siddhivinayak-and-shirdi-4-days/",
+   "msg": "content 55% similar to /packages/india/maharashtra/shirdi-and-nashik-pilgrimage-3-days/"
+  },
+  {
    "page": "/packages/india/goa/goa-beach-holiday-5-days/",
    "msg": "content 55% similar to /packages/india/goa/goa-churches-and-old-goa-heritage-4-days/"
   },
@@ -720,6 +740,10 @@
   {
    "page": "/packages/international/china/beijing-and-shanghai-7-days/",
    "msg": "content 55% similar to /packages/international/china/china-highlights-beijing-xi-an-and-shanghai-8-days/"
+  },
+  {
+   "page": "/destinations/international/south-asia/nepal/annapurna-base-camp/",
+   "msg": "content 55% similar to /destinations/international/south-asia/nepal/everest-base-camp/"
   },
   {
    "page": "/packages/india/rajasthan/rajasthan-luxury-palaces-8-days/",
@@ -758,10 +782,6 @@
    "msg": "content 54% similar to /packages/international/maldives/maldives-honeymoon-5-days/"
   },
   {
-   "page": "/destinations/international/africa/tanzania/ngorongoro/",
-   "msg": "content 54% similar to /destinations/international/africa/tanzania/serengeti/"
-  },
-  {
    "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
    "msg": "content 54% similar to /packages/international/malaysia/malaysia-highlights-8-days/"
   },
@@ -776,10 +796,6 @@
   {
    "page": "/packages/india/ladakh/ladakh-honeymoon-7-days/",
    "msg": "content 54% similar to /packages/india/ladakh/ladakh-photography-tour-8-days/"
-  },
-  {
-   "page": "/packages/india/tamil-nadu/yercaud-honeymoon-retreat-4-days/",
-   "msg": "content 54% similar to /packages/india/tamil-nadu/yercaud-weekend-from-chennai-3-days/"
   },
   {
    "page": "/packages/india/himachal-pradesh/manali-adventure-week-6-days/",
@@ -860,6 +876,10 @@
   {
    "page": "/packages/international/indonesia/bali-friends-trip-5-days/",
    "msg": "content 54% similar to /packages/international/indonesia/bali-senior-friendly-holiday-6-days/"
+  },
+  {
+   "page": "/packages/india/tamil-nadu/yercaud-honeymoon-retreat-4-days/",
+   "msg": "content 54% similar to /packages/india/tamil-nadu/yercaud-weekend-from-chennai-3-days/"
   },
   {
    "page": "/packages/international/indonesia/java-temples-and-bali-7-days/",
@@ -974,6 +994,10 @@
    "msg": "content 53% similar to /packages/international/mauritius/mauritius-honeymoon-6-days/"
   },
   {
+   "page": "/destinations/international/africa/tanzania/ngorongoro/",
+   "msg": "content 53% similar to /destinations/international/africa/tanzania/serengeti/"
+  },
+  {
    "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
    "msg": "content 53% similar to /packages/international/switzerland/grand-european-tour-15-days/"
   },
@@ -1002,6 +1026,10 @@
    "msg": "content 53% similar to /packages/international/uae/dubai-senior-friendly-holiday-7-days/"
   },
   {
+   "page": "/packages/india/himachal-pradesh/hampta-pass-trek-and-chandratal-7-days/",
+   "msg": "content 53% similar to /packages/india/himachal-pradesh/manali-honeymoon-5-days/"
+  },
+  {
    "page": "/destinations/international/southeast-asia/thailand/kanchanaburi/",
    "msg": "content 53% similar to /destinations/international/southeast-asia/thailand/sukhothai/"
   },
@@ -1012,6 +1040,10 @@
   {
    "page": "/packages/international/japan/japan-grand-tour-11-days/",
    "msg": "content 53% similar to /packages/international/japan/japan-luxury-journey-9-days/"
+  },
+  {
+   "page": "/packages/india/ladakh/ladakh-high-passes-and-lakes-camping-9-days/",
+   "msg": "content 53% similar to /packages/india/ladakh/ladakh-photography-tour-8-days/"
   },
   {
    "page": "/packages/international/seychelles/seychelles-island-hopping-7-days/",
@@ -1082,6 +1114,10 @@
    "msg": "content 52% similar to /packages/international/japan/japan-luxury-journey-9-days/"
   },
   {
+   "page": "/destinations/international/south-asia/nepal/kathmandu/",
+   "msg": "content 52% similar to /destinations/international/south-asia/nepal/pokhara/"
+  },
+  {
    "page": "/destinations/international/south-asia/bhutan/punakha/",
    "msg": "content 52% similar to /destinations/international/south-asia/bhutan/thimphu/"
   },
@@ -1100,10 +1136,6 @@
   {
    "page": "/destinations/international/africa/egypt/cairo/",
    "msg": "content 52% similar to /destinations/international/africa/egypt/luxor/"
-  },
-  {
-   "page": "/destinations/international/south-asia/nepal/kathmandu/",
-   "msg": "content 52% similar to /destinations/international/south-asia/nepal/pokhara/"
   },
   {
    "page": "/destinations/international/east-asia/china/beijing/",
@@ -1218,6 +1250,10 @@
    "msg": "content 51% similar to /packages/international/italy/rome-and-vatican-pilgrimage-4-days/"
   },
   {
+   "page": "/destinations/international/south-asia/nepal/chitwan/",
+   "msg": "content 51% similar to /destinations/international/south-asia/nepal/lumbini/"
+  },
+  {
    "page": "/packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/",
    "msg": "content 51% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
   },
@@ -1302,10 +1338,6 @@
    "msg": "content 51% similar to /destinations/international/southeast-asia/thailand/phuket/"
   },
   {
-   "page": "/destinations/international/south-asia/nepal/chitwan/",
-   "msg": "content 51% similar to /destinations/international/south-asia/nepal/lumbini/"
-  },
-  {
    "page": "/packages/india/jammu-and-kashmir/kashmir-honeymoon-with-houseboat-6-days/",
    "msg": "content 51% similar to /packages/india/jammu-and-kashmir/kashmir-senior-friendly-tour-6-days/"
   },
@@ -1316,10 +1348,6 @@
   {
    "page": "/packages/international/italy/italy-food-and-culture-trip-7-days/",
    "msg": "content 51% similar to /packages/international/italy/rome-short-break-5-days/"
-  },
-  {
-   "page": "/destinations/international/south-asia/sri-lanka/kandy/",
-   "msg": "content 50% similar to /destinations/international/south-asia/sri-lanka/nuwara-eliya/"
   },
   {
    "page": "/destinations/international/south-asia/sri-lanka/bentota/",
@@ -1336,6 +1364,10 @@
   {
    "page": "/destinations/international/africa/morocco/fes/",
    "msg": "content 50% similar to /destinations/international/africa/morocco/marrakech/"
+  },
+  {
+   "page": "/destinations/international/south-asia/sri-lanka/kandy/",
+   "msg": "content 50% similar to /destinations/international/south-asia/sri-lanka/nuwara-eliya/"
   },
   {
    "page": "/destinations/international/africa/kenya/amboseli/",
@@ -1396,10 +1428,6 @@
   {
    "page": "/packages/international/indonesia/bali-and-singapore-family-combo-8-days/",
    "msg": "content 50% similar to /packages/international/thailand/thailand-and-singapore-8-days/"
-  },
-  {
-   "page": "/packages/india/madhya-pradesh/pachmarhi-hill-weekend-3-days/",
-   "msg": "content 50% similar to /packages/india/tamil-nadu/yercaud-weekend-from-chennai-3-days/"
   },
   {
    "page": "/packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/",
