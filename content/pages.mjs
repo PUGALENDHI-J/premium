@@ -25,18 +25,21 @@ ${full ? `<div class="fl f"><input id="cfd" placeholder=" "><label for="cfd">Whe
 <p class="note">Sending this form opens WhatsApp on your device. Your enquiry reaches us only when you press send there. An enquiry is not a booking; trips are confirmed only after you accept a written quote.</p></section>`;
 
 export const PAGES = [
-  { s: "about-us", n: "About us", title: "About Nexara Holidays | Travel Planners in Chennai", desc: "Nexara Holidays is a Chennai travel company planning private holidays in India and abroad, plus fixed-date Thailand group and honeymoon departures.", h1: "About Nexara Holidays", scr: "Who we are", sub: "A Chennai travel company that plans trips one conversation at a time.", img: "/assets/exp/from-chennai.webp",
-    body: `Nexara Holidays is a travel company based in **Chennai**. We started with Thailand, running our own group departures and honeymoon specials from Chennai, and we now plan private holidays across India and around the world.
+  { s: "about-us", n: "About us", title: "About Nexara Holidays | Tamil Nadu Travel Company, Worldwide Trips", desc: "Nexara Holidays is a Tamil Nadu travel company planning private holidays, pilgrimages, roots journeys, business trips and group tours across India and the world.", h1: "About Nexara Holidays", scr: "From Tamil Nadu to the world", sub: "A Tamil Nadu travel company that plans journeys anywhere in the world, one conversation at a time.", img: "/assets/photos/tamil-nadu.webp",
+    post: `<section><div class="h"><span class="eye">Where we take you</span><h2>From Tamil Nadu's temples to the world's horizons</h2><p>Our roots are in Tamil Nadu; our trips reach more than 70 countries.</p></div><div class="brg"><a class="brt" href="/destinations/india/tamil-nadu/"><img src="/assets/photos/gt/sm/tamil-nadu.webp" alt="Tamil Nadu" loading="lazy"><span class="brl"><b>Tamil Nadu</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/madurai/"><img src="/assets/photos/gt/sm/madurai.webp" alt="Madurai" loading="lazy"><span class="brl"><b>Madurai</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/mahabalipuram/"><img src="/assets/photos/gt/sm/mahabalipuram.webp" alt="Mahabalipuram" loading="lazy"><span class="brl"><b>Mahabalipuram</b></span></a><a class="brt" href="/destinations/international/indian-ocean/maldives/"><img src="/assets/photos/gt/sm/maldives.webp" alt="Maldives" loading="lazy"><span class="brl"><b>Maldives</b></span></a><a class="brt" href="/destinations/international/europe/switzerland/"><img src="/assets/photos/gt/sm/switzerland.webp" alt="Switzerland" loading="lazy"><span class="brl"><b>Switzerland</b></span></a><a class="brt" href="/destinations/international/east-asia/japan/"><img src="/assets/photos/gt/sm/japan.webp" alt="Japan" loading="lazy"><span class="brl"><b>Japan</b></span></a><a class="brt" href="/destinations/international/middle-east/uae/dubai/"><img src="/assets/photos/gt/sm/dubai.webp" alt="Dubai" loading="lazy"><span class="brl"><b>Dubai</b></span></a><a class="brt" href="/destinations/international/southeast-asia/indonesia/bali/"><img src="/assets/photos/gt/sm/bali.webp" alt="Bali" loading="lazy"><span class="brl"><b>Bali</b></span></a></div><p style="text-align:center;margin-top:24px"><a class="btn ghost2" href="/destinations/">Explore all destinations →</a></p></section>`,
+    body: `Nexara Holidays is a travel company rooted in **Tamil Nadu**. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.
 
-## What we do
+## What we plan
 
-- **Fixed-date departures.** Our Thailand group batches and honeymoon specials leave Chennai on set dates with a Nexara representative. See [[p:thailand-ultimate-boys-escape-5-days]] and [[p:thailand-honeymoon-lantern-of-love-6-days]].
-- **Private, customised holidays.** For everything else we build a day-by-day plan around your dates, budget and interests: honeymoons, family trips, pilgrimages, safaris and more. Browse [[t:honeymoon]], [[t:family-holidays]] or the full [destination directory](/destinations/).
-- **The details around the trip.** Flights from Chennai, hotel bookings, transfers, sightseeing and guidance on visas and entry rules.
+- **Tamil Nadu, close to home.** Temple circuits, [Tamil Nadu temples and shrines](/sacred/tamil-nadu-temples/), hill-station breaks in the Nilgiris and Kodaikanal, and [roots journeys](/experiences/roots-heritage-journeys/#tamil-nadu) for Tamil families returning to their native villages from across the world.
+- **India, every season.** From Kashmir and Ladakh to Kerala and the Andamans: browse [India holidays](/tour-packages/india/) or our [Sacred journeys](/sacred/) for pilgrimages of every faith.
+- **The world.** Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan. See [international holidays](/tour-packages/international/).
+- **Travel with a purpose.** [Business and trade travel](/experiences/business-trade-travel/), [educational trips](/experiences/educational-trips/), [cruises](/experiences/cruise-holidays/) and [yacht experiences](/experiences/luxury-yacht-experiences/).
+- **Groups and special departures.** [Group tours](/tour-types/group-tours/) for friends, families, clubs and companies, including our own fixed-date departures, and [honeymoons](/tour-types/honeymoon/) planned around the two of you.
 
 ## How we work
 
-1. You tell us what you have in mind, on WhatsApp, by phone or through our [custom tour form](/custom-tour/).
+1. You tell us what you have in mind, on WhatsApp, by phone or through our [custom tour form](/custom-tour/), from wherever you live.
 2. We send a written plan with a price. Itineraries on this website are starting points, not fixed products.
 3. You change anything you like until it is right.
 4. Nothing is booked until you confirm in writing and pay the deposit stated in your quote.
@@ -45,7 +48,7 @@ export const PAGES = [
 
 - **Honest information.** We tell you the right season for a destination, even if it means suggesting a different month or place.
 - **No surprises.** Inclusions and exclusions are listed in your written quote. If something is not included, we say so.
-- **A real person to message.** You have a planner on WhatsApp before and during your trip.
+- **A real person to message.** You have a planner on WhatsApp before and during your trip, in English or Tamil.
 
 ## Get in touch
 

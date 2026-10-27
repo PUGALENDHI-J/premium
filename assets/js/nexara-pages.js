@@ -28,8 +28,11 @@
     const grid = tb.nextElementSibling && tb.nextElementSibling.matches(".dgrid") ? tb.nextElementSibling : tb.parentNode.querySelector(".dgrid"), cnt = tb.parentNode.querySelector(".fcount");
     tb.querySelectorAll("button").forEach(b => b.onclick = () => {
       tb.querySelectorAll("button").forEach(x => x.classList.toggle("on", x == b));
-      let n = 0; grid.querySelectorAll(".dc").forEach(c => { const show = b.dataset.f == "all" || (" " + c.dataset.t + " ").includes(" " + b.dataset.f + " "); c.classList.toggle("hide", !show); if (show) n++ });
-      if (cnt) cnt.textContent = n + (n == 1 ? " match" : " matches");
+      // the matching cards fade in one after another, so a change is visible even when the first row stays the same
+      let n = 0; grid.querySelectorAll(".dc").forEach(c => { const show = b.dataset.f == "all" || (" " + c.dataset.t + " ").includes(" " + b.dataset.f + " "); c.classList.toggle("hide", !show); c.classList.remove("fin"); if (show) { c.style.setProperty("--fi", Math.min(n, 8)); n++ } });
+      if (!RM) { void grid.offsetWidth; grid.querySelectorAll(".dc:not(.hide)").forEach(c => c.classList.add("fin")) }
+      if (cnt) cnt.textContent = (b.dataset.f == "all" ? "Showing all " : "Showing ") + n + (n == 1 ? " itinerary" : " itineraries");
+      const top = tb.getBoundingClientRect().top; if (top < 0 || top > innerHeight * .6) tb.scrollIntoView({ behavior: RM ? "auto" : "smooth", block: "start" });
     });
   });
 
