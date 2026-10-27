@@ -109,7 +109,9 @@ a.dc{color:inherit}
 /* enquiry phone: an international number typed with + replaces the +91 prefix */
 .fl.tel.intl .cc{display:none}.fl.tel.intl input{padding-left:14px}.fl.tel.intl label{left:15px}
 /* filter tabs: cards that match fade up in turn */
-.dgrid .dc.fin{animation:fin .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--fi,0) * 45ms)}
-@keyframes fin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.dgrid .dc.dcin{animation:dcin .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--fi,0) * 45ms)}
+@keyframes dcin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .ftabs{scroll-margin-top:110px}
 .fcount{font-weight:600;color:var(--ink)}
+/* filter tabs: a hidden card stays hidden whatever layout rule the grid uses */
+.dgrid .dc.hide,body.sub .dgrid .dc.hide{display:none!important}
