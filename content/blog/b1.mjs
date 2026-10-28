@@ -432,7 +432,7 @@ Check passport validity and current entry rules for Indian passport holders on o
 ## How long to go for
 
 Four to six nights is enough for any of these first trips, with one or two bases.` },
-{ s: "how-to-check-visa-rules-for-indian-passport-holders", cluster: "international-travel", date: D, rel: ["thailand", "europe", "singapore"], title: "How to check visa rules for Indian passport holders (and avoid old information)", desc: "Visa rules change often. How to find current, official entry requirements for Indian passport holders, and the common types of visa you will see.",
+{ s: "how-to-check-visa-rules-for-indian-passport-holders", cluster: "international-travel", date: D, rel: ["europe", "singapore", "thailand"], title: "How to check visa rules for Indian passport holders (and avoid old information)", desc: "Visa rules change often. How to find current, official entry requirements for Indian passport holders, and the common types of visa you will see.",
 body: `Visa and entry rules for Indian passport holders change frequently. A blog post from two years ago may be completely wrong today. Here is how to find reliable, current information.
 
 ## Go to official sources
@@ -548,7 +548,7 @@ Adjust to the destination's time zone. See [[b:beating-jet-lag-on-long-haul-trip
 ## On arrival
 
 Plan an easy first day. See our [[t:long-stays]] and [[t:multi-country-tours]] pages for trips worth the long flight.` },
-{ s: "two-weeks-in-southeast-asia", cluster: "international-travel", date: D, rel: ["thailand", "vietnam", "cambodia", "singapore", "malaysia"], title: "Two weeks in Southeast Asia: three routes for Indian travellers", desc: "Three ways to spend two weeks in Southeast Asia: Thailand in depth, Indochina's history, or a Singapore, Malaysia and Bali loop.",
+{ s: "two-weeks-in-southeast-asia", cluster: "international-travel", date: D, rel: ["vietnam", "cambodia", "singapore", "malaysia", "thailand"], title: "Two weeks in Southeast Asia: three routes for Indian travellers", desc: "Three ways to spend two weeks in Southeast Asia: Thailand in depth, Indochina's history, or a Singapore, Malaysia and Bali loop.",
 body: `Two weeks is enough time to see a lot of Southeast Asia, but trying to see everything leads to exhausting travel days. Pick one of these three routes.
 
 ## Route 1: Thailand in depth
@@ -707,7 +707,7 @@ Spring and autumn are beautiful but busy. See [[g:best-time-to-visit-japan]].
 ## Budget
 
 Japan can be expensive, especially in peak seasons, but there are good-value hotels and meals. Plan carefully, and book hotels early for blossom and autumn seasons. See [[t:cultural-holidays]] for Japan itineraries.` },
-{ s: "travelling-with-forex-cards-tips", cluster: "international-travel", date: D, rel: ["thailand", "singapore", "europe"], title: "Forex cards or credit cards? A quick guide for your next trip", desc: "A quick comparison of forex cards, credit cards, debit cards and cash for Indian travellers, and when to use each on an international holiday.",
+{ s: "travelling-with-forex-cards-tips", cluster: "international-travel", date: D, rel: ["singapore", "europe", "thailand"], title: "Forex cards or credit cards? A quick guide for your next trip", desc: "A quick comparison of forex cards, credit cards, debit cards and cash for Indian travellers, and when to use each on an international holiday.",
 body: `Deciding how to carry money abroad can feel complicated. Here is a quick comparison to help you decide.
 
 ## Forex cards

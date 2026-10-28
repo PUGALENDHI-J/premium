@@ -120,7 +120,7 @@ Use the "multi-city" option when searching for flights, or ask us to compare.
 In Europe and Japan, open-jaw flights pair well with rail travel between cities. See [[g:getting-around-europe-by-train]].
 
 See our [[t:multi-country-tours]] page.` },
-{ s: "how-to-read-an-itinerary", cluster: "itinerary-planning", date: D, rel: ["thailand", "kerala", "dubai"], title: "How to read a tour itinerary and spot problems", desc: "How to read a day-by-day tour itinerary critically: travel times, early starts, meals, free time, inclusions and the warning signs of an unrealistic plan.",
+{ s: "how-to-read-an-itinerary", cluster: "itinerary-planning", date: D, rel: ["kerala", "dubai", "thailand"], title: "How to read a tour itinerary and spot problems", desc: "How to read a day-by-day tour itinerary critically: travel times, early starts, meals, free time, inclusions and the warning signs of an unrealistic plan.",
 body: `A good itinerary is realistic, clear and balanced. Here is how to read one critically before you book.
 
 ## Check travel times

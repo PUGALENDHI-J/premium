@@ -330,9 +330,17 @@ function pkgVis(p) {
 const daysTxt = d => d + (d == "1" ? " day" : " days");
 function firstSentence(s = "") { const m = String(s).match(/^.*?[.!?](\s|$)/); return (m ? m[0] : s).trim() }
 const monthsOf = n => n.bt?.[0] || "";
-// article photo: its own, else the first related destination with a photo, else a destination photo picked by its slug (decorative)
+// article photo: its own; else the related destination its title names; else its first related destination with a photo;
+// else a destination photo picked by its slug (decorative)
 const ALL_IMG = [...new Set(Object.values(PHOTOS).map(p => p.img))];
-const artImg = a => a.img || (a.rel || []).map(s => N.get(s)).map(n => n && (n.img || top(n)?.img)).find(Boolean) || ALL_IMG[[...(a.slug || a.url)].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % ALL_IMG.length];
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const artImg = a => {
+  if (a.img) return a.img;
+  const h = [...(a.slug || a.url)].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7);
+  const rel = (a.rel || []).map(s => N.get(s)).filter(Boolean).map(n => [n, n.img || top(n)?.img]).filter(([, im]) => im);
+  const named = rel.find(([n]) => new RegExp(`\\b${reEsc(n.n.replace(/\s*\(.*?\)/g, ""))}\\b`, "i").test(a.title || ""));
+  return named ? named[1] : rel.length ? rel[0][1] : ALL_IMG[h % ALL_IMG.length];
+};
 const artCards = (arr, label) => arr.length ? `<div class="acards ph">${arr.map(a => `<a class="acard" href="${a.url}"><img class="aci" src="${artImg(a)}" alt="" loading="lazy"><small>${esc(label(a))}</small><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p><span>Read →</span></a>`).join("")}</div>` : "";
 const quoteBox = (trip, extra = "") => `<div class="box"><h3>Plan this trip</h3><p class="quote-p">Request a customised quote</p><p class="quote-s">Prices depend on dates, hotel category and group size, so we quote each trip individually.</p>${extra}<a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a><a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">${IC.wa} WhatsApp us</a><a class="btn ghost2" href="tel:${SITE.tel}">${IC.call} Call ${SITE.phone}</a></div>`;
 // facts panel beside the header photo (GT style): big value, small label, then action buttons

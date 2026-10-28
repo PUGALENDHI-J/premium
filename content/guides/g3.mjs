@@ -640,7 +640,7 @@ Insurance is less common for trips within India, but worth considering for remot
 - Carry a copy of the policy and helpline numbers offline.
 
 We can suggest insurers when you book, but the policy is between you and the insurer.` },
-{ s: "money-abroad-forex-cards-and-cash", cat: "planning", date: D, rel: ["thailand", "dubai", "europe"], trip: "International holiday", title: "Money abroad: forex cards, credit cards and cash for Indian travellers", desc: "How to carry money on an international trip from India: forex cards, debit and credit cards, cash, currency conversion and avoiding hidden fees.",
+{ s: "money-abroad-forex-cards-and-cash", cat: "planning", date: D, rel: ["dubai", "europe", "thailand"], trip: "International holiday", title: "Money abroad: forex cards, credit cards and cash for Indian travellers", desc: "How to carry money on an international trip from India: forex cards, debit and credit cards, cash, currency conversion and avoiding hidden fees.",
 body: `Managing money abroad is easier than ever, but the method you choose affects how much you pay in fees and exchange-rate margins.
 
 ## Multi-currency forex cards
@@ -808,7 +808,7 @@ Report a lost passport to the police and apply for a reissue. Abroad, contact th
 - Name spellings must match exactly between your passport, tickets and visa.
 
 Once your passport is ready, easy first trips from Chennai include [[sri-lanka]], [[singapore]] and [[thailand]]. See our [[g:first-international-trip-checklist]].` },
-{ s: "tcs-on-foreign-tour-packages-explained", cat: "planning", date: D, rel: ["thailand", "dubai", "europe"], trip: "International holiday", title: "TCS on foreign tour packages explained in plain words", desc: "What Tax Collected at Source (TCS) means when you book an overseas tour package from India, how it appears in your quote and how to claim credit.",
+{ s: "tcs-on-foreign-tour-packages-explained", cat: "planning", date: D, rel: ["dubai", "europe", "thailand"], trip: "International holiday", title: "TCS on foreign tour packages explained in plain words", desc: "What Tax Collected at Source (TCS) means when you book an overseas tour package from India, how it appears in your quote and how to claim credit.",
 body: `When you book an international holiday from India, your quote may include an amount called TCS, or Tax Collected at Source. Many travellers are surprised by it. Here is what it is, in plain words.
 
 This is general information, not tax advice. Rules and rates have changed several times in recent years, so check the current position with a tax adviser or the Income Tax Department.

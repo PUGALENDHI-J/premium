@@ -658,7 +658,7 @@ See [[g:rajasthan-in-10-days]] and our [[t:luxury-holidays]] page.
 ## Beyond Rajasthan
 
 Heritage stays exist elsewhere too: colonial bungalows in the Nilgiris and Kerala's tea country, Chettinad mansions in Tamil Nadu, Portuguese villas in Goa and houseboats in Kashmir. They add character to a trip in the same way.` },
-{ s: "budget-southeast-asia-tips", cluster: "budget-premium", date: D, rel: ["thailand", "vietnam", "bali", "cambodia"], title: "Southeast Asia on a budget: how to stretch your money", desc: "Practical ways to enjoy Thailand, Vietnam, Bali and Cambodia on a budget, from transport and food to accommodation and timing.",
+{ s: "budget-southeast-asia-tips", cluster: "budget-premium", date: D, rel: ["vietnam", "bali", "cambodia", "thailand"], title: "Southeast Asia on a budget: how to stretch your money", desc: "Practical ways to enjoy Thailand, Vietnam, Bali and Cambodia on a budget, from transport and food to accommodation and timing.",
 body: `Southeast Asia is one of the best-value regions in the world for Indian travellers. These tips help you make your budget go further.
 
 ## Choose good-value destinations

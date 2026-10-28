@@ -78,7 +78,7 @@ A monsoon trip to Kerala or Coorg can be romantic and good value. See [[t:couple
 ## Festivals in the monsoon
 
 Onam in Kerala (August or September), the Nehru Trophy Boat Race in Alleppey (August) and Ganesh Chaturthi in Maharashtra all fall in or near the monsoon.` },
-{ s: "vegetarian-food-abroad", cat: "planning", date: D, rel: ["thailand", "singapore", "japan", "europe"], trip: "International holiday", title: "Vegetarian food abroad: a destination-by-destination guide", desc: "How easy it is to eat vegetarian, Jain or eggless food in popular destinations for Indian travellers, and how to plan meals on tour.",
+{ s: "vegetarian-food-abroad", cat: "planning", date: D, rel: ["singapore", "japan", "europe", "thailand"], trip: "International holiday", title: "Vegetarian food abroad: a destination-by-destination guide", desc: "How easy it is to eat vegetarian, Jain or eggless food in popular destinations for Indian travellers, and how to plan meals on tour.",
 body: `For many Indian travellers, the biggest worry about going abroad is food. The good news is that vegetarian food is easier to find than ever, though it varies a lot by destination.
 
 ## Easiest destinations
@@ -157,7 +157,7 @@ Travelling in the shoulder season spreads tourism through the year and reduces p
 Permits, timed entries and visitor caps exist to protect places. Respect them, even when it is inconvenient.
 
 We try to build these principles into the itineraries we plan. See [[t:wildlife-safaris]] for responsible wildlife trips.` },
-{ s: "how-to-read-a-travel-quote", cat: "planning", date: D, rel: ["thailand", "kerala", "dubai"], trip: "Holiday", title: "How to read a travel quote and compare packages fairly", desc: "What to check in a holiday quote: inclusions, hotel names and room types, transfers, meals, taxes and the small print, so you compare like with like.",
+{ s: "how-to-read-a-travel-quote", cat: "planning", date: D, rel: ["kerala", "dubai", "thailand"], trip: "Holiday", title: "How to read a travel quote and compare packages fairly", desc: "What to check in a holiday quote: inclusions, hotel names and room types, transfers, meals, taxes and the small print, so you compare like with like.",
 body: `Two holiday quotes for the same destination can differ widely in price. Usually that is because they include different things. Here is how to compare them fairly.
 
 ## Hotels
@@ -247,7 +247,7 @@ Share the final itinerary, hotel names, emergency contacts and a packing list wi
 ## Our group departures
 
 If you would rather join a group than organise one, our group departures from Chennai have fixed dates, a tour manager and pre-booked activities, to places such as Dubai, Europe, Turkey, Bali and Thailand. See [[p:europe-group-tour-10-days]] and [[t:group-tours]].` },
-{ s: "safety-tips-for-travelling-abroad", cat: "planning", date: D, rel: ["thailand", "europe", "dubai"], trip: "International holiday", title: "Safety tips for travelling abroad: scams, documents and emergencies", desc: "Practical safety advice for Indian travellers abroad: protecting documents and money, common tourist scams, transport, emergencies and staying in touch.",
+{ s: "safety-tips-for-travelling-abroad", cat: "planning", date: D, rel: ["europe", "dubai", "thailand"], trip: "International holiday", title: "Safety tips for travelling abroad: scams, documents and emergencies", desc: "Practical safety advice for Indian travellers abroad: protecting documents and money, common tourist scams, transport, emergencies and staying in touch.",
 body: `Most popular holiday destinations are safe, but a few habits help you avoid common problems and handle emergencies calmly.
 
 ## Documents
@@ -292,7 +292,7 @@ body: `Most popular holiday destinations are safe, but a few habits help you avo
 ## Stay in touch
 
 Share your itinerary with family and check in regularly. See [[g:first-international-trip-checklist]].` },
-{ s: "how-to-budget-a-holiday", cat: "planning", date: D, rel: ["thailand", "bali", "kerala"], trip: "Holiday", title: "How to budget a holiday: the costs people forget", desc: "A simple framework for budgeting a holiday in India or abroad, including the costs people often forget, and where to save without spoiling the trip.",
+{ s: "how-to-budget-a-holiday", cat: "planning", date: D, rel: ["bali", "kerala", "thailand"], trip: "Holiday", title: "How to budget a holiday: the costs people forget", desc: "A simple framework for budgeting a holiday in India or abroad, including the costs people often forget, and where to save without spoiling the trip.",
 body: `A holiday budget is more than the package price. Planning for all the costs upfront avoids stress on the trip.
 
 ## The main costs
