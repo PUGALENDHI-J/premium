@@ -26,3 +26,14 @@
 @media(max-width:1000px){.hbw{grid-template-columns:1fr}.hbc{text-align:center}}
 @media(max-width:700px){.hbs{grid-template-columns:1fr 1fr;gap:10px}.hband .stat{padding:12px!important}.hband .stat i{width:36px;height:36px}}
 @media(prefers-reduced-motion:reduce){.hband .stat{transition:none!important}}
+
+/* ---------- opening flight and in-page transition: the Nexara airliner ---------- */
+#intro .pl,#fly .pl{width:clamp(260px,38vw,520px)!important;transform-origin:50% 50%;opacity:0}
+#intro .pl svg,#fly .pl svg{overflow:visible;filter:drop-shadow(0 18px 14px rgba(60,30,30,.22))}
+#intro .pl:before,#intro .pl:after,#fly .pl:before,#fly .pl:after{display:none!important}
+#intro .pl .ctr,#fly .pl .ctr{animation:ctr 1.4s ease-out both;transform-origin:250px 0}
+@keyframes ctr{from{opacity:0;transform:scaleX(.2)}to{opacity:1;transform:none}}
+/* soft clouds drifting behind the opening flight */
+#intro:before{content:"";position:absolute;inset:-10% -40%;background:radial-gradient(60px 26px at 18% 30%,#fff 60%,transparent 62%),radial-gradient(90px 34px at 22% 32%,#fff 60%,transparent 62%),radial-gradient(70px 28px at 62% 66%,#fff 60%,transparent 62%),radial-gradient(110px 40px at 67% 68%,#fff 60%,transparent 62%),radial-gradient(80px 30px at 86% 22%,#fff 60%,transparent 62%);opacity:.9;animation:cld 6s linear both}
+@keyframes cld{from{transform:translateX(6%)}to{transform:translateX(-10%)}}
+@media(prefers-reduced-motion:reduce){#intro:before,#intro .pl .ctr{animation:none}}
