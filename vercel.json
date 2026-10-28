@@ -3,5 +3,12 @@
   "buildCommand": "echo Pages are pre-built locally with npm run build",
   "installCommand": "echo No dependencies to install",
   "outputDirectory": ".",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/sacred/tirupati-shirdi-sabarimala/",
+      "destination": "/sacred/tirupati-balaji/",
+      "permanent": true
+    }
+  ]
 }

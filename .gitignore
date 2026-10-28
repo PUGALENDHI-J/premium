@@ -1,3 +1,5 @@
 node_modules/
-# third-party images: not licensed for use on this site, never commit or deploy
-assets/gtholidays/
+# Veena World source library (assets/main images zips, extracted): only the processed copies in assets/photos/vw ship
+assets/veenaworld/
+assets/main images/
+research/vw-check-cache.json

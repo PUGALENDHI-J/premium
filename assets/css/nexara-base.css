@@ -449,6 +449,18 @@ input:focus,select:focus{box-shadow:0 0 0 4px rgba(255,0,0,.12)}
 .enote{display:flex;align-items:center;justify-content:center;gap:7px;margin:4px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--mut)}
 .eb.sent .enote{display:none}
 @media(max-width:480px){.eh{padding:22px 20px 20px}.eh b{font-size:1.3rem}#enq .steps{padding:14px 20px}#enq .steps s{display:none}#enq .steps i.on s{display:inline}.eb{padding:20px}}
+/* the enquiry fits any screen height: header, steps and the Back / Next buttons stay in view and only the fields scroll
+   (the trip step is taller than a laptop screen, and overflow:hidden used to clip its Next button) */
+#enq[open]{display:flex;flex-direction:column;max-height:92vh;max-height:92dvh}
+#enq .eh,#enq .steps{flex:none}
+#enq .eb{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+#enq .eb>*{flex:none}
+#enq .eb>.sp.on{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;margin:-6px -8px 0;padding:6px 8px 8px}
+#enq .eb.sent{overflow-y:auto}
+#enq .ea{padding-top:14px;border-top:1px solid var(--line)}
+#enq #nx{flex:1;text-align:center;min-height:50px;font-size:.86rem;box-shadow:0 10px 24px rgba(204,0,0,.28)}
+#enq #bk{flex:none}
+#enq #bk[style*="hidden"]{display:none}
 /* photo cards: experiences + why */
 .eg{grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:22px}
 .e{padding:0;overflow:hidden;display:flex;flex-direction:column;cursor:zoom-in;border-bottom-width:1px}

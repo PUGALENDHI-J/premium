@@ -32,19 +32,22 @@ IN_CITIES.push(...ADD_IN_CITIES); COUNTRIES.push(...ADD_COUNTRIES); W_CITIES.pus
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = ROOT, MANIFEST = path.join(ROOT, "research", ".generated-files.json");
-// destination photos: GT Holidays library (tools/gt_photos.py) and/or Wikimedia Commons (tools/fetch_photos.py), per SITE.photos
+// destination photos: Veena World library (tools/vw_photos.py) and/or Wikimedia Commons (tools/fetch_photos.py), per SITE.photos
 const readJson = f => existsSync(path.join(ROOT, "content", f)) ? JSON.parse(readFileSync(path.join(ROOT, "content", f), "utf8")) : {};
-const GT_PHOTOS = readJson("photos-gt.json"), COMMONS_ALL = readJson("photos.json");
+const VW_PHOTOS = readJson("photos-vw.json"), COMMONS_ALL = readJson("photos.json");
 // a Commons photo is used only when the Wikipedia article it came from names the same attraction (or place, for a place photo);
-// loose matches such as a nearby park or a district article are dropped so a card never shows the wrong sight
+// loose matches such as a nearby park or a district article are dropped so a card never shows the wrong sight;
+// a photo picked by hand in photo-overrides.json (p.q) is always kept
 const GEN = new Set("the of and in at on to de la le du da del national park city old new town temple island islands beach lake fort palace district state river valley hill hills mount museum street market sri saint st san jungle safari safaris walk walks tour tours drive drives game zone view views point cruise boat ride rides trip visit area region list day night big five centre center square road garden gardens bay sea coast falls waterfall wildlife sanctuary reserve camp trek trail india".split(" "));
 const tokOf = s => String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").split(/[^a-z0-9]+/).filter(x => x.length > 2 && !GEN.has(x));
 const squash = s => String(s).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
 const sameSight = (name, page) => { const a = tokOf(name), b = tokOf(page); return (squash(page).length > 3 && (squash(name).includes(squash(page)) || squash(page).includes(squash(name)))) || a.some(x => b.some(y => x == y || (x.length > 4 && y.length > 4 && (x.startsWith(y.slice(0, 5)) || y.startsWith(x.slice(0, 5)))))) };
-const COMMONS = Object.fromEntries(Object.entries(COMMONS_ALL).filter(([k, p]) => { const [pl, at] = k.split("--"); return sameSight((at || pl).replace(/-/g, " "), p.page || "") }));
+// photos checked by eye are listed in photo-overrides.json "_verified"
+const VERIFIED = new Set(readJson("photo-overrides.json")._verified || []);
+const COMMONS = Object.fromEntries(Object.entries(COMMONS_ALL).filter(([k, p]) => { const [pl, at] = k.split("--"); return p.q || VERIFIED.has(k) || sameSight((at || pl).replace(/-/g, " "), p.page || "") }));
 // topic photos for card sections (money, water, trekking, ...): tools/fetch_topic_photos.py
 const TOPIC = readJson("photos-topics.json");
-const PHOTOS = SITE.photos == "commons" ? COMMONS : SITE.photos == "gt+commons" ? { ...COMMONS, ...GT_PHOTOS } : GT_PHOTOS;
+const PHOTOS = SITE.photos == "commons" ? COMMONS : SITE.photos == "vw+commons" ? { ...COMMONS, ...VW_PHOTOS } : VW_PHOTOS;
 const report = { built_at: new Date().toISOString(), drafts: [], warnings: [], missingLinks: [], counts: {} };
 const warn = m => report.warnings.push(m);
 const draft = (kind, id, why) => report.drafts.push({ kind, id, why });
@@ -78,8 +81,14 @@ const isPlace = n => n.kind == "city" || n.self; // a place with attractions
 const top = n => n.kind == "city" ? n.parent : n; // state or country
 const kids = p => [...N.values()].filter(n => n.kind == "city" && n.parent === p);
 const placesIn = p => p.self ? [p] : kids(p);
+// a related photo for a place with none of its own: one of its sights, a place inside it, then its state or country
+const relImg = n => { for (const [a] of n.a || []) { const ph = PHOTOS[`${n.s}--${slugify(a)}`]; if (ph) return { img: ph.img, credit: ph } }
+  for (const k of N.values()) if (k.parent === n && k.img && !k.draft) return { img: k.img, sm: k.sm, credit: k.photo };
+  for (let p = n.parent; p; p = p.parent) if (p.img) return { img: p.img, sm: p.sm, credit: p.photo };
+  return null };
 const vis = n => {
   if (n.img) return { img: n.img, sm: n.sm, credit: n.photo };
+  const r = relImg(n); if (r) return r;
   const mo = motifFor(n.t || (n.k || []).join(" "), n.s);
   return { m: mo.m, g: mo.g };
 };
@@ -193,8 +202,8 @@ const relTo = (arr, n) => arr.filter(a => (a.rel || []).includes(n.s) || (n.kind
 // or abroad. A repeated topic picture becomes its icon.
 const canon = src => src.replace(/\/sm\/([^/]+)$/, "/$1");
 const PH_INFO = new Map(), PH_OF = new Map(); // full img -> { n, cap, of }; place slug -> [full img]
-// GT replaces the Commons photo of a place; the Commons one is kept here as a spare
-const SPARE = SITE.photos == "gt+commons" ? Object.entries(COMMONS).filter(([k]) => !k.includes("--") && GT_PHOTOS[k]).map(([k, p]) => [k, p]) : [];
+// Veena World replaces the Commons photo of a place; the Commons one is kept here as a spare
+const SPARE = SITE.photos == "vw+commons" ? Object.entries(COMMONS).filter(([k]) => !k.includes("--") && VW_PHOTOS[k]).map(([k, p]) => [k, p]) : [];
 for (const [k, p] of [...Object.entries(PHOTOS).sort(([a], [b]) => a.includes("--") - b.includes("--")), ...SPARE]) {
   const [pl, at] = k.split("--"), n = N.get(pl), a = at && (n?.a || []).find(([x]) => slugify(x) == at)?.[0];
   if (!n || n.draft || (at && !a) || PH_INFO.has(p.img) || !existsSync(path.join(ROOT, p.img))) continue;
@@ -205,8 +214,10 @@ for (const [k, p] of [...Object.entries(PHOTOS).sort(([a], [b]) => a.includes("-
 const NEAR = new Map(), BY_URL = new Map([...N.values()].map(n => [n.url, n])), PK_BY_URL = new Map(PK.map(p => [p.url, p]));
 const nearImgs = n => {
   if (!NEAR.has(n.s)) {
-    const t = top(n), reg = t.region, all = [...N.values()];
-    const order = [n, t, ...kids(t), ...(reg ? all.filter(x => top(x).region === reg) : []), ...all.filter(x => !!x.dom == !!n.dom)];
+    // stay inside the same state or country (a region tile: its own countries), so a card never shows another country's photo;
+    // with nothing unused left, the repeat is kept rather than borrowing a picture of somewhere else
+    const t = top(n);
+    const order = n.kind == "wregion" || n.kind == "inregion" ?[n, ...[...N.values()].filter(x => top(x).region === n)] : [n, t, ...kids(t)];
     NEAR.set(n.s, [...new Set(order.flatMap(x => PH_OF.get(x.s) || []))]);
   }
   return NEAR.get(n.s);
@@ -216,8 +227,29 @@ const smIf = img => existsSync(path.join(ROOT, smOf(img))) ? smOf(img) : img;
 const brushOf = list => list.map(x => Array.isArray(x) ? x : [x]).map(([s, name, sub]) => { const n = typeof s == "string" ? N.get(s) : s; return n && !n.draft && n.img ? { url: n.url, name: (name || n.n).replace(/\s*\(.*?\)/g, ""), img: smIf(n.img), sub } : null }).filter(Boolean);
 const POP_INTL = ["maldives", "bali", "dubai", "switzerland", "thailand", "singapore", "paris", "japan", "santorini", "mauritius", "london", "vietnam"];
 const POP_IN = ["kerala", ["jammu-and-kashmir", "Kashmir"], "goa", "ladakh", "munnar", "ooty", "manali", "jaipur", ["andaman-and-nicobar", "Andaman"], "rishikesh", "darjeeling", "coorg"];
+// No unused photo of the place is left on this page. Optional cards (attractions, brush tiles, gallery photos) are
+// dropped; a package or place card takes an unused photo of its travel style or kind of place; an article or
+// topic card loses just the picture. Nothing shows the same photo twice.
+const KIND_TOPIC = [[/pilgrimage|temple/, ["tt-pilgrimage-tours", "temple", "temple-2"]], [/beach|island/, ["tt-beach-holidays", "beach", "beach-2", "beach-3", "sunset-2", "dive"]],
+  [/hill|mountain|snow/, ["tt-hill-stations", "naturewalk-2", "trek", "trek-2", "trek-3", "outdoors-2", "drive-2"]], [/wildlife|safari/, ["tt-wildlife-safaris", "safari", "safari-2", "safari-3"]],
+  [/heritage|culture|city/, ["tt-cultural-holidays", "walk", "walk-2", "walk-3", "tt-photography-tours"]], [/adventure|trek|lake|nature|waterfall/, ["tt-adventure", "outdoors", "outdoors-3", "naturewalk", "naturewalk-3", "rafting"]]];
+function noPhotoLeft(html, o, pk, at, used, edits) {
+  const near = cls => { const k = html.lastIndexOf(cls, o.i); return k >= 0 && k > html.lastIndexOf("</section>", o.i) ? k : -1 };
+  const cut = (s, e) => edits.push([s, e, ""]);
+  const box = html.lastIndexOf('<div class="ipc', o.i), card = html.lastIndexOf("<div><figure>", o.i);
+  if (box >= 0 && card > box && html.lastIndexOf("</section>", o.i) < box) return cut(card, html.indexOf("</div></div>", o.i) + 12);
+  const brt = html.lastIndexOf('<a class="brt"', o.i); if (brt >= 0 && html.indexOf("</a>", brt) > o.i) return cut(brt, html.indexOf("</a>", o.i) + 4);
+  if (o.kind == 0) { const f = html.lastIndexOf("<figure", o.i); return cut(f, html.indexOf("</figure>", o.i) + 9) }
+  const fig = html.lastIndexOf('<figure class="cph"', o.i); if (fig >= 0 && html.indexOf("</figure>", fig) > o.i) return cut(fig, html.indexOf("</figure>", o.i) + 9);
+  if (/class="aci"/.test(o.tag)) return cut(o.i, o.i + o.tag.length);
+  const kind = (pk ? pk.stops.map(([n]) => n.t).join(" ") : at?.t) || "";
+  const tags = [...KIND_TOPIC.filter(([rx]) => rx.test(kind)).flatMap(([, k]) => k.filter(x => !x.startsWith("tt-"))), ...(pk ? pk.themes.map(t => "tt-" + t) : [])];
+  const alt = [...tags, ...KIND_TOPIC.flatMap(([, k]) => k).filter(x => !x.startsWith("tt-")), ...KIND_TOPIC.map(([, k]) => k[0])].map(k => TOPIC[k]?.img).find(x => x && !used.has(canon(x)));
+  if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]) }
+  else if (near('class="dc"') < 0 && near('class="tpc"') < 0) cut(o.i, o.i + o.tag.length);
+}
 function onePhotoEach(html) {
-  const occ = [], rx = /<img\b[^>]*?\ssrc="(\/assets\/photos\/[^"]+)"[^>]*>/g;
+  const occ = [], rx = /<img\b[^>]*?\ssrc="(\/assets\/(?:photos|dest|hero|exp)\/[^"]+|\/assets\/img-[^"]+)"[^>]*>/g;
   for (let m; (m = rx.exec(html));) {
     const i = m.index, aOpen = html.lastIndexOf("<a ", i), aTag = aOpen > html.lastIndexOf("</a>", i) ? html.slice(aOpen, html.indexOf(">", aOpen) + 1) : "";
     const kind = / data-lb/.test(aTag) ? 0 : html.lastIndexOf("<div", i) == html.lastIndexOf('<div class="sps">', i) ? 1 : 2;
@@ -240,12 +272,13 @@ function onePhotoEach(html) {
     if (tk) {
       const alt = ["", "-2", "-3", "-4", "-5", "-6"].map(v => TOPIC[tk + v]?.img).find(x => x && !used.has(canon(x)));
       if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]) }
+      else { const ic = html.slice(fig, o.i).match(/data-ic="([^"]+)"/)?.[1]; edits.push([fig, html.indexOf("</figure>", o.i) + 9, `<i>${IC[ic] || IC.compass}</i>`]) }
       continue;
     }
     const pk = PK_BY_URL.get(o.href), at = BY_URL.get(o.href);
     const seeds = pk ? pk.stops.map(([n]) => n) : at ? [at] : PH_INFO.get(o.key) ? [PH_INFO.get(o.key).n] : [];
     const pick = [...new Set(seeds.flatMap(n => PH_OF.get(n.s) || [])), ...(seeds[0] ? nearImgs(seeds[0]) : [])].find(x => !used.has(x));
-    if (!pick) continue;
+    if (!pick) { noPhotoLeft(html, o, pk, at, used, edits); continue }
     used.add(pick);
     const old = PH_INFO.get(o.key), nu = PH_INFO.get(pick), src = o.src.includes("/sm/") ? smIf(pick) : pick;
     let tag = o.tag.replace(`src="${o.src}"`, `src="${src}"`);
@@ -289,10 +322,12 @@ function pkgVis(p) {
   const pool = p.stops.flatMap(([n]) => [n.img && { img: n.img, sm: n.sm, credit: n.photo }, ...(n.a || []).map(([a]) => PHOTOS[`${n.s}--${slugify(a)}`]).filter(Boolean).map(ph => ({ img: ph.img, credit: ph }))]).filter(Boolean);
   let v;
   if (pool.length) { const h = [...p.slug].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7); v = pool[h % pool.length] }
-  else { const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); v = { m: mo.m, g: mo.g } }
+  else { const r = p.stops.map(([n]) => relImg(n)).find(Boolean); if (r) v = r; else { const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); v = { m: mo.m, g: mo.g } } }
   usedPkgImg.set(p.slug, v);
   return v;
 }
+// "1 day", "1–2 days", "3 days"
+const daysTxt = d => d + (d == "1" ? " day" : " days");
 function firstSentence(s = "") { const m = String(s).match(/^.*?[.!?](\s|$)/); return (m ? m[0] : s).trim() }
 const monthsOf = n => n.bt?.[0] || "";
 // article photo: its own, else the first related destination with a photo, else a destination photo picked by its slug (decorative)
@@ -388,7 +423,7 @@ function glanceRows(n) {
     ["cash", "Currency", n.dom ? "Indian rupee (INR)" : T.cur],
     ["talk", "Languages", T.lang],
     F && !n.dom && ["plug", "Power plugs", F.plug],
-    isPlace(n) && n.days && ["cal", "Ideal stay", n.days + " days"],
+    isPlace(n) && n.days && ["cal", "Ideal stay", daysTxt(n.days)],
     isPlace(n) && n.r?.[0] && ["plane", "Getting there", n.r[0]],
     F && F.em && ["shield", "Emergency", F.em],
   ].filter(r => r && r[2]).slice(0, 8).map(([ic, k, v]) => [ic, k, clipV(v)]);
@@ -466,8 +501,8 @@ function travellerTypes(n) {
   const rows = TT.filter(([s]) => liveType(s)).map(([s, label, rx]) => [s, label, ps.filter(p => p.themes.includes(s)).length, rx && rx.test(tg)]).filter(r => r[2] || r[3]);
   if (rows.length < 2) return "";
   const used = new Set(), own = [n, ...placesOf(n)].map(x => x.img).filter(Boolean);
-  const photo = s => { const img = [...ps.filter(p => p.themes.includes(s)).map(p => pkgVis(p).img), ...own, TOPIC[`tt-${s}`]?.img].find(x => x && !used.has(x)); if (img) used.add(img); return img };
-  return sec("Who it suits", `Who should visit ${n.n}?`, `<div class="ppl">${rows.map(r => [...r, photo(r[0])]).map(([s, label, k, , img]) => `<a href="/tour-types/${s}/">${img ? `<figure class="cph"><img src="${img}" alt="" loading="lazy"></figure>` : `<i>${IC[TT_IC[s]] || IC.user}</i>`}<b>${esc(label)}</b><span>${k ? `${k} ${esc(n.n)} itinerar${k == 1 ? "y" : "ies"} in this style` : `${esc(THEME_LABEL[s])} across our destinations`}</span><small>Explore ${IC.arrow}</small></a>`).join("")}</div>`, { cls: "tight" });
+  const photo = s => { const img = [TOPIC[`tt-${s}`]?.img, ...ps.filter(p => p.themes.includes(s)).map(p => pkgVis(p).img), ...own].find(x => x && !used.has(x)); if (img) used.add(img); return img };
+  return sec("Who it suits", `Who should visit ${n.n}?`, `<div class="ppl">${rows.map(r => [...r, photo(r[0])]).map(([s, label, k, , img]) => `<a href="/tour-types/${s}/">${img ? `<figure class="cph" data-ic="${TT_IC[s] || "user"}"><img src="${img}" alt="" loading="lazy"></figure>` : `<i>${IC[TT_IC[s]] || IC.user}</i>`}<b>${esc(label)}</b><span>${k ? `${k} ${esc(n.n)} itinerar${k == 1 ? "y" : "ies"} in this style` : `${esc(THEME_LABEL[s])} across our destinations`}</span><small>Explore ${IC.arrow}</small></a>`).join("")}</div>`, { cls: "tight" });
 }
 
 const IATA = { Chennai: "MAA", Bengaluru: "BLR", Mumbai: "BOM", Delhi: "DEL", Hyderabad: "HYD", Kochi: "COK", Coimbatore: "CJB", Kolkata: "CCU", Ahmedabad: "AMD", Pune: "PNQ" };
@@ -486,7 +521,7 @@ function everything(n) {
     !isPlace(n) && places.length ? `We plan trips to ${places.length} destination${places.length == 1 ? "" : "s"} in ${esc(n.n)}: ${esc(list(places.slice(0, 6).map(p => p.n)))}${places.length > 6 ? " and more" : ""}.` : "",
     attr.length ? `Highlights include ${esc(list(attr))}.` : "",
     food.length ? `Local food worth trying: ${esc(list(food))}.` : "",
-    isPlace(n) && n.days ? `Plan ${esc(n.days)} days here${n.b ? `; it suits ${esc(n.b.toLowerCase())}` : ""}.` : "",
+    isPlace(n) && n.days ? `Plan ${esc(daysTxt(n.days))} here${n.b ? `; it suits ${esc(n.b.toLowerCase())}` : ""}.` : "",
     ps.length ? `Our ${esc(n.n)} itineraries run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days and every one can be changed to suit you.` : "",
   ].filter(Boolean).join(" ");
   const [air, rail, road] = isPlace(n) ? n.r : [];
@@ -612,7 +647,7 @@ function destFaq(n) {
     [`What is ${n.n} famous for?`, `${esc(n.n)} is known for ${esc(list(famous))}. ${esc(firstSentence(n.d))}`],
     !n.dom && !city && [`Where is ${n.n}?`, `${esc(n.n)} is in ${esc(T.region?.n || "")}. Its capital is ${esc(T.cap || "")}.`],
     [`What is the best time to visit ${n.n}?`, `${esc(n.bt[0])}. ${esc(n.bt[1] || "")}`],
-    isPlace(n) && n.days && [`How many days are enough for ${n.n}?`, `Plan ${esc(n.days)} days to see the main sights without rushing.${ps.length ? ` Our itineraries that include ${esc(n.n)} run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days, usually combined with nearby places.` : ""}`],
+    isPlace(n) && n.days && [`How many days are enough for ${n.n}?`, `Plan ${esc(daysTxt(n.days))} to see the main sights without rushing.${ps.length ? ` Our itineraries that include ${esc(n.n)} run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days, usually combined with nearby places.` : ""}`],
     !isPlace(n) && ps.length && [`How many days do I need for ${n.n}?`, `Our ${esc(n.n)} itineraries run from ${Math.min(...ps.map(p => p.days))} to ${Math.max(...ps.map(p => p.days))} days. ${places.length > 1 ? `A first trip usually covers ${esc(list(places.slice(0, 3).map(p => p.n)))}.` : ""}`],
     isPlace(n) && n.r?.[0] && [`How do I reach ${n.n}?`, esc(n.r.filter(Boolean).join(". ")) + "."],
     !n.dom && [`What currency is used in ${n.n}?`, `${esc(T.cur || "")}.${F ? ` ${esc(F.tip)}` : ""}`],
@@ -719,7 +754,7 @@ for (const r of wReg) {
   const cs = COUNTRIES.map(c => N.get(c.s)).filter(c => !c.draft);
   emit(hubW.url, page({
     path: hubW.url, active: "/destinations/", title: "International Tour Packages from India | Nexara Holidays", desc: clip(`${cs.length} countries across ${wReg.length} regions, from Dubai and Bali to Europe and Japan. International holidays planned from ${SITE.city}.`),
-    h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/photos/gt/santorini.webp" },
+    h1: "International holidays", scr: "Explore the world", sub: esc(firstSentence(WORLD.d)), crumbs: [["Home", "/"], ["Destinations", "/destinations/"], ["International", hubW.url]], hero: { img: "/assets/photos/vw/santorini.webp" },
     body: `<section><div class="prose">${WORLD.d.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div></section>` + sec("Popular", "Popular destinations abroad", brush(brushOf(POP_INTL))) + sec("By region", "Regions of the world", cards(wReg.map(r => ({ url: r.url, name: r.n, m: r.m || "sea", img: r.img, sm: r.sm, g: r.g || motifFor("beach", r.s).g, text: firstSentence(r.d), best: COUNTRIES.filter(c => c.rg == r.s).map(c => c.n).join(", "), bestLabel: "Countries", go: "Explore" })))) + sec("All countries", "Countries we plan", cards(cs.map(topCard))) + cta("Plan an international holiday", "Visa guidance, flights from Chennai and a day-by-day plan, all in one quote.", "International holiday"),
   }), "destinations");
   emit("/destinations/", page({
@@ -871,13 +906,13 @@ function pkgGroups(arr, keyFn) {
   }), "pages");
   emit("/tour-packages/international/", page({
     path: "/tour-packages/international/", active: "/tour-packages/", title: "International Tour Packages from Chennai | Nexara Holidays", desc: clip(`${intl.length} international itineraries in ${new Set(intl.map(p => p.home)).size} countries: Dubai, Bali, Europe, Japan, Singapore, Thailand and more, planned from Chennai.`),
-    h1: "International tour packages", scr: "Holidays abroad", sub: `${intl.length} customisable itineraries in ${new Set(intl.map(p => p.home)).size} countries.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["International", "/tour-packages/international/"]], hero: { img: "/assets/photos/gt/switzerland.webp" },
+    h1: "International tour packages", scr: "Holidays abroad", sub: `${intl.length} customisable itineraries in ${new Set(intl.map(p => p.home)).size} countries.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["International", "/tour-packages/international/"]], hero: { img: "/assets/photos/vw/switzerland.webp" },
     body: sec("By country", "Choose a country", jump(intl) + gHtml(intl)) + cta("Planning a multi-country trip?", "We combine countries, flights and visas into one plan.", "International holiday"),
   }), "pages");
   const feat = TYPES.filter(t => !t.draft && pkgsOfType(t.s).length).slice(0, 12);
   emit("/tour-packages/", page({
     path: "/tour-packages/", active: "/tour-packages/", title: "All Tour Packages: India & International Holidays | Nexara Holidays", desc: clip(`${PK.length} itineraries in India and abroad, from 2-day getaways to 15-day tours. Honeymoon, family, group and adventure trips, planned from Chennai.`),
-    h1: "All tour packages", scr: "Handpicked journeys", sub: `${PK.length} itineraries: ${dom.length} in India and ${intl.length} abroad. Every one is private and customisable.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"]], hero: { img: "/assets/photos/gt/maldives.webp" },
+    h1: "All tour packages", scr: "Handpicked journeys", sub: `${PK.length} itineraries: ${dom.length} in India and ${intl.length} abroad. Every one is private and customisable.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"]], hero: { img: "/assets/photos/vw/maldives.webp" },
     body: sec("Holidays in India", `India: ${dom.length} itineraries`, `<p><a class="btn red" href="/tour-packages/india/">Browse India packages →</a></p>` + linkList(pkgGroups(dom, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/india/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
       sec("Holidays abroad", `International: ${intl.length} itineraries`, `<p><a class="btn red" href="/tour-packages/international/">Browse international packages →</a></p>` + linkList(pkgGroups(intl, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/international/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
       sec("Signature departures", "Fixed-date group and honeymoon trips", cards(PK.filter(p => p.sig).map(pkgCard)), { p: "Departures from Chennai with confirmed inclusions." }) +
@@ -930,7 +965,7 @@ for (const t of TYPES) {
   const live = TYPES.filter(t => t.url);
   emit("/tour-types/", page({
     path: "/tour-types/", active: "/tour-types/", title: "Holiday Themes: Honeymoon, Family, Adventure & More | Nexara Holidays", desc: clip(`Browse ${live.length} holiday themes, from honeymoons and family trips to safaris, pilgrimages, cruises and train journeys, with matching itineraries.`),
-    h1: "Holidays by theme", scr: "Travel your way", sub: "Pick the kind of trip you want and see itineraries that fit.", crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"]], hero: { img: "/assets/photos/gt/cappadocia.webp" },
+    h1: "Holidays by theme", scr: "Travel your way", sub: "Pick the kind of trip you want and see itineraries that fit.", crumbs: [["Home", "/"], ["Holiday themes", "/tour-types/"]], hero: { img: "/assets/photos/vw/cappadocia.webp" },
     body: sec("Themes", "Choose a travel style", `<div class="acards ph">${live.map(t => `<a class="acard" href="${t.url}">${(t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)) ? `<img class="aci" src="${t.img || pkgsOfType(t.s).map(p => pkgVis(p).img).find(Boolean)}" alt="" loading="lazy">` : ""}<small>${pkgsOfType(t.s).length} itineraries</small><h3>${esc(t.n)}</h3><p>${esc(t.desc)}</p><span>Explore →</span></a>`).join("")}</div>`) + cta("Mixing styles?", "Honeymoon with adventure, family with wildlife: we plan combinations too.", ""),
   }), "pages");
 }
@@ -1026,7 +1061,7 @@ for (const g of G) emit(g.url, articlePage(g, "guide"), "guides");
 for (const b of B) emit(b.url, articlePage(b, "blog"), "blog");
 emit("/travel-guides/", page({
   path: "/travel-guides/", active: "/travel-guides/", title: "Travel Guides: When to Go, How to Plan, What to Pack | Nexara Holidays", desc: clip(`${G.length} practical travel guides for India and abroad: best times to visit, sample itineraries, packing lists and planning advice from our travel desk.`),
-  h1: "Travel guides", scr: "Plan smarter", sub: "Practical answers to the questions travellers ask us most.", crumbs: [["Home", "/"], ["Travel guides", "/travel-guides/"]], hero: { img: "/assets/photos/gt/kyoto.webp" },
+  h1: "Travel guides", scr: "Plan smarter", sub: "Practical answers to the questions travellers ask us most.", crumbs: [["Home", "/"], ["Travel guides", "/travel-guides/"]], hero: { img: "/assets/photos/vw/kyoto.webp" },
   body: Object.entries(GUIDE_CATS).map(([k, n], i) => { const a = G.filter(g => g.cat == k); return a.length ? (i % 2 ? `<div class="alt">` : "<div>") + sec(`${a.length} guides`, n, artCards(a, () => n)) + "</div>" : "" }).join("") + cta("Have a question we haven't answered?", "Message us. A planner will reply on WhatsApp.", ""),
 }), "pages");
 for (const [k, c] of Object.entries(CLUSTERS)) {
@@ -1036,7 +1071,7 @@ for (const [k, c] of Object.entries(CLUSTERS)) {
 }
 emit("/blog/", page({
   path: "/blog/", active: "/blog/", title: "Travel Blog: Ideas, Comparisons & Planning Tips | Nexara Holidays", desc: clip(`${B.length} articles on honeymoons, family travel, budgets, seasons and destination comparisons, written by the Nexara Holidays travel desk in Chennai.`),
-  h1: "The Nexara travel blog", scr: "Stories and ideas", sub: "Honest planning advice, comparisons and seasonal ideas.", crumbs: [["Home", "/"], ["Blog", "/blog/"]], hero: { img: "/assets/photos/gt/venice.webp" },
+  h1: "The Nexara travel blog", scr: "Stories and ideas", sub: "Honest planning advice, comparisons and seasonal ideas.", crumbs: [["Home", "/"], ["Blog", "/blog/"]], hero: { img: "/assets/photos/vw/venice.webp" },
   body: Object.entries(CLUSTERS).map(([k, c], i) => { const a = B.filter(b => b.cluster == k); return a.length ? (i % 2 ? `<div class="alt">` : "<div>") + sec(`${a.length} articles`, c.n, artCards(a.slice(0, 6), () => c.n) + (a.length > 6 ? `<p style="margin-top:18px"><a class="btn ghost2" href="/blog/topic/${k}/">All ${a.length} articles on ${esc(c.n.toLowerCase())} →</a></p>` : "")) + "</div>" : "" }).join(""),
 }), "blog");
 
@@ -1044,7 +1079,7 @@ emit("/blog/", page({
 for (const pg of PAGES) {
   const r = renderMd(pg.body, resolveSlug, m => report.missingLinks.push({ page: "page:" + pg.s, missing: [m] }));
   const u = `/${pg.s}/`;
-  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : {}, body: (pg.pre || "") + `<section><div class="prose">${r.html}</div></section>` + (pg.post || "") + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
+  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : {}, body: (pg.pre || "") + (pg.body ? `<section><div class="prose">${r.html}</div></section>` : "") + (pg.post || "") + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
 }
 
 /* ---------- 11b. travel services (flights, forex, visas, insurance ...) ---------- */
@@ -1074,7 +1109,7 @@ Forex is supplied by RBI-authorised dealers and insurance by IRDAI-licensed insu
 
 emit("/faqs/", page({
   path: "/faqs/", title: "FAQs: Booking, Payments, Visas & Travel | Nexara Holidays", desc: "Answers to common questions about planning, quotes, payments, visas, flights from Chennai, changes and travelling with Nexara Holidays.",
-  h1: "Frequently asked questions", scr: "Good to know", sub: "How quotes, bookings, payments and trip support work.", crumbs: [["Home", "/"], ["FAQs", "/faqs/"]], hero: { img: "/assets/photos/gt/kerala.webp" },
+  h1: "Frequently asked questions", scr: "Good to know", sub: "How quotes, bookings, payments and trip support work.", crumbs: [["Home", "/"], ["FAQs", "/faqs/"]], hero: { img: "/assets/photos/vw/kerala.webp" },
   body: FAQS.map(([h, qa], i) => (i % 2 ? `<div class="alt">` : "<div>") + sec("", h, faq(qa.map(([q, a]) => [q, renderMd(a, resolveSlug).html]))) + "</div>").join("") + cta("Still have a question?", "Message us on WhatsApp or call. A planner will help.", ""),
 }), "pages");
 
@@ -1094,8 +1129,8 @@ emit("/faqs/", page({
   const topicRows = Object.entries(TOPIC).filter(([, p]) => p.license).map(([k, p]) => `<tr><td>${esc(k.startsWith("tt-") ? THEME_LABEL[k.slice(3)] || k : SPOT_LABEL[k] ? SPOT_LABEL[k] : LABEL[k.replace(/-\d$/, "")] || k)}</td><td>${photoCredit(p)}</td></tr>`);
   if (rows.length) emit("/photo-credits/", page({
     path: "/photo-credits/", title: "Photo Credits | Nexara Holidays", desc: "Credits and licences for the destination photographs used on Nexara Holidays, sourced from Wikimedia Commons under free licences.",
-    h1: "Photo credits", scr: "Thank you, photographers", sub: `${rows.length + topicRows.length} photographs from Wikimedia Commons, used under free licences.`, crumbs: [["Home", "/"], ["Photo credits", "/photo-credits/"]], hero: N.get("thailand")?.img ? { img: N.get("thailand").img } : {},
-    body: sec("Credits", "Destination photographs", `<p>Photos are resized and cropped from the originals on Wikimedia Commons. Each is used under the licence shown; follow the links for the original file, author and licence terms.</p><div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Photo</th><th>Author and licence</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`) +
+    h1: "Photo credits", scr: "Thank you, photographers", sub: `${rows.length + topicRows.length} photographs from Wikimedia Commons, used under free licences.`, crumbs: [["Home", "/"], ["Photo credits", "/photo-credits/"]], hero: N.get("tamil-nadu")?.img ? { img: N.get("tamil-nadu").img } : {},
+    body: sec("Credits", "Destination photographs", `${Object.keys(VW_PHOTOS).length && SITE.photos != "commons" ? `<p>Most destination and attraction photographs come from the Veena World image library and are used with permission. The photographs listed below are from Wikimedia Commons.</p>` : ""}<p>Photos are resized and cropped from the originals on Wikimedia Commons. Each is used under the licence shown; follow the links for the original file, author and licence terms.</p><div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Photo</th><th>Author and licence</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>`) +
       (topicRows.length ? sec("Topics", "Travel tips and activity photographs", `<div class="tbl-wrap prose" style="max-width:none"><table><thead><tr><th>Used for</th><th>Author and licence</th></tr></thead><tbody>${topicRows.join("")}</tbody></table></div>`) : ""),
   }), "pages");
 }

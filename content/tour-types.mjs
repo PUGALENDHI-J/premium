@@ -257,7 +257,7 @@ Sri Lanka's [[nuwara-eliya]], Malaysia's [[cameron-highlands]] and Vietnam's [[s
 
 Hill roads are slow; we plan realistic drive times. Pack layers even in summer, and a rain jacket in the monsoon months.`,
     faq: [["Which hill station is closest to Chennai?", "Yercaud and the Nilgiris (Ooty, Coonoor) are the nearest; Kodaikanal is also an easy overnight trip."]] },
-  { s: "weekend-getaways", n: "Weekend getaways", title: "Weekend Getaways from Chennai & Bengaluru", h1: "Weekend getaways", scr: "Two nights, well spent", img: "/assets/photos/gt/coorg.webp", places: ["puducherry", "mahabalipuram", "yercaud", "kodaikanal", "coorg", "north-goa", "colombo", "singapore"], desc: "Weekend getaways of two or three nights from Chennai and South Indian cities: Pondicherry, Yercaud, Coorg, Goa, and even Colombo or Singapore.", sub: "Two- and three-night trips that fit around a working week.", who: ["Working couples", "Friends with limited leave", "Families on a long weekend"],
+  { s: "weekend-getaways", n: "Weekend getaways", title: "Weekend Getaways from Chennai & Bengaluru", h1: "Weekend getaways", scr: "Two nights, well spent", img: "/assets/photos/vw/coorg.webp", places: ["puducherry", "mahabalipuram", "yercaud", "kodaikanal", "coorg", "north-goa", "colombo", "singapore"], desc: "Weekend getaways of two or three nights from Chennai and South Indian cities: Pondicherry, Yercaud, Coorg, Goa, and even Colombo or Singapore.", sub: "Two- and three-night trips that fit around a working week.", who: ["Working couples", "Friends with limited leave", "Families on a long weekend"],
     body: `A good weekend trip needs a short journey, one base and no more than two big activities. Anything longer than four or five hours each way usually eats into the fun.
 
 ## From Chennai by road or rail
@@ -289,7 +289,7 @@ South Africa's [[garden-route]], the [[scottish-highlands]], [[iceland]]'s Ring 
 
 In India we always recommend a car with an experienced local driver. Abroad, self-drive is common; see [[t:self-drive]] for what is involved.`,
     faq: [["How many hours of driving per day is comfortable?", "Four to five hours on mountain roads, six on highways, with stops."]] },
-  { s: "self-drive", n: "Self-drive holidays", title: "Self-Drive Holidays Abroad", h1: "Self-drive holidays", scr: "Your own pace", img: "/assets/photos/gt/iceland.webp", places: ["iceland", "queenstown", "rotorua", "garden-route", "scottish-highlands", "banff", "melbourne", "lake-como"], desc: "Self-drive holidays in New Zealand, Iceland, Scotland, South Africa, Canada and Australia: routes, car hire and hotels planned for you.", sub: "Pre-planned routes with car hire and hotels, driven by you.", who: ["Confident drivers", "Couples and families who like flexibility", "Repeat international travellers"],
+  { s: "self-drive", n: "Self-drive holidays", title: "Self-Drive Holidays Abroad", h1: "Self-drive holidays", scr: "Your own pace", img: "/assets/photos/vw/iceland.webp", places: ["iceland", "queenstown", "rotorua", "garden-route", "scottish-highlands", "banff", "melbourne", "lake-como"], desc: "Self-drive holidays in New Zealand, Iceland, Scotland, South Africa, Canada and Australia: routes, car hire and hotels planned for you.", sub: "Pre-planned routes with car hire and hotels, driven by you.", who: ["Confident drivers", "Couples and families who like flexibility", "Repeat international travellers"],
     body: `On a self-drive holiday we plan the route, book the car and hotels, and send you a day-by-day driving plan. You set the pace.
 
 ## Where self-drive works well
@@ -323,7 +323,7 @@ Avoid winter self-drives in Iceland and the Rockies unless you are experienced o
 
 We also plan around ocean cruise departures from Chennai and abroad on request; tell us the ship and dates and we add flights and hotels.`,
     faq: [["Do Kerala houseboats have air-conditioning?", "Most premium and deluxe boats have air-conditioned bedrooms, usually running at night. We confirm this for your booking."]] },
-  { s: "train-journeys", n: "Train journeys", title: "Scenic Train Journeys & Rail Holidays", h1: "Scenic train journeys", scr: "All aboard", img: "/assets/photos/gt/switzerland.webp", places: ["ooty", "darjeeling", "shimla", "araku-valley", "ella", "interlaken", "zermatt", "bergen", "tokyo"], desc: "Holidays built around scenic trains: the Nilgiri and Darjeeling toy trains, Sri Lanka's Kandy–Ella line, Swiss panoramic trains and Japan's bullet trains.", sub: "Toy trains, mountain railways and bullet trains.", who: ["Families with children", "Photographers", "Travellers who dislike long drives"],
+  { s: "train-journeys", n: "Train journeys", title: "Scenic Train Journeys & Rail Holidays", h1: "Scenic train journeys", scr: "All aboard", img: "/assets/photos/vw/switzerland.webp", places: ["ooty", "darjeeling", "shimla", "araku-valley", "ella", "interlaken", "zermatt", "bergen", "tokyo"], desc: "Holidays built around scenic trains: the Nilgiri and Darjeeling toy trains, Sri Lanka's Kandy–Ella line, Swiss panoramic trains and Japan's bullet trains.", sub: "Toy trains, mountain railways and bullet trains.", who: ["Families with children", "Photographers", "Travellers who dislike long drives"],
     body: `Some journeys are better by rail. These are the ones we build trips around.
 
 ## In India
@@ -373,7 +373,7 @@ Blossom in [[kyoto]] (late March), lanterns in [[chiang-mai]] (November), the Ra
 
 Pilgrimages to [[tirupati]], [[madurai]] and [[varanasi]]; hill stations like [[kodaikanal]] and [[munnar]]; and easy international trips to [[singapore]], [[dubai]] and [[colombo]].`,
     faq: [["Can you arrange wheelchair assistance at airports?", "Airlines provide wheelchair assistance on request; we help you request it when booking flights."], ["Are Kedarnath and Vaishno Devi possible for seniors?", "Many seniors do them with helicopters, ponies or palanquins. Please consult your doctor first, especially about altitude."]] },
-  { s: "kids-holidays", n: "Kids' holidays", title: "Kids' Holidays Abroad: Theme Parks, Zoos & Aquariums", h1: "Kids' holidays abroad", scr: "Made for little travellers", img: "/assets/photos/gt/orlando.webp", places: ["singapore", "dubai", "hong-kong", "tokyo", "orlando", "gold-coast", "london", "rovaniemi", "kuala-lumpur"], desc: "International holidays planned around children: theme parks, aquariums, zoos and science museums in Singapore, Dubai, Hong Kong, Tokyo, Orlando, the Gold Coast, London and Lapland.", sub: "World trips planned around what children love, at a pace they can keep.", who: ["Families with young children", "Parents planning a child's first trip abroad", "Grandparents travelling with grandchildren"],
+  { s: "kids-holidays", n: "Kids' holidays", title: "Kids' Holidays Abroad: Theme Parks, Zoos & Aquariums", h1: "Kids' holidays abroad", scr: "Made for little travellers", img: "/assets/photos/vw/orlando.webp", places: ["singapore", "dubai", "hong-kong", "tokyo", "orlando", "gold-coast", "london", "rovaniemi", "kuala-lumpur"], desc: "International holidays planned around children: theme parks, aquariums, zoos and science museums in Singapore, Dubai, Hong Kong, Tokyo, Orlando, the Gold Coast, London and Lapland.", sub: "World trips planned around what children love, at a pace they can keep.", who: ["Families with young children", "Parents planning a child's first trip abroad", "Grandparents travelling with grandchildren"],
     body: `Kids' holidays are our international trips built around children: theme parks, aquariums, zoos, science museums and snow, with the days paced for small legs. All of them are abroad; for India trips with children, see [[t:family-holidays]].
 
 ## How we plan for kids
@@ -480,7 +480,7 @@ Single rooms often cost almost the same as doubles; we show the single supplemen
 
 We note where vegetarian food is easy (India, Singapore, Malaysia, Thailand's cities, Italy) and where it takes planning (parts of Japan, Korea and Vietnam), and we recommend restaurants accordingly.`,
     faq: [["Can you plan vegetarian food tours?", "Yes. Many cooking classes and food walks offer vegetarian versions; we confirm before booking."]] },
-  { s: "festival-trips", n: "Festival and seasonal trips", title: "Festival Trips & Seasonal Holidays", h1: "Festival and seasonal trips", scr: "Right place, right time", img: "/assets/photos/gt/rio-de-janeiro.webp", tags: ["festival"], desc: "Trips timed for festivals and seasons: Yi Peng lanterns, Hornbill, Pushkar Camel Fair, Durga Puja, cherry blossom, tulips and the northern lights.", sub: "Festivals and natural seasons that are worth planning a trip around.", who: ["Culture and photography lovers", "Repeat travellers wanting something new", "Couples planning special trips"],
+  { s: "festival-trips", n: "Festival and seasonal trips", title: "Festival Trips & Seasonal Holidays", h1: "Festival and seasonal trips", scr: "Right place, right time", img: "/assets/photos/rio-de-janeiro.webp", tags: ["festival"], desc: "Trips timed for festivals and seasons: Yi Peng lanterns, Hornbill, Pushkar Camel Fair, Durga Puja, cherry blossom, tulips and the northern lights.", sub: "Festivals and natural seasons that are worth planning a trip around.", who: ["Culture and photography lovers", "Repeat travellers wanting something new", "Couples planning special trips"],
     body: `Some trips are worth timing to the week. Festival dates often follow lunar calendars, so we confirm them each year before you book.
 
 ## Festivals in India
@@ -501,7 +501,7 @@ We note where vegetarian food is easy (India, Singapore, Malaysia, Thailand's ci
 
 Hotels near festivals fill up early and cost more, so plan three to six months ahead.`,
     faq: [["Are festival dates fixed?", "Many follow lunar calendars and change each year. We confirm the official dates before booking."]] },
-  { s: "multi-country-tours", n: "Multi-country tours", title: "Multi-Country Tour Packages", h1: "Multi-country tours", scr: "More than one stamp", img: "/assets/photos/gt/paris.webp", places: ["singapore", "bangkok", "kuala-lumpur", "paris", "lucerne", "rome", "dubai", "istanbul"], desc: "Multi-country tours combining two or more countries: Singapore with Malaysia and Thailand, Europe's classic circuits, Dubai with Turkey and more.", sub: "Two or more countries, one plan, one quote.", who: ["First-time international travellers wanting variety", "Families on long holidays", "Travellers with limited leave who want maximum value"],
+  { s: "multi-country-tours", n: "Multi-country tours", title: "Multi-Country Tour Packages", h1: "Multi-country tours", scr: "More than one stamp", img: "/assets/photos/vw/paris.webp", places: ["singapore", "bangkok", "kuala-lumpur", "paris", "lucerne", "rome", "dubai", "istanbul"], desc: "Multi-country tours combining two or more countries: Singapore with Malaysia and Thailand, Europe's classic circuits, Dubai with Turkey and more.", sub: "Two or more countries, one plan, one quote.", who: ["First-time international travellers wanting variety", "Families on long holidays", "Travellers with limited leave who want maximum value"],
     body: `Combining countries makes the most of a long flight, as long as the route is logical and visas are planned in advance.
 
 ## Classic combinations
@@ -516,7 +516,7 @@ Hotels near festivals fill up early and cost more, so plan three to six months a
 
 Each country has its own entry rules, and some (such as the Schengen area) cover several countries with one visa. We sequence applications and give you a document checklist.`,
     faq: [["Do I need separate visas for each country?", "It depends on the countries. A Schengen visa covers most of mainland Europe; Southeast Asian countries each have their own rules."]] },
-  { s: "short-breaks", n: "Short breaks", title: "Short Break Holidays (2–4 Days)", h1: "Short breaks", scr: "Quick escapes", img: "/assets/photos/gt/singapore.webp", places: ["puducherry", "coorg", "hampi", "colombo", "singapore", "bangkok", "dubai"], desc: "Short break holidays of two to four days in India and nearby countries, ideal for long weekends and limited leave.", sub: "Trips of two to four days, in India and a short flight away.", who: ["Working professionals with limited leave", "Couples", "Families on school holidays"],
+  { s: "short-breaks", n: "Short breaks", title: "Short Break Holidays (2–4 Days)", h1: "Short breaks", scr: "Quick escapes", img: "/assets/photos/vw/singapore.webp", places: ["puducherry", "coorg", "hampi", "colombo", "singapore", "bangkok", "dubai"], desc: "Short break holidays of two to four days in India and nearby countries, ideal for long weekends and limited leave.", sub: "Trips of two to four days, in India and a short flight away.", who: ["Working professionals with limited leave", "Couples", "Families on school holidays"],
     body: `A short break is about choosing well. One destination, one hotel and a plan that leaves time to relax.
 
 ## Rules of thumb
@@ -531,7 +531,7 @@ In India: [[puducherry]], [[coorg]], [[hampi]], [[munnar]] and [[udaipur]]. Abro
 
 All packages of four days or less appear below.`,
     faq: [["What is the best short trip from Chennai?", "For culture, Pondicherry or Mahabalipuram; for hills, Yercaud or the Nilgiris; abroad, Sri Lanka or Singapore."]] },
-  { s: "long-stays", n: "Long-stay holidays", title: "Long-Stay Holidays (10 Days or More)", h1: "Long-stay holidays", scr: "Take your time", img: "/assets/photos/gt/ubud.webp", places: ["kovalam", "ubud", "chiang-mai", "lisbon"], desc: "Long holidays of ten days or more: grand tours of Rajasthan, Kerala, Sri Lanka, Europe, Japan, Australia and New Zealand.", sub: "Ten days or more, with time to slow down.", who: ["Retired travellers", "Families on long summer holidays", "Once-in-a-lifetime trips"],
+  { s: "long-stays", n: "Long-stay holidays", title: "Long-Stay Holidays (10 Days or More)", h1: "Long-stay holidays", scr: "Take your time", img: "/assets/photos/ubud.webp", places: ["kovalam", "ubud", "chiang-mai", "lisbon"], desc: "Long holidays of ten days or more: grand tours of Rajasthan, Kerala, Sri Lanka, Europe, Japan, Australia and New Zealand.", sub: "Ten days or more, with time to slow down.", who: ["Retired travellers", "Families on long summer holidays", "Once-in-a-lifetime trips"],
     body: `A longer trip lets you see more without rushing, or go deep into one region.
 
 ## Two approaches
@@ -545,7 +545,7 @@ Build in rest days every four or five days, keep laundry stops in mind, and thin
 
 All itineraries of ten days or more appear below.`,
     faq: [["Can you plan trips of a month or longer?", "Yes. We plan long stays with serviced apartments or long-stay hotel rates where available."]] },
-  { s: "private-tours", n: "Customised private tours", title: "Customised Private Tours", h1: "Customised private tours", scr: "Made for you", img: "/assets/photos/gt/santorini.webp", sample: 12, places: [], desc: "Every Nexara itinerary is a private, customisable tour: your own vehicle, your pace and your choice of hotels. Here is how custom planning works.", sub: "Every itinerary on this site is private and can be changed to suit you.", who: ["Anyone who prefers not to join a group", "Families and couples", "Travellers with specific needs or interests"],
+  { s: "private-tours", n: "Customised private tours", title: "Customised Private Tours", h1: "Customised private tours", scr: "Made for you", img: "/assets/photos/vw/santorini.webp", sample: 12, places: [], desc: "Every Nexara itinerary is a private, customisable tour: your own vehicle, your pace and your choice of hotels. Here is how custom planning works.", sub: "Every itinerary on this site is private and can be changed to suit you.", who: ["Anyone who prefers not to join a group", "Families and couples", "Travellers with specific needs or interests"],
     body: `Apart from our fixed-date group departures, every itinerary on this website is a **private tour**: your own car and driver or private transfers, your own pace, and hotels chosen for you.
 
 ## How custom planning works
@@ -561,7 +561,7 @@ Everything: the route, hotel category, room types, guides, activities, meal plan
 
 Below is a cross-section of itineraries to start from. Use the [custom tour form](/custom-tour/) if you prefer to start from scratch.`,
     faq: [["Is a private tour more expensive than a group tour?", "Not always. For families and groups of four or more, private tours are often similar in cost and far more flexible."], ["Can I start from one of your itineraries and change it?", "Yes, that is how most of our trips are planned."]] },
-  { s: "island-holidays", n: "Island holidays", title: "Island Holidays: Andamans, Maldives, Bali & More", h1: "Island holidays", scr: "Island time", img: "/assets/photos/gt/seychelles.webp", tags: ["island"], desc: "Island holidays in the Andamans, Lakshadweep, the Maldives, Mauritius, Seychelles, Bali, Phuket, Langkawi and the Greek islands.", sub: "From India's own islands to the Indian Ocean and beyond.", who: ["Honeymooners", "Divers and snorkellers", "Families who love the sea"],
+  { s: "island-holidays", n: "Island holidays", title: "Island Holidays: Andamans, Maldives, Bali & More", h1: "Island holidays", scr: "Island time", img: "/assets/photos/vw/seychelles.webp", tags: ["island"], desc: "Island holidays in the Andamans, Lakshadweep, the Maldives, Mauritius, Seychelles, Bali, Phuket, Langkawi and the Greek islands.", sub: "From India's own islands to the Indian Ocean and beyond.", who: ["Honeymooners", "Divers and snorkellers", "Families who love the sea"],
     body: `Island trips need a little more planning than beach trips on the mainland: ferries and seaplanes run to schedules, weather matters more and some islands need permits.
 
 ## India's islands

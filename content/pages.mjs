@@ -3,12 +3,59 @@
 import { SITE } from "./site.mjs";
 
 const SVG = d => `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
-const contactCards = `<section class="tight"><div class="cgrid">
-<a href="tel:${SITE.tel}"><i>${SVG('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>')}</i><b>${SITE.phone}</b><small>Call a planner</small></a>
+const contactLinks = `<a href="tel:${SITE.tel}"><i>${SVG('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>')}</i><b>${SITE.phone}</b><small>Call a planner</small></a>
 <a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener"><i>${SVG('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>')}</i><b>WhatsApp</b><small>Fastest way to reach us</small></a>
 <a href="mailto:${SITE.email}"><i>${SVG('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>')}</i><b>${SITE.email}</b><small>Email</small></a>
-<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><i>${SVG('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>')}</i><b>@${SITE.insta}</b><small>Instagram</small></a>
+<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><i>${SVG('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>')}</i><b>@${SITE.insta}</b><small>Instagram</small></a>`;
+const contactCards = `<section class="tight"><div class="cgrid">
+${contactLinks}
 </div></section>`;
+
+// About page sections (styles: .ab-* in assets/css/nexara-pages.css); every claim here repeats what the rest of the site says
+const IC = {
+  temple: '<path d="M3 21h18M5 21V11m14 10V11M2.5 11h19L12 3.5z"/><path d="M10 21v-5h4v5"/>',
+  map: '<path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14m6-12v14"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  brief: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+  group: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5"/>',
+  plane: '<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
+  list: '<path d="M10 6h10M10 12h10M10 18h10"/><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"/>',
+  chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+};
+const aboutPlan = [
+  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines"],
+  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays"],
+  ["globe", "The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays"],
+  ["brief", "Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences"],
+  ["group", "Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours"],
+  ["plane", "Travel services", "Flight tickets, visas, forex, travel insurance, hotels and airport transfers, on their own or as part of your trip.", "/services/", "Travel services"],
+];
+const aboutSteps = [
+  ["Tell us your idea", `On WhatsApp, by phone or through our <a href="/custom-tour/">custom tour form</a>, from wherever you live.`],
+  ["Get a written plan", "We send a written plan with a price. Itineraries on this website are starting points, not fixed products."],
+  ["Change anything", "Swap hotels, add a day or change the route until the plan is right for you."],
+  ["Confirm when ready", "Nothing is booked until you confirm in writing and pay the deposit stated in your quote."],
+];
+const aboutPromises = [
+  ["info", "Honest information", "We tell you the right season for a destination, even if it means suggesting a different month or place."],
+  ["list", "No surprises", "Inclusions and exclusions are listed in your written quote. If something is not included, we say so."],
+  ["chat", "A real person to message", "You have a planner on WhatsApp before and during your trip, in English or Tamil."],
+];
+const aboutPre = `<section class="ab-s ab-intro"><div class="ab-copy"><div class="h"><span class="eye">Who we are</span><h2>A Tamil Nadu travel company, planning journeys everywhere</h2></div>
+<p>Nexara Holidays is rooted in <b>Tamil Nadu</b>. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.</p>
+<p>Every trip starts as a conversation with a planner, not a fixed package: you tell us what you have in mind, and we send a written plan with a price that you can change until it is right.</p>
+<div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+<ul class="ab-facts"><li><b>70+</b><span>countries we plan trips to</span></li><li><b>2</b><span>languages: English and Tamil</span></li><li><b>1</b><span>planner on WhatsApp, before and during your trip</span></li><li><b>Free</b><span>quotes; nothing is booked until you confirm</span></li></ul></section>
+<div class="alt"><section class="ab-s"><div class="h"><span class="eye">What we plan</span><h2>Trips for every reason to travel</h2><p>From a weekend temple circuit to a month across several continents.</p></div>
+<div class="ab-grid">${aboutPlan.map(([ic, h, p, u, go]) => `<a class="ab-card" href="${u}"><i>${SVG(IC[ic])}</i><h3>${h}</h3><p>${p}</p><span class="ab-go">${go} →</span></a>`).join("")}</div></section></div>
+<section class="ab-s"><div class="h"><span class="eye">How we work</span><h2>From your first message to a confirmed trip</h2><p>Four simple steps, and you decide at every one of them.</p></div>
+<ol class="ab-steps">${aboutSteps.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
+<div class="alt"><section class="ab-s"><div class="h"><span class="eye">Our promises</span><h2>What you can count on</h2></div>
+<div class="ab-promise">${aboutPromises.map(([ic, h, p]) => `<div><i>${SVG(IC[ic])}</i><h3>${h}</h3><p>${p}</p></div>`).join("")}</div></section></div>`;
+const aboutContact = `<div class="alt"><section class="ab-s"><div class="h"><span class="eye">Get in touch</span><h2>Talk to a planner</h2><p>Call, WhatsApp, email or message us on Instagram. We usually reply the same day.</p></div><div class="cgrid">
+${contactLinks}
+</div><div class="ab-cta ab-mid"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></section></div>`;
 const opt = a => a.map(v => `<option>${v}</option>`).join("");
 const form = (full) => `<section><div class="h"><span class="eye">${full ? "Start planning" : "Quick message"}</span><h2>${full ? "Tell us about your trip" : "Send us a note"}</h2><p>Fill this in and WhatsApp opens with your message ready to send. Nothing is stored on this website.</p></div>
 <form id="ctf" novalidate>
@@ -25,35 +72,10 @@ ${full ? `<div class="fl f"><input id="cfd" placeholder=" "><label for="cfd">Whe
 <p class="note">Sending this form opens WhatsApp on your device. Your enquiry reaches us only when you press send there. An enquiry is not a booking; trips are confirmed only after you accept a written quote.</p></section>`;
 
 export const PAGES = [
-  { s: "about-us", n: "About us", title: "About Nexara Holidays | Tamil Nadu Travel Company, Worldwide Trips", desc: "Nexara Holidays is a Tamil Nadu travel company planning private holidays, pilgrimages, roots journeys, business trips and group tours across India and the world.", h1: "About Nexara Holidays", scr: "From Tamil Nadu to the world", sub: "A Tamil Nadu travel company that plans journeys anywhere in the world, one conversation at a time.", img: "/assets/photos/tamil-nadu.webp",
-    post: `<section><div class="h"><span class="eye">Where we take you</span><h2>From Tamil Nadu's temples to the world's horizons</h2><p>Our roots are in Tamil Nadu; our trips reach more than 70 countries.</p></div><div class="brg"><a class="brt" href="/destinations/india/tamil-nadu/"><img src="/assets/photos/gt/sm/tamil-nadu.webp" alt="Tamil Nadu" loading="lazy"><span class="brl"><b>Tamil Nadu</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/madurai/"><img src="/assets/photos/gt/sm/madurai.webp" alt="Madurai" loading="lazy"><span class="brl"><b>Madurai</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/mahabalipuram/"><img src="/assets/photos/gt/sm/mahabalipuram.webp" alt="Mahabalipuram" loading="lazy"><span class="brl"><b>Mahabalipuram</b></span></a><a class="brt" href="/destinations/international/indian-ocean/maldives/"><img src="/assets/photos/gt/sm/maldives.webp" alt="Maldives" loading="lazy"><span class="brl"><b>Maldives</b></span></a><a class="brt" href="/destinations/international/europe/switzerland/"><img src="/assets/photos/gt/sm/switzerland.webp" alt="Switzerland" loading="lazy"><span class="brl"><b>Switzerland</b></span></a><a class="brt" href="/destinations/international/east-asia/japan/"><img src="/assets/photos/gt/sm/japan.webp" alt="Japan" loading="lazy"><span class="brl"><b>Japan</b></span></a><a class="brt" href="/destinations/international/middle-east/uae/dubai/"><img src="/assets/photos/gt/sm/dubai.webp" alt="Dubai" loading="lazy"><span class="brl"><b>Dubai</b></span></a><a class="brt" href="/destinations/international/southeast-asia/indonesia/bali/"><img src="/assets/photos/gt/sm/bali.webp" alt="Bali" loading="lazy"><span class="brl"><b>Bali</b></span></a></div><p style="text-align:center;margin-top:24px"><a class="btn ghost2" href="/destinations/">Explore all destinations →</a></p></section>`,
-    body: `Nexara Holidays is a travel company rooted in **Tamil Nadu**. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.
-
-## What we plan
-
-- **Tamil Nadu, close to home.** Temple circuits, [Tamil Nadu temples and shrines](/sacred/tamil-nadu-temples/), hill-station breaks in the Nilgiris and Kodaikanal, and [roots journeys](/experiences/roots-heritage-journeys/#tamil-nadu) for Tamil families returning to their native villages from across the world.
-- **India, every season.** From Kashmir and Ladakh to Kerala and the Andamans: browse [India holidays](/tour-packages/india/) or our [Sacred journeys](/sacred/) for pilgrimages of every faith.
-- **The world.** Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan. See [international holidays](/tour-packages/international/).
-- **Travel with a purpose.** [Business and trade travel](/experiences/business-trade-travel/), [educational trips](/experiences/educational-trips/), [cruises](/experiences/cruise-holidays/) and [yacht experiences](/experiences/luxury-yacht-experiences/).
-- **Groups and special departures.** [Group tours](/tour-types/group-tours/) for friends, families, clubs and companies, including our own fixed-date departures, and [honeymoons](/tour-types/honeymoon/) planned around the two of you.
-
-## How we work
-
-1. You tell us what you have in mind, on WhatsApp, by phone or through our [custom tour form](/custom-tour/), from wherever you live.
-2. We send a written plan with a price. Itineraries on this website are starting points, not fixed products.
-3. You change anything you like until it is right.
-4. Nothing is booked until you confirm in writing and pay the deposit stated in your quote.
-
-## Our promises
-
-- **Honest information.** We tell you the right season for a destination, even if it means suggesting a different month or place.
-- **No surprises.** Inclusions and exclusions are listed in your written quote. If something is not included, we say so.
-- **A real person to message.** You have a planner on WhatsApp before and during your trip, in English or Tamil.
-
-## Get in touch
-
-Call or WhatsApp **${SITE.phone}**, email ${SITE.email} or follow us on Instagram at @${SITE.insta}. You can also visit our [contact page](/contact-us/).` },
-  { s: "contact-us", n: "Contact us", title: "Contact Nexara Holidays | Call or WhatsApp +91 73059 71481", desc: "Contact Nexara Holidays in Chennai by phone, WhatsApp, email or Instagram, or send a quick enquiry. We reply on WhatsApp with a plan and a price.", h1: "Contact us", scr: "Let's plan together", sub: "Call, WhatsApp or email. We usually reply the same day.", img: "/assets/photos/gt/dubai.webp", noCta: true, pre: contactCards, post: form(false),
+  { s: "about-us", n: "About us", title: "About Nexara Holidays | Tamil Nadu Travel Company, Worldwide Trips", desc: "Nexara Holidays is a Tamil Nadu travel company planning private holidays, pilgrimages, roots journeys, business trips and group tours across India and the world.", h1: "About Nexara Holidays", scr: "From Tamil Nadu to the world", sub: "A Tamil Nadu travel company that plans journeys anywhere in the world, one conversation at a time.", img: "/assets/photos/tamil-nadu.webp", noCta: true, pre: aboutPre,
+    post: `<section class="ab-s"><div class="h"><span class="eye">Where we take you</span><h2>From Tamil Nadu's temples to the world's horizons</h2><p>Our roots are in Tamil Nadu; our trips reach more than 70 countries.</p></div><div class="brg"><a class="brt" href="/destinations/india/tamil-nadu/"><img src="/assets/photos/vw/sm/tamil-nadu.webp" alt="Tamil Nadu" loading="lazy"><span class="brl"><b>Tamil Nadu</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/madurai/"><img src="/assets/photos/vw/sm/madurai.webp" alt="Madurai" loading="lazy"><span class="brl"><b>Madurai</b></span></a><a class="brt" href="/destinations/india/tamil-nadu/mahabalipuram/"><img src="/assets/photos/vw/sm/mahabalipuram.webp" alt="Mahabalipuram" loading="lazy"><span class="brl"><b>Mahabalipuram</b></span></a><a class="brt" href="/destinations/international/indian-ocean/maldives/"><img src="/assets/photos/vw/sm/maldives.webp" alt="Maldives" loading="lazy"><span class="brl"><b>Maldives</b></span></a><a class="brt" href="/destinations/international/europe/switzerland/"><img src="/assets/photos/vw/sm/switzerland.webp" alt="Switzerland" loading="lazy"><span class="brl"><b>Switzerland</b></span></a><a class="brt" href="/destinations/international/east-asia/japan/"><img src="/assets/photos/vw/sm/japan.webp" alt="Japan" loading="lazy"><span class="brl"><b>Japan</b></span></a><a class="brt" href="/destinations/international/middle-east/uae/dubai/"><img src="/assets/photos/vw/sm/dubai.webp" alt="Dubai" loading="lazy"><span class="brl"><b>Dubai</b></span></a><a class="brt" href="/destinations/international/southeast-asia/indonesia/bali/"><img src="/assets/photos/vw/sm/bali.webp" alt="Bali" loading="lazy"><span class="brl"><b>Bali</b></span></a></div><p style="text-align:center;margin-top:24px"><a class="btn ghost2" href="/destinations/">Explore all destinations →</a></p></section>` + aboutContact,
+    body: "" },
+  { s: "contact-us", n: "Contact us", title: "Contact Nexara Holidays | Call or WhatsApp +91 73059 71481", desc: "Contact Nexara Holidays in Chennai by phone, WhatsApp, email or Instagram, or send a quick enquiry. We reply on WhatsApp with a plan and a price.", h1: "Contact us", scr: "Let's plan together", sub: "Call, WhatsApp or email. We usually reply the same day.", img: "/assets/photos/vw/dubai.webp", noCta: true, pre: contactCards, post: form(false),
     body: `## The quickest ways to reach us
 
 **WhatsApp** is the fastest: message ${SITE.phone} with where you would like to go and your dates, and a planner will reply. You can also **call** the same number or email **${SITE.email}**.
@@ -71,7 +93,7 @@ It helps to have:
 - A rough budget per person
 
 Not sure where to go? Browse the [destination directory](/destinations/), [holiday themes](/tour-types/) or [travel guides](/travel-guides/) for ideas.` },
-  { s: "custom-tour", n: "Custom tour enquiry", title: "Plan a Custom Tour | Free Quote | Nexara Holidays", desc: "Request a free, no-obligation quote for a customised private tour in India or abroad. Share your dates, travellers and budget and we reply on WhatsApp.", h1: "Plan a custom tour", scr: "Made for you", sub: "Tell us your dates, travellers and budget. We reply with a plan and a price.", img: "/assets/photos/gt/bali.webp", noCta: true, post: form(true),
+  { s: "custom-tour", n: "Custom tour enquiry", title: "Plan a Custom Tour | Free Quote | Nexara Holidays", desc: "Request a free, no-obligation quote for a customised private tour in India or abroad. Share your dates, travellers and budget and we reply on WhatsApp.", h1: "Plan a custom tour", scr: "Made for you", sub: "Tell us your dates, travellers and budget. We reply with a plan and a price.", img: "/assets/photos/vw/bali.webp", noCta: true, post: form(true),
     body: `Every trip on this website can be changed, and many of our travellers start from a blank page. Fill in the form below and WhatsApp opens with your details ready to send.
 
 ## What happens next

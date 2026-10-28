@@ -1,4 +1,4 @@
-// Writes research/place-list.json: every destination with its parent and attraction names, for tools/gt_photos.py.
+// Writes research/place-list.json: every destination with its parent and attraction names, for tools/vw_photos.py.
 import { writeFileSync } from "node:fs";
 import { IN_REGIONS, STATES, IN_CITIES } from "../content/india.mjs";
 import { W_REGIONS, COUNTRIES, W_CITIES } from "../content/world.mjs";

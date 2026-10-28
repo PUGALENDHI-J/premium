@@ -8,5 +8,7 @@ NEXARA-DESIGN-PROMPT.md
 nexara-redesign.html
 # original PNG frames (the site uses assets/frames/)
 assets/Nexara_Holidays_Thailand_travel___20261022134034_frames/
-# third-party images: not licensed for use on this site
-assets/gtholidays/
+# Veena World source library; the site uses the processed copies in assets/photos/vw/
+assets/veenaworld/
+assets/main images/
+research/vw-check-cache.json

@@ -1,11 +1,6 @@
 {
- "built_at": "2026-10-27T08:18:31.341Z",
+ "built_at": "2026-10-28T15:08:56.847Z",
  "drafts": [
-  {
-   "kind": "package",
-   "id": "tirumala-footpath-darshan-3-days",
-   "why": "same route and nights as tirupati-balaji-darshan-tour-3-days"
-  },
   {
    "kind": "package",
    "id": "copenhagen-and-danish-castles-5-days",
@@ -17,16 +12,14 @@
    "why": "Accessibility details for hotels, vehicles and sites have not been verified; held until confirmed with suppliers."
   }
  ],
- "warnings": [
-  "sacred tirupati-shirdi-sabarimala: unknown package \"Tirumala Footpath Darshan\""
- ],
+ "warnings": [],
  "missingLinks": [],
  "counts": {
-  "sitemap_urls_total": 1332,
+  "sitemap_urls_total": 1360,
   "by_sitemap": {
-   "pages": 80,
-   "destinations": 429,
-   "packages": 613,
+   "pages": 82,
+   "destinations": 442,
+   "packages": 626,
    "guides": 99,
    "blog": 111
   },
@@ -34,16 +27,16 @@
    "india_hub": 1,
    "india_regions": 6,
    "states": 32,
-   "india_places": 152,
+   "india_places": 164,
    "intl_hub": 1,
    "intl_regions": 12,
    "countries": 72,
-   "intl_places": 153,
+   "intl_places": 154,
    "directory": 1
   },
   "packages": {
-   "india": 245,
-   "international": 368,
+   "india": 257,
+   "international": 369,
    "signature": 3,
    "listings": 3
   },
@@ -51,8 +44,8 @@
   "guides": 99,
   "blog_posts": 100,
   "blog_topics": 10,
-  "drafts": 3,
-  "files_written": 1340
+  "drafts": 2,
+  "files_written": 1368
  },
  "articleWords": {
   "guide": [

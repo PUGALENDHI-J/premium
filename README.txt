@@ -50,13 +50,16 @@ Folders
   sitemap.xml, sitemap-*.xml, robots.txt, 404.html   GENERATED.
 
 Destination photos
-  Source is set in content/site.mjs (photos:): "gt" = GT Holidays library only (current), "gt+commons" = GT first
-  with Wikimedia Commons filling gaps, "commons" = Commons only.
-  GT Holidays (owner-licensed, same owner as Nexara)
-    assets/gtholidays/      the raw GT image library (642 MB; kept out of git and Vercel)
-    assets/photos/gt/       web-sized copies used by the site (gt/sm/ = card size); content/photos-gt.json = index
-    Refresh:  node tools/place-list.mjs  then  python tools/gt_photos.py  then  npm run build
-    The matcher skips staff/customer photos, logos, maps, icons, blog graphics and text-overlay banners.
+  Source is set in content/site.mjs (photos:): "vw+commons" = Veena World first with Wikimedia Commons filling
+  gaps (current), "vw" = Veena World only, "commons" = Commons only. (The GT Holidays photos were retired in October 2026.)
+  Veena World (used with the owner's written permission; credited on /photo-credits/)
+    assets/main images/     the original zips (veenaworld-part1..11.zip); kept out of git and Vercel
+    assets/veenaworld/      the zips extracted, part1 ... part11, each with products.csv (5.3 GB; out of git and Vercel)
+    assets/photos/vw/       web-sized copies used by the site (vw/sm/ = card size); content/photos-vw.json = index
+    Refresh:  node tools/place-list.mjs  then  python tools/vw_photos.py  then  npm run build
+    The matcher skips guest feedback galleries, staff photos, logo-marked banners, thumbnails, hotel/food/festival
+    shots and any photo with a prominent face. Photos rejected on review: research/vw-rejected.json (by name).
+    research/vw-unmatched.json lists usable photos naming no Nexara place: a list of destinations worth adding.
   Wikimedia Commons (free licences, credited on /photo-credits/ when used)
     assets/photos/ (+ sm/, a/), content/photos.json, content/photo-overrides.json
     Refresh:  node tools/photo-targets.mjs  then  python tools/fetch_photos.py  then  npm run build

@@ -943,6 +943,33 @@
 "page": "Brandenburg Gate",
 "source": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg"
 },
+"bern": {
+"author": "Flooffy",
+"file": "Bundeshaus_Bern_2009,_Flooffy.jpg",
+"img": "/assets/photos/bern.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Bern",
+"source": "https://commons.wikimedia.org/wiki/File:Bundeshaus_Bern_2009,_Flooffy.jpg"
+},
+"bern--bern-old-town": {
+"author": "André P. Holzer, Bern",
+"file": "Muenster_Bern.jpg",
+"img": "/assets/photos/a/bern--bern-old-town.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Bern Minster",
+"source": "https://commons.wikimedia.org/wiki/File:Muenster_Bern.jpg"
+},
+"bern--zytglogge": {
+"author": "Mike Lehmann, Mike Switzerland 13:37, 2 July 2006 (UTC)",
+"file": "Zytglogge_01.jpg",
+"img": "/assets/photos/a/bern--zytglogge.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Zytglogge",
+"source": "https://commons.wikimedia.org/wiki/File:Zytglogge_01.jpg"
+},
 "bhopal": {
 "author": "Sgbot321",
 "file": "Upper Lake, Bhopal, M.P.jpg",
@@ -1387,6 +1414,24 @@
 "page": "Kawasan Falls",
 "source": "https://commons.wikimedia.org/wiki/File:Kawasan_Falls_Level_1,_Badian,_Cebu_in_2026.jpg"
 },
+"chail": {
+"author": "generalising from Cambridge, UK",
+"file": "Chail_watchtower_(6608719641).jpg",
+"img": "/assets/photos/chail.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Chail Sanctuary",
+"source": "https://commons.wikimedia.org/wiki/File:Chail_watchtower_(6608719641).jpg"
+},
+"chail--chail-cricket-ground": {
+"author": "Unknown authorUnknown author",
+"file": "Bhupinder_Singh_of_Patiala.jpg",
+"img": "/assets/photos/a/chail--chail-cricket-ground.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Bhupinder Singh of Patiala",
+"source": "https://commons.wikimedia.org/wiki/File:Bhupinder_Singh_of_Patiala.jpg"
+},
 "chandigarh": {
 "author": "Raakesh Blokhra",
 "file": "Open_Hand_monument,_Chandigarh.jpg",
@@ -1626,6 +1671,42 @@
 "page": "Tourism in China",
 "source": "https://commons.wikimedia.org/wiki/File:Shanghai_-_Skyline_Sunset_0057.jpg"
 },
+"chitrakoot": {
+"author": "Naitritya verma",
+"file": "Mandakini_river_in_chitrkoot.jpg",
+"img": "/assets/photos/chitrakoot.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chitrakoot, Madhya Pradesh",
+"source": "https://commons.wikimedia.org/wiki/File:Mandakini_river_in_chitrkoot.jpg"
+},
+"chittorgarh": {
+"author": "Ssjoshi111",
+"file": "Chittorgarh_fort.JPG",
+"img": "/assets/photos/chittorgarh.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Chittorgarh",
+"source": "https://commons.wikimedia.org/wiki/File:Chittorgarh_fort.JPG"
+},
+"chittorgarh--chittorgarh-fort": {
+"author": "Itsmalay~commonswiki",
+"file": "Kirti_Stambha_and_a_nearby_temple.jpg",
+"img": "/assets/photos/a/chittorgarh--chittorgarh-fort.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chittorgarh district",
+"source": "https://commons.wikimedia.org/wiki/File:Kirti_Stambha_and_a_nearby_temple.jpg"
+},
+"chittorgarh--vijay-stambha": {
+"author": "Schwiki",
+"file": "Tower_of_victory.jpg",
+"img": "/assets/photos/a/chittorgarh--vijay-stambha.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Vijaya Stambha",
+"source": "https://commons.wikimedia.org/wiki/File:Tower_of_victory.jpg"
+},
 "chitwan": {
 "author": "Vadim Tolbatov",
 "file": "Chitwan_swamp.jpg",
@@ -1634,6 +1715,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Chitwan National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Chitwan_swamp.jpg"
+},
+"chopta--chandrashila": {
+"author": "AjitK332",
+"file": "AjitHota-ChandrasilaPeak.jpg",
+"img": "/assets/photos/a/chopta--chandrashila.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chandrashila",
+"source": "https://commons.wikimedia.org/wiki/File:AjitHota-ChandrasilaPeak.jpg"
+},
+"chopta--tungnath-temple": {
+"author": "Varun Shiv Kapur",
+"file": "Tungnath_temple.jpg",
+"img": "/assets/photos/a/chopta--tungnath-temple.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Tungnath",
+"source": "https://commons.wikimedia.org/wiki/File:Tungnath_temple.jpg"
 },
 "coimbatore": {
 "author": "Ramprasad014",
@@ -2670,6 +2769,15 @@
 "page": "Guruvayur",
 "source": "https://commons.wikimedia.org/wiki/File:009392022_Guruvayur_temple,_Kerala_004.jpg"
 },
+"guruvayur--punnathur-kotta": {
+"author": "Sarvagyana guru",
+"file": "Kottapadi1.jpg",
+"img": "/assets/photos/a/guruvayur--punnathur-kotta.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Kottapadi",
+"source": "https://commons.wikimedia.org/wiki/File:Kottapadi1.jpg"
+},
 "guwahati": {
 "author": "Rituraj Bhuyan from Guwahati, India",
 "file": "Guwahati_citysky.jpg",
@@ -3656,6 +3764,24 @@
 "page": "Panna National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Peaceful_time_away_from_the_wild_hustle._01.jpg"
 },
+"kannur": {
+"author": "Kidu (talk)",
+"file": "Kannur_Skyline_3.jpg",
+"img": "/assets/photos/kannur.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Kannur",
+"source": "https://commons.wikimedia.org/wiki/File:Kannur_Skyline_3.jpg"
+},
+"kannur--muzhappilangad-drive-in-beach": {
+"author": "Shagil Kannur",
+"file": "Muzhappilangad_Drive-in_Beach_2.jpg",
+"img": "/assets/photos/a/kannur--muzhappilangad-drive-in-beach.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Muzhappilangad Beach",
+"source": "https://commons.wikimedia.org/wiki/File:Muzhappilangad_Drive-in_Beach_2.jpg"
+},
 "kanyakumari": {
 "author": "Ravivg5",
 "file": "Vivekananda_Rock_Memorial,_Kanyakumari.jpg",
@@ -3691,6 +3817,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Tourism in Karnataka",
 "source": "https://commons.wikimedia.org/wiki/File:Hampi_virupaksha_temple.jpg"
+},
+"kasauli": {
+"author": "Vijitgrover77",
+"file": "Kasauli_hills.jpg",
+"img": "/assets/photos/kasauli.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kasauli",
+"source": "https://commons.wikimedia.org/wiki/File:Kasauli_hills.jpg"
 },
 "kasol": {
 "author": "Rahulsetiya94",
@@ -4309,6 +4444,15 @@
 "page": "Apatsahayesvarar Temple, Alangudi",
 "source": "https://commons.wikimedia.org/wiki/File:Aalangudi_Temple.jpg"
 },
+"kurseong": {
+"author": "Mayukh Ghose",
+"file": "Kurseong_panorama_by_Mayukh_Ghose.jpg",
+"img": "/assets/photos/kurseong.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kurseong",
+"source": "https://commons.wikimedia.org/wiki/File:Kurseong_panorama_by_Mayukh_Ghose.jpg"
+},
 "kutch": {
 "author": "RajputLokesh",
 "file": "Magnificent Vijay Vilas Palace-Mandvi, Gujarat.jpg",
@@ -4463,6 +4607,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Langkawi Cable Car",
 "source": "https://commons.wikimedia.org/wiki/File:Langkawi_Cable_Car.JPG"
+},
+"lansdowne": {
+"author": "Ravi krishnan gupta",
+"file": "Lansdowne_Landscape.jpg",
+"img": "/assets/photos/lansdowne.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Lansdowne, India",
+"source": "https://commons.wikimedia.org/wiki/File:Lansdowne_Landscape.jpg"
 },
 "laos": {
 "author": "Francisco Anzola",
@@ -5093,6 +5246,15 @@
 "page": "Manali, Chennai",
 "source": "https://commons.wikimedia.org/wiki/File:Manali_and_Ennore_1.jpg"
 },
+"mandawa": {
+"author": "Digrajsingh",
+"file": "Front_Facade_View_of_Shahpura_House,_Shekhawati,_Rajputana.jpg",
+"img": "/assets/photos/mandawa.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Shekhawati",
+"source": "https://commons.wikimedia.org/wiki/File:Front_Facade_View_of_Shahpura_House,_Shekhawati,_Rajputana.jpg"
+},
 "manipur": {
 "author": "ch_15march",
 "file": "Loktak Lake Manipur 01.jpg",
@@ -5231,13 +5393,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Dawki_River,_Meghalaya,_India.jpg"
 },
 "melbourne": {
-"author": "Bobak Ha'Eri",
-"file": "2009-0825-GreatOceanRoadsign.jpg",
+"author": "DXR",
+"file": "Melbourne CBD skyline, south view 20230221 1.jpg",
 "img": "/assets/photos/melbourne.webp",
-"license": "CC BY 3.0",
-"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-"page": "Great Ocean Road",
-"source": "https://commons.wikimedia.org/wiki/File:2009-0825-GreatOceanRoadsign.jpg"
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Melbourne CBD skyline",
+"q": "Melbourne CBD skyline",
+"source": "https://commons.wikimedia.org/wiki/File:Melbourne_CBD_skyline,_south_view_20230221_1.jpg"
 },
 "melbourne--great-ocean-road-and-twelve-apostles": {
 "author": "Bobak Ha'Eri",
@@ -5684,6 +5847,15 @@
 "page": "Trimbakeshwar Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Trimbakeshwar_Temple-Nashik-Maharashtra-1.jpg"
 },
+"neemrana": {
+"author": "RunningToddler",
+"file": "Neemrana_Fort_Palace_terrace_and_the_town_below.jpg",
+"img": "/assets/photos/neemrana.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Neemrana",
+"source": "https://commons.wikimedia.org/wiki/File:Neemrana_Fort_Palace_terrace_and_the_town_below.jpg"
+},
 "neil-island": {
 "author": "Vyacheslav Argenberg",
 "file": "Shaheed Island, Andaman Islands, Tropical beach.jpg",
@@ -5913,6 +6085,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Hundar, India",
 "source": "https://commons.wikimedia.org/wiki/File:Hundur_Gompa,_Numbra_valley,_Ladakh.jpg"
+},
+"nubra-valley--khardung-la": {
+"author": "Mohdshariq6986",
+"file": "Mig-La-Pass-Discover-Leh-Ladakh.jpg",
+"img": "/assets/photos/a/nubra-valley--khardung-la.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Mig La",
+"source": "https://commons.wikimedia.org/wiki/File:Mig-La-Pass-Discover-Leh-Ladakh.jpg"
 },
 "nusa-penida": {
 "author": "Georgi Kovachev",
@@ -7185,22 +7366,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_(8281675670).jpg"
 },
 "sabarimala": {
-"author": "rajaraman sundaram",
-"file": "MOUNTAINS_SABARIMALA_KERALA_-_panoramio.jpg",
+"author": "AnjanaMenon at Malayalam Wikipedia",
+"file": "Shabarimala.JPG",
 "img": "/assets/photos/sabarimala.webp",
-"license": "CC BY 3.0",
-"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-"page": "Sabarimala (place)",
-"source": "https://commons.wikimedia.org/wiki/File:MOUNTAINS_SABARIMALA_KERALA_-_panoramio.jpg"
-},
-"sabarimala--pathinettam-padi": {
-"author": "Malludirectionz",
-"file": "Sandeep_Pradeep_2026.jpg",
-"img": "/assets/photos/a/sabarimala--pathinettam-padi.webp",
-"license": "CC0",
-"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-"page": "Sandeep Pradeep",
-"source": "https://commons.wikimedia.org/wiki/File:Sandeep_Pradeep_2026.jpg"
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Sabarimala Sannidhanam temple",
+"q": "Sabarimala Sannidhanam temple",
+"source": "https://commons.wikimedia.org/wiki/File:Shabarimala.JPG"
 },
 "salalah": {
 "author": "Bernhard Dunst",
@@ -7221,13 +7394,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Khor_Rori_1.jpg"
 },
 "salzburg": {
-"author": "C.Stadler/Bwag",
-"file": "Hallstatt_-_Zentrum_.JPG",
+"author": "Uoaei1",
+"file": "Salzburg Altstadt Panorama 20170409 02.jpg",
 "img": "/assets/photos/salzburg.webp",
 "license": "CC BY-SA 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-"page": "Hallstatt",
-"source": "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG"
+"page": "Salzburg Altstadt Hohensalzburg",
+"q": "Salzburg Altstadt Hohensalzburg",
+"source": "https://commons.wikimedia.org/wiki/File:Salzburg_Altstadt_Panorama_20170409_02.jpg"
 },
 "salzburg--hohensalzburg-fortress": {
 "author": "Marko Pernhart",
@@ -8769,6 +8943,33 @@
 "licenseUrl": "",
 "page": "Tourism in Vietnam",
 "source": "https://commons.wikimedia.org/wiki/File:Halong_bay_vietnam.JPG"
+},
+"vijayapura": {
+"author": "Ashwatham at English Wikipedia",
+"file": "GolGumbaz2.jpg",
+"img": "/assets/photos/vijayapura.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Bijapur district, Karnataka",
+"source": "https://commons.wikimedia.org/wiki/File:GolGumbaz2.jpg"
+},
+"vijayapura--gol-gumbaz": {
+"author": "Mukul Banerjee",
+"file": "Gol_Gumbaz_-4,_Bijapur,_Karnataka.jpg",
+"img": "/assets/photos/a/vijayapura--gol-gumbaz.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Gol Gumbaz",
+"source": "https://commons.wikimedia.org/wiki/File:Gol_Gumbaz_-4,_Bijapur,_Karnataka.jpg"
+},
+"vijayapura--ibrahim-rauza": {
+"author": "Aanand",
+"file": "Ibrahim_Roza.jpg",
+"img": "/assets/photos/a/vijayapura--ibrahim-rauza.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Ibrahim Rauza",
+"source": "https://commons.wikimedia.org/wiki/File:Ibrahim_Roza.jpg"
 },
 "visakhapatnam": {
 "author": "iMahesh",
