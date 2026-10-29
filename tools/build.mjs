@@ -17,7 +17,7 @@ import { EXPERIENCES } from "../content/experiences.mjs";
 import { buildExperiences, homeExperiences } from "./lib/exp.mjs";
 import { GUIDES, GUIDE_CATS } from "../content/guides/index.mjs";
 import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
-import { PAGES, FAQS } from "../content/pages.mjs";
+import { PAGES, FAQS, destOptions } from "../content/pages.mjs";
 import { SERVICES, SERVICE_GROUPS, SERVICE_FAQ } from "../content/services.mjs";
 import { COUNTRY_FACTS, INDIA_FACTS, INDIA_TZ, FACTS_REVIEWED } from "../content/country-facts.mjs";
 import { ADD_STATES, ADD_IN_CITIES, ADD_W_REGIONS, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
@@ -109,6 +109,9 @@ function placeOk(n) {
 for (const n of N.values()) if (isPlace(n)) placeOk(n);
 for (const n of N.values()) if (n.kind == "state" || n.kind == "country") { if (words(n.d) < 30) { draft("destination", n.s, "overview under 30 words"); n.draft = true } }
 
+// countries where we have a tied-up partner company (SITE.partners lists cities and countries)
+const PARTNER_TOPS = new Set(SITE.partners.map(([s]) => N.get(s)).filter(n => n && !n.draft).map(top));
+
 /* ---------- 3. packages ---------- */
 const THEME_LABEL = Object.fromEntries(TYPES.map(t => [t.s, t.n]));
 const SPOT_LABEL = Object.fromEntries(TYPES.flatMap(t => (t.spots || []).map(([n]) => ["kid-" + slugify(n), n])));
@@ -158,10 +161,11 @@ setMenu(MENU);
 {
   // index.html is hand-made; only the regions between the MENU markers are rewritten
   let home = indexHtml;
-  const put = (name, html) => { const rx = new RegExp(`(<!--${name}-->)[\\s\\S]*?(<!--/${name}-->)`); if (!rx.test(home)) throw new Error(`index.html: missing <!--${name}--> markers`); home = home.replace(rx, (_, a, b) => a + html + b) };
+  const put = (name, html) => { const rx = new RegExp(`(<!--${name}-->)[\\s\\S]*?(<!--/${name}-->)`); if (!rx.test(home)) throw new Error(`index.html: missing <!--${name}--> markers`); home = home.replace(new RegExp(rx.source, "g"), (_, a, b) => a + html + b) };
   put("TOPBAR", topbar());
   put("MENU", menuLinks(MENU, "/", { spa: true }));
   put("EXPERIENCES", homeExperiences(TOPIC));
+  put("DESTS", destOptions());
   if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
 }
 
@@ -225,6 +229,8 @@ const nearImgs = n => {
 const smIf = img => existsSync(path.join(ROOT, smOf(img))) ? smOf(img) : img;
 // brush-label photo tiles: [slug, optional short name]
 const brushOf = list => list.map(x => Array.isArray(x) ? x : [x]).map(([s, name, sub]) => { const n = typeof s == "string" ? N.get(s) : s; return n && !n.draft && n.img ? { url: n.url, name: (name || n.n).replace(/\s*\(.*?\)/g, ""), img: smIf(n.img), sub } : null }).filter(Boolean);
+// tied-up partner destinations (SITE.partners) as brush tiles: the home page passes "rv" for its reveal animation
+const partnerSec = (rv = "") => `<section class="brhome" id="partners"><div class="h${rv ? " " + rv : ""}"><span class="eye">Our partner network</span><h2>Tied-up partners on the ground</h2><p>We work with our own partner companies in these destinations, so guides, drivers and hotels are arranged by people who live there.</p></div>${brush(brushOf(SITE.partners))}<p class="brall"><a class="btn ghost2" href="/destinations/international/central-asia/">Central Asia &amp; the Caucasus →</a></p></section>`;
 const POP_INTL = ["maldives", "bali", "dubai", "switzerland", "thailand", "singapore", "paris", "japan", "santorini", "mauritius", "london", "vietnam"];
 const POP_IN = ["kerala", ["jammu-and-kashmir", "Kashmir"], "goa", "ladakh", "munnar", "ooty", "manali", "jaipur", ["andaman-and-nicobar", "Andaman"], "rishikesh", "darjeeling", "coorg"];
 // No unused photo of the place is left on this page. Optional cards (attractions, brush tiles, gallery photos) are
@@ -466,6 +472,7 @@ function essentialTips(n) {
   const money = n.dom ? "UPI and cards are widely accepted in cities and hotels; keep some cash for small shops, rural areas, hill towns and tips."
     : `${esc(T.cur)}. Carry some local currency for markets, small shops and tips, and ask your bank about international card charges before you travel.`;
   const tips = [...(T.tips || []), n !== T && n.tip].filter(Boolean);
+  const partner = PARTNER_TOPS.has(T) && `We work with our own tied-up partner company in ${esc(T.n)}, so your guides, drivers, hotels and transfers are arranged by people who live there, with local support throughout your trip.`;
   return sec("Before you go", `Essential tips for travelling to ${n.n}`, tipCards([
     ["cash", "Currency and payments", money],
     ["star", "Tipping", esc(F.tip)],
@@ -474,6 +481,7 @@ function essentialTips(n) {
     ["shield", "Emergency numbers", esc(F.em || "")],
     ["talk", "Language", T.lang ? `Languages spoken: ${esc(T.lang)}.` : ""],
     ["route", "Getting around", esc(T.go || "")],
+    ["tip", "Our partner on the ground", partner || "", "pt"],
     ...tips.map(t => ["tip", "Planner's tip", esc(t), "pt"]),
   ]) + note(`General guidance. Local rules and services change; we confirm details for your dates.`), { id: "tips" });
 }
@@ -1038,11 +1046,11 @@ for (const t of TYPES) {
 }
 
 /* ---------- 9c. travel experiences (/experiences/): business, heritage, education, cruises, yachts ---------- */
-buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard });
+buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard, pkgsOf: f => PK.filter(f) });
 {
   // home page: popular destinations as brush-label photo tiles (between the BRUSH markers in index.html)
   const f = path.join(ROOT, "index.html"), h = readFileSync(f, "utf8");
-  const html = `<section class="brhome"><div class="h rv"><span class="eye">Popular destinations</span><h2>Where will you go next?</h2></div>${brush(brushOf([...POP_INTL.slice(0, 4), ...POP_IN.slice(0, 4)]))}<p class="brall"><a class="btn ghost2" href="/destinations/">All destinations →</a></p></section>`;
+  const html = `<section class="brhome"><div class="h rv"><span class="eye">Popular destinations</span><h2>Where will you go next?</h2></div>${brush(brushOf([...POP_INTL.slice(0, 4), ...POP_IN.slice(0, 4)]))}<p class="brall"><a class="btn ghost2" href="/destinations/">All destinations →</a></p></section>` + partnerSec("rv");
   const out = h.replace(/(<!--BRUSH-->)[\s\S]*?(<!--\/BRUSH-->)/, (_, a, b) => a + html + b);
   if (out != h) writeFileSync(f, out);
 }
@@ -1084,10 +1092,11 @@ emit("/blog/", page({
 }), "blog");
 
 /* ---------- 11. company pages ---------- */
+// About us carries the partner tiles where its copy has a <!--PARTNERS--> marker
 for (const pg of PAGES) {
   const r = renderMd(pg.body, resolveSlug, m => report.missingLinks.push({ page: "page:" + pg.s, missing: [m] }));
   const u = `/${pg.s}/`;
-  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : {}, body: (pg.pre || "") + (pg.body ? `<section><div class="prose">${r.html}</div></section>` : "") + (pg.post || "") + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
+  emit(u, page({ path: u, active: pg.s == "contact-us" ? "/contact-us/" : "", title: pg.title, desc: clip(pg.desc), h1: pg.h1, scr: pg.scr, sub: esc(pg.sub || ""), crumbs: [["Home", "/"], [pg.n, u]], hero: pg.img ? { img: pg.img } : {}, body: (pg.pre || "") + (pg.body ? `<section><div class="prose">${r.html}</div></section>` : "") + (pg.post || "").replace("<!--PARTNERS-->", partnerSec()) + (pg.noCta ? "" : cta("Talk to a planner", "Call, WhatsApp or send an enquiry. We usually reply the same day.", "")) }), "pages");
 }
 
 /* ---------- 11b. travel services (flights, forex, visas, insurance ...) ---------- */

@@ -171,6 +171,35 @@
 "page": "Vembanad",
 "source": "https://commons.wikimedia.org/wiki/File:Kumarkom.jpg"
 },
+"almaty": {
+"author": "Matti Blume",
+"file": "Shymbulak, Almaty (P1180205-Pano).jpg",
+"img": "/assets/photos/almaty.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+"page": "Almaty mountains panorama",
+"q": "Almaty mountains panorama",
+"source": "https://commons.wikimedia.org/wiki/File:Shymbulak,_Almaty_(P1180205-Pano).jpg"
+},
+"almaty--big-almaty-lake": {
+"author": "Ds02006",
+"file": "Big Almaty Lake (Bolshaya Almatinka) in June.jpg",
+"img": "/assets/photos/a/almaty--big-almaty-lake.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Big Almaty Lake",
+"q": "Big Almaty Lake",
+"source": "https://commons.wikimedia.org/wiki/File:Big_Almaty_Lake_(Bolshaya_Almatinka)_in_June.jpg"
+},
+"almaty--shymbulak": {
+"author": "Girdi at English Wikipedia",
+"file": "Shimbulak1.JPG",
+"img": "/assets/photos/a/almaty--shymbulak.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Shymbulak",
+"source": "https://commons.wikimedia.org/wiki/File:Shimbulak1.JPG"
+},
 "amalfi-coast": {
 "author": "Bruno Rijsman",
 "file": "Amalfi_Coast_(Italy,_October_2020)_-_75_(50558355441).jpg",
@@ -197,6 +226,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Positano",
 "source": "https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG"
+},
+"amarnath": {
+"author": "Gktambe at English Wikipedia",
+"file": "Cave_Temple_of_Lord_Amarnath.jpg",
+"img": "/assets/photos/amarnath.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Amarnath Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Cave_Temple_of_Lord_Amarnath.jpg"
+},
+"amarnath--holy-amarnath-cave": {
+"author": "Kasisripada17",
+"file": "Amarnath cave view.jpg",
+"img": "/assets/photos/a/amarnath--holy-amarnath-cave.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Amarnath cave view",
+"q": "Amarnath cave view",
+"source": "https://commons.wikimedia.org/wiki/File:Amarnath_cave_view.jpg"
+},
+"amarnath--sheshnag-lake": {
+"author": "Nitin Badhwar",
+"file": "A_M_A_R_N_A_T_H_-_Y_A_T_R_A_-_Flickr_-_J_I_G_I_S_H_A_a.k.a_Nitin_Badhwar.jpg",
+"img": "/assets/photos/a/amarnath--sheshnag-lake.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Sheshnag Lake",
+"source": "https://commons.wikimedia.org/wiki/File:A_M_A_R_N_A_T_H_-_Y_A_T_R_A_-_Flickr_-_J_I_G_I_S_H_A_a.k.a_Nitin_Badhwar.jpg"
 },
 "amboseli": {
 "author": "Photograph: flightlog / Bearbeitung (Ausschnitt erstellt, gedreht, farbig nachbelichtet, Tonwert und Kontrast korrigiert): Christoph Waghubinger (Lewenstein)",
@@ -418,6 +475,34 @@
 "q": "Kaziranga National Park grassland",
 "source": "https://commons.wikimedia.org/wiki/File:Grassland_patch_burning_at_Kaziranga_National_Park,_Assam,_India.jpg"
 },
+"astana": {
+"author": "Rassim",
+"file": "Astana from Radison Hotel.jpg",
+"img": "/assets/photos/astana.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Astana Nur-Sultan skyline night",
+"q": "Astana Nur-Sultan skyline night",
+"source": "https://commons.wikimedia.org/wiki/File:Astana_from_Radison_Hotel.jpg"
+},
+"astana--bayterek-tower": {
+"author": "Bernard Gagnon",
+"file": "Nurjol_Boulevard,_Astana.jpg",
+"img": "/assets/photos/a/astana--bayterek-tower.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Nurjol Boulevard",
+"source": "https://commons.wikimedia.org/wiki/File:Nurjol_Boulevard,_Astana.jpg"
+},
+"astana--khan-shatyr": {
+"author": "Dauren Nabijan",
+"file": "Astana_Esil_view.jpg",
+"img": "/assets/photos/a/astana--khan-shatyr.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Astana",
+"source": "https://commons.wikimedia.org/wiki/File:Astana_Esil_view.jpg"
+},
 "aswan": {
 "author": "youssef_alam",
 "file": "Ramsis,_Aswan_Governorate,_Egypt_-_panoramio.jpg",
@@ -616,6 +701,15 @@
 "page": "Wat Ratchaburana, Ayutthaya",
 "source": "https://commons.wikimedia.org/wiki/File:Entrance_of_Wat_Ratchaburana_(Ayutthaya).jpg"
 },
+"azerbaijan": {
+"author": "Sefer azeri",
+"file": "Qız_qalası_ümumi_2016.jpg",
+"img": "/assets/photos/azerbaijan.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Tourism in Azerbaijan",
+"source": "https://commons.wikimedia.org/wiki/File:Q%C4%B1z_qalas%C4%B1_%C3%BCmumi_2016.jpg"
+},
 "badami": {
 "author": "Sanyam Bahga",
 "file": "BadamiCaves87.JPG",
@@ -669,6 +763,35 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Badrinath Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Badrinath_Temple_,_Uttarakhand.jpg"
+},
+"baku": {
+"author": "Avisadehh",
+"file": "BAKU AT NIGHT .RED TOWERS.באקו בלילה מגדלים באדום.jpg",
+"img": "/assets/photos/baku.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Flame Towers Baku",
+"q": "Flame Towers Baku",
+"source": "https://commons.wikimedia.org/wiki/File:BAKU_AT_NIGHT_.RED_TOWERS.%D7%91%D7%90%D7%A7%D7%95_%D7%91%D7%9C%D7%99%D7%9C%D7%94_%D7%9E%D7%92%D7%93%D7%9C%D7%99%D7%9D_%D7%91%D7%90%D7%93%D7%95%D7%9D.jpg"
+},
+"baku--icherisheher-old-city": {
+"author": "Gulustan",
+"file": "Fortress of Baku, 2010.jpg",
+"img": "/assets/photos/a/baku--icherisheher-old-city.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Icheri Sheher Baku old city",
+"q": "Icheri Sheher Baku old city",
+"source": "https://commons.wikimedia.org/wiki/File:Fortress_of_Baku,_2010.jpg"
+},
+"baku--maiden-tower": {
+"author": "AlixSaz",
+"file": "Maiden_tower_IMG_8521.jpg",
+"img": "/assets/photos/a/baku--maiden-tower.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Maiden Tower (Baku)",
+"source": "https://commons.wikimedia.org/wiki/File:Maiden_tower_IMG_8521.jpg"
 },
 "bali": {
 "author": "Vyacheslav Argenberg",
@@ -805,6 +928,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Sagrada Família",
 "source": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg"
+},
+"batumi": {
+"author": "Commander, U.S. Naval Forces Europe-Africa/U.S. 6th Fleet",
+"file": "USS_Oak_Hill,_26th_MEU_Marines_Visit_Batumi,_Georgia_(40817303032).jpg",
+"img": "/assets/photos/batumi.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Batumi",
+"source": "https://commons.wikimedia.org/wiki/File:USS_Oak_Hill,_26th_MEU_Marines_Visit_Batumi,_Georgia_(40817303032).jpg"
+},
+"batumi--batumi-boulevard": {
+"author": "Vicuna R",
+"file": "Nino_and_Ali_Statues_in_Batumi,_2016.jpg",
+"img": "/assets/photos/a/batumi--batumi-boulevard.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Ali and Nino (sculpture)",
+"source": "https://commons.wikimedia.org/wiki/File:Nino_and_Ali_Statues_in_Batumi,_2016.jpg"
 },
 "beijing": {
 "author": "N509FZ",
@@ -1071,6 +1212,33 @@
 "page": "List of palaces in Rajasthan",
 "source": "https://commons.wikimedia.org/wiki/File:Wind_Palace-Jaipur-India0002.JPG"
 },
+"bishkek": {
+"author": "Aitenir",
+"file": "Bishkek_City's_business_center.jpg",
+"img": "/assets/photos/bishkek.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Bishkek",
+"source": "https://commons.wikimedia.org/wiki/File:Bishkek_City%27s_business_center.jpg"
+},
+"bishkek--ala-archa-national-park": {
+"author": "The original uploader was Garthwillis at English Wikipedia.",
+"file": "Ala_archa.JPG",
+"img": "/assets/photos/a/bishkek--ala-archa-national-park.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"page": "Ala-Archa Nature Park",
+"source": "https://commons.wikimedia.org/wiki/File:Ala_archa.JPG"
+},
+"bishkek--ala-too-square": {
+"author": "t_y_l",
+"file": "Bishkek_P9170507_014_(40103613941).jpg",
+"img": "/assets/photos/a/bishkek--ala-too-square.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Ala-Too Square",
+"source": "https://commons.wikimedia.org/wiki/File:Bishkek_P9170507_014_(40103613941).jpg"
+},
 "black-forest": {
 "author": "MWolf89",
 "file": "Blick_vom_Hohfelsen.jpg",
@@ -1160,6 +1328,33 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Tourism in Brazil",
 "source": "https://commons.wikimedia.org/wiki/File:Cidade_Maravilhosa.jpg"
+},
+"bukhara": {
+"author": "Euyasik",
+"file": "Kalon-Ensemble_Buchara.jpg",
+"img": "/assets/photos/bukhara.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Bukhara",
+"source": "https://commons.wikimedia.org/wiki/File:Kalon-Ensemble_Buchara.jpg"
+},
+"bukhara--kalyan-minaret-and-mosque": {
+"author": "Petar Milošević",
+"file": "Kalyan_Minaret,_Bukhara_(Минарет_Калян_в_Бухаре,_Minorai_Kalon).jpg",
+"img": "/assets/photos/a/bukhara--kalyan-minaret-and-mosque.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kalyan Minaret",
+"source": "https://commons.wikimedia.org/wiki/File:Kalyan_Minaret,_Bukhara_(%D0%9C%D0%B8%D0%BD%D0%B0%D1%80%D0%B5%D1%82_%D0%9A%D0%B0%D0%BB%D1%8F%D0%BD_%D0%B2_%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B5,_Minorai_Kalon).jpg"
+},
+"bukhara--lyabi-hauz": {
+"author": "Mario J. Schwaiger",
+"file": "Nadir_Divan-Beghi_Madrassah.JPG",
+"img": "/assets/photos/a/bukhara--lyabi-hauz.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Lab-i Hauz",
+"source": "https://commons.wikimedia.org/wiki/File:Nadir_Divan-Beghi_Madrassah.JPG"
 },
 "bulgaria": {
 "author": "Deensel",
@@ -2424,6 +2619,25 @@
 "page": "Tourism in France",
 "source": "https://commons.wikimedia.org/wiki/File:Mont-Saint-Michel_vu_du_ciel.jpg"
 },
+"gabala": {
+"author": "Sefer azeri",
+"file": "Qəbələ_şəhərinin_Tufandağdan_görünüşü.jpg",
+"img": "/assets/photos/gabala.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Qabala",
+"source": "https://commons.wikimedia.org/wiki/File:Q%C9%99b%C9%99l%C9%99_%C5%9F%C9%99h%C9%99rinin_Tufanda%C4%9Fdan_g%C3%B6r%C3%BCn%C3%BC%C5%9F%C3%BC.jpg"
+},
+"gabala--nohur-lake": {
+"author": "Nigar O.Mammadova",
+"file": "Nohur Lake, Gabala.jpg",
+"img": "/assets/photos/a/gabala--nohur-lake.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Nohur lake Gabala",
+"q": "Nohur lake Gabala",
+"source": "https://commons.wikimedia.org/wiki/File:Nohur_Lake,_Gabala.jpg"
+},
 "galle": {
 "author": "Rovin Shanila",
 "file": "Galle_Fort.jpg",
@@ -2540,6 +2754,16 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Genting Skyway",
 "source": "https://commons.wikimedia.org/wiki/File:Genting_Highlands_-_Genting_Skyway_0012.jpg"
+},
+"georgia": {
+"author": "Alexxx1979",
+"file": "Georgia Jvari monastery IMG 9345 2070.jpg",
+"img": "/assets/photos/georgia.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jvari Monastery Mtskheta",
+"q": "Jvari Monastery Mtskheta",
+"source": "https://commons.wikimedia.org/wiki/File:Georgia_Jvari_monastery_IMG_9345_2070.jpg"
 },
 "germany": {
 "author": "Wilfredor",
@@ -2695,6 +2919,33 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Nuuk",
 "source": "https://commons.wikimedia.org/wiki/File:Nuuk,_Greenland_skyline_aerial_view.jpg"
+},
+"guangzhou": {
+"author": "Tim Wu",
+"file": "Canton_Tower_20241027.jpg",
+"img": "/assets/photos/guangzhou.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Guangzhou",
+"source": "https://commons.wikimedia.org/wiki/File:Canton_Tower_20241027.jpg"
+},
+"guangzhou--canton-fair-complex": {
+"author": "Tim Wu",
+"file": "Aerial_View,_Zone_B,_Canton_Fair_Complex_20230701-C.jpg",
+"img": "/assets/photos/a/guangzhou--canton-fair-complex.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Canton Fair Complex",
+"source": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Zone_B,_Canton_Fair_Complex_20230701-C.jpg"
+},
+"guangzhou--canton-tower": {
+"author": "Tim Wu",
+"file": "Canton_Tower_20241027_(cropped).jpg",
+"img": "/assets/photos/a/guangzhou--canton-tower.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Canton Tower",
+"source": "https://commons.wikimedia.org/wiki/File:Canton_Tower_20241027_(cropped).jpg"
 },
 "guilin": {
 "author": "Chensiyuan",
@@ -3385,6 +3636,35 @@
 "page": "Old City of Jerusalem",
 "source": "https://commons.wikimedia.org/wiki/File:2014-06_East_Jerusalem_090_(14936890061).jpg"
 },
+"issyk-kul": {
+"author": "Jaya govinda",
+"file": "Issyk kul Lake mountains.jpg",
+"img": "/assets/photos/issyk-kul.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Issyk-Kul lake mountains",
+"q": "Issyk-Kul lake mountains",
+"source": "https://commons.wikimedia.org/wiki/File:Issyk_kul_Lake_mountains.jpg"
+},
+"issyk-kul--cholpon-ata": {
+"author": "Firespeaker",
+"file": "Rux_Ordo_from_the_SE.jpg",
+"img": "/assets/photos/a/issyk-kul--cholpon-ata.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Cholpon-Ata",
+"source": "https://commons.wikimedia.org/wiki/File:Rux_Ordo_from_the_SE.jpg"
+},
+"issyk-kul--cholpon-ata-petroglyphs": {
+"author": "Bgag",
+"file": "Petroglyph Museum of Cholpon-Ata 10.jpg",
+"img": "/assets/photos/a/issyk-kul--cholpon-ata-petroglyphs.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Cholpon-Ata petroglyphs",
+"q": "Cholpon-Ata petroglyphs",
+"source": "https://commons.wikimedia.org/wiki/File:Petroglyph_Museum_of_Cholpon-Ata_10.jpg"
+},
 "istanbul": {
 "author": "Hunanuk",
 "file": "Historical_peninsula_and_modern_skyline_of_Istanbul.jpg",
@@ -3937,6 +4217,34 @@
 "page": "Charyn Canyon",
 "source": "https://commons.wikimedia.org/wiki/File:Charyn_Canyon,_Kazakhstan_03.jpg"
 },
+"kazbegi": {
+"author": "Vyacheslav Argenberg",
+"file": "Kazbegi, Mount Kazbek, Georgia.jpg",
+"img": "/assets/photos/kazbegi.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Stepantsminda Mount Kazbek",
+"q": "Stepantsminda Mount Kazbek",
+"source": "https://commons.wikimedia.org/wiki/File:Kazbegi,_Mount_Kazbek,_Georgia.jpg"
+},
+"kazbegi--ananuri-fortress": {
+"author": "Vadim Tolbatov",
+"file": "Georgian_Fortress_Ananuri.jpg",
+"img": "/assets/photos/a/kazbegi--ananuri-fortress.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Ananuri",
+"source": "https://commons.wikimedia.org/wiki/File:Georgian_Fortress_Ananuri.jpg"
+},
+"kazbegi--gergeti-trinity-church": {
+"author": "This Photo was taken by Supanut Arunoprayote. Feel free to use any of my images, but please mention me as the author and may send me a message. (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+"file": "Gergeti_Trinity_Church_09.23.jpg",
+"img": "/assets/photos/a/kazbegi--gergeti-trinity-church.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Gergeti Trinity Church",
+"source": "https://commons.wikimedia.org/wiki/File:Gergeti_Trinity_Church_09.23.jpg"
+},
 "kaziranga": {
 "author": "Diganta Talukdar",
 "file": "Beauty_of_Kaziranga_National_Park.jpg",
@@ -4090,6 +4398,24 @@
 "licenseUrl": "",
 "page": "Houseboat",
 "source": "https://commons.wikimedia.org/wiki/File:LakeUnionHouseboat.jpg"
+},
+"khiva": {
+"author": "Fulvio Spada from Torino, Italy",
+"file": "View_from_the_city_walls,_Khiva_(4934484894).jpg",
+"img": "/assets/photos/khiva.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Khiva",
+"source": "https://commons.wikimedia.org/wiki/File:View_from_the_city_walls,_Khiva_(4934484894).jpg"
+},
+"khiva--itchan-kala": {
+"author": "Bgag",
+"file": "Islam_Khodja_Madrasa_01.jpg",
+"img": "/assets/photos/a/khiva--itchan-kala.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Itchan Kala",
+"source": "https://commons.wikimedia.org/wiki/File:Islam_Khodja_Madrasa_01.jpg"
 },
 "kilimanjaro": {
 "author": "Unknown author",
@@ -4444,6 +4770,15 @@
 "page": "Apatsahayesvarar Temple, Alangudi",
 "source": "https://commons.wikimedia.org/wiki/File:Aalangudi_Temple.jpg"
 },
+"kumbhalgarh": {
+"author": "NormanK",
+"file": "Nagda2.jpg",
+"img": "/assets/photos/kumbhalgarh.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Architecture of Rajasthan",
+"source": "https://commons.wikimedia.org/wiki/File:Nagda2.jpg"
+},
 "kurseong": {
 "author": "Mayukh Ghose",
 "file": "Kurseong_panorama_by_Mayukh_Ghose.jpg",
@@ -4507,6 +4842,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Kinkaku-ji",
 "source": "https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg"
+},
+"kyrgyzstan": {
+"author": "Adam Harangozó",
+"file": "Yurts_and_resort_in_Altyn_Arashan,_Kyrgyzstan.jpg",
+"img": "/assets/photos/kyrgyzstan.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Tourism in Kyrgyzstan",
+"source": "https://commons.wikimedia.org/wiki/File:Yurts_and_resort_in_Altyn_Arashan,_Kyrgyzstan.jpg"
 },
 "labuan-bajo": {
 "author": "Tiket2",
@@ -5255,6 +5599,42 @@
 "page": "Shekhawati",
 "source": "https://commons.wikimedia.org/wiki/File:Front_Facade_View_of_Shahpura_House,_Shekhawati,_Rajputana.jpg"
 },
+"manila": {
+"author": "Bahnfrend",
+"file": "Cityscape_of_Manila,_2025_(01).jpg",
+"img": "/assets/photos/manila.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Manila",
+"source": "https://commons.wikimedia.org/wiki/File:Cityscape_of_Manila,_2025_(01).jpg"
+},
+"manila--fort-santiago": {
+"author": "Elmer B. Domingo",
+"file": "Fort_Santiago,_Intramuros.JPG",
+"img": "/assets/photos/a/manila--fort-santiago.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Fort Santiago",
+"source": "https://commons.wikimedia.org/wiki/File:Fort_Santiago,_Intramuros.JPG"
+},
+"manila--intramuros": {
+"author": "Diego Delso",
+"file": "Baluartillo_de_San_José,_Manila,_Filipinas,_2023-08-26,_DD_41.jpg",
+"img": "/assets/photos/a/manila--intramuros.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Intramuros",
+"source": "https://commons.wikimedia.org/wiki/File:Baluartillo_de_San_Jos%C3%A9,_Manila,_Filipinas,_2023-08-26,_DD_41.jpg"
+},
+"manila--san-agustin-church": {
+"author": "Johngaje92",
+"file": "San_Agustin_Church,_Intramuros,_Manila_City.jpg",
+"img": "/assets/photos/a/manila--san-agustin-church.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "San Agustin Church (Manila)",
+"source": "https://commons.wikimedia.org/wiki/File:San_Agustin_Church,_Intramuros,_Manila_City.jpg"
+},
 "manipur": {
 "author": "ch_15march",
 "file": "Loktak Lake Manipur 01.jpg",
@@ -5483,6 +5863,34 @@
 "page": "Chefchaouen blue city",
 "q": "Chefchaouen blue city",
 "source": "https://commons.wikimedia.org/wiki/File:2018_01_(Blue)_-_Chaouen.jpg"
+},
+"moscow": {
+"author": "This photo was taken by Anton Zelenov. Please credit this with : Photo : Anton Zelenov in the immediate vicinity of the image. If you use one of my photos, please email me (account needed) or leave me a short message on my discussion page. It would be greatly appreciated. Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.",
+"file": "View to Moscow river from Bolshoy Moskvoretsky Bridge.jpg",
+"img": "/assets/photos/moscow.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Moscow Kremlin panorama river",
+"q": "Moscow Kremlin panorama river",
+"source": "https://commons.wikimedia.org/wiki/File:View_to_Moscow_river_from_Bolshoy_Moskvoretsky_Bridge.jpg"
+},
+"moscow--red-square-and-st-basil-s-cathedral": {
+"author": "mos.ru",
+"file": "Kremlin_and_Red_Square.1.jpg",
+"img": "/assets/photos/a/moscow--red-square-and-st-basil-s-cathedral.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Red Square",
+"source": "https://commons.wikimedia.org/wiki/File:Kremlin_and_Red_Square.1.jpg"
+},
+"moscow--the-kremlin": {
+"author": "Минеева Ю. (Julmin) (retouched by Surendil)",
+"file": "Moscow_Kremlin_from_Kamenny_bridge.jpg",
+"img": "/assets/photos/a/moscow--the-kremlin.webp",
+"license": "CC BY-SA 1.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/1.0",
+"page": "Moscow Kremlin Wall",
+"source": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_from_Kamenny_bridge.jpg"
 },
 "mount-abu": {
 "author": "Andreas Kleemann",
@@ -7366,14 +7774,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Moscow_Kremlin_(8281675670).jpg"
 },
 "sabarimala": {
-"author": "AnjanaMenon at Malayalam Wikipedia",
-"file": "Shabarimala.JPG",
+"author": "Dhinakar01",
+"file": "Sabarimala_4.jpg",
 "img": "/assets/photos/sabarimala.webp",
-"license": "CC BY-SA 3.0",
-"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Sabarimala Sannidhanam temple",
 "q": "Sabarimala Sannidhanam temple",
-"source": "https://commons.wikimedia.org/wiki/File:Shabarimala.JPG"
+"source": "https://commons.wikimedia.org/wiki/File:Sabarimala_4.jpg"
 },
 "salalah": {
 "author": "Bernhard Dunst",
@@ -7420,6 +7828,36 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
 "page": "Mozart's birthplace",
 "source": "https://commons.wikimedia.org/wiki/File:Salzburg,_Getreidegasse_9,_Mozarts_Geburtshaus.jpg"
+},
+"samarkand": {
+"author": "Akhemen",
+"file": "Registan Square in night July 2018 (Samarkand).jpg",
+"img": "/assets/photos/samarkand.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Samarkand Registan night",
+"q": "Samarkand Registan night",
+"source": "https://commons.wikimedia.org/wiki/File:Registan_Square_in_night_July_2018_(Samarkand).jpg"
+},
+"samarkand--registan": {
+"author": "Bernard Gagnon",
+"file": "Tilya-Kori Madrasa 01.jpg",
+"img": "/assets/photos/a/samarkand--registan.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Registan Samarkand madrasa",
+"q": "Registan Samarkand madrasa",
+"source": "https://commons.wikimedia.org/wiki/File:Tilya-Kori_Madrasa_01.jpg"
+},
+"samarkand--shah-i-zinda": {
+"author": "Petar Milošević",
+"file": "Shohi-Zinda majmuasi (Shah-i-Zinda, Шахи-Зинда).jpg",
+"img": "/assets/photos/a/samarkand--shah-i-zinda.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Shah-i-Zinda necropolis Samarkand",
+"q": "Shah-i-Zinda necropolis Samarkand",
+"source": "https://commons.wikimedia.org/wiki/File:Shohi-Zinda_majmuasi_(Shah-i-Zinda,_%D0%A8%D0%B0%D1%85%D0%B8-%D0%97%D0%B8%D0%BD%D0%B4%D0%B0).jpg"
 },
 "san-francisco": {
 "author": "Craig Howell from San Carlos, CA, USA",
@@ -7665,6 +8103,60 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "The Bund",
 "source": "https://commons.wikimedia.org/wiki/File:The_Bund_2.jpg"
+},
+"sheki": {
+"author": "Sefer azeri",
+"file": "Şəki_şəhəri_ümumi_görünüş._çaykənarı.jpg",
+"img": "/assets/photos/sheki.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Shaki, Azerbaijan",
+"source": "https://commons.wikimedia.org/wiki/File:%C5%9E%C9%99ki_%C5%9F%C9%99h%C9%99ri_%C3%BCmumi_g%C3%B6r%C3%BCn%C3%BC%C5%9F._%C3%A7ayk%C9%99nar%C4%B1.jpg"
+},
+"sheki--palace-of-the-shaki-khans": {
+"author": "Urek Meniashvili",
+"file": "Interior_of_Consultation_Room_in_Khan's_Palace_of_Shaki.JPG",
+"img": "/assets/photos/a/sheki--palace-of-the-shaki-khans.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Palace of Shaki Khans",
+"source": "https://commons.wikimedia.org/wiki/File:Interior_of_Consultation_Room_in_Khan%27s_Palace_of_Shaki.JPG"
+},
+"sheki--upper-caravanserai": {
+"author": "Gilad Rom",
+"file": "Caravanserai_Hotel.jpg",
+"img": "/assets/photos/a/sheki--upper-caravanserai.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"page": "Upper Caravanserai (Shaki)",
+"source": "https://commons.wikimedia.org/wiki/File:Caravanserai_Hotel.jpg"
+},
+"shenzhen": {
+"author": "Charlie fong",
+"file": "Commercial_area_of_futian_to_east2020.jpg",
+"img": "/assets/photos/shenzhen.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Shenzhen",
+"source": "https://commons.wikimedia.org/wiki/File:Commercial_area_of_futian_to_east2020.jpg"
+},
+"shenzhen--huaqiangbei-electronics-markets": {
+"author": "Charlie fong",
+"file": "Huaqiangbei&Shennan_Cross2021.jpg",
+"img": "/assets/photos/a/shenzhen--huaqiangbei-electronics-markets.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Huaqiangbei",
+"source": "https://commons.wikimedia.org/wiki/File:Huaqiangbei%26Shennan_Cross2021.jpg"
+},
+"shenzhen--window-of-the-world": {
+"author": "Dinkun Chen",
+"file": "WINDOWS_OF_THE_WORLD_SHENZHEN_(13).jpg",
+"img": "/assets/photos/a/shenzhen--window-of-the-world.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Window of the World",
+"source": "https://commons.wikimedia.org/wiki/File:WINDOWS_OF_THE_WORLD_SHENZHEN_(13).jpg"
 },
 "shillong": {
 "author": "Prasanta Kr Dutta",
@@ -8037,6 +8529,34 @@
 "page": "Shalimar Bagh, Srinagar",
 "source": "https://commons.wikimedia.org/wiki/File:Shalimar_Bagh_1.jpg"
 },
+"st-petersburg": {
+"author": "Godot13",
+"file": "RUS-2016-Aerial-SPB-Winter Palace (crop).jpg",
+"img": "/assets/photos/st-petersburg.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "RUS-2016-Aerial-SPB-Winter Palace",
+"q": "RUS-2016-Aerial-SPB-Winter Palace",
+"source": "https://commons.wikimedia.org/wiki/File:RUS-2016-Aerial-SPB-Winter_Palace_(crop).jpg"
+},
+"st-petersburg--peterhof-palace": {
+"author": "Ninara from Helsinki, Finland",
+"file": "Peterhof_Palace,_Saint_Petersburg,_Russia_(44408938295).jpg",
+"img": "/assets/photos/a/st-petersburg--peterhof-palace.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Peterhof Palace",
+"source": "https://commons.wikimedia.org/wiki/File:Peterhof_Palace,_Saint_Petersburg,_Russia_(44408938295).jpg"
+},
+"st-petersburg--state-hermitage-museum": {
+"author": "GAlexandrova",
+"file": "5174-3._St._Petersburg._Greater_Hermitage.jpg",
+"img": "/assets/photos/a/st-petersburg--state-hermitage-museum.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Hermitage Museum",
+"source": "https://commons.wikimedia.org/wiki/File:5174-3._St._Petersburg._Greater_Hermitage.jpg"
+},
 "sukhothai": {
 "author": "Khunkay",
 "file": "Wat_srichum_03.jpg",
@@ -8191,6 +8711,34 @@
 "page": "Tourism in Tanzania",
 "source": "https://commons.wikimedia.org/wiki/File:Elephant_and_tourists_at_Ngorongoro_Crater.jpg"
 },
+"tashkent": {
+"author": "Yuriy Pavlovich",
+"file": "Minor Mosque Tashkent.jpg",
+"img": "/assets/photos/tashkent.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Tashkent Minor Mosque",
+"q": "Tashkent Minor Mosque",
+"source": "https://commons.wikimedia.org/wiki/File:Minor_Mosque_Tashkent.jpg"
+},
+"tashkent--chorsu-bazaar": {
+"author": "Theklan",
+"file": "Chorsu_Market_general_view.jpg",
+"img": "/assets/photos/a/tashkent--chorsu-bazaar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chorsu Bazaar",
+"source": "https://commons.wikimedia.org/wiki/File:Chorsu_Market_general_view.jpg"
+},
+"tashkent--khast-imam-complex": {
+"author": "Carpodacus",
+"file": "Muin_Khalfa-Bobo_mausoleum.jpg",
+"img": "/assets/photos/a/tashkent--khast-imam-complex.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Muin Xalfa Bobo Mausoleum",
+"source": "https://commons.wikimedia.org/wiki/File:Muin_Khalfa-Bobo_mausoleum.jpg"
+},
 "tawang": {
 "author": "Kthatapalli",
 "file": "The_buddist_monastry.jpg",
@@ -8217,6 +8765,34 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Tawang Monastery",
 "source": "https://commons.wikimedia.org/wiki/File:TawangMonastery.jpg"
+},
+"tbilisi": {
+"author": "anjči",
+"file": "Sunset in Tbilisi (2010).jpg",
+"img": "/assets/photos/tbilisi.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Fortress and Old Town of Tbilisi at dusk",
+"q": "Fortress and Old Town of Tbilisi at dusk",
+"source": "https://commons.wikimedia.org/wiki/File:Sunset_in_Tbilisi_(2010).jpg"
+},
+"tbilisi--abanotubani": {
+"author": "Marcin Konsek",
+"file": "2014_Tbilisi,_Łaźnie_siarkowe_w_Abanotubani_(04).jpg",
+"img": "/assets/photos/a/tbilisi--abanotubani.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Abanotubani",
+"source": "https://commons.wikimedia.org/wiki/File:2014_Tbilisi,_%C5%81a%C5%BAnie_siarkowe_w_Abanotubani_(04).jpg"
+},
+"tbilisi--narikala-fortress": {
+"author": "Alexxx1979",
+"file": "Tbilisi_IMG_8846_1920.jpg",
+"img": "/assets/photos/a/tbilisi--narikala-fortress.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Narikala",
+"source": "https://commons.wikimedia.org/wiki/File:Tbilisi_IMG_8846_1920.jpg"
 },
 "telangana": {
 "author": "Joydeep",

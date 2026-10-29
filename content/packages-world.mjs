@@ -95,6 +95,7 @@ export const PK_W = [
   ["cambodia", "Angkor & Singapore", [["siem-reap", 3], ["singapore", 3]], "multi-country-tours family-holidays", "A trip of contrasts: three days among the Khmer temples of Angkor, then three nights in Singapore for gardens, Sentosa and hawker food."],
   ["laos", "Luang Prabang & Vang Vieng", [["luang-prabang", 3], ["vang-vieng", 2]], "cultural-holidays adventure", "Temples, alms giving and Kuang Si Falls in Luang Prabang, then caves, kayaking and balloons in Vang Vieng."],
   ["laos", "Laos & Northern Thailand", [["chiang-mai", 3], ["luang-prabang", 3]], "multi-country-tours cultural-holidays", "Chiang Mai's temples and markets, then a short flight to tranquil Luang Prabang."],
+  ["philippines", "Manila & Boracay", [["manila", 2], ["boracay", 3]], "beach-holidays honeymoon", "Intramuros, Binondo food and a Manila Bay sunset, then a short flight to Boracay's White Beach."],
   ["philippines", "Palawan: El Nido Island Hopping", [["el-nido", 4]], "island-holidays honeymoon adventure", "Four nights in El Nido for lagoons, secret beaches and snorkelling on Bacuit Bay's island tours."],
   ["philippines", "Boracay Beach Holiday", [["boracay", 4]], "beach-holidays group-tours", "White Beach, sunset sailing on a paraw and island hopping on Boracay."],
   ["philippines", "Cebu & Bohol Adventure", [["cebu", 4]], "adventure family-holidays", "Canyoneering at Kawasan, the Moalboal sardine run and a day trip to Bohol's Chocolate Hills."],

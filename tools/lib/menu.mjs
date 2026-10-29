@@ -1,4 +1,4 @@
-// Site-wide top bar and mega menu (Packages / Experiences / India / Honeymoon / Sacred / Themes / Services / Company dropdowns).
+// Site-wide top bar and mega menu (Group Tours / Packages / Experiences / India / Honeymoon / Sacred / Themes / Services / Company dropdowns).
 // buildMenu() turns the destination graph and packages into plain link data; the render functions
 // are shared by generated pages (html.mjs) and the hand-made index.html (injected between markers by build.mjs).
 import { SITE } from "../../content/site.mjs";
@@ -21,6 +21,13 @@ function honeyLinks(ps, max = 99) {
   return out.sort((a, b) => b[2] - a[2]).slice(0, max).map(([l, u]) => [l, u]).sort((a, b) => a[0].localeCompare(b[0]));
 }
 
+// one link per state or country: its first group itinerary
+function homeLinks(ps, max = 99) {
+  const seen = new Set(), out = [];
+  for (const p of ps) { if (seen.has(p.home.n)) continue; seen.add(p.home.n); out.push([p.home.n, p.url]) }
+  return out.sort((a, b) => a[0].localeCompare(b[0])).slice(0, max);
+}
+
 /** N: destination graph, PK: packages, TYPES: tour types, inReg: India regions with state slugs, SERVICES: travel services. */
 export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS = {}, SACRED = [], SACRED_GROUPS = {}, EXPERIENCES = [] }) {
   const live = s => { const n = N.get(s); return n && !n.draft ? n : null };
@@ -32,6 +39,7 @@ export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS =
   const R = s => inReg.find(r => r.s == s);
   const honey = PK.filter(p => p.themes.includes("honeymoon"));
   const cruise = TYPES.find(t => t.s == "cruise-holidays" && !t.draft);
+  const groupPk = PK.filter(p => p.themes.includes("group-tours"));
   // busiest Indian places by number of itineraries
   const count = new Map();
   for (const p of PK) if (p.dom) for (const [n] of p.stops) if (n.kind == "city") count.set(n, (count.get(n) || 0) + 1);
@@ -42,9 +50,9 @@ export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS =
       label: "Packages", url: "/tour-packages/international/", match: ["/tour-packages/", "/packages/international/", "/destinations/international/"],
       cols: [
         [g("Africa", W("africa"), countries("africa")), g("America", null, countries("north-america", "central-america", "south-america")), g("Pacific", W("oceania"), countries("oceania"))],
-        [g("Asia", null, countries("southeast-asia", "east-asia", "south-asia", "central-asia"))],
+        [g("Asia", null, countries("southeast-asia", "east-asia", "south-asia")), g("Central Asia & Caucasus", W("central-asia"), countries("central-asia"))],
         [g("Europe", W("europe"), countries("europe"))],
-        [g("Island", W("indian-ocean"), countries("indian-ocean")), g("Middle East", W("middle-east"), countries("middle-east")), cruise && g("Cruises", cruise && `/tour-types/${cruise.s}/`, [["Cruise holidays", `/tour-types/${cruise.s}/`]])],
+        [g("Island", W("indian-ocean"), countries("indian-ocean")), g("Middle East", W("middle-east"), countries("middle-east")), cruise && g("Cruises", cruise && `/tour-types/${cruise.s}/`, [["Cordelia Cruises", "/experiences/cruise-holidays/#discover-india-coast"], ["International cruises", "/experiences/cruise-holidays/"], ["Cruise holidays", `/tour-types/${cruise.s}/`]])],
         [g("Honeymoon", "/tour-types/honeymoon/", honeyLinks(honey.filter(p => !p.dom), 18))],
       ],
       all: ["View all packages", "/tour-packages/"],
@@ -96,6 +104,16 @@ export function buildMenu({ N, PK, TYPES, inReg, SERVICES = [], SERVICE_GROUPS =
       all: ["All travel services", "/services/"],
       small: true,
     },
+    groups: {
+      label: "Group Tours", url: "/tour-types/group-tours/", match: ["/tour-types/group-tours/"],
+      cols: [
+        [g("Group tours in India", null, homeLinks(groupPk.filter(p => p.dom), 14))],
+        [g("Group tours abroad", null, homeLinks(groupPk.filter(p => !p.dom), 14))],
+        [g("Groups we plan for", null, [["Friends and family groups", "/tour-types/group-tours/"], ["School and college tours", "/tour-types/educational-tours/"], ["Educational trips abroad", "/experiences/educational-trips/"],
+          ["Corporate and incentive trips", "/tour-types/corporate-travel/"], ["Trade fair delegations", "/experiences/business-trade-travel/"], ["Pilgrimage groups", "/sacred/"], ["Senior citizens' groups", "/tour-types/senior-friendly/"]])],
+      ],
+      all: ["All group tours", "/tour-types/group-tours/"],
+    },
     company: {
       label: "Company", url: "/about-us/", match: ["/about-us/", "/faqs/", "/travel-guides/", "/blog/"],
       cols: [[g("Nexara Holidays", null, [["About us", "/about-us/"], ["Plan a custom tour", "/custom-tour/"], ["Destinations", "/destinations/"], ["Travel guides", "/travel-guides/"], ["Travel blog", "/blog/"], ["FAQs", "/faqs/"], ["Cancellation and refunds", "/cancellation-policy/"]])]],
@@ -117,10 +135,9 @@ export function menuLinks(M, active, { spa = false } = {}) {
   // the section whose longest URL prefix matches the current page is highlighted
   let best = "", len = 0;
   if (active) for (const [k, m] of Object.entries(M)) for (const u of m.match) if (active.startsWith(u) && u.length > len) { best = k; len = u.length }
-  if (active == "/tour-types/group-tours/") best = ""; // has its own top-level link
   const dropdown = (k, m) => dd(k, m, k == best);
   const a = (u, n, on) => `<a href="${u}"${on ? ' class="cur" aria-current="page"' : ""}><span class="lt">${n}</span></a>`;
-  return a(spa ? "#home" : "/", "Home", active == "/") + dropdown("company", M.company) + a("/tour-types/group-tours/", "Group Tours", active == "/tour-types/group-tours/") +
+  return a(spa ? "#home" : "/", "Home", active == "/") + dropdown("company", M.company) + dropdown("groups", M.groups) +
     dropdown("packages", M.packages) + (M.experiences.cols[0][0] ? dropdown("experiences", M.experiences) : "") + dropdown("india", M.india) + dropdown("honeymoon", M.honeymoon) + (M.sacred.cols.length ? dropdown("sacred", M.sacred) : "") + dropdown("themes", M.themes) + (M.services.cols.length ? dropdown("services", M.services) : "") +
     a(spa ? "#contact" : "/contact-us/", "Contact", active == "/contact-us/");
 }

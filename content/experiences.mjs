@@ -107,28 +107,44 @@ const HERITAGE = [
 export const TN_ROOTS = {
   intro: "For Tamil families in Malaysia, Singapore, Sri Lanka, Mauritius, Fiji, South Africa, the Gulf, Europe and North America, and for families within India, a roots journey often means finding the native village (ooru), visiting the family deity's temple (kula deivam) and meeting relatives. We plan it region by region, with drivers and guides who speak Tamil.",
   help: ["Travel to your native village with a Tamil-speaking driver-guide", "Visits to your kula deivam temple, with poojas booked through the temple office", "Family reunions, with stays and transport for every generation", "Trips timed for Pongal, temple festivals and family occasions", "Local food, crafts and the stories of each region"],
+  // photo: the tab's main picture (a site photo key, or a topic key from content/photo-topics.json); tall: a portrait photo, shown whole
+  // sights: [caption, photo key, fit?] for the small gallery under the main picture
   areas: [
-    { id: "chennai-thondai", name: "Chennai & Thondai Nadu", short: "Chennai, Kanchipuram, Mahabalipuram, Vellore", photo: "chennai--kapaleeshwarar-temple", ll: [12.83, 79.70], towns: [["Chennai", "chennai"], ["Kanchipuram", "kanchipuram"], ["Mahabalipuram", "mahabalipuram"], ["Tiruvannamalai", "tiruvannamalai"]],
-      text: "The northern region around Chennai: old Mylapore and George Town, the Pallava temples of Kanchipuram and Mahabalipuram, and inland forts and temple towns such as Vellore, Gingee and Tiruvannamalai.",
-      explore: ["Mylapore's Kapaleeshwarar temple and tank", "Kanchipuram's silk-weaving streets and temples", "Pallava shore temples at Mahabalipuram", "Vellore and Gingee forts", "Girivalam at Tiruvannamalai"], when: "December–January brings Chennai's music and dance season; Karthigai Deepam at Tiruvannamalai falls in November or December." },
+    { id: "chennai-thondai", name: "Chennai & Thondai Nadu", short: "Chennai, Kanchipuram, Mahabalipuram, Tiruvannamalai", photo: "chennai--kapaleeshwarar-temple", ll: [12.83, 79.70], towns: [["Chennai", "chennai"], ["Kanchipuram", "kanchipuram"], ["Mahabalipuram", "mahabalipuram"], ["Tiruvannamalai", "tiruvannamalai"]],
+      text: "The northern region around Chennai: old Mylapore and George Town, Marina Beach and Valluvar Kottam, the Pallava temples of Kanchipuram and Mahabalipuram, and inland forts and temple towns such as Vellore, Gingee and Tiruvannamalai.",
+      explore: ["Mylapore's Kapaleeshwarar temple and tank", "An evening on Marina Beach", "Valluvar Kottam, the stone-chariot memorial to Thiruvalluvar", "Shore Temple and Arjuna's Penance at Mahabalipuram", "Kanchipuram's silk-weaving streets and temples", "Gingee Fort and girivalam at Tiruvannamalai"], when: "December–January brings Chennai's music and dance season; Karthigai Deepam at Tiruvannamalai falls in November or December.",
+      sights: [["Marina Beach, Chennai", "chennai--marina-beach"], ["Valluvar Kottam, Chennai", "tn-valluvar-kottam"], ["Shore Temple, Mahabalipuram", "mahabalipuram--shore-temple"], ["Arjuna's Penance, Mahabalipuram", "mahabalipuram--arjuna-s-penance", 1], ["Kailasanathar Temple, Kanchipuram", "kanchipuram--kailasanathar-temple"], ["Gingee Fort", "tn-gingee"]] },
     { id: "chola-nadu", name: "Chola Nadu: the Kaveri delta", short: "Thanjavur, Kumbakonam, Trichy, Chidambaram", photo: "thanjavur--brihadeeswarar-temple", ll: [10.85, 79.30], towns: [["Thanjavur", "thanjavur"], ["Kumbakonam", "kumbakonam"], ["Tiruchirappalli", "tiruchirappalli"], ["Chidambaram", "chidambaram"]],
-      text: "The rice bowl of Tamil Nadu and heartland of the Cholas: temple towns, agraharam streets and delta villages where many families trace their ancestors.",
-      explore: ["Brihadeeswarar Temple in Thanjavur", "Agraharam streets and village temples of the delta", "Bronze casting at Swamimalai", "Srirangam and Thiruvanaikaval in Trichy", "Thanjavur paintings and veena makers"], when: "The Thyagaraja Aradhana music festival at Thiruvaiyaru is in January; Pongal is in mid-January." },
+      text: "The rice bowl of Tamil Nadu and heartland of the Cholas: the great living Chola temples, temple towns, agraharam streets and delta villages where many families trace their ancestors.",
+      explore: ["Brihadeeswarar Temple in Thanjavur", "Airavatesvara Temple at Darasuram", "Srirangam and Thiruvanaikaval in Trichy", "Thillai Nataraja Temple, Chidambaram", "Bronze casting at Swamimalai", "Thanjavur paintings and veena makers"], when: "The Thyagaraja Aradhana music festival at Thiruvaiyaru is in January; Pongal is in mid-January.",
+      sights: [["Airavatesvara Temple, Darasuram", "kumbakonam--airavatesvara-temple-darasuram"], ["Srirangam, Trichy", "tiruchirappalli--sri-ranganathaswamy-temple-srirangam"], ["Thiruvanaikaval, Trichy", "tiruchirappalli--jambukeswarar-temple-thiruvanaikaval"], ["Thillai Nataraja Temple, Chidambaram", "chidambaram--thillai-nataraja-temple"], ["Navagraha temples, Kumbakonam", "kumbakonam--navagraha-temples"], ["Thanjavur Royal Palace", "thanjavur--thanjavur-royal-palace"]] },
+    { id: "pandya-nadu", name: "Pandya Nadu: Madurai and the south", short: "Madurai, Rameswaram, Tirunelveli, Tiruchendur", photo: "madurai--meenakshi-amman-temple", ll: [9.30, 78.10], towns: [["Madurai", "madurai"], ["Rameswaram", "rameswaram"], ["Tiruchendur", "tiruchendur"]],
+      text: "The old Pandya country, from Madurai's Meenakshi temple to the coast at Rameswaram and Tiruchendur, with Tirunelveli's temples, the Courtallam falls and family shrines across the dry south.",
+      explore: ["Meenakshi Amman Temple and Madurai's old streets", "Rameswaram, the Pamban bridge and Dhanushkodi", "Tiruchendur's seashore Murugan temple", "Nellaiappar Temple in Tirunelveli", "Courtallam falls in the monsoon", "Village festivals and family deity temples"], when: "The Chithirai festival in Madurai is in April–May; Courtallam's falls run best from June to September.",
+      sights: [["Mariamman Teppakulam, Madurai", "madurai"], ["Ramanathaswamy Temple, Rameswaram", "rameswaram--ramanathaswamy-temple"], ["Pamban Bridge, Rameswaram", "rameswaram--pamban-bridge"], ["Subramaniya Swamy Temple, Tiruchendur", "tiruchendur--arulmigu-subramaniya-swamy-temple"], ["Nellaiappar Temple, Tirunelveli", "tn-nellaiappar"], ["Courtallam falls", "tn-courtallam"]] },
+    { id: "nanjil-nadu", name: "Nanjil Nadu: Kanyakumari", short: "Kanyakumari, Nagercoil, Suchindram, Padmanabhapuram", photo: "kanyakumari", ll: [8.18, 77.41], towns: [["Kanyakumari", "kanyakumari"], ["Thiruvananthapuram", "thiruvananthapuram"]],
+      text: "The green southern tip of India, where three seas meet: paddy fields under the Western Ghats, Nagercoil's temples and churches, and a mix of Tamil and Travancore heritage seen best at Suchindram and Padmanabhapuram Palace.",
+      explore: ["Sunrise and sunset at Kanyakumari", "The Thiruvalluvar Statue and Vivekananda Rock Memorial", "Suchindram's Thanumalayan Temple", "Padmanabhapuram Palace, the old Travancore seat", "Nagercoil's temples and churches", "Nanjil Nadu cooking and paddy-field villages"], when: "October to March; Chithra Pournami, the full moon of April–May, brings a famous moonrise and sunset together at Kanyakumari.",
+      sights: [["Thiruvalluvar Statue, Kanyakumari", "kanyakumari--thiruvalluvar-statue", 1], ["Vivekananda Rock Memorial", "kanyakumari--vivekananda-rock-memorial"], ["Thanumalayan Temple, Suchindram", "tn-suchindram"], ["Padmanabhapuram Palace", "tn-padmanabhapuram"]] },
+    { id: "kongu-nadu", name: "Kongu Nadu: the west", short: "Coimbatore, Tiruppur, Erode, Salem, Palani", photo: "coimbatore--adiyogi-shiva-statue-isha-yoga-centre", ll: [11.02, 77.30], towns: [["Coimbatore", "coimbatore"], ["Palani", "palani"], ["Valparai", "valparai"], ["Yercaud", "yercaud"]],
+      text: "The western uplands of textile towns, farming villages and hill temples, with its own Kongu cuisine and long family histories in Coimbatore, Tiruppur, Erode and Salem, and the Kaveri falling through Hogenakkal on its way in.",
+      explore: ["Adiyogi at the Isha Yoga Centre", "Marudhamalai and Perur temples near Coimbatore", "Palani's hilltop Murugan temple", "Hogenakkal falls and coracle rides", "Valparai's tea estates and Aliyar dam", "Kongu home cooking and farm visits"], when: "October to March; Thai Poosam at Palani is in January or February.",
+      sights: [["Marudhamalai Temple, Coimbatore", "coimbatore--marudhamalai-temple"], ["Perur Patteeswarar Temple", "tn-perur"], ["Dhandayuthapani Temple, Palani", "palani--dhandayuthapani-swamy-temple"], ["Hogenakkal falls", "tn-hogenakkal"], ["Aliyar Dam, Valparai", "valparai--aliyar-dam"], ["Yercaud Lake", "yercaud--yercaud-lake", 1]] },
+    { id: "chera-nadu", name: "Chera Nadu: Sabarimala and the Ghats", short: "Sabarimala, Thiruvananthapuram, Guruvayur", state: "Kerala", photo: "tn-ayyappan", tall: 1, ll: [9.43, 77.08], towns: [["Sabarimala", "sabarimala"], ["Thiruvananthapuram", "thiruvananthapuram"], ["Guruvayur", "guruvayur"]],
+      text: "Across the Western Ghats from Kongu and Nanjil Nadu lies the old Chera country, now Kerala. Every Mandalam season Tamil families take the vow and climb to Swami Ayyappan at Sabarimala, and many return through the temples of Thiruvananthapuram and Guruvayur.",
+      explore: ["The Sabarimala pilgrimage and the 18 holy steps", "Sree Padmanabhaswamy Temple, Thiruvananthapuram", "Guruvayur's Krishna temple", "Periyar and Thekkady on the way through the Ghats", "Travel and stays arranged around your vratham"], when: "The Mandala–Makaravilakku season runs from mid-November to mid-January; the temple also opens for the first days of each Malayalam month.",
+      sights: [["The 18 holy steps, Sabarimala", "tn-sabari-steps"], ["Sree Padmanabhaswamy Temple", "thiruvananthapuram--sree-padmanabhaswamy-temple"], ["Guruvayur", "guruvayur"], ["Sannidhanam, Sabarimala", "sabarimala"]] },
     { id: "chettinad", name: "Chettinad", short: "Karaikudi, Kanadukathan, Athangudi", photo: "chettinad--chettinad-mansions-of-kanadukathan", ll: [10.07, 78.78], towns: [["Chettinad", "chettinad"], ["Madurai", "madurai"]],
       text: "The home villages of the Nattukottai Chettiars, whose trading families went to Burma, Malaya, Ceylon and Saigon and built grand mansions back home. Many diaspora families return here to find the family house.",
       explore: ["Mansions of Kanadukathan and Karaikudi", "Athangudi tile workshops", "Pillayarpatti cave temple", "Chettinad cooking in a family kitchen", "Antique and kandangi sari markets"], when: "October to March is most comfortable; many families return for weddings and temple festivals." },
-    { id: "pandya-nadu", name: "Pandya Nadu: Madurai and the south", short: "Madurai, Rameswaram, Tirunelveli, Tiruchendur, Kanyakumari", photo: "madurai--meenakshi-amman-temple", ll: [9.30, 78.10], towns: [["Madurai", "madurai"], ["Rameswaram", "rameswaram"], ["Tiruchendur", "tiruchendur"], ["Kanyakumari", "kanyakumari"]],
-      text: "The old Pandya country, from Madurai's Meenakshi temple to the coast at Rameswaram and the southern tip at Kanyakumari, with village festivals, Tirunelveli's temples and family shrines across the dry south.",
-      explore: ["Meenakshi Amman Temple and Madurai's old streets", "Village festivals and family deity temples", "Rameswaram and Dhanushkodi", "Tiruchendur's seashore temple", "Sunrise at Kanyakumari"], when: "The Chithirai festival in Madurai is in April–May; Pongal village celebrations are in mid-January." },
-    { id: "kongu-nadu", name: "Kongu Nadu: the west", short: "Coimbatore, Tiruppur, Erode, Salem, Palani", photo: "coimbatore--marudhamalai-temple", ll: [11.02, 77.30], towns: [["Coimbatore", "coimbatore"], ["Palani", "palani"], ["Yercaud", "yercaud"]],
-      text: "The western uplands of textile towns, farming villages and hill temples, with its own Kongu cuisine and long family histories in Coimbatore, Tiruppur, Erode and Salem.",
-      explore: ["Marudhamalai and Perur temples near Coimbatore", "Palani's hilltop Murugan temple", "Textile towns of Tiruppur and Erode", "Kongu home cooking", "Farm and village visits"], when: "October to March; Thai Poosam at Palani is in January or February." },
     { id: "hills", name: "The hills: Nilgiris, Kodaikanal and Yercaud", short: "Ooty, Coonoor, Kotagiri, Kodaikanal, Yercaud", photo: "ooty--nilgiri-mountain-railway", ll: [11.40, 76.70], towns: [["Ooty", "ooty"], ["Coonoor", "coonoor"], ["Kodaikanal", "kodaikanal"], ["Yercaud", "yercaud"]],
       text: "Hill towns with tea estates, old schools and churches, and the Badaga and Toda communities of the Nilgiris, whose villages are visited only with local guides and respect for their customs.",
-      explore: ["Nilgiri Mountain Railway, a UNESCO site", "Tea estates and factories", "Hill-station schools and churches families attended", "Badaga village visits with local guides", "Kodaikanal's lake and forest walks"], when: "March to June and September to November; the monsoon is heavy from June to August." },
+      explore: ["Nilgiri Mountain Railway, a UNESCO site", "Tea estates and factories", "Hill-station schools and churches families attended", "Badaga village visits with local guides", "Kodaikanal's lake and forest walks"], when: "March to June and September to November; the monsoon is heavy from June to August.",
+      sights: [["Doddabetta Peak, Ooty", "ooty--doddabetta-peak"], ["Dolphin's Nose, Coonoor", "coonoor--dolphin-s-nose"], ["Kodaikanal Lake", "kodaikanal--kodaikanal-lake"], ["Government Botanical Garden, Ooty", "ooty--government-botanical-garden"]] },
     { id: "coromandel", name: "The Coromandel coast", short: "Nagapattinam, Velankanni, Nagore, Tharangambadi, Puducherry", photo: "velankanni--basilica-of-our-lady-of-good-health", ll: [10.90, 79.84], towns: [["Velankanni", "velankanni"], ["Puducherry", "puducherry"], ["Chidambaram", "chidambaram"]],
       text: "A coast of many faiths and trading histories: Velankanni's basilica, the Nagore Dargah, the Danish fort at Tharangambadi and French Puducherry, home to old Tamil Christian, Muslim and Hindu families.",
-      explore: ["Velankanni Basilica and Nagore Dargah", "Fort Dansborg at Tharangambadi", "Puducherry's French and Tamil quarters", "Fishing villages and coastal temples", "Pichavaram mangroves"], when: "December to March; the Velankanni feast falls in late August and early September." },
+      explore: ["Velankanni Basilica and Nagore Dargah", "Fort Dansborg at Tharangambadi", "Puducherry's French and Tamil quarters", "Fishing villages and coastal temples", "Boat rides through the Pichavaram mangroves"], when: "December to March; the Velankanni feast falls in late August and early September, and the Nagore Kandoori festival follows the Islamic calendar.",
+      sights: [["Nagore Dargah", "tn-nagore"], ["Fort Dansborg, Tharangambadi", "tn-tharangambadi"], ["Promenade Beach, Puducherry", "puducherry--promenade-beach"], ["Pichavaram mangroves", "tn-pichavaram"]] },
   ],
 };
 
@@ -217,12 +233,12 @@ const PURPOSES = ["Trade fair or exhibition", "Product sourcing & supplier visit
 
 export const EXPERIENCES = [
   {
-    s: "business-trade-travel", n: "Business & Trade Travel", short: "Trade fairs, sourcing trips, industry tours and corporate travel worldwide.", theme: "biz", lead: true, img: "x-biz-hero",
-    title: "Business Travel: Trade Fairs & Sourcing Trips | Nexara Holidays",
-    desc: "Business travel planned around your goals: trade fairs such as Canton Fair, Hannover Messe and CES, sourcing trips, industry tours and corporate travel.",
-    h1: "Connect Globally. Travel With Purpose.",
-    sub: "Discover international business opportunities, attend world-leading trade exhibitions, connect with industry hubs, and explore global markets with business travel planned around your objectives.",
-    cta: ["Plan Your Business Trip", "#planner"], cta2: ["Explore Global Trade Events", "#events"],
+    s: "business-trade-travel", n: "Business & Trade Travel", short: "Trade fairs, sourcing trips, industry tours and corporate travel worldwide.", theme: "biz", lead: true,
+    title: "Canton Fair Business Trips from India & Trade Fair Travel | Nexara Holidays",
+    desc: "Canton Fair trips from India: phases, dates, buyer registration, China business visa, hotels near Pazhou, interpreters and factory visits, plus trade fairs worldwide.",
+    h1: "Canton Fair & Global Business Travel",
+    sub: "China's largest trade fair, twice a year in Guangzhou: we plan your flights, business visa, hotel near the Canton Fair Complex, interpreters and factory visits, and travel to trade fairs and industry hubs worldwide.",
+    cta: ["Plan My Canton Fair Trip", "#canton-plan"], cta2: ["Canton Fair guide", "#canton"], img: "x-biz-canton", alt: "Aerial view of the Canton Fair Complex in Pazhou, Guangzhou",
   },
   {
     s: "roots-heritage-journeys", n: "Roots & Heritage Journeys", short: "Ancestral hometowns, family history, traditions and cultural journeys anywhere in the world.", theme: "her", img: "x-her-festival",
@@ -264,8 +280,70 @@ export const EXP_HUB = {
   desc: "Business and trade travel, roots and heritage journeys, educational trips, cruise holidays and luxury yacht experiences, planned worldwide.",
 };
 
+
+/* ---------- 1a. Canton Fair: the lead section of the Business & Trade Travel page ----------
+   Dates were checked on EVENTS_CHECKED against the organiser's announcements and trade listings. The organiser
+   confirms each session's dates and phase layout a few months ahead; the "next" session is shown as expected until then. */
+const CANTON = {
+  name: "Canton Fair (China Import and Export Fair)",
+  intro: [
+    "The Canton Fair is China's largest and longest-running trade fair, held since 1957 and run by the Ministry of Commerce and the Guangdong provincial government. It takes place twice a year in Guangzhou, in spring (April–May) and autumn (October–November), at the Canton Fair Complex in Pazhou, one of the largest exhibition centres in the world.",
+    "Each session is split into three phases of about five days, each devoted to different industries, so buyers choose the phase that matches what they want to source. Tens of thousands of Chinese manufacturers and exporters exhibit, and there is also an International Pavilion for exhibitors from other countries.",
+    "For Indian importers, wholesalers, retailers and manufacturers it is the single most efficient way to meet many suppliers in one trip. Nexara plans the whole journey from Chennai or any Indian city: flights, the China business visa, a hotel near the complex, transfers, interpreters and supplier visits after the fair.",
+  ],
+  facts: [["Since", "1957"], ["Held", "Twice a year"], ["Phases", "3 per session"], ["Venue", "Pazhou, Guangzhou"], ["Badge", "Free for buyers"], ["From India", "Nonstop flights"]],
+  sessions: [
+    { n: "140th session (autumn 2026)", st: "Dates published by the organiser", ph: [["Phase 1", "15–19 October 2026"], ["Phase 2", "23–27 October 2026"], ["Phase 3", "31 October – 4 November 2026"]] },
+    { n: "141st session (spring 2027)", st: "Expected dates: confirm with the organiser", ph: [["Phase 1", "about 15–19 April 2027"], ["Phase 2", "about 23–27 April 2027"], ["Phase 3", "about 1–5 May 2027"]] },
+  ],
+  phases: [
+    ["Phase 1", "Advanced manufacturing", ["Consumer electronics and information products", "Household electrical appliances", "Lighting equipment", "Industrial automation and machinery", "Power and electrical equipment", "Hardware and tools", "New energy and new-energy vehicles", "Vehicles, spare parts and motorcycles"]],
+    ["Phase 2", "Quality home life", ["Building and decorative materials", "Furniture", "Kitchenware and tableware", "Household items", "Home decorations and gifts", "Festival products", "Garden products", "Toys, pet products and baby care"]],
+    ["Phase 3", "Fashion, health and food", ["Textiles and garments", "Shoes, bags and fashion accessories", "Home textiles and carpets", "Office supplies and stationery", "Medicines, health products and medical devices", "Food and beverages", "Sports, travel and leisure products", "Personal care and bathroom products"]],
+  ],
+  steps: [
+    ["Choose your phase", "Pick the phase that matches your products. Many buyers cover two phases; the gap between them is a good time for factory visits."],
+    ["Register as a buyer", "Pre-register free on the Canton Fair's official Buyer Service System or app with your passport and company details. First-time buyers receive the invitation letter through the same system."],
+    ["Apply for your China visa", "Indian passport holders need a visa for mainland China. Most buyers apply for a business (M) visa with the fair's invitation letter; the name and passport number must match on the letter, the visa and the badge."],
+    ["Book flights and a hotel early", "IndiGo flies nonstop to Guangzhou from Delhi and Kolkata, and there are one-stop connections from Chennai, Mumbai and Bengaluru. Hotels near Pazhou fill up months before each session."],
+    ["Collect your badge", "First-time buyers collect the buyer badge at the registration counters in Guangzhou, including at the airport and at the complex; returning buyers can reuse their badge."],
+    ["Visit, then follow up", "Walk the halls with an interpreter if you need one, collect catalogues and quotes, and leave a day or two to visit shortlisted factories in Guangzhou, Foshan or Shenzhen."],
+  ],
+  services: [
+    "Return flights from Chennai or any Indian city, timed to your phase",
+    "China business (M) visa guidance and document checklist",
+    "Buyer registration and invitation-letter guidance",
+    "Hotels near the Canton Fair Complex, booked as soon as dates are fixed",
+    "Airport and daily fair transfers, or a metro card for Pazhou",
+    "English-Chinese interpreters, booked by the day",
+    "Factory and showroom visits in Guangzhou, Foshan, Shenzhen and Yiwu",
+    "Group delegations for associations, chambers of commerce and companies",
+    "Local SIM or eSIM, and forex or a travel card for China",
+    "Travel insurance for the trip",
+  ],
+  tips: [
+    "Carry plenty of business cards and a short company profile; exhibitors exchange cards first and talk prices later.",
+    "Most suppliers quote in US dollars. Ask for the minimum order quantity, lead time and sample cost at the stand.",
+    "Google, WhatsApp and Gmail are blocked in mainland China without a roaming plan or an international eSIM, so set that up before you fly. Suppliers mostly use WeChat.",
+    "Cash is rarely used: Alipay and WeChat Pay accept many foreign cards, so link yours before you travel.",
+    "The halls are huge: wear comfortable shoes, use the fair's app or map, and plan each day by hall and zone.",
+    "Metro Line 8 stops at Xingang East and Pazhou stations, right beside the complex, and is the fastest way in each morning.",
+  ],
+  faq: [
+    ["When is the next Canton Fair?", "The 140th session (autumn 2026) runs in three phases from 15 October to 4 November 2026. The 141st session is expected in April and May 2027; the organiser confirms the exact dates a few months ahead, and we check them before booking any non-refundable travel."],
+    ["Do Indians need a visa for the Canton Fair?", "Yes. Indian passport holders need a visa for mainland China. Most buyers apply for a business (M) visa using the invitation letter from the fair's Buyer Service System. We help with the checklist, but visa decisions are made by the Chinese visa office."],
+    ["Is the Canton Fair free to attend?", "Yes. The buyer badge is free for overseas buyers who register in advance. You pay only for your travel, visa, hotel and any services such as interpreters."],
+    ["Which phase should I attend?", "Phase 1 is for electronics, appliances, machinery, tools, energy and vehicles; Phase 2 for building materials, furniture, kitchenware, home goods and gifts; Phase 3 for textiles, garments, shoes, bags, office supplies, health products and food. Tell us your products and we will suggest the phase."],
+    ["How many days do I need?", "Four to six nights covers one phase with a spare day for meetings. To cover two phases, plan nine to ten nights; to visit factories after the fair, add two to four nights in Foshan, Shenzhen or Yiwu."],
+    ["How do I get from India to Guangzhou?", "IndiGo flies nonstop to Guangzhou from Delhi and Kolkata, and China Southern serves Delhi. From Chennai, Mumbai, Bengaluru and Hyderabad there are one-stop connections via these cities, Singapore, Hong Kong or Bangkok."],
+    ["Can you arrange an interpreter and factory visits?", "Yes. We book English-Chinese interpreters by the day and arrange transport for factory and showroom visits. Supplier introductions and factory access depend on the companies themselves."],
+    ["Can you plan a group delegation?", "Yes. We plan Canton Fair delegations for associations, chambers of commerce and companies, with group flights, hotels together near the complex, transfers and a shared day-by-day plan."],
+  ],
+  link: "https://www.cantonfair.org.cn/en-US",
+};
+
 export const EXP_DATA = {
-  TN_ROOTS, INDUSTRIES, EVENTS, HUBS, HERITAGE, HERITAGE_TYPES, SUBJECTS, AGES, EDU, CRUISE_STYLES, CRUISE, CRUISE_LINES, YACHT, YACHT_TYPES, OCCASIONS, PURPOSES,
+  TN_ROOTS, INDUSTRIES, EVENTS, HUBS, CANTON, HERITAGE, HERITAGE_TYPES, SUBJECTS, AGES, EDU, CRUISE_STYLES, CRUISE, CRUISE_LINES, YACHT, YACHT_TYPES, OCCASIONS, PURPOSES,
   SOURCING: ["International product sourcing", "Supplier and manufacturer visits", "Wholesale market exploration", "Procurement trips", "Export market exploration", "Business networking", "Manufacturing and industrial visits", "Trade exhibition itineraries", "Custom business delegations"],
   CORPORATE: [["Corporate delegations", "Group flights, hotels near the venue, transfers and a shared programme for the whole team."], ["International conferences", "Travel built around the conference dates, with time added for meetings or sightseeing."], ["Executive meetings", "Short, tightly timed trips with private transfers and business hotels."], ["Industry association groups", "Itineraries for chambers of commerce and trade bodies, including fair visits."], ["Incentive travel", "Reward trips for teams and dealers, from city breaks to cruises."], ["Company visits and business exchanges", "Visits arranged through your contacts or the host organisation, with travel around them."]],
 };

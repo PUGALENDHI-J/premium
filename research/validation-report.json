@@ -1,15 +1,17 @@
 {
  "summary": {
-  "checked_pages": 1361,
-  "sitemap_urls": 1360,
+  "checked_pages": 1408,
+  "sitemap_urls": 1407,
   "errors": 0,
-  "warnings": 399,
+  "warnings": 416,
   "pages_with_single_inbound_link": 0,
   "most_similar_pairs": [
    "77% /packages/india/himachal-pradesh/hampta-pass-trek-and-chandratal-7-days/ ~ /packages/india/himachal-pradesh/manali-adventure-week-6-days/",
    "64% /packages/india/andaman-and-nicobar/andaman-honeymoon-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/",
+   "64% /packages/india/jammu-and-kashmir/amarnath-yatra-via-baltal-5-days/ ~ /packages/india/jammu-and-kashmir/amarnath-yatra-via-pahalgam-5-days/",
    "63% /packages/international/bhutan/bhutan-highlights-6-days/ ~ /packages/international/bhutan/bhutan-monasteries-and-tiger-s-nest-6-days/",
    "63% /packages/international/japan/japan-cherry-blossom-tour-8-days/ ~ /packages/international/japan/japan-honeymoon-8-days/",
+   "63% /packages/india/jammu-and-kashmir/amarnath-yatra-by-helicopter-4-days/ ~ /packages/india/jammu-and-kashmir/amarnath-yatra-via-baltal-5-days/",
    "63% /packages/international/turkey/turkey-grand-tour-8-days/ ~ /packages/international/turkey/turkey-highlights-7-days/",
    "62% /packages/india/delhi/golden-triangle-and-varanasi-8-days/ ~ /packages/india/delhi/golden-triangle-tour-6-days/",
    "62% /packages/international/uae/dubai-classic-holiday-5-days/ ~ /packages/international/uae/dubai-shopping-festival-trip-7-days/",
@@ -18,9 +20,7 @@
    "62% /packages/india/himachal-pradesh/shimla-and-manali-family-trip-5-days/ ~ /packages/india/himachal-pradesh/shimla-and-manali-holiday-6-days/",
    "62% /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/ ~ /packages/india/andaman-and-nicobar/andaman-short-break-4-days/",
    "62% /packages/international/thailand/chiang-mai-and-chiang-rai-northern-trail-6-days/ ~ /packages/international/thailand/northern-thailand-and-sukhothai-6-days/",
-   "62% /packages/india/ladakh/ladakh-family-holiday-6-days/ ~ /packages/india/ladakh/leh-ladakh-explorer-7-days/",
-   "61% /packages/international/indonesia/bali-and-nusa-penida-6-days/ ~ /packages/international/indonesia/bali-photography-trip-8-days/",
-   "61% /packages/international/singapore/singapore-and-langkawi-family-trip-7-days/ ~ /packages/international/singapore/singapore-family-holiday-5-days/"
+   "62% /packages/india/ladakh/ladakh-family-holiday-6-days/ ~ /packages/india/ladakh/leh-ladakh-explorer-7-days/"
   ]
  },
  "errors": [],
@@ -118,6 +118,10 @@
    "msg": "meta description length 172"
   },
   {
+   "page": "/experiences/business-trade-travel/",
+   "msg": "title length 79"
+  },
+  {
    "page": "/packages/india/manipur/manipur-imphal-and-loktak-lake-4-days/",
    "msg": "meta description length 173"
   },
@@ -183,7 +187,7 @@
   },
   {
    "page": "/",
-   "msg": "has 10 <h1> elements (pre-existing home page: hero slides and hidden views)"
+   "msg": "has 11 <h1> elements (pre-existing home page: hero slides and hidden views)"
   },
   {
    "page": "/",
@@ -210,12 +214,20 @@
    "msg": "content 64% similar to /packages/india/andaman-and-nicobar/andaman-islands-holiday-6-days/"
   },
   {
+   "page": "/packages/india/jammu-and-kashmir/amarnath-yatra-via-baltal-5-days/",
+   "msg": "content 64% similar to /packages/india/jammu-and-kashmir/amarnath-yatra-via-pahalgam-5-days/"
+  },
+  {
    "page": "/packages/international/bhutan/bhutan-highlights-6-days/",
    "msg": "content 63% similar to /packages/international/bhutan/bhutan-monasteries-and-tiger-s-nest-6-days/"
   },
   {
    "page": "/packages/international/japan/japan-cherry-blossom-tour-8-days/",
    "msg": "content 63% similar to /packages/international/japan/japan-honeymoon-8-days/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/amarnath-yatra-by-helicopter-4-days/",
+   "msg": "content 63% similar to /packages/india/jammu-and-kashmir/amarnath-yatra-via-baltal-5-days/"
   },
   {
    "page": "/packages/international/turkey/turkey-grand-tour-8-days/",
@@ -308,6 +320,10 @@
   {
    "page": "/packages/international/seychelles/seychelles-nature-holiday-6-days/",
    "msg": "content 60% similar to /packages/international/seychelles/seychelles-short-break-5-days/"
+  },
+  {
+   "page": "/packages/international/china/canton-fair-and-shenzhen-factory-visits-8-days/",
+   "msg": "content 60% similar to /packages/international/china/canton-fair-business-trip-one-phase-6-days/"
   },
   {
    "page": "/packages/international/switzerland/best-of-europe-paris-switzerland-and-italy-11-days/",
@@ -464,6 +480,10 @@
   {
    "page": "/packages/india/jammu-and-kashmir/kashmir-family-holiday-7-days/",
    "msg": "content 58% similar to /packages/india/jammu-and-kashmir/kashmir-honeymoon-with-houseboat-6-days/"
+  },
+  {
+   "page": "/packages/international/china/canton-fair-business-trip-one-phase-6-days/",
+   "msg": "content 57% similar to /packages/international/china/canton-fair-two-phases-10-days/"
   },
   {
    "page": "/packages/international/uae/dubai-senior-friendly-holiday-7-days/",
@@ -634,6 +654,10 @@
    "msg": "content 56% similar to /packages/international/singapore/singapore-honeymoon-7-days/"
   },
   {
+   "page": "/destinations/international/central-asia/uzbekistan/samarkand/",
+   "msg": "content 56% similar to /destinations/international/central-asia/uzbekistan/tashkent/"
+  },
+  {
    "page": "/packages/india/goa/goa-beach-holiday-5-days/",
    "msg": "content 56% similar to /packages/india/goa/goa-churches-and-old-goa-heritage-4-days/"
   },
@@ -644,6 +668,10 @@
   {
    "page": "/packages/india/andaman-and-nicobar/andaman-family-island-trip-7-days/",
    "msg": "content 56% similar to /packages/india/andaman-and-nicobar/andaman-grand-island-tour-9-days/"
+  },
+  {
+   "page": "/packages/international/kazakhstan/almaty-mountains-and-lakes-6-days/",
+   "msg": "content 56% similar to /packages/international/kazakhstan/almaty-short-break-4-days/"
   },
   {
    "page": "/packages/international/hong-kong/hong-kong-disneyland-family-trip-5-days/",
@@ -694,6 +722,10 @@
    "msg": "content 56% similar to /packages/international/uae/uae-luxury-holiday-7-days/"
   },
   {
+   "page": "/packages/international/uzbekistan/tashkent-and-samarkand-short-break-5-days/",
+   "msg": "content 55% similar to /packages/international/uzbekistan/tashkent-chimgan-and-samarkand-6-days/"
+  },
+  {
    "page": "/packages/india/rajasthan/rajasthan-luxury-palaces-8-days/",
    "msg": "content 55% similar to /packages/india/rajasthan/rajasthan-school-heritage-tour-6-days/"
   },
@@ -704,10 +736,6 @@
   {
    "page": "/packages/international/vietnam/vietnam-grand-tour-10-days/",
    "msg": "content 55% similar to /packages/international/vietnam/vietnam-highlights-8-days/"
-  },
-  {
-   "page": "/packages/india/jammu-and-kashmir/amarnath-yatra-via-pahalgam-5-days/",
-   "msg": "content 55% similar to /packages/india/jammu-and-kashmir/kashmir-tulip-festival-trip-5-days/"
   },
   {
    "page": "/packages/india/kerala/kerala-highlights-munnar-thekkady-and-alleppey-6-days/",
@@ -910,10 +938,6 @@
    "msg": "content 54% similar to /packages/international/uae/dubai-stopover-3-days/"
   },
   {
-   "page": "/destinations/international/east-asia/china/beijing/",
-   "msg": "content 54% similar to /destinations/international/east-asia/china/shanghai/"
-  },
-  {
    "page": "/packages/international/uae/abu-dhabi-culture-and-theme-parks-4-days/",
    "msg": "content 54% similar to /packages/international/uae/dubai-and-abu-dhabi-6-days/"
   },
@@ -958,6 +982,10 @@
    "msg": "content 53% similar to /packages/international/uae/dubai-senior-friendly-holiday-7-days/"
   },
   {
+   "page": "/destinations/international/east-asia/china/beijing/",
+   "msg": "content 53% similar to /destinations/international/east-asia/china/shanghai/"
+  },
+  {
    "page": "/destinations/international/middle-east/jordan/amman/",
    "msg": "content 53% similar to /destinations/international/middle-east/jordan/petra/"
   },
@@ -984,6 +1012,10 @@
   {
    "page": "/packages/international/spain/barcelona-and-portaventura-kids-holiday-6-days/",
    "msg": "content 53% similar to /packages/international/spain/barcelona-short-break-5-days/"
+  },
+  {
+   "page": "/destinations/international/europe/russia/moscow/",
+   "msg": "content 53% similar to /destinations/international/europe/russia/st-petersburg/"
   },
   {
    "page": "/packages/india/madhya-pradesh/prayagraj-and-chitrakoot-ramayana-trail-4-days/",
@@ -1022,16 +1054,16 @@
    "msg": "content 53% similar to /packages/international/nepal/nepal-with-chitwan-safari-7-days/"
   },
   {
+   "page": "/destinations/international/southeast-asia/philippines/cebu/",
+   "msg": "content 53% similar to /destinations/international/southeast-asia/philippines/el-nido/"
+  },
+  {
    "page": "/packages/international/indonesia/java-temples-and-bali-7-days/",
    "msg": "content 53% similar to /packages/international/indonesia/yogyakarta-heritage-short-break-4-days/"
   },
   {
    "page": "/packages/international/indonesia/bali-family-holiday-7-days/",
    "msg": "content 53% similar to /packages/international/indonesia/bali-friends-trip-5-days/"
-  },
-  {
-   "page": "/packages/india/jammu-and-kashmir/amarnath-yatra-via-pahalgam-5-days/",
-   "msg": "content 53% similar to /packages/india/jammu-and-kashmir/kashmir-autumn-colours-6-days/"
   },
   {
    "page": "/packages/international/malaysia/malaysia-group-tour-6-days/",
@@ -1076,6 +1108,10 @@
   {
    "page": "/destinations/international/europe/greece/mykonos/",
    "msg": "content 53% similar to /destinations/international/europe/greece/santorini/"
+  },
+  {
+   "page": "/packages/india/jammu-and-kashmir/amarnath-yatra-by-helicopter-4-days/",
+   "msg": "content 53% similar to /packages/india/jammu-and-kashmir/amarnath-yatra-via-pahalgam-5-days/"
   },
   {
    "page": "/packages/india/himachal-pradesh/hampta-pass-trek-and-chandratal-7-days/",
@@ -1134,16 +1170,16 @@
    "msg": "content 52% similar to /packages/india/andaman-and-nicobar/andaman-scuba-diving-holiday-6-days/"
   },
   {
+   "page": "/destinations/international/central-asia/azerbaijan/baku/",
+   "msg": "content 52% similar to /destinations/international/central-asia/azerbaijan/sheki/"
+  },
+  {
    "page": "/destinations/international/south-asia/sri-lanka/kandy/",
    "msg": "content 52% similar to /destinations/international/south-asia/sri-lanka/nuwara-eliya/"
   },
   {
    "page": "/packages/india/delhi/golden-triangle-tour-6-days/",
    "msg": "content 52% similar to /packages/india/delhi/golden-triangle-with-amritsar-8-days/"
-  },
-  {
-   "page": "/destinations/international/southeast-asia/philippines/boracay/",
-   "msg": "content 52% similar to /destinations/international/southeast-asia/philippines/cebu/"
   },
   {
    "page": "/packages/international/malaysia/kuala-lumpur-and-langkawi-6-days/",
@@ -1168,6 +1204,10 @@
   {
    "page": "/packages/international/maldives/maldives-and-dubai-7-days/",
    "msg": "content 52% similar to /packages/international/maldives/maldives-and-singapore-8-days/"
+  },
+  {
+   "page": "/destinations/international/central-asia/uzbekistan/bukhara/",
+   "msg": "content 52% similar to /destinations/international/central-asia/uzbekistan/khiva/"
   },
   {
    "page": "/destinations/international/southeast-asia/thailand/chiang-rai/",
@@ -1198,6 +1238,10 @@
    "msg": "content 52% similar to /packages/international/japan/japan-luxury-journey-9-days/"
   },
   {
+   "page": "/destinations/international/southeast-asia/philippines/boracay/",
+   "msg": "content 52% similar to /destinations/international/southeast-asia/philippines/el-nido/"
+  },
+  {
    "page": "/packages/international/hungary/budapest-short-break-4-days/",
    "msg": "content 52% similar to /packages/international/portugal/lisbon-short-break-4-days/"
   },
@@ -1216,10 +1260,6 @@
   {
    "page": "/destinations/international/europe/italy/florence/",
    "msg": "content 52% similar to /destinations/international/europe/italy/rome/"
-  },
-  {
-   "page": "/destinations/international/southeast-asia/philippines/cebu/",
-   "msg": "content 52% similar to /destinations/international/southeast-asia/philippines/el-nido/"
   },
   {
    "page": "/destinations/international/south-asia/sri-lanka/bentota/",
@@ -1242,8 +1282,8 @@
    "msg": "content 52% similar to /packages/international/turkey/istanbul-mosques-and-ottoman-heritage-4-days/"
   },
   {
-   "page": "/destinations/international/southeast-asia/philippines/boracay/",
-   "msg": "content 52% similar to /destinations/international/southeast-asia/philippines/el-nido/"
+   "page": "/destinations/international/central-asia/georgia/kazbegi/",
+   "msg": "content 52% similar to /destinations/international/central-asia/georgia/tbilisi/"
   },
   {
    "page": "/packages/international/kenya/kenya-and-tanzania-safari-8-days/",
@@ -1306,8 +1346,16 @@
    "msg": "content 51% similar to /destinations/international/europe/croatia/plitvice-lakes/"
   },
   {
+   "page": "/destinations/international/southeast-asia/philippines/boracay/",
+   "msg": "content 51% similar to /destinations/international/southeast-asia/philippines/cebu/"
+  },
+  {
    "page": "/packages/india/goa/goa-and-gokarna-beach-hop-5-days/",
    "msg": "content 51% similar to /packages/india/goa/goa-beach-holiday-5-days/"
+  },
+  {
+   "page": "/destinations/international/central-asia/azerbaijan/gabala/",
+   "msg": "content 51% similar to /destinations/international/central-asia/azerbaijan/sheki/"
   },
   {
    "page": "/destinations/international/europe/united-kingdom/edinburgh/",
@@ -1368,10 +1416,6 @@
   {
    "page": "/packages/international/indonesia/bali-temple-trail-4-days/",
    "msg": "content 51% similar to /packages/international/italy/rome-and-vatican-pilgrimage-4-days/"
-  },
-  {
-   "page": "/destinations/international/east-asia/china/beijing/",
-   "msg": "content 51% similar to /destinations/international/east-asia/china/xian/"
   },
   {
    "page": "/packages/international/indonesia/bali-and-the-gili-islands-7-days/",
@@ -1462,8 +1506,16 @@
    "msg": "content 51% similar to /packages/international/indonesia/bali-short-break-4-days/"
   },
   {
+   "page": "/packages/international/kazakhstan/almaty-bishkek-and-issyk-kul-8-days/",
+   "msg": "content 51% similar to /packages/international/kyrgyzstan/bishkek-and-issyk-kul-6-days/"
+  },
+  {
    "page": "/packages/india/uttarakhand/haridwar-and-rishikesh-pilgrimage-4-days/",
    "msg": "content 51% similar to /packages/india/uttarakhand/kedarnath-and-badrinath-do-dham-yatra-7-days/"
+  },
+  {
+   "page": "/destinations/international/east-asia/china/beijing/",
+   "msg": "content 51% similar to /destinations/international/east-asia/china/xian/"
   },
   {
    "page": "/destinations/international/southeast-asia/thailand/ayutthaya/",
@@ -1484,6 +1536,10 @@
   {
    "page": "/destinations/international/south-asia/sri-lanka/bentota/",
    "msg": "content 51% similar to /destinations/international/south-asia/sri-lanka/kandy/"
+  },
+  {
+   "page": "/destinations/international/central-asia/uzbekistan/bukhara/",
+   "msg": "content 51% similar to /destinations/international/central-asia/uzbekistan/samarkand/"
   },
   {
    "page": "/destinations/india/sikkim/gangtok/",
@@ -1554,10 +1610,6 @@
    "msg": "content 50% similar to /destinations/international/south-asia/sri-lanka/ella/"
   },
   {
-   "page": "/destinations/international/east-asia/china/shanghai/",
-   "msg": "content 50% similar to /destinations/international/east-asia/china/xian/"
-  },
-  {
    "page": "/packages/international/japan/japan-family-holiday-8-days/",
    "msg": "content 50% similar to /packages/international/japan/tokyo-short-break-5-days/"
   },
@@ -1586,8 +1638,16 @@
    "msg": "content 50% similar to /packages/india/andaman-and-nicobar/andaman-short-break-4-days/"
   },
   {
+   "page": "/packages/international/kazakhstan/almaty-bishkek-and-issyk-kul-8-days/",
+   "msg": "content 50% similar to /packages/international/kazakhstan/almaty-mountains-and-lakes-6-days/"
+  },
+  {
    "page": "/destinations/international/europe/austria/innsbruck/",
    "msg": "content 50% similar to /destinations/international/europe/austria/vienna/"
+  },
+  {
+   "page": "/packages/international/georgia/georgia-and-armenia-8-days/",
+   "msg": "content 50% similar to /packages/international/georgia/tbilisi-and-kazbegi-6-days/"
   },
   {
    "page": "/destinations/international/south-asia/sri-lanka/galle/",
@@ -1602,8 +1662,16 @@
    "msg": "content 50% similar to /destinations/international/europe/turkey/pamukkale/"
   },
   {
+   "page": "/destinations/international/southeast-asia/philippines/cebu/",
+   "msg": "content 50% similar to /destinations/international/southeast-asia/philippines/manila/"
+  },
+  {
    "page": "/packages/india/madhya-pradesh/indore-ujjain-and-mandu-4-days/",
    "msg": "content 50% similar to /packages/india/madhya-pradesh/ujjain-and-omkareshwar-jyotirlinga-yatra-3-days/"
+  },
+  {
+   "page": "/destinations/international/central-asia/uzbekistan/bukhara/",
+   "msg": "content 50% similar to /destinations/international/central-asia/uzbekistan/tashkent/"
   },
   {
    "page": "/packages/india/rajasthan/rajasthan-luxury-palaces-8-days/",
