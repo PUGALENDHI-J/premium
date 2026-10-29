@@ -237,8 +237,8 @@ export const EXPERIENCES = [
     title: "Canton Fair Business Trips from India & Trade Fair Travel | Nexara Holidays",
     desc: "Canton Fair trips from India: phases, dates, buyer registration, China business visa, hotels near Pazhou, interpreters and factory visits, plus trade fairs worldwide.",
     h1: "Canton Fair & Global Business Travel",
-    sub: "China's largest trade fair, twice a year in Guangzhou: we plan your flights, business visa, hotel near the Canton Fair Complex, interpreters and factory visits, and travel to trade fairs and industry hubs worldwide.",
-    cta: ["Plan My Canton Fair Trip", "#canton-plan"], cta2: ["Canton Fair guide", "#canton"], img: "x-biz-canton", alt: "Aerial view of the Canton Fair Complex in Pazhou, Guangzhou",
+    sub: "China's largest trade fair, twice a year in Guangzhou: we plan your travel, business visa, hotel near the Canton Fair Complex, interpreters and factory visits, and travel to trade fairs and industry hubs worldwide.",
+    cta: ["Plan My Canton Fair Trip", "#canton-plan"], cta2: ["Canton Fair guide", "#canton"], img: "x-biz-canton", alt: "Front entrance of the Canton Fair Complex in Pazhou, Guangzhou, with the Canton Fair logo",
   },
   {
     s: "roots-heritage-journeys", n: "Roots & Heritage Journeys", short: "Ancestral hometowns, family history, traditions and cultural journeys anywhere in the world.", theme: "her", img: "x-her-festival",
@@ -282,19 +282,20 @@ export const EXP_HUB = {
 
 
 /* ---------- 1a. Canton Fair: the lead section of the Business & Trade Travel page ----------
-   Dates were checked on EVENTS_CHECKED against the organiser's announcements and trade listings. The organiser
-   confirms each session's dates and phase layout a few months ahead; the "next" session is shown as expected until then. */
+   Kept general on purpose: no session dates or airline details, which change every season. */
 const CANTON = {
   name: "Canton Fair (China Import and Export Fair)",
   intro: [
     "The Canton Fair is China's largest and longest-running trade fair, held since 1957 and run by the Ministry of Commerce and the Guangdong provincial government. It takes place twice a year in Guangzhou, in spring (April–May) and autumn (October–November), at the Canton Fair Complex in Pazhou, one of the largest exhibition centres in the world.",
     "Each session is split into three phases of about five days, each devoted to different industries, so buyers choose the phase that matches what they want to source. Tens of thousands of Chinese manufacturers and exporters exhibit, and there is also an International Pavilion for exhibitors from other countries.",
-    "For Indian importers, wholesalers, retailers and manufacturers it is the single most efficient way to meet many suppliers in one trip. Nexara plans the whole journey from Chennai or any Indian city: flights, the China business visa, a hotel near the complex, transfers, interpreters and supplier visits after the fair.",
+    "For Indian importers, wholesalers, retailers and manufacturers it is the single most efficient way to meet many suppliers in one trip. Nexara plans the whole journey from Chennai or any Indian city: travel, the China business visa, a hotel near the complex, transfers, interpreters and supplier visits after the fair.",
   ],
-  facts: [["Since", "1957"], ["Held", "Twice a year"], ["Phases", "3 per session"], ["Venue", "Pazhou, Guangzhou"], ["Badge", "Free for buyers"], ["From India", "Nonstop flights"]],
-  sessions: [
-    { n: "140th session (autumn 2026)", st: "Dates published by the organiser", ph: [["Phase 1", "15–19 October 2026"], ["Phase 2", "23–27 October 2026"], ["Phase 3", "31 October – 4 November 2026"]] },
-    { n: "141st session (spring 2027)", st: "Expected dates: confirm with the organiser", ph: [["Phase 1", "about 15–19 April 2027"], ["Phase 2", "about 23–27 April 2027"], ["Phase 3", "about 1–5 May 2027"]] },
+  facts: [["Since", "1957"], ["Held", "Twice a year"], ["Phases", "3 per session"], ["Venue", "Pazhou, Guangzhou"], ["Badge", "Free for buyers"], ["Trip length", "4–10 nights"]],
+  // when it is held: the organiser fixes each session's exact dates and phase layout a few months ahead
+  when: [
+    ["Spring session", "April to May, in three phases of about five days each"],
+    ["Autumn session", "October to November, in three phases of about five days each"],
+    ["Between phases", "A few changeover days, useful for factory and showroom visits"],
   ],
   phases: [
     ["Phase 1", "Advanced manufacturing", ["Consumer electronics and information products", "Household electrical appliances", "Lighting equipment", "Industrial automation and machinery", "Power and electrical equipment", "Hardware and tools", "New energy and new-energy vehicles", "Vehicles, spare parts and motorcycles"]],
@@ -305,12 +306,12 @@ const CANTON = {
     ["Choose your phase", "Pick the phase that matches your products. Many buyers cover two phases; the gap between them is a good time for factory visits."],
     ["Register as a buyer", "Pre-register free on the Canton Fair's official Buyer Service System or app with your passport and company details. First-time buyers receive the invitation letter through the same system."],
     ["Apply for your China visa", "Indian passport holders need a visa for mainland China. Most buyers apply for a business (M) visa with the fair's invitation letter; the name and passport number must match on the letter, the visa and the badge."],
-    ["Book flights and a hotel early", "IndiGo flies nonstop to Guangzhou from Delhi and Kolkata, and there are one-stop connections from Chennai, Mumbai and Bengaluru. Hotels near Pazhou fill up months before each session."],
+    ["Book your travel and hotel early", "Fix your travel as soon as you know your phase. Hotels near the Canton Fair Complex in Pazhou fill up and raise prices months before each session."],
     ["Collect your badge", "First-time buyers collect the buyer badge at the registration counters in Guangzhou, including at the airport and at the complex; returning buyers can reuse their badge."],
     ["Visit, then follow up", "Walk the halls with an interpreter if you need one, collect catalogues and quotes, and leave a day or two to visit shortlisted factories in Guangzhou, Foshan or Shenzhen."],
   ],
   services: [
-    "Return flights from Chennai or any Indian city, timed to your phase",
+    "Travel from Chennai or any Indian city, timed to your phase",
     "China business (M) visa guidance and document checklist",
     "Buyer registration and invitation-letter guidance",
     "Hotels near the Canton Fair Complex, booked as soon as dates are fixed",
@@ -330,14 +331,14 @@ const CANTON = {
     "Metro Line 8 stops at Xingang East and Pazhou stations, right beside the complex, and is the fastest way in each morning.",
   ],
   faq: [
-    ["When is the next Canton Fair?", "The 140th session (autumn 2026) runs in three phases from 15 October to 4 November 2026. The 141st session is expected in April and May 2027; the organiser confirms the exact dates a few months ahead, and we check them before booking any non-refundable travel."],
+    ["When is the Canton Fair held?", "Twice a year in Guangzhou: a spring session in April and May and an autumn session in October and November, each in three phases of about five days. The organiser announces the exact dates a few months ahead, and we confirm them before booking any non-refundable travel."],
     ["Do Indians need a visa for the Canton Fair?", "Yes. Indian passport holders need a visa for mainland China. Most buyers apply for a business (M) visa using the invitation letter from the fair's Buyer Service System. We help with the checklist, but visa decisions are made by the Chinese visa office."],
     ["Is the Canton Fair free to attend?", "Yes. The buyer badge is free for overseas buyers who register in advance. You pay only for your travel, visa, hotel and any services such as interpreters."],
     ["Which phase should I attend?", "Phase 1 is for electronics, appliances, machinery, tools, energy and vehicles; Phase 2 for building materials, furniture, kitchenware, home goods and gifts; Phase 3 for textiles, garments, shoes, bags, office supplies, health products and food. Tell us your products and we will suggest the phase."],
     ["How many days do I need?", "Four to six nights covers one phase with a spare day for meetings. To cover two phases, plan nine to ten nights; to visit factories after the fair, add two to four nights in Foshan, Shenzhen or Yiwu."],
-    ["How do I get from India to Guangzhou?", "IndiGo flies nonstop to Guangzhou from Delhi and Kolkata, and China Southern serves Delhi. From Chennai, Mumbai, Bengaluru and Hyderabad there are one-stop connections via these cities, Singapore, Hong Kong or Bangkok."],
+    ["How do I get from India to Guangzhou?", "Guangzhou has a large international airport with good connections from Indian cities. We plan the route from your city, timed to your phase, along with transfers to your hotel near the fair."],
     ["Can you arrange an interpreter and factory visits?", "Yes. We book English-Chinese interpreters by the day and arrange transport for factory and showroom visits. Supplier introductions and factory access depend on the companies themselves."],
-    ["Can you plan a group delegation?", "Yes. We plan Canton Fair delegations for associations, chambers of commerce and companies, with group flights, hotels together near the complex, transfers and a shared day-by-day plan."],
+    ["Can you plan a group delegation?", "Yes. We plan Canton Fair delegations for associations, chambers of commerce and companies, with group travel, hotels together near the complex, transfers and a shared day-by-day plan."],
   ],
   link: "https://www.cantonfair.org.cn/en-US",
 };

@@ -5,7 +5,7 @@
 export const SACRED_HUB = {
   title: "Sacred Journeys: Pilgrimage Tours in India & Abroad | Nexara Holidays",
   hero: "haridwar--har-ki-pauri", tiles: { india: "rishikesh--triveni-ghat", abroad: "kailash-mansarovar" }, h1: "Sacred", scr: "National + International Faith Journeys", sub: "Curated with Reverence.",
-  desc: "Pilgrimage tours from Chennai for every faith: Char Dham and Jyotirlinga yatras, temple trails, gurdwaras, Jain tirths, Sufi shrines, churches, Buddhist circuits, Kailash Mansarovar and sacred sites abroad.",
+  desc: "Pilgrimage tours from Chennai for every faith: Kashi, Char Dham and Jyotirlinga yatras, temple trails, gurdwaras, Jain tirths, dargahs, Umrah and Ziyarat, churches, Buddhist circuits, Kailash Mansarovar and sacred sites abroad.",
   intro: `A pilgrimage is planned around faith first and sightseeing second. We build each sacred journey around darshan and prayer timings, festival calendars and rules of dress and conduct, and keep the pace gentle enough for parents and grandparents.
 
 Choose a journey below, or tell us the shrines you want to visit and we will plan the route.`,
@@ -20,7 +20,7 @@ Choose a journey below, or tell us the shrines you want to visit and we will pla
     ["Are these trips suitable for senior citizens?", "Most are. We keep travel days short, choose hotels close to the shrine and arrange ponies, palkis, wheelchairs or helicopters where available. High-altitude yatras such as Kedarnath, Hemkund Sahib, Amarnath and Kailash need a medical check-up first."],
     ["Do you arrange vegetarian or Jain food?", "Yes. We choose hotels and restaurants that serve pure vegetarian or Jain food where possible, and pack-meal arrangements for long drives."],
     ["Can I join a group pilgrimage?", "Every itinerary here can be private for your family, or we can form a small group with other travellers on fixed dates for popular yatras."],
-    ["Do you arrange Umrah or Hajj?", "Hajj is arranged through the Haj Committee of India and licensed operators, and Umrah through licensed operators. We do not sell either directly, but we can help with flights and connecting holidays."],
+    ["Do you arrange Umrah or Hajj?", "We plan Umrah together with our licensed Umrah partner, who arranges the Umrah visa and Nusuk permits while we look after flights, hotels near the Haram and the rest of your trip. Hajj places for Indian pilgrims are allotted only through the Haj Committee of India and Ministry-approved Hajj Group Organisers, so we do not sell Hajj."],
   ],
 };
 
@@ -71,6 +71,17 @@ The day at Shirdi follows four aartis, Kakad at dawn, Madhyan at noon, Dhoop at 
 The temple opens for the Mandala season from about mid-November to late December, again for Makaravilakku until about 20 January, and for the first few days of every Malayalam month. Every pilgrim needs a Virtual-Q slot, booked on the official Sabarimala portal. We help with the booking, arrange vehicles for your whole group as far as Nilakkal, plan rooms around Pathanamthitta, Chengannur or Kottayam, and leave the vratham and irumudi to your guru swami's guidance.`,
     pk: ["Sabarimala Ayyappa Darshan", "Erumeli, Sabarimala & Guruvayur Yatra", "Guruvayur & Kerala Temple Trail"],
     faq: [["When is Sabarimala open?", "For the Mandala season from about mid-November to late December, again for Makaravilakku until about 20 January, and for the first few days of every Malayalam month. The Travancore Devaswom Board announces the exact dates each year, and every pilgrim needs a Virtual-Q booking."], ["Who can make the Sabarimala pilgrimage?", "Devotees traditionally observe a 41-day vratham and carry the irumudi kettu. By custom, women aged 10 to 50 do not make the pilgrimage; the question of entry is before the Supreme Court, and we follow the Travancore Devaswom Board's rules at the time you travel."], ["How hard is the Sabarimala climb?", "It is about 5 km uphill from Pamba to the Sannidhanam on a paved path with steps, and most pilgrims take two to four hours. Dolis carry those who cannot walk, and anyone with heart or breathing problems should see a doctor first."], ["Can you arrange transport for our whole group?", "Yes. We arrange cars, tempo travellers or buses for groups of any size. Private vehicles stop at Nilakkal, and KSRTC buses run the last 22 km to Pamba."]],
+  },
+  {
+    s: "kashi-yatra", n: "Kashi Yatra (Varanasi)", group: "india", hero: "varanasi", scr: "The city of Shiva",
+    short: "Kashi Vishwanath, the Ganga aarti, Sarnath, Prayagraj, Gaya pind daan and the Rameswaram–Kashi yatra.",
+    desc: "Kashi yatras to Varanasi: Kashi Vishwanath darshan, Ganga aarti, Dev Deepawali, Sarnath, the Kashi–Prayag–Gaya tristhali for ancestral rites and the traditional Rameswaram–Kashi yatra.",
+    who: ["Families with elders", "Families performing ancestral rites", "Devotees from Tamil Nadu on the Rameswaram–Kashi yatra"],
+    intro: `Kashi, the city of Lord Shiva on the Ganga, is the holiest of the seven sacred cities. Pilgrims come for darshan of the Kashi Vishwanath Jyotirlinga, the evening Ganga aarti at Dashashwamedh Ghat, a dawn boat past the burning ghats of Manikarnika, and the temples of Annapurna, Kaal Bhairav and Sankat Mochan.
+
+Many families combine Kashi with Prayagraj and Gaya, the tristhali of ancestral rites, or follow the Tamil tradition of beginning at Rameswaram and bringing Ganga water back to it. We book darshan, boats and pandas, choose hotels close to the ghats and keep the walking within reach of elders.`,
+    pk: ["Kashi Vishwanath & Sarnath", "Varanasi Spiritual Retreat", "Kashi Darshan: Vishwanath, Annapurna & Kaal Bhairav", "Dev Deepawali in Kashi", "Kashi & Ayodhya Yatra", "Prayagraj, Varanasi & Ayodhya Yatra", "Kashi, Prayag & Gaya Tristhali Yatra", "Gaya Pind Daan Yatra", "Rameswaram–Kashi Yatra", "Buddhist Circuit: Varanasi to Bodh Gaya"],
+    faq: [["How do I book Kashi Vishwanath darshan?", "The temple trust offers sugam darshan, aarti and rudrabhishek bookings online for set time slots. We book them for your dates where slots are open, and plan the rest of the day around them."], ["What is the Rameswaram–Kashi yatra?", "A traditional pilgrimage for Tamil families: you begin with a bath and puja at Rameswaram, carry sand from there to the Triveni Sangam at Prayagraj, pray at Kashi Vishwanath and perform pind daan at Gaya, then complete the yatra by offering Ganga water at Rameswaram."], ["When is the best time to visit Kashi?", "October to March, when the days are cool. Dev Deepawali at Kartik Purnima in November and Mahashivratri in February or March are the most festive, and the busiest."]],
   },
   {
     s: "char-dham-yatra", n: "Char Dham, Amarnath & Himalayan Yatras", group: "india", hero: "kedarnath--kedarnath-temple", scr: "Himalayan yatras",
@@ -149,24 +160,24 @@ We arrange Jain food throughout, plan pre-dawn starts for the climbs, book dolis
   },
   {
     s: "sufi-shrines", n: "Sufi Shrines & Islamic Heritage", group: "faiths", hero: "ajmer", scr: "Dargahs and qawwali",
-    short: "Ajmer Sharif, Nizamuddin, Nagore and the great mosques of Istanbul.",
-    desc: "Ziyarat tours to Ajmer Sharif, Hazrat Nizamuddin in Delhi and Nagore Dargah, and Islamic heritage tours of Istanbul.",
+    short: "Ajmer Sharif, Nizamuddin, Fatehpur Sikri, Hazratbal, Nagore, Cheraman Juma Masjid and the mosques of Istanbul.",
+    desc: "Ziyarat tours to Ajmer Sharif, Hazrat Nizamuddin, Fatehpur Sikri, Hazratbal in Srinagar, Nagore Dargah and Kerala's Cheraman Juma Masjid, and Islamic heritage tours of Istanbul.",
     who: ["Families on ziyarat", "Travellers of every faith drawn to Sufi music"],
     intro: `India's Sufi shrines are visited by people of every faith. The Dargah of Khwaja Moinuddin Chishti in Ajmer, Hazrat Nizamuddin in Delhi and the Nagore Dargah on the Tamil Nadu coast are places of prayer, music and open kitchens.
 
-We plan visits around Thursday qawwali and the Urs, choose stays within walking distance of the dargah and explain the customs of each shrine. Hajj and Umrah are arranged through licensed operators, and we do not sell them directly.`,
-    pk: ["Ajmer Sharif & Pushkar", "Delhi Sufi Trail & Ajmer Sharif", "Velankanni, Nagore & Thanjavur", "Istanbul Mosques & Ottoman Heritage"],
+We plan visits around Thursday qawwali and the Urs, choose stays within walking distance of the dargah and explain the customs of each shrine. For Umrah in Makkah and Madinah, and ziyarat to Najaf, Karbala and Mashhad, see Umrah & Ziyarat.`,
+    pk: ["Ajmer Sharif & Pushkar", "Delhi Sufi Trail & Ajmer Sharif", "Agra, Fatehpur Sikri & Ajmer Sharif", "Hazratbal & Kashmir Sufi Shrines", "Nagore Dargah Ziyarat", "Kochi & Cheraman Juma Masjid", "Velankanni, Nagore & Thanjavur", "Istanbul Mosques & Ottoman Heritage"],
   },
   {
     s: "christian-pilgrimages", n: "Churches & Christian Pilgrimages", group: "faiths", hero: "velankanni", scr: "Basilicas and holy lands",
-    short: "Velankanni, Old Goa, the Holy Land, Rome and the Vatican, and Fatima.",
-    desc: "Christian pilgrimage tours to Velankanni, the churches of Old Goa, the Holy Land in Israel, Rome and the Vatican, and Fatima in Portugal.",
+    short: "Velankanni, San Thome, Old Goa, Kerala's St Thomas shrines, Mother Teresa's Kolkata, the Holy Land, Rome, Lourdes and Fatima.",
+    desc: "Christian pilgrimage tours to Velankanni, San Thome in Chennai, Old Goa, Kerala's St Thomas shrines and Mother Teresa's Kolkata, and abroad to the Holy Land, Rome and the Vatican, Lourdes and Fatima.",
     who: ["Parish groups and families", "Feast-day pilgrims"],
     intro: `From the Basilica of Our Lady of Good Health in Velankanni and the Basilica of Bom Jesus in Old Goa to Jerusalem, Rome and Fatima, Christian pilgrimages combine Mass, prayer and the history of the faith.
 
 We plan around feast days, book Papal audience tickets when they are offered, and arrange guides who know the scripture behind each site. Travel to the Holy Land is planned subject to current government travel advice.`,
-    pk: ["Velankanni Pilgrimage", "Velankanni, Nagore & Thanjavur", "Goa Churches & Old Goa Heritage", "Israel Holy Land Tour", "Rome & Vatican Pilgrimage", "Lisbon, Fatima & Porto Pilgrimage"],
-    faq: [["Can you arrange a Papal audience?", "General audiences are free and ticketed by the Prefecture of the Papal Household. We request tickets for your dates when an audience is scheduled, but they cannot be guaranteed."]],
+    pk: ["Velankanni Pilgrimage", "Chennai St Thomas & Velankanni Pilgrimage", "Velankanni, Nagore & Thanjavur", "Kerala St Thomas Christian Trail", "Goa Churches & Old Goa Heritage", "Kolkata: Mother Teresa's City", "Israel Holy Land Tour", "Holy Land: Israel & Jordan", "Rome & Vatican Pilgrimage", "Lourdes & Paris Pilgrimage", "Rome, Lourdes & Fatima Pilgrimage", "Lisbon, Fatima & Porto Pilgrimage"],
+    faq: [["When are the big feast days?", "Velankanni's feast runs from 29 August to 8 September, the Feast of St Francis Xavier in Old Goa is on 3 December, Malayattoor's Puthunjayar falls on the Sunday after Easter, and Lourdes marks 11 February. Hotels fill early, so book these dates months ahead."], ["Can you arrange a Papal audience?", "General audiences are free and ticketed by the Prefecture of the Papal Household. We request tickets for your dates when an audience is scheduled, but they cannot be guaranteed."]],
   },
   {
     s: "buddhist-pilgrimages", n: "Buddhist Pilgrimages", group: "faiths", hero: "bodh-gaya", scr: "In the footsteps of the Buddha",
@@ -177,6 +188,19 @@ We plan around feast days, book Papal audience tickets when they are offered, an
 
 We plan quiet early visits to the Mahabodhi Temple, time trips for Buddha Purnima on request, and arrange meditation sessions at monasteries where they welcome visitors.`,
     pk: ["Buddhist Circuit: Varanasi to Bodh Gaya", "Bodh Gaya Pilgrimage", "Bodh Gaya & Varanasi", "Patna Sahib & Bodh Gaya", "Tawang Monastery Trip", "Nepal Buddhist Circuit", "Lumbini Pilgrimage", "Sri Lanka Buddhist Trail", "Bhutan Monasteries & Tiger's Nest"],
+  },
+  {
+    s: "umrah-ziyarat", n: "Umrah & Ziyarat", group: "abroad", hero: "madinah", scr: "Makkah, Madinah, Najaf, Karbala, Mashhad",
+    short: "Umrah in Makkah and Madinah with our licensed partner, Ramadan Umrah, and ziyarat to Najaf, Karbala and Mashhad.",
+    desc: "Umrah packages to Makkah and Madinah arranged with our licensed Umrah partner, Ramadan Umrah, Umrah with Istanbul, and ziyarat tours to Najaf, Karbala and Mashhad.",
+    who: ["Families on their first Umrah", "Elders who need a gentle pace", "Shia pilgrims on ziyarat"],
+    intro: `Umrah can be performed at any time of year. Pilgrims enter ihram at the miqat, perform tawaf around the Kaaba and sa'i between Safa and Marwah in Makkah, and then visit the Prophet's Mosque in Madinah, travelling between the two cities on the Haramain high-speed train.
+
+We plan Umrah together with our licensed Umrah partner, who arranges the Umrah visa and Nusuk permits, while we look after flights from India, hotels close to the Haram and the Prophet's Mosque, a mutawwif and ziyarat tours. Hajj places for Indian pilgrims are allotted only through the Haj Committee of India and Ministry-approved Hajj Group Organisers, so we do not sell Hajj.
+
+For ziyarat, we plan journeys to the shrine of Imam Ali in Najaf, Imam Hussain and Hazrat Abbas in Karbala, and Imam Reza in Mashhad, only when government travel advice allows.`,
+    pk: ["Umrah Package", "Umrah with Extended Madinah Stay", "Ramadan Umrah: Last Ten Nights", "Umrah & Istanbul", "Iraq Ziyarat: Najaf & Karbala", "Arbaeen Walk to Karbala", "Iran & Iraq Ziyarat"],
+    faq: [["Who arranges the Umrah visa?", "Our licensed Umrah partner applies for the Umrah visa and Nusuk permits. You need a passport valid for at least six months and the vaccinations Saudi Arabia requires at the time, such as meningitis; we send the current list with your quote."], ["Can women travel for Umrah without a mahram?", "Saudi rules now allow women to perform Umrah without a mahram in an organised group. We confirm the current rule for your dates when you enquire."], ["Can you arrange Hajj?", "No. Hajj places for Indian pilgrims are allotted through the Haj Committee of India and Ministry-approved Hajj Group Organisers. We can help with Umrah at other times of the year."]],
   },
   {
     s: "kailash-nepal-yatras", n: "Kailash & Nepal Yatras", group: "abroad", hero: "kathmandu", scr: "The sacred Himalaya",

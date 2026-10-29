@@ -1719,6 +1719,42 @@
 "source": "https://commons.wikimedia.org/wiki/File:Rows_of_grapes.jpg",
 "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/94/Rows_of_grapes.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
 },
+"w7-chichen": {
+"author": "Daniel Schwen",
+"file": "Chichen Itza 3.jpg",
+"img": "/assets/photos/t/w7-chichen.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Chichen Itza",
+"source": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg"
+},
+"w7-colosseum": {
+"author": "Diliff",
+"file": "Colosseum in Rome-April 2007-1- copie 2B.jpg",
+"img": "/assets/photos/t/w7-colosseum.webp",
+"license": "CC BY-SA 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+"q": "Colosseum Rome",
+"source": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome-April_2007-1-_copie_2B.jpg"
+},
+"w7-redeemer": {
+"author": "Donatas Dabravolskas",
+"file": "Redentor Over Clouds 1.jpg",
+"img": "/assets/photos/t/w7-redeemer.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Redentor Over Clouds 1",
+"source": "https://commons.wikimedia.org/wiki/File:Redentor_Over_Clouds_1.jpg"
+},
+"w7-taj": {
+"author": "MarcBW",
+"file": "Taj Mahal Tomb at sunrise.JPG",
+"img": "/assets/photos/t/w7-taj.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Taj Mahal sunrise",
+"source": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_Tomb_at_sunrise.JPG"
+},
 "walk": {
 "author": "Jorge Láscar from Melbourne, Australia",
 "file": "Cobbled street - Gamla stan (24740034422).jpg",
@@ -1760,13 +1796,13 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Female_doctor_in_uniform_holding_a_glass_of_water_closeup.jpg/1280px-Female_doctor_in_uniform_holding_a_glass_of_water_closeup.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "x-biz-canton": {
-"author": "Tim Wu",
-"file": "Aerial View, Zone B, Canton Fair Complex 20230701-C.jpg",
+"author": "H2NCH2COOH",
+"file": "中国进出口商品交易会展馆.JPG",
 "img": "/assets/photos/t/x-biz-canton.webp",
-"license": "CC BY-SA 4.0",
-"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-"q": "Canton Fair Complex Pazhou Guangzhou",
-"source": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Zone_B,_Canton_Fair_Complex_20230701-C.jpg"
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Canton Fair Complex front entrance logo",
+"source": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E5%9B%BD%E8%BF%9B%E5%87%BA%E5%8F%A3%E5%95%86%E5%93%81%E4%BA%A4%E6%98%93%E4%BC%9A%E5%B1%95%E9%A6%86.JPG"
 },
 "x-biz-canton-2": {
 "author": "Tim Wu",
@@ -1796,13 +1832,13 @@
 "source": "https://commons.wikimedia.org/wiki/File:Bharat_Mandapam_Convention_Centre.jpg"
 },
 "x-biz-hero": {
-"author": "Paul Colin Hennig firstdorsal.eu",
-"file": "Wave roof of Hall 3 at the Frankfurt Messe (2025).jpg",
+"author": "Tim Wu",
+"file": "Aerial View, Zone C, Canton Fair Complex 20230701.jpg",
 "img": "/assets/photos/t/x-biz-hero.webp",
 "license": "CC BY-SA 4.0",
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-"q": "Messe Frankfurt exhibition hall",
-"source": "https://commons.wikimedia.org/wiki/File:Wave_roof_of_Hall_3_at_the_Frankfurt_Messe_(2025).jpg"
+"q": "Canton Fair Complex and Canton Fair Building tower",
+"source": "https://commons.wikimedia.org/wiki/File:Aerial_View,_Zone_C,_Canton_Fair_Complex_20230701.jpg"
 },
 "x-biz-hubs": {
 "author": "H. Zell",

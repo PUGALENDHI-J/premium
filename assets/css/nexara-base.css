@@ -462,13 +462,13 @@ input:focus,select:focus{box-shadow:0 0 0 4px rgba(255,0,0,.12)}
 #enq #bk{flex:none}
 #enq #bk[style*="hidden"]{display:none}
 /* Seven Wonders slide: a row of linked thumbnails in place of the feature icons */
-.w7{list-style:none;margin:14px 0 20px;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,84px));gap:10px}
-.w7 a{display:block;color:#fff;text-decoration:none}
-.w7 img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:2px solid rgba(255,255,255,.85);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.35);transition:transform .25s,border-color .25s}
-.w7 a:hover img,.w7 a:focus-visible img{transform:translateY(-4px);border-color:var(--gold)}
-.w7 span{display:block;margin-top:6px;font-size:.74rem;font-weight:600;line-height:1.25;text-shadow:0 1px 6px rgba(0,0,0,.7)}
-.w7 .w7c{display:block;font-size:.66rem;font-weight:400;font-style:normal;opacity:.85}
-@media(max-width:760px){.w7{display:flex;overflow-x:auto;gap:10px;margin:14px -6vw 18px 0;padding-right:6vw;scrollbar-width:none}.w7::-webkit-scrollbar{display:none}.w7 li{flex:0 0 84px}}
+
+
+
+
+
+
+@media(max-width:760px){}
 /* photo cards: experiences + why */
 .eg{grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:22px}
 .e{padding:0;overflow:hidden;display:flex;flex-direction:column;cursor:zoom-in;border-bottom-width:1px}
