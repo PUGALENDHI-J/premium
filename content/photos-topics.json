@@ -259,6 +259,112 @@
 "source": "https://commons.wikimedia.org/wiki/File:Mountain_Pass_Wayanad.jpg",
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Mountain_Pass_Wayanad.jpg/1280px-Mountain_Pass_Wayanad.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
+"edu-andaman-marine": {
+"author": "Ritiks",
+"file": "The Coral Reef at the Andaman Islands.jpg",
+"img": "/assets/photos/t/edu-andaman-marine.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "The Coral Reef at the Andaman Islands",
+"source": "https://commons.wikimedia.org/wiki/File:The_Coral_Reef_at_the_Andaman_Islands.jpg"
+},
+"edu-costa-rica": {
+"author": "Cephas",
+"file": "Monteverde Cloud Forest 01.jpg",
+"img": "/assets/photos/t/edu-costa-rica.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Monteverde Cloud Forest 01",
+"source": "https://commons.wikimedia.org/wiki/File:Monteverde_Cloud_Forest_01.jpg"
+},
+"edu-delhi": {
+"author": "Subeesh Balan സുഭീഷ് ബാലൻ",
+"file": "Jantar Mantar New Delhi.jpg",
+"img": "/assets/photos/t/edu-delhi.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Jantar Mantar New Delhi",
+"source": "https://commons.wikimedia.org/wiki/File:Jantar_Mantar_New_Delhi.jpg"
+},
+"edu-dubai": {
+"file": "places-to-visit-in-the-uae-exploring-cities-landmarks-and-hidden-gems.jpg",
+"img": "/assets/photos/t/edu-dubai.webp",
+"q": "Museum of the Future Dubai",
+"source": "Veena World",
+"vwName": "Places to Visit in the UAE: Exploring Cities, Landmarks, and Hidden Gems"
+},
+"edu-florida": {
+"author": "Reinhard Link from Germany",
+"file": "NASA Kennedy Space Center Rocket-Garden (16073890065).jpg",
+"img": "/assets/photos/t/edu-florida.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"q": "NASA Kennedy Space Center Rocket-Garden (16073890065)",
+"source": "https://commons.wikimedia.org/wiki/File:NASA_Kennedy_Space_Center_Rocket-Garden_(16073890065).jpg"
+},
+"edu-germany": {
+"author": "Jorge Royan",
+"file": "Munich - Deutsches Museum - 07-9864.jpg",
+"img": "/assets/photos/t/edu-germany.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Munich - Deutsches Museum - 07-9864",
+"source": "https://commons.wikimedia.org/wiki/File:Munich_-_Deutsches_Museum_-_07-9864.jpg"
+},
+"edu-iceland": {
+"author": "ThinkGeoEnergy",
+"file": "HellisheidiPowerStation01.jpg",
+"img": "/assets/photos/t/edu-iceland.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"q": "HellisheidiPowerStation01",
+"source": "https://commons.wikimedia.org/wiki/File:HellisheidiPowerStation01.jpg"
+},
+"edu-kenya": {
+"author": "Hobbyfotowiki",
+"file": "African bush elephant (Loxodonta africana), Masai Mara.jpg",
+"img": "/assets/photos/t/edu-kenya.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"q": "African bush elephant (Loxodonta africana), Masai Mara",
+"source": "https://commons.wikimedia.org/wiki/File:African_bush_elephant_(Loxodonta_africana),_Masai_Mara.jpg"
+},
+"edu-london": {
+"author": "Helen Ilus",
+"file": "Natural History Museum Hintze Hall.jpg",
+"img": "/assets/photos/t/edu-london.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Natural History Museum Hintze Hall",
+"source": "https://commons.wikimedia.org/wiki/File:Natural_History_Museum_Hintze_Hall.jpg"
+},
+"edu-netherlands": {
+"author": "Dietmar Rabich",
+"file": "Vrouwenpolder (NL), Oosterscheldekering -- 2022 -- 5039.jpg",
+"img": "/assets/photos/t/edu-netherlands.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Vrouwenpolder (NL), Oosterscheldekering -- 2022 -- 5039",
+"source": "https://commons.wikimedia.org/wiki/File:Vrouwenpolder_(NL),_Oosterscheldekering_--_2022_--_5039.jpg"
+},
+"edu-rome": {
+"author": "Colin",
+"file": "Colosseum interior 2012.jpg",
+"img": "/assets/photos/t/edu-rome.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Colosseum interior 2012",
+"source": "https://commons.wikimedia.org/wiki/File:Colosseum_interior_2012.jpg"
+},
+"edu-tokyo": {
+"author": "Harperawl",
+"file": "Miraikan Earth globe screen.jpg",
+"img": "/assets/photos/t/edu-tokyo.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"q": "Miraikan Earth globe screen",
+"source": "https://commons.wikimedia.org/wiki/File:Miraikan_Earth_globe_screen.jpg"
+},
 "emergency": {
 "author": "Xnatedawgx",
 "file": "Stadium Medical ambulance, St. Anthony Hospital ambulance area 2024-01-06.jpg",
@@ -396,6 +502,96 @@
 "q": "husky sled dogs snow",
 "source": "https://commons.wikimedia.org/wiki/File:Greenland_467_(35130903436).jpg",
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Greenland_467_%2835130903436%29.jpg/1280px-Greenland_467_%2835130903436%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+},
+"ic-eiffel": {
+"author": "Nitot",
+"file": "Eiffel tower at dawn horizontal.jpg",
+"img": "/assets/photos/t/ic-eiffel.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Tour eiffel at sunrise from the trocadero",
+"source": "https://commons.wikimedia.org/wiki/File:Eiffel_tower_at_dawn_horizontal.jpg"
+},
+"ic-giza": {
+"author": "Ricardo Liberato",
+"file": "All Gizah Pyramids.jpg",
+"img": "/assets/photos/t/ic-giza.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"q": "All Gizah Pyramids",
+"source": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg"
+},
+"ic-liberty": {
+"author": "William Warby",
+"file": "Statue of Liberty, NY.jpg",
+"img": "/assets/photos/t/ic-liberty.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"q": "Statue of Liberty New York Harbor",
+"source": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty,_NY.jpg"
+},
+"ic-london-eye": {
+"author": "User:Diliff",
+"file": "London Eye Twilight April 2006.jpg",
+"img": "/assets/photos/t/ic-london-eye.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"q": "London Eye",
+"source": "https://commons.wikimedia.org/wiki/File:London_Eye_Twilight_April_2006.jpg"
+},
+"ic-lotus-tower": {
+"author": "Nisal Senanayaka",
+"file": "Nelum kuluna lotus tower wide angle view.jpg",
+"img": "/assets/photos/t/ic-lotus-tower.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Nelum kuluna lotus tower wide angle view",
+"source": "https://commons.wikimedia.org/wiki/File:Nelum_kuluna_lotus_tower_wide_angle_view.jpg"
+},
+"ic-mbs": {
+"author": "Basile Morin",
+"file": "Marina Bay Sands and illuminated polyhedral building Louis Vuitton over the water at blue hour with pink clouds in Singapore.jpg",
+"img": "/assets/photos/t/ic-mbs.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Marina Bay Sands",
+"source": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_and_illuminated_polyhedral_building_Louis_Vuitton_over_the_water_at_blue_hour_with_pink_clouds_in_Singapore.jpg"
+},
+"ic-opera": {
+"author": "Diliff",
+"file": "Sydney Opera House - Dec 2008.jpg",
+"img": "/assets/photos/t/ic-opera.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Sydney Opera House",
+"source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg"
+},
+"ic-pisa": {
+"author": "MHoser",
+"file": "The Duomo and Tower of Pisa at sunrise.jpg",
+"img": "/assets/photos/t/ic-pisa.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Leaning Tower of Pisa",
+"source": "https://commons.wikimedia.org/wiki/File:The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg"
+},
+"ic-tower-bridge": {
+"author": "Diliff",
+"file": "Tower Bridge London Dusk Feb 2006.jpg",
+"img": "/assets/photos/t/ic-tower-bridge.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Tower Bridge London",
+"source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_London_Dusk_Feb_2006.jpg"
+},
+"ic-vatican": {
+"author": "Diliff",
+"file": "St Peter's Square, Vatican City - April 2007.jpg",
+"img": "/assets/photos/t/ic-vatican.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"q": "St. Peter's Square Vatican",
+"source": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg"
 },
 "kid-american-museum-of-natural-history": {
 "author": "Ryan Schwark",
@@ -1590,14 +1786,13 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Dance_performance_Gopalpur_on_the_sea_5.jpg/1280px-Dance_performance_Gopalpur_on_the_sea_5.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "tt-educational-tours": {
-"author": "PersianDutchNetwork",
-"file": "Students visit Basra Museum - Iraq - 2017.jpg",
+"author": "Julian Herzog (Website)",
+"file": "Radcliffe Camera Oxford 2018 03.jpg",
 "img": "/assets/photos/t/tt-educational-tours.webp",
-"license": "CC BY-SA 4.0",
-"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-"q": "school students museum visit",
-"source": "https://commons.wikimedia.org/wiki/File:Students_visit_Basra_Museum_-_Iraq_-_2017.jpg",
-"thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Students_visit_Basra_Museum_-_Iraq_-_2017.jpg/1280px-Students_visit_Basra_Museum_-_Iraq_-_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"q": "Radcliffe Camera Oxford 2018 03",
+"source": "https://commons.wikimedia.org/wiki/File:Radcliffe_Camera_Oxford_2018_03.jpg"
 },
 "tt-family-holidays": {
 "author": "Ed Yourdon",
@@ -1909,18 +2104,22 @@
 "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/River_cruise_ships_on_the_Danube_in_Budapest.jpg/1280px-River_cruise_ships_on_the_Danube_in_Budapest.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
 },
 "x-edu-campus": {
-"file": "everything-you-need-to-know-about-the-louvre-museum-paris.jpg",
+"author": "Diliff",
+"file": "Long Room Interior, Trinity College Dublin, Ireland - Diliff.jpg",
 "img": "/assets/photos/t/x-edu-campus.webp",
-"q": "university campus students walking",
-"source": "Veena World",
-"vwName": "Everything You Need to Know about the Louvre Museum, Paris"
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"q": "Long Room Interior, Trinity College Dublin, Ireland - Diliff",
+"source": "https://commons.wikimedia.org/wiki/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland_-_Diliff.jpg"
 },
 "x-edu-hero": {
-"file": "jantar-mantar-jaipur-timings-ticket-price-history-information.jpg",
+"author": "Biswarup Ganguly",
+"file": "Science City Kolkata 4643.JPG",
 "img": "/assets/photos/t/x-edu-hero.webp",
-"q": "students field trip",
-"source": "Veena World",
-"vwName": "Jantar Mantar Jaipur: Timings, Ticket Price, History, Information"
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"q": "Science City Kolkata 4643",
+"source": "https://commons.wikimedia.org/wiki/File:Science_City_Kolkata_4643.JPG"
 },
 "x-edu-science": {
 "author": "luckywhitegirl from Washington, D.C.",

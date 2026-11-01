@@ -4,7 +4,7 @@
 
 export const SACRED_HUB = {
   title: "Sacred Journeys: Pilgrimage Tours in India & Abroad | Nexara Holidays",
-  hero: "haridwar--har-ki-pauri", tiles: { india: "rishikesh--triveni-ghat", abroad: "kailash-mansarovar" }, h1: "Sacred", scr: "National + International Faith Journeys", sub: "Curated with Reverence.",
+  hero: "haridwar--har-ki-pauri", tiles: { india: "rishikesh--ram-jhula-and-laxman-jhula", abroad: "kailash-mansarovar" }, h1: "Sacred", scr: "National + International Faith Journeys", sub: "Curated with Reverence.",
   desc: "Pilgrimage tours from Chennai for every faith: Kashi, Char Dham and Jyotirlinga yatras, temple trails, gurdwaras, Jain tirths, dargahs, Umrah and Ziyarat, churches, Buddhist circuits, Kailash Mansarovar and sacred sites abroad.",
   intro: `A pilgrimage is planned around faith first and sightseeing second. We build each sacred journey around darshan and prayer timings, festival calendars and rules of dress and conduct, and keep the pace gentle enough for parents and grandparents.
 
@@ -106,7 +106,7 @@ We book the Bhasma Aarti at Mahakaleshwar in Ujjain when slots are released, pla
     faq: [["Can you book the Bhasma Aarti in Ujjain?", "We apply for Bhasma Aarti entry as soon as the temple releases slots, but numbers are limited and allocation is not guaranteed."]],
   },
   {
-    s: "south-india-temple-trails", n: "South India Temple Trails", group: "india", hero: "madurai--meenakshi-amman-temple", scr: "Gopurams and sacred tanks",
+    s: "south-india-temple-trails", n: "South India Temple Trails", group: "india", hero: "tiruchirappalli--sri-ranganathaswamy-temple-srirangam", scr: "Gopurams and sacred tanks",
     short: "Tirupati Balaji, Guruvayur, Padmanabhaswamy, Udupi and Gokarna, plus Madurai and Rameswaram.",
     desc: "South Indian temple tours to Tirupati, Guruvayur, Padmanabhaswamy in Thiruvananthapuram, Udupi, Gokarna, Madurai and Rameswaram. Tamil Nadu temple tours have their own page.",
     who: ["Families from Chennai and the south", "Temple architecture lovers", "Senior pilgrims"],

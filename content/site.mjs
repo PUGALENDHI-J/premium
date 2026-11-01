@@ -8,6 +8,11 @@ export const SITE = {
   email: "hello@nexaraholidays.com",
   insta: "nexara_holidays_official",
   city: "Chennai",
+  // office address: shown on the contact page and in the footer
+  street: "Kodambakkam High Rd, Mahalingapuram, Nungambakkam",
+  address: "Kodambakkam High Rd, Mahalingapuram, Nungambakkam, Chennai, Tamil Nadu 600034",
+  pin: "600034",
+  map: "https://www.google.com/maps/search/?api=1&query=Nexara+Holidays+Kodambakkam+High+Rd+Nungambakkam+Chennai+600034",
   // date the generated content was written / last editorially reviewed
   reviewed: "2026-10-23",
   ogImage: "/assets/og-image.jpg",

@@ -6,7 +6,8 @@ const SVG = d => `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" st
 const contactLinks = `<a href="tel:${SITE.tel}"><i>${SVG('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>')}</i><b>${SITE.phone}</b><small>Call a planner</small></a>
 <a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener"><i>${SVG('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>')}</i><b>WhatsApp</b><small>Fastest way to reach us</small></a>
 <a href="mailto:${SITE.email}"><i>${SVG('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>')}</i><b>${SITE.email}</b><small>Email</small></a>
-<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><i>${SVG('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>')}</i><b>@${SITE.insta}</b><small>Instagram</small></a>`;
+<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><i>${SVG('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>')}</i><b>@${SITE.insta}</b><small>Instagram</small></a>
+<a class="caddr" href="${SITE.map}" target="_blank" rel="noopener"><i>${SVG('<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>')}</i><b>Visit our office</b><small>${SITE.address}</small></a>`;
 const contactCards = `<section class="tight"><div class="cgrid">
 ${contactLinks}
 </div></section>`;
@@ -94,6 +95,8 @@ export const PAGES = [
     body: `## The quickest ways to reach us
 
 **WhatsApp** is the fastest: message ${SITE.phone} with where you would like to go and your dates, and a planner will reply. You can also **call** the same number or email **${SITE.email}**.
+
+**Visit us** at our office: Nexara Holidays, ${SITE.address}. Please call or WhatsApp before you come so a planner is free to meet you.
 
 For a detailed quote, the [custom tour enquiry form](/custom-tour/) asks for everything we need in one go: destination, travellers, month, duration and budget.
 

@@ -23,10 +23,9 @@ PICK = {
     "x-her-festival": "Best Places to Visit in Thanjavur - A Travel Guide",
     # heritage food card: a grandmother cooking -> Kerala sadya on a banana leaf
     "x-her-food": "Think You Know All About Kerala Cuisine?",
-    # Educational Trips header: two students walking -> the Louvre
-    "x-edu-campus": "Everything You Need to Know about the Louvre Museum",
-    # field trips card: a school group on rocks -> Jantar Mantar observatory, Jaipur
-    "x-edu-hero": "Jantar Mantar Jaipur: Timings, Ticket Price",
+    # (x-edu-campus and x-edu-hero now come from Wikimedia Commons: Trinity College Long Room, Science City Kolkata)
+    # Innovation and design in Dubai study card: the Museum of the Future (Commons has no usable photo)
+    "edu-dubai": "Places to Visit in the UAE: Exploring Cities, Landmarks, and Hidden Gems",
 }
 
 

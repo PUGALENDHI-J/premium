@@ -1,0 +1,75 @@
+/* Light theme: replaces the black/charcoal panels across the site with warm light surfaces.
+   Loaded last on every page so it wins over base, flat and page styles. Photo cards keep their dark overlays for legibility. */
+:root{--lt-bg:#fff6f2;--lt-card:#ffffff;--lt-line:#f2dcd4;--lt-ink:#1f1a19;--lt-text:#4a403d;--lt-mut:#7a6f6b;--char:#fff6f2;--char2:#ffece5}
+
+/* top bar */
+.tbar{background:#fff0eb!important;color:var(--lt-text)!important;border-bottom:1px solid var(--lt-line)}
+.tbar a:hover{color:var(--red)!important}
+.tbar svg{color:var(--red)!important}
+
+/* footer */
+.sky{color:var(--lt-bg)!important}
+footer{background:var(--lt-bg)!important;color:var(--lt-text)!important}
+.fin{background:var(--lt-bg)!important}
+footer h5{color:var(--lt-ink)!important}
+.fg a,.fbrand p,.frow p a{color:var(--lt-text)!important}
+.fg a:hover,.frow p a:hover{color:var(--red)!important}
+.frow h5 a{color:var(--red)!important}
+.frow p a:not(:last-child):after{color:#c9b7b0!important}
+.flinks{border-top:1px solid var(--lt-line)!important}
+.soc a,footer .soc a{border:1px solid var(--lt-line)!important;background:#fff!important;color:var(--red)!important}
+.soc a svg{color:var(--red)!important;stroke:var(--red)}
+.soc a:hover,footer .soc a:hover{background:var(--red)!important;border-color:var(--red)!important}
+.soc a:hover svg{color:#fff!important;stroke:#fff}
+.fg a.flogo{box-shadow:0 10px 26px rgba(255,0,0,.15)}
+.cta .btn:hover,.fcta .btn:hover{background:#ffe3dc!important;color:var(--red-deep,#cc0000)!important;border-color:#ffe3dc!important}
+
+/* mobile menu footer */
+@media(max-width:1180px){
+  .mfoot{background:#fff0eb!important;border-color:var(--lt-line)!important}
+  header>nav .mfoot a{color:var(--lt-text)!important}
+  header>nav .mfoot a:hover{color:var(--red)!important}
+}
+
+/* enquiry popup header and "at a glance" band: red instead of black-to-red */
+.eh{background:linear-gradient(135deg,#cc0000,#ff0000 70%,#ff4d2e)!important}
+.glance{background:linear-gradient(135deg,#b20000,#ff0000 60%,#ff4d2e)!important}
+
+/* marquee and countdown */
+.mq{background:#fff0eb!important;color:var(--lt-ink)!important;border-block:1px solid var(--lt-line)}
+.clock div{background:#fff!important;color:var(--lt-ink)!important;border:1px solid var(--lt-line)!important;box-shadow:0 8px 18px rgba(255,0,0,.1)!important}
+.clock b{color:var(--red)!important}
+#toast{background:var(--red)!important;color:#fff!important}
+
+/* destination pages: travel tips, departure board, must-try list */
+.ptips>div{background:var(--lt-bg)!important;color:var(--lt-ink)!important;border:1px solid var(--lt-line)}
+.ptips>div:after{background:radial-gradient(circle,rgba(255,40,30,.1),transparent 70%)!important}
+.ptips b{color:var(--red)!important}
+.ptips p{color:var(--lt-text)!important}
+.dpbd{background:var(--lt-bg)!important;color:var(--lt-ink)!important;border:1px solid var(--lt-line)}
+.dpbd .dep{background:var(--lt-card)!important;border-color:var(--lt-line)!important;color:var(--lt-ink)!important}
+.dpbd .dep b{background:#fff0e0!important;color:#c25e00!important;border-bottom-color:#f3cfa8!important}
+.dpbd .dep small{color:var(--lt-mut)!important}
+.dpbd .dep:hover,.dpbd .dep:focus-visible{background:#ffece5!important}
+.cxm{background:var(--lt-bg)!important;color:var(--lt-ink)!important;border:1px solid var(--lt-line)}
+.cxm h3{color:var(--lt-ink)!important}
+.cxm h3 span{color:#e07b00!important}
+.cxm li{color:var(--lt-text)!important;border-bottom-color:rgba(0,0,0,.12)!important}
+.tpc:nth-child(4) .tpb,.kc3>div:nth-child(3) i,.oat i,.oat button span,body.sub .dgrid .dn{background:var(--red)!important;color:#fff!important}
+
+/* experience pages: corporate travel, yachts, Canton Fair call-out, chips */
+.xpcorp{background:var(--lt-bg)!important;color:var(--lt-ink)!important}
+.xpcorp .eye,.xpcorp li:before{color:var(--red)!important}
+.xpcorp p,.xpcorp li span{color:var(--lt-text)!important}
+.xpcorp li{border-top-color:var(--lt-line)!important}
+.xpcorp li b{color:var(--lt-ink)!important}
+.xpcorp .xpgo{color:var(--red)!important}
+.xpyk{background:#fbf6ec!important;color:#3b2f1e!important}
+.xpyk .eye{color:#a07a2a!important}
+.xpyk .xpcloud li{background:#fff!important;border-color:rgba(160,122,42,.35)!important;color:#3b2f1e!important}
+.xpcf-cta{background:linear-gradient(135deg,#cc0000,#ff4d2e)!important}
+.xpch input:checked+span,.xpmon button.on{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+.xpoff:hover{background:var(--red)!important;color:#fff!important}
+.xpcorp h2,.xpcorp h3,.dpbd h2,.dpbd h3,.ptips h3{color:var(--lt-ink)!important}
+.xpyk h2,.xpyk h3{color:#2a2114!important}
+.xpyk p{color:#5a4a33!important}

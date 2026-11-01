@@ -47,7 +47,9 @@ const VERIFIED = new Set(readJson("photo-overrides.json")._verified || []);
 const COMMONS = Object.fromEntries(Object.entries(COMMONS_ALL).filter(([k, p]) => { const [pl, at] = k.split("--"); return p.q || VERIFIED.has(k) || sameSight((at || pl).replace(/-/g, " "), p.page || "") }));
 // topic photos for card sections (money, water, trekking, ...): tools/fetch_topic_photos.py
 const TOPIC = readJson("photos-topics.json");
-const PHOTOS = SITE.photos == "commons" ? COMMONS : SITE.photos == "vw+commons" ? { ...COMMONS, ...VW_PHOTOS } : VW_PHOTOS;
+// photos supplied by Nexara Holidays (content/photos-own.json) win over both libraries
+const { _note: _ownNote, ...OWN_PHOTOS } = readJson("photos-own.json");
+const PHOTOS = { ...(SITE.photos == "commons" ? COMMONS : SITE.photos == "vw+commons" ? { ...COMMONS, ...VW_PHOTOS } : VW_PHOTOS), ...OWN_PHOTOS };
 const report = { built_at: new Date().toISOString(), drafts: [], warnings: [], missingLinks: [], counts: {} };
 const warn = m => report.warnings.push(m);
 const draft = (kind, id, why) => report.drafts.push({ kind, id, why });
@@ -124,6 +126,7 @@ function addPkg(dom, [home, name, stops, th, sum, opt = {}]) {
   const nights = stops.reduce((a, [, n]) => a + n, 0), days = nights + 1;
   const slug = opt.slug || `${slugify(name)}-${days}-days`;
   const p = { dom, home: H, name, slug, stops: st, nights, days, sum, opt, id: pkgId(slug), url: `/packages/${dom ? "india" : "international"}/${H.s}/${slug}/` };
+  if (opt.img) p.img = PHOTOS[opt.img]?.img || warn(`package ${name}: no photo ${opt.img}`) || undefined; // opt.img: "place--attraction" key
   const themes = new Set(th.split(/\s+/).filter(Boolean));
   if (days <= 4) themes.add("short-breaks");
   if (dom && days <= 3) themes.add("weekend-getaways");
@@ -1142,6 +1145,7 @@ emit("/faqs/", page({
     beach: "Beach time", foodwalk: "Food and market walks", walk: "Heritage and city walks", naturewalk: "Nature walks", village: "Village walks", temple: "Temple walks", houseboat: "Houseboat stays", shikara: "Shikara rides", fishing: "Fishing", vineyard: "Vineyard visits", heritage: "Heritage walks in India",
     "hero-world": "Home page: The World, Your Way", "hero-honeymoon": "Home page: Honeymoons", "x-biz-hero": "Business & Trade Travel", "x-biz-sourcing": "Sourcing trips", "x-biz-hubs": "Industry hubs", "x-biz-corporate": "Corporate travel", "x-biz-skyline": "Travel Experiences",
     "x-her-festival": "Roots & Heritage Journeys", "x-her-hero": "Heritage villages", "x-her-food": "Heritage food", "x-edu-campus": "Educational Trips", "x-edu-hero": "Field trips", "x-edu-science": "Science visits",
+    "edu-florida": "Study trip: space science in Florida", "edu-tokyo": "Study trip: technology in Japan", "edu-london": "Study trip: London museums", "edu-rome": "Study trip: classical Italy", "edu-kenya": "Study trip: wildlife in Kenya", "edu-costa-rica": "Study trip: rainforest ecology", "edu-iceland": "Study trip: Iceland geology", "edu-germany": "Study trip: German engineering", "edu-netherlands": "Study trip: Dutch water management", "edu-andaman-marine": "Study trip: Andaman marine science", "edu-delhi": "Study trip: heritage and science in India", "edu-dubai": "Study trip: innovation in Dubai",
     "x-cru-deck": "Cruise Holidays", "x-cru-river": "River cruises", "x-cru-expedition": "Expedition cruises", "x-cru-hero": "Cruise holidays", "x-yac-hero": "Luxury Yacht Experiences", "x-yac-cat": "Catamaran charters", "x-yac-gulet": "Gulet charters" };
   const topicRows = Object.entries(TOPIC).filter(([, p]) => p.license).map(([k, p]) => `<tr><td>${esc(k.startsWith("tt-") ? THEME_LABEL[k.slice(3)] || k : SPOT_LABEL[k] ? SPOT_LABEL[k] : LABEL[k.replace(/-\d$/, "")] || k)}</td><td>${photoCredit(p)}</td></tr>`);
   if (rows.length) emit("/photo-credits/", page({

@@ -153,3 +153,4 @@ body.sub main>section.ab-s,body.sub .alt>section.ab-s{padding-top:clamp(40px,4.5
 .cgrid b{overflow-wrap:anywhere}
 .cgrid b{font-size:.9rem}
 @media(max-width:560px){.ab-cta .btn{flex:1 1 100%}}
+.cgrid a.caddr{grid-column:1/-1}.cgrid a.caddr small{display:block;max-width:46ch;margin:4px auto 0;line-height:1.5}
