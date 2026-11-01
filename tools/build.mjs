@@ -50,6 +50,13 @@ const TOPIC = readJson("photos-topics.json");
 // photos supplied by Nexara Holidays (content/photos-own.json) win over both libraries
 const { _note: _ownNote, ...OWN_PHOTOS } = readJson("photos-own.json");
 const PHOTOS = { ...(SITE.photos == "commons" ? COMMONS : SITE.photos == "vw+commons" ? { ...COMMONS, ...VW_PHOTOS } : VW_PHOTOS), ...OWN_PHOTOS };
+// where each photo's subject is (checked by eye; tools/photo_focus.py suggests candidates), so cropped cards and heroes keep faces and tall subjects in frame
+const { _note: _focusNote, ...PHOTO_FOCUS } = readJson("photo-focus.json");
+const withFocus = html => html.replace(/<img\b([^>]*?)\ssrc="(\/assets\/photos\/[^"]+)"([^>]*)>/g, (tag, pre, src, post) => {
+  const attrs = (pre + " " + post).replace(/\sstyle="object-position:[^"]*"/, ""), f = PHOTO_FOCUS[src.replace("/sm/", "/")];
+  if (/\sstyle=/.test(attrs)) return tag;
+  return `<img${pre.replace(/\sstyle="object-position:[^"]*"/, "")} src="${src}"${f ? ` style="object-position:${f}"` : ""}${post.replace(/\sstyle="object-position:[^"]*"/, "")}>`;
+});
 const report = { built_at: new Date().toISOString(), drafts: [], warnings: [], missingLinks: [], counts: {} };
 const warn = m => report.warnings.push(m);
 const draft = (kind, id, why) => report.drafts.push({ kind, id, why });
@@ -169,6 +176,7 @@ setMenu(MENU);
   put("MENU", menuLinks(MENU, "/", { spa: true }));
   put("EXPERIENCES", homeExperiences(TOPIC));
   put("DESTS", destOptions());
+  home = withFocus(home);
   if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
 }
 
@@ -312,6 +320,7 @@ const written = [], sitemap = { pages: [], destinations: [], packages: [], guide
 function emit(urlPath, html, group, { index = true } = {}) {
   const file = urlPath.endsWith("/") ? path.join(OUT, urlPath, "index.html") : path.join(OUT, urlPath);
   if (html.includes("<main")) html = onePhotoEach(html);
+  html = withFocus(html);
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
   written.push(path.relative(ROOT, file).replace(/\\/g, "/"));
