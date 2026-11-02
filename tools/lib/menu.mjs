@@ -142,15 +142,9 @@ export function menuLinks(M, active, { spa = false } = {}) {
     a(spa ? "#contact" : "/contact-us/", "Contact", active == "/contact-us/");
 }
 
-const ICO = {
-  ig: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
-  wa: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>',
-  mail: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
-  call: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
-};
 
 const SRCH_ICO = '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
-export const topbar = () => `<div class="tbar"><div class="tbl"><a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener" aria-label="Instagram">${ICO.ig}</a><a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener" aria-label="WhatsApp">${ICO.wa}</a><i></i><a class="tmail" href="mailto:${SITE.email}">${ICO.mail}<span>${SITE.email}</span></a></div><div class="tbr"><a class="tsrch" href="/sitemap/" role="button" aria-label="Search destinations, packages and guides" aria-keyshortcuts="/ Control+K">${SRCH_ICO}<span>Search destinations, packages, guides…</span><kbd>/</kbd></a><span class="tnote">From Tamil Nadu to the world</span><a class="tcall" href="tel:${SITE.tel}">${ICO.call}<b>${SITE.phone}</b></a></div></div>`;
+export const topbar = () => `<div class="tbar"><div class="tbl"><a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener" >Instagram</a><a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener" >WhatsApp</a><i></i><a class="tmail" href="mailto:${SITE.email}"><span>${SITE.email}</span></a></div><div class="tbr"><a class="tsrch" href="/sitemap/" role="button" aria-label="Search destinations, packages and guides" aria-keyshortcuts="/ Control+K">${SRCH_ICO}<span>Search destinations, packages, guides…</span><kbd>/</kbd></a><span class="tnote">From Tamil Nadu to the world</span><a class="tcall" href="tel:${SITE.tel}"><b>${SITE.phone}</b></a></div></div>`;
 
 /** Header search button for the burger layout (the top bar has a search field on desktop, where the menu fills the header).
     Both open the search panel (assets/js/nexara-search.js); without JavaScript they link to the site map. */

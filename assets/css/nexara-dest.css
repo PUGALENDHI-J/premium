@@ -153,7 +153,7 @@
 .cxm h3 span{font:400 2rem/1 "Mr Dafoe",cursive;color:#ffb020;rotate:-4deg;margin-bottom:2px}
 .cxm ul{list-style:none;padding:0;margin:0;columns:2;column-gap:26px}
 .cxm li{color:#ececec;break-inside:avoid;display:flex;align-items:baseline;gap:8px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.16);font-size:.9rem}
-.cxm li:before{content:"✦";color:var(--red);font-size:.7rem}
+.cxm li:before{content:"•";color:var(--red);font-size:.7rem}
 
 /* ---------- outdoor activities ---------- */
 .oat{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
@@ -228,3 +228,5 @@
   .oat .cph{margin:-18px -14px 0}
 }
 @media(prefers-reduced-motion:reduce){.sps figure,.tpc img,.et2>div,.ppl a,.oat>div,.oat i{transition:none}}
+/* fact rows and the WhatsApp link are text only */
+.spwa{text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,0,0,.4)}

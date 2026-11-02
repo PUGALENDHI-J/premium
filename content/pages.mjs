@@ -2,36 +2,24 @@
 // (no server-side form storage; enquiries go to WhatsApp). Have them reviewed before relying on them legally.
 import { SITE } from "./site.mjs";
 
-const SVG = d => `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
-const contactLinks = `<a href="tel:${SITE.tel}"><i>${SVG('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>')}</i><b>${SITE.phone}</b><small>Call a planner</small></a>
-<a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener"><i>${SVG('<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>')}</i><b>WhatsApp</b><small>Fastest way to reach us</small></a>
-<a href="mailto:${SITE.email}"><i>${SVG('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>')}</i><b>${SITE.email}</b><small>Email</small></a>
-<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><i>${SVG('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>')}</i><b>@${SITE.insta}</b><small>Instagram</small></a>
-<a class="caddr" href="${SITE.map}" target="_blank" rel="noopener"><i>${SVG('<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>')}</i><b>Visit our office</b><small>${SITE.address}</small></a>`;
+const contactLinks = `<a href="tel:${SITE.tel}"><b>${SITE.phone}</b><small>Call a planner</small></a>
+<a href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener"><b>WhatsApp</b><small>Fastest way to reach us</small></a>
+<a href="mailto:${SITE.email}"><b>${SITE.email}</b><small>Email</small></a>
+<a href="https://instagram.com/${SITE.insta}" target="_blank" rel="noopener"><b>@${SITE.insta}</b><small>Instagram</small></a>
+<a class="caddr" href="${SITE.map}" target="_blank" rel="noopener"><b>Visit our office</b><small>${SITE.address}</small></a>`;
 const contactCards = `<section class="tight"><div class="cgrid">
 ${contactLinks}
 </div></section>`;
 
 // About page sections (styles: .ab-* in assets/css/nexara-pages.css); every claim here repeats what the rest of the site says
-const IC = {
-  temple: '<path d="M3 21h18M5 21V11m14 10V11M2.5 11h19L12 3.5z"/><path d="M10 21v-5h4v5"/>',
-  map: '<path d="m9 4-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14m6-12v14"/>',
-  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
-  brief: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
-  group: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5"/>',
-  plane: '<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/>',
-  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
-  list: '<path d="M10 6h10M10 12h10M10 18h10"/><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"/>',
-  chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
-};
-// [icon, title, text, link, link label, photo, photo caption]
+// [title, text, link, link label, photo, photo caption]
 const aboutPlan = [
-  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines", "/assets/photos/vw/paris.webp", "The Eiffel Tower at dusk, Paris"],
-  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays", "/assets/photos/vw/tokyo.webp", "Shibuya at night, Tokyo"],
-  ["globe", "The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays", "/assets/photos/vw/switzerland.webp", "An alpine valley in Switzerland"],
-  ["brief", "Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences", "/assets/photos/guangzhou.webp", "Guangzhou, home of the Canton Fair"],
-  ["group", "Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours", "/assets/photos/vw/maldives.webp", "Island reefs of the Maldives"],
-  ["plane", "Travel services", "Flight tickets, visas, forex, travel insurance, hotels and airport transfers, on their own or as part of your trip.", "/services/", "Travel services", "/assets/photos/vw/dubai--burj-khalifa.webp", "Burj Khalifa, Dubai"],
+  ["Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines", "/assets/photos/vw/paris.webp", "The Eiffel Tower at dusk, Paris"],
+  ["India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays", "/assets/photos/vw/tokyo.webp", "Shibuya at night, Tokyo"],
+  ["The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays", "/assets/photos/vw/switzerland.webp", "An alpine valley in Switzerland"],
+  ["Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences", "/assets/photos/guangzhou.webp", "Guangzhou, home of the Canton Fair"],
+  ["Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours", "/assets/photos/vw/maldives.webp", "Island reefs of the Maldives"],
+  ["Travel services", "Flight tickets, visas, forex, travel insurance, hotels and airport transfers, on their own or as part of your trip.", "/services/", "Travel services", "/assets/photos/vw/dubai--burj-khalifa.webp", "Burj Khalifa, Dubai"],
 ];
 const aboutSteps = [
   ["Tell us your idea", `On WhatsApp, by phone or through our <a href="/custom-tour/">custom tour form</a>, from wherever you live.`],
@@ -40,9 +28,9 @@ const aboutSteps = [
   ["Confirm when ready", "Nothing is booked until you confirm in writing and pay the deposit stated in your quote."],
 ];
 const aboutPromises = [
-  ["info", "Honest information", "We tell you the right season for a destination, even if it means suggesting a different month or place."],
-  ["list", "No surprises", "Inclusions and exclusions are listed in your written quote. If something is not included, we say so."],
-  ["chat", "A real person to message", "You have a planner on WhatsApp before and during your trip, in English or Tamil."],
+  ["Honest information", "We tell you the right season for a destination, even if it means suggesting a different month or place."],
+  ["No surprises", "Inclusions and exclusions are listed in your written quote. If something is not included, we say so."],
+  ["A real person to message", "You have a planner on WhatsApp before and during your trip, in English or Tamil."],
 ];
 const two = n => String(n + 1).padStart(2, "0");
 const chev = '<svg class="abx-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
@@ -53,17 +41,17 @@ const aboutPre = `<section class="ab-s abx-intro"><div class="abx-copy"><div cla
 <p>Every trip starts as a conversation with a planner, not a fixed package: you tell us what you have in mind, and we send a written plan with a price that you can change until it is right.</p>
 <div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
 <div class="abx-art"><figure class="abx-p1"><img src="/assets/photos/vw/venice.webp" alt="A gondola under the Bridge of Sighs, Venice"></figure><figure class="abx-p2"><img src="/assets/photos/vw/santorini--oia-sunset.webp" alt="Whitewashed houses of Oia, Santorini" loading="lazy"></figure>
-<div class="abx-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="abx-ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text><textPath href="#abx-ring" textLength="280" lengthAdjust="spacing">From Tamil Nadu · to the world · </textPath></text></svg><i>${SVG(IC.globe)}</i></div>
+<div class="abx-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="abx-ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text><textPath href="#abx-ring" textLength="280" lengthAdjust="spacing">From Tamil Nadu · to the world · </textPath></text></svg><i><img src="/assets/logo-circle.webp" alt=""></i></div>
 <div class="abx-tag"><b>English &amp; Tamil</b><span>your planner speaks both</span></div></div></section>
 <div class="abx-statw"><ul class="abx-stats">${aboutFacts.map(([n, s, t]) => `<li><b${n ? ` data-count="${n}" data-suffix="${s}"` : ""}>${n ? n + s : s}</b><span>${t}</span></li>`).join("")}</ul></div>
 <div class="alt abx-band"><section class="ab-s"><div class="h"><span class="eye">What we plan</span><h2>Trips for every reason to travel</h2><p>From a weekend temple circuit to a month across several continents.</p></div>
-<div class="abx-show"><div class="abx-media">${aboutPlan.map(([, , , , , img, cap], i) => `<figure${i ? "" : ' class="on"'}><img src="${img}" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`).join("")}<div class="abx-num" aria-hidden="true"><b>01</b> / ${two(aboutPlan.length - 1)}</div></div>
-<ol class="abx-tabs">${aboutPlan.map(([ic, h, p, u, go], i) => `<li${i ? "" : ' class="on"'}><button type="button" id="abx-t${i}" aria-controls="abx-p${i}" aria-expanded="${!i}"><i>${SVG(IC[ic])}</i><span class="abx-n">${two(i)}</span><span class="abx-t">${h}</span>${chev}</button><div class="abx-panel" id="abx-p${i}" role="region" aria-labelledby="abx-t${i}"><div><p>${p}</p><a class="abx-go" href="${u}">${go} →</a></div></div><span class="abx-bar" aria-hidden="true"><span></span></span></li>`).join("")}</ol></div></section></div>
+<div class="abx-show"><div class="abx-media">${aboutPlan.map(([, , , , img, cap], i) => `<figure${i ? "" : ' class="on"'}><img src="${img}" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`).join("")}<div class="abx-num" aria-hidden="true"><b>01</b> / ${two(aboutPlan.length - 1)}</div></div>
+<ol class="abx-tabs">${aboutPlan.map(([h, p, u, go, img], i) => `<li${i ? "" : ' class="on"'}><button type="button" id="abx-t${i}" aria-controls="abx-p${i}" aria-expanded="${!i}"><i><img src="${img}" alt="" loading="lazy"></i><span class="abx-n">${two(i)}</span><span class="abx-t">${h}</span>${chev}</button><div class="abx-panel" id="abx-p${i}" role="region" aria-labelledby="abx-t${i}"><div><p>${p}</p><a class="abx-go" href="${u}">${go} →</a></div></div><span class="abx-bar" aria-hidden="true"><span></span></span></li>`).join("")}</ol></div></section></div>
 <section class="ab-s"><div class="h c"><span class="eye">How we work</span><h2>From your first message to a confirmed trip</h2><p>Four simple steps, and you decide at every one of them.</p></div>
 <ol class="abx-steps">${aboutSteps.map(([h, p], i) => `<li><span class="abx-dot">${two(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
 <div class="abx-pwrap"><section class="ab-s abx-promise"><figure class="abx-pimg"><img src="/assets/photos/vw/lucerne.webp" alt="Lucerne's old town on the Reuss river, Switzerland" loading="lazy"><figcaption><span>Lucerne</span>Where the lake meets the Alps</figcaption></figure>
 <div><div class="h"><span class="eye">Our promises</span><h2>What you can count on</h2><p>Three things that hold for every trip we plan, whatever its size.</p></div>
-<ul class="abx-plist">${aboutPromises.map(([ic, h, p]) => `<li><i>${SVG(IC[ic])}</i><div><h3>${h}</h3><p>${p}</p></div></li>`).join("")}</ul></div></section></div>
+<ul class="abx-plist">${aboutPromises.map(([h, p]) => `<li><div><h3>${h}</h3><p>${p}</p></div></li>`).join("")}</ul></div></section></div>
 <script src="/assets/js/nexara-about.js" defer></script>`;
 const aboutContact = `<div class="alt"><section class="ab-s"><div class="abx-cta"><img src="/assets/photos/vw/bali--tanah-lot.webp" alt="" loading="lazy"><div class="abx-cin"><span class="eye">Get in touch</span><h2>Talk to a planner</h2><p>Call, WhatsApp, email or message us on Instagram. We usually reply the same day.</p><div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></div></div><div class="cgrid">
 ${contactLinks}
