@@ -62,6 +62,24 @@
 "page": "Moti Masjid (Agra Fort)",
 "source": "https://commons.wikimedia.org/wiki/File:Moti_Masjid,Agra.jpg"
 },
+"agra--fatehpur-sikri": {
+"author": "Marcin Białek",
+"file": "Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
+"img": "/assets/photos/a/agra--fatehpur-sikri.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Fatehpur Sikri",
+"source": "https://commons.wikimedia.org/wiki/File:Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg"
+},
+"agra--mehtab-bagh": {
+"author": "g.kaustav",
+"file": "Mehtab_Bagh_facing_Taj_Mahal.JPG",
+"img": "/assets/photos/a/agra--mehtab-bagh.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Mehtab Bagh",
+"source": "https://commons.wikimedia.org/wiki/File:Mehtab_Bagh_facing_Taj_Mahal.JPG"
+},
 "agra--taj-mahal": {
 "author": "Yann; edited by Jim Carter",
 "file": "Taj_Mahal_(Edited).jpeg",
@@ -191,6 +209,33 @@
 "q": "Big Almaty Lake",
 "source": "https://commons.wikimedia.org/wiki/File:Big_Almaty_Lake_(Bolshaya_Almatinka)_in_June.jpg"
 },
+"almaty--charyn-canyon": {
+"author": "Peretz Partensky",
+"file": "Charyn_Canyon_-_3.jpg",
+"img": "/assets/photos/a/almaty--charyn-canyon.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Charyn National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Charyn_Canyon_-_3.jpg"
+},
+"almaty--kok-tobe": {
+"author": "Nikolai Bulykin",
+"file": "Кок-Тобе,_вид_с_лестницы.jpg",
+"img": "/assets/photos/a/almaty--kok-tobe.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kök Töbe (recreation area)",
+"source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BA-%D0%A2%D0%BE%D0%B1%D0%B5,_%D0%B2%D0%B8%D0%B4_%D1%81_%D0%BB%D0%B5%D1%81%D1%82%D0%BD%D0%B8%D1%86%D1%8B.jpg"
+},
+"almaty--kolsai-and-kaindy-lakes": {
+"author": "Нұрлан Рахымжанов at Kazakh Wikipedia",
+"file": "Kolsay_Lake.jpeg",
+"img": "/assets/photos/a/almaty--kolsai-and-kaindy-lakes.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Kolsay Lakes National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Kolsay_Lake.jpeg"
+},
 "almaty--shymbulak": {
 "author": "Girdi at English Wikipedia",
 "file": "Shimbulak1.JPG",
@@ -218,6 +263,24 @@
 "page": "Amalfi",
 "source": "https://commons.wikimedia.org/wiki/File:Amalfi_sea_view_Italy.JPG"
 },
+"amalfi-coast--path-of-the-gods": {
+"author": "Gianni Careddu",
+"file": "Alghero_-_Torre_del_Porticciolo_(1).JPG",
+"img": "/assets/photos/a/amalfi-coast--path-of-the-gods.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Path of 100 Towers (Sardinia)",
+"source": "https://commons.wikimedia.org/wiki/File:Alghero_-_Torre_del_Porticciolo_(1).JPG"
+},
+"amalfi-coast--pompeii": {
+"author": "Carsten Steger",
+"file": "Aerial_image_of_Pompeii_and_Mount_Vesuvius_(view_from_the_southeast).jpg",
+"img": "/assets/photos/a/amalfi-coast--pompeii.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Pompeii",
+"source": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Pompeii_and_Mount_Vesuvius_(view_from_the_southeast).jpg"
+},
 "amalfi-coast--positano": {
 "author": "JeCCo",
 "file": "Positano_Sunset.JPG",
@@ -226,6 +289,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Positano",
 "source": "https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG"
+},
+"amalfi-coast--ravello": {
+"author": "Matt c j486 at English Wikipedia",
+"file": "Ravello-coastline.jpg",
+"img": "/assets/photos/a/amalfi-coast--ravello.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Ravello",
+"source": "https://commons.wikimedia.org/wiki/File:Ravello-coastline.jpg"
 },
 "amarnath": {
 "author": "Gktambe at English Wikipedia",
@@ -236,6 +308,15 @@
 "page": "Amarnath Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Cave_Temple_of_Lord_Amarnath.jpg"
 },
+"amarnath--baltal": {
+"author": "aditya20",
+"file": "BALTAL_VIEW_DURING_AMARNATH_YATRA_-_panoramio.jpg",
+"img": "/assets/photos/a/amarnath--baltal.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Baltal, Jammu and Kashmir",
+"source": "https://commons.wikimedia.org/wiki/File:BALTAL_VIEW_DURING_AMARNATH_YATRA_-_panoramio.jpg"
+},
 "amarnath--holy-amarnath-cave": {
 "author": "Kasisripada17",
 "file": "Amarnath cave view.jpg",
@@ -245,6 +326,15 @@
 "page": "Amarnath cave view",
 "q": "Amarnath cave view",
 "source": "https://commons.wikimedia.org/wiki/File:Amarnath_cave_view.jpg"
+},
+"amarnath--panchtarni": {
+"author": "Subhajitdas258",
+"file": "Panchtarni.jpg",
+"img": "/assets/photos/a/amarnath--panchtarni.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Panchtarni",
+"source": "https://commons.wikimedia.org/wiki/File:Panchtarni.jpg"
 },
 "amarnath--sheshnag-lake": {
 "author": "Nitin Badhwar",
@@ -300,6 +390,15 @@
 "page": "Amman Citadel",
 "source": "https://commons.wikimedia.org/wiki/File:Amman_Citadel.jpg"
 },
+"amman--jerash": {
+"author": "Ramzik1999",
+"file": "New_Abdali_2024.png",
+"img": "/assets/photos/a/amman--jerash.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Amman",
+"source": "https://commons.wikimedia.org/wiki/File:New_Abdali_2024.png"
+},
 "amman--roman-theatre": {
 "author": "David Bjorgen",
 "file": "Amman_Citadel.jpg",
@@ -327,6 +426,15 @@
 "page": "Golden Temple",
 "source": "https://commons.wikimedia.org/wiki/File:The_Golden_Temple_of_Amrithsar_7.jpg"
 },
+"amritsar--jallianwala-bagh": {
+"author": "Bernard Gagnon",
+"file": "Jallianwala_Bagh,_Amritsar_01.jpg",
+"img": "/assets/photos/a/amritsar--jallianwala-bagh.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jallianwala Bagh",
+"source": "https://commons.wikimedia.org/wiki/File:Jallianwala_Bagh,_Amritsar_01.jpg"
+},
 "amritsar--langar-hall": {
 "author": "Imjha1",
 "file": "Golden_temple_india.jpg",
@@ -335,6 +443,15 @@
 "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
 "page": "Gurdwara",
 "source": "https://commons.wikimedia.org/wiki/File:Golden_temple_india.jpg"
+},
+"amritsar--partition-museum": {
+"author": "Vengolis",
+"file": "Amritsar_9125.jpg",
+"img": "/assets/photos/a/amritsar--partition-museum.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Partition Museum",
+"source": "https://commons.wikimedia.org/wiki/File:Amritsar_9125.jpg"
 },
 "andaman-and-nicobar": {
 "author": "Ritiks",
@@ -557,6 +674,15 @@
 "page": "Acropolis of Athens",
 "source": "https://commons.wikimedia.org/wiki/File:1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg"
 },
+"athens--plaka": {
+"author": "Joanbanjo",
+"file": "Carrer_del_barri_de_Plaka,_Atenes.JPG",
+"img": "/assets/photos/a/athens--plaka.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Plaka",
+"source": "https://commons.wikimedia.org/wiki/File:Carrer_del_barri_de_Plaka,_Atenes.JPG"
+},
 "auckland": {
 "author": "elpinto007",
 "file": "Auckland_skyline_-_May_2024_(2).jpg",
@@ -565,6 +691,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Auckland",
 "source": "https://commons.wikimedia.org/wiki/File:Auckland_skyline_-_May_2024_(2).jpg"
+},
+"auckland--hobbiton": {
+"author": "Harsh.gavhane",
+"file": "Waterhouse_Lake_Front.jpg",
+"img": "/assets/photos/a/auckland--hobbiton.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Hobbiton Movie Set",
+"source": "https://commons.wikimedia.org/wiki/File:Waterhouse_Lake_Front.jpg"
 },
 "auckland--sky-tower": {
 "author": "Jorge Royan",
@@ -674,6 +809,15 @@
 "page": "Hanuman Garhi Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Hanuman_Garhi_Temple,_a_major_religious_site_in_Ayodhya_utter_pradesh.jpg"
 },
+"ayodhya--ram-ki-paidi": {
+"author": "रूही",
+"file": "Sarayu_River_night_view,_Ayodhya_001.jpg",
+"img": "/assets/photos/a/ayodhya--ram-ki-paidi.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ram Ki Paidi",
+"source": "https://commons.wikimedia.org/wiki/File:Sarayu_River_night_view,_Ayodhya_001.jpg"
+},
 "ayutthaya": {
 "author": "Nina R from Africa",
 "file": "Ayutthaya_Historical_Park_(49814043183).jpg",
@@ -737,6 +881,15 @@
 "page": "Badami cave temples",
 "source": "https://commons.wikimedia.org/wiki/File:Vishnu_image_inside_cave_number_3_in_Badami.jpg"
 },
+"badami--pattadakal": {
+"author": "Nithin bolar k",
+"file": "Pattadakal_000.JPG",
+"img": "/assets/photos/a/badami--pattadakal.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Pattadakal",
+"source": "https://commons.wikimedia.org/wiki/File:Pattadakal_000.JPG"
+},
 "badrinath": {
 "author": "Arpita Tripathy",
 "file": "Badrinath_Temple-_Uttarakhand.jpg",
@@ -774,6 +927,24 @@
 "q": "Flame Towers Baku",
 "source": "https://commons.wikimedia.org/wiki/File:BAKU_AT_NIGHT_.RED_TOWERS.%D7%91%D7%90%D7%A7%D7%95_%D7%91%D7%9C%D7%99%D7%9C%D7%94_%D7%9E%D7%92%D7%93%D7%9C%D7%99%D7%9D_%D7%91%D7%90%D7%93%D7%95%D7%9D.jpg"
 },
+"baku--flame-towers": {
+"author": "Presidential Press and Information Office",
+"file": "Baku_city_at_night.jpg",
+"img": "/assets/photos/a/baku--flame-towers.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Baku",
+"source": "https://commons.wikimedia.org/wiki/File:Baku_city_at_night.jpg"
+},
+"baku--gobustan": {
+"author": "Азербайджан-е-Джануби",
+"file": "Qobustan_qesebesi.jpg",
+"img": "/assets/photos/a/baku--gobustan.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Gobustan, Baku",
+"source": "https://commons.wikimedia.org/wiki/File:Qobustan_qesebesi.jpg"
+},
 "baku--icherisheher-old-city": {
 "author": "Gulustan",
 "file": "Fortress of Baku, 2010.jpg",
@@ -801,6 +972,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Bali Sea",
 "source": "https://commons.wikimedia.org/wiki/File:Clouds_over_Lombok_Strait,_Gili_Islands,_West_Nusa_Tenggara,_Indonesia.jpg"
+},
+"bali--nusa-dua": {
+"author": "AkbarWilliams",
+"file": "Blue_Lagoon,Nusa_Lembongan-Bali.jpg",
+"img": "/assets/photos/a/bali--nusa-dua.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Nusa Lembongan",
+"source": "https://commons.wikimedia.org/wiki/File:Blue_Lagoon,Nusa_Lembongan-Bali.jpg"
+},
+"bali--seminyak": {
+"author": "LittleT889",
+"file": "Legian_Beach.jpg",
+"img": "/assets/photos/a/bali--seminyak.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Legian",
+"source": "https://commons.wikimedia.org/wiki/File:Legian_Beach.jpg"
 },
 "bali--tanah-lot": {
 "author": "Grayswoodsurrey",
@@ -846,6 +1035,15 @@
 "licenseUrl": "",
 "page": "Banff National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Moraine_Lake_17092005.jpg"
+},
+"banff--icefields-parkway": {
+"author": "Ethan Sahagun",
+"file": "Icefields_Parkway_from_an_elevated_viewpoint,_Jasper_National_Park,_Alberta,_Canada.jpg",
+"img": "/assets/photos/a/banff--icefields-parkway.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Alberta Highway 93",
+"source": "https://commons.wikimedia.org/wiki/File:Icefields_Parkway_from_an_elevated_viewpoint,_Jasper_National_Park,_Alberta,_Canada.jpg"
 },
 "banff--lake-louise": {
 "author": "Chensiyuan",
@@ -910,6 +1108,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Barcelona",
 "source": "https://commons.wikimedia.org/wiki/File:Evening_light_over_Barcelona.jpg"
+},
+"barcelona--gothic-quarter": {
+"author": "derivative work: — Malik Shabazz (talk • contribs) Call.jpg: Mariusmm",
+"file": "Call_de_Barcelona_Marlet.jpg",
+"img": "/assets/photos/a/barcelona--gothic-quarter.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Jewish quarter (Barcelona)",
+"source": "https://commons.wikimedia.org/wiki/File:Call_de_Barcelona_Marlet.jpg"
 },
 "barcelona--park-guell": {
 "author": "essetefano",
@@ -984,6 +1191,15 @@
 "q": "Grand Place Brussels",
 "source": "https://commons.wikimedia.org/wiki/File:Edificios_en_la_Grand-Place,_Bruselas,_B%C3%A9lgica,_2021-12-15,_DD_184-186_HDR.jpg"
 },
+"belgium--atomium": {
+"author": "Trougnouf (Benoit Brummer)",
+"file": "The_Atomium_during_civil_twilight_(DSCF1135).jpg",
+"img": "/assets/photos/a/belgium--atomium.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Atomium",
+"source": "https://commons.wikimedia.org/wiki/File:The_Atomium_during_civil_twilight_(DSCF1135).jpg"
+},
 "belgium--bruges-old-town": {
 "author": "Zairon",
 "file": "Brügge_Blick_vom_Belfried_4.jpg",
@@ -1020,6 +1236,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Bengaluru Palace",
 "source": "https://commons.wikimedia.org/wiki/File:Bangalore_Mysore_Maharaja_Palace.jpg"
+},
+"bengaluru--nandi-hills": {
+"author": "JzG",
+"file": "Sunrise_at_Nandi_Hills.jpg",
+"img": "/assets/photos/a/bengaluru--nandi-hills.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Nandi Hills, India",
+"source": "https://commons.wikimedia.org/wiki/File:Sunrise_at_Nandi_Hills.jpg"
 },
 "bentota": {
 "author": "Vincent van Zeijst",
@@ -1065,6 +1290,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
 "page": "Bergen",
 "source": "https://commons.wikimedia.org/wiki/File:Bergen_panorama_at_night_-_panoramio_(1).jpg"
+},
+"bergen--flam-railway": {
+"author": "Kenny Louie",
+"file": "Aurlandsfjorden_frå_Snøvegen.jpg",
+"img": "/assets/photos/a/bergen--flam-railway.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Flåm",
+"source": "https://commons.wikimedia.org/wiki/File:Aurlandsfjorden_fr%C3%A5_Sn%C3%B8vegen.jpg"
+},
+"bergen--n-r-yfjord": {
+"author": "Andreas Trepte",
+"file": "Geirangerfjord_.jpg",
+"img": "/assets/photos/a/bergen--n-r-yfjord.webp",
+"license": "CC BY-SA 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+"page": "Geirangerfjord",
+"source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg"
 },
 "berlin": {
 "author": "File:Museumsinsel Berlin Juli 2021 1 (cropped).jpg: Kasa Fue derivative work: Georgfotoart",
@@ -1284,6 +1527,15 @@
 "page": "Bodhi tree",
 "source": "https://commons.wikimedia.org/wiki/File:Bodhgaya_3639641913_f4c5f73689_t.jpg"
 },
+"bodh-gaya--international-monasteries": {
+"author": "Photo Dharma from Penang, Malaysia",
+"file": "Bodh_Gaya_-_Wat_Thai_-_Side_Entrance_(9228469202).jpg",
+"img": "/assets/photos/a/bodh-gaya--international-monasteries.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Wat Thai Buddhagaya",
+"source": "https://commons.wikimedia.org/wiki/File:Bodh_Gaya_-_Wat_Thai_-_Side_Entrance_(9228469202).jpg"
+},
 "bodh-gaya--mahabodhi-temple": {
 "author": "Evan Lovely",
 "file": "Diamond_Throne_Vajrasana_(detail).jpg",
@@ -1383,6 +1635,15 @@
 "page": "Rila Monastery",
 "source": "https://commons.wikimedia.org/wiki/File:Rila_Monastery,_August_2013.jpg"
 },
+"bulgaria--valley-of-roses-kazanlak": {
+"author": "Ivano Giambattista",
+"file": "The_Koprinka_Reservoir_seen_from_Shipka_peak.jpg",
+"img": "/assets/photos/a/bulgaria--valley-of-roses-kazanlak.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Kazanlak Valley",
+"source": "https://commons.wikimedia.org/wiki/File:The_Koprinka_Reservoir_seen_from_Shipka_peak.jpg"
+},
 "busan": {
 "author": "Hawkeye UK",
 "file": "Airbus_A321-231_‘HL7729’_Air_Busan.jpg",
@@ -1455,6 +1716,15 @@
 "page": "Egyptian Museum",
 "source": "https://commons.wikimedia.org/wiki/File:1897_bis_1902_wurde_das_%C3%84gyptische_Museum_in_Kairo_gebaut._04.jpg"
 },
+"cairo--khan-el-khalili": {
+"author": "Wael El Sisi",
+"file": "Cairo_From_Tower_(cropped).jpg",
+"img": "/assets/photos/a/cairo--khan-el-khalili.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Cairo",
+"source": "https://commons.wikimedia.org/wiki/File:Cairo_From_Tower_(cropped).jpg"
+},
 "cairo--pyramids-of-giza-and-the-sphinx": {
 "author": "Hesham Ebaid",
 "file": "Sphinx_with_the_third_pyramid.jpg",
@@ -1499,6 +1769,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Mount Irau",
 "source": "https://commons.wikimedia.org/wiki/File:Gunung_Irau_(The_Mossy_Forest)_(26119177991).jpg"
+},
+"cameron-highlands--strawberry-farms": {
+"author": "patrickroque01",
+"file": "La_Trinidad_strawberry_farms_(La_Trinidad,_Benguet)(2018-11-26).jpg",
+"img": "/assets/photos/a/cameron-highlands--strawberry-farms.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "La Trinidad Strawberry Farm",
+"source": "https://commons.wikimedia.org/wiki/File:La_Trinidad_strawberry_farms_(La_Trinidad,_Benguet)(2018-11-26).jpg"
 },
 "canada": {
 "author": "Gorgo",
@@ -1564,6 +1843,15 @@
 "page": "Table Mountain",
 "source": "https://commons.wikimedia.org/wiki/File:Table_Mountain_DanieVDM.jpg"
 },
+"cape-town--winelands": {
+"author": "MARELBU",
+"file": "Domaine_Carneros,_Napa_Valley,_CA_USA_-_panoramio_(9)_(cropped).jpg",
+"img": "/assets/photos/a/cape-town--winelands.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Wine Country",
+"source": "https://commons.wikimedia.org/wiki/File:Domaine_Carneros,_Napa_Valley,_CA_USA_-_panoramio_(9)_(cropped).jpg"
+},
 "cappadocia": {
 "author": "Arian Zwegers from Brussels, Belgium",
 "file": "Cappadocia_balloon_trip,_Ortahisar_Castle_(11893715185).jpg",
@@ -1599,6 +1887,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Cebu",
 "source": "https://commons.wikimedia.org/wiki/File:Osme%C3%B1a_Peak,_Cebu,_Philippines.jpg"
+},
+"cebu--bohol-s-chocolate-hills": {
+"author": "P199",
+"file": "Chocolate_Hills_Bohol.JPG",
+"img": "/assets/photos/a/cebu--bohol-s-chocolate-hills.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Chocolate Hills",
+"source": "https://commons.wikimedia.org/wiki/File:Chocolate_Hills_Bohol.JPG"
 },
 "cebu--kawasan-falls": {
 "author": "A.C.T. Alejandre",
@@ -1664,6 +1961,15 @@
 "q": "Kapaleeshwarar Temple Mylapore",
 "source": "https://commons.wikimedia.org/wiki/File:Kapaleeshwarar_Temple,_Mylapore,_Chennai,_India.jpg"
 },
+"chennai--fort-st-george": {
+"author": "L.vivian.richard at English Wikipedia",
+"file": "Fort_St._George,_Chennai_2.jpg",
+"img": "/assets/photos/a/chennai--fort-st-george.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Fort St. George",
+"source": "https://commons.wikimedia.org/wiki/File:Fort_St._George,_Chennai_2.jpg"
+},
 "chennai--kapaleeshwarar-temple": {
 "author": "Gopala Nivasam",
 "file": "Haridra_Nadhi_Aani_Theppotsavam.jpg",
@@ -1681,6 +1987,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Marina Beach",
 "source": "https://commons.wikimedia.org/wiki/File:Chennai_-_bird%27s-eye_view.jpg"
+},
+"chennai--san-thome-basilica": {
+"author": "w:user:PlaneMad",
+"file": "Santhome_Basilica.jpg",
+"img": "/assets/photos/a/chennai--san-thome-basilica.webp",
+"license": "CC BY-SA 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+"page": "St. Thomas Cathedral Basilica, Chennai",
+"source": "https://commons.wikimedia.org/wiki/File:Santhome_Basilica.jpg"
 },
 "cherrapunji": {
 "author": "Vikramjit Kakati",
@@ -1774,6 +2089,15 @@
 "page": "Chiang Rai",
 "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%AB%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A2_Chiang_Rai_Clock_Tower.jpg"
 },
+"chiang-rai--golden-triangle": {
+"author": "SaiLp",
+"file": "Golden_Triangle_Special_Economic_Zone_New_City_2021.jpg",
+"img": "/assets/photos/a/chiang-rai--golden-triangle.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Golden Triangle Special Economic Zone",
+"source": "https://commons.wikimedia.org/wiki/File:Golden_Triangle_Special_Economic_Zone_New_City_2021.jpg"
+},
 "chiang-rai--wat-rong-khun-white-temple": {
 "author": "JJ Harrison (https://www.jjharrison.com.au/)",
 "file": "Wat_Rong_Khun_-_Chiang_Rai.jpg",
@@ -1801,6 +2125,15 @@
 "page": "Thillai Nataraja Temple Chidambaram gopuram",
 "q": "Thillai Nataraja Temple Chidambaram gopuram",
 "source": "https://commons.wikimedia.org/wiki/File:Thillai_Nataraja_Temple_(Chidambaram_Nataraja_Temple).jpg"
+},
+"chidambaram--pichavaram-mangroves": {
+"author": "Ryan",
+"file": "Chidambaram_Temple.jpg",
+"img": "/assets/photos/a/chidambaram--pichavaram-mangroves.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Chidambaram",
+"source": "https://commons.wikimedia.org/wiki/File:Chidambaram_Temple.jpg"
 },
 "chidambaram--thillai-nataraja-temple": {
 "author": "Raghavendran",
@@ -1830,6 +2163,15 @@
 "page": "Baba Budangiri",
 "source": "https://commons.wikimedia.org/wiki/File:A_scenery_from_bababudan_hill.jpg"
 },
+"chikmagalur--hebbe-falls": {
+"author": "Man On Mission",
+"file": "Hebbe_Falls.JPG",
+"img": "/assets/photos/a/chikmagalur--hebbe-falls.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Hebbe Falls",
+"source": "https://commons.wikimedia.org/wiki/File:Hebbe_Falls.JPG"
+},
 "chikmagalur--mullayanagiri": {
 "author": "Jesjose",
 "file": "Hanumangundi_Falls.jpg",
@@ -1847,6 +2189,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Chilika Lake",
 "source": "https://commons.wikimedia.org/wiki/File:Birds_eyeview_of_Chilika_Lake.jpg"
+},
+"chilika--mangalajodi": {
+"author": "Soumyadeep Chatterjee . from Kolkata, India",
+"file": "Northern_pintails_Odisha_India.jpg",
+"img": "/assets/photos/a/chilika--mangalajodi.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Mangalajodi",
+"source": "https://commons.wikimedia.org/wiki/File:Northern_pintails_Odisha_India.jpg"
 },
 "chilika--nalabana-bird-sanctuary": {
 "author": "Mehmet Karatay",
@@ -1874,6 +2225,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Chitrakoot, Madhya Pradesh",
 "source": "https://commons.wikimedia.org/wiki/File:Mandakini_river_in_chitrkoot.jpg"
+},
+"chitrakoot--gupt-godavari": {
+"author": "Nandanupadhyay",
+"file": "View_from_the_top_of_Vijay_Garh_Fort.jpg",
+"img": "/assets/photos/a/chitrakoot--gupt-godavari.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Sonbhadra district",
+"source": "https://commons.wikimedia.org/wiki/File:View_from_the_top_of_Vijay_Garh_Fort.jpg"
 },
 "chittorgarh": {
 "author": "Ssjoshi111",
@@ -1919,6 +2279,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Chandrashila",
 "source": "https://commons.wikimedia.org/wiki/File:AjitHota-ChandrasilaPeak.jpg"
+},
+"chopta--deoria-tal": {
+"author": "Senthilnath G T, XS. Gtsenthilnath at English Wikipedia",
+"file": "Deoria_Tal_Chandrashila_Chaukamba_reflection.jpg",
+"img": "/assets/photos/a/chopta--deoria-tal.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Deoria Tal",
+"source": "https://commons.wikimedia.org/wiki/File:Deoria_Tal_Chandrashila_Chaukamba_reflection.jpg"
 },
 "chopta--tungnath-temple": {
 "author": "Varun Shiv Kapur",
@@ -1983,6 +2352,15 @@
 "page": "Gangaramaya Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Gangaramaya_Temple.JPG"
 },
+"colombo--pettah-market": {
+"author": "Bernard Gagnon",
+"file": "Colombo_02.jpg",
+"img": "/assets/photos/a/colombo--pettah-market.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Pettah Market",
+"source": "https://commons.wikimedia.org/wiki/File:Colombo_02.jpg"
+},
 "coonoor": {
 "author": "Robinder Uppal",
 "file": "Coonoor.JPG",
@@ -2027,6 +2405,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Irupu Falls",
 "source": "https://commons.wikimedia.org/wiki/File:Iruppu_Falls_(49099719332).jpg"
+},
+"coorg--dubare-elephant-camp": {
+"author": "Ashwin Geet Dsa",
+"file": "Kaveri_by_Dubare_Forest.jpg",
+"img": "/assets/photos/a/coorg--dubare-elephant-camp.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Dubare",
+"source": "https://commons.wikimedia.org/wiki/File:Kaveri_by_Dubare_Forest.jpg"
 },
 "coorg--raja-s-seat": {
 "author": "Pawanrao",
@@ -2147,6 +2534,15 @@
 "page": "Golden Bridge (Vietnam)",
 "source": "https://commons.wikimedia.org/wiki/File:Golden_Bridge_at_Ba_Na_Hills_20250718.jpg"
 },
+"da-nang--marble-mountains": {
+"author": "Viethavvh at vi.wikipedia",
+"file": "Ngu_hanh_son_toan_canh.jpg",
+"img": "/assets/photos/a/da-nang--marble-mountains.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Ngũ Hành Sơn",
+"source": "https://commons.wikimedia.org/wiki/File:Ngu_hanh_son_toan_canh.jpg"
+},
 "da-nang--my-khe-beach": {
 "author": "Adam Jones Adam63",
 "file": "Co_Luy_-_My_Lai_Massacre_Village_-_Vietnam.JPG",
@@ -2237,6 +2633,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Tomb of Isa Khan",
 "source": "https://commons.wikimedia.org/wiki/File:Isha_Khan_Niyazi%27s_tomb_-_Delhi_297_HT.jpg"
+},
+"delhi--jama-masjid": {
+"author": "Bikashrd",
+"file": "Jama_Masjid_-_In_the_Noon.jpg",
+"img": "/assets/photos/a/delhi--jama-masjid.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jama Masjid, Delhi",
+"source": "https://commons.wikimedia.org/wiki/File:Jama_Masjid_-_In_the_Noon.jpg"
 },
 "delhi--qutub-minar": {
 "author": "Wasir kasab",
@@ -2364,6 +2769,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Dubrovnik",
 "source": "https://commons.wikimedia.org/wiki/File:The_walls_of_the_fortress_and_View_of_the_old_city._panorama.jpg"
+},
+"dubrovnik--bay-of-kotor": {
+"author": "kallerna",
+"file": "Kotor_aerial_1.jpg",
+"img": "/assets/photos/a/dubrovnik--bay-of-kotor.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Bay of Kotor",
+"source": "https://commons.wikimedia.org/wiki/File:Kotor_aerial_1.jpg"
 },
 "dubrovnik--city-walls": {
 "author": "Miroslav.vajdic",
@@ -2676,6 +3090,24 @@
 "page": "Galle International Stadium",
 "source": "https://commons.wikimedia.org/wiki/File:Sri_Lanka_vs_Pakistan_test_match.JPG"
 },
+"galle--mirissa-whale-watching": {
+"author": "Ji-Elle",
+"file": "Mirissa-Plage_(3).jpg",
+"img": "/assets/photos/a/galle--mirissa-whale-watching.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Mirissa",
+"source": "https://commons.wikimedia.org/wiki/File:Mirissa-Plage_(3).jpg"
+},
+"galle--stilt-fishermen-at-koggala": {
+"author": "Astronomyinertia",
+"file": "Koggala.JPG",
+"img": "/assets/photos/a/galle--stilt-fishermen-at-koggala.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Koggala",
+"source": "https://commons.wikimedia.org/wiki/File:Koggala.JPG"
+},
 "galle--unawatuna-beach": {
 "author": "Bernard Gagnon",
 "file": "Unawatuna.jpg",
@@ -2712,6 +3144,15 @@
 "page": "List of roads named after Mahatma Gandhi",
 "source": "https://commons.wikimedia.org/wiki/File:Bangalore_MG_Road_4.jpg"
 },
+"gangtok--rumtek-monastery": {
+"author": "Anjan Kumar Kundu",
+"file": "Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok,_East_Sikkim_09.jpg",
+"img": "/assets/photos/a/gangtok--rumtek-monastery.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Rumtek Monastery",
+"source": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok,_East_Sikkim_09.jpg"
+},
 "gangtok--tsomgo-changu-lake": {
 "author": "Indrajit Das",
 "file": "Tsongmo_Lake_or_Changu_Lake_-_East_Sikkim.jpg",
@@ -2729,6 +3170,15 @@
 "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
 "page": "Garden Route National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Tsitsikamma_Park.JPG"
+},
+"garden-route--bloukrans-bridge": {
+"author": "NJR ZA",
+"file": "Bloukrans_Bridge-001.jpg",
+"img": "/assets/photos/a/garden-route--bloukrans-bridge.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Bloukrans Bridge",
+"source": "https://commons.wikimedia.org/wiki/File:Bloukrans_Bridge-001.jpg"
 },
 "garden-route--knysna-lagoon": {
 "author": "Terence27",
@@ -2757,6 +3207,24 @@
 "page": "Vishnupad Temple Gaya",
 "q": "Vishnupad Temple Gaya",
 "source": "https://commons.wikimedia.org/wiki/File:Vishnupad_temple_gaya_bihar.jpg"
+},
+"gaya--akshayavat": {
+"author": "Surajkumar12111",
+"file": "Vishnupad_temple_gaya_bihar.jpg",
+"img": "/assets/photos/a/gaya--akshayavat.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Gaya, India",
+"source": "https://commons.wikimedia.org/wiki/File:Vishnupad_temple_gaya_bihar.jpg"
+},
+"gaya--bodh-gaya": {
+"author": "SWAPNA SOURAV",
+"file": "Great_Buddha_Statue,_Bodh_Gaya_2017.jpg",
+"img": "/assets/photos/a/gaya--bodh-gaya.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Gaya district",
+"source": "https://commons.wikimedia.org/wiki/File:Great_Buddha_Statue,_Bodh_Gaya_2017.jpg"
 },
 "gaya--vishnupad-temple": {
 "author": "Deeppsychological",
@@ -2841,6 +3309,15 @@
 "page": "Bandipur National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Prince_in_the_Jungle_crop.jpg"
 },
+"gir--somnath": {
+"author": "Ms Sarah Welch",
+"file": "\"Aerial_view_of_Somnath_temple_02,_Prabhas_Patan_Gujarat.jpg",
+"img": "/assets/photos/a/gir--somnath.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Gir Somnath district",
+"source": "https://commons.wikimedia.org/wiki/File:%22Aerial_view_of_Somnath_temple_02,_Prabhas_Patan_Gujarat.jpg"
+},
 "goa": {
 "author": "Tanya Dedyukhina",
 "file": "GOA_-_panoramio_(11).jpg",
@@ -2885,6 +3362,15 @@
 "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
 "page": "Gold Coast, Queensland",
 "source": "https://commons.wikimedia.org/wiki/File:Gold_Coast_skyline_(Unsplash).jpg"
+},
+"gold-coast--dreamworld": {
+"author": "ASphericalBird",
+"file": "Dreamworld_20251004_150425.jpg",
+"img": "/assets/photos/a/gold-coast--dreamworld.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Dreamworld (Australia)",
+"source": "https://commons.wikimedia.org/wiki/File:Dreamworld_20251004_150425.jpg"
 },
 "gold-coast--warner-bros-movie-world": {
 "author": "Herry Lawford from London, UK",
@@ -2940,6 +3426,15 @@
 "page": "Ilulissat icefjord icebergs",
 "q": "Ilulissat icefjord icebergs",
 "source": "https://commons.wikimedia.org/wiki/File:Ilulissat_Icefjord.jpg"
+},
+"greenland--disko-bay": {
+"author": "Algkalv (talk)",
+"file": "Disko-bay-icebergs.jpg",
+"img": "/assets/photos/a/greenland--disko-bay.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Disko Bay",
+"source": "https://commons.wikimedia.org/wiki/File:Disko-bay-icebergs.jpg"
 },
 "greenland--ilulissat-icefjord": {
 "author": "Quintin Soloviev",
@@ -3113,6 +3608,15 @@
 "page": "Gwalior district",
 "source": "https://commons.wikimedia.org/wiki/File:Jai_Vilas_Palace_(_Scindia_Palace).jpg"
 },
+"gwalior--jai-vilas-palace": {
+"author": "Rainer Halama",
+"file": "Thanjavur_Maratha_Palace-WUS02790.jpg",
+"img": "/assets/photos/a/gwalior--jai-vilas-palace.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Thanjavur Maratha Palace",
+"source": "https://commons.wikimedia.org/wiki/File:Thanjavur_Maratha_Palace-WUS02790.jpg"
+},
 "gwalior--man-singh-palace": {
 "author": "Gyanendra_Singh_Chauhan",
 "file": "Maharaja_Mansingh_Tomar_Gwalior_2014-07-13_18-32.jpg",
@@ -3157,6 +3661,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Hampi",
 "source": "https://commons.wikimedia.org/wiki/File:Wide_angle_of_Galigopuram_of_Virupaksha_Temple,_Hampi_(04)_(cropped).jpg"
+},
+"hampi--matanga-hill": {
+"author": "Mathew Chandy",
+"file": "Enroute_to_Matanga_hills,_Hampi.jpg",
+"img": "/assets/photos/a/hampi--matanga-hill.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Matanga Hill",
+"source": "https://commons.wikimedia.org/wiki/File:Enroute_to_Matanga_hills,_Hampi.jpg"
 },
 "hampi--virupaksha-temple": {
 "author": "iMahesh",
@@ -3293,6 +3806,15 @@
 "page": "Gurdwara Hemkund Sahib",
 "source": "https://commons.wikimedia.org/wiki/File:Hemkunt-003.jpg"
 },
+"hemkund-sahib--valley-of-flowers": {
+"author": "Original: Rohit Sharma Derivative work: UnpetitproleX",
+"file": "Valley_of_flowers_national_park,_Uttarakhand,_India_03_(edit).jpg",
+"img": "/assets/photos/a/hemkund-sahib--valley-of-flowers.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Valley of Flowers National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Valley_of_flowers_national_park,_Uttarakhand,_India_03_(edit).jpg"
+},
 "himachal-pradesh": {
 "author": "ShashankSharma2511",
 "file": "Christ_Church,_Shimla.jpg",
@@ -3402,6 +3924,24 @@
 "page": "Citybus (Hong Kong)",
 "source": "https://commons.wikimedia.org/wiki/File:Citybus51439_796X.jpg"
 },
+"hong-kong--ocean-park": {
+"author": "Exploringlife",
+"file": "Ocean_Park_Hong_Kong.jpg",
+"img": "/assets/photos/a/hong-kong--ocean-park.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ocean Park Hong Kong",
+"source": "https://commons.wikimedia.org/wiki/File:Ocean_Park_Hong_Kong.jpg"
+},
+"hong-kong--star-ferry": {
+"author": "Baycrest",
+"file": "Tsim_Sha_Tsui_Ferry_Pier.jpg",
+"img": "/assets/photos/a/hong-kong--star-ferry.webp",
+"license": "CC BY-SA 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+"page": "Star Ferry",
+"source": "https://commons.wikimedia.org/wiki/File:Tsim_Sha_Tsui_Ferry_Pier.jpg"
+},
 "hong-kong--victoria-peak": {
 "author": "Daniel Case",
 "file": "High_West_and_Victoria_Peak_from_Victoria_Gap_(crop1).jpg",
@@ -3465,6 +4005,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Golconda",
 "source": "https://commons.wikimedia.org/wiki/File:Golconda_Fort_005.jpg"
+},
+"hyderabad--ramoji-film-city": {
+"author": "Shillika",
+"file": "Ramoji_Film_City.jpg",
+"img": "/assets/photos/a/hyderabad--ramoji-film-city.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Ramoji Film City",
+"source": "https://commons.wikimedia.org/wiki/File:Ramoji_Film_City.jpg"
+},
+"hyderabad--salar-jung-museum": {
+"author": "Omer123hussain",
+"file": "Salar_Jung_Museum,_Hyderabad,_India.jpg",
+"img": "/assets/photos/a/hyderabad--salar-jung-museum.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Salar Jung Museum",
+"source": "https://commons.wikimedia.org/wiki/File:Salar_Jung_Museum,_Hyderabad,_India.jpg"
 },
 "iceland": {
 "author": "Olga Ernst",
@@ -3556,6 +4114,15 @@
 "page": "Lalbagh Palace",
 "source": "https://commons.wikimedia.org/wiki/File:Lalbagh_palace,_Indore.jpg"
 },
+"indore--mandu": {
+"author": "Aamin",
+"file": "JahazMahal.jpg",
+"img": "/assets/photos/a/indore--mandu.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Mandu, Madhya Pradesh",
+"source": "https://commons.wikimedia.org/wiki/File:JahazMahal.jpg"
+},
 "indore--rajwada-palace": {
 "author": "DeepakNigam",
 "file": "Indore_Rajwada01.jpg",
@@ -3591,6 +4158,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/3.0/de/deed.en",
 "page": "Nordkette Cable Car",
 "source": "https://commons.wikimedia.org/wiki/File:Seegrube.01.vm.jpg"
+},
+"innsbruck--swarovski-crystal-worlds": {
+"author": "Marek Śliwecki",
+"file": "Wattens_-_Swarovski_Kristallwelten.jpg",
+"img": "/assets/photos/a/innsbruck--swarovski-crystal-worlds.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Swarovski Kristallwelten",
+"source": "https://commons.wikimedia.org/wiki/File:Wattens_-_Swarovski_Kristallwelten.jpg"
 },
 "interlaken": {
 "author": "Rectilinium",
@@ -3658,6 +4234,15 @@
 "page": "Cliffs of Moher",
 "source": "https://commons.wikimedia.org/wiki/File:Cliffs-Of-Moher-OBriens-From-South.JPG"
 },
+"ireland--ring-of-kerry": {
+"author": "Robert Linsdell from St. Andrews, Canada",
+"file": "Atlantic_Ocean,_Ring_of_Kerry_(506559)_(27964189752).jpg",
+"img": "/assets/photos/a/ireland--ring-of-kerry.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Ring of Kerry",
+"source": "https://commons.wikimedia.org/wiki/File:Atlantic_Ocean,_Ring_of_Kerry_(506559)_(27964189752).jpg"
+},
 "ireland--trinity-college-and-the-book-of-kells": {
 "author": "Unattributed",
 "file": "KellsFol032vChristEnthroned.jpg",
@@ -3677,6 +4262,15 @@
 "q": "Dome of the Rock Jerusalem panorama",
 "source": "https://commons.wikimedia.org/wiki/File:Panorama_with_Dome_of_the_Rock_-_Temple_Mount_-_Old_City_-_East_Jerusalem_(5684536532).jpg"
 },
+"israel--bethlehem": {
+"author": "Neil Ward",
+"file": "Church_of_the_Nativity_(7703592746).jpg",
+"img": "/assets/photos/a/israel--bethlehem.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Bethlehem",
+"source": "https://commons.wikimedia.org/wiki/File:Church_of_the_Nativity_(7703592746).jpg"
+},
 "israel--dead-sea": {
 "author": "لا روسا",
 "file": "Dead_Sea_beach_00.JPG",
@@ -3694,6 +4288,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Old City of Jerusalem",
 "source": "https://commons.wikimedia.org/wiki/File:2014-06_East_Jerusalem_090_(14936890061).jpg"
+},
+"israel--masada": {
+"author": "Godot13",
+"file": "Israel-2013-Aerial_21-Masada.jpg",
+"img": "/assets/photos/a/israel--masada.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Masada",
+"source": "https://commons.wikimedia.org/wiki/File:Israel-2013-Aerial_21-Masada.jpg"
+},
+"israel--tel-aviv-jaffa": {
+"author": "Ynhockey",
+"file": "Sarona_CBD_01_(cropped).jpg",
+"img": "/assets/photos/a/israel--tel-aviv-jaffa.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Tel Aviv",
+"source": "https://commons.wikimedia.org/wiki/File:Sarona_CBD_01_(cropped).jpg"
 },
 "issyk-kul": {
 "author": "Jaya govinda",
@@ -3724,6 +4336,15 @@
 "q": "Cholpon-Ata petroglyphs",
 "source": "https://commons.wikimedia.org/wiki/File:Petroglyph_Museum_of_Cholpon-Ata_10.jpg"
 },
+"issyk-kul--jeti-oguz": {
+"author": "Ninara from Helsinki, Finland",
+"file": "Issyk-Kul,_Kyrgyzstan_(43713946455).jpg",
+"img": "/assets/photos/a/issyk-kul--jeti-oguz.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Issyk-Kul Region",
+"source": "https://commons.wikimedia.org/wiki/File:Issyk-Kul,_Kyrgyzstan_(43713946455).jpg"
+},
 "istanbul": {
 "author": "Hunanuk",
 "file": "Historical_peninsula_and_modern_skyline_of_Istanbul.jpg",
@@ -3742,6 +4363,15 @@
 "page": "Blue Mosque, Istanbul",
 "source": "https://commons.wikimedia.org/wiki/File:Istanbul_(34223582516)_(cropped).jpg"
 },
+"istanbul--grand-bazaar": {
+"author": "Robot8A",
+"file": "Spice_Bazaar_Istanbul_Feb_2020,_img_2.jpg",
+"img": "/assets/photos/a/istanbul--grand-bazaar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Spice Bazaar",
+"source": "https://commons.wikimedia.org/wiki/File:Spice_Bazaar_Istanbul_Feb_2020,_img_2.jpg"
+},
 "istanbul--hagia-sophia": {
 "author": "Adli Wahid",
 "file": "Hagia_Sophia_(228968325).jpeg",
@@ -3750,6 +4380,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Hagia Sophia",
 "source": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg"
+},
+"istanbul--topkap-palace": {
+"author": "Carlos Delgado",
+"file": "Topkapı_-_01.jpg",
+"img": "/assets/photos/a/istanbul--topkap-palace.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Topkapı Palace",
+"source": "https://commons.wikimedia.org/wiki/File:Topkap%C4%B1_-_01.jpg"
 },
 "italy": {
 "author": "FeaturedPics",
@@ -3804,6 +4443,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Amber, India",
 "source": "https://commons.wikimedia.org/wiki/File:Amer_City.jpg"
+},
+"jaipur--city-palace": {
+"author": "Jakub Hałun",
+"file": "Chandra_Mahal,_City_Palace,_Jaipur,_20191218_0951_9043.jpg",
+"img": "/assets/photos/a/jaipur--city-palace.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "City Palace, Jaipur",
+"source": "https://commons.wikimedia.org/wiki/File:Chandra_Mahal,_City_Palace,_Jaipur,_20191218_0951_9043.jpg"
+},
+"jaipur--jantar-mantar": {
+"author": "Knowledge Seeker",
+"file": "Jantar_Mantar_at_Jaipur.jpg",
+"img": "/assets/photos/a/jaipur--jantar-mantar.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Jantar Mantar, Jaipur",
+"source": "https://commons.wikimedia.org/wiki/File:Jantar_Mantar_at_Jaipur.jpg"
 },
 "jaisalmer": {
 "author": "Adrian Sulc",
@@ -4040,6 +4697,15 @@
 "page": "Erawan National Park",
 "source": "https://commons.wikimedia.org/wiki/File:Erawan_Waterfall,_Kanchanaburi_Province,_Thailand_-_June_2004.jpg"
 },
+"kanchanaburi--hellfire-pass": {
+"author": "Athikhun.suw",
+"file": "Hellfire_pass_2023.jpg",
+"img": "/assets/photos/a/kanchanaburi--hellfire-pass.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Hellfire Pass",
+"source": "https://commons.wikimedia.org/wiki/File:Hellfire_pass_2023.jpg"
+},
 "kanchipuram": {
 "author": "Sridhar.selvaraj",
 "file": "Parameswara_Vinnagaram.JPG",
@@ -4195,6 +4861,15 @@
 "page": "Kasauli",
 "source": "https://commons.wikimedia.org/wiki/File:Kasauli_hills.jpg"
 },
+"kasauli--mall-road": {
+"author": "Navalgazta",
+"file": "Solan12345.jpg",
+"img": "/assets/photos/a/kasauli--mall-road.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Solan district",
+"source": "https://commons.wikimedia.org/wiki/File:Solan12345.jpg"
+},
 "kasol": {
 "author": "Rahulsetiya94",
 "file": "Tosh_in_Monsoon,_July_2017.jpg",
@@ -4203,6 +4878,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Parvati Valley",
 "source": "https://commons.wikimedia.org/wiki/File:Tosh_in_Monsoon,_July_2017.jpg"
+},
+"kasol--kheerganga-trek": {
+"author": "BenSalo",
+"file": "Kasol_mountain_view.jpg",
+"img": "/assets/photos/a/kasol--kheerganga-trek.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Kasol",
+"source": "https://commons.wikimedia.org/wiki/File:Kasol_mountain_view.jpg"
 },
 "kasol--manikaran-sahib": {
 "author": "TheSlumPanda",
@@ -4231,6 +4915,15 @@
 "page": "Kathmandu",
 "source": "https://commons.wikimedia.org/wiki/File:Kathmandu-Durbar_Square-06-Mahavishnu-Kuh-Vishnu-Pratapamalla-Jagannath-2007-gje.jpg"
 },
+"kathmandu--bhaktapur": {
+"author": "Saroj Pandey",
+"file": "Nyatpola_&_Bhairav_Temple.jpg",
+"img": "/assets/photos/a/kathmandu--bhaktapur.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Bhaktapur",
+"source": "https://commons.wikimedia.org/wiki/File:Nyatpola_%26_Bhairav_Temple.jpg"
+},
 "kathmandu--boudhanath-stupa": {
 "author": "Sumitbhatt222",
 "file": "Boudhanath_stupa_,_Kathmandu,_Nepal.jpg",
@@ -4248,6 +4941,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Pashupatinath Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Pashupatinath_Temple-2020.jpg"
+},
+"kathmandu--swayambhunath": {
+"author": "Nabin K. Sapkota",
+"file": "Swayambhunath_2018.jpg",
+"img": "/assets/photos/a/kathmandu--swayambhunath.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Swayambhunath",
+"source": "https://commons.wikimedia.org/wiki/File:Swayambhunath_2018.jpg"
 },
 "katra": {
 "author": "KuShahrukh Tendulkar",
@@ -4359,6 +5061,15 @@
 "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
 "page": "Sankri",
 "source": "https://commons.wikimedia.org/wiki/File:Base_of_Kedarkantha_trek.jpg"
+},
+"kedarkantha--sankri": {
+"author": "Metanish",
+"file": "Har_Ki_Dun.jpg",
+"img": "/assets/photos/a/kedarkantha--sankri.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Har Ki Doon",
+"source": "https://commons.wikimedia.org/wiki/File:Har_Ki_Dun.jpg"
 },
 "kedarnath": {
 "author": "Shivam Kumar 766",
@@ -4559,6 +5270,15 @@
 "page": "Mattancherry Palace",
 "source": "https://commons.wikimedia.org/wiki/File:Mattancherry_Palace_DSC_0899.JPG"
 },
+"kochi--st-francis-church": {
+"author": "Ranjith Siji",
+"file": "St_Francis_Church_Fort_Kochi_DSC_1048.JPG",
+"img": "/assets/photos/a/kochi--st-francis-church.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Church of Saint Francis, Kochi",
+"source": "https://commons.wikimedia.org/wiki/File:St_Francis_Church_Fort_Kochi_DSC_1048.JPG"
+},
 "kodaikanal": {
 "author": "KARTY JazZ",
 "file": "Boating_in_Kodaikanal_Lake_with_Mist.jpg",
@@ -4585,6 +5305,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Kodaikanal International School",
 "source": "https://commons.wikimedia.org/wiki/File:Kodaikanal_International_School-Margret_Eddy_Memorial_Church-WUS05109.jpg"
+},
+"kodaikanal--pine-forest": {
+"author": "MarkLaun",
+"file": "En_Route_to_Venderavu_from_Kodaikanal.jpg",
+"img": "/assets/photos/a/kodaikanal--pine-forest.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Kodaikanal–Munnar Road",
+"source": "https://commons.wikimedia.org/wiki/File:En_Route_to_Venderavu_from_Kodaikanal.jpg"
 },
 "kodungallur": {
 "author": "Vis M",
@@ -4623,6 +5352,15 @@
 "page": "Ko Samui",
 "source": "https://commons.wikimedia.org/wiki/File:Koh_Samui_Lipa_Noi2.jpg"
 },
+"koh-samui--ang-thong-marine-park": {
+"author": "Vyacheslav Argenberg",
+"file": "Mu_Ko_Ang_Thong,_Islands_in_the_sea_2,_Thailand.jpg",
+"img": "/assets/photos/a/koh-samui--ang-thong-marine-park.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Mu Ko Ang Thong National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Mu_Ko_Ang_Thong,_Islands_in_the_sea_2,_Thailand.jpg"
+},
 "koh-samui--chaweng-beach": {
 "author": "MNXANL",
 "file": "202402_Check-in_Drop-Off_Area_of_USM.jpg",
@@ -4651,6 +5389,15 @@
 "q": "Dzukou Valley",
 "source": "https://commons.wikimedia.org/wiki/File:Breathtaking_beauty_of_Dzukou_Valley_in_Manipur-Nagaland_border_(edit).jpg"
 },
+"kohima--khonoma-village": {
+"author": "Ly.n0m",
+"file": "View_of_Khonoma_(2024).jpg",
+"img": "/assets/photos/a/kohima--khonoma-village.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Khonoma",
+"source": "https://commons.wikimedia.org/wiki/File:View_of_Khonoma_(2024).jpg"
+},
 "kohima--kisama-heritage-village": {
 "author": "Aravind Manickam",
 "file": "Kisama_main_arena_Hornbill_Festival_2019.jpg",
@@ -4677,6 +5424,25 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Howrah Bridge",
 "source": "https://commons.wikimedia.org/wiki/File:Howrah_bridge_at_night.jpg"
+},
+"kolkata--kumartuli": {
+"author": "Sudipta Mallick",
+"file": "Lane_of_North_Kolkata_(5262472804).jpg",
+"img": "/assets/photos/a/kolkata--kumartuli.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "North Kolkata",
+"source": "https://commons.wikimedia.org/wiki/File:Lane_of_North_Kolkata_(5262472804).jpg"
+},
+"kolkata--mother-house": {
+"author": "Hiroki Ogawa",
+"file": "Mother Teresa House Kolkata India - panoramio.jpg",
+"img": "/assets/photos/a/kolkata--mother-house.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Mother House Kolkata",
+"q": "Mother House Kolkata",
+"source": "https://commons.wikimedia.org/wiki/File:Mother_Teresa_House_Kolkata_India_-_panoramio.jpg"
 },
 "kolkata--victoria-memorial": {
 "author": "Subhrajyoti07",
@@ -4822,6 +5588,15 @@
 "page": "Batu Caves",
 "source": "https://commons.wikimedia.org/wiki/File:Batu_Caves_stairs_2022-05.jpg"
 },
+"kuala-lumpur--brickfields-little-india": {
+"author": "Shesmax",
+"file": "Kuala_Lumpur._Brickfields._2019-12-14_09-39-24.jpg",
+"img": "/assets/photos/a/kuala-lumpur--brickfields-little-india.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Brickfields, Kuala Lumpur",
+"source": "https://commons.wikimedia.org/wiki/File:Kuala_Lumpur._Brickfields._2019-12-14_09-39-24.jpg"
+},
 "kuala-lumpur--petronas-twin-towers": {
 "author": "DvTor8303",
 "file": "Kuala_Lumpur_Tower_20250822_(1).jpg",
@@ -4950,6 +5725,15 @@
 "page": "Fushimi Inari-taisha",
 "source": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
 },
+"kyoto--gion": {
+"author": "663highland",
+"file": "150124_Gion_Kyoto_Japan01s3.jpg",
+"img": "/assets/photos/a/kyoto--gion.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"page": "Gion",
+"source": "https://commons.wikimedia.org/wiki/File:150124_Gion_Kyoto_Japan01s3.jpg"
+},
 "kyoto--kinkaku-ji": {
 "author": "Nacaru",
 "file": "Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg",
@@ -4985,6 +5769,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Komodo dragon",
 "source": "https://commons.wikimedia.org/wiki/File:202306_Varanus_komodoensis.jpg"
+},
+"labuan-bajo--pink-beach": {
+"author": "Unknown author",
+"file": "Kuta_200507-3.jpg",
+"img": "/assets/photos/a/labuan-bajo--pink-beach.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "List of beaches in Indonesia",
+"source": "https://commons.wikimedia.org/wiki/File:Kuta_200507-3.jpg"
 },
 "lachung": {
 "author": "Indrajit Das",
@@ -5077,6 +5870,15 @@
 "page": "Lansdowne, India",
 "source": "https://commons.wikimedia.org/wiki/File:Lansdowne_Landscape.jpg"
 },
+"lansdowne--tarkeshwar-mahadev": {
+"author": "Panwar Namrata",
+"file": "Peaks_and_clouds.jpg",
+"img": "/assets/photos/a/lansdowne--tarkeshwar-mahadev.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Pauri Garhwal district",
+"source": "https://commons.wikimedia.org/wiki/File:Peaks_and_clouds.jpg"
+},
 "laos": {
 "author": "Francisco Anzola",
 "file": "LPB_Guest_Houses_(1490224551).jpg",
@@ -5167,6 +5969,33 @@
 "page": "Belém Tower",
 "source": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg"
 },
+"lisbon--sanctuary-of-fatima": {
+"author": "Kent Wang",
+"file": "Exterior_of_Basílica_de_Nossa_Senhora_do_Rosário_(Fátima)_22.jpg",
+"img": "/assets/photos/a/lisbon--sanctuary-of-fatima.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Fátima Ways",
+"source": "https://commons.wikimedia.org/wiki/File:Exterior_of_Bas%C3%ADlica_de_Nossa_Senhora_do_Ros%C3%A1rio_(F%C3%A1tima)_22.jpg"
+},
+"lisbon--sintra": {
+"author": "Singa Hitam",
+"file": "Sintra_-_Palacio_da_Pena_(20332995770)_(cropped2).jpg",
+"img": "/assets/photos/a/lisbon--sintra.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Sintra",
+"source": "https://commons.wikimedia.org/wiki/File:Sintra_-_Palacio_da_Pena_(20332995770)_(cropped2).jpg"
+},
+"lisbon--tram-28": {
+"author": "Ajay Suresh from New York, NY, USA",
+"file": "Lisbon-Day3-1_(34184431096).jpg",
+"img": "/assets/photos/a/lisbon--tram-28.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Trams in Lisbon",
+"source": "https://commons.wikimedia.org/wiki/File:Lisbon-Day3-1_(34184431096).jpg"
+},
 "lombok": {
 "author": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
 "file": "ISS059-E-75321_-_View_of_Indonesia.jpg",
@@ -5231,6 +6060,15 @@
 "page": "London",
 "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_(125508655).jpeg"
 },
+"london--british-museum": {
+"author": "Ham",
+"file": "British_Museum_from_NE_2.JPG",
+"img": "/assets/photos/a/london--british-museum.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "British Museum",
+"source": "https://commons.wikimedia.org/wiki/File:British_Museum_from_NE_2.JPG"
+},
 "london--buckingham-palace": {
 "author": "Julian Herzog (Website)",
 "file": "Buckingham_Palace_London_Morning_2020_01_(cropped).jpg",
@@ -5240,6 +6078,15 @@
 "page": "Buckingham Palace",
 "source": "https://commons.wikimedia.org/wiki/File:Buckingham_Palace_London_Morning_2020_01_(cropped).jpg"
 },
+"london--london-eye": {
+"author": "Khamtran",
+"file": "London-Eye-2009.JPG",
+"img": "/assets/photos/a/london--london-eye.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "London Eye",
+"source": "https://commons.wikimedia.org/wiki/File:London-Eye-2009.JPG"
+},
 "london--tower-of-london": {
 "author": "[Duncan] from Nottingham, UK",
 "file": "Tower_of_London_from_the_Shard_(8515883950).jpg",
@@ -5248,6 +6095,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Tower of London",
 "source": "https://commons.wikimedia.org/wiki/File:Tower_of_London_from_the_Shard_(8515883950).jpg"
+},
+"london--westminster-and-big-ben": {
+"author": "Christian David",
+"file": "Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+"img": "/assets/photos/a/london--westminster-and-big-ben.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Big Ben",
+"source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg"
 },
 "los-angeles": {
 "author": "Gnaphron",
@@ -5349,6 +6205,15 @@
 "page": "Titlis",
 "source": "https://commons.wikimedia.org/wiki/File:Titlis_W.jpg"
 },
+"lucerne--swiss-museum-of-transport": {
+"author": "Unknown author",
+"file": "Spiez-IMG_8698.JPG",
+"img": "/assets/photos/a/lucerne--swiss-museum-of-transport.webp",
+"license": "CC BY-SA 2.0 fr",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
+"page": "Type 41 class patrol boat",
+"source": "https://commons.wikimedia.org/wiki/File:Spiez-IMG_8698.JPG"
+},
 "lucknow": {
 "author": "Dey.sandip",
 "file": "Imambara inside the Residency-Lucknow-Uttar Pradesh-DSC 0001.jpg",
@@ -5404,6 +6269,15 @@
 "page": "Luxor Obelisks",
 "source": "https://commons.wikimedia.org/wiki/File:Paris,_Obelisk_in_the_Place_de_la_Concorde,_July_22,_2008.jpg"
 },
+"luxor--valley-of-the-kings": {
+"author": "Wouter Hagens",
+"file": "Luxor_hot_air_balloon_G.jpg",
+"img": "/assets/photos/a/luxor--valley-of-the-kings.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Hot air ballooning in Luxor",
+"source": "https://commons.wikimedia.org/wiki/File:Luxor_hot_air_balloon_G.jpg"
+},
 "macau": {
 "author": "kewl",
 "file": "Macau - Senado Square.jpg",
@@ -5413,6 +6287,15 @@
 "page": "Senado Square Macau",
 "q": "Senado Square Macau",
 "source": "https://commons.wikimedia.org/wiki/File:Macau_-_Senado_Square.jpg"
+},
+"macau--macau-tower": {
+"author": "Mike",
+"file": "Macau_Skyline_(157931361).jpeg",
+"img": "/assets/photos/a/macau--macau-tower.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Economy of Macau",
+"source": "https://commons.wikimedia.org/wiki/File:Macau_Skyline_(157931361).jpeg"
 },
 "macau--ruins-of-st-paul-s": {
 "author": "GG001213",
@@ -5560,6 +6443,15 @@
 "page": "Madurai district",
 "source": "https://commons.wikimedia.org/wiki/File:Gopurams_of_the_Madurai_Meenakshi_Temple,_Madurai,_Tamil_Nadu,_India_(2004)_350.jpg"
 },
+"madurai--thiruparankundram": {
+"author": "Mamichaelraj",
+"file": "Thirupparankundram_Dargah_on_top_of_the_Hills.jpg",
+"img": "/assets/photos/a/madurai--thiruparankundram.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Thiruparankundram Dargah",
+"source": "https://commons.wikimedia.org/wiki/File:Thirupparankundram_Dargah_on_top_of_the_Hills.jpg"
+},
 "mahabaleshwar": {
 "author": "Amitban77",
 "file": "MAHABALESWAR_LANDSCAPE.jpg",
@@ -5577,6 +6469,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Arthur's Seat",
 "source": "https://commons.wikimedia.org/wiki/File:Arthur%27s_Seat,_Edinburgh.JPG"
+},
+"mahabaleshwar--pratapgad-fort": {
+"author": "Neeraj Rane",
+"file": "Pratapgad_The_Fort_of_Valour.jpg",
+"img": "/assets/photos/a/mahabaleshwar--pratapgad-fort.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Pratapgad",
+"source": "https://commons.wikimedia.org/wiki/File:Pratapgad_The_Fort_of_Valour.jpg"
+},
+"mahabaleshwar--table-land-panchgani": {
+"author": "Akhilesh Dasgupta",
+"file": "Panchghani_Hill.jpg",
+"img": "/assets/photos/a/mahabaleshwar--table-land-panchgani.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "Panchgani",
+"source": "https://commons.wikimedia.org/wiki/File:Panchghani_Hill.jpg"
 },
 "mahabaleshwar--venna-lake": {
 "author": "Ganesh G (Ganeshrg)",
@@ -5793,6 +6703,15 @@
 "page": "Manali, Chennai",
 "source": "https://commons.wikimedia.org/wiki/File:Manali_and_Ennore_1.jpg"
 },
+"manali--solang-valley": {
+"author": "Harvinder Chandigarh",
+"file": "Solang_Valley_,Manali,_Himachal_Pardes,_India.JPG",
+"img": "/assets/photos/a/manali--solang-valley.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Solang Valley",
+"source": "https://commons.wikimedia.org/wiki/File:Solang_Valley_,Manali,_Himachal_Pardes,_India.JPG"
+},
 "mandawa": {
 "author": "Digrajsingh",
 "file": "Front_Facade_View_of_Shahpura_House,_Shekhawati,_Rajputana.jpg",
@@ -5801,6 +6720,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Shekhawati",
 "source": "https://commons.wikimedia.org/wiki/File:Front_Facade_View_of_Shahpura_House,_Shekhawati,_Rajputana.jpg"
+},
+"mandawa--mandawa-fort": {
+"author": "Ankit Sihag",
+"file": "(_Side_view_of_Rani_Sati_temple_Jhunjhunu_).jpg",
+"img": "/assets/photos/a/mandawa--mandawa-fort.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jhunjhunu district",
+"source": "https://commons.wikimedia.org/wiki/File:(_Side_view_of_Rani_Sati_temple_Jhunjhunu_).jpg"
 },
 "manila": {
 "author": "Bahnfrend",
@@ -5857,6 +6785,15 @@
 "page": "Markha River (India)",
 "source": "https://commons.wikimedia.org/wiki/File:Markha_Valley1.JPG"
 },
+"markha-valley--hemis-national-park": {
+"author": "Reach4avik",
+"file": "Hamis_Gonpa_on_a_rainy_day.JPG",
+"img": "/assets/photos/a/markha-valley--hemis-national-park.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Hemis",
+"source": "https://commons.wikimedia.org/wiki/File:Hamis_Gonpa_on_a_rainy_day.JPG"
+},
 "markha-valley--kongmaru-la": {
 "author": "Sundeep bhardwaj",
 "file": "13-10-08_217_CONFLUENCE_OF_INDUS_RIVER_N.jpg",
@@ -5875,6 +6812,15 @@
 "page": "Marrakesh",
 "source": "https://commons.wikimedia.org/wiki/File:Marrakech,_Morocco_(5421595453)_(5).jpg"
 },
+"marrakech--atlas-mountains": {
+"author": "Mounir Neddi",
+"file": "Plateau_Yagour,_Agdal,_Morocco.jpg",
+"img": "/assets/photos/a/marrakech--atlas-mountains.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Atlas Mountains",
+"source": "https://commons.wikimedia.org/wiki/File:Plateau_Yagour,_Agdal,_Morocco.jpg"
+},
 "marrakech--jemaa-el-fnaa": {
 "author": "Boris Macek",
 "file": "Djemaa_el_Fna.jpg",
@@ -5892,6 +6838,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Majorelle Garden",
 "source": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_40.JPG"
+},
+"marrakech--souqs": {
+"author": "C messier",
+"file": "Large_riad_Bahia_1321.jpg",
+"img": "/assets/photos/a/marrakech--souqs.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Riad (architecture)",
+"source": "https://commons.wikimedia.org/wiki/File:Large_riad_Bahia_1321.jpg"
 },
 "masai-mara": {
 "author": "Danijel Mihajlovic",
@@ -5985,6 +6940,15 @@
 "page": "Chamarel",
 "source": "https://commons.wikimedia.org/wiki/File:2006-10-02_Chamarel_Waterfalls.jpg"
 },
+"mauritius--grand-bassin-ganga-talao": {
+"author": "Starts",
+"file": "Grand_Bassin,_Mauritius.jpg",
+"img": "/assets/photos/a/mauritius--grand-bassin-ganga-talao.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ganga Talao",
+"source": "https://commons.wikimedia.org/wiki/File:Grand_Bassin,_Mauritius.jpg"
+},
 "mauritius--ile-aux-cerfs": {
 "author": "Arne Müseler",
 "file": "Mauritius_Île_aux_Cerfs.jpg",
@@ -6040,6 +7004,15 @@
 "page": "Merzouga",
 "source": "https://commons.wikimedia.org/wiki/File:Merzouga_2024.jpg"
 },
+"merzouga--ait-benhaddou": {
+"author": "Petar Milošević",
+"file": "Ksar_Aït_Benhaddou,_Marocco_(أيت_بن_حدو،_المغرب,_ⴰⵢⵜ_ⵃⴰⴷⴷⵓ).jpg",
+"img": "/assets/photos/a/merzouga--ait-benhaddou.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Aït Benhaddou",
+"source": "https://commons.wikimedia.org/wiki/File:Ksar_A%C3%AFt_Benhaddou,_Marocco_(%D8%A3%D9%8A%D8%AA_%D8%A8%D9%86_%D8%AD%D8%AF%D9%88%D8%8C_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8,_%E2%B4%B0%E2%B5%A2%E2%B5%9C_%E2%B5%83%E2%B4%B0%E2%B4%B7%E2%B4%B7%E2%B5%93).jpg"
+},
 "merzouga--camel-trek": {
 "author": "Jjron",
 "file": "07._Camel_Profile,_near_Silverton,_NSW,_07.07.2007.jpg",
@@ -6084,6 +7057,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Teotihuacan",
 "source": "https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg"
+},
+"mexico-city--xochimilco": {
+"author": "ProtoplasmaKid",
+"file": "Trajinera_en_canal_Nativitas.jpg",
+"img": "/assets/photos/a/mexico-city--xochimilco.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Xochimilco",
+"source": "https://commons.wikimedia.org/wiki/File:Trajinera_en_canal_Nativitas.jpg"
 },
 "morocco": {
 "author": "Fbrandao.1963",
@@ -6196,6 +7178,24 @@
 "page": "Chhatrapati Shivaji Terminus",
 "source": "https://commons.wikimedia.org/wiki/File:Chhatrapati_shivaji_terminus,_esterno_01.jpg"
 },
+"mumbai--elephanta-caves": {
+"author": "Christian Haugen",
+"file": "Elephanta_Caves_Trimurti.jpg",
+"img": "/assets/photos/a/mumbai--elephanta-caves.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Elephanta Caves",
+"source": "https://commons.wikimedia.org/wiki/File:Elephanta_Caves_Trimurti.jpg"
+},
+"mumbai--marine-drive": {
+"author": "Deepak (http://deepakp7.googlepages.com)",
+"file": "Musical-walkway.jpg",
+"img": "/assets/photos/a/mumbai--marine-drive.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Marine Drive, Kochi",
+"source": "https://commons.wikimedia.org/wiki/File:Musical-walkway.jpg"
+},
 "munich": {
 "author": "Thomas Wolf, www.foto-tw.de",
 "file": "Stadtbild_München.jpg",
@@ -6222,6 +7222,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
 "page": "Neuschwanstein Castle",
 "source": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_2013.jpg"
+},
+"munich--zugspitze": {
+"author": "Octagon",
+"file": "Zugspitze_2.JPG",
+"img": "/assets/photos/a/munich--zugspitze.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Zugspitze",
+"source": "https://commons.wikimedia.org/wiki/File:Zugspitze_2.JPG"
 },
 "munnar": {
 "author": "Kondephy",
@@ -6250,6 +7259,15 @@
 "page": "KDHP Tea Museum",
 "source": "https://commons.wikimedia.org/wiki/File:Le_mus%C3%A9e_du_th%C3%A9_(Munnar,_Inde)_(13694719014).jpg"
 },
+"munnar--top-station": {
+"author": "Jan J George",
+"file": "The_Beautiful_landscape_view_from_the_Kolukkumalai_Peak,_Munnar.jpg",
+"img": "/assets/photos/a/munnar--top-station.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kolukkumalai",
+"source": "https://commons.wikimedia.org/wiki/File:The_Beautiful_landscape_view_from_the_Kolukkumalai_Peak,_Munnar.jpg"
+},
 "muscat": {
 "author": "Tristan",
 "file": "Al_Alam_Palace.jpg",
@@ -6258,6 +7276,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Muscat",
 "source": "https://commons.wikimedia.org/wiki/File:Al_Alam_Palace.jpg"
+},
+"muscat--bimmah-sinkhole": {
+"author": "Peter1936F",
+"file": "07_Imotski_Crveno_Jezero_(1).jpg",
+"img": "/assets/photos/a/muscat--bimmah-sinkhole.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Sinkhole",
+"source": "https://commons.wikimedia.org/wiki/File:07_Imotski_Crveno_Jezero_(1).jpg"
 },
 "muscat--mutrah-souq-and-corniche": {
 "author": "Izeberg007",
@@ -6332,6 +7359,15 @@
 "q": "Mysore Palace",
 "source": "https://commons.wikimedia.org/wiki/File:Mysore_Palace_(1).jpg"
 },
+"mysuru--brindavan-gardens": {
+"author": "Joe Ravi",
+"file": "Brindavan_Gardens.JPG",
+"img": "/assets/photos/a/mysuru--brindavan-gardens.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Brindavan Gardens",
+"source": "https://commons.wikimedia.org/wiki/File:Brindavan_Gardens.JPG"
+},
 "mysuru--chamundi-hill": {
 "author": "Prof tpms",
 "file": "J.C.Nagar_Welcome_Board_to_Chamundi_Hills.jpg",
@@ -6386,6 +7422,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Nainital",
 "source": "https://commons.wikimedia.org/wiki/File:Nainital_metro.jpg"
+},
+"nainital--mukteshwar": {
+"author": "ParthaPratimNath",
+"file": "Chauli_Ki_Jali,_Mukteshwar.jpg",
+"img": "/assets/photos/a/nainital--mukteshwar.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Mukteshwar",
+"source": "https://commons.wikimedia.org/wiki/File:Chauli_Ki_Jali,_Mukteshwar.jpg"
 },
 "nainital--naina-devi-temple": {
 "author": "Moh hakem",
@@ -6524,6 +7569,15 @@
 "page": "Nashik district",
 "source": "https://commons.wikimedia.org/wiki/File:Nasik,_Ramkund_(6362131297).jpg"
 },
+"nashik--panchavati-and-ramkund": {
+"author": "Pradeep717",
+"file": "Kalaram_Temple_Nashik_Corner_View.jpg",
+"img": "/assets/photos/a/nashik--panchavati-and-ramkund.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Panchavati",
+"source": "https://commons.wikimedia.org/wiki/File:Kalaram_Temple_Nashik_Corner_View.jpg"
+},
 "nashik--trimbakeshwar-temple": {
 "author": "Abhideo21",
 "file": "Trimbakeshwar_Temple-Nashik-Maharashtra-1.jpg",
@@ -6589,6 +7643,15 @@
 "page": "Canals of Amsterdam",
 "source": "https://commons.wikimedia.org/wiki/File:Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png"
 },
+"netherlands--keukenhof": {
+"author": "Urdulife",
+"file": "26Y_1599_2.jpg",
+"img": "/assets/photos/a/netherlands--keukenhof.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Keukenhof",
+"source": "https://commons.wikimedia.org/wiki/File:26Y_1599_2.jpg"
+},
 "netherlands--rijksmuseum-and-van-gogh-museum": {
 "author": "Trougnouf (Benoit Brummer)",
 "file": "South_facade_of_the_Rijksmuseum_Amsterdam_(DSCF0528).jpg",
@@ -6606,6 +7669,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "New York City",
 "source": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg"
+},
+"new-york--central-park": {
+"author": "Anthony Quintano from Hillsborough, NJ, United States",
+"file": "Global_Citizen_Festival_Central_Park_New_York_City_from_NYonAir_(15351915006).jpg",
+"img": "/assets/photos/a/new-york--central-park.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Central Park",
+"source": "https://commons.wikimedia.org/wiki/File:Global_Citizen_Festival_Central_Park_New_York_City_from_NYonAir_(15351915006).jpg"
 },
 "new-york--statue-of-liberty-and-ellis-island": {
 "author": "AskALotl",
@@ -6699,6 +7771,15 @@
 "page": "Jebel Akhdar (Oman)",
 "source": "https://commons.wikimedia.org/wiki/File:Jebel_Akhdar_view.jpg"
 },
+"nizwa--jebel-akhdar": {
+"author": "Mark Hills from London, England",
+"file": "Nakhal_Fort_1.jpg",
+"img": "/assets/photos/a/nizwa--jebel-akhdar.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Hajar Mountains",
+"source": "https://commons.wikimedia.org/wiki/File:Nakhal_Fort_1.jpg"
+},
 "nizwa--nizwa-fort": {
 "author": "Andries Oudshoorn",
 "file": "Nakhal_Fort_(2).jpg",
@@ -6716,6 +7797,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Al Hamra, Oman",
 "source": "https://commons.wikimedia.org/wiki/File:Al_Hamra_(5).jpg"
+},
+"nizwa--wahiba-sands": {
+"author": "Aidas U.",
+"file": "Arabian_Desert_-_panoramio.jpg",
+"img": "/assets/photos/a/nizwa--wahiba-sands.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Arabian Desert",
+"source": "https://commons.wikimedia.org/wiki/File:Arabian_Desert_-_panoramio.jpg"
 },
 "north-goa": {
 "author": "Vyacheslav Argenberg",
@@ -6744,6 +7834,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Goa",
 "source": "https://commons.wikimedia.org/wiki/File:BeachFun.jpg"
+},
+"north-goa--fontainhas-panaji": {
+"author": "Макс Вальтер",
+"file": "Panaji_City.JPG",
+"img": "/assets/photos/a/north-goa--fontainhas-panaji.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Panaji",
+"source": "https://commons.wikimedia.org/wiki/File:Panaji_City.JPG"
 },
 "norway": {
 "author": "User:BIL",
@@ -6826,6 +7925,15 @@
 "page": "Lake Gregory (Nuwara Eliya)",
 "source": "https://commons.wikimedia.org/wiki/File:UG-LK_Photowalk_-_2018-03-25_-_Lake_Gregory_(1).jpg"
 },
+"nuwara-eliya--seetha-amman-temple": {
+"author": "Buddhika Mawella",
+"file": "Seetha_Amman_Temple_Seetha_Eliya.jpg",
+"img": "/assets/photos/a/nuwara-eliya--seetha-amman-temple.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Seetha Amman Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Seetha_Amman_Temple_Seetha_Eliya.jpg"
+},
 "nuwara-eliya--tea-factories": {
 "author": "Abdul malik77",
 "file": "NuwaraEliya_from_top.jpg",
@@ -6880,6 +7988,15 @@
 "page": "Nilgiri Mountains",
 "source": "https://commons.wikimedia.org/wiki/File:Nilgiri_Hills_from_Bandipur.jpg"
 },
+"ooty--ooty-lake": {
+"author": "Pinakpani",
+"file": "Ooty_Lake_in_Tamil_Nadu_04.jpg",
+"img": "/assets/photos/a/ooty--ooty-lake.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Ooty Lake",
+"source": "https://commons.wikimedia.org/wiki/File:Ooty_Lake_in_Tamil_Nadu_04.jpg"
+},
 "orchha": {
 "author": "Yann (talk)",
 "file": "Chaturbhuj_Temple,_Orchha.jpg",
@@ -6915,6 +8032,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Orlando, Florida",
 "source": "https://commons.wikimedia.org/wiki/File:Orlando,_Florida_(cropped).jpg"
+},
+"orlando--kennedy-space-center": {
+"author": "Kim Shiflett",
+"file": "Launch_pad_40_awaiting_Falcon_9_rocket.jpg",
+"img": "/assets/photos/a/orlando--kennedy-space-center.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "SpaceX facilities",
+"source": "https://commons.wikimedia.org/wiki/File:Launch_pad_40_awaiting_Falcon_9_rocket.jpg"
 },
 "orlando--universal-orlando": {
 "author": "Kev Cook",
@@ -6961,6 +8087,15 @@
 "page": "Osaka Metro",
 "source": "https://commons.wikimedia.org/wiki/File:Osaka-Metro_Series400-409-01.jpg"
 },
+"osaka--universal-studios-japan": {
+"author": "Leeyj0401",
+"file": "Universal_Studios_in_Japan.jpg",
+"img": "/assets/photos/a/osaka--universal-studios-japan.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Universal Studios Japan",
+"source": "https://commons.wikimedia.org/wiki/File:Universal_Studios_in_Japan.jpg"
+},
 "pachmarhi": {
 "author": "Abhayashok",
 "file": "Pachmarhi_valley_Madhya_Pradesh_INDIA.jpg",
@@ -6978,6 +8113,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Hoshangabad district",
 "source": "https://commons.wikimedia.org/wiki/File:Chauragarh,_Pachmarhi.jpg"
+},
+"pachmarhi--dhoopgarh": {
+"author": "Yashjaiswal12",
+"file": "Dhupgarh,_the_highest_mountain_peak_of_Madhya_Pradesh_gives_a_spectacular_view_of_the_sunset.jpg",
+"img": "/assets/photos/a/pachmarhi--dhoopgarh.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Dhupgarh",
+"source": "https://commons.wikimedia.org/wiki/File:Dhupgarh,_the_highest_mountain_peak_of_Madhya_Pradesh_gives_a_spectacular_view_of_the_sunset.jpg"
 },
 "pachmarhi--jata-shankar-caves": {
 "author": "Shahrukhalam334",
@@ -7014,6 +8158,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Betaab Valley",
 "source": "https://commons.wikimedia.org/wiki/File:Betaab_Valley.jpg"
+},
+"pahalgam--chandanwari": {
+"author": "Unknown author",
+"file": "LiddarRiverJhelum.jpeg",
+"img": "/assets/photos/a/pahalgam--chandanwari.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Pahalgam",
+"source": "https://commons.wikimedia.org/wiki/File:LiddarRiverJhelum.jpeg"
 },
 "palani": {
 "author": "Spsarvana",
@@ -7069,6 +8222,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Pamukkale",
 "source": "https://commons.wikimedia.org/wiki/File:Pamukkale,_Denizli_2026_68.jpg"
+},
+"pamukkale--ephesus": {
+"author": "BSRF",
+"file": "Kula_Fairy_Chimneys_03.jpg",
+"img": "/assets/photos/a/pamukkale--ephesus.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Aegean region",
+"source": "https://commons.wikimedia.org/wiki/File:Kula_Fairy_Chimneys_03.jpg"
 },
 "pamukkale--hierapolis": {
 "author": "Carole Raddato from FRANKFURT, Germany",
@@ -7216,6 +8378,15 @@
 "page": "Sanctuary of Truth",
 "source": "https://commons.wikimedia.org/wiki/File:Santuaryoftruth2.jpg"
 },
+"pattaya--walking-street": {
+"author": "Vyacheslav Argenberg",
+"file": "Pattaya,_Walking_Street_at_night,_Thailand.jpg",
+"img": "/assets/photos/a/pattaya--walking-street.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Walking Street, Pattaya",
+"source": "https://commons.wikimedia.org/wiki/File:Pattaya,_Walking_Street_at_night,_Thailand.jpg"
+},
 "pelling": {
 "author": "Santanu Paul",
 "file": "Sunrise_over_Kangchenjunga.jpg",
@@ -7234,6 +8405,24 @@
 "page": "Dzuluk",
 "source": "https://commons.wikimedia.org/wiki/File:Zuluk_at_dawn.jpg"
 },
+"pelling--khecheopalri-lake": {
+"author": "Kothanda Srinivasan",
+"file": "Foot_bridge_to_Khecheolpalri_Lake.jpg",
+"img": "/assets/photos/a/pelling--khecheopalri-lake.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Khecheopalri Lake",
+"source": "https://commons.wikimedia.org/wiki/File:Foot_bridge_to_Khecheolpalri_Lake.jpg"
+},
+"pelling--pelling-skywalk": {
+"author": "Rangan Datta Wiki",
+"file": "Pelling_Sky_Walk_3.jpg",
+"img": "/assets/photos/a/pelling--pelling-skywalk.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Chenrezig statue and skywalk",
+"source": "https://commons.wikimedia.org/wiki/File:Pelling_Sky_Walk_3.jpg"
+},
 "pelling--pemayangtse-monastery": {
 "author": "walter callens",
 "file": "Full_view_of_Sanga-Choeling_Monastery.jpg",
@@ -7242,6 +8431,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Sanga Choeling Monastery",
 "source": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg"
+},
+"pelling--rabdentse-ruins": {
+"author": "Rangan Datta Wiki",
+"file": "Rabdantse_6.jpg",
+"img": "/assets/photos/a/pelling--rabdentse-ruins.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Rabdentse",
+"source": "https://commons.wikimedia.org/wiki/File:Rabdantse_6.jpg"
 },
 "penang": {
 "author": "HundenvonPenang",
@@ -7269,6 +8467,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Khoo Kongsi",
 "source": "https://commons.wikimedia.org/wiki/File:Khoo_Kongsi_(I).jpg"
+},
+"penang--penang-hill": {
+"author": "HundenvonPenang",
+"file": "Penang_Hil,_George_Town,_Penang_2023.jpg",
+"img": "/assets/photos/a/penang--penang-hill.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Penang Hill",
+"source": "https://commons.wikimedia.org/wiki/File:Penang_Hil,_George_Town,_Penang_2023.jpg"
 },
 "peru": {
 "author": "Diego Delso",
@@ -7397,6 +8604,15 @@
 "page": "Phuket province",
 "source": "https://commons.wikimedia.org/wiki/File:Phuket_Aerial.jpg"
 },
+"phuket--big-buddha": {
+"author": "Subhrajyoti07",
+"file": "The_Big_Buddha,_Phuket.jpg",
+"img": "/assets/photos/a/phuket--big-buddha.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Phuket Big Buddha",
+"source": "https://commons.wikimedia.org/wiki/File:The_Big_Buddha,_Phuket.jpg"
+},
 "phuket--kata-and-karon-beaches": {
 "author": "Christophe95",
 "file": "Soi_Rommanee,_Phuket_Town.jpg",
@@ -7406,6 +8622,15 @@
 "page": "Phuket Old Town",
 "source": "https://commons.wikimedia.org/wiki/File:Soi_Rommanee,_Phuket_Town.jpg"
 },
+"phuket--old-phuket-town": {
+"author": "Myinternationalwikipedia",
+"file": "Phuket_City.jpg",
+"img": "/assets/photos/a/phuket--old-phuket-town.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Phuket (city)",
+"source": "https://commons.wikimedia.org/wiki/File:Phuket_City.jpg"
+},
 "phuket--patong-beach": {
 "author": "Unknown author",
 "file": "Patong_Beach.jpg",
@@ -7414,6 +8639,24 @@
 "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
 "page": "Patong",
 "source": "https://commons.wikimedia.org/wiki/File:Patong_Beach.jpg"
+},
+"phuket--phang-nga-bay": {
+"author": "Vyacheslav Argenberg",
+"file": "Dramatic_karst_landscape_of_Phang_Nga_Bay,_Thailand.jpg",
+"img": "/assets/photos/a/phuket--phang-nga-bay.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Phang Nga Bay",
+"source": "https://commons.wikimedia.org/wiki/File:Dramatic_karst_landscape_of_Phang_Nga_Bay,_Thailand.jpg"
+},
+"phuket--promthep-cape": {
+"author": "Ahoerstemeier",
+"file": "Phuket_Promthep_Cape.jpg",
+"img": "/assets/photos/a/phuket--promthep-cape.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Mueang Phuket district",
+"source": "https://commons.wikimedia.org/wiki/File:Phuket_Promthep_Cape.jpg"
 },
 "plitvice-lakes": {
 "author": "Zysko serhii",
@@ -7678,6 +8921,15 @@
 "page": "Puri Beach",
 "source": "https://commons.wikimedia.org/wiki/File:Puri_Sea_Beach_viewed_from_the_light_house.jpg"
 },
+"puri--raghurajpur": {
+"author": "Rakesh09in",
+"file": "Entrance_of_Raghurajpur.jpg",
+"img": "/assets/photos/a/puri--raghurajpur.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Raghurajpur",
+"source": "https://commons.wikimedia.org/wiki/File:Entrance_of_Raghurajpur.jpg"
+},
 "pushkar": {
 "author": "Bernard Gagnon",
 "file": "Pushkar.jpg",
@@ -7695,6 +8947,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
 "page": "Brahma",
 "source": "https://commons.wikimedia.org/wiki/File:Brahma,_dal_soffitto_del_tempio_di_huchchappaiyya_gudi,_aihole_(balgakot),_karnataka,_VII_secolo_(cropped).jpg"
+},
+"pushkar--pushkar-camel-fair": {
+"author": "sheetal saini",
+"file": "(A)_Camel_Pushkar_fair.jpg",
+"img": "/assets/photos/a/pushkar--pushkar-camel-fair.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Pushkar Fair",
+"source": "https://commons.wikimedia.org/wiki/File:(A)_Camel_Pushkar_fair.jpg"
 },
 "pushkar--pushkar-lake-and-ghats": {
 "author": "Felipe Skroski from Wellington, New Zealand",
@@ -7714,6 +8975,15 @@
 "page": "Doha skyline Corniche",
 "q": "Doha skyline Corniche",
 "source": "https://commons.wikimedia.org/wiki/File:Doha_Corniche_Skyline_View_1.jpg"
+},
+"qatar--souq-waqif": {
+"author": "Diego Delso",
+"file": "Souq_Waqif,_Doha,_Catar,_2013-08-05,_DD_84.JPG",
+"img": "/assets/photos/a/qatar--souq-waqif.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Souq Waqif",
+"source": "https://commons.wikimedia.org/wiki/File:Souq_Waqif,_Doha,_Catar,_2013-08-05,_DD_84.JPG"
 },
 "queenstown": {
 "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
@@ -7787,6 +9057,15 @@
 "page": "Rameswaram",
 "source": "https://commons.wikimedia.org/wiki/File:Rameswaram_Morning.jpg"
 },
+"rameswaram--dhanushkodi": {
+"author": "D Kartikeyan",
+"file": "Dhanushkodi_Old_Railway_Station_02.jpg",
+"img": "/assets/photos/a/rameswaram--dhanushkodi.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Dhanushkodi railway station",
+"source": "https://commons.wikimedia.org/wiki/File:Dhanushkodi_Old_Railway_Station_02.jpg"
+},
 "rameswaram--pamban-bridge": {
 "author": "Shaswat Nimesh",
 "file": "Pamban_Bridge_Train_Passing.jpg",
@@ -7831,6 +9110,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Hundru Falls",
 "source": "https://commons.wikimedia.org/wiki/File:Hundru_Falls,_Jharkhand,_India_4.jpg"
+},
+"ranchi--jonha-falls": {
+"author": "Binayrungta at English Wikipedia",
+"file": "Jonha_falls.jpg",
+"img": "/assets/photos/a/ranchi--jonha-falls.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Jonha Falls",
+"source": "https://commons.wikimedia.org/wiki/File:Jonha_falls.jpg"
 },
 "ranthambore": {
 "author": "Manojmeena",
@@ -7951,6 +9239,15 @@
 "page": "Peleș Castle",
 "source": "https://commons.wikimedia.org/wiki/File:01_Chateau_Peles.jpg"
 },
+"romania--sighisoara": {
+"author": "Fridolin68",
+"file": "Casa_cu_cerbi.JPG",
+"img": "/assets/photos/a/romania--sighisoara.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Sighișoara",
+"source": "https://commons.wikimedia.org/wiki/File:Casa_cu_cerbi.JPG"
+},
 "rome": {
 "author": "Diliff",
 "file": "Trevi_Fountain,_Rome,_Italy_2_-_May_2007.jpg",
@@ -7968,6 +9265,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Roman Forum",
 "source": "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg"
+},
+"rome--st-peter-s-basilica": {
+"author": "Alvesgaspar",
+"file": "Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+"img": "/assets/photos/a/rome--st-peter-s-basilica.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "St. Peter's Basilica",
+"source": "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg"
 },
 "rome--vatican-museums-and-sistine-chapel": {
 "author": "Antoine Taveneaux",
@@ -8013,6 +9319,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Rovaniemi",
 "source": "https://commons.wikimedia.org/wiki/File:Rovaniemi_Montage.jpg"
+},
+"rovaniemi--husky-and-reindeer-safaris": {
+"author": "Alfred Dengan at fi.wikipedia",
+"file": "Ruka.JPG",
+"img": "/assets/photos/a/rovaniemi--husky-and-reindeer-safaris.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Rukatunturi",
+"source": "https://commons.wikimedia.org/wiki/File:Ruka.JPG"
+},
+"rovaniemi--northern-lights-tours": {
+"author": "patano",
+"file": "78°_55'_N_-_Ny-Ålesund_-_panoramio.jpg",
+"img": "/assets/photos/a/rovaniemi--northern-lights-tours.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "List of northernmost items",
+"source": "https://commons.wikimedia.org/wiki/File:78%C2%B0_55%27_N_-_Ny-%C3%85lesund_-_panoramio.jpg"
 },
 "rovaniemi--santa-claus-village": {
 "author": "Floppyjb",
@@ -8061,6 +9385,15 @@
 "q": "Sabarimala Sannidhanam temple",
 "source": "https://commons.wikimedia.org/wiki/File:Sabarimala_4.jpg"
 },
+"sabarimala--erumeli": {
+"author": "Shantham11",
+"file": "Pilgrims_trekking_on_the_path_through_forests_leading_to_Sabarimala_temple.jpg",
+"img": "/assets/photos/a/sabarimala--erumeli.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Sabarimala Trek",
+"source": "https://commons.wikimedia.org/wiki/File:Pilgrims_trekking_on_the_path_through_forests_leading_to_Sabarimala_temple.jpg"
+},
 "salalah": {
 "author": "Bernhard Dunst",
 "file": "Dunst_Oman_scan0322_-_Burj_al_Nahda.jpg",
@@ -8088,6 +9421,15 @@
 "page": "Salzburg Altstadt Hohensalzburg",
 "q": "Salzburg Altstadt Hohensalzburg",
 "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Altstadt_Panorama_20170409_02.jpg"
+},
+"salzburg--hallstatt": {
+"author": "C.Stadler/Bwag",
+"file": "Hallstatt_-_Zentrum_.JPG",
+"img": "/assets/photos/a/salzburg--hallstatt.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Hallstatt",
+"source": "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG"
 },
 "salzburg--hohensalzburg-fortress": {
 "author": "Marko Pernhart",
@@ -8320,6 +9662,24 @@
 "page": "Bukchon Hanok Village",
 "source": "https://commons.wikimedia.org/wiki/File:Bukchon_Hanok_Village_01.jpg"
 },
+"seoul--dmz-tour": {
+"author": "Korea.net / Korean Culture and Information Service (Jeon Han)",
+"file": "Korea_DMZ_Train_01_(14061927467).jpg",
+"img": "/assets/photos/a/seoul--dmz-tour.webp",
+"license": "CC BY-SA 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+"page": "DMZ Train",
+"source": "https://commons.wikimedia.org/wiki/File:Korea_DMZ_Train_01_(14061927467).jpg"
+},
+"seoul--myeongdong": {
+"author": "Asacyan",
+"file": "Myeongdong_Cathedral_01_(cropped).jpg",
+"img": "/assets/photos/a/seoul--myeongdong.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Myeongdong Cathedral",
+"source": "https://commons.wikimedia.org/wiki/File:Myeongdong_Cathedral_01_(cropped).jpg"
+},
 "serengeti": {
 "author": "Bjørn Christian Tørrissen",
 "file": "Serengeti-Landscape-2012.JPG",
@@ -8346,6 +9706,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Seville",
 "source": "https://commons.wikimedia.org/wiki/File:Sevilla_Cathedral_-_Southeast.jpg"
+},
+"seville--alhambra-granada": {
+"author": "Jebulon",
+"file": "Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+"img": "/assets/photos/a/seville--alhambra-granada.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Alhambra",
+"source": "https://commons.wikimedia.org/wiki/File:Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg"
 },
 "seville--real-alcazar": {
 "author": "Ajay Suresh from New York, NY, USA. Edited by MenkinAlRire",
@@ -8401,6 +9770,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
 "page": "Shanghai",
 "source": "https://commons.wikimedia.org/wiki/File:Huangpu_Park_20124-Shanghai_(32208802494).jpg"
+},
+"shanghai--shanghai-disneyland": {
+"author": "Josh Grenier",
+"file": "18-03-12_ShanghaiDisney_013.jpg",
+"img": "/assets/photos/a/shanghai--shanghai-disneyland.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Shanghai Disneyland",
+"source": "https://commons.wikimedia.org/wiki/File:18-03-12_ShanghaiDisney_013.jpg"
 },
 "shanghai--shanghai-tower": {
 "author": "China News Service",
@@ -8519,6 +9897,24 @@
 "page": "The Ridge, Shimla",
 "source": "https://commons.wikimedia.org/wiki/File:The_Ridge_Shimla_5.jpg"
 },
+"shimla--jakhoo-temple": {
+"author": "Rohan1331",
+"file": "Jakhoo_temple.jpg",
+"img": "/assets/photos/a/shimla--jakhoo-temple.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Jakhu Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Jakhoo_temple.jpg"
+},
+"shimla--kufri": {
+"author": "Jeyasree S.B",
+"file": "Kufri_hills.jpg",
+"img": "/assets/photos/a/shimla--kufri.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Kufri, India",
+"source": "https://commons.wikimedia.org/wiki/File:Kufri_hills.jpg"
+},
 "shimla--the-ridge-and-mall-road": {
 "author": "Virusism",
 "file": "Mall_Road_Shimla_1.jpg",
@@ -8537,6 +9933,15 @@
 "page": "Shirdi Sai Baba Samadhi Mandir",
 "q": "Shirdi Sai Baba Samadhi Mandir",
 "source": "https://commons.wikimedia.org/wiki/File:Baba%27s_98th_Maha_Samadhi_Punya_Thithi_Pooja_at_Shirdi_Sai_Gurusthan_Mandir_Coimbatore.jpg"
+},
+"shirdi--shani-shingnapur": {
+"author": "25 Cents FC",
+"file": "Shani_Shignapur_renowned_for_its_Shani_temple.jpg",
+"img": "/assets/photos/a/shirdi--shani-shingnapur.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Shani Shingnapur",
+"source": "https://commons.wikimedia.org/wiki/File:Shani_Shignapur_renowned_for_its_Shani_temple.jpg"
 },
 "shravanabelagola": {
 "author": "Ananth H V",
@@ -8583,6 +9988,15 @@
 "page": "Angkor Wat",
 "source": "https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg"
 },
+"siem-reap--banteay-srei": {
+"author": "Tsui",
+"file": "Banteay_Srei_full2.jpg",
+"img": "/assets/photos/a/siem-reap--banteay-srei.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+"page": "Banteay Srei",
+"source": "https://commons.wikimedia.org/wiki/File:Banteay_Srei_full2.jpg"
+},
 "siem-reap--bayon": {
 "author": "This Photo was taken by Supanut Arunoprayote. Feel free to use any of my images, but please mention me as the author and may send me a message. (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
 "file": "Angkor_Thom_(II).jpg",
@@ -8591,6 +10005,24 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Angkor Thom",
 "source": "https://commons.wikimedia.org/wiki/File:Angkor_Thom_(II).jpg"
+},
+"siem-reap--ta-prohm": {
+"author": "This Photo was taken by Supanut Arunoprayote. Feel free to use any of my images, but please mention me as the author and may send me a message. (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่งข้อความบอกกล่าวด้วย) Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+"file": "Ta_Prohm_(III).jpg",
+"img": "/assets/photos/a/siem-reap--ta-prohm.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Ta Prohm",
+"source": "https://commons.wikimedia.org/wiki/File:Ta_Prohm_(III).jpg"
+},
+"siem-reap--tonle-sap-floating-villages": {
+"author": "Deror_avi",
+"file": "Cambodia,_Tonle_Sap_IMG_3285.JPG",
+"img": "/assets/photos/a/siem-reap--tonle-sap-floating-villages.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Tonle Sap",
+"source": "https://commons.wikimedia.org/wiki/File:Cambodia,_Tonle_Sap_IMG_3285.JPG"
 },
 "sigiriya": {
 "author": "Wrobell",
@@ -8609,6 +10041,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
 "page": "Pidurangala Vihara",
 "source": "https://commons.wikimedia.org/wiki/File:Pidurangala_Buddha_(1).jpg"
+},
+"sigiriya--polonnaruwa": {
+"author": "Lankapic",
+"file": "Dambulla-buddhastupa.jpg",
+"img": "/assets/photos/a/sigiriya--polonnaruwa.webp",
+"license": "CC BY 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+"page": "Dambulla cave temple",
+"source": "https://commons.wikimedia.org/wiki/File:Dambulla-buddhastupa.jpg"
 },
 "sigiriya--sigiriya-rock-fortress": {
 "author": "Lankapic",
@@ -8654,6 +10095,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
 "page": "Marina Bay Sands",
 "source": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_(I).jpg"
+},
+"singapore--night-safari": {
+"author": "Allie Caulfield",
+"file": "Entrance_of_Night_Safari,_Singapore,_2012.jpg",
+"img": "/assets/photos/a/singapore--night-safari.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Night Safari, Singapore",
+"source": "https://commons.wikimedia.org/wiki/File:Entrance_of_Night_Safari,_Singapore,_2012.jpg"
 },
 "slovakia": {
 "author": "Arne Müseler",
@@ -8746,6 +10196,16 @@
 "q": "Palolem beach Goa",
 "source": "https://commons.wikimedia.org/wiki/File:Palolem_beach.jpg"
 },
+"south-goa--basilica-of-bom-jesus-old-goa": {
+"author": "iMahesh",
+"file": "Front Elevation of Basilica of Bom Jesus.jpg",
+"img": "/assets/photos/a/south-goa--basilica-of-bom-jesus-old-goa.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Basilica of Bom Jesus facade Old Goa",
+"q": "Basilica of Bom Jesus facade Old Goa",
+"source": "https://commons.wikimedia.org/wiki/File:Front_Elevation_of_Basilica_of_Bom_Jesus.jpg"
+},
 "south-goa--colva-and-benaulim-beaches": {
 "author": "Ray Swi-hymn",
 "file": "20191211_Benaulim_4885.jpg",
@@ -8754,6 +10214,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Benaulim",
 "source": "https://commons.wikimedia.org/wiki/File:20191211_Benaulim_4885.jpg"
+},
+"south-goa--dudhsagar-falls": {
+"author": "Hsp wiki",
+"file": "Doodhsagar_Fall.jpg",
+"img": "/assets/photos/a/south-goa--dudhsagar-falls.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Dudhsagar Falls",
+"source": "https://commons.wikimedia.org/wiki/File:Doodhsagar_Fall.jpg"
 },
 "south-goa--palolem-beach": {
 "author": "iMahesh",
@@ -8836,6 +10305,15 @@
 "page": "Shikara",
 "source": "https://commons.wikimedia.org/wiki/File:Shikara_-_Sukhna_Lake_-_Chandigarh_2016-08-07_(edit).jpg"
 },
+"srinagar--hazratbal-shrine": {
+"author": "Hardikmodi",
+"file": "HAZRATBAL_SHRINE_01.JPG",
+"img": "/assets/photos/a/srinagar--hazratbal-shrine.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Hazratbal Shrine",
+"source": "https://commons.wikimedia.org/wiki/File:HAZRATBAL_SHRINE_01.JPG"
+},
 "srinagar--nishat-and-shalimar-bagh": {
 "author": "ANSAR AHMAD",
 "file": "Shalimar_Bagh_1.jpg",
@@ -8854,6 +10332,15 @@
 "page": "RUS-2016-Aerial-SPB-Winter Palace",
 "q": "RUS-2016-Aerial-SPB-Winter Palace",
 "source": "https://commons.wikimedia.org/wiki/File:RUS-2016-Aerial-SPB-Winter_Palace_(crop).jpg"
+},
+"st-petersburg--catherine-palace": {
+"author": "Alexander2018",
+"file": "Царское_Село._Екатерининский_дворец_1.jpg",
+"img": "/assets/photos/a/st-petersburg--catherine-palace.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Catherine Palace",
+"source": "https://commons.wikimedia.org/wiki/File:%D0%A6%D0%B0%D1%80%D1%81%D0%BA%D0%BE%D0%B5_%D0%A1%D0%B5%D0%BB%D0%BE._%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80%D0%B5%D1%86_1.jpg"
 },
 "st-petersburg--peterhof-palace": {
 "author": "Ninara from Helsinki, Finland",
@@ -8963,6 +10450,15 @@
 "page": "Sydney",
 "source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_and_Harbour_Bridge_Dusk_(2)_2019-06-21.jpg"
 },
+"sydney--blue-mountains": {
+"author": "JJ Harrison (https://www.jjharrison.com.au/)",
+"file": "Three_Sisters_Sunset.jpg",
+"img": "/assets/photos/a/sydney--blue-mountains.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Blue Mountains (New South Wales)",
+"source": "https://commons.wikimedia.org/wiki/File:Three_Sisters_Sunset.jpg"
+},
 "sydney--sydney-harbour-bridge": {
 "author": "Servite et contribuere",
 "file": "Sydney_Harbour_Bridge-16_October_2025.jpg",
@@ -8981,6 +10477,15 @@
 "page": "Sydney Opera House",
 "source": "https://commons.wikimedia.org/wiki/File:Sydney_Australia._(21339175489).jpg"
 },
+"sydney--taronga-zoo": {
+"author": "Coekon",
+"file": "Taronga_Zoo,_New_South_Wales_Australia.jpg",
+"img": "/assets/photos/a/sydney--taronga-zoo.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Taronga Zoo",
+"source": "https://commons.wikimedia.org/wiki/File:Taronga_Zoo,_New_South_Wales_Australia.jpg"
+},
 "taiwan": {
 "author": "毛貓大少爺",
 "file": "Taipei_Skyline_2022.06.29.jpg",
@@ -8989,6 +10494,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
 "page": "Economy of Taiwan",
 "source": "https://commons.wikimedia.org/wiki/File:Taipei_Skyline_2022.06.29.jpg"
+},
+"taiwan--jiufen": {
+"author": "lumoplank",
+"file": "A-mei_Tea_House.jpg",
+"img": "/assets/photos/a/taiwan--jiufen.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Jiufen",
+"source": "https://commons.wikimedia.org/wiki/File:A-mei_Tea_House.jpg"
 },
 "taiwan--national-palace-museum": {
 "author": "Peellden",
@@ -8999,6 +10513,15 @@
 "page": "National Palace Museum",
 "source": "https://commons.wikimedia.org/wiki/File:NationalPalace_MuseumFrontView.jpg"
 },
+"taiwan--sun-moon-lake": {
+"author": "徐月春",
+"file": "555,_Taiwan,_南投縣魚池鄉水社村_-_panoramio.jpg",
+"img": "/assets/photos/a/taiwan--sun-moon-lake.webp",
+"license": "CC BY 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+"page": "Sun Moon Lake Wen Wu Temple",
+"source": "https://commons.wikimedia.org/wiki/File:555,_Taiwan,_%E5%8D%97%E6%8A%95%E7%B8%A3%E9%AD%9A%E6%B1%A0%E9%84%89%E6%B0%B4%E7%A4%BE%E6%9D%91_-_panoramio.jpg"
+},
 "taiwan--taipei-101": {
 "author": "Sinsyuan",
 "file": "2026台北跨年舞台(英文文字).jpg",
@@ -9007,6 +10530,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Taipei New Year's Eve Party",
 "source": "https://commons.wikimedia.org/wiki/File:2026%E5%8F%B0%E5%8C%97%E8%B7%A8%E5%B9%B4%E8%88%9E%E5%8F%B0(%E8%8B%B1%E6%96%87%E6%96%87%E5%AD%97).jpg"
+},
+"taiwan--taroko-gorge": {
+"author": "lumoplank",
+"file": "Taroko_Gorge4.jpg",
+"img": "/assets/photos/a/taiwan--taroko-gorge.webp",
+"license": "CC0",
+"licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+"page": "Taroko National Park",
+"source": "https://commons.wikimedia.org/wiki/File:Taroko_Gorge4.jpg"
 },
 "tamil-nadu": {
 "author": "Original: Rainer Halama Derivative work: UnpetitproleX",
@@ -9036,6 +10568,15 @@
 "page": "Tashkent Minor Mosque",
 "q": "Tashkent Minor Mosque",
 "source": "https://commons.wikimedia.org/wiki/File:Minor_Mosque_Tashkent.jpg"
+},
+"tashkent--chimgan-mountains": {
+"author": "TwoWings",
+"file": "Chimgan_ski.JPG",
+"img": "/assets/photos/a/tashkent--chimgan-mountains.webp",
+"license": "Public domain",
+"licenseUrl": "",
+"page": "Chimgan",
+"source": "https://commons.wikimedia.org/wiki/File:Chimgan_ski.JPG"
 },
 "tashkent--chorsu-bazaar": {
 "author": "Theklan",
@@ -9101,6 +10642,15 @@
 "page": "Abanotubani",
 "source": "https://commons.wikimedia.org/wiki/File:2014_Tbilisi,_%C5%81a%C5%BAnie_siarkowe_w_Abanotubani_(04).jpg"
 },
+"tbilisi--mtskheta": {
+"author": "Jelger Groeneveld",
+"file": "View_to_Mtskheta_from_Jvari.jpg",
+"img": "/assets/photos/a/tbilisi--mtskheta.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Mtskheta",
+"source": "https://commons.wikimedia.org/wiki/File:View_to_Mtskheta_from_Jvari.jpg"
+},
 "tbilisi--narikala-fortress": {
 "author": "Alexxx1979",
 "file": "Tbilisi_IMG_8846_1920.jpg",
@@ -9148,6 +10698,15 @@
 "page": "Brihadisvara Temple",
 "source": "https://commons.wikimedia.org/wiki/File:Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_(edit).jpg"
 },
+"thanjavur--gangaikonda-cholapuram": {
+"author": "Ssriraman",
+"file": "GangaiKonda_Cholapuram(Front_View).JPG",
+"img": "/assets/photos/a/thanjavur--gangaikonda-cholapuram.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Gangaikonda Cholapuram",
+"source": "https://commons.wikimedia.org/wiki/File:GangaiKonda_Cholapuram(Front_View).JPG"
+},
 "thanjavur--thanjavur-royal-palace": {
 "author": "MADHURANTHAKAN JAGADEESAN",
 "file": "N-TN-C192_Sunrise-Perspective-of-BigTemple.jpg",
@@ -9194,13 +10753,14 @@
 "source": "https://commons.wikimedia.org/wiki/File:Tashich%C3%B6dzong_Thimphu-2008-01-23.jpg"
 },
 "thimphu--buddha-dordenma": {
-"author": "xiquinhosilva",
-"file": "36275-Leshan_(49067653383).jpg",
+"author": "Bernard Gagnon",
+"file": "Buddha Dordenma statue, Thimphu 06.jpg",
 "img": "/assets/photos/a/thimphu--buddha-dordenma.webp",
-"license": "CC BY 2.0",
-"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-"page": "Leshan Giant Buddha",
-"source": "https://commons.wikimedia.org/wiki/File:36275-Leshan_(49067653383).jpg"
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Buddha Dordenma Thimphu",
+"q": "Buddha Dordenma Thimphu",
+"source": "https://commons.wikimedia.org/wiki/File:Buddha_Dordenma_statue,_Thimphu_06.jpg"
 },
 "thimphu--tashichho-dzong": {
 "author": "Bernard Gagnon",
@@ -9384,6 +10944,15 @@
 "page": "Niagara Falls, New York",
 "source": "https://commons.wikimedia.org/wiki/File:Niagara_Falls_001.JPG"
 },
+"toronto-niagara--niagara-on-the-lake": {
+"author": "Paste Let’s have a chat. / Paste at English Wikipedia",
+"file": "Niagara_on_the_lake.jpg",
+"img": "/assets/photos/a/toronto-niagara--niagara-on-the-lake.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Niagara-on-the-Lake",
+"source": "https://commons.wikimedia.org/wiki/File:Niagara_on_the_lake.jpg"
+},
 "tromso": {
 "author": "The Municipality of Tromsø from Tromsø, Norway",
 "file": "Tromsø_sentrum_(5835702754).jpg",
@@ -9501,6 +11070,15 @@
 "page": "Udupi Sri Krishna Matha",
 "source": "https://commons.wikimedia.org/wiki/File:Udupi_Sri_Krishna_Matha_Temple.jpg"
 },
+"udupi--st-mary-s-island": {
+"author": "Dil Shad Roshan",
+"file": "St._Mary's_islands,_Udupi_1767.jpg",
+"img": "/assets/photos/a/udupi--st-mary-s-island.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "St. Mary's Islands",
+"source": "https://commons.wikimedia.org/wiki/File:St._Mary%27s_islands,_Udupi_1767.jpg"
+},
 "ujjain": {
 "author": "Ashverse",
 "file": "Mahakaleshwar_Temple,_Ujjain.jpg",
@@ -9527,6 +11105,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Mahakaleshwar Jyotirlinga",
 "source": "https://commons.wikimedia.org/wiki/File:Mahakaleshwar_Temple,_Ujjain.jpg"
+},
+"ujjain--omkareshwar": {
+"author": "Deveshc92",
+"file": "Omkareswar_Jyotirlinga.jpg",
+"img": "/assets/photos/a/ujjain--omkareshwar.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Omkareshwar Temple",
+"source": "https://commons.wikimedia.org/wiki/File:Omkareswar_Jyotirlinga.jpg"
 },
 "united-kingdom": {
 "author": "Chiugoran",
@@ -9728,6 +11315,15 @@
 "page": "Dashashwamedh Ghat",
 "source": "https://commons.wikimedia.org/wiki/File:Dasaswamedh_ghat-varanasi_india-andres_larin.jpg"
 },
+"varanasi--sarnath": {
+"author": "Yusuke Kawasaki",
+"file": "Ancient_Buddhist_monasteries_near_Dhamekh_Stupa_Monument_Site,_Sarnath.jpg",
+"img": "/assets/photos/a/varanasi--sarnath.webp",
+"license": "CC BY 2.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+"page": "Sarnath",
+"source": "https://commons.wikimedia.org/wiki/File:Ancient_Buddhist_monasteries_near_Dhamekh_Stupa_Monument_Site,_Sarnath.jpg"
+},
 "varkala": {
 "author": "Devender Goyal",
 "file": "Varkala_Beach,_Varkala,_Kerala.jpg",
@@ -9772,6 +11368,16 @@
 "licenseUrl": "",
 "page": "Basilica of Our Lady of Snows, Thoothukudi",
 "source": "https://commons.wikimedia.org/wiki/File:Our_lady_of_snows_basilica.JPG"
+},
+"velankanni--morning-star-church": {
+"author": "Santhoshkumar Sugumar",
+"file": "Morning star church Velankanni.jpg",
+"img": "/assets/photos/a/velankanni--morning-star-church.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Morning Star Church Velankanni",
+"q": "Morning Star Church Velankanni",
+"source": "https://commons.wikimedia.org/wiki/File:Morning_star_church_Velankanni.jpg"
 },
 "velankanni--our-lady-s-tank": {
 "author": "Jebulon",
@@ -9909,6 +11515,15 @@
 "page": "Warangal district",
 "source": "https://commons.wikimedia.org/wiki/File:Kummarigullu_Shiva_Trikutalaya_temple_ruins,_Nidigonda_village,_Telangana_24.jpg"
 },
+"warangal--ramappa-temple": {
+"author": "Warangalite",
+"file": "Bhadrakali_Temple,_Warangal.jpg",
+"img": "/assets/photos/a/warangal--ramappa-temple.webp",
+"license": "CC BY-SA 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+"page": "Bhadrakali Temple, Warangal",
+"source": "https://commons.wikimedia.org/wiki/File:Bhadrakali_Temple,_Warangal.jpg"
+},
 "warangal--thousand-pillar-temple": {
 "author": "Nikhil B",
 "file": "1000pillar_temple_warangal.jpg",
@@ -9944,6 +11559,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
 "page": "Banasura Sagar Dam",
 "source": "https://commons.wikimedia.org/wiki/File:Banasurasagar_Main_Dam.jpg"
+},
+"wayanad--chembra-peak": {
+"author": "Aneesh Jose",
+"file": "Chembra.jpg",
+"img": "/assets/photos/a/wayanad--chembra-peak.webp",
+"license": "CC BY-SA 3.0",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+"page": "Chembra Peak",
+"source": "https://commons.wikimedia.org/wiki/File:Chembra.jpg"
 },
 "wayanad--edakkal-caves": {
 "author": "നിരക്ഷരൻ at Malayalam Wikipedia.",
@@ -10045,6 +11669,15 @@
 "page": "Borobudur",
 "source": "https://commons.wikimedia.org/wiki/File:Pradaksina.jpg"
 },
+"yogyakarta--kraton-sultan-s-palace": {
+"author": "Chainwit.",
+"file": "Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_02.jpg",
+"img": "/assets/photos/a/yogyakarta--kraton-sultan-s-palace.webp",
+"license": "CC BY 4.0",
+"licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+"page": "Kraton Ngayogyakarta Hadiningrat",
+"source": "https://commons.wikimedia.org/wiki/File:Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_02.jpg"
+},
 "yogyakarta--prambanan": {
 "author": "Gunawan Kartapranata",
 "file": "Prambanan_Complex_1.jpg",
@@ -10098,6 +11731,15 @@
 "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
 "page": "Zermatt",
 "source": "https://commons.wikimedia.org/wiki/File:1_zermatt_evening_2022.jpg"
+},
+"zermatt--glacier-express": {
+"author": "Daniel Schwen",
+"file": "CH_Landwasser_2.jpg",
+"img": "/assets/photos/a/zermatt--glacier-express.webp",
+"license": "CC BY-SA 2.5",
+"licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+"page": "Glacier Express",
+"source": "https://commons.wikimedia.org/wiki/File:CH_Landwasser_2.jpg"
 },
 "zermatt--gornergrat-railway": {
 "author": "My another account at English Wikipedia",

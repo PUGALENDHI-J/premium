@@ -2,13 +2,15 @@
 // Markup and class names are copied from index.html so new pages use the existing design system.
 import { readFileSync } from "node:fs";
 import { SITE } from "../../content/site.mjs";
-import { menuLinks, topbar, footLinks } from "./menu.mjs";
+import { menuLinks, topbar, footLinks, searchBtn } from "./menu.mjs";
 
 // the floating WhatsApp button is copied verbatim from the home page
 const WA_BTN = readFileSync(new URL("../../index.html", import.meta.url), "utf8").match(/<a class="wa"[\s\S]*?<\/a>/)[0].replace('href="https', 'target="_blank" rel="noopener" href="https');
 
 export const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 export const slugify = s => String(s).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+// true when text names a sight: "Basilica of Bom Jesus, Old Goa" is named by "...the Basilica of Bom Jesus and Se Cathedral..."
+export const namedIn = (sight, text) => { const core = slugify(String(sight).split(/[,(]/)[0]); return core.length > 3 && `-${slugify(text)}-`.includes(`-${core}-`) };
 export const abs = u => SITE.origin + u;
 export const list = (a, sep = ", ", last = " and ") => a.length < 2 ? (a[0] || "") : a.slice(0, -1).join(sep) + last + a[a.length - 1];
 
@@ -84,7 +86,7 @@ export const setMenu = m => { MENU = m };
 
 function header(active) {
   const nl = menuLinks(MENU, active);
-  return `${topbar()}<header><a class="brand" href="/" aria-label="Nexara Holidays, home"><img src="/assets/logo-circle.webp" alt="" width="56" height="56"><span class="bw" aria-hidden="true"><b>NEXARA</b><i>Holidays</i></span></a><nav><span class="nl">${nl}</span><span class="hc"><a class="hcall" href="tel:${SITE.tel}"><i>${IC.call}</i><span><small>Talk to a planner</small><b>${SITE.phone}</b></span></a><a class="hmail" href="mailto:${SITE.email}" title="${SITE.email}" aria-label="Email ${SITE.email}">${IC.mail}</a></span><a class="ph" href="/custom-tour/" data-enq><span>Get a free quote</span><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></nav><button class="burger" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg></button></header>`;
+  return `${topbar()}<header><a class="brand" href="/" aria-label="Nexara Holidays, home"><img src="/assets/logo-circle.webp" alt="" width="56" height="56"><span class="bw" aria-hidden="true"><b>NEXARA</b><i>Holidays</i></span></a><nav><span class="nl">${nl}</span><span class="hc"><a class="hcall" href="tel:${SITE.tel}"><i>${IC.call}</i><span><small>Talk to a planner</small><b>${SITE.phone}</b></span></a><a class="hmail" href="mailto:${SITE.email}" title="${SITE.email}" aria-label="Email ${SITE.email}">${IC.mail}</a></span><a class="ph" href="/custom-tour/" data-enq><span>Get a free quote</span><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></nav>${searchBtn()}<button class="burger" aria-label="Menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16M8 16h12"/></svg></button></header>`;
 }
 
 function footer() {
@@ -121,7 +123,7 @@ export function page({ path, title, desc, h1, scr, sub, crumbs = [], hero = {}, 
 <meta property="og:image" content="${abs(hero.img || SITE.ogImage)}"><meta name="twitter:card" content="summary_large_image">
 ${ld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="${FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css"><link rel="stylesheet" href="/assets/css/nexara-dest.css"><link rel="stylesheet" href="/assets/css/nexara-brush.css">${headExtra}<link rel="stylesheet" href="/assets/css/nexara-light.css">
+<link rel="stylesheet" href="/assets/css/nexara-base.css"><link rel="stylesheet" href="/assets/css/nexara-pages.css"><link rel="stylesheet" href="/assets/css/nexara-menu.css"><link rel="stylesheet" href="/assets/css/nexara-ui.css"><link rel="stylesheet" href="/assets/css/nexara-flat.css"><link rel="stylesheet" href="/assets/css/nexara-dest.css"><link rel="stylesheet" href="/assets/css/nexara-brush.css"><link rel="stylesheet" href="/assets/css/nexara-search.css">${headExtra}<link rel="stylesheet" href="/assets/css/nexara-light.css">
 </head><body class="sub">
 ${header(path)}
 <main id="main">
@@ -143,6 +145,7 @@ ${WA_BTN}
 <script src="/assets/js/nexara-pages.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
 <script src="/assets/js/nexara-menu.js" defer></script>
+<script src="/assets/js/nexara-search.js" defer></script>
 <script src="/assets/js/nexara-ui.js" defer></script>
 <script src="/assets/js/nexara-transition.js" defer></script>
 <script src="/assets/js/nexara-grid.js" defer></script>

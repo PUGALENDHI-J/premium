@@ -20,7 +20,7 @@ UA = "NexaraHolidaysSiteBuilder/1.0 (https://nexaraholidays.com; static site pho
 API = "https://en.wikipedia.org/w/api.php"
 BAD = re.compile(r"flag|map|locator|location|seal|emblem|coat[_ ]of[_ ]arms|logo|\.svg|\.gif|\.tif|diagram|chart|icon|signature|portrait|banknote|stamp", re.I)
 OK_LICENCE = re.compile(r"^(cc0|public domain|pd|cc[ -]by(-sa)?[ -]\d)", re.I)
-SIZES = {"place": (1600, 640), "top": (1600, 640), "attraction": (960, None)}
+SIZES = {"place": (1920, 1280), "top": (1920, 1280), "attraction": (960, None)}  # full HD; cards use the 1280 copy
 
 
 def get(url, tries=4):

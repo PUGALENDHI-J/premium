@@ -197,3 +197,11 @@ body.sub .dgrid .dc.rv.in:hover{transform:translateY(-8px)}
 nav .nl a.cur{border-radius:8px!important}
 .ftabs button{border-radius:99px!important}
 @media(prefers-reduced-motion:reduce){body.sub .dgrid .dc,body.sub .dgrid .dc *{transition:none!important}}
+
+/* own packages: highlight chips and the photo gallery */
+.pkhl{list-style:none;padding:0;margin:14px 0 18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:12px}
+.pkhl li{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;font:500 .95rem Poppins,sans-serif;color:var(--ink);transition:border-color .25s,transform .25s,box-shadow .25s}
+.pkhl li:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.pkhl i{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,0,0,.08);color:var(--red)}
+.pkgal{grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))}
+.pkgal figure{border-radius:14px}

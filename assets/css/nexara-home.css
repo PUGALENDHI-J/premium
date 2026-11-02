@@ -53,3 +53,19 @@
 #intro:after{content:"";position:absolute;inset:-10% -60%;pointer-events:none;background:radial-gradient(120px 46px at 12% 12%,rgba(255,255,255,.95) 60%,transparent 62%),radial-gradient(160px 56px at 16% 14%,rgba(255,255,255,.95) 60%,transparent 62%),radial-gradient(140px 50px at 55% 96%,rgba(255,255,255,.95) 60%,transparent 62%),radial-gradient(190px 60px at 60% 98%,rgba(255,255,255,.95) 60%,transparent 62%),radial-gradient(130px 44px at 92% 10%,rgba(255,255,255,.9) 60%,transparent 62%);animation:cld2 3.6s linear both}
 @keyframes cld2{from{transform:translateX(14%)}to{transform:translateX(-22%)}}
 @media(prefers-reduced-motion:reduce){.pl .gl,#intro:after{animation:none}#intro .in p span{opacity:1;transform:none}}
+
+/* "Our holiday packages": filters, search, count and show-all */
+.fbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin-bottom:10px}
+.fbar #ftabs{margin:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.fbar #ftabs::-webkit-scrollbar{display:none}
+.fsch{display:flex;align-items:center;gap:8px;padding:0 16px;height:46px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--mut);min-width:min(280px,100%);transition:border-color .25s,box-shadow .25s}
+.fsch:focus-within{border-color:var(--red);box-shadow:0 0 0 4px rgba(255,0,0,.08)}
+.fsch input{border:0;outline:0;background:transparent;font:400 .92rem Poppins,sans-serif;color:var(--ink);width:100%;min-width:0}
+.fct{text-align:center;color:var(--mut);font-size:.85rem;margin:6px 0 18px;min-height:1.2em}
+.fnone{text-align:center;color:var(--mut);margin:20px 0}
+.fnone a{color:var(--red);font-weight:600}
+.fmore{text-align:center;margin-top:28px}
+#fgrid .card:hover .more,#fgrid .card:focus-within .more{max-height:340px}
+#fgrid .card .ci{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+#fgrid .card:hover .ci{transform:scale(1.08)}
+@media(max-width:640px){.fbar{flex-direction:column;align-items:stretch}.fbar #ftabs{max-width:100%}.fsch{min-width:0}}

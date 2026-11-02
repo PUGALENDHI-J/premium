@@ -24,13 +24,14 @@ const IC = {
   list: '<path d="M10 6h10M10 12h10M10 18h10"/><path d="m3.5 6 1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"/>',
   chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
 };
+// [icon, title, text, link, link label, photo, photo caption]
 const aboutPlan = [
-  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines"],
-  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays"],
-  ["globe", "The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays"],
-  ["brief", "Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences"],
-  ["group", "Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours"],
-  ["plane", "Travel services", "Flight tickets, visas, forex, travel insurance, hotels and airport transfers, on their own or as part of your trip.", "/services/", "Travel services"],
+  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines", "/assets/photos/vw/thanjavur.webp", "Brihadeeswarar Temple, Thanjavur"],
+  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays", "/assets/photos/vw/ladakh.webp", "Prayer flags by a high mountain lake, Ladakh"],
+  ["globe", "The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays", "/assets/photos/vw/switzerland.webp", "An alpine valley in Switzerland"],
+  ["brief", "Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences", "/assets/photos/guangzhou.webp", "Guangzhou, home of the Canton Fair"],
+  ["group", "Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours", "/assets/photos/vw/maldives.webp", "Island reefs of the Maldives"],
+  ["plane", "Travel services", "Flight tickets, visas, forex, travel insurance, hotels and airport transfers, on their own or as part of your trip.", "/services/", "Travel services", "/assets/photos/vw/dubai--burj-khalifa.webp", "Burj Khalifa, Dubai"],
 ];
 const aboutSteps = [
   ["Tell us your idea", `On WhatsApp, by phone or through our <a href="/custom-tour/">custom tour form</a>, from wherever you live.`],
@@ -43,20 +44,30 @@ const aboutPromises = [
   ["list", "No surprises", "Inclusions and exclusions are listed in your written quote. If something is not included, we say so."],
   ["chat", "A real person to message", "You have a planner on WhatsApp before and during your trip, in English or Tamil."],
 ];
-const aboutPre = `<section class="ab-s ab-intro"><div class="ab-copy"><div class="h"><span class="eye">Who we are</span><h2>A Tamil Nadu travel company, planning journeys everywhere</h2></div>
-<p>Nexara Holidays is rooted in <b>Tamil Nadu</b>. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.</p>
+const two = n => String(n + 1).padStart(2, "0");
+const chev = '<svg class="abx-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const aboutFacts = [[70, "+", "countries we plan trips to"], [2, "", "languages: English and Tamil"], [1, "", "planner on WhatsApp, before and during your trip"], [0, "Free", "quotes; nothing is booked until you confirm"]];
+// interactions (count-up, plan showcase, timeline, collage parallax) live in assets/js/nexara-about.js
+const aboutPre = `<section class="ab-s abx-intro"><div class="abx-copy"><div class="h"><span class="eye">Who we are</span><h2>A Tamil Nadu travel company, planning journeys <em>everywhere</em></h2></div>
+<p class="abx-lede">Nexara Holidays is rooted in <b>Tamil Nadu</b>. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.</p>
 <p>Every trip starts as a conversation with a planner, not a fixed package: you tell us what you have in mind, and we send a written plan with a price that you can change until it is right.</p>
 <div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
-<ul class="ab-facts"><li><b>70+</b><span>countries we plan trips to</span></li><li><b>2</b><span>languages: English and Tamil</span></li><li><b>1</b><span>planner on WhatsApp, before and during your trip</span></li><li><b>Free</b><span>quotes; nothing is booked until you confirm</span></li></ul></section>
-<div class="alt"><section class="ab-s"><div class="h"><span class="eye">What we plan</span><h2>Trips for every reason to travel</h2><p>From a weekend temple circuit to a month across several continents.</p></div>
-<div class="ab-grid">${aboutPlan.map(([ic, h, p, u, go]) => `<a class="ab-card" href="${u}"><i>${SVG(IC[ic])}</i><h3>${h}</h3><p>${p}</p><span class="ab-go">${go} →</span></a>`).join("")}</div></section></div>
-<section class="ab-s"><div class="h"><span class="eye">How we work</span><h2>From your first message to a confirmed trip</h2><p>Four simple steps, and you decide at every one of them.</p></div>
-<ol class="ab-steps">${aboutSteps.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
-<div class="alt"><section class="ab-s"><div class="h"><span class="eye">Our promises</span><h2>What you can count on</h2></div>
-<div class="ab-promise">${aboutPromises.map(([ic, h, p]) => `<div><i>${SVG(IC[ic])}</i><h3>${h}</h3><p>${p}</p></div>`).join("")}</div></section></div>`;
-const aboutContact = `<div class="alt"><section class="ab-s"><div class="h"><span class="eye">Get in touch</span><h2>Talk to a planner</h2><p>Call, WhatsApp, email or message us on Instagram. We usually reply the same day.</p></div><div class="cgrid">
+<div class="abx-art"><figure class="abx-p1"><img src="/assets/photos/vw/madurai--meenakshi-amman-temple.webp" alt="Painted ceiling and carved pillars of Meenakshi Amman Temple, Madurai"></figure><figure class="abx-p2"><img src="/assets/photos/vw/santorini--oia-sunset.webp" alt="Whitewashed houses of Oia, Santorini" loading="lazy"></figure>
+<div class="abx-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="abx-ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text><textPath href="#abx-ring" textLength="280" lengthAdjust="spacing">From Tamil Nadu · to the world · </textPath></text></svg><i>${SVG(IC.globe)}</i></div>
+<div class="abx-tag"><b>English &amp; Tamil</b><span>your planner speaks both</span></div></div></section>
+<div class="abx-statw"><ul class="abx-stats">${aboutFacts.map(([n, s, t]) => `<li><b${n ? ` data-count="${n}" data-suffix="${s}"` : ""}>${n ? n + s : s}</b><span>${t}</span></li>`).join("")}</ul></div>
+<div class="alt abx-band"><section class="ab-s"><div class="h"><span class="eye">What we plan</span><h2>Trips for every reason to travel</h2><p>From a weekend temple circuit to a month across several continents.</p></div>
+<div class="abx-show"><div class="abx-media">${aboutPlan.map(([, , , , , img, cap], i) => `<figure${i ? "" : ' class="on"'}><img src="${img}" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`).join("")}<div class="abx-num" aria-hidden="true"><b>01</b> / ${two(aboutPlan.length - 1)}</div></div>
+<ol class="abx-tabs">${aboutPlan.map(([ic, h, p, u, go], i) => `<li${i ? "" : ' class="on"'}><button type="button" id="abx-t${i}" aria-controls="abx-p${i}" aria-expanded="${!i}"><i>${SVG(IC[ic])}</i><span class="abx-n">${two(i)}</span><span class="abx-t">${h}</span>${chev}</button><div class="abx-panel" id="abx-p${i}" role="region" aria-labelledby="abx-t${i}"><div><p>${p}</p><a class="abx-go" href="${u}">${go} →</a></div></div><span class="abx-bar" aria-hidden="true"><span></span></span></li>`).join("")}</ol></div></section></div>
+<section class="ab-s"><div class="h c"><span class="eye">How we work</span><h2>From your first message to a confirmed trip</h2><p>Four simple steps, and you decide at every one of them.</p></div>
+<ol class="abx-steps">${aboutSteps.map(([h, p], i) => `<li><span class="abx-dot">${two(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
+<div class="abx-pwrap"><section class="ab-s abx-promise"><figure class="abx-pimg"><img src="/assets/photos/vw/kanyakumari.webp" alt="Vivekananda Rock Memorial and Thiruvalluvar Statue, Kanyakumari" loading="lazy"><figcaption><span>Kanyakumari</span>Where India's three seas meet</figcaption></figure>
+<div><div class="h"><span class="eye">Our promises</span><h2>What you can count on</h2><p>Three things that hold for every trip we plan, whatever its size.</p></div>
+<ul class="abx-plist">${aboutPromises.map(([ic, h, p]) => `<li><i>${SVG(IC[ic])}</i><div><h3>${h}</h3><p>${p}</p></div></li>`).join("")}</ul></div></section></div>
+<script src="/assets/js/nexara-about.js" defer></script>`;
+const aboutContact = `<div class="alt"><section class="ab-s"><div class="abx-cta"><img src="/assets/photos/vw/bali--tanah-lot.webp" alt="" loading="lazy"><div class="abx-cin"><span class="eye">Get in touch</span><h2>Talk to a planner</h2><p>Call, WhatsApp, email or message us on Instagram. We usually reply the same day.</p><div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></div></div><div class="cgrid">
 ${contactLinks}
-</div><div class="ab-cta ab-mid"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></section></div>`;
+</div></section></div>`;
 // destination picker for the enquiry forms (contact, custom tour, home page): grouped like the Packages menu
 export const DEST_GROUPS = [
   ["India", ["Tamil Nadu", "Kerala", "Karnataka", "Goa", "Rajasthan", "Golden Triangle (Delhi, Agra, Jaipur)", "Kashmir", "Ladakh", "Himachal Pradesh", "Uttarakhand", "Varanasi and Uttar Pradesh", "Sikkim and Darjeeling", "Northeast India", "Andaman Islands", "Lakshadweep", "Pilgrimage in India"]],

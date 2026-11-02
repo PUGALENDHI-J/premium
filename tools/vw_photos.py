@@ -217,9 +217,9 @@ def main():
         if same:  # unchanged since the last run: keep the existing copies
             continue
         im = Image.open(ph["file"]).convert("RGB")
-        big = im.copy(); big.thumbnail((1600, 1600), Image.LANCZOS); big.save(OUT / f"{key}.webp", "WEBP", quality=80, method=6)
+        big = im.copy(); big.thumbnail((1920, 1920), Image.LANCZOS); big.save(OUT / f"{key}.webp", "WEBP", quality=80, method=6)
         if "--" not in key:
-            sm = im.copy(); sm.thumbnail((720, 720), Image.LANCZOS); sm.save(OUT / "sm" / f"{key}.webp", "WEBP", quality=76, method=6)
+            sm = im.copy(); sm.thumbnail((1280, 1280), Image.LANCZOS); sm.save(OUT / "sm" / f"{key}.webp", "WEBP", quality=76, method=6)
     for f in list(OUT.glob("*.webp")) + list((OUT / "sm").glob("*.webp")):
         if f.name not in keep:
             f.unlink()

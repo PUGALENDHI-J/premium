@@ -11,6 +11,7 @@ import { WORLD, W_REGIONS, COUNTRIES, W_CITIES } from "../content/world.mjs";
 import { PK_IN } from "../content/packages-india.mjs";
 import { PK_W } from "../content/packages-world.mjs";
 import { SIGNATURE } from "../content/packages-signature.mjs";
+import { TOP } from "../content/packages-top.mjs";
 import { TYPES } from "../content/tour-types.mjs";
 import { SACRED, SACRED_GROUPS, SACRED_HUB } from "../content/sacred.mjs";
 import { EXPERIENCES } from "../content/experiences.mjs";
@@ -21,8 +22,8 @@ import { PAGES, FAQS, destOptions } from "../content/pages.mjs";
 import { SERVICES, SERVICE_GROUPS, SERVICE_FAQ } from "../content/services.mjs";
 import { COUNTRY_FACTS, INDIA_FACTS, INDIA_TZ, FACTS_REVIEWED } from "../content/country-facts.mjs";
 import { ADD_STATES, ADD_IN_CITIES, ADD_W_REGIONS, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
-import { esc, slugify, abs, list, IC, motifFor, page, sec, card, cards, faq, brush, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit, spotlight } from "./lib/html.mjs";
-import { buildMenu, menuLinks, topbar } from "./lib/menu.mjs";
+import { esc, slugify, namedIn, abs, list, IC, motifFor, page, sec, card, cards, faq, brush, tags, dat, facts, linkList, cta, note, filterTabs, setMenu, photoCredit, spotlight } from "./lib/html.mjs";
+import { buildMenu, menuLinks, topbar, searchBtn } from "./lib/menu.mjs";
 import { renderMd } from "./lib/md.mjs";
 
 // destinations added later live in their own file; merge them before anything is built
@@ -159,6 +160,18 @@ for (const s of SIGNATURE) {
   const H = N.get(s.home), st = s.stops.map(([x, n]) => [N.get(x), n]);
   PK.push({ ...s, dom: false, home: H, stops: st, nights: s.nights, days: s.nights + 1, id: s.id, sig: true, themes: s.themes, url: `/packages/international/${H.s}/${s.slug}/` });
 }
+// Nexara's own 23 holiday packages (content/packages-top.mjs): written day plans, in India or abroad
+for (const s of TOP) {
+  const H = N.get(s.home), st = s.stops.map(([x, n]) => [N.get(x), n]), why = [];
+  if (!H) why.push("unknown home " + s.home);
+  st.forEach(([n], i) => { if (!n || !isPlace(n) || n.draft) why.push("unknown or draft stop " + s.stops[i][0]) });
+  if (s.stops.reduce((a, [, n]) => a + n, 0) != s.nights) why.push("stop nights do not add up to " + s.nights);
+  if (s.d.length != s.nights + 1) why.push(`${s.d.length} day plans for ${s.nights + 1} days`);
+  for (const t of s.themes) if (!THEME_LABEL[t]) why.push("unknown theme " + t);
+  if (why.length) { draft("package", s.slug, why.join("; ")); continue }
+  const dom = top(H).kind == "state", img = PHOTOS[s.img]?.img || warn(`package ${s.name}: no photo ${s.img}`) || undefined;
+  PK.push({ ...s, dom, home: H, stops: st, days: s.nights + 1, sig: true, top: true, img, url: `/packages/${dom ? "india" : "international"}/${H.s}/${s.slug}/` });
+}
 const pkgsAt = n => PK.filter(p => p.stops.some(([x]) => x === n));
 const pkgsIn = t => PK.filter(p => p.home === t || p.stops.some(([x]) => top(x) === t));
 const pkgsOfType = s => PK.filter(p => p.themes.includes(s));
@@ -174,8 +187,17 @@ setMenu(MENU);
   const put = (name, html) => { const rx = new RegExp(`(<!--${name}-->)[\\s\\S]*?(<!--/${name}-->)`); if (!rx.test(home)) throw new Error(`index.html: missing <!--${name}--> markers`); home = home.replace(new RegExp(rx.source, "g"), (_, a, b) => a + html + b) };
   put("TOPBAR", topbar());
   put("MENU", menuLinks(MENU, "/", { spa: true }));
+  put("SEARCH", searchBtn());
   put("EXPERIENCES", homeExperiences(TOPIC));
   put("DESTS", destOptions());
+  // "Our holiday packages" cards (const FP in the home script): the own packages, with day titles for the day preview
+  const W = { honeymoon: "couple", couples: "couple", "family-holidays": "family", "group-tours": "group friends" };
+  const fp = PK.filter(p => p.top).map(p => {
+    const img = p.img && existsSync(path.join(ROOT, smOf(p.img))) ? smOf(p.img) : p.img;
+    return JSON.stringify({ n: p.name, u: p.url, im: (img || "").replace(/^\//, ""), loc: [...new Set(p.stops.map(([n]) => n.n))].slice(0, 4).join(" · "), dur: `${p.nights} Nights ${p.days} Days`, tag: p.tag, r: p.r, w: [...new Set(p.themes.map(t => W[t]).filter(Boolean))].join(" "), h: p.hl.join(" · "), d: p.d.map(([t]) => [t]) }) + ",\n";
+  }).join("");
+  if (!/\/\*FP\*\/[\s\S]*?\/\*\/FP\*\//.test(home)) throw new Error("index.html: missing /*FP*/ markers");
+  home = home.replace(/(\/\*FP\*\/)[\s\S]*?(\/\*\/FP\*\/)/, (_, a, b) => a + "\n" + fp + b);
   home = withFocus(home);
   if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
 }
@@ -259,6 +281,8 @@ function noPhotoLeft(html, o, pk, at, used, edits) {
   if (o.kind == 0) { const f = html.lastIndexOf("<figure", o.i); return cut(f, html.indexOf("</figure>", o.i) + 9) }
   const fig = html.lastIndexOf('<figure class="cph"', o.i); if (fig >= 0 && html.indexOf("</figure>", fig) > o.i) return cut(fig, html.indexOf("</figure>", o.i) + 9);
   if (/class="aci"/.test(o.tag)) return cut(o.i, o.i + o.tag.length);
+  // a faith journey keeps its repeated photo rather than a temple or beach picture from the generic topics
+  if (/umrah|ziyarat|hajj|mosque|masjid|dargah|sufi|church|christian|basilica|cathedral|vatican|holy land|lourdes|fatima|gurdwara|sahib|jain|tirth|buddhist|monastery|islam/i.test(pk ? `${pk.name} ${pk.sum}` : at ? `${at.n} ${at.d}` : "")) return;
   const kind = (pk ? pk.stops.map(([n]) => n.t).join(" ") : at?.t) || "";
   const tags = [...KIND_TOPIC.filter(([rx]) => rx.test(kind)).flatMap(([, k]) => k.filter(x => !x.startsWith("tt-"))), ...(pk ? pk.themes.map(t => "tt-" + t) : [])];
   const alt = [...tags, ...KIND_TOPIC.flatMap(([, k]) => k).filter(x => !x.startsWith("tt-")), ...KIND_TOPIC.map(([, k]) => k[0])].map(k => TOPIC[k]?.img).find(x => x && !used.has(canon(x)));
@@ -294,7 +318,7 @@ function onePhotoEach(html) {
     }
     const pk = PK_BY_URL.get(o.href), at = BY_URL.get(o.href);
     const seeds = pk ? pk.stops.map(([n]) => n) : at ? [at] : PH_INFO.get(o.key) ? [PH_INFO.get(o.key).n] : [];
-    const pick = [...new Set(seeds.flatMap(n => PH_OF.get(n.s) || [])), ...(seeds[0] ? nearImgs(seeds[0]) : [])].find(x => !used.has(x));
+    const pick = [...new Set([...(pk ? pkgPhotos(pk).map(o => o.img).filter(x => PH_INFO.has(x)) : []), ...seeds.flatMap(n => PH_OF.get(n.s) || [])]), ...(seeds[0] ? nearImgs(seeds[0]) : [])].find(x => !used.has(x));
     if (!pick) { noPhotoLeft(html, o, pk, at, used, edits); continue }
     used.add(pick);
     const old = PH_INFO.get(o.key), nu = PH_INFO.get(pick), src = o.src.includes("/sm/") ? smIf(pick) : pick;
@@ -324,22 +348,54 @@ function emit(urlPath, html, group, { index = true } = {}) {
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
   written.push(path.relative(ROOT, file).replace(/\\/g, "/"));
-  if (index && group) sitemap[group].push(urlPath);
+  if (index && group) { sitemap[group].push(urlPath); searchRow(urlPath, html) }
 }
+// site search (assets/js/nexara-search.js): one row per indexed page, [name, url, type, description, photo, keywords]
+const SEARCH = [];
+const unent = s => String(s).replace(/<[^>]+>/g, "").replace(/&(amp|lt|gt|quot|#39);/g, (_, e) => ({ amp: "&", lt: "<", gt: ">", quot: '"', "#39": "'" }[e])).replace(/\s+/g, " ").trim();
+const SEARCH_TYPE = [["/destinations/", "d"], ["/packages/", "k"], ["/tour-packages/", "k"], ["/tour-types/", "t"], ["/experiences/", "e"], ["/sacred/", "s"], ["/services/", "v"], ["/travel-guides/", "g"], ["/blog/", "b"]];
+function searchRow(u, html) {
+  const name = unent(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1] || html.match(/<title>(.*?)<\/title>/)[1].split(" | ")[0]);
+  const desc = unent(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || "");
+  const og = html.match(/<meta property="og:image" content="([^"]*)"/)?.[1].replace(SITE.origin, "");
+  const img = og && og != SITE.ogImage ? og : html.match(/<main[\s\S]*?<img[^>]*?src="(\/assets\/photos\/[^"]+)"/)?.[1];
+  const t = (SEARCH_TYPE.find(([p]) => u.startsWith(p)) || [, "p"])[1];
+  // destination headings read "Kerala Tour Packages"; the result says "Destination" already
+  SEARCH.push([t == "d" ? name.replace(/ Tour Packages$/, "") : name, u, t, clipV(desc, 130), img ? smIf(canon(img)) : "", ""]);
+}
+// words a page should be found by that its heading and description may not contain: sights, stops, themes, the state or country
+const searchKw = u => {
+  const n = BY_URL.get(u), p = PK_BY_URL.get(u);
+  if (n) return ["tour packages", n.parent?.n, n.region?.n, n.dom ? "India" : "", n.t, ...(n.k || []), ...(n.a || []).map(a => a[0])];
+  if (p) return [p.home.n, ...p.stops.map(([x]) => x?.n), ...p.themes.map(t => THEME_LABEL[t]), `${p.days} days`, p.dom ? "India" : "international"];
+  return [];
+};
 
 /* ---------- helpers for cards ---------- */
 const placeCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.kind == "city" ? n.parent.n : (n.region?.n || ""), tags: (n.t || "").split(" ").filter(Boolean).map(x => x[0].toUpperCase() + x.slice(1)), text: firstSentence(n.d), best: n.b, t: n.t || "" });
 const topCard = n => ({ url: n.url, name: n.n, ...vis(n), loc: n.region?.n || (n.dom ? "India" : ""), tags: (n.k || []).slice(0, 3), text: firstSentence(n.d), best: n.bt?.[0], bestLabel: "Best time", go: "Explore" });
 const pkgCard = p => ({ url: p.url, name: p.name, ...pkgVis(p), badge: `${p.days}D / ${p.nights}N`, loc: p.stops.map(([n]) => n.n).filter((v, i, a) => a.indexOf(v) == i).slice(0, 4).join(" · "), tags: p.themes.filter(t => !["short-breaks", "long-stays", "weekend-getaways", "private-tours"].includes(t)).slice(0, 2).map(t => THEME_LABEL[t]), text: p.sum, go: "View itinerary", t: p.themes.join(" ") + (p.dom ? " india" : " international") + (inTN(p) ? " tamil-nadu" : "") });
-// package photo: varied per package (seeded by its slug) from its stops' own photos and their attraction photos,
+// package photo: a sight its summary names that fits the trip's style (a church on a pilgrimage, a houseboat on a
+// cruise), then the sight it names first ("Basilica of Bom Jesus" on a Goa churches trip), then any photo that fits
+// the style; else varied per package (seeded by its slug) from its stops' own photos and their attraction photos,
 // so packages sharing a stop don't all show the same picture
+const PKG_THEME_RX = [["cruise-holidays", /cruise|houseboat|boat|ship|ferry|felucca|backwater/i], ["pilgrimage-tours", /temple|church|basilica|cathedral|shrine|grotto|chapel|mosque|masjid|dargah|gurudwara|gurdwara|sahib|monastery|stupa|gompa|mandir|math\b|ghat|pilgrimage/i], ["wildlife-safaris", /safari|national park|tiger|zone|range|wildlife|game|migration/i], ["beach-holidays", /beach|island|lagoon|bay\b/i]];
+// a package's own photos, best first (also used when the page has already shown the first one)
+const pkgPhotos = p => {
+  const text = `${p.name} ${p.sum}`, at = slugify(text);
+  const pool = p.stops.flatMap(([n]) => [n.img && { img: n.img, sm: n.sm, credit: n.photo, about: `${n.n} ${n.t || ""}` }, ...(n.a || []).map(([a]) => [a, PHOTOS[`${n.s}--${slugify(a)}`]]).filter(([, ph]) => ph).map(([a, ph]) => ({ img: ph.img, credit: ph, about: a, named: namedIn(a, text) && at.indexOf(slugify(a.split(/[,(]/)[0])) }))]).filter(Boolean);
+  const named = pool.filter(o => typeof o.named == "number").sort((a, b) => a.named - b.named);
+  const rx = PKG_THEME_RX.find(([t]) => p.themes.includes(t))?.[1], fit = rx ? pool.filter(o => rx.test(o.about)) : [];
+  const h = [...p.slug].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7), turn = a => a.length ? [...a.slice(h % a.length), ...a.slice(0, h % a.length)] : a;
+  return [...new Set([...named.filter(o => fit.includes(o)), ...named, ...turn(fit), ...turn(pool)])];
+};
 const usedPkgImg = new Map();
 function pkgVis(p) {
   if (p.img) return { img: p.img };
   if (usedPkgImg.has(p.slug)) return usedPkgImg.get(p.slug);
-  const pool = p.stops.flatMap(([n]) => [n.img && { img: n.img, sm: n.sm, credit: n.photo }, ...(n.a || []).map(([a]) => PHOTOS[`${n.s}--${slugify(a)}`]).filter(Boolean).map(ph => ({ img: ph.img, credit: ph }))]).filter(Boolean);
+  const pool = pkgPhotos(p);
   let v;
-  if (pool.length) { const h = [...p.slug].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7); v = pool[h % pool.length] }
+  if (pool.length) v = pool[0];
   else { const r = p.stops.map(([n]) => relImg(n)).find(Boolean); if (r) v = r; else { const mo = motifFor(p.stops.map(([n]) => n.t).join(" "), p.slug); v = { m: mo.m, g: mo.g } } }
   usedPkgImg.set(p.slug, v);
   return v;
@@ -868,11 +924,18 @@ const DEF_IN = { dom: ["Hotel stay for {n} nights with daily breakfast (hotel ca
 const DEF_EX = { dom: ["Flights or train tickets unless added to your quote", "Lunch and dinner unless stated", "Entry tickets, camera fees and optional activities unless stated", "Personal expenses such as laundry, tips and shopping", "Travel insurance", "GST as applicable"], intl: ["International flights unless added to your quote", "Visa fees and travel insurance", "Lunch and dinner unless stated", "Optional activities and personal expenses", "City or tourism taxes payable at hotels where applicable", "GST and TCS as applicable under Indian tax rules"] };
 
 // package header: the package photo first, then each stop and its attractions
-function pkgSpot(p, uniq, eye, forWho, bts) {
+// every photo of a package's stops, the package photo first: the header takes four, an own package's gallery the rest
+function pkgPool(p, uniq, per = 3) {
   const v = pkgVis(p), pool = [];
   const add = (img, cap) => { if (img && !pool.some(o => o.img == img)) pool.push({ img, cap }) };
-  for (const n of uniq) { add(n.img, n.kind == "city" ? `${n.n}, ${n.parent.n}` : n.n); for (const [a] of n.a.slice(0, 3)) add(PHOTOS[`${n.s}--${slugify(a)}`]?.img, `${a} – ${n.n}`) }
-  const first = pool.find(o => o.img == v.img), slides = (first ? [first, ...pool.filter(o => o !== first)] : pool).slice(0, 4);
+  for (const n of uniq) { add(n.img, n.kind == "city" ? `${n.n}, ${n.parent.n}` : n.n); for (const [a] of [...n.a.filter(([x]) => namedIn(x, `${p.name} ${p.sum}`)), ...n.a.slice(0, per)]) add(PHOTOS[`${n.s}--${slugify(a)}`]?.img, `${a} – ${n.n}`) }
+  const first = pool.find(o => o.img == v.img);
+  // an own package's photo may show its country rather than a stop (Bhutan's Tiger's Nest): it still leads
+  if (!first && p.top && v.img) return [{ img: v.img, cap: PH_INFO.get(v.img)?.cap || p.name }, ...pool];
+  return first ? [first, ...pool.filter(o => o !== first)] : pool;
+}
+function pkgSpot(p, uniq, eye, forWho, bts) {
+  const v = pkgVis(p), slides = pkgPool(p, uniq).slice(0, 4);
   const T = top(p.home);
   return spotlight({
     eye, h1: hiName(p.name, [p.home, ...uniq].find(n => p.name.toLowerCase().includes(n.n.toLowerCase()))?.n || p.home.n), desc: esc(p.sum), label: "Trip at a glance", best: bts[0],
@@ -900,10 +963,15 @@ for (const p of PK) {
   ];
   if (!p.dom) qa.push(["What documents do I need?", "A passport valid for at least six months beyond your return date is commonly required. Visa and entry rules for Indian citizens vary by country and change, so we confirm the current requirements from official sources when you book."]);
   const rel = PK.filter(q => q !== p).map(q => [q, q.stops.filter(([n]) => places.includes(n)).length * 3 + (q.home === p.home ? 2 : 0) + q.themes.filter(t => p.themes.includes(t)).length]).filter(x => x[1] > 2).sort((a, b) => b[1] - a[1] || Math.abs(a[0].days - p.days) - Math.abs(b[0].days - p.days)).slice(0, 6).map(x => x[0]);
+  // own packages get a gallery of their stops' other photos; the header's four are left out so nothing repeats
+  // the stops' own photos are left for the destination cards further down
+  const head = new Set([...pkgPool(p, uniq).slice(0, 4).map(o => o.img), ...uniq.map(n => n.img)]);
+  const shots = p.top ? pkgPool(p, uniq, 8).filter(o => !head.has(o.img) && PH_INFO.has(o.img)).slice(0, 8) : [];
+  const gallery = shots.length >= 2 ? `<h2 id="photos" style="font-size:clamp(1.5rem,3vw,2rem);margin:38px 0 12px">Photo gallery</h2><div class="gal pkgal">${shots.map(o => `<figure><a href="${o.img}" data-lb data-cap="${esc(o.cap)}"><img src="${o.img}" alt="${esc(o.cap)}" loading="lazy" width="1920" height="1280"></a><figcaption><b>${esc(o.cap.split(" – ")[0])}</b><span>${esc(PH_INFO.get(o.img).of)}</span></figcaption></figure>`).join("")}</div>` : "";
   const main = `<div class="prose"><h2 id="overview">Trip overview</h2>${overview}${routeHtml}
-<h2 id="highlights">Highlights</h2>${tags([...new Set(uniq.flatMap(n => n.a.slice(0, 3).map(a => a[0])))].slice(0, 10))}
+<h2 id="highlights">Highlights</h2>${p.hl ? `<ul class="pkhl">${p.hl.map((h, i) => `<li><i>${IC[["star", "pin", "heart", "camera"][i % 4]]}</i>${esc(h)}</li>`).join("")}</ul>` : ""}${tags([...new Set(uniq.flatMap(n => n.a.slice(0, 3).map(a => a[0])))].slice(0, 10))}
 </div><h2 id="itinerary" style="font-size:clamp(1.5rem,3vw,2rem);margin:38px 0 12px">Day-by-day itinerary</h2><div class="days"><div class="dayx"><button type="button" data-x="open">Expand all</button><button type="button" data-x="close">Collapse all</button></div>${dd.map((d, i) => `<div class="day${i ? "" : " open"}"><h3><span><em>Day ${i + 1}</em>${esc(d.t)}</span></h3><ul>${d.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</div>
-<div class="prose">${focusOf(p).length && !p.sig ? `<h2 id="how-planned">How this version is planned</h2><ul>${[...new Set(focusOf(p).slice(0, 2).flatMap(([, f]) => f.notes))].slice(0, 5).map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${p.sig ? "" : note("This is a suggested itinerary. Sightseeing order may change with opening days, weather and local conditions; your final plan is in your written quote.")}${tips ? `<h2 id="tips">Good to know</h2><ul>${tips}</ul>` : ""}</div>`;
+${gallery}<div class="prose">${focusOf(p).length && !p.sig ? `<h2 id="how-planned">How this version is planned</h2><ul>${[...new Set(focusOf(p).slice(0, 2).flatMap(([, f]) => f.notes))].slice(0, 5).map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${p.top ? note("Hotels, sightseeing order and the final price are confirmed in your written quote. Timings may change with opening days, weather and local conditions.") : p.sig ? "" : note("This is a suggested itinerary. Sightseeing order may change with opening days, weather and local conditions; your final plan is in your written quote.")}${tips ? `<h2 id="tips">Good to know</h2><ul>${tips}</ul>` : ""}</div>`;
   const aside = `<aside><div class="box"><h3>At a glance</h3>${kv([["Duration", `${p.days} days / ${p.nights} nights`], ["Route", esc(uniq.map(n => n.n).join(", "))], ["Ideal for", esc(forWho.slice(0, 3).join(", "))], ["Best time", esc(bts.join("; "))], ["Trip style", p.sig ? esc(p.style || "Group departure") : "Private, customisable"], ["Package code", p.id]])}${p.pr ? `<p class="quote-p">${esc(p.pr)}</p><p class="quote-s">${esc(p.prNote || "")}</p>` : ""}</div>${quoteBox(p.name)}<div class="box"><h3>${p.sig ? "Included" : "Typically included"}</h3><ul class="sd" style="list-style:none;padding:0;margin:0">${inc.map(x => `<li class="y" style="padding:6px 0;border-bottom:1px dashed var(--line);font-size:.9rem">${esc(x)}</li>`).join("")}</ul><h3 style="margin-top:18px">Not included</h3><ul style="list-style:none;padding:0;margin:0">${exc.map(x => `<li class="n" style="padding:6px 0;border-bottom:1px dashed var(--line);font-size:.9rem">${esc(x)}</li>`).join("")}</ul>${p.sig ? "" : `<p class="quote-s" style="margin-top:12px">Final inclusions are listed in your written quote.</p>`}</div></aside>`;
   const scr = p.sig ? p.tag : THEME_LABEL[p.themes[0]] || (p.dom ? "India" : top(p.home).n);
   const crumbs = [["Home", "/"], ["Tour packages", "/tour-packages/"], [p.dom ? "India" : "International", p.dom ? "/tour-packages/india/" : "/tour-packages/international/"], [p.home.n, p.home.url], [p.name, p.url]];
@@ -941,9 +1009,10 @@ function pkgGroups(arr, keyFn) {
   emit("/tour-packages/", page({
     path: "/tour-packages/", active: "/tour-packages/", title: "All Tour Packages: India & International Holidays | Nexara Holidays", desc: clip(`${PK.length} itineraries in India and abroad, from 2-day getaways to 15-day tours. Honeymoon, family, group and adventure trips, planned from Chennai.`),
     h1: "All tour packages", scr: "Handpicked journeys", sub: `${PK.length} itineraries: ${dom.length} in India and ${intl.length} abroad. Every one is private and customisable.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"]], hero: { img: "/assets/photos/vw/maldives.webp" },
-    body: sec("Holidays in India", `India: ${dom.length} itineraries`, `<p><a class="btn red" href="/tour-packages/india/">Browse India packages →</a></p>` + linkList(pkgGroups(dom, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/india/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
+    body: sec("Nexara holiday packages", "Our 23 most-loved trips", filterTabs([["all", "All"], ["international", "International"], ["india", "India"], ["multi-country-tours", "Multi-country"], ["island-holidays", "Islands"], ["honeymoon", "Honeymoon"], ["group-tours", "Group tours"]]) + cards(PK.filter(p => p.top).map(pkgCard)), { p: "Full day-by-day plans with inclusions, from Bhutan and Bali to Kashmir and the North East. Every trip can be tailored to your dates." }) +
+      sec("Holidays in India", `India: ${dom.length} itineraries`, `<p><a class="btn red" href="/tour-packages/india/">Browse India packages →</a></p>` + linkList(pkgGroups(dom, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/india/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
       sec("Holidays abroad", `International: ${intl.length} itineraries`, `<p><a class="btn red" href="/tour-packages/international/">Browse international packages →</a></p>` + linkList(pkgGroups(intl, p => p.home).map(([h, ps]) => [h.n, `/tour-packages/international/#${h.s}`, `${ps.length} itineraries`])), { cls: "tight" }) +
-      sec("Signature departures", "Fixed-date group and honeymoon trips", cards(PK.filter(p => p.sig).map(pkgCard)), { p: "Departures from Chennai with confirmed inclusions." }) +
+      sec("Signature departures", "Fixed-date group and honeymoon trips", cards(PK.filter(p => p.sig && !p.top).map(pkgCard)), { p: "Departures from Chennai with confirmed inclusions." }) +
       `<div class="alt">${sec("By theme", "Find packages by travel style", linkList(feat.map(t => [t.n, `/tour-types/${t.s}/`, `${pkgsOfType(t.s).length} itineraries`])))}</div>` + cta("Want something different?", "Every trip is custom. Tell us your idea and we will price it.", ""),
   }), "pages");
 }
@@ -951,7 +1020,9 @@ function pkgGroups(arr, keyFn) {
 /* ---------- 9. tour types ---------- */
 function typeSpot(t, ps, pd, pi, places) {
   const slides = [], add = (img, cap) => { if (img && !slides.some(o => o.img == img)) slides.push({ img, cap }) };
-  add(t.img, t.n); for (const p of ps) { if (slides.length == 4) break; add(pkgVis(p).img, p.name) }
+  // t.slides: [photo key, caption] picked by eye for the theme; package photos often show a stop that is off-theme
+  if (t.slides) for (const [k, cap] of t.slides) add(PHOTOS[k]?.img || TOPIC[k]?.img || warn(`${t.n}: no slide photo ${k}`), cap);
+  else { add(t.img, t.n); for (const p of ps) { if (slides.length == 4) break; add(pkgVis(p).img, p.name) } }
   const days = ps.map(p => p.days);
   return spotlight({
     eye: t.scr || "Holiday themes", h1: hiName(t.h1 || t.n, t.n), desc: esc(t.sub || t.desc), label: `${t.n} at a glance`,
@@ -1016,7 +1087,7 @@ for (const t of TYPES) {
   for (const c of SACRED) {
     const pd = c.ps.filter(p => p.dom), pi = c.ps.filter(p => !p.dom);
     const places = [...new Set(c.ps.flatMap(p => p.stops.map(([n]) => n)))].filter(n => n && isPlace(n) && !n.draft);
-    const t = { n: c.n, h1: c.n, scr: c.scr, sub: c.short, desc: c.desc, who: c.who, img: c.img, m: "temple" };
+    const t = { n: c.n, h1: c.n, scr: c.scr, sub: c.short, desc: c.desc, who: c.who, img: c.img, slides: c.slides, m: "temple" };
     const others = SACRED.filter(o => o !== c);
     emit(c.url, page({
       path: c.url, active: "/sacred/", title: clipT(`${c.n}: Pilgrimage Tours | Nexara Holidays`), desc: clip(c.desc),
@@ -1112,13 +1183,15 @@ for (const pg of PAGES) {
 }
 
 /* ---------- 11b. travel services (flights, forex, visas, insurance ...) ---------- */
-const svcCards = arr => `<div class="ppl">${arr.map(v => `<a href="/services/${v.s}/"><i>${IC[v.ic] || IC.star}</i><b>${esc(v.n)}</b><span>${esc(v.short)}</span><small>Explore ${IC.arrow}</small></a>`).join("")}</div>`;
+// each service's photo: content/photo-topics.json key svc-<slug>
+const svcPhoto = v => TOPIC[`svc-${v.s}`];
+const svcCards = arr => `<div class="ppl">${arr.map(v => `<a href="/services/${v.s}/">${svcPhoto(v) ? `<figure class="cph" data-ic="${v.ic}"><img src="${svcPhoto(v).img}" alt="" loading="lazy"></figure>` : `<i>${IC[v.ic] || IC.star}</i>`}<b>${esc(v.n)}</b><span>${esc(v.short)}</span><small>Explore ${IC.arrow}</small></a>`).join("")}</div>`;
 const svcBox = v => `<div class="box"><h3>Ask about ${esc(v.n.toLowerCase())}</h3><p class="quote-s">Tell us your dates and destination. A planner replies on WhatsApp, usually the same day.</p><a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(v.n)}">Send an enquiry</a><a class="btn ghost2" href="${waLink(`Hi Nexara Holidays, I need help with: ${v.n}.`)}" target="_blank" rel="noopener">${IC.wa} WhatsApp us</a><a class="btn ghost2" href="tel:${SITE.tel}">${IC.call} Call ${SITE.phone}</a></div>`;
 for (const v of SERVICES) {
   const r = renderMd(v.body, resolveSlug, m => report.missingLinks.push({ page: "service:" + v.s, missing: [m] }));
   const u = `/services/${v.s}/`, others = SERVICES.filter(x => x !== v);
   emit(u, page({
-    path: u, active: "/services/", title: v.title, desc: clip(v.desc), h1: v.n, scr: SERVICE_GROUPS[v.grp], sub: esc(v.sub), crumbs: [["Home", "/"], ["Travel services", "/services/"], [v.n, u]], hero: { g: v.g },
+    path: u, active: "/services/", title: v.title, desc: clip(v.desc), h1: v.n, scr: SERVICE_GROUPS[v.grp], sub: esc(v.sub), crumbs: [["Home", "/"], ["Travel services", "/services/"], [v.n, u]], hero: svcPhoto(v) ? { img: svcPhoto(v).img, credit: svcPhoto(v) } : { g: v.g },
     body: `<div class="lay"><div class="prose">${r.html}</div><aside>${svcBox(v)}<div class="box"><h3>What we handle</h3>${dat(v.inc.map(esc))}</div><div class="box"><h3>Keep these ready</h3>${dat(v.need.map(esc))}</div></aside></div>` +
       (v.faq?.length ? `<div class="alt">${sec("FAQs", `${v.n}: common questions`, faq(v.faq.map(([q, a]) => [q, esc(a)])), { cls: "tight" })}</div>` : "") +
       sec("More services", "Everything else for your trip", svcCards(others), { cls: "tight" }) + cta(`Need help with ${v.n.toLowerCase()}?`, "Book it on its own or add it to a holiday. We reply on WhatsApp with options and a price.", v.n),
@@ -1126,7 +1199,7 @@ for (const v of SERVICES) {
 }
 emit("/services/", page({
   path: "/services/", active: "/services/", title: "Travel Services: Flights, Forex, Visas & Insurance | Nexara Holidays", desc: clip(`Flights, forex and currency exchange, visas, travel insurance, hotels, transfers, eSIMs and more: ${SERVICES.length} travel services from Nexara Holidays in Chennai.`),
-  h1: "Travel services", scr: "Everything around the trip", sub: "Flights, forex, visas, insurance and more, on their own or with a holiday.", crumbs: [["Home", "/"], ["Travel services", "/services/"]], hero: { g: "#5a2a1e,#b3562b,#ff8a3d" },
+  h1: "Travel services", scr: "Everything around the trip", sub: "Flights, forex, visas, insurance and more, on their own or with a holiday.", crumbs: [["Home", "/"], ["Travel services", "/services/"]], hero: TOPIC["svc-travel-insurance"] ? { img: TOPIC["svc-travel-insurance"].img, credit: TOPIC["svc-travel-insurance"] } : { g: "#5a2a1e,#b3562b,#ff8a3d" },
   body: Object.entries(SERVICE_GROUPS).map(([k, h], i) => (i % 2 ? `<div class="alt">` : "<div>") + sec(i ? "On the trip" : "Get ready", h, svcCards(SERVICES.filter(v => v.grp == k))) + "</div>").join("") +
     sec("How it works", "One planner for every part of the trip", `<div class="prose">${renderMd(`1. **Tell us what you need** on WhatsApp, by phone or through the [enquiry form](/custom-tour/): a single flight, forex for a trip, or the whole holiday.
 2. **We send options and a written price**, with any service fee shown separately.
@@ -1155,7 +1228,7 @@ emit("/faqs/", page({
     "hero-world": "Home page: The World, Your Way", "hero-honeymoon": "Home page: Honeymoons", "x-biz-hero": "Business & Trade Travel", "x-biz-sourcing": "Sourcing trips", "x-biz-hubs": "Industry hubs", "x-biz-corporate": "Corporate travel", "x-biz-skyline": "Travel Experiences",
     "x-her-festival": "Roots & Heritage Journeys", "x-her-hero": "Heritage villages", "x-her-food": "Heritage food", "x-edu-campus": "Educational Trips", "x-edu-hero": "Field trips", "x-edu-science": "Science visits",
     "edu-florida": "Study trip: space science in Florida", "edu-tokyo": "Study trip: technology in Japan", "edu-london": "Study trip: London museums", "edu-rome": "Study trip: classical Italy", "edu-kenya": "Study trip: wildlife in Kenya", "edu-costa-rica": "Study trip: rainforest ecology", "edu-iceland": "Study trip: Iceland geology", "edu-germany": "Study trip: German engineering", "edu-netherlands": "Study trip: Dutch water management", "edu-andaman-marine": "Study trip: Andaman marine science", "edu-delhi": "Study trip: heritage and science in India", "edu-dubai": "Study trip: innovation in Dubai",
-    "x-cru-deck": "Cruise Holidays", "x-cru-river": "River cruises", "x-cru-expedition": "Expedition cruises", "x-cru-hero": "Cruise holidays", "x-yac-hero": "Luxury Yacht Experiences", "x-yac-cat": "Catamaran charters", "x-yac-gulet": "Gulet charters" };
+    "x-cru-deck": "Cruise Holidays", "x-cru-river": "River cruises", "x-cru-expedition": "Expedition cruises", "x-cru-hero": "Cruise holidays", "x-yac-hero": "Luxury Yacht Experiences", "x-yac-cat": "Catamaran charters", "x-yac-gulet": "Gulet charters", ...Object.fromEntries(SERVICES.map(v => [`svc-${v.s}`, `Travel services: ${v.n}`])) };
   const topicRows = Object.entries(TOPIC).filter(([, p]) => p.license).map(([k, p]) => `<tr><td>${esc(k.startsWith("tt-") ? THEME_LABEL[k.slice(3)] || k : SPOT_LABEL[k] ? SPOT_LABEL[k] : LABEL[k.replace(/-\d$/, "")] || k)}</td><td>${photoCredit(p)}</td></tr>`);
   if (rows.length) emit("/photo-credits/", page({
     path: "/photo-credits/", title: "Photo Credits | Nexara Holidays", desc: "Credits and licences for the destination photographs used on Nexara Holidays, sourced from Wikimedia Commons under free licences.",
@@ -1186,6 +1259,10 @@ for (const [k, urls] of Object.entries(sitemap)) { if (!urls.length) continue; c
 writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${smFiles.map(f => `<sitemap><loc>${abs("/" + f)}</loc><lastmod>${SITE.reviewed}</lastmod></sitemap>`).join("\n")}\n</sitemapindex>\n`);
 writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nDisallow: /research/\nDisallow: /tools/\nDisallow: /content/\nDisallow: /nexara-redesign.html\nDisallow: /assets/Nexara_Holidays_Thailand_travel___20261022134034_frames/\n\nSitemap: ${SITE.origin}/sitemap.xml\n`);
 written.push("sitemap.xml", "robots.txt", "assets/css/nexara-base.css");
+SEARCH.unshift(["Home", "/", "p", "Nexara Holidays: India and international holidays, honeymoons, group tours and pilgrimages planned from Tamil Nadu.", "", ""]);
+for (const r of SEARCH) r[5] = [...new Set(searchKw(r[1]).filter(Boolean).flatMap(s => String(s).split(/\s+/)).map(s => s.toLowerCase()))].filter(w => !r[0].toLowerCase().includes(w)).join(" ");
+writeFileSync(path.join(ROOT, "assets/search-index.json"), JSON.stringify(SEARCH));
+written.push("assets/search-index.json");
 
 /* ---------- 13. remove stale generated files, write report ---------- */
 if (existsSync(MANIFEST)) {

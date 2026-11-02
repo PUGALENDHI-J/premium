@@ -74,7 +74,15 @@
   "Vertical Adventures 20230422 153305.jpg",
   "Wave roof of Hall 3 at the Frankfurt Messe (2025).jpg",
   "Yachts sailing in the Solent at sunset 2.JPG",
-  "Żabnica, Widok z Płone na Romankę i Rysiankę, jesień, październik 2022, KP.jpg"
+  "Żabnica, Widok z Płone na Romankę i Rysiankę, jesień, październik 2022, KP.jpg",
+  "GDR passport with exit visa.jpg",
+  "Restaurant room of Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
+  "Svalbard Airport, Longyear, arrivals hall, July 2026.jpg",
+  "Money Changers in Hargeisa, Somaliland (30479697210).jpg",
+  "2025 South Korean passport Visas Page 24 - 25.jpg",
+  "Midland Hotel, Bradford.jpg",
+  "Interior of Helsinki Airport Vantaa.jpg",
+  "Visa policy of the Schengen Area in Europe.png"
  ],
  "currency": "cash money wallet",
  "tipping": "tip jar",
@@ -292,7 +300,17 @@
   "x-cru-deck",
   "x-yac-hero",
   "x-biz-canton",
-  "tt-educational-tours"
+  "tt-educational-tours",
+  "svc-flight-tickets",
+  "svc-forex",
+  "svc-visa-assistance",
+  "svc-passport-services",
+  "svc-travel-insurance",
+  "svc-hotel-bookings",
+  "svc-airport-transfers-and-car-rentals",
+  "svc-sim-cards-and-esims",
+  "svc-sightseeing-and-activity-tickets",
+  "svc-airport-meet-and-assist"
  ],
  "hero-world": "Oia Santorini sunset",
  "hero-honeymoon": "couple beach sunset",
@@ -323,5 +341,15 @@
  "edu-netherlands": "Vrouwenpolder (NL), Oosterscheldekering -- 2022 -- 5039",
  "edu-andaman-marine": "The Coral Reef at the Andaman Islands",
  "edu-delhi": "Jantar Mantar New Delhi",
- "edu-dubai": "Museum of the Future Dubai"
+ "edu-dubai": "Museum of the Future Dubai",
+ "svc-flight-tickets": "airliner taking off runway",
+ "svc-forex": "euro banknotes",
+ "svc-visa-assistance": "visa application",
+ "svc-passport-services": "Indian passport",
+ "svc-travel-insurance": "suitcases luggage airport terminal",
+ "svc-hotel-bookings": "hotel room double bed",
+ "svc-airport-transfers-and-car-rentals": "taxi rank airport cars",
+ "svc-sim-cards-and-esims": "smartphone map navigation",
+ "svc-sightseeing-and-activity-tickets": "tourists sightseeing landmark",
+ "svc-airport-meet-and-assist": "airport check-in counters"
 }

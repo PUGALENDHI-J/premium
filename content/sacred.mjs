@@ -29,7 +29,7 @@ export const SACRED_GROUPS = { india: "Within India", faiths: "Faiths across bor
 
 export const SACRED = [
   {
-    s: "tamil-nadu-temples", n: "Tamil Nadu Temples & Shrines", group: "india", hero: "thanjavur--brihadeeswarar-temple", scr: "Sacred Tamil Nadu", feature: true,
+    s: "tamil-nadu-temples", n: "Tamil Nadu Temples & Shrines", group: "india", hero: "thanjavur--brihadeeswarar-temple", slides: [["thanjavur--brihadeeswarar-temple", "Brihadeeswarar Temple, Thanjavur"], ["kumbakonam", "Kumbakonam"], ["kanchipuram--kailasanathar-temple", "Kailasanathar Temple, Kanchipuram"], ["rameswaram--ramanathaswamy-temple", "Ramanathaswamy Temple, Rameswaram"]], scr: "Sacred Tamil Nadu", feature: true,
     short: "Madurai, Rameswaram, Srirangam, Tiruvannamalai, Chidambaram, Murugan's six abodes, the Navagrahas and Velankanni.",
     desc: "Tamil Nadu pilgrimage tours from Chennai: Madurai Meenakshi, Rameswaram, Srirangam, Tiruvannamalai Girivalam, Chidambaram, the Pancha Bhoota temples, Arupadai Veedu, the Navagraha temples and Velankanni.",
     who: ["Families from Chennai and across Tamil Nadu", "Senior pilgrims", "Temple architecture lovers"],
@@ -84,7 +84,7 @@ Many families combine Kashi with Prayagraj and Gaya, the tristhali of ancestral 
     faq: [["How do I book Kashi Vishwanath darshan?", "The temple trust offers sugam darshan, aarti and rudrabhishek bookings online for set time slots. We book them for your dates where slots are open, and plan the rest of the day around them."], ["What is the Rameswaram–Kashi yatra?", "A traditional pilgrimage for Tamil families: you begin with a bath and puja at Rameswaram, carry sand from there to the Triveni Sangam at Prayagraj, pray at Kashi Vishwanath and perform pind daan at Gaya, then complete the yatra by offering Ganga water at Rameswaram."], ["When is the best time to visit Kashi?", "October to March, when the days are cool. Dev Deepawali at Kartik Purnima in November and Mahashivratri in February or March are the most festive, and the busiest."]],
   },
   {
-    s: "char-dham-yatra", n: "Char Dham, Amarnath & Himalayan Yatras", group: "india", hero: "kedarnath--kedarnath-temple", scr: "Himalayan yatras",
+    s: "char-dham-yatra", n: "Char Dham, Amarnath & Himalayan Yatras", group: "india", hero: "kedarnath--kedarnath-temple", slides: [["kedarnath--kedarnath-temple", "Kedarnath Temple"], ["badrinath--badrinath-temple", "Badrinath Temple"], ["gangotri", "Gangotri"], ["yamunotri", "Yamunotri"]], scr: "Himalayan yatras",
     short: "Yamunotri, Gangotri, Kedarnath and Badrinath, plus Vaishno Devi and Amarnath.",
     desc: "Char Dham, Do Dham, Kedarnath, Vaishno Devi and Amarnath yatras with registration, helicopter or pony options and pacing for the altitude.",
     who: ["Families travelling with elders", "First-time Himalayan pilgrims", "Devotees completing the Char Dham"],
@@ -95,7 +95,7 @@ We handle the compulsory registrations, book helicopter seats to Kedarnath where
     faq: [["When is the best time for the Char Dham Yatra?", "May to June and September to October. The shrines open in late April or May and close around Diwali; July and August bring monsoon landslides on the mountain roads."], ["How fit do I need to be?", "Kedarnath is a 16 km trek each way and Yamunotri 6 km; ponies, palkis and helicopters reduce the walking. Everyone should have a medical check-up before travelling above 3,000 metres."], ["How do I register for the Amarnath Yatra?", "Registration opens in spring through the Shri Amarnathji Shrine Board and its designated banks, and needs a Compulsory Health Certificate from an authorised doctor. Pilgrims must be aged 13 to 70. We guide you through the forms, then collect your RFID card and book helicopter seats where you want them."], ["Pahalgam or Baltal: which Amarnath route is better?", "The Pahalgam route is about 36 km and takes three days up, through Sheshnag and Panchtarni, with a gentler climb. The Baltal route is about 14 km and can be done up and back in a day or two, but it is much steeper. Helicopters fly to Panchtarni from both sides."]],
   },
   {
-    s: "jyotirlinga-darshan", n: "Jyotirlinga Darshan", group: "india", hero: "ujjain", scr: "Shiva's twelve lights",
+    s: "jyotirlinga-darshan", n: "Jyotirlinga Darshan", group: "india", hero: "ujjain--mahakaleshwar-temple", slides: [["ujjain--mahakaleshwar-temple", "Mahakaleshwar, Ujjain"], ["gir--somnath", "Somnath Temple"], ["nashik--trimbakeshwar-temple", "Trimbakeshwar, Nashik"], ["ujjain--omkareshwar", "Omkareshwar"]], scr: "Shiva's twelve lights",
     short: "Mahakaleshwar, Kashi Vishwanath, Somnath, Trimbakeshwar and more of the twelve Jyotirlingas.",
     desc: "Jyotirlinga yatras to Ujjain, Omkareshwar, Varanasi, Somnath, Trimbakeshwar, Grishneshwar, Bhimashankar, Rameswaram, Kedarnath and Deoghar.",
     who: ["Shiva devotees", "Families on a temple circuit", "Senior pilgrims"],
@@ -127,7 +127,7 @@ Festivals change these places completely: Holi in Braj, the Magh Mela at Prayagr
     pk: ["Prayagraj, Varanasi & Ayodhya Yatra", "Magh Mela at the Sangam", "Kashi & Ayodhya Yatra", "Ayodhya Darshan Short Trip", "Braj Darshan: Mathura, Vrindavan & Govardhan", "Mathura Vrindavan Holi Trip", "Golden Triangle & Varanasi", "Dwarka & Somnath Pilgrimage", "Puri Rath Yatra Trip", "Odisha Golden Triangle", "Prayagraj & Chitrakoot Ramayana Trail"],
   },
   {
-    s: "devi-shakti-temples", n: "Devi & Shakti Temples", group: "india", hero: "guwahati--kamakhya-temple", scr: "The Mother Goddess",
+    s: "devi-shakti-temples", n: "Devi & Shakti Temples", group: "india", hero: "guwahati--kamakhya-temple", slides: [["guwahati--kamakhya-temple", "Kamakhya Temple, Guwahati"], ["madurai--meenakshi-amman-temple", "Meenakshi Amman Temple, Madurai"], ["madurai", "Mariamman Teppakulam, Madurai"], ["haridwar--mansa-devi-temple", "Mansa Devi hill, Haridwar"]], scr: "The Mother Goddess",
     short: "Vaishno Devi, Kamakhya, Kalighat and Dakshineswar, Meenakshi and Durga Puja.",
     desc: "Shakti Peeth and Devi temple tours: Vaishno Devi, Kamakhya in Guwahati, Kalighat and Dakshineswar in Kolkata, Madurai Meenakshi and Durga Puja.",
     who: ["Devotees of the Goddess", "Navratri and Durga Puja travellers"],
@@ -148,7 +148,7 @@ We book hotels or yatri niwas close to the gurdwara, plan around Gurpurab dates 
     faq: [["What should I know before visiting a gurdwara?", "Cover your head, remove shoes and wash your feet before entering, and do not carry tobacco or alcohol. Scarves are usually available at the entrance."]],
   },
   {
-    s: "jain-tirth-yatras", n: "Jain Tirth Yatras", group: "india", hero: "palitana", scr: "Marble temples and holy hills",
+    s: "jain-tirth-yatras", n: "Jain Tirth Yatras", group: "india", hero: "kumbhalgarh--ranakpur-jain-temple", slides: [["kumbhalgarh--ranakpur-jain-temple", "Ranakpur Jain Temple"], ["shravanabelagola--gommateshwara-statue", "Gommateshwara, Shravanabelagola"], ["mount-abu--dilwara-temples", "Dilwara Temples, Mount Abu"], ["palitana--adinath-temple", "Adinath Temple, Palitana"]], scr: "Marble temples and holy hills",
     short: "Palitana, Shravanabelagola, Dilwara and Ranakpur.",
     desc: "Jain pilgrimage tours to Palitana's Shatrunjaya Hill, Shravanabelagola's Gommateshwara, the Dilwara temples of Mount Abu and Ranakpur.",
     who: ["Jain families and groups", "Lovers of temple architecture"],
@@ -159,7 +159,7 @@ We arrange Jain food throughout, plan pre-dawn starts for the climbs, book dolis
     faq: [["Can you arrange Jain food?", "Yes. We choose hotels and caterers who prepare Jain food without root vegetables, and pack meals for travel days."]],
   },
   {
-    s: "sufi-shrines", n: "Sufi Shrines & Islamic Heritage", group: "faiths", hero: "ajmer", scr: "Dargahs and qawwali",
+    s: "sufi-shrines", n: "Sufi Shrines & Islamic Heritage", group: "faiths", hero: "ajmer--ajmer-sharif-dargah", slides: [["ajmer--ajmer-sharif-dargah", "Ajmer Sharif Dargah"], ["tn-nagore", "Nagore Dargah"], ["delhi--jama-masjid", "Jama Masjid, Delhi"], ["agra--fatehpur-sikri", "Buland Darwaza, Fatehpur Sikri"]], scr: "Dargahs and qawwali",
     short: "Ajmer Sharif, Nizamuddin, Fatehpur Sikri, Hazratbal, Nagore, Cheraman Juma Masjid and the mosques of Istanbul.",
     desc: "Ziyarat tours to Ajmer Sharif, Hazrat Nizamuddin, Fatehpur Sikri, Hazratbal in Srinagar, Nagore Dargah and Kerala's Cheraman Juma Masjid, and Islamic heritage tours of Istanbul.",
     who: ["Families on ziyarat", "Travellers of every faith drawn to Sufi music"],
@@ -180,7 +180,7 @@ We plan around feast days, book Papal audience tickets when they are offered, an
     faq: [["When are the big feast days?", "Velankanni's feast runs from 29 August to 8 September, the Feast of St Francis Xavier in Old Goa is on 3 December, Malayattoor's Puthunjayar falls on the Sunday after Easter, and Lourdes marks 11 February. Hotels fill early, so book these dates months ahead."], ["Can you arrange a Papal audience?", "General audiences are free and ticketed by the Prefecture of the Papal Household. We request tickets for your dates when an audience is scheduled, but they cannot be guaranteed."]],
   },
   {
-    s: "buddhist-pilgrimages", n: "Buddhist Pilgrimages", group: "faiths", hero: "bodh-gaya", scr: "In the footsteps of the Buddha",
+    s: "buddhist-pilgrimages", n: "Buddhist Pilgrimages", group: "faiths", hero: "bodh-gaya", slides: [["bodh-gaya", "Mahabodhi Temple, Bodh Gaya"], ["sarnath--dhamek-stupa", "Dhamek Stupa, Sarnath"], ["nalanda-rajgir--nalanda-mahavihara-ruins", "Nalanda Mahavihara"], ["lumbini", "Lumbini, the Buddha's birthplace"]], scr: "In the footsteps of the Buddha",
     short: "Bodh Gaya, Sarnath, Lumbini, Kandy, Bhutan and Tawang.",
     desc: "Buddhist pilgrimage tours to Bodh Gaya, Sarnath, Nalanda and Rajgir, Lumbini in Nepal, Kandy and Anuradhapura in Sri Lanka, Bhutan and Tawang.",
     who: ["Buddhist pilgrims and meditation groups", "History and philosophy lovers"],
@@ -203,7 +203,7 @@ For ziyarat, we plan journeys to the shrine of Imam Ali in Najaf, Imam Hussain a
     faq: [["Who arranges the Umrah visa?", "Our licensed Umrah partner applies for the Umrah visa and Nusuk permits. You need a passport valid for at least six months and the vaccinations Saudi Arabia requires at the time, such as meningitis; we send the current list with your quote."], ["Can women travel for Umrah without a mahram?", "Saudi rules now allow women to perform Umrah without a mahram in an organised group. We confirm the current rule for your dates when you enquire."], ["Can you arrange Hajj?", "No. Hajj places for Indian pilgrims are allotted through the Haj Committee of India and Ministry-approved Hajj Group Organisers. We can help with Umrah at other times of the year."]],
   },
   {
-    s: "kailash-nepal-yatras", n: "Kailash & Nepal Yatras", group: "abroad", hero: "kathmandu", scr: "The sacred Himalaya",
+    s: "kailash-nepal-yatras", n: "Kailash & Nepal Yatras", group: "abroad", hero: "kailash-mansarovar--mount-kailash", slides: [["kailash-mansarovar--mount-kailash", "Mount Kailash"], ["kailash-mansarovar--lake-mansarovar", "Lake Mansarovar"], ["kathmandu--pashupatinath-temple", "Pashupatinath Temple, Kathmandu"], ["lumbini", "Maya Devi Temple, Lumbini"]], scr: "The sacred Himalaya",
     short: "Kailash Mansarovar, Pashupatinath and Muktinath.",
     desc: "Kailash Mansarovar Yatra via Nepal, and Nepal pilgrimages to Pashupatinath, Muktinath and Lumbini.",
     who: ["Devotees in good health", "Pilgrims combining Nepal's great temples"],

@@ -3,8 +3,10 @@
 import { writeFileSync } from "node:fs";
 import { IN_REGIONS, STATES, IN_CITIES } from "../content/india.mjs";
 import { W_REGIONS, COUNTRIES, W_CITIES } from "../content/world.mjs";
-import { ADD_STATES, ADD_IN_CITIES, ADD_COUNTRIES, ADD_W_CITIES } from "../content/places-added.mjs";
-import { slugify } from "./lib/html.mjs";
+import { ADD_STATES, ADD_IN_CITIES, ADD_COUNTRIES, ADD_W_CITIES, ADD_PK_IN, ADD_PK_W } from "../content/places-added.mjs";
+import { PK_IN } from "../content/packages-india.mjs";
+import { PK_W } from "../content/packages-world.mjs";
+import { slugify, namedIn } from "./lib/html.mjs";
 
 const ATTR_PER_PLACE = 2;
 const states = [...STATES, ...ADD_STATES], countries = [...COUNTRIES, ...ADD_COUNTRIES];
@@ -16,6 +18,13 @@ const place = (x, ctx) => {
 };
 for (const s of states) s.self ? place(s, "India") : out.push({ key: s.s, kind: "top", q: [`Tourism in ${s.n}`, s.n] });
 for (const c of countries) c.self ? place(c, "") : out.push({ key: c.s, kind: "top", q: [`Tourism in ${c.n}`, c.n] });
-for (const c of [...IN_CITIES, ...ADD_IN_CITIES, ...W_CITIES, ...ADD_W_CITIES]) place(c, parentName(c.p));
+const cities = [...IN_CITIES, ...ADD_IN_CITIES, ...W_CITIES, ...ADD_W_CITIES];
+for (const c of cities) place(c, parentName(c.p));
+// sights a package names ("Basilica of Bom Jesus" on a Goa churches trip) get a photo too, so the package can show it
+const byS = new Map([...states, ...countries, ...cities].map(x => [x.s, x]));
+for (const [, name, stops, , sum] of [...PK_IN, ...PK_W, ...ADD_PK_IN, ...ADD_PK_W]) for (const [s] of stops) {
+  const x = byS.get(s);
+  for (const [a] of (x?.a || []).slice(ATTR_PER_PLACE)) if (namedIn(a, `${name} ${sum}`) && !out.some(t => t.key == `${x.s}--${slugify(a)}`)) out.push({ key: `${x.s}--${slugify(a)}`, kind: "attraction", q: [`${a} ${x.n}`, a] });
+}
 writeFileSync(new URL("../research/photo-targets.json", import.meta.url), JSON.stringify(out, null, 0));
 console.log(out.length, "targets;", out.filter(t => t.kind != "attraction").length, "destinations");

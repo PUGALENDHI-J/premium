@@ -75,6 +75,12 @@ Destination page template (every state, country and place page)
 New destinations
   content/places-added.mjs  states, cities, countries and itineraries added in October 2026 (merged by build.mjs)
 
+Site search
+  The top bar has a search field on desktop; below 1181px a search icon sits next to the menu button ("/" or Ctrl+K also open it).
+  Every build writes assets/search-index.json (name, URL, type, description, photo, keywords for each page in the sitemaps);
+  destination keywords include sights, package keywords include stops and themes, so "Eiffel" finds Paris.
+  Panel: assets/js/nexara-search.js and assets/css/nexara-search.css. Popular searches: const POPULAR in the script.
+
 Commands (needs Node.js 20 or newer)
   npm run build      regenerate all pages after editing anything in content/ or index.html's CSS
   npm run validate   check titles, canonicals, broken links, sitemap, orphans, near-duplicates
