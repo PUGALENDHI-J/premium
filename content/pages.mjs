@@ -26,8 +26,8 @@ const IC = {
 };
 // [icon, title, text, link, link label, photo, photo caption]
 const aboutPlan = [
-  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines", "/assets/photos/vw/thanjavur.webp", "Brihadeeswarar Temple, Thanjavur"],
-  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays", "/assets/photos/vw/ladakh.webp", "Prayer flags by a high mountain lake, Ladakh"],
+  ["temple", "Tamil Nadu, close to home", "Temple circuits, hill-station breaks in the Nilgiris and Kodaikanal, and roots journeys for Tamil families returning to their native villages.", "/sacred/tamil-nadu-temples/", "Tamil Nadu temples & shrines", "/assets/photos/vw/paris.webp", "The Eiffel Tower at dusk, Paris"],
+  ["map", "India, every season", "From Kashmir and Ladakh to Kerala and the Andamans, with Sacred journeys for pilgrimages of every faith.", "/tour-packages/india/", "India holidays", "/assets/photos/vw/tokyo.webp", "Shibuya at night, Tokyo"],
   ["globe", "The world", "Private holidays across Asia, Europe, the Middle East, Africa, the Americas and Oceania, with flights, hotels, transfers and visa guidance in one plan.", "/tour-packages/international/", "International holidays", "/assets/photos/vw/switzerland.webp", "An alpine valley in Switzerland"],
   ["brief", "Travel with a purpose", "Business and trade travel, educational trips, roots and heritage journeys, cruises and luxury yacht experiences.", "/experiences/", "Travel experiences", "/assets/photos/guangzhou.webp", "Guangzhou, home of the Canton Fair"],
   ["group", "Groups and honeymoons", "Group tours for friends, families, clubs and companies, including our own fixed-date departures, and honeymoons planned around the two of you.", "/tour-types/group-tours/", "Group tours", "/assets/photos/vw/maldives.webp", "Island reefs of the Maldives"],
