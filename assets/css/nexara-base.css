@@ -355,6 +355,9 @@ nav a.ph:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(255,0,0,.4
 .mq span:after{content:"•";color:var(--gold);font-size:.85rem}
 .mq:hover div{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-100%)}}
+.nx-off,.nx-off *{animation-play-state:paused!important}
+/* photos with srcset and sizes="auto" (tools/lib/img.mjs) keep the layout size of their own photo, not the browser's 300x150 placeholder */
+:where(img[sizes^="auto"]){aspect-ratio:var(--ar,auto);contain-intrinsic-size:var(--cis,300px 150px)}
 /* why cards */
 .wg{counter-reset:w}
 .w{counter-increment:w;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:20px;padding:28px 24px;background:#fff;transition:.45s var(--ease)}

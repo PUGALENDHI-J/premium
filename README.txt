@@ -63,6 +63,9 @@ Destination photos
   Wikimedia Commons (free licences, credited on /photo-credits/ when used)
     assets/photos/ (+ sm/, a/), content/photos.json, content/photo-overrides.json
     Refresh:  node tools/photo-targets.mjs  then  python tools/fetch_photos.py  then  npm run build
+  Small copies (xs/, 600 px) of every photo folder, for icons and cards: python tools/photos_xs.py
+    Run it after adding or replacing photos, then npm run build. The build gives each lazy <img> a srcset of its
+    xs/, sm/ and full copies (tools/lib/img.mjs), so a small box no longer decodes a 2200 px photo while scrolling.
 
 Destination page template (every state, country and place page)
   One template in tools/build.mjs (section 7) renders: header photo + facts panel, quick facts, essential tips,

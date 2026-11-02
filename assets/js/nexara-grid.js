@@ -30,11 +30,27 @@
 
   const grids = [...document.querySelectorAll(SEL)];
   if (!grids.length) return;
-  grids.forEach(centre);
+  // which cards are showing; centring only needs redoing when this changes. Scrolling toggles classes and styles
+  // all over the page (sticky header, scroll reveals, the home film), so re-laying out every grid on each of those
+  // forced a full page layout several times a frame.
+  const key = g => shown(g) ? [...g.children].map(k => shown(k) ? 1 : 0).join("") : "";
+  const last = new WeakMap();
+  const run = g => { centre(g); last.set(g, key(g)) };
+  grids.forEach(run);
   let t = 0;
-  const all = () => { cancelAnimationFrame(t); t = requestAnimationFrame(() => grids.forEach(centre)) };
-  addEventListener("resize", all);
-  // filter tabs hide cards by class or style; ignore the style changes made here
-  new MutationObserver(ms => { if (ms.some(m => !busy.has(m.target.parentElement) && !busy.has(m.target))) all() })
-    .observe(document.body, { subtree: true, attributes: true, attributeFilter: ["class", "hidden", "style"], childList: true });
+  addEventListener("resize", () => { cancelAnimationFrame(t); t = requestAnimationFrame(() => grids.forEach(run)) });
+  // filter tabs hide cards by class or style, and view switches show whole sections; ignore the style changes made here
+  let dirty = new Set(), q = 0;
+  const flush = () => { q = 0; const gs = dirty; dirty = new Set(); gs.forEach(g => { if (key(g) != last.get(g)) run(g) }) };
+  const NEW = "\n"; // a grid whose cards were replaced: always re-centre, the new cards have no spans yet
+  new MutationObserver(ms => {
+    for (const m of ms) {
+      const el = m.target;
+      if (el == document.body || el == document.documentElement || busy.has(el) || busy.has(el.parentElement)) continue;
+      if (m.type == "childList" && grids.includes(el)) last.set(el, NEW);
+      if (m.type == "attributes" && m.attributeName == "style" && !grids.includes(el.parentElement)) continue;
+      for (const g of grids) if (g == el || g == el.parentElement || el.contains(g)) dirty.add(g);
+    }
+    if (dirty.size && !q) q = requestAnimationFrame(flush);
+  }).observe(document.body, { subtree: true, attributes: true, attributeFilter: ["class", "hidden", "style"], childList: true });
 })();

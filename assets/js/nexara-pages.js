@@ -14,9 +14,12 @@
   let tt; const toast = m => { const t = $("#toast"); if (!t) return; t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 3200) };
 
   /* header, progress bar, back to top, menu */
-  const hd = $("header"), bt = $(".btt"), bc = bt && bt.querySelector("circle");
-  function onS() { const y = scrollY, h = document.documentElement.scrollHeight - innerHeight, p = h > 0 ? Math.min(1, y / h) : 0; hd && hd.classList.toggle("sc", y > 40); document.body.classList.toggle("scd", y > innerHeight * .6); const pr = $("#prog"); if (pr) pr.style.transform = `scaleX(${p})`; if (bt) { bt.classList.toggle("on", y > 500); bc.style.strokeDashoffset = 145 * (1 - p) } }
-  addEventListener("scroll", onS, { passive: true }); onS();
+  const hd = $("header"), bt = $(".btt"), bc = bt && bt.querySelector("circle"), pr = $("#prog");
+  // once per frame, with the page height cached: reading scrollHeight on every scroll event forced a layout each time
+  let sH = 0, sR = 0; const sHt = () => { sH = document.documentElement.scrollHeight - innerHeight };
+  new ResizeObserver(sHt).observe(document.documentElement); addEventListener("resize", sHt); sHt();
+  function onS() { sR = 0; const y = scrollY, p = sH > 0 ? Math.min(1, y / sH) : 0; hd && hd.classList.toggle("sc", hd.classList.contains("sc") ? y > 10 : y > 90); /* apart, so the shrinking header cannot flicker */ document.body.classList.toggle("scd", y > innerHeight * .6); if (pr) pr.style.transform = `scaleX(${p.toFixed(4)})`; if (bt) { bt.classList.toggle("on", y > 500); bc.style.strokeDashoffset = (145 * (1 - p)).toFixed(1) } }
+  addEventListener("scroll", () => { if (!sR) sR = requestAnimationFrame(onS) }, { passive: true }); onS();
   bt && (bt.onclick = () => scrollTo({ top: 0, behavior: RM ? "auto" : "smooth" }));
 
   /* itinerary accordions */

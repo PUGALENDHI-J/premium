@@ -25,6 +25,8 @@ header .brand img,.flogo img,a.wa{border-radius:50%!important}
 
 /* no glass, no drop shadows, no glow text */
 *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important}
+/* these pulses only animate box-shadow, which is off above; left running they restyle every frame for nothing */
+.wa,.rov button,.enq i,.live,.fbatch:before{animation:none!important}
 h1,h2,h3,.btn,nav a{text-shadow:none!important}
 header,header.sc{background:#fff!important}
 header:after{background:var(--red)!important;opacity:1!important;height:2px!important}

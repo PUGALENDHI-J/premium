@@ -16,6 +16,7 @@ import { TYPES } from "../content/tour-types.mjs";
 import { SACRED, SACRED_GROUPS, SACRED_HUB } from "../content/sacred.mjs";
 import { EXPERIENCES } from "../content/experiences.mjs";
 import { buildExperiences, homeExperiences } from "./lib/exp.mjs";
+import { responsive } from "./lib/img.mjs";
 import { GUIDES, GUIDE_CATS } from "../content/guides/index.mjs";
 import { POSTS, CLUSTERS } from "../content/blog/index.mjs";
 import { PAGES, FAQS, destOptions } from "../content/pages.mjs";
@@ -198,7 +199,7 @@ setMenu(MENU);
   }).join("");
   if (!/\/\*FP\*\/[\s\S]*?\/\*\/FP\*\//.test(home)) throw new Error("index.html: missing /*FP*/ markers");
   home = home.replace(/(\/\*FP\*\/)[\s\S]*?(\/\*\/FP\*\/)/, (_, a, b) => a + "\n" + fp + b);
-  home = withFocus(home);
+  home = responsive(ROOT, withFocus(home));
   if (home != indexHtml) writeFileSync(path.join(ROOT, "index.html"), home);
 }
 
@@ -260,6 +261,8 @@ const nearImgs = n => {
   return NEAR.get(n.s);
 };
 const smIf = img => existsSync(path.join(ROOT, smOf(img))) ? smOf(img) : img;
+// search results show a small thumbnail: the 600 px copy from tools/photos_xs.py
+const xsIf = img => { const xs = img.replace(/\/([^/]+)$/, "/xs/$1"); return existsSync(path.join(ROOT, xs)) ? xs : smIf(img) };
 // brush-label photo tiles: [slug, optional short name]
 const brushOf = list => list.map(x => Array.isArray(x) ? x : [x]).map(([s, name, sub]) => { const n = typeof s == "string" ? N.get(s) : s; return n && !n.draft && n.img ? { url: n.url, name: (name || n.n).replace(/\s*\(.*?\)/g, ""), img: smIf(n.img), sub } : null }).filter(Boolean);
 // tied-up partner destinations (SITE.partners) as brush tiles: the home page passes "rv" for its reveal animation
@@ -344,7 +347,7 @@ const written = [], sitemap = { pages: [], destinations: [], packages: [], guide
 function emit(urlPath, html, group, { index = true } = {}) {
   const file = urlPath.endsWith("/") ? path.join(OUT, urlPath, "index.html") : path.join(OUT, urlPath);
   if (html.includes("<main")) html = onePhotoEach(html);
-  html = withFocus(html);
+  html = responsive(ROOT, withFocus(html));
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, html);
   written.push(path.relative(ROOT, file).replace(/\\/g, "/"));
@@ -361,7 +364,7 @@ function searchRow(u, html) {
   const img = og && og != SITE.ogImage ? og : html.match(/<main[\s\S]*?<img[^>]*?src="(\/assets\/photos\/[^"]+)"/)?.[1];
   const t = (SEARCH_TYPE.find(([p]) => u.startsWith(p)) || [, "p"])[1];
   // destination headings read "Kerala Tour Packages"; the result says "Destination" already
-  SEARCH.push([t == "d" ? name.replace(/ Tour Packages$/, "") : name, u, t, clipV(desc, 130), img ? smIf(canon(img)) : "", ""]);
+  SEARCH.push([t == "d" ? name.replace(/ Tour Packages$/, "") : name, u, t, clipV(desc, 130), img ? xsIf(canon(img)) : "", ""]);
 }
 // words a page should be found by that its heading and description may not contain: sights, stops, themes, the state or country
 const searchKw = u => {
@@ -1141,7 +1144,7 @@ buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard, pkgsOf: f => PK.
   // home page: popular destinations as brush-label photo tiles (between the BRUSH markers in index.html)
   const f = path.join(ROOT, "index.html"), h = readFileSync(f, "utf8");
   const html = `<section class="brhome"><div class="h rv"><span class="eye">Popular destinations</span><h2>Where will you go next?</h2></div>${brush(brushOf([...POP_INTL.slice(0, 4), ...POP_IN.slice(0, 4)]))}<p class="brall"><a class="btn ghost2" href="/destinations/">All destinations →</a></p></section>` + partnerSec("rv");
-  const out = h.replace(/(<!--BRUSH-->)[\s\S]*?(<!--\/BRUSH-->)/, (_, a, b) => a + html + b);
+  const out = h.replace(/(<!--BRUSH-->)[\s\S]*?(<!--\/BRUSH-->)/, (_, a, b) => a + responsive(ROOT, html) + b);
   if (out != h) writeFileSync(f, out);
 }
 
