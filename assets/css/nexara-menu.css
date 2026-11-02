@@ -97,11 +97,23 @@ nav .nl .mega a.mall:hover{color:#fff;box-shadow:0 12px 24px rgba(255,0,0,.35)}
   nav .nl .mega a.mall{align-self:flex-end;margin-top:8px;padding:7px 20px;font-size:.82rem}
 }
 
-/* page transition (assets/js/nexara-transition.js): a curved panel sweeps over the page between internal links */
-.ptx{position:fixed;inset:0;z-index:10050;pointer-events:none;visibility:hidden}
+/* page transition (assets/js/nexara-transition.js): a curved panel sweeps over the page between internal links,
+   showing a red-tinted destination photo, a "next stop" caption and a dotted flight route */
+.ptx{position:fixed;inset:0;z-index:10050;pointer-events:none;visibility:hidden;overflow:hidden;background:linear-gradient(135deg,#7a0000,#b3261e)}
 .ptx.on{visibility:visible;pointer-events:auto}
-.ptx svg{display:block;width:100%;height:100%}
-html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:#9e0000}
+.ptx>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+.ptx:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(110,0,0,.45),rgba(70,0,0,.86) 75%),linear-gradient(135deg,rgba(158,0,0,.55),rgba(179,38,30,.35))}
+.ptx-c{position:absolute;inset:0;z-index:1;padding:0 16px;display:flex;justify-content:center;flex-direction:column;align-items:center;text-align:center;color:#fff;opacity:0}
+.ptx-k{font:600 .78rem/1 Poppins,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#ffd7c2}
+.ptx-n{margin-top:12px;font:700 clamp(2rem,6vw,3.6rem)/1.05 "Playfair Display",Georgia,serif;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.ptx-r{display:block;width:min(560px,100%);height:auto;margin-top:22px;overflow:visible}
+.ptx-r path{fill:none;stroke-linecap:round}
+.ptx-rb{stroke:rgba(255,255,255,.55);stroke-width:2;stroke-dasharray:.5 9}
+.ptx-rp{stroke:#fff;stroke-width:2.5;stroke-dasharray:100;stroke-dashoffset:100}
+.ptx-e{fill:none;stroke:#fff;stroke-width:2}
+.ptx-d{fill:#fff;filter:drop-shadow(0 0 6px #ffb08a)}
+.ptx-w{margin-top:20px;font:500 .74rem/1 Poppins,sans-serif;letter-spacing:.42em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:linear-gradient(135deg,#5a0000,#8a1a14)}
 
 /* ---------- burger overlay: menu, quote and contact panels, animated by assets/js/nexara-menu.js ---------- */
 .mbg,.mfeat,.mfoot,header>nav .nl>.mlogo{display:none}

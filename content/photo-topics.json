@@ -1,6 +1,10 @@
 {
  "_note": "Wikimedia Commons searches for the topic photos on destination cards (essential tips, key facts, outdoor activities). tools/fetch_topic_photos.py re-fetches a key whenever its search here changes; list rejected Commons files under _skip.",
  "_skip": [
+  "Cabin window views of aircraft wings, Cairns Airport, 2025.jpg",
+  "Flight departure board at Brisbane Airport, December 2022.jpg",
+  "PASSPORT SEVA KENDRA, MADURAI - panoramio.jpg",
+  "Indian Passport Type.png",
   "Unique Moment with the Moon and Christ the Redeemer 3.jpg",
   "Valluvarkottam.jpg",
   "Paintings of Ayyappan at Shree Dharmashasthagiri Ayyappa Swamy Temple, Huskuru (2).jpg",
@@ -345,7 +349,7 @@
  "svc-flight-tickets": "airliner taking off runway",
  "svc-forex": "euro banknotes",
  "svc-visa-assistance": "visa application",
- "svc-passport-services": "Indian passport",
+ "svc-passport-services": "airplane wing above clouds",
  "svc-travel-insurance": "suitcases luggage airport terminal",
  "svc-hotel-bookings": "hotel room double bed",
  "svc-airport-transfers-and-car-rentals": "taxi rank airport cars",

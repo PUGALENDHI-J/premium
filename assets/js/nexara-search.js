@@ -17,8 +17,10 @@
 
   const dlg = document.createElement("dialog");
   dlg.className = "srch";
-  dlg.setAttribute("aria-label", "Search the site");
-  dlg.innerHTML = `<div class="srw"><form class="srf" role="search" method="dialog">${ICON}<input type="search" name="q" placeholder="Search destinations, packages, guides…" autocomplete="off" spellcheck="false" enterkeyhint="go" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="sr-list" aria-autocomplete="list"><button type="button" class="srx" aria-label="Close search">Esc</button></form>` +
+  dlg.setAttribute("aria-labelledby", "srht");
+  // header and field styled like the enquiry popup (#enq in nexara-pages.js)
+  dlg.innerHTML = `<div class="srw"><div class="srh"><button type="button" class="srx" aria-label="Close search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><small>Nexara Holidays · Site search</small><b id="srht">Find your next holiday</b><span>Search destinations, packages, themes and travel guides across the site.</span></div>` +
+    `<form class="srf" role="search" method="dialog"><label>${ICON}<input type="search" name="q" placeholder="Try Maldives, Kerala or honeymoon" autocomplete="off" spellcheck="false" enterkeyhint="go" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="sr-list" aria-autocomplete="list"></label></form>` +
     `<div class="srt" role="toolbar" aria-label="Filter results">${TABS.map(([v, n], i) => `<button type="button" data-f="${v}"${i ? "" : ' class="on"'} aria-pressed="${!i}">${n}<small></small></button>`).join("")}</div>` +
     `<div class="srb"><p class="srm" role="status" aria-live="polite"></p><ul id="sr-list" class="srl" role="listbox" aria-label="Results"></ul></div>` +
     `<p class="srk"><span><kbd>↑</kbd><kbd>↓</kbd> to move</span><span><kbd>Enter</kbd> to open</span><span><kbd>Esc</kbd> to close</span></p></div>`;
