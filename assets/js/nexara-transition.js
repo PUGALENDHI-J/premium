@@ -1,26 +1,36 @@
 /* Page transition: a curved panel sweeps up over the page when an internal link is clicked, and sweeps back down
-   on the next page. The panel is a red-tinted destination photo with a "next stop" caption and a dotted flight route
+   on the next page. The panel is a red-tinted photo of the page being opened, with a "next stop" caption naming it
+   (the place, package or page clicked) and a dotted flight route
    that draws across the screen: the first part before leaving, the rest on arrival. Shared by index.html and every
    generated page; the <head> sets html.pt-in on arrival so the page stays covered until this runs. */
 (() => {
   const html = document.documentElement;
   if (matchMedia("(prefers-reduced-motion:reduce)").matches) { html.classList.remove("pt-in"); return }
 
-  const STOPS = [
-    ["santorini-sunset", "Santorini, Greece"],
-    ["dubai-night", "Dubai, UAE"],
-    ["maldives-atoll", "The Maldives"],
-    ["great-wall-autumn", "Great Wall, China"],
-    ["le-morne-mauritius", "Le Morne, Mauritius"],
-    ["wat-arun-night", "Bangkok, Thailand"],
-    ["taj-mahal", "Agra, India"],
-  ];
+  // what the clicked link opens: its name and photo. Names come from the site search index (page name, photo per URL),
+  // else from the link itself (card title, label, image alt); the photo is the one on the clicked card, else the page's own.
   const KEY = "nx-ptx";
   let saved = null;
   try { saved = JSON.parse(sessionStorage.getItem(KEY)); sessionStorage.removeItem(KEY) } catch (_) {}
   const arriving = html.classList.contains("pt-in");
-  // arrival keeps the photo the last page left on; the next exit picks a different one
-  let stop = arriving && saved && STOPS[saved.i] ? saved.i : Math.floor(Math.random() * STOPS.length);
+  let idx = null, idxP = null;
+  const loadIdx = () => idxP || (idxP = fetch("/assets/search-index.json").then(r => r.ok ? r.json() : []).then(d => { idx = new Map(d.map(r => [r[1], r])) }).catch(() => {}));
+  const full = src => src ? src.replace(/\/(xs|sm)\/([^/]+)$/, "/$2") : "";
+  const clean = t => String(t || "").replace(/[→›»]/g, "").replace(/\s+/g, " ").trim();
+  const GENERIC = /^(view|read|explore|see|discover|open|more|book|go|details|plan|request|enquire|all)/i;
+  const cardOf = a => a.closest(".dc,.acard,.brt,.ipc>div,.ppl>a,li,figure") || a;
+  const target = (a, url) => {
+    const row = idx && idx.get(url.pathname);
+    const card = cardOf(a);
+    const own = [a.querySelector("h3"), a.querySelector(".brl b"), a.querySelector("b")].map(e => e && clean(e.textContent)).find(Boolean);
+    let n = row ? clean(row[0]) : "";
+    if (!n) n = own || "";
+    if (!n || GENERIC.test(n)) { const t = clean(a.getAttribute("aria-label") || a.textContent); n = t && !GENERIC.test(t) ? t : clean(card.querySelector("h3,h2,b")?.textContent) || clean(a.querySelector("img")?.alt) || t }
+    if (url.pathname == "/") n = "Nexara Holidays";
+    const pic = a.querySelector("img") || (card != a && card.querySelector("img"));
+    const im = (pic && (pic.currentSrc || pic.src)) || (row && row[4] ? full(row[4]) : "");
+    return { n: n.slice(0, 70), im };
+  };
 
   const wrap = document.createElement("div");
   wrap.className = "ptx";
@@ -32,7 +42,7 @@
   document.body.appendChild(wrap);
   const img = wrap.querySelector("img"), content = wrap.querySelector(".ptx-c"), name = wrap.querySelector(".ptx-n");
   const route = wrap.querySelector(".ptx-rp"), dot = wrap.querySelector(".ptx-d");
-  const setStop = i => { stop = i; img.src = `/assets/hero/ptx/${STOPS[i][0]}.webp`; name.textContent = STOPS[i][1] };
+  const setStop = t => { if (t.im) img.src = t.im; else img.removeAttribute("src"); img.style.visibility = t.im ? "" : "hidden"; name.textContent = t.n || "" };
 
   // the panel's top edge: flat at the bottom (hidden), a hump (half way), flat at the top (covering the page)
   const usePath = CSS.supports("clip-path", 'path("M 0 0 H 1 V 1 z")');
@@ -90,12 +100,12 @@
       const d = clamp((k - .45) / .55);
       panel(1 - d);
       look(1 - clamp(d * 2.2), .5 * (1 - outEase(k)));
-    }, () => { wrap.classList.remove("on"); setStop((stop + 1 + Math.floor(Math.random() * (STOPS.length - 1))) % STOPS.length) });
+    }, () => { wrap.classList.remove("on") });
   };
   const reset = () => { cancelAnimationFrame(raf); panel(0); flight(0); wrap.classList.remove("on"); html.classList.remove("pt-in") };
 
-  // on a fresh visit the photo waits for the page's own images
-  if (arriving) { setStop(stop); reveal() } else { panel(0); addEventListener("load", () => setStop(stop)) }
+  // arrival shows the name and photo the last page left on
+  if (arriving && saved) { setStop(saved); reveal() } else { panel(0); html.classList.remove("pt-in") }
   // back/forward cache restores the covered page: uncover it
   addEventListener("pageshow", e => { if (e.persisted) reset() });
   addEventListener("resize", () => { if (!wrap.classList.contains("on")) panel(0) });
@@ -114,14 +124,19 @@
   const fetched = new Set();
   const prefetch = e => {
     const url = pageLink(e.target);
-    if (!url || fetched.has(url.pathname)) return;
+    if (!url) return;
+    loadIdx();
+    if (fetched.has(url.pathname)) return;
     fetched.add(url.pathname);
+    // warm the photo the transition will show
+    const t = target(e.target.closest("a[href]"), url); if (t.im) new Image().src = t.im;
     const l = document.createElement("link");
     l.rel = "prefetch"; l.href = url.pathname + url.search;
     document.head.appendChild(l);
   };
   addEventListener("mouseover", prefetch, { passive: true });
   addEventListener("pointerdown", prefetch, { passive: true });
+  addEventListener("focusin", prefetch, { passive: true });
 
   // on window, so menu, lightbox and enquiry handlers on document run first and can claim the click
   addEventListener("click", e => {
@@ -129,7 +144,8 @@
     const url = pageLink(e.target);
     if (!url) return;
     e.preventDefault();
-    if (!name.textContent) setStop(stop);
+    const next = target(e.target.closest("a[href]"), url);
+    setStop(next);
     flight(0); look(0, 1);
     wrap.classList.add("on");
     // take off: raise the panel, bring in the caption, start the route
@@ -140,7 +156,7 @@
     }, () => {
       try {
         sessionStorage.setItem("nx-pt", Date.now());
-        sessionStorage.setItem(KEY, JSON.stringify({ i: stop, p: LEAVE }));
+        sessionStorage.setItem(KEY, JSON.stringify({ n: next.n, im: next.im, p: LEAVE }));
       } catch (_) {}
       location.href = url.href;
     });
