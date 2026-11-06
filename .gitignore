@@ -3,3 +3,5 @@ node_modules/
 assets/veenaworld/
 assets/main images/
 research/vw-check-cache.json
+# original PNG frames of the scroll film (kept on disk as a backup; the site uses the compressed assets/frames/)
+assets/Nexara_Holidays_Thailand_travel___20261022134034_frames/

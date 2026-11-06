@@ -45,7 +45,13 @@ export function srcsetFor(root, src) {
 // in index.html's <style> (:where(img[sizes^="auto"])) applies them, so layout is exactly as without the srcset.
 export function responsive(root, html) {
   return html.replace(/<img\b[^>]*>/g, tag => {
-    if (/\ssrcset=/.test(tag) || !/\sloading="lazy"/.test(tag)) return tag;
+    if (/\ssrcset=/.test(tag)) return tag;
+    // the header photo loads at once (fetchpriority="high"): a srcset with plain sizes lets a phone take the sm/ copy
+    if (/\sfetchpriority="high"/.test(tag)) {
+      const src = tag.match(/\ssrc="([^"]+)"/)?.[1], set = src && srcsetFor(root, src);
+      return set ? tag.replace(/\s*\/?>$/, ` srcset="${set}" sizes="(max-width: 860px) 100vw, 60vw">`) : tag;
+    }
+    if (!/\sloading="lazy"/.test(tag)) return tag;
     const src = tag.match(/\ssrc="([^"]+)"/)?.[1];
     const set = src && srcsetFor(root, src), d = set && webpSize(path.join(root, src.replace(/^\//, "")));
     if (!d) return tag;

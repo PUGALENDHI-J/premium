@@ -43,7 +43,7 @@ for (const [u, p] of pages) {
 const missing = new Map();
 for (const [u, p] of pages) {
   for (const l of new Set(p.allLinks)) if (!existsSync(path.join(ROOT, fileFor(l)))) missing.set(l, (missing.get(l) || []).concat(u));
-  for (const s of new Set(p.srcs)) if (!existsSync(path.join(ROOT, decodeURIComponent(s.slice(1))))) err(u, `missing asset ${s}`);
+  for (const s of new Set(p.srcs)) if (!existsSync(path.join(ROOT, decodeURIComponent(s.slice(1).replace(/[?#].*$/, ""))))) err(u, `missing asset ${s}`);
 }
 for (const [l, from] of missing) err(from[0], `broken link ${l} (on ${from.length} pages)`);
 // 3. sitemaps

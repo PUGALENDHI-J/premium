@@ -110,3 +110,19 @@ Before going live, please review
   - the email address (still the placeholder hello@nexaraholidays.com) in content/site.mjs and index.html
   - the privacy, terms and cancellation pages (content/pages.mjs) with your own business terms
   - itinerary prices: none are shown except the Ultimate Boys Escape (copied from the home page)
+
+
+SPEED AND CACHING (November 2026)
+=================================
+- vercel.json Cache-Control: CSS and JS are kept by browsers for a year (the build adds ?v=<content hash> to every
+  CSS/JS URL, so a changed file is fetched at once); photos, frames and other assets for 7 days (then refreshed in the
+  background); search-index.json for an hour. A photo replaced under the SAME file name can show the old picture to a
+  returning visitor for up to 7 days: give a replacement photo a new file name when it must change at once.
+- Stylesheets: each page loads one bundle (assets/css/bundle-<hash>.css), written by the build from the page's own list
+  of stylesheets, in the same order. Edit the separate files (nexara-*.css), never the bundles. index.html keeps its list
+  in the <!--CSS:...--> marker.
+- Photos: python tools/compress_photos.py caps full-size photos at 380 KB and sm/ copies at 200 KB (same dimensions).
+  Run it after adding photos, then python tools/photos_xs.py and npm run build.
+- Home hero slides: portrait phones load centre-cropped copies from assets/hero/m/<slide key>.webp. When a slide photo
+  changes in const IM=, remake its copy (centre crop to 0.8 width/height, max 1400 px tall, WebP quality 74).
+- The scroll film loads every second frame on data-saver and 2G/3G connections.
