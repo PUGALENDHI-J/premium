@@ -28,32 +28,71 @@ const aboutSteps = [
   ["Confirm when ready", "Nothing is booked until you confirm in writing and pay the deposit stated in your quote."],
 ];
 const aboutPromises = [
-  ["Honest information", "We tell you the right season for a destination, even if it means suggesting a different month or place."],
-  ["No surprises", "Inclusions and exclusions are listed in your written quote. If something is not included, we say so."],
-  ["A real person to message", "You have a planner on WhatsApp before and during your trip, in English or Tamil."],
+  ["One written quote", "Flights, hotels, visas, transfers and sightseeing priced together, with no surprises later."],
+  ["Partners who live there", "Our own tied-up partner companies in destinations across Central Asia, the Caucasus, Russia and the Philippines arrange guides, drivers and hotels."],
+  ["Private transfers", "A private air-conditioned vehicle for every transfer, plus a tour manager on group trips."],
+  ["Meet and greet", "A Nexara representative receives you at the airport."],
+  ["Visa assistance", "A document checklist for your destination and help with the application."],
+  ["24/7 trip support", "A planner on WhatsApp before, during and after your trip."],
+];
+// the meaning of the name, the emblem and the mission (About copy, Nov 2026)
+const aboutMeaning = [
+  ["Next Era", "The old era of travel was about packages and checklists. Ours is about privilege: unhurried schedules, private arrangements and destinations chosen for the story they give you, not the number they add to a list."],
+  ["Next Aura", "Every Nexara journey carries a distinct character: composed, discreet and quietly exceptional. You arrive as a guest who has been expected."],
+  ["Next + Aura = Nexara", "The light that guides you to your next chapter."],
+];
+const aboutEmblem = [
+  ["The N", "is your foundation: strong, composed and enduring."],
+  ["The bird rising from the N", "shows a journey and an identity that are one."],
+  ["The golden swoosh", "is the trail a Nexara traveller leaves behind."],
+  ["The gold X", "at the heart of the name is where your ambition and our expertise meet."],
+];
+const aboutMission = [
+  ["Crafted, never copied", "Every itinerary is built around you. Choose a fully private journey, or a small-group departure with limited seats and a dedicated tour manager."],
+  ["Experiences with meaning", "A candlelit dinner above the Maldivian lagoon, Petra at night, a heritage journey to your ancestral hometown, a private yacht at sunset. We plan chapters of your life story, not just hotel nights."],
+  ["Seamless from start to finish", "Visa guidance, flights, forex, insurance, hotels and transfers are handled together, so the only decision left for you is where to look first."],
+  ["Service that stays with you", "Private air-conditioned transfers, a Nexara representative to meet and greet you on arrival, and a planner on WhatsApp around the clock while you travel."],
 ];
 const two = n => String(n + 1).padStart(2, "0");
 const chev = '<svg class="abx-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
-const aboutFacts = [[70, "+", "countries we plan trips to"], [2, "", "languages: English and Tamil"], [1, "", "planner on WhatsApp, before and during your trip"], [0, "Free", "quotes; nothing is booked until you confirm"]];
+const aboutFacts = [[70, "+", "countries we plan journeys to"], [580, "+", "itineraries planned by our desk"], [30, "+", "Indian states covered"], [0, "24/7", "trip support from a planner on WhatsApp"]];
 // interactions (count-up, plan showcase, timeline, collage parallax) live in assets/js/nexara-about.js
-const aboutPre = `<section class="ab-s abx-intro"><div class="abx-copy"><div class="h"><span class="eye">Who we are</span><h2>A Tamil Nadu travel company, planning journeys <em>everywhere</em></h2></div>
-<p class="abx-lede">Nexara Holidays is rooted in <b>Tamil Nadu</b>. We know its temple towns, hill stations, coast and villages first-hand, and we plan journeys from here to every part of India and more than 70 countries around the world.</p>
-<p>Every trip starts as a conversation with a planner, not a fixed package: you tell us what you have in mind, and we send a written plan with a price that you can change until it is right.</p>
+const aboutPre = `<section class="ab-s abx-intro"><div class="abx-copy"><div class="h"><span class="eye">Who we are</span><h2>We don't plan trips. We craft stories worth <em>retelling</em>.</h2></div>
+<p class="abx-lede">From Chennai to seventy-plus countries, Nexara Holidays designs private journeys for travellers who expect more than a package: considered itineraries, trusted partners on the ground, and a real person beside you from the first call to the journey home.</p>
+<p>Nexara Holidays is a <b>Chennai-based travel house</b> crafting holidays across India and the world. Our desk plans more than 580 itineraries, spanning 70+ countries and 30+ Indian states: from Maldives water villas and Swiss lakeside rail journeys to Kashmir houseboats and the high passes of Ladakh.</p>
+<p>Every journey is built the same way. Flights, hotels, visas, transfers and experiences arrive in one written quote, designed around your dates, your pace and your priorities. Honeymoons, family holidays, sacred journeys, corporate delegations and trade-fair travel each receive the same attention to detail, because each one marks an important moment in someone's life or business.</p>
+<p>We stay deliberately personal. You are never passed between departments. You speak to a Nexara planner who knows your trip, and who stays reachable on WhatsApp while you travel.</p>
 <div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="https://wa.me/${SITE.wa}" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
 <div class="abx-art"><figure class="abx-p1"><img src="/assets/photos/vw/venice.webp" alt="A gondola under the Bridge of Sighs, Venice"></figure><figure class="abx-p2"><img src="/assets/photos/vw/santorini--oia-sunset.webp" alt="Whitewashed houses of Oia, Santorini" loading="lazy"></figure>
 <div class="abx-seal" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="abx-ring" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text><textPath href="#abx-ring" textLength="280" lengthAdjust="spacing">From Tamil Nadu · to the world · </textPath></text></svg><i><img src="/assets/logo-mark.webp" alt=""></i></div>
 <div class="abx-tag"><b>English &amp; Tamil</b><span>your planner speaks both</span></div></div></section>
 <div class="abx-statw"><ul class="abx-stats">${aboutFacts.map(([n, s, t]) => `<li><b${n ? ` data-count="${n}" data-suffix="${s}"` : ""}>${n ? n + s : s}</b><span>${t}</span></li>`).join("")}</ul></div>
+<section class="ab-s abx-mean"><div class="h c"><span class="eye">The meaning of Nexara</span><h2>A promise of what comes <em>next</em></h2></div>
+<div class="abx-mgrid">${aboutMeaning.map(([h, p], i) => `<div${i == 2 ? ' class="abx-mfin"' : ""}><h3>${h}</h3><p>${p}</p></div>`).join("")}</div></section>
+<div class="alt"><section class="ab-s abx-emb"><div class="abx-eart"><figure class="abx-elogo"><img src="/assets/logo-lg.webp" alt="The Nexara Holidays emblem: an Arctic tern rising from the N" loading="lazy"></figure><figure class="abx-etern"><img src="/assets/photos/t/about-tern.webp" alt="An Arctic tern in flight over Iceland" loading="lazy"><figcaption>Arctic tern, Iceland</figcaption></figure></div>
+<div><div class="h"><span class="eye">Our emblem</span><h2>The Arctic tern</h2><p>Look closely at our N. It is not only a letter; it is a flight path.</p></div>
+<p>Our emblem is the Arctic tern, a seabird that travels from the Arctic to the Antarctic and back every year, roughly 70,000 kilometres, one of the longest migrations of any animal on earth. It crosses oceans, seasons and entire hemispheres with precision and purpose. That is the standard we hold our journeys to.</p>
+<ul class="abx-elist">${aboutEmblem.map(([b, t]) => `<li><b>${b}</b> ${t}</li>`).join("")}</ul>
+<div class="abx-sw"><div><i class="ruby"></i><p><b>Ruby Red</b>for courage and character</p></div><div><i class="gold"></i><p><b>Liquid Gold</b>because excellence is not a price tag; it is a standard we keep</p></div></div></div></section></div>
+<section class="ab-s abx-vm"><div class="h c"><span class="eye">Our vision and mission</span><h2>Measured in memories, not miles</h2></div>
+<blockquote class="abx-vis"><span>Vision</span>To be the most trusted name in premium journeys from South India, measured not in miles travelled but in memories made and clients who return.</blockquote>
+<p class="abx-mlead"><b>Mission.</b> To design every journey with four commitments:</p>
+<ol class="abx-mis">${aboutMission.map(([h, p], i) => `<li><span class="abx-dot">${two(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
 <div class="alt abx-band"><section class="ab-s"><div class="h"><span class="eye">What we plan</span><h2>Trips for every reason to travel</h2><p>From a weekend temple circuit to a month across several continents.</p></div>
 <div class="abx-show"><div class="abx-media">${aboutPlan.map(([, , , , img, cap], i) => `<figure${i ? "" : ' class="on"'}><img src="${img}" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption></figure>`).join("")}<div class="abx-num" aria-hidden="true"><b>01</b> / ${two(aboutPlan.length - 1)}</div></div>
 <ol class="abx-tabs">${aboutPlan.map(([h, p, u, go, img], i) => `<li${i ? "" : ' class="on"'}><button type="button" id="abx-t${i}" aria-controls="abx-p${i}" aria-expanded="${!i}"><i><img src="${img}" alt="" loading="lazy"></i><span class="abx-n">${two(i)}</span><span class="abx-t">${h}</span>${chev}</button><div class="abx-panel" id="abx-p${i}" role="region" aria-labelledby="abx-t${i}"><div><p>${p}</p><a class="abx-go" href="${u}">${go} →</a></div></div><span class="abx-bar" aria-hidden="true"><span></span></span></li>`).join("")}</ol></div></section></div>
 <section class="ab-s"><div class="h c"><span class="eye">How we work</span><h2>From your first message to a confirmed trip</h2><p>Four simple steps, and you decide at every one of them.</p></div>
 <ol class="abx-steps">${aboutSteps.map(([h, p], i) => `<li><span class="abx-dot">${two(i)}</span><h3>${h}</h3><p>${p}</p></li>`).join("")}</ol></section>
 <div class="abx-pwrap"><section class="ab-s abx-promise"><figure class="abx-pimg"><img src="/assets/photos/vw/lucerne.webp" alt="Lucerne's old town on the Reuss river, Switzerland" loading="lazy"><figcaption><span>Lucerne</span>Where the lake meets the Alps</figcaption></figure>
-<div><div class="h"><span class="eye">Our promises</span><h2>What you can count on</h2><p>Three things that hold for every trip we plan, whatever its size.</p></div>
-<ul class="abx-plist">${aboutPromises.map(([h, p]) => `<li><div><h3>${h}</h3><p>${p}</p></div></li>`).join("")}</ul></div></section></div>
+<div><div class="h"><span class="eye">The Nexara standard</span><h2>Our commitment, and what it means for you</h2></div>
+<ul class="abx-plist">${aboutPromises.map(([h, p]) => `<li><div><h3>${h}</h3><p>${p}</p></div></li>`).join("")}</ul>
+<p class="abx-beyond">Beyond holidays, we plan <a href="/sacred/">sacred journeys</a> across India and abroad, <a href="/experiences/roots-heritage-journeys/">roots and heritage journeys</a>, <a href="/experiences/educational-trips/">educational tours</a>, <a href="/experiences/business-trade-travel/">trade-fair and sourcing trips</a> such as the Canton Fair, <a href="/experiences/cruise-holidays/">ocean and river cruises</a>, and <a href="/experiences/luxury-yacht-experiences/">private yacht charters</a>.</p></div></section></div>
+<section class="ab-s abx-why"><div class="h c"><span class="eye">Why Nexara</span><h2>Planned with care, and entirely <em>yours</em></h2></div>
+<p>The world has no shortage of travel agencies. What it needs are planners who treat your time, your occasion and your trust as seriously as you do.</p>
+<p>You have worked hard to earn your holidays. They deserve to feel considered, effortless and entirely yours.</p>
+<p class="abx-wfin">If you are looking for a package, there are thousands to choose from. If you are looking for a journey planned with care, there is Nexara.</p></section>
 <script src="/assets/js/nexara-about.js" defer></script>`;
-const aboutContact = `<div class="alt"><section class="ab-s"><div class="abx-cta"><img src="/assets/photos/vw/bali--tanah-lot.webp" alt="" loading="lazy"><div class="abx-cin"><span class="eye">Get in touch</span><h2>Talk to a planner</h2><p>Call, WhatsApp, email or message us on Instagram. We usually reply the same day.</p><div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></div></div><div class="cgrid">
+const aboutContact = `<div class="alt"><section class="ab-s"><div class="abx-cta"><img src="/assets/photos/vw/bali--tanah-lot.webp" alt="" loading="lazy"><div class="abx-cin"><span class="eye">Welcome to the Next Era. Welcome to Your Aura.</span><h2>Your next story starts here</h2><p>Share your plans and we reply on WhatsApp with a plan and a price.</p><div class="ab-cta"><button type="button" class="btn red" data-enq>Request a free quote →</button><a class="btn ghost2" href="/contact-us/">Contact page</a></div></div></div><div class="cgrid">
 ${contactLinks}
 </div></section></div>`;
 // destination picker for the enquiry forms (contact, custom tour, home page): grouped like the Packages menu
@@ -87,7 +126,7 @@ ${full ? `<div class="fl"><input id="cft" type="number" min="1" max="99" placeho
 <p class="note">Sending this form opens WhatsApp on your device. Your enquiry reaches us only when you press send there. An enquiry is not a booking; trips are confirmed only after you accept a written quote.</p></section>`;
 
 export const PAGES = [
-  { s: "about-us", n: "About us", title: "About Nexara Holidays | Tamil Nadu Travel Company, Worldwide Trips", desc: "Nexara Holidays is a Tamil Nadu travel company planning private holidays, pilgrimages, roots journeys, business trips and group tours across India and the world.", h1: "About Nexara Holidays", scr: "From Tamil Nadu to the world", sub: "A Tamil Nadu travel company that plans journeys anywhere in the world, one conversation at a time.", img: "/assets/photos/vw/italy.webp", noCta: true, pre: aboutPre,
+  { s: "about-us", n: "About us", title: "About Nexara Holidays | Elite Journeys from Chennai", desc: "Nexara Holidays is a Chennai-based travel house crafting private holidays, honeymoons, sacred journeys and trade-fair travel across India and 70+ countries.", h1: "About Nexara Holidays", scr: "Elite Journeys. Legendary Experiences.", sub: "We don't plan trips. We craft stories worth retelling.", img: "/assets/photos/vw/italy.webp", noCta: true, pre: aboutPre,
     post: `<section class="ab-s"><div class="h"><span class="eye">Where we take you</span><h2>Journeys to the world's horizons</h2><p>Our trips reach more than 70 countries.</p></div><div class="brg"><a class="brt" href="/destinations/international/europe/france/paris/"><img src="/assets/photos/vw/sm/paris.webp" alt="Paris" loading="lazy"><span class="brl"><b>Paris</b></span></a><a class="brt" href="/destinations/international/southeast-asia/singapore/"><img src="/assets/photos/vw/sm/singapore.webp" alt="Singapore" loading="lazy"><span class="brl"><b>Singapore</b></span></a><a class="brt" href="/destinations/international/southeast-asia/thailand/"><img src="/assets/photos/vw/sm/thailand.webp" alt="Thailand" loading="lazy"><span class="brl"><b>Thailand</b></span></a><a class="brt" href="/destinations/international/indian-ocean/maldives/"><img src="/assets/photos/vw/sm/maldives.webp" alt="Maldives" loading="lazy"><span class="brl"><b>Maldives</b></span></a><a class="brt" href="/destinations/international/europe/switzerland/"><img src="/assets/photos/vw/sm/switzerland.webp" alt="Switzerland" loading="lazy"><span class="brl"><b>Switzerland</b></span></a><a class="brt" href="/destinations/international/east-asia/japan/"><img src="/assets/photos/vw/sm/japan.webp" alt="Japan" loading="lazy"><span class="brl"><b>Japan</b></span></a><a class="brt" href="/destinations/international/middle-east/uae/dubai/"><img src="/assets/photos/vw/sm/dubai.webp" alt="Dubai" loading="lazy"><span class="brl"><b>Dubai</b></span></a><a class="brt" href="/destinations/international/southeast-asia/indonesia/bali/"><img src="/assets/photos/vw/sm/bali.webp" alt="Bali" loading="lazy"><span class="brl"><b>Bali</b></span></a></div><p style="text-align:center;margin-top:24px"><a class="btn ghost2" href="/destinations/">Explore all destinations →</a></p></section><!--PARTNERS-->` + aboutContact,
     body: "" },
   { s: "contact-us", n: "Contact us", title: "Contact Nexara Holidays | Call or WhatsApp +91 73059 71481", desc: "Contact Nexara Holidays in Chennai by phone, WhatsApp, email or Instagram, or send a quick enquiry. We reply on WhatsApp with a plan and a price.", h1: "Contact us", scr: "Let's plan together", sub: "Call, WhatsApp or email. We usually reply the same day.", img: "/assets/photos/vw/dubai.webp", noCta: true, pre: contactCards, post: form(false),
