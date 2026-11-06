@@ -127,7 +127,7 @@ html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:line
   header>nav>.hc,header>nav>.ph{display:none!important}
   header>nav .nl>.mlogo{display:flex!important;text-transform:none;letter-spacing:0;align-items:center;gap:10px;height:44px;margin:0 0 12px;padding:0 4px;background:none!important}
   header>nav .nl>.mlogo:after{display:none}
-  .mlogo img{height:44px!important;width:44px;border-radius:50%!important}
+  .mlogo img{height:44px!important;width:auto!important;border-radius:0!important;box-shadow:none!important}
   .mbg{display:block;position:absolute;inset:0;background:rgba(17,17,17,.5);opacity:0}
   nav.open>.mbg{opacity:1}
   .mpanel{position:relative;width:100%;border:2px solid;border-radius:18px!important}
@@ -146,7 +146,7 @@ html.pt-in:after{content:"";position:fixed;inset:0;z-index:10051;background:line
   header>nav .mfoot a{display:inline-block!important;padding:4px 0;border-radius:0;background:none;font:500 .76rem Poppins,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#cfcfcf}
   header>nav .mfoot a:hover{color:#fff;background:none}
   header>nav .mfa a:after,header>nav .mfoot a:after{display:none}
-  .mfoot img{position:absolute;right:18px;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%!important}
+  .mfoot img{position:absolute;right:18px;top:50%;width:84px;height:auto;margin-top:-27px;border-radius:0!important}
 }
 
 /* desktop header fits the screen: logo, menu and quote button never run past the right edge.

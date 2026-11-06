@@ -1,7 +1,7 @@
 """Fetch freely licensed topic photos (money, water, trekking, ...) for destination cards from Wikimedia Commons.
 
 Usage: python tools/fetch_topic_photos.py
-Reads content/photo-topics.json (key -> Commons search), writes assets/photos/t/<key>.webp and
+Reads content/photo-topics.json (key -> Commons search, or "File:<name>" for one file picked by eye), writes assets/photos/t/<key>.webp and
 content/photos-topics.json (author, licence and source, used for the credits page). Uses the same licence
 checks as tools/fetch_photos.py. Keys whose search is unchanged are skipped, so the script can be re-run.
 Keys listed under "_large" are full-width hero photos: only originals at least MIN_LARGE pixels wide are
@@ -46,8 +46,10 @@ def main():
             continue
         res = None
         try:
-            for _, name in commons_files(q):
-                if BAD.search(name) or (name in used and name != credits.get(key, {}).get("file")) or name in skip:
+            # "File:<name>" pins one Commons file picked by eye; anything else is a Commons search
+            pinned = q.startswith("File:")
+            for _, name in ([(q, q[5:])] if pinned else commons_files(q)):
+                if (not pinned and BAD.search(name)) or (name in used and name != credits.get(key, {}).get("file")) or name in skip:
                     continue
                 info = licensed(name, 2560 if key in large else 1280, landscape=True)
                 if info:

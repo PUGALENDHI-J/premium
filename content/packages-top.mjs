@@ -80,7 +80,7 @@ export const TOP = [
   {
     id: "NX-TOP-08", slug: "malaysia-and-langkawi-island-holiday-6-days", home: "malaysia", name: "Malaysia & Langkawi Island Holiday",
     stops: [["kuala-lumpur", 2], ["langkawi", 3]], nights: 5, themes: ["honeymoon", "family-holidays", "island-holidays", "beach-holidays"], tag: "City + island", r: "intl island",
-    img: "langkawi", style: "Private transfers, shared island tours",
+    img: "langkawi--langkawi-skycab-and-sky-bridge", style: "Private transfers, shared island tours",
     hl: ["Langkawi SkyCab & Sky Bridge", "Island hopping & eagle feeding", "Mangrove boat tour", "Petronas Twin Towers"],
     sum: "Two nights in Kuala Lumpur, then three on Langkawi's beaches: the SkyCab and Sky Bridge, island hopping with eagle feeding and a swim in the Lake of the Pregnant Maiden, and a mangrove boat tour.",
     over: "The trip starts with Kuala Lumpur's twin towers and the Batu Caves, then a one-hour flight takes you to Langkawi, Malaysia's duty-free island. You stay at Pantai Cenang or a quieter bay, ride the SkyCab to the curved Sky Bridge, spend a day island-hopping in the Andaman Sea and cruise the Kilim Geoforest mangroves. Evenings are for sunsets and beach dinners.",
@@ -131,7 +131,7 @@ export const TOP = [
   {
     id: "NX-TOP-13", slug: "vietnam-and-thailand-combo-8-days", home: "vietnam", name: "Vietnam & Thailand Combo",
     stops: [["hanoi", 2], ["ha-long-bay", 1], ["pattaya", 2], ["bangkok", 2]], nights: 7, themes: ["multi-country-tours", "family-holidays", "group-tours", "cruise-holidays"], tag: "Bestselling combo", r: "intl combo group",
-    img: "vietnam", style: "Private or group transfers",
+    img: "pk-halong-junk", style: "Private or group transfers",
     hl: ["Ha Long Bay cruise", "Hanoi Old Quarter", "Coral Island, Pattaya", "Safari World, Bangkok"],
     sum: "Ha Long Bay and Hanoi in Vietnam, then Thailand's favourites: Pattaya's Coral Island and Alcazar show, and Bangkok's temples, Safari World and shopping, linked by a direct flight.",
     over: "The trip starts in Hanoi with the Old Quarter and a water puppet show, then a night on a cruise in Ha Long Bay. A direct flight from Hanoi to Bangkok begins the Thai half: two nights in Pattaya for Coral Island, Nong Nooch and the Alcazar show, and two in Bangkok for Safari World, the temples and the markets.",

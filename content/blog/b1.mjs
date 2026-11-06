@@ -339,7 +339,7 @@ body: `Chennai is well placed for weekend escapes. Here are ten ideas, grouped b
 October to March suits the coast and temple towns. The hills are a summer escape in April and May, but busy; book early.
 
 See our [[t:weekend-getaways]] page for ready-made plans.` },
-{ s: "best-winter-destinations-in-india", cluster: "india-travel", date: D, rel: ["goa", "rajasthan", "kerala", "gulmarg", "andaman-and-nicobar"], title: "The best winter destinations in India (November to February)", desc: "Where to go in India's winter: beaches, deserts, snow, wildlife and festivals, with the best month for each.",
+{ s: "best-winter-destinations-in-india", img: "/assets/photos/a/gulmarg--gulmarg-gondola.webp", cluster: "india-travel", date: D, rel: ["goa", "rajasthan", "kerala", "gulmarg", "andaman-and-nicobar"], title: "The best winter destinations in India (November to February)", desc: "Where to go in India's winter: beaches, deserts, snow, wildlife and festivals, with the best month for each.",
 body: `Winter is the main travel season for most of India. Here is where to go, depending on what you are looking for.
 
 ## Beaches
@@ -833,7 +833,7 @@ Book three to four months ahead for most destinations, and longer for peak dates
 ## Ask for options
 
 Tell us your budget and dates and we will suggest two or three destinations that fit. See our [[t:honeymoon]] page.` },
-{ s: "honeymoon-in-india-or-abroad", cluster: "honeymoon", date: D, rel: ["srinagar", "andaman-and-nicobar", "bali", "maldives", "kerala"], title: "Honeymoon in India or abroad? How to decide", desc: "Comparing honeymoons in India and abroad on budget, travel time, paperwork, experiences and season, with the best choices for each.",
+{ s: "honeymoon-in-india-or-abroad", img: "/assets/photos/vw/maldives.webp", cluster: "honeymoon", date: D, rel: ["srinagar", "andaman-and-nicobar", "bali", "maldives", "kerala"], title: "Honeymoon in India or abroad? How to decide", desc: "Comparing honeymoons in India and abroad on budget, travel time, paperwork, experiences and season, with the best choices for each.",
 body: `One of the first decisions couples face is whether to honeymoon in India or abroad. Both have advantages.
 
 ## Reasons to choose India

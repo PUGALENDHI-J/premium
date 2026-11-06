@@ -161,7 +161,7 @@ Rainfall is modest in most of the state, but it cools things down. Udaipur's lak
 For a first visit, go between mid-October and mid-March. If you only have summer, focus on Udaipur and Mount Abu and keep sightseeing to early mornings and evenings.
 
 Browse [[t:cultural-holidays]] and [[t:luxury-holidays]] for Rajasthan routes.` },
-{ s: "best-time-to-visit-andaman-islands", cat: "when-to-go", date: D, rel: ["andaman-and-nicobar", "havelock", "port-blair", "neil-island"], trip: "Andaman holiday", title: "Best time to visit the Andaman Islands for beaches and diving", desc: "When to plan an Andaman trip for calm seas, clear water and reliable ferries, and what the monsoon means for your itinerary.",
+{ s: "best-time-to-visit-andaman-islands", img: "/assets/photos/t/art-andaman-beach.webp", cat: "when-to-go", date: D, rel: ["andaman-and-nicobar", "havelock", "port-blair", "neil-island"], trip: "Andaman holiday", title: "Best time to visit the Andaman Islands for beaches and diving", desc: "When to plan an Andaman trip for calm seas, clear water and reliable ferries, and what the monsoon means for your itinerary.",
 body: `The Andaman Islands are a tropical destination, so the temperature hardly changes. What changes is the sea, and that decides how much you can do.
 
 ## October to May: the main season

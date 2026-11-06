@@ -251,3 +251,6 @@ body.sub main>section.ab-s,body.sub .alt>section.ab-s{padding-top:clamp(48px,5.5
 /* About: tab thumbnails and the seal centre are photos */
 .abx-tabs i,.abx-seal i{overflow:hidden;padding:0}
 .abx-tabs i img,.abx-seal i img{width:100%;height:100%;object-fit:cover;display:block}
+/* About seal: new Nexara mark on white, not cropped */
+.abx-seal i{padding:7px;background:#fff!important;box-shadow:0 6px 16px rgba(120,20,10,.18)}
+.abx-seal i img{object-fit:contain}

@@ -52,6 +52,11 @@ const TOPIC = readJson("photos-topics.json");
 // photos supplied by Nexara Holidays (content/photos-own.json) win over both libraries
 const { _note: _ownNote, ...OWN_PHOTOS } = readJson("photos-own.json");
 const PHOTOS = { ...(SITE.photos == "commons" ? COMMONS : SITE.photos == "vw+commons" ? { ...COMMONS, ...VW_PHOTOS } : VW_PHOTOS), ...OWN_PHOTOS };
+// photo-overrides.json: "_drop" lists library keys whose photo shows another subject (checked by eye); "_alias" points a key
+// at a correct photo of the same subject (another library key or a topic key from photo-topics.json)
+{ const ov = readJson("photo-overrides.json");
+  for (const k of ov._drop || []) delete PHOTOS[k];
+  for (const [k, v] of Object.entries(ov._alias || {})) { const ph = PHOTOS[v] || TOPIC[v]; if (ph) PHOTOS[k] = ph; else console.warn(`photo alias ${k}: no photo ${v}`) } }
 // where each photo's subject is (checked by eye; tools/photo_focus.py suggests candidates), so cropped cards and heroes keep faces and tall subjects in frame
 const { _note: _focusNote, ...PHOTO_FOCUS } = readJson("photo-focus.json");
 const withFocus = html => html.replace(/<img\b([^>]*?)\ssrc="(\/assets\/photos\/[^"]+)"([^>]*)>/g, (tag, pre, src, post) => {
@@ -85,7 +90,7 @@ for (const c of [...IN_CITIES.map(x => ({ ...x, dom: true })), ...W_CITIES.map(x
 }
 for (const r of inReg) for (const s of r.states) if (!N.has(s)) throw new Error("region state " + s);
 const smOf = img => img.replace(/\/([^/]+)$/, "/sm/$1");
-for (const n of N.values()) { const ph = PHOTOS[n.s]; if (ph && !n.img) { n.img = ph.img; n.sm = smOf(ph.img); n.photo = ph } }
+for (const n of N.values()) { const ph = PHOTOS[n.s]; if (ph && !n.img) { n.img = ph.img; n.sm = existsSync(path.join(ROOT, smOf(ph.img))) ? smOf(ph.img) : ph.img; n.photo = ph } }
 // regions borrow the photo of their first state or country that has one
 for (const r of [...inReg, ...wReg]) { const kid = (r.kind == "inregion" ? r.states : COUNTRIES.filter(c => c.rg == r.s).map(c => c.s)).map(x => N.get(x)).find(x => x?.photo); if (kid) Object.assign(r, { img: kid.img, sm: kid.sm, photo: kid.photo }) }
 const isPlace = n => n.kind == "city" || n.self; // a place with attractions
@@ -135,7 +140,7 @@ function addPkg(dom, [home, name, stops, th, sum, opt = {}]) {
   const nights = stops.reduce((a, [, n]) => a + n, 0), days = nights + 1;
   const slug = opt.slug || `${slugify(name)}-${days}-days`;
   const p = { dom, home: H, name, slug, stops: st, nights, days, sum, opt, id: pkgId(slug), url: `/packages/${dom ? "india" : "international"}/${H.s}/${slug}/` };
-  if (opt.img) p.img = PHOTOS[opt.img]?.img || warn(`package ${name}: no photo ${opt.img}`) || undefined; // opt.img: "place--attraction" key
+  if (opt.img) p.img = PHOTOS[opt.img]?.img || TOPIC[opt.img]?.img || warn(`package ${name}: no photo ${opt.img}`) || undefined; // opt.img: "place--attraction" key, or a topic photo key (content/photo-topics.json)
   const themes = new Set(th.split(/\s+/).filter(Boolean));
   if (days <= 4) themes.add("short-breaks");
   if (dom && days <= 3) themes.add("weekend-getaways");
@@ -170,7 +175,7 @@ for (const s of TOP) {
   if (s.d.length != s.nights + 1) why.push(`${s.d.length} day plans for ${s.nights + 1} days`);
   for (const t of s.themes) if (!THEME_LABEL[t]) why.push("unknown theme " + t);
   if (why.length) { draft("package", s.slug, why.join("; ")); continue }
-  const dom = top(H).kind == "state", img = PHOTOS[s.img]?.img || warn(`package ${s.name}: no photo ${s.img}`) || undefined;
+  const dom = top(H).kind == "state", img = PHOTOS[s.img]?.img || TOPIC[s.img]?.img || warn(`package ${s.name}: no photo ${s.img}`) || undefined;
   PK.push({ ...s, dom, home: H, stops: st, days: s.nights + 1, sig: true, top: true, img, url: `/packages/${dom ? "india" : "international"}/${H.s}/${s.slug}/` });
 }
 const pkgsAt = n => PK.filter(p => p.stops.some(([x]) => x === n));
@@ -249,6 +254,20 @@ for (const [k, p] of [...Object.entries(PHOTOS).sort(([a], [b]) => a.includes("-
   if (!PH_OF.has(n.s)) PH_OF.set(n.s, []);
   PH_OF.get(n.s).push(p.img);
 }
+// article cards: articles by URL, and topic photos for the subject an article's title names
+const ART_BY_URL = new Map([...G, ...B].map(a => [a.url, a]));
+const ART_TOPIC = [[/scuba|div(e|ing)|snorkel|reef|underwater/i, ["dive", "dive-2", "dive-3"]], [/beach|island|coast/i, ["beach", "beach-2", "beach-3", "tt-beach-holidays"]],
+  [/trek|hik|altitude|mountain|himalaya|ladakh|permit|pass/i, ["trek", "trek-2", "trek-3", "naturewalk-2"]], [/temple|pilgrim|yatra|darshan|jyotirlinga|shrine|devi/i, ["temple", "temple-2", "tt-pilgrimage-tours"]],
+  [/safari|wildlife|tiger|national park/i, ["safari", "safari-2", "safari-3"]], [/honeymoon|couple|romantic/i, ["tc-honeymoon", "tt-honeymoon", "tc-couples", "hero-honeymoon"]],
+  [/family|kids|children/i, ["tc-family", "tt-family-holidays"]], [/food|cuisine|eat/i, ["tc-food", "foodwalk", "foodwalk-2"]], [/festival|ceremon|nyepi|lantern/i, ["tc-festival", "x-her-festival"]],
+  [/train|rail/i, ["tc-train"]], [/visa|passport|document/i, ["svc-visa-assistance", "svc-passport-services"]], [/flight|airport|transit|layover|airline|jet lag|long-haul/i, ["svc-flight-tickets", "flight", "air"]],
+  [/money|budget|forex|currency|cost|cheap|tipping/i, ["currency", "svc-forex", "tipping", "tt-budget-holidays"]], [/cruise|ferry|boat|ship|houseboat/i, ["boat", "boat-2", "cruise", "houseboat"]],
+  [/road|drive|taxi|getting around|transport/i, ["tc-road", "drive", "drive-2", "transport", "transport-2"]], [/solo/i, ["tc-solo", "tt-solo-travel"]], [/senior|elderly/i, ["tc-senior", "tt-senior-friendly"]],
+  [/photo/i, ["tc-photo", "tt-photography-tours"]], [/best time|season|weather|monsoon|winter|summer|when to/i, ["season", "sunset", "sunset-2", "sunset-3"]],
+  [/itinerary|days|plan|packing|tips|guide|first/i, ["planner", "planner-3", "planner-4", "planner-5"]], [/./, ["walk", "walk-2", "walk-3", "outdoors", "hero-world"]]];
+// rows of ART_TOPIC that name a subject clearly enough to beat a destination photo on an article card
+const ART_STRONG = new Set(ART_TOPIC.map(([rx], i) => /scuba|family|food|festival|train|visa|flight|money|cruise|road|solo|senior|photo/.test(rx.source) ? i : -1));
+const artTopics = a => ART_TOPIC.filter(([rx]) => rx.test(a.title)).flatMap(([, ks]) => ks).map(k => TOPIC[k]?.img).filter(Boolean);
 const NEAR = new Map(), BY_URL = new Map([...N.values()].map(n => [n.url, n])), PK_BY_URL = new Map(PK.map(p => [p.url, p]));
 const nearImgs = n => {
   if (!NEAR.has(n.s)) {
@@ -299,9 +318,11 @@ function onePhotoEach(html) {
     const kind = / data-lb/.test(aTag) ? 0 : html.lastIndexOf("<div", i) == html.lastIndexOf('<div class="sps">', i) ? 1 : 2;
     occ.push({ i, tag: m[0], src: m[1], key: canon(m[1]), kind, aOpen, aTag, href: aTag.match(/href="([^"]+)"/)?.[1] });
   }
-  const used = new Set(), edits = [];
+  const used = new Set(), edits = [], firstHref = new Map();
   for (const o of [...occ].sort((a, b) => a.kind - b.kind || a.i - b.i)) {
-    if (!used.has(o.key)) { used.add(o.key); continue }
+    // the same card twice on a page (a featured row and the full list) keeps its photo
+    if (!used.has(o.key)) { used.add(o.key); if (o.href) firstHref.set(o.key, o.href); continue }
+    if (o.href && firstHref.get(o.key) == o.href) continue;
     if (o.src.startsWith("/assets/photos/t/")) {
       // repeated topic photo: another photo of the same topic (planner, planner-2, ...), then a related topic, else no picture
       const base = o.src.match(/\/t\/(.+?)(-\d)?\.webp$/)[1], near = OUT_NEAR[base] ? [...OUT_NEAR[base], "outdoors"].filter(k => k != "heritage") : [];
@@ -318,6 +339,12 @@ function onePhotoEach(html) {
       if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]) }
       else { const alt = nearPhoto(html.slice(fig, o.i).match(/data-ic="([^"]+)"/)?.[1] || "compass", used); if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]) } else edits.push([fig, html.indexOf("</figure>", o.i) + 9, ""]) }
       continue;
+    }
+    // repeated photo on an article card: an unused photo of a place the article covers, else a topic photo its title points to
+    const art = /class="aci"/.test(o.tag) && ART_BY_URL.get(o.href);
+    if (art) {
+      const alt = [...(art.rel || []).map(s => N.get(s)).filter(n => n && !n.draft).flatMap(n => [...(PH_OF.get(n.s) || []), ...nearImgs(n)]), ...artTopics(art)].find(x => !used.has(canon(x)));
+      if (alt) { used.add(canon(alt)); edits.push([o.i, o.i + o.tag.length, o.tag.replace(`src="${o.src}"`, `src="${alt}"`)]); continue }
     }
     const pk = PK_BY_URL.get(o.href), at = BY_URL.get(o.href);
     const seeds = pk ? pk.stops.map(([n]) => n) : at ? [at] : PH_INFO.get(o.key) ? [PH_INFO.get(o.key).n] : [];
@@ -338,7 +365,11 @@ function onePhotoEach(html) {
     const after = o.i + o.tag.length, lab = html.slice(after, after + 600).match(/^<span>(<svg[\s\S]*?<\/svg>)([^<]*)<\/span>/);
     if (lab && old && lab[2] == esc(old.of)) edits.push([after, after + lab[0].length, `<span>${lab[1]}${esc(nu.of)}</span>`]);
   }
-  for (const [s, e, t] of edits.sort((a, b) => b[0] - a[0])) html = html.slice(0, s) + t + html.slice(e);
+  // a card's end is found by searching forward, which can miss in some layouts: never apply a reversed range, a cut far
+  // larger than one card, or an edit overlapping one already accepted (the repeated photo then simply stays)
+  const ok = [];
+  for (const x of edits) if (x[1] >= x[0] && !(x[2] == "" && x[1] - x[0] > 6000) && !ok.some(y => x[0] < y[1] && y[0] < x[1])) ok.push(x);
+  for (const [s, e, t] of ok.sort((a, b) => b[0] - a[0])) html = html.slice(0, s) + t + html.slice(e);
   return html;
 }
 
@@ -416,7 +447,11 @@ const artImg = a => {
   const h = [...(a.slug || a.url)].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7);
   const rel = (a.rel || []).map(s => N.get(s)).filter(Boolean).map(n => [n, n.img || top(n)?.img]).filter(([, im]) => im);
   const named = rel.find(([n]) => new RegExp(`\\b${reEsc(n.n.replace(/\s*\(.*?\)/g, ""))}\\b`, "i").test(a.title || ""));
-  return named ? named[1] : rel.length ? rel[0][1] : ALL_IMG[h % ALL_IMG.length];
+  if (named) return named[1];
+  // an article about a subject rather than a place (visas, flights, trains, family, money...) shows that subject
+  const strong = ART_TOPIC.filter(([rx], i) => ART_STRONG.has(i) && rx.test(a.title || "")).flatMap(([, ks]) => ks).map(k => TOPIC[k]?.img).filter(Boolean);
+  if (strong.length) return strong[h % strong.length];
+  return rel.length ? rel[0][1] : ALL_IMG[h % ALL_IMG.length];
 };
 const artCards = (arr, label) => arr.length ? `<div class="acards ph">${arr.map(a => `<a class="acard" href="${a.url}"><img class="aci" src="${artImg(a)}" alt="" loading="lazy"><small>${esc(label(a))}</small><h3>${esc(a.title)}</h3><p>${esc(a.desc)}</p><span>Read →</span></a>`).join("")}</div>` : "";
 const quoteBox = (trip, extra = "") => `<div class="box"><h3>Plan this trip</h3><p class="quote-p">Request a customised quote</p><p class="quote-s">Prices depend on dates, hotel category and group size, so we quote each trip individually.</p>${extra}<a class="btn red" href="/custom-tour/" data-enq data-trip="${esc(trip)}">Request a quote</a><a class="btn ghost2" href="https://wa.me/${SITE.wa}?text=${encodeURIComponent("Hi Nexara Holidays, I would like a quote for: " + trip)}" target="_blank" rel="noopener">WhatsApp us</a><a class="btn ghost2" href="tel:${SITE.tel}">Call ${SITE.phone}</a></div>`;
@@ -1007,7 +1042,7 @@ function pkgGroups(arr, keyFn) {
   const jump = arr => `<p class="byline">Jump to: ${pkgGroups(arr, p => p.home).map(([h]) => `<a href="#${h.s}" style="color:var(--red)">${esc(h.n)}</a>`).join(" · ")}</p>`;
   emit("/tour-packages/india/", page({
     path: "/tour-packages/india/", active: "/tour-packages/", title: "India Tour Packages: Domestic Holidays from Chennai | Nexara Holidays", desc: clip(`${dom.length} domestic itineraries across ${new Set(dom.map(p => p.home)).size} states: Kerala, Kashmir, Rajasthan, Goa, the Himalaya, the Northeast and more. Private, customisable trips.`),
-    h1: "India tour packages", scr: "Domestic holidays", sub: `${dom.length} customisable itineraries across India. Request a quote for your dates.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["India", "/tour-packages/india/"]], hero: { m: "temple", g: "#5a2a1e,#b3562b,#ff8a3d" },
+    h1: "India tour packages", scr: "Domestic holidays", sub: `${dom.length} customisable itineraries across India. Request a quote for your dates.`, crumbs: [["Home", "/"], ["Tour packages", "/tour-packages/"], ["India", "/tour-packages/india/"]], hero: { img: "/assets/hero/taj-mahal.webp" },
     body: sec("By state", "Choose a state", jump(dom) + gHtml(dom)) + cta("Can't find your route?", "Tell us where you want to go and we will build it.", "India holiday"),
   }), "pages");
   emit("/tour-packages/international/", page({
@@ -1149,7 +1184,7 @@ buildExperiences({ N, PHOTOS, TOPIC, emit, pkgsOfType, pkgCard, pkgsOf: f => PK.
 }
 
 /* ---------- 10. guides & blog ---------- */
-const articleLd = (a, kind) => ({ "@context": "https://schema.org", "@type": kind == "blog" ? "BlogPosting" : "Article", headline: a.title, description: a.desc, datePublished: a.date || SITE.reviewed, dateModified: a.updated || a.date || SITE.reviewed, mainEntityOfPage: abs(a.url), author: { "@type": "Organization", name: "Nexara Holidays travel desk", url: SITE.origin + "/about-us/" }, publisher: { "@type": "Organization", name: SITE.name, logo: { "@type": "ImageObject", url: abs("/assets/logo-circle.png") } }, image: abs(a.img || SITE.ogImage) });
+const articleLd = (a, kind) => ({ "@context": "https://schema.org", "@type": kind == "blog" ? "BlogPosting" : "Article", headline: a.title, description: a.desc, datePublished: a.date || SITE.reviewed, dateModified: a.updated || a.date || SITE.reviewed, mainEntityOfPage: abs(a.url), author: { "@type": "Organization", name: "Nexara Holidays travel desk", url: SITE.origin + "/about-us/" }, publisher: { "@type": "Organization", name: SITE.name, logo: { "@type": "ImageObject", url: abs("/assets/logo.png") } }, image: abs(a.img || SITE.ogImage) });
 function articlePage(a, kind) {
   const relNodes = (a.rel || []).map(s => N.get(s)).filter(n => n && !n.draft);
   const relP = PK.filter(p => p.stops.some(([n]) => relNodes.includes(n) || relNodes.includes(top(n)))).slice(0, 6);
@@ -1209,7 +1244,7 @@ for (const v of SERVICES) {
 }
 emit("/services/", page({
   path: "/services/", active: "/services/", title: "Travel Services: Flights, Forex, Visas & Insurance | Nexara Holidays", desc: clip(`Flights, forex and currency exchange, visas, travel insurance, hotels, transfers, eSIMs and more: ${SERVICES.length} travel services from Nexara Holidays in Chennai.`),
-  h1: "Travel services", scr: "Everything around the trip", sub: "Flights, forex, visas, insurance and more, on their own or with a holiday.", crumbs: [["Home", "/"], ["Travel services", "/services/"]], hero: TOPIC["svc-travel-insurance"] ? { img: TOPIC["svc-travel-insurance"].img, credit: TOPIC["svc-travel-insurance"] } : { g: "#5a2a1e,#b3562b,#ff8a3d" },
+  h1: "Travel services", scr: "Everything around the trip", sub: "Flights, forex, visas, insurance and more, on their own or with a holiday.", crumbs: [["Home", "/"], ["Travel services", "/services/"]], hero: TOPIC["svc-hero"] ? { img: TOPIC["svc-hero"].img, credit: TOPIC["svc-hero"] } : { g: "#5a2a1e,#b3562b,#ff8a3d" },
   body: Object.entries(SERVICE_GROUPS).map(([k, h], i) => (i % 2 ? `<div class="alt">` : "<div>") + sec(i ? "On the trip" : "Get ready", h, svcCards(SERVICES.filter(v => v.grp == k))) + "</div>").join("") +
     sec("How it works", "One planner for every part of the trip", `<div class="prose">${renderMd(`1. **Tell us what you need** on WhatsApp, by phone or through the [enquiry form](/custom-tour/): a single flight, forex for a trip, or the whole holiday.
 2. **We send options and a written price**, with any service fee shown separately.
@@ -1238,6 +1273,11 @@ emit("/faqs/", page({
     "hero-world": "Home page: The World, Your Way", "hero-honeymoon": "Home page: Honeymoons", "x-biz-hero": "Business & Trade Travel", "x-biz-sourcing": "Sourcing trips", "x-biz-hubs": "Industry hubs", "x-biz-corporate": "Corporate travel", "x-biz-skyline": "Travel Experiences",
     "x-her-festival": "Roots & Heritage Journeys", "x-her-hero": "Heritage villages", "x-her-food": "Heritage food", "x-edu-campus": "Educational Trips", "x-edu-hero": "Field trips", "x-edu-science": "Science visits",
     "edu-florida": "Study trip: space science in Florida", "edu-tokyo": "Study trip: technology in Japan", "edu-london": "Study trip: London museums", "edu-rome": "Study trip: classical Italy", "edu-kenya": "Study trip: wildlife in Kenya", "edu-costa-rica": "Study trip: rainforest ecology", "edu-iceland": "Study trip: Iceland geology", "edu-germany": "Study trip: German engineering", "edu-netherlands": "Study trip: Dutch water management", "edu-andaman-marine": "Study trip: Andaman marine science", "edu-delhi": "Study trip: heritage and science in India", "edu-dubai": "Study trip: innovation in Dubai",
+    "svc-hero": "Travel services", "art-andaman-scuba": "Article: diving in the Andamans", "art-andaman-ferry": "Article: reaching the Andamans", "art-andaman-beach": "Article: best time for the Andamans",
+    "art-responsible-travel": "Article: responsible travel", "pk-nile-dahabiya": "Package: Egypt with Nile cruise", "pk-kumarakom-houseboat": "Package: Kerala backwaters", "pk-alaska-cruise": "Package: Alaska glaciers",
+    "pk-halong-junk": "Package: Vietnam & Thailand", "pk-chettinad-palace": "Package: Chettinad heritage stay", "pk-chettinad-food": "Package: Chettinad food trail", "pk-japan-sakura": "Package: Japan cherry blossom",
+    "pk-japan-autumn": "Package: Japan autumn colours", "pk-yi-peng": "Package: Chiang Mai Yi Peng", "pk-kinabalu": "Kota Kinabalu (Borneo)", "pk-bali-villa": "Package: Bali luxury villas", "pk-dakshineswar": "Package: Kolkata & Dakshineswar",
+    "pk-mother-teresa": "Package: Mother Teresa's Kolkata", "pk-ubud-rice": "Ubud rice terraces", "pk-bali-temple": "Package: Bali temple trail", "pk-vaishno-devi": "Package: Vaishno Devi yatra",
     "x-cru-deck": "Cruise Holidays", "x-cru-river": "River cruises", "x-cru-expedition": "Expedition cruises", "x-cru-hero": "Cruise holidays", "x-yac-hero": "Luxury Yacht Experiences", "x-yac-cat": "Catamaran charters", "x-yac-gulet": "Gulet charters", ...Object.fromEntries(SERVICES.map(v => [`svc-${v.s}`, `Travel services: ${v.n}`])) };
   const topicRows = Object.entries(TOPIC).filter(([, p]) => p.license).map(([k, p]) => `<tr><td>${esc(k.startsWith("tt-") ? THEME_LABEL[k.slice(3)] || k : SPOT_LABEL[k] ? SPOT_LABEL[k] : LABEL[k.replace(/-\d$/, "")] || k)}</td><td>${photoCredit(p)}</td></tr>`);
   if (rows.length) emit("/photo-credits/", page({

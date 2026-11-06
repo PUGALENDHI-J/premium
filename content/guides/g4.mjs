@@ -113,7 +113,7 @@ Jain food (no onion, garlic or root vegetables) is available in Dubai, Singapore
 ## On tours
 
 Our quotes note which meals are included. We request vegetarian, Jain or eggless meals and confirm what each supplier can provide. See [[t:food-tours]].` },
-{ s: "responsible-travel-tips", cat: "planning", date: D, rel: ["ladakh", "andaman-and-nicobar", "chiang-mai"], trip: "Responsible holiday", title: "Responsible travel: simple ways to travel better", desc: "Practical ways to reduce your impact and support local communities on holiday, from wildlife experiences and plastic to dress and photography.",
+{ s: "responsible-travel-tips", img: "/assets/photos/t/art-responsible-travel.webp", cat: "planning", date: D, rel: ["ladakh", "andaman-and-nicobar", "chiang-mai"], trip: "Responsible holiday", title: "Responsible travel: simple ways to travel better", desc: "Practical ways to reduce your impact and support local communities on holiday, from wildlife experiences and plastic to dress and photography.",
 body: `Responsible travel does not mean giving things up. It means making small choices that keep places beautiful and benefit the people who live there.
 
 ## Wildlife experiences
@@ -1223,7 +1223,7 @@ Plan at least three or four safaris over two nights. Each drive is a few hours l
 Leopards, sloth bears, deer, birds and the forest itself make every safari worthwhile.
 
 See [[t:wildlife-safaris]] for itineraries.` },
-{ s: "scuba-diving-for-first-timers-in-the-andamans", cat: "special-trips", date: D, rel: ["havelock", "andaman-and-nicobar", "neil-island"], trip: "Andaman diving holiday", title: "Scuba diving for first-timers in the Andamans", desc: "Try-dives and beginner courses on Havelock: who can dive, what to expect, medical checks, seasons, flying after diving and choosing a dive centre.",
+{ s: "scuba-diving-for-first-timers-in-the-andamans", img: "/assets/photos/t/art-andaman-scuba.webp", cat: "special-trips", date: D, rel: ["havelock", "andaman-and-nicobar", "neil-island"], trip: "Andaman diving holiday", title: "Scuba diving for first-timers in the Andamans", desc: "Try-dives and beginner courses on Havelock: who can dive, what to expect, medical checks, seasons, flying after diving and choosing a dive centre.",
 body: `The Andaman Islands are India's best place to try scuba diving, with warm water, coral reefs and certified dive centres on [[havelock]] (Swaraj Dweep) and [[neil-island]].
 
 ## Try-dive or course?

@@ -33,7 +33,7 @@ The drive up the Kallar ghat road from Mettupalayam takes about two to three hou
 - Motion sickness is rare on the train but common on the ghat road; carry medication if needed.
 
 See our [[t:train-journeys]] page and [[g:best-time-to-visit-ooty-and-kodaikanal]].` },
-{ s: "how-to-reach-the-andaman-islands-from-chennai", cat: "getting-there", date: D, rel: ["port-blair", "havelock", "andaman-and-nicobar"], trip: "Andaman holiday", title: "How to reach the Andaman Islands from Chennai: flights, ships and ferries", desc: "Your options for getting from Chennai to the Andamans by air or sea, and how inter-island ferries to Havelock and Neil work.",
+{ s: "how-to-reach-the-andaman-islands-from-chennai", img: "/assets/photos/t/art-andaman-ferry.webp", cat: "getting-there", date: D, rel: ["port-blair", "havelock", "andaman-and-nicobar"], trip: "Andaman holiday", title: "How to reach the Andaman Islands from Chennai: flights, ships and ferries", desc: "Your options for getting from Chennai to the Andamans by air or sea, and how inter-island ferries to Havelock and Neil work.",
 body: `The Andaman Islands are about 1,200 kilometres from Chennai across the Bay of Bengal. There are no road or rail links, so you arrive by air or sea.
 
 ## By air

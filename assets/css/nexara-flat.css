@@ -5,7 +5,7 @@
 
 /* square corners */
 *,*:before,*:after{border-radius:0!important}
-header .brand img,.flogo img,a.wa{border-radius:50%!important}
+a.wa{border-radius:50%!important}
 .more-pl{border-radius:24px!important}
 .mpi{border-radius:999px!important}
 .mpi i,.mpi:after{border-radius:50%!important}
