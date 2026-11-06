@@ -12,7 +12,7 @@
   const KEY = "nx-ptx";
   let saved = null;
   try { saved = JSON.parse(sessionStorage.getItem(KEY)); sessionStorage.removeItem(KEY) } catch (_) {}
-  const arriving = html.classList.contains("pt-in");
+  const arriving = html.classList.contains("pt-in") || !!document.querySelector("body > .ptx.on");
   let idx = null, idxP = null;
   const loadIdx = () => idxP || (idxP = fetch("/assets/search-index.json").then(r => r.ok ? r.json() : []).then(d => { idx = new Map(d.map(r => [r[1], r])) }).catch(() => {}));
   const full = src => src ? src.replace(/\/(xs|sm)\/([^/]+)$/, "/$2") : "";
@@ -32,14 +32,15 @@
     return { n: n.slice(0, 70), im };
   };
 
-  const wrap = document.createElement("div");
-  wrap.className = "ptx";
-  wrap.setAttribute("aria-hidden", "true");
-  wrap.innerHTML = `<img alt="" decoding="async"><div class="ptx-c"><span class="ptx-k">Next stop</span><b class="ptx-n"></b>`
-    + `<svg class="ptx-r" viewBox="0 0 300 70"><path class="ptx-rb" d="M 12 58 Q 150 -18 288 58"/><path class="ptx-rp" pathLength="100" d="M 12 58 Q 150 -18 288 58"/>`
-    + `<circle class="ptx-e" cx="12" cy="58" r="4"/><circle class="ptx-e" cx="288" cy="58" r="4"/><circle class="ptx-d" r="5.5"/></svg>`
-    + `<span class="ptx-w">Nexara Holidays</span></div>`;
-  document.body.appendChild(wrap);
+  // on arrival the inline script at the top of <body> has already built the covering panel; adopt it
+  let wrap = document.querySelector("body > .ptx");
+  if (!wrap) {
+    wrap = document.createElement("div");
+    wrap.className = "ptx";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML = `<img alt="" decoding="async"><div class="ptx-c"><span class="ptx-k">Next stop</span><b class="ptx-n"></b><svg class="ptx-r" viewBox="0 0 300 70"><path class="ptx-rb" d="M 12 58 Q 150 -18 288 58"/><path class="ptx-rp" pathLength="100" d="M 12 58 Q 150 -18 288 58"/><circle class="ptx-e" cx="12" cy="58" r="4"/><circle class="ptx-e" cx="288" cy="58" r="4"/><circle class="ptx-d" r="5.5"/></svg><span class="ptx-w">Nexara Holidays</span></div>`;
+    document.body.appendChild(wrap);
+  }
   const img = wrap.querySelector("img"), content = wrap.querySelector(".ptx-c"), name = wrap.querySelector(".ptx-n");
   const route = wrap.querySelector(".ptx-rp"), dot = wrap.querySelector(".ptx-d");
   const setStop = t => { if (t.im) img.src = t.im; else img.removeAttribute("src"); img.style.visibility = t.im ? "" : "hidden"; name.textContent = t.n || "" };
@@ -94,13 +95,23 @@
     panel(1); flight(saved?.p ?? LEAVE); look(1, .5);
     wrap.classList.add("on"); html.classList.remove("pt-in");
     const from = saved?.p ?? LEAVE;
-    // land: finish the route, then lower the panel while the caption fades
-    tween(ARRIVE, k => {
+    // land: finish the route, then lower the panel while the caption fades. The page stays covered until its other
+    // scripts have run and it has painted (DOMContentLoaded, then two frames), and the photo is decoded, so their
+    // start-up work does not stall the animation half way down
+    let started = false;
+    const land = () => { if (started) return; started = true; tween(ARRIVE, k => {
       flight(from + (1 - from) * outEase(clamp(k / .4)));
       const d = clamp((k - .45) / .55);
       panel(1 - d);
       look(1 - clamp(d * 2.2), .5 * (1 - outEase(k)));
-    }, () => { wrap.classList.remove("on") });
+    }, () => { wrap.classList.remove("on") }) };
+    const ready = Promise.all([
+      // deferred scripts run before DOMContentLoaded, so it is still to come here unless the page has fully loaded
+      new Promise(r => document.readyState == "complete" ? r() : addEventListener("DOMContentLoaded", r, { once: true })),
+      img.getAttribute("src") ? img.decode().catch(() => {}) : null,
+    ]);
+    ready.then(() => requestAnimationFrame(() => requestAnimationFrame(land)));
+    setTimeout(land, 1500); // never leave the page covered
   };
   const reset = () => { cancelAnimationFrame(raf); panel(0); flight(0); wrap.classList.remove("on"); html.classList.remove("pt-in") };
 
