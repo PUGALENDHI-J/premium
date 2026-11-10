@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#dce9ff","on-tertiary-fixed-variant":"#2f2ebe","tertiary-container":"#07006c","on-primary-fixed-variant":"#3f465c","surface-container-highest":"#d3e4fe","on-primary":"#ffffff","error":"#ba1a1a","on-secondary":"#ffffff","error-container":"#ffdad6","tertiary-fixed-dim":"#c0c1ff","on-error-container":"#93000a","primary-fixed-dim":"#bec6e0","outline-variant":"#c6c6cd","surface-dim":"#cbdbf5","secondary-fixed":"#dbe1ff","surface-tint":"#565e74","on-surface":"#0b1c30","on-secondary-fixed":"#00174b","inverse-primary":"#bec6e0","on-tertiary-container":"#7073ff","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#f8f9ff","surface-container":"#e5eeff","background":"#f8f9ff","primary-container":"#131b2e","on-surface-variant":"#45464d","on-secondary-fixed-variant":"#003ea8","surface-container-low":"#eff4ff","surface-bright":"#f8f9ff","surface-variant":"#d3e4fe","primary":"#000000","outline":"#76777d","tertiary":"#000000","primary-fixed":"#dae2fd","inverse-on-surface":"#eaf1ff","on-primary-container":"#7c839b","on-primary-fixed":"#131b2e","secondary":"#0051d5","on-tertiary-fixed":"#07006c","on-background":"#0b1c30","inverse-surface":"#213145","secondary-fixed-dim":"#b4c5ff","tertiary-fixed":"#e1e0ff","on-secondary-container":"#fefcff","secondary-container":"#316bf3","surface-container-lowest":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xs":"0.25rem",gutter:"1.5rem","space-sm":"0.5rem",margin:"2rem","margin-mobile":"1rem","space-xl":"2.5rem","space-md":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem"},fontFamily:{"body-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"body-md":["Inter"],"code-sm":["Inter"],"label-md":["Inter"],display:["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-mobile":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"code-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],display:["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"display-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" href="#"><img alt="NexaTalent Enterprise Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDFhHy7XD3wuck3UZlIXdJmBex-XzgVn7FhL7S7tsV58N5ABf7XPlyy_Sbiih3OCLx3adRRu3NcgZ1zOHcjs8G24v5uWv7BcLrBxLgLw6dm3Y3biturGKxlvhsW2pkZcDygU_s3bq1LEtlbPVd0meaeD2TPAUVH4nxZF4HMnKWkdhQMZjfCLYKiAN9NPhim7GW3dMMjoSd9AuecU1E2eoAhDkKfPakbViquvLdzXa4"/><span class="font-title-md text-title-md tracking-tight uppercase text-on-surface font-bold">NEXATALENT</span></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface rounded-xl"><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="find-jobs" href="#">Find Jobs</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="explore-courses" href="#">Explore Courses</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="career-pathways" href="#">Career Pathways</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="companies" href="#">Companies</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="for-employers" href="#">For Employers</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="pricing" href="#">Pricing</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed"><span class="material-symbols-outlined text-secondary text-base">psychology</span><span class="font-label-sm text-label-sm font-semibold">AI Skill Match 98%</span></div><button class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-lg">search</span><span class="hidden sm:inline font-body-sm text-body-sm">Quick search...</span><kbd class="hidden md:inline font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></button><div class="relative"><button class="relative p-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button></div><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="hidden md:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Enterprise Lead</span><span class="font-code-sm text-code-sm text-on-surface-variant">Candidate View</span></div><div class="relative flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox3E-_2jtc7AGrZaCCS2WksgvrkIxK91K-OHDDf_AbyCLd7Acf-xqOJcCb3EC0EmXVu8NKwmulgIBYpzTueiCNcL7X2k01yIVc_KceeQC-T_fZWmRMyo158nJWFTtrzILWj2ogowaVpNh0YVNyqTWAMJ5Kvji99OWC7Tolz6hKPniqMD_qaihB7e4MqVpN_3QUlTRNUgTqdVeQnPhWyN_yPjANz5AL42Tg81XdjA"/><span class="material-symbols-outlined text-sm text-on-surface-variant">unfold_more</span></div></div></div></div><div class="w-full bg-surface-container-low px-margin py-space-xs flex items-center justify-between overflow-x-auto"><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Ecosystem:</span><nav class="flex items-center gap-space-xs" data-active-classes="bg-surface-container-highest text-on-surface font-semibold rounded-lg"><a class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="find-jobs" href="#">Public Marketplace</a><a class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="student-portal" href="#">Student Portal</a><a class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="recruiter-ats" href="#">Recruiter ATS</a><a class="px-space-sm py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="admin-console" href="#">Admin Console</a></nav></div><div class="hidden sm:flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><span>Status: <strong class="text-secondary">Verified Talent Pool</strong></span></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Command Search Bar Header -->
+<section class="w-full bg-surface-container-lowest shadow-sm z-30 px-margin py-space-md">
+<div class="max-w-[1600px] mx-auto flex flex-col gap-space-sm">
+<!-- Primary Inputs Row -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Main Search Keyword -->
+<div class="lg:col-span-5 relative flex items-center bg-surface-container-low rounded-xl px-space-md py-space-sm transition-all focus-within:bg-surface-container">
+<span class="material-symbols-outlined text-on-surface-variant text-xl mr-space-sm">search</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Search job title, skills, tech stack, or keywords (e.g. Distributed Systems, Rust, PyTorch)" type="text" value="Principal Distributed Systems Architect"/>
+<span class="font-code-sm text-code-sm text-secondary px-space-xs py-0.5 rounded bg-surface-container-highest uppercase">Cmd + K</span>
+</div>
+<!-- Location with Remote Strict Toggle -->
+<div class="lg:col-span-4 relative flex items-center justify-between bg-surface-container-low rounded-xl px-space-md py-space-sm">
+<div class="flex items-center gap-space-sm flex-1 mr-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">location_on</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Bangalore, IN, San Francisco, Remote" type="text" value="Bengaluru, IN (Hybrid / Remote)"/>
+</div>
+<label class="flex items-center gap-space-xs cursor-pointer select-none bg-surface-container-lowest px-space-sm py-1 rounded-lg shadow-sm">
+<input checked="" class="w-3.5 h-3.5 accent-secondary cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface font-medium whitespace-nowrap">Strict Remote</span>
+</label>
+</div>
+<!-- Experience Band Selector -->
+<div class="lg:col-span-2 relative">
+<div class="flex items-center justify-between bg-surface-container-low rounded-xl px-space-md py-space-sm cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">timeline</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">6-10 yrs Lead</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">expand_more</span>
+</div>
+</div>
+<!-- Action / Submit -->
+<div class="lg:col-span-1">
+<button class="w-full flex items-center justify-center gap-space-xs bg-secondary text-on-secondary px-space-md py-space-sm rounded-xl font-title-md text-title-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span>Filter</span>
+<span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+</div>
+<!-- Quick Matrix Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pt-space-xs pb-1 scrollbar-none">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold whitespace-nowrap mr-space-xs">Filter Matrix:</span>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold hover:opacity-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm text-secondary">payments</span>
+          Min CTC ≥ ₹40 LPA / $150k+
+          <span class="material-symbols-outlined text-sm ml-0.5">close</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary">account_balance</span>
+          Tier-1 Funded / Public (CIN Validated)
+        </button>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary">shield</span>
+          DPDP Compliant Only
+        </button>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold whitespace-nowrap">
+<span class="material-symbols-outlined text-sm text-secondary">sync</span>
+          Direct ATS Sync
+          <span class="material-symbols-outlined text-sm ml-0.5">close</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm font-medium whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary">bolt</span>
+          Fast Response (&lt;48h)
+        </button>
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold ml-auto whitespace-nowrap pl-space-sm">
+          Reset All
+        </button>
+</div>
+</div>
+</section>
+<!-- Workspace Container: Two Column Architecture -->
+<div class="max-w-[1600px] w-full mx-auto px-margin py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Sidebar: Granular Facet Controller -->
+<aside class="lg:col-span-4 xl:col-span-3 flex flex-col gap-space-md">
+<!-- AI Profile Match Toggle Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-secondary-fixed/50 pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-2xl">psychology</span>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Candidate AI Match</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Profile: Staff Platform Spec</p>
+</div>
+</div>
+<span class="font-code-sm text-code-sm text-secondary bg-secondary-fixed px-space-xs py-0.5 rounded font-bold">ACTIVE</span>
+</div>
+<div class="mt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Min Match Threshold</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Filter out below 80%</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="mt-space-sm flex items-center justify-between font-code-sm text-code-sm text-on-surface-variant">
+<span>Verified Skills: <strong>24 Matrix Items</strong></span>
+<span class="text-secondary font-semibold cursor-pointer hover:underline">Edit Dossier</span>
+</div>
+</div>
+<!-- Compensation Band / Histogram Slider -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Annual CTC Range</h4>
+<span class="font-code-sm text-code-sm text-secondary font-bold">₹42L - ₹1.1Cr</span>
+</div>
+<!-- Histogram Data Density Bar Illustration -->
+<div class="h-14 flex items-end gap-1 px-1 pt-space-xs">
+<div class="w-1/12 bg-surface-container-high h-[20%] rounded-t-sm"></div>
+<div class="w-1/12 bg-surface-container-high h-[35%] rounded-t-sm"></div>
+<div class="w-1/12 bg-surface-container-high h-[55%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary-fixed-dim h-[85%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary h-[100%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary h-[90%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary h-[70%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary h-[50%] rounded-t-sm"></div>
+<div class="w-1/12 bg-secondary-fixed-dim h-[40%] rounded-t-sm"></div>
+<div class="w-1/12 bg-surface-container-high h-[25%] rounded-t-sm"></div>
+<div class="w-1/12 bg-surface-container-high h-[15%] rounded-t-sm"></div>
+<div class="w-1/12 bg-surface-container-high h-[8%] rounded-t-sm"></div>
+</div>
+<!-- Track & Slider Simulator -->
+<div class="relative w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="absolute left-[25%] right-[15%] h-full bg-secondary"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant font-medium">
+<span>₹15 Lakhs</span>
+<span>₹50 Lakhs</span>
+<span>₹1.20 Crore+</span>
+</div>
+<div class="flex items-center gap-space-xs pt-space-xs">
+<input checked="" class="accent-secondary w-3.5 h-3.5" id="includeEquity" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface cursor-pointer" for="includeEquity">Include Liquid Stock / Pre-IPO ESOPs</label>
+</div>
+</div>
+<!-- Department & Domain Specialization -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Department</h4>
+<span class="font-label-sm text-label-sm text-secondary font-semibold cursor-pointer">Select All</span>
+</div>
+<div class="space-y-space-xs">
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input checked="" class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                AI &amp; Machine Learning
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">842</span>
+</label>
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input checked="" class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                Distributed Systems &amp; Cloud
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">619</span>
+</label>
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                DevOps, SRE &amp; Platform Eng
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">495</span>
+</label>
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                Product Engineering &amp; Architecture
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">382</span>
+</label>
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                Fintech, Cryptography &amp; Core
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">271</span>
+</label>
+<label class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg cursor-pointer">
+<span class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface">
+<input class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+                Cybersecurity &amp; Infra Defense
+              </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">190</span>
+</label>
+</div>
+</div>
+<!-- Notice Period Acceptance -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Notice Period Acceptability</h4>
+<div class="grid grid-cols-3 gap-space-xs">
+<button class="py-space-xs px-1 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold text-center transition-colors">Immediate</button>
+<button class="py-space-xs px-1 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm font-medium text-center transition-colors">≤15 Days</button>
+<button class="py-space-xs px-1 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm font-medium text-center transition-colors">≤30 Days</button>
+</div>
+</div>
+<!-- Verified Organization Badges Filter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Employer Pedigree</h4>
+<div class="space-y-space-xs">
+<label class="flex items-center gap-space-sm p-space-xs cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Fortune 500 / Global 2000</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Series B+ Unicorn &amp; Growth</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Ministry MCA / CIN Verified</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs cursor-pointer">
+<input class="accent-secondary w-4 h-4 rounded" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">US Parent Subsidiary</span>
+</label>
+</div>
+</div>
+<!-- Employment Modality -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-xs">
+<h4 class="font-title-md text-title-md font-bold text-on-surface">Contract Modality</h4>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold cursor-pointer">Full-time Regular</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm cursor-pointer">C2H Enterprise</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm cursor-pointer">Retained Advisory</span>
+</div>
+</div>
+</aside>
+<!-- Right Main Stream: Job Intelligence Feed -->
+<main class="lg:col-span-8 xl:col-span-9 flex flex-col gap-space-md">
+<!-- Controls & Metrics Header -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-3 h-3 rounded-full bg-secondary animate-pulse"></div>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">2,842</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-1 font-medium">Verified Enterprise Positions</span>
+</div>
+<span class="hidden md:inline-flex px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm font-semibold">14 New in Last 2h</span>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sort by:</span>
+<div class="relative bg-surface-container-low rounded-lg px-space-sm py-1.5 flex items-center gap-space-xs cursor-pointer">
+<span class="font-label-md text-label-md font-semibold text-on-surface">AI Relevance Score</span>
+<span class="material-symbols-outlined text-base text-on-surface-variant">unfold_more</span>
+</div>
+<div class="flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button class="p-1 rounded bg-surface-container-lowest text-secondary shadow-sm"><span class="material-symbols-outlined text-base">view_list</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">grid_view</span></button>
+</div>
+</div>
+</div>
+<!-- Listing 1: Principal Distributed Systems Architect -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Top subtle accent bar indicating AI match level -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-secondary-container to-secondary-fixed"></div>
+<div class="flex flex-col md:flex-row items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<img class="w-14 h-14 rounded-xl object-cover bg-surface-container shadow-sm flex-shrink-0" data-alt="Modern geometric tech company emblem for Nexora Systems, corporate blue and slate palette, isolated against a crisp white minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi35ls5lw3ff8uL5stNi5lUuiLfIWcBZf-dQhAw3uIA18x5ntm4nnBL8bWXDrGsdb5H_xPwG0HRaxbu2ULoLgPuOXcHxhdlylVKWdaXdVv__E6GoRIv-Um8PFDCoqhbpuX6MbCLAfgrzGPEKyhOJ_qwxY3VC_bRPryYpWgst_wkbx1Cc_hkMJkKvOQjsYaVKFiku97JH95tjeB9ZtlE_SG94idEJZEyhu9GF-SUoc"/>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface group-hover:text-secondary transition-colors">Nexora Cloud Systems</span>
+<span class="inline-flex items-center gap-0.5 px-space-xs py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span>
+                    CIN: U72900KA2019PTC1
+                  </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-code-sm text-code-sm text-on-surface-variant">Series C ($180M)</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Principal Distributed Systems Architect</h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-secondary">payments</span>
+<strong class="text-on-surface">₹65L - ₹95L / yr</strong> + 0.18% Liquid Equity
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_city</span>
+                    Bengaluru (Indiranagar / Remote Permitted)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">work_history</span>
+                    8-12 Years Experience
+                  </span>
+</div>
+</div>
+</div>
+<!-- AI Match Visual Score Pill -->
+<div class="flex md:flex-col items-end gap-space-xs flex-shrink-0 w-full md:w-auto justify-between">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg">auto_awesome</span>
+<span>96% AI Match</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Direct Recruiter ATS Active</span>
+</div>
+</div>
+<!-- Description Snippet -->
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2">
+            Spearhead core transactional primitives across high-throughput distributed state-machine nodes. Responsible for zero-data-loss Raft replication engine processing 4.2M events/sec, cross-region quorum consistency, and kernel-level latency optimization via eBPF instrumentation.
+          </p>
+<!-- Tech Stack Badges -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Rust</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Raft Consensus</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">eBPF</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">gRPC / Protobuf</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Distributed KV Stores</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Linux Internals</span>
+</div>
+<!-- Skill Bridge Banner -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl">school</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-semibold text-secondary">Bridge 1 Missing Skill:</span> eBPF Kernel Observability Track (4 Modules left on NexaTalent Academy)
+              </div>
+</div>
+<a class="font-label-md text-label-md text-secondary font-bold hover:underline whitespace-nowrap flex items-center gap-1" href="#">
+              Start Rapid Cert Module <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Bottom Action Buttons Deck -->
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">schedule</span> Posted 3 hours ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">people</span> 18 Applicants</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">timer</span> Avg Interview Turnaround: 4 Days</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="p-space-sm rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Bookmark Job">
+<span class="material-symbols-outlined text-lg">bookmark_border</span>
+</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-title-md text-title-md font-semibold hover:bg-surface-container transition-colors">
+                Quick View
+              </button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-xl bg-secondary text-on-secondary font-title-md text-title-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base">send</span>
+                1-Click Dossier Apply
+              </button>
+</div>
+</div>
+</article>
+<!-- Listing 2: Staff AI Inference & Compiler Engineer -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col md:flex-row items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<img class="w-14 h-14 rounded-xl object-cover bg-surface-container shadow-sm flex-shrink-0" data-alt="Monochrome deep slate corporate logo for Quantis Neural AI research laboratory with clean geometric hypercube motif on pure white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRlfJOCY2jbCcA64roROmUZwAPfxTYlFZacxD6X-QRmm7v2h5rBUNzZC3WXYJxW-5S_Okgypgcut7bjFAtVRZ_ug5dNbnIUY2nQcC_spoftqKmXJ-dbMRSuRt6yd-XBYJqjQBOYRBGo2y28MzltbKy9i6IZoclAs_SnqLiH8usE2LqKFcbh6Wvlu4jIx9idaONyS36whbAStduMB9tInb545bs-6njdpNfCMHY6vI"/>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface group-hover:text-secondary transition-colors">Quantis AI Research Labs</span>
+<span class="inline-flex items-center gap-0.5 px-space-xs py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span>
+                    Global 500 Enterprise
+                  </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-code-sm text-code-sm text-on-surface-variant">NASDAQ Listed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Staff AI Inference &amp; LLM Compiler Engineer</h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-secondary">payments</span>
+<strong class="text-on-surface">₹72L - ₹1.10Cr / yr</strong> + RSU Grants
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_city</span>
+                    San Francisco / Bengaluru (100% Strict Remote)
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">work_history</span>
+                    7+ Years Experience
+                  </span>
+</div>
+</div>
+</div>
+<!-- AI Match Visual Score Pill -->
+<div class="flex md:flex-col items-end gap-space-xs flex-shrink-0 w-full md:w-auto justify-between">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg">auto_awesome</span>
+<span>92% AI Match</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Direct Hiring Manager Review</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2">
+            Accelerate trillion-parameter generative models across heterogeneous GPU/TPU server clusters. Optimize memory layout, flash attention operators, and low-bit quantization regimes using TVM, Triton, and CUDA kernel synthesis.
+          </p>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">PyTorch C++</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">CUDA</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Triton</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">TensorRT-LLM</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Model Quantization (AWQ/GPTQ)</span>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">schedule</span> Posted 5 hours ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">people</span> 34 Candidates</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">bolt</span> Response in &lt; 24h</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="p-space-sm rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark_border</span>
+</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-title-md text-title-md font-semibold hover:bg-surface-container transition-colors">
+                Quick View
+              </button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-xl bg-secondary text-on-secondary font-title-md text-title-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base">send</span>
+                1-Click Dossier Apply
+              </button>
+</div>
+</div>
+</article>
+<!-- Listing 3: Lead SRE & Platform Reliability Director -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col md:flex-row items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<img class="w-14 h-14 rounded-xl object-cover bg-surface-container shadow-sm flex-shrink-0" data-alt="Bold technological crest logo for Apex FinTech Infrastructure, deep indigo and platinum tones on pristine surface container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9qwhLtMWRs78n9yzjUnICYhxEYqgAcLfvICVMsXzMm-VkRUVpQZfSAH01uLl7G_INbRvkDpL7s862GwbaNlWPA-8sE3a411wP_7mlbxVumVcN-XvZkaEhnLBOsR0RGBH-K1PtTUEWqAwV9VNJpfng-5nMRdRNGTOMCJ50JCyr0KH49YVzx-B-b4gLwbrhPOKAA6tKwIkyOjNM3acU6UE-FPyo8c8-LimDorowVlU"/>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface group-hover:text-secondary transition-colors">Apex Global Financial Systems</span>
+<span class="inline-flex items-center gap-0.5 px-space-xs py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span>
+                    Tier-1 Institutional
+                  </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-code-sm text-code-sm text-on-surface-variant">RBI / SEBI Certified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Lead SRE &amp; Resiliency Systems Architect</h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-secondary">payments</span>
+<strong class="text-on-surface">₹55L - ₹80L / yr</strong> + Performance Bonus
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_city</span>
+                    Mumbai (BKC) / Hybrid 2-days
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">work_history</span>
+                    9+ Years Experience
+                  </span>
+</div>
+</div>
+</div>
+<!-- AI Match Visual Score Pill -->
+<div class="flex md:flex-col items-end gap-space-xs flex-shrink-0 w-full md:w-auto justify-between">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg">auto_awesome</span>
+<span>88% AI Match</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">99.999% SLA Mission</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2">
+            Own the enterprise uptime posture for real-time settlement rails reconciling $40B+ daily volume. Direct multi-cloud chaos engineering simulations, automated canary deployments, and low-latency Kubernetes service mesh across tier-4 datacenters.
+          </p>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Kubernetes Federation</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Istio Mesh</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Chaos Mesh</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Prometheus / Thanos</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Go / Python</span>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">schedule</span> Posted 1 day ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">people</span> 47 Candidates</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">verified_user</span> Immediate Notice Preferred</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="p-space-sm rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark_border</span>
+</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-title-md text-title-md font-semibold hover:bg-surface-container transition-colors">
+                Quick View
+              </button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-xl bg-secondary text-on-secondary font-title-md text-title-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base">send</span>
+                1-Click Dossier Apply
+              </button>
+</div>
+</div>
+</article>
+<!-- Listing 4: Staff Backend Architect - Payments Core -->
+<article class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex flex-col md:flex-row items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<img class="w-14 h-14 rounded-xl object-cover bg-surface-container shadow-sm flex-shrink-0" data-alt="Sophisticated stylized fintech hexagon icon for StrataPay International, tech navy and electric blue gradient on white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiWoDPEO7wwAjaUpkFVomsf1cmHrFq_8cWY6rDRciDZIT43XgacvPa2rjXYMnlo5t_nGLc6Vp4wDKmpUZBnKVYu_ZM46W95PLiVXlK9dIfETI2xrHZwSWs_Gz0VN5UNISTt-ecDEpvCdVC3Dh4jERGWRzTdrb4M4VynvV6b1kO78W14okdTnBkuAvPbhC3NrKyi48GXPx-a6OXINKTqbNQylPcb_PlbX-r6QzRbXI"/>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-on-surface group-hover:text-secondary transition-colors">StrataPay Global</span>
+<span class="inline-flex items-center gap-0.5 px-space-xs py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs">verified</span>
+                    Series D Unicorn
+                  </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-code-sm text-code-sm text-on-surface-variant">DPDP Audited</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Staff Backend Architect (Real-Time Settlement Core)</h3>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant pt-0.5">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-secondary">payments</span>
+<strong class="text-on-surface">₹60L - ₹85L / yr</strong> + ESOP Liquidity Window
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_city</span>
+                    Bengaluru / Remote
+                  </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">work_history</span>
+                    8+ Years Experience
+                  </span>
+</div>
+</div>
+</div>
+<!-- AI Match Visual Score Pill -->
+<div class="flex md:flex-col items-end gap-space-xs flex-shrink-0 w-full md:w-auto justify-between">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-title-md text-title-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-secondary text-lg">auto_awesome</span>
+<span>94% AI Match</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Direct Recruiter ATS Active</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2">
+            Build idempotency foundations, distributed 2-phase commit ledgers, and double-entry accounting engines handling 180k transactions/sec with zero reconciliation divergence. Direct integration with major central banking clearing networks.
+          </p>
+<div class="flex flex-wrap items-center gap-space-xs mt-space-sm pt-space-xs">
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Java 21 / Virtual Threads</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Kafka Exactly-Once</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">CockroachDB</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">Distributed Locking</span>
+<span class="px-space-sm py-0.5 rounded-md bg-surface-container font-code-sm text-code-sm text-on-surface font-medium">OpenTelemetry</span>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">schedule</span> Posted 2 days ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">people</span> 29 Candidates</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">bolt</span> Response in &lt; 48h</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="p-space-sm rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">bookmark_border</span>
+</button>
+<button class="px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface font-title-md text-title-md font-semibold hover:bg-surface-container transition-colors">
+                Quick View
+              </button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-xl bg-secondary text-on-secondary font-title-md text-title-md font-semibold hover:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-base">send</span>
+                1-Click Dossier Apply
+              </button>
+</div>
+</div>
+</article>
+<!-- Dynamic Talent Alert Subscription Banner -->
+<section class="bg-gradient-to-r from-primary-container via-surface-dim to-secondary-fixed/30 rounded-xl p-space-lg text-on-surface relative overflow-hidden shadow-sm">
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="p-space-sm rounded-xl bg-secondary text-on-secondary shadow-md">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+</div>
+<div class="space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Activate Instant High-CTC Pulse Alerts</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Receive automated WhatsApp &amp; Encrypted Email pings the second roles ≥ ₹50 LPA match your dossier.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs w-full md:w-auto">
+<input class="bg-surface-container-lowest px-space-md py-space-sm rounded-xl font-body-md text-body-md text-on-surface border-none shadow-sm focus:outline-none w-full md:w-64" placeholder="dev.lead@enterprise.io" type="email"/>
+<button class="bg-secondary text-on-secondary font-title-md text-title-md font-bold px-space-lg py-space-sm rounded-xl hover:bg-secondary-container transition-colors whitespace-nowrap shadow-sm">
+                Subscribe Alert
+              </button>
+</div>
+</div>
+</section>
+<!-- Pagination & Ledger Status -->
+<nav class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+            Showing <strong class="text-on-surface font-semibold">1 - 4</strong> of <strong class="text-on-surface font-semibold">2,842</strong> verified opportunities
+          </div>
+<div class="flex items-center gap-space-xs">
+<button class="p-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center shadow-sm">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center transition-colors">3</button>
+<span class="px-space-xs text-on-surface-variant font-code-sm">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md font-semibold flex items-center justify-center transition-colors">711</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-space-xs font-code-sm text-code-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Live Feed Synchronized</span>
+</div>
+</nav>
+</main>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface-variant pt-space-xl pb-space-lg mt-space-xl"><div class="w-full px-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-gutter pb-space-xl border-b border-outline-variant/30"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="NexaTalent Enterprise Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDFhHy7XD3wuck3UZlIXdJmBex-XzgVn7FhL7S7tsV58N5ABf7XPlyy_Sbiih3OCLx3adRRu3NcgZ1zOHcjs8G24v5uWv7BcLrBxLgLw6dm3Y3biturGKxlvhsW2pkZcDygU_s3bq1LEtlbPVd0meaeD2TPAUVH4nxZF4HMnKWkdhQMZjfCLYKiAN9NPhim7GW3dMMjoSd9AuecU1E2eoAhDkKfPakbViquvLdzXa4"/><span class="font-title-md text-title-md font-bold tracking-tight text-on-surface">NEXATALENT</span></div><p class="font-body-sm text-body-sm max-w-sm text-on-surface-variant">Next-generation enterprise AI talent exchange and certified learning management ecosystem powering global career acceleration.</p><div class="flex items-center gap-space-md pt-space-xs"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm"><span class="material-symbols-outlined text-sm text-secondary">security</span><span>Razorpay Verified</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container text-on-surface font-code-sm text-code-sm"><span class="material-symbols-outlined text-sm text-secondary">verified_user</span><span>DPDP Compliant</span></div></div></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase text-on-surface font-semibold">Career Resources</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">Skill Matrix Builder</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Salary Benchmarks</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Interview Sandbox</a></li><li><a class="hover:text-on-surface transition-colors" href="#">AI Resume Audit</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase text-on-surface font-semibold">Categories</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">Machine Learning</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Executive Leadership</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Cloud Architecture</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Product Design</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase text-on-surface font-semibold">Enterprise</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">Company Verification</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Talent Pipeline APIs</a></li><li><a class="hover:text-on-surface transition-colors" href="#">LMS Accreditation</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Compliance Shield</a></li></ul></div><div class="space-y-space-sm"><div class="font-label-md text-label-md uppercase text-on-surface font-semibold">Legal &amp; Trust</div><ul class="space-y-space-xs font-body-sm text-body-sm"><li><a class="hover:text-on-surface transition-colors" href="#">DPDP Privacy Notice</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Enterprise Terms</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Security Whitepaper</a></li><li><a class="hover:text-on-surface transition-colors" href="#">Cookie Governance</a></li></ul></div></div><div class="w-full px-margin pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="font-body-sm text-body-sm">© 2025 NEXATALENT Enterprise Systems Inc. All rights reserved.</div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-sm text-label-sm"><span class="material-symbols-outlined text-base">payments</span><span class="text-on-surface font-semibold">INR / USD</span><select class="bg-surface-container rounded px-space-xs py-1 text-on-surface text-label-sm outline-none cursor-pointer"><option>USD ($)</option><option>INR (₹)</option><option>EUR (€)</option><option>GBP (£)</option></select></div><div class="flex items-center gap-space-xs font-label-sm text-label-sm"><span class="material-symbols-outlined text-base text-secondary">lock</span><span>256-bit TLS Encrypted</span></div></div></div></footer></body></html>

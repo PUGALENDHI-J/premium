@@ -1,0 +1,392 @@
+// NexaTalent QX — Enterprise Prisma Schema
+// Quantum Intelligence Ecosystem
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CANDIDATE
+  STUDENT
+  INSTRUCTOR
+  RECRUITER
+  EMPLOYER
+  ADMIN
+}
+
+enum RobotState {
+  IDLE
+  LISTENING
+  THINKING
+  ANALYSING
+  RESPONDING
+  SUCCESS
+  WARNING
+  ERROR
+  SLEEP
+}
+
+enum ActionStatus {
+  PENDING_CONFIRMATION
+  APPROVED
+  REJECTED
+  EXECUTED
+  FAILED
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  SHORTLISTED
+  INTERVIEW_SCHEDULED
+  OFFER_EXTENDED
+  HIRED
+  REJECTED
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  REMOTE
+  HYBRID
+}
+
+model User {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  name         String
+  role         UserRole    @default(CANDIDATE)
+  avatarUrl    String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  candidate    Candidate?
+  employer     Employer?
+  conversations AIConversation[]
+  actionApprovals AIActionApproval[]
+  usageRecords AIUsageRecord[]
+  enrollments  Enrollment[]
+  insights     AIInsight[]
+  interactions AIInteractionEvent[]
+}
+
+model Candidate {
+  id              String      @id @default(cuid())
+  userId          String      @unique
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  headline        String
+  bio             String?
+  experienceYears Float       @default(0)
+  currentRole     String?
+  targetRole      String?
+  location        String
+  isRemote        Boolean     @default(true)
+  salaryMin       Float?
+  salaryMax       Float?
+  verifiedStatus  Boolean     @default(false)
+  resumeText      String?
+  resumeUrl       String?
+
+  skills          CandidateSkillEvidence[]
+  applications    Application[]
+  gapAnalyses     SkillGapAnalysis[]
+  careerPaths     CareerPath[]
+}
+
+model Employer {
+  id              String      @id @default(cuid())
+  userId          String      @unique
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName     String
+  cinNumber       String?     // Corporate Identification Number
+  gstNumber       String?     // GST Verification
+  isVerified      Boolean     @default(false)
+  industry        String
+  companySize     String
+  location        String
+  logoUrl         String?
+  jobs            Job[]
+}
+
+model Job {
+  id              String             @id @default(cuid())
+  employerId      String
+  employer        Employer           @relation(fields: [employerId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  department      String
+  type            JobType            @default(FULL_TIME)
+  location        String
+  isRemote        Boolean            @default(false)
+  experienceMin   Float              @default(1)
+  experienceMax   Float?
+  salaryMin       Float
+  salaryMax       Float
+  currency        String             @default("USD")
+  requiredSkills  String[]
+  preferredSkills String[]
+  responsibilities String[]
+  qualifications  String[]
+  isActive        Boolean            @default(true)
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  applications    Application[]
+}
+
+model Application {
+  id              String             @id @default(cuid())
+  jobId           String
+  job             Job                @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidateId     String
+  candidate       Candidate          @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  status          ApplicationStatus  @default(SUBMITTED)
+  matchScore      Float              @default(0) // Explainable composite score (0 - 100)
+  matchBreakdown  Json?              // Detailed 7-factor explainable components
+  notes           String?
+  appliedAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+}
+
+model Course {
+  id              String        @id @default(cuid())
+  title           String
+  description     String
+  instructorName  String
+  instructorRole  String?
+  level           String        @default("Intermediate")
+  durationHours   Float
+  price           Float         @default(0)
+  thumbnailUrl    String?
+  rating          Float         @default(4.8)
+  enrolledCount   Int           @default(0)
+  tags            String[]
+  skillsTaught    String[]
+  isPublished     Boolean       @default(true)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  lessons         Lesson[]
+  enrollments     Enrollment[]
+}
+
+model Lesson {
+  id              String        @id @default(cuid())
+  courseId        String
+  course          Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title           String
+  order           Int           @default(1)
+  durationMinutes Int           @default(15)
+  videoUrl        String?
+  transcript      String?
+  summary         String?
+  quizData        Json?
+}
+
+model Enrollment {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId        String
+  course          Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  progressPercent Float         @default(0)
+  completedAt     DateTime?
+  enrolledAt      DateTime      @default(now())
+  lastAccessedAt  DateTime      @default(now())
+}
+
+// --------------------------------------------------------------------------
+// QUANTUM AI INTELLIGENCE ECOSYSTEM MODELS
+// --------------------------------------------------------------------------
+
+model AIAgent {
+  id              String              @id @default(cuid())
+  code            String              @unique // NEXA_CORE, NEXA_CAREER, NEXA_TALENT, etc.
+  name            String
+  description     String
+  systemPrompt    String
+  allowedTools    String[]
+  requiredRoles   UserRole[]
+  executions      AIAgentExecution[]
+  createdAt       DateTime            @default(now())
+}
+
+model AIConversation {
+  id              String          @id @default(cuid())
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title           String          @default("New Session")
+  agentCode       String          @default("NEXA_CORE")
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  messages        AIMessage[]
+  executions      AIAgentExecution[]
+  actions         AIAction[]
+}
+
+model AIMessage {
+  id              String          @id @default(cuid())
+  conversationId  String
+  conversation    AIConversation  @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role            String          // user | assistant | system | tool
+  content         String
+  metadata        Json?           // Structured widgets, card data, charts
+  thoughtProcess  String?         // AI reasoning / chain-of-thought
+  toolCalls       Json?           // Invoked actions / tools
+  robotState      RobotState?     @default(RESPONDING)
+  createdAt       DateTime        @default(now())
+}
+
+model AIAgentExecution {
+  id              String          @id @default(cuid())
+  agentId         String
+  agent           AIAgent         @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  conversationId  String?
+  conversation    AIConversation? @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+  inputPayload    Json
+  outputPayload   Json?
+  tokensUsed      Int             @default(0)
+  latencyMs       Int             @default(0)
+  success         Boolean         @default(true)
+  errorMessage    String?
+  createdAt       DateTime        @default(now())
+}
+
+model AIAction {
+  id              String              @id @default(cuid())
+  conversationId  String?
+  conversation    AIConversation?     @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+  actionType      String              // APPLY_JOB, ENROLL_COURSE, UPDATE_SKILLS, SCHEDULE_INTERVIEW
+  title           String
+  description     String
+  payload         Json
+  status          ActionStatus        @default(PENDING_CONFIRMATION)
+  requiresApproval Boolean            @default(true)
+  createdAt       DateTime            @default(now())
+  executedAt      DateTime?
+
+  approval        AIActionApproval?
+}
+
+model AIActionApproval {
+  id              String          @id @default(cuid())
+  actionId        String          @unique
+  action          AIAction        @relation(fields: [actionId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  decision        String          // APPROVED, REJECTED
+  comment         String?
+  decidedAt       DateTime        @default(now())
+}
+
+model AIUsageRecord {
+  id              String          @id @default(cuid())
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  featureName     String
+  promptTokens    Int             @default(0)
+  completionTokens Int            @default(0)
+  estimatedCostUsd Float          @default(0)
+  recordedAt      DateTime        @default(now())
+}
+
+model AIInsight {
+  id              String          @id @default(cuid())
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category        String          // CAREER, SKILL, MARKET, LEARNING
+  headline        String
+  summary         String
+  confidenceScore Float           @default(0.9)
+  isDismissed     Boolean         @default(false)
+  metrics         Json?
+  createdAt       DateTime        @default(now())
+}
+
+model CareerPath {
+  id              String              @id @default(cuid())
+  candidateId     String
+  candidate       Candidate           @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  currentTitle    String
+  targetTitle     String
+  projectedMonths Int                 @default(12)
+  confidenceScore Float               @default(0.85)
+  marketDemandTier String             @default("High")
+  createdAt       DateTime            @default(now())
+
+  milestones      CareerMilestone[]
+}
+
+model CareerMilestone {
+  id              String          @id @default(cuid())
+  careerPathId    String
+  careerPath      CareerPath      @relation(fields: [careerPathId], references: [id], onDelete: Cascade)
+  order           Int             @default(1)
+  title           String
+  description     String
+  requiredSkills  String[]
+  estimatedWeeks  Int             @default(4)
+  isCompleted     Boolean         @default(false)
+}
+
+model SkillRelationship {
+  id              String          @id @default(cuid())
+  sourceSkill     String
+  targetSkill     String
+  relationType    String          // PREREQUISITE, COMPLEMENTARY, ADVANCEMENT
+  weight          Float           @default(0.8)
+
+  @@unique([sourceSkill, targetSkill, relationType])
+}
+
+model CandidateSkillEvidence {
+  id              String          @id @default(cuid())
+  candidateId     String
+  candidate       Candidate       @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  skillName       String
+  proficiencyTier String          // BEGINNER, INTERMEDIATE, ADVANCED, EXPERT
+  yearsExperience Float           @default(1)
+  isVerified      Boolean         @default(false)
+  sourceType      String          // RESUME_PARSED, ASSESSMENT_PASSED, COURSE_COMPLETED
+  evidenceDetails Json?
+}
+
+model SkillGapAnalysis {
+  id              String          @id @default(cuid())
+  candidateId     String
+  candidate       Candidate       @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  targetJobId     String?
+  targetRoleTitle String
+  missingSkills   String[]
+  criticalityMap  Json            // e.g. { "PyTorch": "HIGH", "Docker": "MEDIUM" }
+  recommendedCourses Json         // Mapped courses with time to bridge
+  createdAt       DateTime        @default(now())
+}
+
+model AIRecommendation {
+  id              String          @id @default(cuid())
+  targetType      String          // JOB, COURSE, CANDIDATE
+  targetId        String
+  score           Float           @default(0.9)
+  explanation     String
+  category        String
+  metadata        Json?
+  createdAt       DateTime        @default(now())
+}
+
+model AIInteractionEvent {
+  id              String          @id @default(cuid())
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventType       String          // VOICE_INPUT, ROBOT_STATE_CHANGE, 3D_INTERACT, ACTION_TRIGGER
+  details         Json?
+  timestamp       DateTime        @default(now())
+}
+

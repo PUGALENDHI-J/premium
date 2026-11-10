@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#dce9ff","on-tertiary-fixed-variant":"#2f2ebe","tertiary-container":"#07006c","on-primary-fixed-variant":"#3f465c","surface-container-highest":"#d3e4fe","on-primary":"#ffffff","error":"#ba1a1a","on-secondary":"#ffffff","error-container":"#ffdad6","tertiary-fixed-dim":"#c0c1ff","on-error-container":"#93000a","primary-fixed-dim":"#bec6e0","outline-variant":"#c6c6cd","surface-dim":"#cbdbf5","secondary-fixed":"#dbe1ff","surface-tint":"#565e74","on-surface":"#0b1c30","on-secondary-fixed":"#00174b","inverse-primary":"#bec6e0","on-tertiary-container":"#7073ff","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#f8f9ff","surface-container":"#e5eeff","background":"#f8f9ff","primary-container":"#131b2e","on-surface-variant":"#45464d","on-secondary-fixed-variant":"#003ea8","surface-container-low":"#eff4ff","surface-bright":"#f8f9ff","surface-variant":"#d3e4fe","primary":"#000000","outline":"#76777d","tertiary":"#000000","primary-fixed":"#dae2fd","inverse-on-surface":"#eaf1ff","on-primary-container":"#7c839b","on-primary-fixed":"#131b2e","secondary":"#0051d5","on-tertiary-fixed":"#07006c","on-background":"#0b1c30","inverse-surface":"#213145","secondary-fixed-dim":"#b4c5ff","tertiary-fixed":"#e1e0ff","on-secondary-container":"#fefcff","secondary-container":"#316bf3","surface-container-lowest":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xs":"0.25rem",gutter:"1.5rem","space-sm":"0.5rem",margin:"2rem","margin-mobile":"1rem","space-xl":"2.5rem","space-md":"1rem","space-lg":"1.5rem","gutter-mobile":"1rem"},fontFamily:{"body-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"body-md":["Inter"],"code-sm":["Inter"],"label-md":["Inter"],display:["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-mobile":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"code-sm":["12px",{lineHeight:"16px",fontWeight:"500"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],display:["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"display-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between py-space-md border-r border-outline-variant/30"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center gap-space-sm"><img alt="NexaTalent Enterprise Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDFhHy7XD3wuck3UZlIXdJmBex-XzgVn7FhL7S7tsV58N5ABf7XPlyy_Sbiih3OCLx3adRRu3NcgZ1zOHcjs8G24v5uWv7BcLrBxLgLw6dm3Y3biturGKxlvhsW2pkZcDygU_s3bq1LEtlbPVd0meaeD2TPAUVH4nxZF4HMnKWkdhQMZjfCLYKiAN9NPhim7GW3dMMjoSd9AuecU1E2eoAhDkKfPakbViquvLdzXa4"/><span class="font-title-md text-title-md font-bold tracking-tight text-on-surface uppercase">NEXATALENT</span></div><nav class="px-space-md flex flex-col gap-1" data-active-classes="bg-surface-container-high text-on-surface font-bold rounded-xl"><div class="px-space-md py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Ecosystem Workspaces</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="student-portal" href="#"><span class="material-symbols-outlined text-xl">school</span><span class="font-body-md text-body-md">Student Portal</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="recruiter-ats" href="#"><span class="material-symbols-outlined text-xl">work</span><span class="font-body-md text-body-md">Recruiter ATS</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="admin-console" href="#"><span class="material-symbols-outlined text-xl">admin_panel_settings</span><span class="font-body-md text-body-md">Admin Console</span></a><div class="mt-space-md px-space-md py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Talent Operations</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="candidate-pipeline" href="#"><span class="material-symbols-outlined text-xl">group</span><span class="font-body-md text-body-md">Candidate Pipeline</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="curriculum-manager" href="#"><span class="material-symbols-outlined text-xl">menu_book</span><span class="font-body-md text-body-md">Curriculum Manager</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="ai-matching-engine" href="#"><span class="material-symbols-outlined text-xl">auto_awesome</span><span class="font-body-md text-body-md">AI Matching Engine</span></a></nav></div><div class="px-space-md"><div class="p-space-md rounded-xl bg-surface-container space-y-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Compliance Guard</span><span class="material-symbols-outlined text-base text-secondary">verified</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">DPDP Certified Enterprise Shield</p></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 border-b border-outline-variant/30 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-lg">search</span><span class="font-body-sm text-body-sm">Search candidates, skills, or syllabi...</span><kbd class="font-code-sm text-code-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant">⌘K</kbd></button></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed"><span class="material-symbols-outlined text-secondary text-base">psychology</span><span class="font-label-sm text-label-sm font-semibold">Match Engine: Active</span></div><button class="relative p-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-sm border-l border-outline-variant/30"><div class="flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Director of Talent</span><span class="font-code-sm text-code-sm text-on-surface-variant">ATS Recruiter</span></div><div class="flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox3E-_2jtc7AGrZaCCS2WksgvrkIxK91K-OHDDf_AbyCLd7Acf-xqOJcCb3EC0EmXVu8NKwmulgIBYpzTueiCNcL7X2k01yIVc_KceeQC-T_fZWmRMyo158nJWFTtrzILWj2ogowaVpNh0YVNyqTWAMJ5Kvji99OWC7Tolz6hKPniqMD_qaihB7e4MqVpN_3QUlTRNUgTqdVeQnPhWyN_yPjANz5AL42Tg81XdjA"/><span class="material-symbols-outlined text-sm text-on-surface-variant">expand_more</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Learning Navigation Bar -->
+<div class="w-full bg-surface-container-lowest shadow-sm rounded-xl p-space-md mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Left: Title, Module & Breadcrumbs -->
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-secondary flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+            Student Dashboard
+          </a>
+<span>/</span>
+<span class="text-on-surface-variant">Architecture Track</span>
+<span>/</span>
+<span class="text-secondary font-semibold">Course NX-804</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight truncate">
+            Advanced Cloud Architecture &amp; Kubernetes Mastery
+          </h1>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+            Module 02 • Lesson 14
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span>Active Session: Pod Scheduling, Taints &amp; Affinity Topologies</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-outline">Instructor: Rajiv Mehta (Distinguished Architect)</span>
+</p>
+</div>
+<!-- Right: Course Metrics & Action CTAs -->
+<div class="flex items-center gap-space-md flex-shrink-0">
+<!-- Progress Counter -->
+<div class="flex flex-col w-44">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Course Progress</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface">68%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 68%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-0.5 text-right">18 of 26 Lessons</span>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-space-sm rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors shadow-sm text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-base">attachment</span>
+<span>Artifacts (4)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-space-sm rounded-xl bg-secondary text-on-secondary hover:bg-secondary/90 transition-all shadow-sm text-label-md font-semibold" id="complete-btn" type="button">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Mark Lesson Complete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Learning Grid (12-Column Responsive Split) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Theater & Tabbed Workspace (8 Columns on desktop) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- DRM Secure Player Container -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-primary-container shadow-xl">
+<!-- Video Viewport (16:9 aspect) -->
+<div class="relative w-full aspect-video flex items-center justify-center overflow-hidden bg-primary-container select-none">
+<!-- Background Architectural Diagram Graphic -->
+<div class="absolute inset-0 bg-cover bg-center opacity-90 transition-opacity duration-300" data-alt="Technical architectural diagram depicting enterprise Kubernetes Ingress architecture with Envoy proxy, Cilium eBPF Service Mesh, TLS termination gateway, and cluster pod topology on a deep dark blue grid layout with glowing vectors and labels in neon cyan and indigo." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeNoxlp_AZ8bT7oMMhKiXmVup3-o87e9pH239t7KSEVvDtXTwi3Tl0SQdhj6cuUJUh_VH7DrfyUFvlQfS_L6yLVe-Uf8MRCf1_7qKxzQH1xuuDbhejAMBragfq6VqRtIOCMhgm3TTzYiyYZDFBTA17a8d5xLmMlITShTV7aG4nLcAyWuXzyAYJ87MN432irCUqBm9nlTvV3n4SSAdaOOfi87-QNjrClZlbEDXJMpc')">
+</div>
+<!-- Subtle Radial Scrim for Dark Mode Depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-primary-container/40 pointer-events-none"></div>
+<!-- Dynamic Anti-Piracy Watermark Layer (Rotates & Moves) -->
+<div class="absolute pointer-events-none z-20 text-on-primary font-code-sm text-code-sm opacity-25 mix-blend-screen tracking-wider select-none transform rotate-[-8deg] transition-all duration-1000 ease-out" id="watermark-layer" style="top: 22%; left: 16%;">
+            NX-US-77821-D • alex.chen@enterprise.io • IP: 103.22.18.91 • DRM L1 Widevine Active
+          </div>
+<!-- Ambient Overlay Center Play Toggle Button -->
+<button aria-label="Play / Pause" class="group relative z-30 p-space-lg rounded-full bg-surface-container-lowest/15 backdrop-blur-md hover:bg-surface-container-lowest/30 transition-transform active:scale-95 flex items-center justify-center" id="center-play-button" type="button">
+<span class="material-symbols-outlined text-on-primary text-5xl group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Watermark Secondary Anchor (Bottom Right corner counter-mark) -->
+<div class="absolute bottom-16 right-6 pointer-events-none z-20 font-code-sm text-code-sm text-on-primary/20 tracking-widest uppercase">
+            Widevine-Secure • HLS-AES128
+          </div>
+<!-- Custom Player Control Deck -->
+<div class="absolute bottom-0 inset-x-0 z-30 flex flex-col justify-end p-space-md bg-gradient-to-t from-primary-container via-primary-container/90 to-transparent">
+<!-- Scrubbing Timeline & Chapter Markers -->
+<div class="relative w-full mb-space-sm group cursor-pointer py-1">
+<div class="w-full h-1.5 bg-on-primary/20 rounded-full overflow-hidden relative">
+<!-- Buffer Bar -->
+<div class="absolute left-0 top-0 bottom-0 bg-on-primary/30 w-3/4"></div>
+<!-- Playhead Progress Bar -->
+<div class="absolute left-0 top-0 bottom-0 bg-secondary-container w-[42%]"></div>
+</div>
+<!-- Chapter Segments (Visual ticks) -->
+<div class="absolute top-1 left-[20%] w-0.5 h-1.5 bg-primary-container"></div>
+<div class="absolute top-1 left-[50%] w-0.5 h-1.5 bg-primary-container"></div>
+<div class="absolute top-1 left-[85%] w-0.5 h-1.5 bg-primary-container"></div>
+<!-- Draggable Scrub Head -->
+<div class="absolute top-1/2 left-[42%] -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 bg-on-primary rounded-full shadow-md scale-0 group-hover:scale-100 transition-transform"></div>
+</div>
+<!-- Playback Action Controls Row -->
+<div class="flex items-center justify-between text-on-primary">
+<!-- Left: Playback Triggers & Timestamps -->
+<div class="flex items-center gap-space-sm">
+<button aria-label="Play" class="p-1 hover:text-secondary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="p-1 hover:text-secondary-fixed transition-colors" title="Rewind 10 seconds" type="button">
+<span class="material-symbols-outlined text-xl">replay_10</span>
+</button>
+<button class="p-1 hover:text-secondary-fixed transition-colors" title="Forward 10 seconds" type="button">
+<span class="material-symbols-outlined text-xl">forward_10</span>
+</button>
+<div class="flex items-center gap-1 ml-2 text-on-primary/80 font-code-sm text-code-sm">
+<span class="text-on-primary font-medium">14:22</span>
+<span>/</span>
+<span class="text-on-primary/50">34:10</span>
+</div>
+</div>
+<!-- Right: Audio, Speed, Resolution & Fullscreen -->
+<div class="flex items-center gap-space-md">
+<!-- Volume -->
+<div class="flex items-center gap-1.5 group">
+<button class="hover:text-secondary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">volume_up</span>
+</button>
+<div class="w-16 h-1 bg-on-primary/30 rounded-full overflow-hidden hidden sm:block">
+<div class="h-full bg-on-primary w-4/5 rounded-full"></div>
+</div>
+</div>
+<!-- Speed Selector -->
+<button class="px-2 py-0.5 rounded bg-on-primary/10 hover:bg-on-primary/20 text-on-primary font-code-sm text-code-sm font-semibold transition-colors" type="button">
+                  1.0x
+                </button>
+<!-- Bitrate / Quality Dropdown Badge -->
+<div class="relative group">
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-on-primary/10 hover:bg-on-primary/20 text-on-primary font-code-sm text-code-sm font-semibold transition-colors" type="button">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span>1080p 60fps</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+</div>
+<!-- Closed Captions -->
+<button class="p-1 text-secondary-fixed hover:text-on-primary transition-colors" title="Closed Captions (CC Enabled)" type="button">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">closed_caption</span>
+</button>
+<!-- Fullscreen -->
+<button class="p-1 hover:text-secondary-fixed transition-colors" title="Toggle Fullscreen" type="button">
+<span class="material-symbols-outlined text-xl">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Guardrail Banner Underneath Player Frame -->
+<div class="bg-primary-container text-on-primary-container px-space-md py-space-xs flex flex-wrap items-center justify-between text-code-sm font-code-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-base">verified_user</span>
+<span class="text-on-primary font-medium">Enterprise Hardware DRM Active</span>
+<span class="text-on-primary-container">•</span>
+<span>Concurrent Session Detection &amp; Screen Shield Enforced</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-semibold text-on-primary">Encrypted TLS Pipeline (Cilium v1.14)</span>
+</div>
+</div>
+</div>
+<!-- Tabbed Learning Deck (Overview / Q&A / Timestamped Notes) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Tab Navigation Bar -->
+<div class="flex items-center bg-surface-container-low px-space-md pt-space-xs gap-space-md">
+<button class="tab-trigger pb-space-sm px-space-xs text-title-md font-title-md font-bold text-secondary border-b-2 border-secondary flex items-center gap-2" data-target="tab-overview" type="button">
+<span class="material-symbols-outlined text-lg">info</span>
+            Overview &amp; Architecture
+          </button>
+<button class="tab-trigger pb-space-sm px-space-xs text-title-md font-title-md text-on-surface-variant hover:text-on-surface flex items-center gap-2" data-target="tab-qa" type="button">
+<span class="material-symbols-outlined text-lg">forum</span>
+            Discussion &amp; Q&amp;A
+            <span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">12</span>
+</button>
+<button class="tab-trigger pb-space-sm px-space-xs text-title-md font-title-md text-on-surface-variant hover:text-on-surface flex items-center gap-2" data-target="tab-notes" type="button">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+            Personal Notes
+            <span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">3</span>
+</button>
+</div>
+<!-- Tab 1: Overview & Learning Objectives -->
+<div class="tab-content p-space-lg flex flex-col gap-space-lg" id="tab-overview">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-xs">
+              Lesson Objectives: Production Node Topologies &amp; Taint Propagation
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              In this high-fidelity module, we examine how kube-scheduler evaluates hard constraints, soft affinities, and tolerations across multi-zone EKS and GKE clusters. You will learn how to architect tenant-isolated compute groups without risking node starvation or cascade scheduler loops.
+            </p>
+</div>
+<!-- Bulleted Takeaways Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2 text-secondary font-title-md text-title-md">
+<span class="material-symbols-outlined text-lg">radar</span>
+<span>Topology Spread Constraints</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Enforce high availability across AWS Availability Zones using maxSkew constraints to withstand single-zone datacenter interruptions.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-2 text-secondary font-title-md text-title-md">
+<span class="material-symbols-outlined text-lg">security</span>
+<span>Workload Taint Sandboxing</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Apply dedicated taints (NoSchedule, PreferNoSchedule, NoExecute) to isolate GPU worker pools and PCI-DSS compliance zones.
+              </p>
+</div>
+</div>
+<!-- Reference Download Artifacts -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-bold">Downloadable Reference Files</span>
+<div class="flex flex-wrap gap-space-sm">
+<a class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined text-secondary text-xl">description</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-sm font-semibold">TopologySpread_Spec.yaml</span>
+<span class="font-code-sm text-code-sm text-outline">v2.4 Production Manifest (18 KB)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base ml-2">download</span>
+</a>
+<a class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" href="#">
+<span class="material-symbols-outlined text-error text-xl">picture_as_pdf</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-sm font-semibold">K8s_Ingress_ServiceMesh_Blueprint.pdf</span>
+<span class="font-code-sm text-code-sm text-outline">Architectural Diagram (3.8 MB)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base ml-2">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Tab 2: Discussion & Q&A -->
+<div class="tab-content p-space-lg flex flex-col gap-space-md hidden" id="tab-qa">
+<!-- Question Input -->
+<div class="flex gap-space-sm items-start">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed text-sm flex-shrink-0">
+              AC
+            </div>
+<div class="flex-1 flex flex-col gap-space-xs">
+<textarea class="w-full p-space-sm rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Ask Instructor Rajiv Mehta or community peers a technical question..." rows="2"></textarea>
+<div class="flex justify-end">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/80 transition-colors" type="button">
+                  Post Question
+                </button>
+</div>
+</div>
+</div>
+<!-- Thread 1 (Instructor Endorsed) -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface text-xs">
+                  SK
+                </div>
+<span class="font-title-md text-title-md text-sm font-bold">Siddharth Kumar</span>
+<span class="font-label-sm text-label-sm text-outline">2 hours ago</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Endorsed Answer
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Does the new Cilium BPF masquerade fully supersede kube-proxy iptables mode when routing ingress across node boundaries?
+            </p>
+<!-- Instructor Reply -->
+<div class="ml-space-md pl-space-md border-l-2 border-secondary flex flex-col gap-1 mt-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-sm font-bold text-secondary">Rajiv Mehta</span>
+<span class="px-1.5 py-0.2 rounded bg-primary text-on-primary font-label-sm text-label-sm">Instructor</span>
+<span class="font-label-sm text-label-sm text-outline">1 hour ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Yes, Siddharth. When Cilium is initialized with <code class="font-code-sm text-code-sm bg-surface-container px-1 py-0.5 rounded">kubeProxyReplacement=true</code>, eBPF programs attached to the TC (traffic control) hook inspect and rewrite L3/L4 packet headers directly, skipping the iptables conntrack overhead completely.
+              </p>
+</div>
+</div>
+</div>
+<!-- Tab 3: Personal Notes -->
+<div class="tab-content p-space-lg flex flex-col gap-space-md hidden" id="tab-notes">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-bold text-on-surface">Your Timestamped Notebook</span>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container text-secondary text-label-md font-semibold hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">add_alarm</span>
+              Capture Current Frame (14:22)
+            </button>
+</div>
+<!-- Existing Notes List -->
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm font-bold text-secondary">Marker @ 14:22</span>
+<span class="font-label-sm text-label-sm text-outline">Synchronized to Cloud Storage</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                "Ingress routing with Cilium eBPF: Remember to configure nodeAffinity with <code class="font-code-sm text-code-sm bg-surface-container px-1 py-0.5 rounded">topologyKey: topology.kubernetes.io/zone</code> to prevent cross-AZ NAT traversal egress costs."
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm font-bold text-secondary">Marker @ 05:40</span>
+<span class="font-label-sm text-label-sm text-outline">Earlier Today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+                "Key difference: NoSchedule prevents new pods unless tolerated. NoExecute evicts existing pods immediately unless tolerated with tolerationSeconds."
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right-Hand Persistent Course Syllabus & Assessment Drawer (4 Columns on desktop) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Proctored Assessment Banner (Sticky CTA) -->
+<div class="bg-gradient-to-br from-primary-container to-secondary-container rounded-2xl p-space-md text-on-primary shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm font-label-sm text-label-sm font-semibold tracking-wide">
+            Module 02 Assessment Gate
+          </span>
+<span class="material-symbols-outlined text-secondary-fixed text-lg">verified</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold leading-snug">
+            Proctored Mid-Term Evaluation
+          </h4>
+<p class="font-body-sm text-body-sm text-on-primary/80 mt-1">
+            25-minute automated scenario quiz verifying your cluster topology design and ingress failover knowledge.
+          </p>
+</div>
+<button class="w-full py-space-sm px-space-md rounded-xl bg-on-primary text-on-surface font-title-md text-title-md font-bold hover:bg-surface-container-lowest transition-colors flex items-center justify-center gap-2 shadow" type="button">
+<span class="material-symbols-outlined text-secondary text-lg">assignment_turned_in</span>
+<span>Take 25-min Proctored Quiz</span>
+</button>
+</div>
+<!-- Syllabus Module Tree Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Search Lessons Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full pl-9 pr-space-sm py-2 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Filter 26 syllabus topics..." type="text"/>
+</div>
+<!-- Module Accordion List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Module 1: Completed -->
+<div class="rounded-xl bg-surface-container-low p-space-sm flex flex-col gap-2">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+<span class="font-title-md text-title-md text-sm font-bold text-on-surface">1. Cloud-Native Fundamentals</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">4/4 Done</span>
+</div>
+</div>
+<!-- Module 2: In-Progress (Expanded) -->
+<div class="rounded-xl bg-surface-container p-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-title-md text-title-md text-sm font-bold text-on-surface">2. Ingress &amp; Service Mesh</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant">3/6 Completed</span>
+</div>
+<!-- Lessons in Module 2 -->
+<div class="flex flex-col gap-1.5 pl-space-xs">
+<!-- Lesson 12: Completed -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span class="font-body-sm text-body-sm">Lesson 12: Ingress Controllers Overview</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">18m</span>
+</div>
+<!-- Lesson 13: Completed -->
+<div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span class="font-body-sm text-body-sm">Lesson 13: Envoy Gateway Configuration</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">24m</span>
+</div>
+<!-- Lesson 14: ACTIVE PLAYING -->
+<div class="flex items-center justify-between p-space-xs rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2 text-on-surface font-semibold">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<span class="font-body-sm text-body-sm text-secondary font-bold">Lesson 14: Pod Scheduling &amp; Tolerations</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-code-sm text-code-sm font-bold">Playing</span>
+</div>
+<!-- Lesson 15: Next / Locked until complete -->
+<div class="flex items-center justify-between p-space-xs rounded-lg opacity-60">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-base">lock</span>
+<span class="font-body-sm text-body-sm">Lesson 15: Envoy Proxy Filters &amp; WASM</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">32m</span>
+</div>
+<!-- Lesson 16: Locked -->
+<div class="flex items-center justify-between p-space-xs rounded-lg opacity-60">
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-base">lock</span>
+<span class="font-body-sm text-body-sm">Lesson 16: Cilium eBPF Mutual TLS</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">45m</span>
+</div>
+</div>
+</div>
+<!-- Module 3: Security & Zero Trust (Locked) -->
+<div class="rounded-xl bg-surface-container-low p-space-sm flex flex-col gap-2 opacity-60">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-xl">lock</span>
+<span class="font-title-md text-title-md text-sm font-bold text-outline">3. Security &amp; Zero Trust Policies</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">0/6 Done</span>
+</div>
+</div>
+<!-- Module 4: High-Scale Disaster Recovery (Locked) -->
+<div class="rounded-xl bg-surface-container-low p-space-sm flex flex-col gap-2 opacity-60">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-xl">lock</span>
+<span class="font-title-md text-title-md text-sm font-bold text-outline">4. Multi-Region Disaster Recovery</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">0/5 Done</span>
+</div>
+</div>
+</div>
+<!-- Need Help / Mentor Support Footer -->
+<div class="mt-space-xs p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">support_agent</span>
+<span class="font-label-sm text-label-sm">Enterprise Dedicated Mentor</span>
+</div>
+<button class="font-label-sm text-label-sm text-secondary font-bold hover:underline" type="button">
+            Request Sync
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Tab Switching Behavior
+  const tabTriggers = document.querySelectorAll('.tab-trigger');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const targetId = trigger.getAttribute('data-target');
+
+      // Update triggers
+      tabTriggers.forEach(t => {
+        t.classList.remove('text-secondary', 'border-b-2', 'border-secondary', 'font-bold');
+        t.classList.add('text-on-surface-variant');
+      });
+      trigger.classList.add('text-secondary', 'border-b-2', 'border-secondary', 'font-bold');
+      trigger.classList.remove('text-on-surface-variant');
+
+      // Update contents
+      tabContents.forEach(content => {
+        if (content.id === targetId) {
+          content.classList.remove('hidden');
+        } else {
+          content.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Dynamic Floating Watermark Shift (Anti-piracy simulator)
+  const watermark = document.getElementById('watermark-layer');
+  if (watermark) {
+    setInterval(() => {
+      const randomTop = Math.floor(Math.random() * 55) + 15;
+      const randomLeft = Math.floor(Math.random() * 45) + 10;
+      watermark.style.top = randomTop + '%';
+      watermark.style.left = randomLeft + '%';
+    }, 12000);
+  }
+
+  // Interactive Mark Lesson Complete feedback
+  const completeBtn = document.getElementById('complete-btn');
+  if (completeBtn) {
+    completeBtn.addEventListener('click', () => {
+      completeBtn.classList.remove('bg-secondary');
+      completeBtn.classList.add('bg-primary-container');
+      completeBtn.innerHTML = '<span class="material-symbols-outlined text-base text-secondary">check</span><span>Completed!</span>';
+    });
+  }
+</script></main></div></body></html>
