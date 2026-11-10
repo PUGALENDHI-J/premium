@@ -17,6 +17,7 @@ export const QuantumHeader: React.FC = () => {
     { label: 'Recruiter ATS', href: '/employer' },
     { label: 'Curriculum Studio', href: '/instructor' },
     { label: 'Admin Console', href: '/admin' },
+    { label: '📱 Mobile App View', href: '/mobile' },
   ];
 
   return (
@@ -57,6 +58,15 @@ export const QuantumHeader: React.FC = () => {
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span>NEXA AI COMMAND CENTER</span>
             <span className="material-symbols-outlined text-xs">arrow_forward</span>
+          </Link>
+
+          {/* Mobile View Simulator Link */}
+          <Link
+            href="/mobile"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all"
+          >
+            <span className="material-symbols-outlined text-sm">smartphone</span>
+            <span>Mobile App &amp; APK</span>
           </Link>
         </div>
 

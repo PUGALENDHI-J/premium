@@ -1,0 +1,22 @@
+{
+  "name": "NexaTalent QX — Quantum Mobile OS",
+  "short_name": "NexaTalent",
+  "start_url": "/mobile",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#00f0ff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAox3E-_2jtc7AGrZaCCS2WksgvrkIxK91K-OHDDf_AbyCLd7Acf-xqOJcCb3EC0EmXVu8NKwmulgIBYpzTueiCNcL7X2k01yIVc_KceeQC-T_fZWmRMyo158nJWFTtrzILWj2ogowaVpNh0YVNyqTWAMJ5Kvji99OWC7Tolz6hKPniqMD_qaihB7e4MqVpN_3QUlTRNUgTqdVeQnPhWyN_yPjANz5AL42Tg81XdjA",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAox3E-_2jtc7AGrZaCCS2WksgvrkIxK91K-OHDDf_AbyCLd7Acf-xqOJcCb3EC0EmXVu8NKwmulgIBYpzTueiCNcL7X2k01yIVc_KceeQC-T_fZWmRMyo158nJWFTtrzILWj2ogowaVpNh0YVNyqTWAMJ5Kvji99OWC7Tolz6hKPniqMD_qaihB7e4MqVpN_3QUlTRNUgTqdVeQnPhWyN_yPjANz5AL42Tg81XdjA",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
