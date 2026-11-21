@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Secure Checkout | Rib Cotton</title>
+  <meta name="description" content="Complete your Rib Cotton order securely. Support for UPI, GPay, PhonePe, Cards, Net Banking, and Cash on Delivery.">
+  <meta name="theme-color" content="#0a2463">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<!-- Header -->
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="logo" href="index.html" aria-label="Rib Cotton Home">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="index.html#logo"/></svg>
+      <span class="logo-text">RIB COTTON</span>
+    </a>
+
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 0.8rem; font-size: 0.88rem; color: var(--navy); font-weight: 700;">
+      <span>🔒 256-Bit SSL Encrypted Checkout</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-top: 2rem;">
+    <div class="wrap">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="breadcrumbs-sep">/</span>
+        <a href="cart.html">Shopping Bag</a>
+        <span class="breadcrumbs-sep">/</span>
+        <span style="color:var(--navy); font-weight:700;">Secure Checkout</span>
+      </nav>
+
+      <div class="checkout-layout">
+        <!-- Left: Checkout Forms -->
+        <div>
+          <form id="checkoutForm" onsubmit="event.preventDefault(); processOrder();">
+            <!-- Step 1: Contact Information -->
+            <div class="checkout-step-card">
+              <div class="step-header">
+                <span class="step-number">1</span>
+                <h3>Contact &amp; WhatsApp Notifications</h3>
+              </div>
+
+              <div class="form-grid two-col">
+                <div class="form-field">
+                  <label for="custName">Full Name *</label>
+                  <input type="text" id="custName" required placeholder="e.g. Aravind Sundaram">
+                </div>
+                <div class="form-field">
+                  <label for="custPhone">Mobile / WhatsApp Number *</label>
+                  <input type="tel" id="custPhone" required placeholder="e.g. 9840012345" pattern="[0-9]{10}">
+                </div>
+                <div class="form-field" style="grid-column: 1 / -1;">
+                  <label for="custEmail">Email Address (for Tax Invoice) *</label>
+                  <input type="email" id="custEmail" required placeholder="name@example.com">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Shipping Address -->
+            <div class="checkout-step-card">
+              <div class="step-header">
+                <span class="step-number">2</span>
+                <h3>Shipping &amp; Delivery Address</h3>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="custAddress">Street Address / House / Flat No. *</label>
+                  <input type="text" id="custAddress" required placeholder="Flat 4B, Emerald Heights, MG Road">
+                </div>
+                <div class="form-grid two-col">
+                  <div class="form-field">
+                    <label for="custCity">City *</label>
+                    <input type="text" id="custCity" required placeholder="e.g. Chennai">
+                  </div>
+                  <div class="form-field">
+                    <label for="custPincode">6-Digit Pincode *</label>
+                    <input type="text" id="custPincode" required placeholder="e.g. 600001" maxlength="6" pattern="[0-9]{6}">
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="custState">State *</label>
+                  <select id="custState" required>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Other">Other States</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment Method Selection -->
+            <div class="checkout-step-card">
+              <div class="step-header">
+                <span class="step-number">3</span>
+                <h3>Payment Method</h3>
+              </div>
+
+              <div class="payment-tiles">
+                <!-- UPI Tile -->
+                <label class="payment-tile active" id="tileUPI">
+                  <input type="radio" name="payMethod" value="upi" checked onchange="switchPayMethod('upi')">
+                  <div class="payment-tile-info">
+                    <strong>⚡ Instant UPI / QR Code (GPay, PhonePe, Paytm, BHIM)</strong>
+                    <span>Scan simulated QR code or pay with VPA • Instant Confirmation</span>
+                  </div>
+                </label>
+
+                <!-- Cards Tile -->
+                <label class="payment-tile" id="tileCard">
+                  <input type="radio" name="payMethod" value="card" onchange="switchPayMethod('card')">
+                  <div class="payment-tile-info">
+                    <strong>💳 Credit / Debit Cards (VISA, Mastercard, RuPay)</strong>
+                    <span>Fast, encrypted payments through verified banking gateway</span>
+                  </div>
+                </label>
+
+                <!-- COD Tile -->
+                <label class="payment-tile" id="tileCOD">
+                  <input type="radio" name="payMethod" value="cod" onchange="switchPayMethod('cod')">
+                  <div class="payment-tile-info">
+                    <strong>💵 Cash on Delivery (COD)</strong>
+                    <span>Pay cash or UPI to the courier upon doorstep delivery</span>
+                  </div>
+                </label>
+
+                <!-- WhatsApp Direct Tile -->
+                <label class="payment-tile" id="tileWA">
+                  <input type="radio" name="payMethod" value="whatsapp" onchange="switchPayMethod('whatsapp')">
+                  <div class="payment-tile-info">
+                    <strong>💬 Pay &amp; Confirm on WhatsApp</strong>
+                    <span>Receive UPI payment link directly on your WhatsApp number</span>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Interactive UPI Sub-panel -->
+              <div id="subPanelUPI" style="margin-top:1.2rem; padding:1.2rem; background:var(--mist); border-radius:var(--radius-md); border:1px solid var(--line);">
+                <p style="font-size:0.88rem; font-weight:700; color:var(--navy); margin-bottom:0.4rem;">
+                  Enter UPI ID (VPA) or Scan QR on next step:
+                </p>
+                <div style="display:flex; gap:0.6rem;">
+                  <input type="text" id="upiVpaInput" placeholder="yourname@okhdfcbank" style="flex:1; padding:0.6rem 0.9rem; border:1.5px solid var(--line); border-radius:var(--radius-sm); background:#fff;">
+                  <button type="button" class="btn btn-outline btn-sm" onclick="alert('UPI ID verified! Proceed to click Place Order.')">Verify VPA</button>
+                </div>
+              </div>
+
+              <!-- Interactive Card Sub-panel -->
+              <div id="subPanelCard" style="display:none; margin-top:1.2rem; padding:1.2rem; background:var(--mist); border-radius:var(--radius-md); border:1px solid var(--line);">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="4111 2222 3333 4444" maxlength="19">
+                  </div>
+                  <div class="form-grid two-col">
+                    <div class="form-field">
+                      <label>Valid Thru</label>
+                      <input type="text" placeholder="MM / YY" maxlength="5">
+                    </div>
+                    <div class="form-field">
+                      <label>CVV</label>
+                      <input type="password" placeholder="123" maxlength="3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="placeOrderBtn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+              Place Order Now &rarr;
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Order Summary Preview -->
+        <aside class="order-summary-box">
+          <h3 class="summary-title">Your Order</h3>
+
+          <div id="checkoutItemsPreview" style="display:flex; flex-direction:column; gap:1rem; margin-bottom:1.5rem; max-height:360px; overflow-y:auto; padding-right:4px;">
+            <!-- Rendered via JS -->
+          </div>
+
+          <div class="summary-rows">
+            <div class="summary-row">
+              <span style="color:var(--muted);">Subtotal:</span>
+              <strong id="coSubtotal">₹0</strong>
+            </div>
+            <div class="summary-row" id="coDiscountRow" style="display:none; color:#16a34a; font-weight:700;">
+              <span>Promo Discount:</span>
+              <span id="coDiscountVal">- ₹0</span>
+            </div>
+            <div class="summary-row">
+              <span style="color:var(--muted);">Shipping Charges:</span>
+              <span id="coShipping" style="font-weight:700; color:var(--navy);">FREE</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total Payable:</span>
+              <span id="coTotal" style="color:var(--navy); font-size:1.4rem;">₹0</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Order Success Modal -->
+<div class="order-modal" id="orderSuccessModal">
+  <div class="qv-overlay"></div>
+  <div class="order-modal-dialog">
+    <div class="order-success-icon">✓</div>
+    <h2 style="font-size:1.8rem; font-weight:800; color:var(--navy); margin-bottom:0.4rem;">Order Placed Successfully!</h2>
+    <p style="font-size:0.92rem; color:var(--muted);">Thank you for choosing Rib Cotton. Your order is confirmed and being prepared for priority dispatch.</p>
+
+    <div style="margin-block:1.4rem; padding:1.2rem; background:var(--mist); border-radius:var(--radius-md); text-align:left; font-size:0.88rem; line-height:1.6;">
+      <div><strong>Order ID:</strong> <span id="successOrderId" style="color:var(--blue); font-weight:800;">RC-2026-8942</span></div>
+      <div><strong>Estimated Delivery:</strong> <span id="successDeliveryDate">3-4 business days</span></div>
+      <div><strong>Payment Method:</strong> <span id="successPayMethod">Instant UPI</span></div>
+      <div><strong>Total Amount:</strong> <strong id="successTotal">₹0</strong></div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+      <button type="button" class="btn btn-whatsapp btn-block" id="successWhatsAppBtn">
+        <svg class="i i-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.477-.15-.678.15-.201.301-.779.98-.955 1.18-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.352.452-.527.15-.176.201-.301.301-.502.101-.201.05-.377-.025-.527-.075-.15-.678-1.633-.93-2.236-.245-.588-.495-.508-.678-.518l-.578-.01c-.201 0-.527.075-.803.377-.276.301-1.054 1.03-1.054 2.512 0 1.482 1.079 2.912 1.23 3.113.15.201 2.123 3.242 5.143 4.547.718.311 1.279.497 1.716.636.721.229 1.377.197 1.896.119.578-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351z"/></svg>
+        Send Confirmation via WhatsApp
+      </button>
+
+      <button type="button" class="btn btn-outline btn-block" onclick="window.print()">
+        🖨️ Print Receipt / Invoice
+      </button>
+
+      <a href="index.html" class="btn btn-primary btn-block">
+        Return to Homepage &rarr;
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Core Scripts -->
+<script src="products.js"></script>
+<script src="store.js"></script>
+<script src="animations.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    let chosenPayment = "upi";
+
+    window.switchPayMethod = function (method) {
+      chosenPayment = method;
+      document.querySelectorAll(".payment-tile").forEach(t => t.classList.remove("active"));
+      const activeTile = document.querySelector(`input[value="${method}"]`).closest(".payment-tile");
+      if (activeTile) activeTile.classList.add("active");
+
+      document.getElementById("subPanelUPI").style.display = method === "upi" ? "block" : "none";
+      document.getElementById("subPanelCard").style.display = method === "card" ? "block" : "none";
+    };
+
+    function renderCheckoutReview() {
+      if (!window.RibStore) return;
+
+      const cart = window.RibStore.getCart();
+      if (cart.length === 0) {
+        window.location.href = "cart.html";
+        return;
+      }
+
+      const totals = window.RibStore.getCartTotals();
+      const container = document.getElementById("checkoutItemsPreview");
+
+      container.innerHTML = cart.map(item => `
+        <div style="display:flex; gap:0.8rem; align-items:center;">
+          <img src="${item.image}" alt="${item.name}" style="width:64px; height:80px; object-fit:cover; border-radius:6px; background:var(--mist); flex:none;">
+          <div style="flex:1; min-width:0;">
+            <strong style="display:block; font-size:0.9rem; color:var(--navy); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.name}</strong>
+            <span style="font-size:0.8rem; color:var(--muted);">${item.size} • ${item.color} • Qty: ${item.quantity}</span>
+            <div style="font-weight:700; font-size:0.92rem; color:var(--navy); margin-top:2px;">₹${(item.price * item.quantity).toLocaleString("en-IN")}</div>
+          </div>
+        </div>
+      `).join("");
+
+      document.getElementById("coSubtotal").textContent = `₹${totals.subtotal.toLocaleString("en-IN")}`;
+      document.getElementById("coShipping").textContent = totals.shipping === 0 ? "FREE" : `₹${totals.shipping}`;
+      document.getElementById("coTotal").textContent = `₹${totals.total.toLocaleString("en-IN")}`;
+
+      if (totals.couponDiscount > 0) {
+        document.getElementById("coDiscountRow").style.display = "flex";
+        document.getElementById("coDiscountVal").textContent = `- ₹${totals.couponDiscount.toLocaleString("en-IN")}`;
+      } else {
+        document.getElementById("coDiscountRow").style.display = "none";
+      }
+    }
+
+    window.processOrder = function () {
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const email = document.getElementById("custEmail").value.trim();
+      const address = document.getElementById("custAddress").value.trim();
+      const city = document.getElementById("custCity").value.trim();
+      const pincode = document.getElementById("custPincode").value.trim();
+      const state = document.getElementById("custState").value;
+
+      const cart = window.RibStore.getCart();
+      const totals = window.RibStore.getCartTotals();
+      const orderId = `RC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      const orderData = {
+        orderId,
+        items: cart,
+        totals,
+        shippingInfo: {
+          name, phone, email, address, city, pincode, state,
+          paymentMethod: chosenPayment
+        }
+      };
+
+      const btn = document.getElementById("placeOrderBtn");
+      btn.textContent = "Processing Order...";
+      btn.disabled = true;
+
+      setTimeout(() => {
+        // Show success modal
+        document.getElementById("successOrderId").textContent = orderId;
+        document.getElementById("successPayMethod").textContent = chosenPayment.toUpperCase();
+        document.getElementById("successTotal").textContent = `₹${totals.total.toLocaleString("en-IN")}`;
+
+        document.getElementById("successWhatsAppBtn").onclick = function () {
+          window.RibStore.sendWhatsAppOrder(orderData);
+        };
+
+        const modal = document.getElementById("orderSuccessModal");
+        modal.classList.add("open");
+
+        // Clear cart
+        window.RibStore.clearCart();
+      }, 1000);
+    };
+
+    document.addEventListener("DOMContentLoaded", renderCheckoutReview);
+  })();
+</script>
+</body>
+</html>
+
