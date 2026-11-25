@@ -134,16 +134,16 @@ tiles = "".join(
 <div class="tile-cap"><h3>{c}</h3><span>{COUNT[c]} styles</span></div></a>''' for c, ids in tile_defs)
 
 audience_slides_data = [
-    ("Men", 37, "Olive graphic T-shirt for men"),
-    ("Women", 36, "Yellow printed tunic modeled by a woman"),
-    ("Kids", 25, "Sky-blue New York sweatshirt for kids"),
+    ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
+    ("Women", "assets/lifestyle/family-women-pexels-18379520.webp", "Parents and daughters spending time together in a park."),
+    ("Kids", "assets/lifestyle/family-kids-pexels-27176613.webp", "Parents playing with their child outdoors at sunset."),
 ]
 audience_slides = "".join(
     f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
-      <img src="{img(product_id)}" alt="{alt}" decoding="async" {"fetchpriority='high'" if i == 0 else "loading='lazy'"}>
+      <img src="{image}" alt="{alt}" decoding="async" {"fetchpriority='high'" if i == 0 else "loading='lazy'"}>
       <div class="audience-caption"><div><p>Explore the collection</p><h2>{audience}</h2></div><a href="shop.html?for={audience}">Shop {audience}</a></div>
     </div>'''
-    for i, (audience, product_id, alt) in enumerate(audience_slides_data)
+    for i, (audience, image, alt) in enumerate(audience_slides_data)
 )
 audience_dots = "".join(
     f'<button class="audience-dot" type="button" data-slide-to="{i}" aria-label="Show {audience} collection" aria-controls="audience-slide-{i + 1}" aria-pressed="{str(i == 0).lower()}"></button>'
@@ -161,7 +161,7 @@ home = f"""
         <a class="btn btn-wa" data-wa href="#">{icon("wa","i i-fill")} Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="hero-stage audience-slider rib" id="audienceSlider" role="region" aria-roledescription="carousel" aria-label="Shop by collection">
+    <div class="hero-stage audience-slider" id="audienceSlider" role="region" aria-roledescription="carousel" aria-label="Shop by collection">
       <div class="audience-slides" aria-live="off">{audience_slides}</div>
       <div class="audience-controls">
         <button class="audience-arrow" type="button" data-slide-prev aria-label="Previous collection">‹</button>
@@ -214,8 +214,8 @@ home = f"""
 
 <section class="section statement">
   <div class="wrap">
-    <p class="display">Rib knit stretches with every movement and springs back. The neckline stays crisp and the fit stays true, wash after wash.</p>
-    <p style="margin-top:32px"><a class="link" href="about.html#rib">Why we knit in rib</a></p>
+    <p class="display">Quality knitted garments for men, women and children, made with a focus on comfort, consistency and responsible production.</p>
+    <p style="margin-top:32px"><a class="link" href="about.html#quality">Our quality standards</a></p>
   </div>
 </section>
 
@@ -318,13 +318,13 @@ about = f"""
   </div>
 </section>
 
-<section class="section" id="rib">
+<section class="section" id="quality">
   <div class="wrap">
     <div class="section-head"><h2>Quality, comfort and responsibility</h2></div>
     <div class="facts">
-      <div><h3>It stretches and recovers</h3><p>The ridges open as you move and close again afterwards, so cuffs, hems and necklines keep their shape.</p></div>
-      <div><h3>It sits close and soft</h3><p>A fine rib hugs the body without pinching, which is why it works so well for children and for lounge wear.</p></div>
-      <div><h3>Organic options</h3><p>Choose organic or conventional knitted garments, made using azo-free dyes.</p></div>
+      <div><h3>Made for everyday movement</h3><p>Rib construction offers comfortable stretch and recovers its shape, helping cuffs, hems and necklines maintain their fit.</p></div>
+      <div><h3>Softness for everyday wear</h3><p>Soft knitted fabrics provide a comfortable feel across our men's, women's and kids' collections.</p></div>
+      <div><h3>Organic and conventional</h3><p>We manufacture organic and conventional garments using azo-free dyes, with quality and consistency checks throughout production.</p></div>
     </div>
   </div>
 </section>

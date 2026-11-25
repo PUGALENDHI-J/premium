@@ -26,4 +26,6 @@ then add an entry to `js/products.js` with a new `id` and `code`.
 ## Notes
 - No prices are shown because the catalogue had none. Customers enquire on
   WhatsApp instead. The old cart and checkout were removed for that reason.
+- Homepage family lifestyle photos are from Pexels (photo IDs 12969212,
+  18379520 and 27176613); see the [Pexels license](https://www.pexels.com/license/).
 - `_archive/original-assets` holds all of your original photos untouched.

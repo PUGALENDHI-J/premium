@@ -136,11 +136,12 @@ h3,.h3{font-family:var(--text);font-weight:600;font-size:1.0625rem;line-height:1
 .hero-stage{position:relative;aspect-ratio:1/1.02;border-radius:var(--radius);overflow:hidden}
 .audience-slide{position:absolute;inset:0}
 .audience-slide[hidden]{display:none}
-.audience-slide img{position:absolute;left:50%;top:5%;height:68%;max-width:84%;object-fit:contain;transform:translateX(-50%);filter:drop-shadow(0 22px 22px rgba(14,26,56,.22)) drop-shadow(0 4px 6px rgba(14,26,56,.12))}
-.audience-caption{position:absolute;inset:auto 24px 78px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;color:var(--ink)}
+.audience-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,25,.03) 24%,rgba(8,12,25,.18) 52%,rgba(8,12,25,.72) 100%);pointer-events:none}
+.audience-slide img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;filter:none}
+.audience-caption{position:absolute;z-index:1;inset:auto 24px 78px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;color:#fff}
 .audience-caption p{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-.audience-caption h2{font-size:clamp(2rem,4vw,3rem)}
-.audience-caption a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:var(--radius);background:var(--ink);color:#fff;font-size:.92rem;font-weight:600}
+.audience-caption h2{font-size:clamp(2rem,4vw,3rem);color:#fff}
+.audience-caption a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:var(--radius);background:#fff;color:var(--ink);font-size:.92rem;font-weight:600}
 .audience-caption a:hover{background:var(--garnet)}
 .audience-controls{position:absolute;z-index:2;inset:auto 18px 18px;display:flex;align-items:center;gap:8px}
 .audience-arrow,.audience-toggle,.audience-dot{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--ink);cursor:pointer}
