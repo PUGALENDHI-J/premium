@@ -122,7 +122,7 @@ def page(fname, title, desc, body, active="", pg="", extra_head=""):
 tile_defs = [
     ("Hoodies & Sweatshirts", [30, 25]),
     ("Tees & Polos", [7, 17]),
-    ("Nightwear", [33]),
+    ("Nightwear", [31]),
     ("Shorts & Leggings", [14]),
     ("Sets", [24, 26]),
     ("Tops & Tunics", [11, 28]),

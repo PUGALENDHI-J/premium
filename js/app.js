@@ -117,7 +117,7 @@
   function home() {
     var rail = $("#newRail");
     if (!rail) return;
-    var ids = [24, 17, 7, 25, 18, 33, 3, 8];
+    var ids = [24, 17, 7, 25, 18, 3, 8];
     rail.innerHTML = ids.map(function (id) { return card(byId(id)); }).join("");
   }
 

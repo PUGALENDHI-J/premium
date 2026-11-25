@@ -385,18 +385,6 @@ window.PRODUCTS = [
   "featured": false
  },
  {
-  "id": 33,
-  "code": "RC-033",
-  "slug": "black-camisole-and-shorts-set",
-  "name": "Black camisole and shorts set",
-  "category": "Nightwear",
-  "audience": "Women",
-  "fabric": "Soft cotton jersey",
-  "description": "Black camisole with a floral motif and matching shorts, made for lounging and sleep.",
-  "image": "assets/products/p33.webp",
-  "featured": true
- },
- {
   "id": 34,
   "code": "RC-034",
   "slug": "candy-stripe-long-sleeve-tee",
