@@ -74,7 +74,6 @@
           <!-- Floating Badges -->
           <div class="card-badges">
             ${p.tag ? `<span class="card-badge badge-${p.tag.toLowerCase().replace(/\s+/g, '-')}">${p.tag}</span>` : ""}
-            <span class="card-badge badge-discount">${p.discount}</span>
           </div>
 
           <!-- Wishlist Heart Button -->
@@ -104,12 +103,6 @@
           <div class="card-rating">
             <span class="stars" style="--r:${p.rating}">★★★★★</span>
             <span>(${p.reviews})</span>
-          </div>
-
-          <div class="card-price-row">
-            <span class="card-price">₹${p.price.toLocaleString("en-IN")}</span>
-            <s class="card-mrp">₹${p.originalPrice.toLocaleString("en-IN")}</s>
-            <span class="card-discount-pill">${p.discount}</span>
           </div>
 
           <div class="card-footer">

@@ -141,9 +141,9 @@
           <div class="product-card-body">
             <span class="card-category">${p.category}</span>
             <h3 class="card-title"><a href="product-detail.html?id=${p.id}">${p.name}</a></h3>
-            <div class="card-price-row">
-              <span class="card-price">₹${p.price.toLocaleString("en-IN")}</span>
-              <s class="card-mrp">₹${p.originalPrice.toLocaleString("en-IN")}</s>
+            <div class="card-rating">
+              <span class="stars" style="--r:${p.rating}">★★★★★</span>
+              <span>(${p.reviews})</span>
             </div>
             <div style="display:flex; gap:0.6rem; margin-top:0.8rem;">
               <button type="button" class="btn btn-primary btn-sm" style="flex:1;" onclick="moveToBag(${p.id})">

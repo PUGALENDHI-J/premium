@@ -1599,8 +1599,13 @@ h2 em { font-style: normal; color: var(--blue); }
   gap: 2rem;
   margin-top: 2rem;
 }
+/* Mobile: products (main content) FIRST, sidebar below */
+.shop-sidebar { order: 2; }
+.shop-main-content { order: 1; }
 @media (min-width: 960px) {
   .shop-layout { grid-template-columns: 280px 1fr; gap: 2.5rem; }
+  .shop-sidebar { order: 0; }
+  .shop-main-content { order: 0; }
 }
 
 /* Filter Sidebar */

@@ -156,15 +156,7 @@
             </ul>
           </div>
 
-          <!-- Price Range Filter -->
-          <div class="filter-group">
-            <h3 class="filter-title">Price Range</h3>
-            <div style="display:flex; justify-content:space-between; font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">
-              <span>₹700</span>
-              <span id="priceRangeVal">₹3,000</span>
-            </div>
-            <input type="range" id="priceRange" min="700" max="3000" step="100" value="3000" style="width:100%; accent-color:var(--blue);">
-          </div>
+          <!-- Price Range Filter REMOVED -->
 
           <!-- Size Filter -->
           <div class="filter-group">
@@ -221,8 +213,6 @@
               <select id="shopSort" class="shop-sort-select">
                 <option value="featured">Featured Picks</option>
                 <option value="bestseller">Best Selling</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
                 <option value="rating">Highest Rated</option>
                 <option value="newest">New Arrivals</option>
               </select>
@@ -338,7 +328,6 @@
     let selectedCategory = urlParams.get("cat") || "All";
     let selectedSort = urlParams.get("sort") || "featured";
     let searchQuery = (urlParams.get("q") || "").toLowerCase().trim();
-    let maxPrice = 3000;
     let selectedSizes = [];
     let selectedTags = [];
 
@@ -385,12 +374,9 @@
 
     window.resetAllFilters = function () {
       selectedCategory = "All";
-      maxPrice = 3000;
       selectedSizes = [];
       selectedTags = [];
       searchQuery = "";
-      document.getElementById("priceRange").value = 3000;
-      document.getElementById("priceRangeVal").textContent = "₹3,000";
       document.querySelectorAll(".size-chip-btn").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tag-filter-check").forEach(c => c.checked = false);
       const searchInput = document.getElementById("searchInput");
@@ -411,8 +397,6 @@
         if (selectedCategory !== "All" && p.category.toLowerCase() !== selectedCategory.toLowerCase()) {
           return false;
         }
-        // Price check
-        if (p.price > maxPrice) return false;
         // Size check
         if (selectedSizes.length > 0) {
           const hasSize = selectedSizes.some(s => p.sizes.includes(s));
@@ -422,7 +406,6 @@
         if (selectedTags.length > 0) {
           const matchTag = selectedTags.some(t => {
             if (t === "Bestseller") return p.bestseller || p.tag === "Bestseller";
-            if (t === "Hot Deal") return p.price <= (p.originalPrice * 0.65);
             return p.tag === t;
           });
           if (!matchTag) return false;
@@ -440,9 +423,7 @@
 
       // Sorting
       const sortVal = document.getElementById("shopSort").value;
-      if (sortVal === "price-low") filtered.sort((a, b) => a.price - b.price);
-      else if (sortVal === "price-high") filtered.sort((a, b) => b.price - a.price);
-      else if (sortVal === "rating") filtered.sort((a, b) => b.rating - a.rating);
+      if (sortVal === "rating") filtered.sort((a, b) => b.rating - a.rating);
       else if (sortVal === "newest") filtered.sort((a, b) => (b.id - a.id));
       else if (sortVal === "bestseller") filtered.sort((a, b) => (b.reviews - a.reviews));
 
@@ -474,7 +455,6 @@
             </a>
             <div class="card-badges">
               ${p.tag ? `<span class="card-badge badge-${p.tag.toLowerCase().replace(/\s+/g, '-')}">${p.tag}</span>` : ""}
-              <span class="card-badge badge-discount">${p.discount}</span>
             </div>
             <button type="button" class="card-wishlist-btn ${window.RibStore && window.RibStore.isInWishlist(p.id) ? 'active' : ''}" data-wishlist-toggle="${p.id}" aria-label="Add ${p.name} to wishlist">
               <svg class="i i-sm" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.8-9.5-10C1.5 7 3.8 4 7 4c2 0 3.5 1.2 5 3.2C13.5 5.2 15 4 17 4c3.2 0 5.5 3 4.5 6.5-1.5 5.2-9.5 10-9.5 10z"/></svg>
@@ -497,11 +477,6 @@
             <div class="card-rating">
               <span class="stars" style="--r:${p.rating}">★★★★★</span>
               <span>(${p.reviews})</span>
-            </div>
-            <div class="card-price-row">
-              <span class="card-price">₹${p.price.toLocaleString("en-IN")}</span>
-              <s class="card-mrp">₹${p.originalPrice.toLocaleString("en-IN")}</s>
-              <span class="card-discount-pill">${p.discount}</span>
             </div>
             <div class="card-footer">
               <div class="card-sizes-preview">
@@ -527,7 +502,7 @@
 
       const pills = [];
       if (selectedCategory !== "All") pills.push({ label: `Category: ${selectedCategory}`, onRemove: () => selectCategory("All") });
-      if (maxPrice < 3000) pills.push({ label: `Under ₹${maxPrice.toLocaleString("en-IN")}`, onRemove: () => { maxPrice = 3000; document.getElementById("priceRange").value = 3000; document.getElementById("priceRangeVal").textContent = "₹3,000"; filterCatalog(); } });
+      if (maxPrice < 3000) pills.push({ label: `Budget Filter Active`, onRemove: () => { maxPrice = 3000; filterCatalog(); } });
       selectedSizes.forEach(s => pills.push({ label: `Size: ${s}`, onRemove: () => { selectedSizes = selectedSizes.filter(x => x !== s); document.querySelectorAll(`.size-chip-btn[data-size="${s}"]`).forEach(b => b.classList.remove("active")); filterCatalog(); } }));
       selectedTags.forEach(t => pills.push({ label: t, onRemove: () => { selectedTags = selectedTags.filter(x => x !== t); document.querySelectorAll(`.tag-filter-check[value="${t}"]`).forEach(c => c.checked = false); filterCatalog(); } }));
       if (searchQuery) pills.push({ label: `Search: "${searchQuery}"`, onRemove: () => { searchQuery = ""; const si = document.getElementById("searchInput"); if (si) si.value = ""; filterCatalog(); } });
@@ -548,12 +523,6 @@
     }
 
     // Event listeners
-    document.getElementById("priceRange").addEventListener("input", (e) => {
-      maxPrice = parseInt(e.target.value, 10);
-      document.getElementById("priceRangeVal").textContent = `₹${maxPrice.toLocaleString("en-IN")}`;
-      filterCatalog();
-    });
-
     document.querySelectorAll(".size-chip-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const size = btn.getAttribute("data-size");
