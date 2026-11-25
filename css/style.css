@@ -130,7 +130,7 @@ h3,.h3{font-family:var(--text);font-weight:600;font-size:1.0625rem;line-height:1
 .hero-grid{display:grid;grid-template-columns:minmax(0,5.6fr) minmax(0,6fr);gap:clamp(24px,3.4vw,64px);align-items:center}
 .hero-copy{padding-block:24px}
 .kw{margin-right:-.07em}
-.hero-copy h1{margin-bottom:clamp(20px,2.6vw,32px)}
+.hero-copy h1{font-size:clamp(2.8rem,5.5vw,5.4rem);line-height:1.04;margin-bottom:clamp(20px,2.6vw,32px)}
 .hero-copy .lead{margin-bottom:clamp(28px,3vw,40px)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero-stage{position:relative;aspect-ratio:1/1.02;border-radius:var(--radius);overflow:hidden}

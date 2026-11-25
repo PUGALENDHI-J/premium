@@ -137,7 +137,7 @@ home = f"""
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1><span class="kw">W</span>ear the comfort.</h1>
+      <h1>Fresh styles developed exclusively for your brand</h1>
       <p class="lead">High-quality knitted garments for men, women and children, made for customers across Europe and Scandinavia.</p>
       <div class="hero-actions">
         <a class="btn" href="shop.html">Browse the collection</a>
@@ -288,6 +288,7 @@ about = f"""
     <div class="photo"><img src="assets/factory/f38.webp" alt="Operators at their sewing stations on our production floor"></div>
     <div class="prose">
       <h2 style="margin-bottom:24px">Quality knitwear for global customers</h2>
+      <p class="lead">Fresh styles developed exclusively for your brand.</p>
       <p>We specialize in high-quality knitted garments for men, women, and children. Our product range includes T-shirts, polo shirts, sweatshirts, tank tops, hooded jackets, and leggings. We currently supply customers across Europe and Scandinavian countries.</p>
       <p>Our production units are fully compliant and certified. We manufacture both organic and conventional garments using azo-free dyes, reflecting our commitment to quality, consistency, and environmental responsibility.</p>
       <p>We offer competitive pricing, flexible MOQs, and strict quality control throughout the production process.</p>
