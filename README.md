@@ -15,13 +15,15 @@ Open `index.html` in a browser to preview. To publish, upload the whole folder
    `PHONE_DISPLAY`, `WHATSAPP_DISPLAY`, `WEBSITE`, `ADDRESS` at the top
    of `_tools/build.py`, then run `python3 _tools/build.py` to refresh the pages.
 2. **Products.** Edit `js/products.js` (name, category, audience, fabric,
-   description). Images live in `assets/products/` (garment cut-outs, WebP).
+   description). Product images live in `assets/products/` as WebP files;
+   keep garments upright, with the neckline at the top.
 3. **Company details.** Confirm certifications, organic garment availability,
    production details and export destinations before publishing changes to them.
 
 ## Adding a product
-Add a cut-out image to `assets/products/` (transparent WebP, about 900px),
-then add an entry to `js/products.js` with a new `id` and `code`.
+Add an upright WebP image to `assets/products/` (about 900–1200px on the
+longest side; transparent cut-outs or photo backgrounds both work), then add
+an entry to `js/products.js` with a new `id` and `code`.
 
 ## Notes
 - No prices are shown because the catalogue had none. Customers enquire on

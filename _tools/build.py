@@ -165,7 +165,7 @@ home = f"""
 <section class="section-tight" id="collection">
   <div class="wrap">
     <div class="section-head">
-      <div><h2>The collection</h2><p class="lead">{len(PRODUCTS)} styles in six families, from everyday tees to cosy sets.</p></div>
+      <div><h2>The collection</h2><p class="lead">{len(PRODUCTS)} styles across {len(CATS)} collections, from everyday tees to cosy sets.</p></div>
       <a class="link" href="shop.html">View every style {icon("arrow","i i-sm","style='width:18px;height:18px'")}</a>
     </div>
     <div class="tiles">{tiles}</div>
@@ -237,9 +237,11 @@ shop = f"""
   <h1>The collection</h1>
   <p class="lead">Knitted garments for men, women and children. Add pieces to your list and send them to us on WhatsApp in one go.</p>
 </div>
-<section class="section-tight"><div class="wrap"><div class="cta rib-deep">
-  <div><h2>Men's collection</h2><p>Explore our men's knitted styles. Organic and conventional garment options are available.</p></div>
-  <a class="btn btn-light" href="shop.html?for=Men">Shop menswear</a>
+<section class="section-tight"><div class="wrap"><div class="audience-collections">
+  <div class="cta rib-deep"><div><h2>Men's collection</h2><p>Explore our men's knitted styles. Organic and conventional garment options are available.</p></div>
+    <a class="btn btn-light" href="shop.html?for=Men">Shop menswear</a></div>
+  <div class="cta rib-deep"><div><h2>Kids' collection</h2><p>Browse comfortable knitted styles for children, including tops and hoodies.</p></div>
+    <a class="btn btn-light" href="shop.html?for=Kids">Shop kids' styles</a></div>
 </div></div></section>
 <div class="filters"><div class="wrap filters-row">
   <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>

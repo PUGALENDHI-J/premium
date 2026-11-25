@@ -431,6 +431,126 @@ window.PRODUCTS = [
   "description": "Olive crew-neck tee with a clean barcode graphic across the chest.",
   "image": "assets/products/p37.webp",
   "featured": false
+ },
+ {
+  "id": 38,
+  "code": "RC-038",
+  "slug": "mens-white-sleeveless-vest",
+  "name": "White sleeveless vest",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "White sleeveless vest with a scoop neckline and a clean, simple finish.",
+  "image": "assets/products/p38.webp",
+  "featured": false
+ },
+ {
+  "id": 39,
+  "code": "RC-039",
+  "slug": "mens-taupe-black-colour-block-top",
+  "name": "Taupe and black colour-block long-sleeve top",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Long-sleeve crew-neck top with taupe sleeves and a black body.",
+  "image": "assets/products/p39.webp",
+  "featured": false
+ },
+ {
+  "id": 40,
+  "code": "RC-040",
+  "slug": "mens-grey-contrast-sleeve-polo",
+  "name": "Grey contrast-sleeve polo",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Grey short-sleeve polo with a navy collar and teal contrast sleeves.",
+  "image": "assets/products/p40.webp",
+  "featured": false
+ },
+ {
+  "id": 41,
+  "code": "RC-041",
+  "slug": "mens-blue-contrast-polo",
+  "name": "Blue contrast polo",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Blue short-sleeve polo with a dark collar and lighter blue sleeve panels.",
+  "image": "assets/products/p41.webp",
+  "featured": false
+ },
+ {
+  "id": 42,
+  "code": "RC-042",
+  "slug": "mens-mustard-graphic-hoodie",
+  "name": "Mustard graphic hoodie",
+  "category": "Hoodies & Sweatshirts",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Mustard pullover hoodie with a front graphic and ribbed cuffs and hem.",
+  "image": "assets/products/p42.webp",
+  "featured": false
+ },
+ {
+  "id": 43,
+  "code": "RC-043",
+  "slug": "mens-taupe-pocket-polo",
+  "name": "Taupe pocket polo",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Short-sleeve taupe polo with a chest pocket and button placket.",
+  "image": "assets/products/p43.webp",
+  "featured": false
+ },
+ {
+  "id": 44,
+  "code": "RC-044",
+  "slug": "mens-green-crew-neck-tee",
+  "name": "Green crew-neck T-shirt",
+  "category": "Tees & Polos",
+  "audience": "Men",
+  "fabric": "Knitted fabric",
+  "description": "Short-sleeve green crew-neck T-shirt with a small chest emblem.",
+  "image": "assets/products/p44.webp",
+  "featured": false
+ },
+ {
+  "id": 45,
+  "code": "RC-045",
+  "slug": "kids-red-textured-long-sleeve-top",
+  "name": "Kids' red textured long-sleeve top",
+  "category": "Tops & Tunics",
+  "audience": "Kids",
+  "fabric": "Textured knit",
+  "description": "Red long-sleeve top with a horizontal texture and a gathered neckline detail.",
+  "image": "assets/products/p45.webp",
+  "featured": false
+ },
+ {
+  "id": 46,
+  "code": "RC-046",
+  "slug": "kids-pink-bow-long-sleeve-top",
+  "name": "Kids' pink bow-detail long-sleeve top",
+  "category": "Tops & Tunics",
+  "audience": "Kids",
+  "fabric": "Textured knit",
+  "description": "Pink textured long-sleeve top finished with a bow at the neckline.",
+  "image": "assets/products/p46.webp",
+  "featured": false
+ },
+ {
+  "id": 47,
+  "code": "RC-047",
+  "slug": "kids-teal-graphic-hoodie",
+  "name": "Kids' teal graphic hoodie",
+  "category": "Hoodies & Sweatshirts",
+  "audience": "Kids",
+  "fabric": "Knitted fabric",
+  "description": "Teal pullover hoodie with a front graphic and kangaroo pocket.",
+  "image": "assets/products/p47.webp",
+  "featured": false
  }
 ];
-window.FEATURED_ORDER = [24, 17, 7, 25, 30, 1, 18, 33, 3, 16, 8, 22];
+window.FEATURED_ORDER = [24, 17, 7, 25, 30, 1, 18, 3, 16, 8, 22];

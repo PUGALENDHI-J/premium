@@ -207,6 +207,8 @@ h3,.h3{font-family:var(--text);font-weight:600;font-size:1.0625rem;line-height:1
 .cta h2{color:#fff}
 .cta p{color:var(--mist);margin-top:14px;max-width:30em}
 .cta-actions{display:flex;flex-wrap:wrap;gap:12px}
+.audience-collections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.audience-collections .cta{padding:clamp(28px,4vw,48px);gap:20px}
 
 /* footer */
 .site-footer{background:var(--ink);color:#fff;padding-top:clamp(56px,7vw,104px);overflow:hidden}
@@ -356,6 +358,7 @@ details.faq p{color:var(--muted);padding-bottom:26px;max-width:40em}
   .rail .card{flex:0 0 62%;scroll-snap-align:start}
 
   .floor-grid,.split,.contact-grid,.pd,.list-wrap,.cta{grid-template-columns:1fr}
+  .audience-collections{grid-template-columns:1fr}
   .photo-trio{aspect-ratio:1.1/1}
   .steps,.facts{grid-template-columns:1fr}
   .steps li{display:grid;grid-template-columns:56px 1fr;column-gap:16px;padding-bottom:6px}
