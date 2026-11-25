@@ -136,8 +136,8 @@ tiles = "".join(
 audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
     ("Women", "assets/lifestyle/family-women-pexels-18379520.webp", "Parents and daughters spending time together in a park."),
-    ("Kids", "assets/lifestyle/family-kids-pexels-27176613.webp", "Parents playing with their child outdoors at sunset."),
     ("Factory", "assets/factory/f38.webp", "Sewing operators at work on the production floor."),
+    ("Production", "assets/factory/f39.webp", "Rows of sewing machines under the ceiling fans."),
 ]
 audience_slides = "".join(
     f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{audience}, {i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
@@ -291,7 +291,7 @@ page("enquiry.html", f"Your list | {BRAND}", f"Review the {BRAND} pieces you hav
 
 # ---------------------------------------------------------------- ABOUT
 about = f"""
-<div class="wrap page-head"><h1>{BRAND}</h1>
+<div class="wrap page-head"><h1 class="rib-title">{BRAND}</h1>
 <p class="lead">A certified apparel manufacturing and export company based in Tirupur, South India.</p></div>
 
 <section class="section-tight">

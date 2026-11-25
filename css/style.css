@@ -391,3 +391,5 @@ details.faq p{color:var(--muted);padding-bottom:26px;max-width:40em}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+.page-head h1.rib-title{font-weight:800;letter-spacing:-.04em;background:repeating-linear-gradient(90deg,#c77987 0 3px,#8e2236 3px 6px);-webkit-background-clip:text;background-clip:text;color:transparent}
