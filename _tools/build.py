@@ -135,7 +135,6 @@ tiles = "".join(
 
 audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
-    ("Women", "assets/lifestyle/family-women-pexels-18379520.webp", "Parents and daughters spending time together in a park."),
     ("Factory", "assets/factory/f38.webp", "Sewing operators at work on the production floor."),
     ("Production", "assets/factory/f39.webp", "Rows of sewing machines under the ceiling fans."),
 ]
