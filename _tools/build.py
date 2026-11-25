@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Generates the static pages for the Rib Cotton site from shared partials.
+"""Generates the static pages for the RIB Cotton Exports site from shared partials.
 Run:  python3 build.py   (writes the .html files next to this script's ./site folder)
 """
 import json, os, re, html
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "site") if os.path.isdir(os.path.join(HERE, "site")) else os.path.dirname(HERE)
-PHONE_DISPLAY = "+91 98400 12345"
-EMAIL = "support@ribcotton.com"
-ADDRESS = "No. 42, Cotton Mills Avenue, Tirupur, Tamil Nadu - 600001"
+BRAND = "RIB Cotton Exports"
+PHONE_DISPLAY = "+91 95005 73568 / +91 94430 43950"
+WHATSAPP_DISPLAY = "+91 80120 29452"
+WEBSITE = "https://www.ribcottonexports.in"
+ADDRESS = "2A, Amaravathi Nagar<br>Dharapuram Road<br>Tirupur – 638701<br>South India"
 
 src = open(os.path.join(ROOT, "js/products.js"), encoding="utf-8").read()
 PRODUCTS = json.loads(re.search(r"window\.PRODUCTS = (\[.*?\]);\nwindow", src, re.S).group(1))
@@ -48,7 +50,7 @@ def header(active):
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap nav-row">
-    <a class="brand" href="index.html" aria-label="Rib Cotton, home">{icon("mark","i brand-mark")}<span class="brand-name">Rib Cotton</span></a>
+    <a class="brand" href="index.html" aria-label="{BRAND}, home">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
     <nav class="nav" aria-label="Main"><ul>{links}</ul></nav>
     <div class="nav-actions">
       <a class="list-link" href="enquiry.html" aria-label="Your list">{icon("bag")}<span class="label">Your list</span><span class="count js-count" hidden>0</span></a>
@@ -58,10 +60,10 @@ def header(active):
   </div>
 </header>
 <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
-  <div class="menu-top"><a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">Rib Cotton</span></a>
+  <div class="menu-top"><a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
     <button class="menu-btn" id="menuClose" type="button" aria-label="Close menu" style="display:grid;color:#fff">{icon("close")}</button></div>
   <nav class="menu-links" aria-label="Menu">{menu_links}</nav>
-  <div class="menu-foot"><span>Questions about a style?</span><a data-wa href="#">Chat on WhatsApp</a><a data-tel href="#">{PHONE_DISPLAY}</a></div>
+  <div class="menu-foot"><span>Questions about a style?</span><a data-wa href="#">Chat on WhatsApp {WHATSAPP_DISPLAY}</a><a data-tel href="#">{PHONE_DISPLAY}</a></div>
 </div>"""
 
 DOCK = f"""
@@ -78,15 +80,15 @@ def footer():
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">Rib Cotton</span></a>
-        <p>Knitwear for children, women and the whole family. Made in Tirupur.</p>
+        <a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
+        <p>Certified knitted garment manufacturing and exports from Tirupur, South India.</p>
       </div>
       <nav aria-label="Shop"><h3>Shop</h3><ul>{shop}</ul></nav>
       <nav aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#faq">Questions</a></li><li><a href="enquiry.html">Your list</a></li></ul></nav>
-      <div><h3>Reach us</h3><ul><li><a data-wa href="#">WhatsApp</a></li><li><a data-tel href="#">{PHONE_DISPLAY}</a></li><li><a data-mail href="#">{EMAIL}</a></li></ul></div>
+      <div><h3>Reach us</h3><ul><li><a data-wa href="#">WhatsApp {WHATSAPP_DISPLAY}</a></li><li><a data-tel href="#">{PHONE_DISPLAY}</a></li><li><a href="{WEBSITE}">ribcottonexports.in</a></li></ul></div>
     </div>
-    <div class="foot-mark" aria-hidden="true">Rib Cotton</div>
-    <div class="foot-bottom"><span>© 2026 Rib Cotton Apparel Private Limited</span><span>Tirupur, Tamil Nadu</span></div>
+    <div class="foot-mark" aria-hidden="true">{BRAND}</div>
+    <div class="foot-bottom"><span>© 2026 {BRAND}</span><span>Tirupur, South India</span></div>
   </div>
 </footer>"""
 
@@ -136,13 +138,13 @@ home = f"""
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1><span class="kw">W</span>ear the comfort.</h1>
-      <p class="lead">Rib-cotton knitwear for children, women and the whole family, cut and finished at our own unit in Tirupur.</p>
+      <p class="lead">High-quality knitted garments for men, women and children, made for customers across Europe and Scandinavia.</p>
       <div class="hero-actions">
         <a class="btn" href="shop.html">Browse the collection</a>
         <a class="btn btn-wa" data-wa href="#">{icon("wa","i i-fill")} Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="hero-stage rib" role="img" aria-label="A selection of Rib Cotton hoodies, polos and tees laid flat">
+    <div class="hero-stage rib" role="img" aria-label="A selection of RIB Cotton Exports hoodies, polos and tees laid flat">
       <img class="hs-a" src="{img(24)}" alt="">
       <img class="hs-b" src="{img(17)}" alt="">
       <img class="hs-c" src="{img(7)}" alt="">
@@ -161,6 +163,13 @@ home = f"""
   </div>
 </section>
 
+<section class="section statement">
+  <div class="wrap">
+    <p class="display">Organic and conventional knitted garments, made with azo-free dyes.</p>
+    <p style="margin-top:24px">Our certified production units follow strict quality control and support responsible garment manufacturing.</p>
+  </div>
+</section>
+
 <section class="section-tight">
   <div class="wrap">
     <div class="section-head"><h2>Latest styles</h2><a class="link" href="shop.html">See all {icon("arrow","i","style='width:18px;height:18px'")}</a></div>
@@ -172,7 +181,7 @@ home = f"""
   <div class="wrap floor-grid">
     <div>
       <h2>Made on our own floor</h2>
-      <p>Every piece starts as a roll of knit fabric on our cutting tables and leaves as a finished garment from the same building. Buyers are always welcome to visit and see the work first-hand.</p>
+      <p>Our compliant, certified production units manufacture high-quality knitted garments with strict quality control throughout the process.</p>
       <a class="link" href="about.html">Read our story {icon("arrow","i","style='width:18px;height:18px'")}</a>
     </div>
     <div class="photo-trio">
@@ -209,16 +218,20 @@ home = f"""
     </div>
   </div>
 </section>"""
-page("index.html", "Rib Cotton | Rib-cotton knitwear made in Tirupur",
-     "Rib-cotton knitwear for children, women and the whole family. Browse tees, polos, hoodies, sets and nightwear, then enquire on WhatsApp.", home, pg="home")
+page("index.html", f"{BRAND} | Knitted garment manufacturer and exporter",
+     "Certified knitted garment manufacturing and exports from Tirupur, South India. Organic and conventional garments for men, women and children.", home, pg="home")
 
 # ---------------------------------------------------------------- SHOP
 who = ["Boys", "Girls", "Teens", "Women", "Men", "Kids"]
 shop = f"""
 <div class="wrap page-head">
   <h1>The collection</h1>
-  <p class="lead">Every style we make. Add pieces to your list and send them to us on WhatsApp in one go.</p>
+  <p class="lead">Knitted garments for men, women and children. Add pieces to your list and send them to us on WhatsApp in one go.</p>
 </div>
+<section class="section-tight"><div class="wrap"><div class="cta rib-deep">
+  <div><h2>Men's collection</h2><p>Explore our men's knitted styles. Organic and conventional garment options are available.</p></div>
+  <a class="btn btn-light" href="shop.html?for=Men">Shop menswear</a>
+</div></div></section>
 <div class="filters"><div class="wrap filters-row">
   <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
 </div></div>
@@ -233,7 +246,7 @@ shop = f"""
   <div class="grid" id="shopGrid" style="padding-bottom:clamp(64px,8vw,112px)"></div>
   <div class="empty" id="empty" hidden><h2>No styles match</h2><p>Try a different search, or clear the filters to see everything.</p><button class="btn" id="reset" type="button">Clear filters</button></div>
 </div>"""
-page("shop.html", "The collection | Rib Cotton", "Browse every Rib Cotton style: tees and polos, hoodies and sweatshirts, sets, shorts and leggings, nightwear and tunics.", shop, active="shop", pg="shop")
+page("shop.html", f"The collection | {BRAND}", "Browse knitted garments for men, women and children, including organic and conventional options.", shop, active="shop", pg="shop")
 
 # ---------------------------------------------------------------- PRODUCT
 prod = f"""
@@ -245,7 +258,7 @@ prod = f"""
     <div class="grid rail" id="moreRail"></div>
   </div>
 </div>"""
-page("product.html", "Style | Rib Cotton", "Rib Cotton style details.", prod, active="shop", pg="product")
+page("product.html", f"Style | {BRAND}", f"{BRAND} style details.", prod, active="shop", pg="product")
 
 # ---------------------------------------------------------------- ENQUIRY
 enq = f"""
@@ -263,31 +276,34 @@ enq = f"""
     </aside>
   </div>
 </div>"""
-page("enquiry.html", "Your list | Rib Cotton", "Review the Rib Cotton pieces you have chosen and send the list on WhatsApp.", enq, pg="enquiry")
+page("enquiry.html", f"Your list | {BRAND}", f"Review the {BRAND} pieces you have chosen and send the list on WhatsApp.", enq, pg="enquiry")
 
 # ---------------------------------------------------------------- ABOUT
 about = f"""
-<div class="wrap page-head"><h1>Knitwear, made with care in Tirupur</h1>
-<p class="lead">We are a knitwear maker. We cut, stitch and finish our garments ourselves, and we build every collection around soft cotton knits and honest finishing.</p></div>
+<div class="wrap page-head"><h1>{BRAND}</h1>
+<p class="lead">A certified apparel manufacturing and export company based in Tirupur, South India.</p></div>
 
 <section class="section-tight">
   <div class="wrap split">
     <div class="photo"><img src="assets/factory/f38.webp" alt="Operators at their sewing stations on our production floor"></div>
     <div class="prose">
-      <h2 style="margin-bottom:24px">One roof, start to finish</h2>
-      <p>Fabric arrives as rolls and leaves as finished garments from the same building. Keeping cutting, stitching and finishing together lets us check quality at every step and move quickly when a style needs to change.</p>
-      <p>Our range covers children, teens and women, with everyday tees and polos, warm fleece, matching sets and soft nightwear. If you buy for a shop, a school or a family, we are happy to talk through quantities and timing.</p>
+      <h2 style="margin-bottom:24px">Quality knitwear for global customers</h2>
+      <p>We specialize in high-quality knitted garments for men, women, and children. Our product range includes T-shirts, polo shirts, sweatshirts, tank tops, hooded jackets, and leggings. We currently supply customers across Europe and Scandinavian countries.</p>
+      <p>Our production units are fully compliant and certified. We manufacture both organic and conventional garments using azo-free dyes, reflecting our commitment to quality, consistency, and environmental responsibility.</p>
+      <p>We offer competitive pricing, flexible MOQs, and strict quality control throughout the production process.</p>
+      <p>I would be happy to discuss your requirements and provide samples or quotations based on your needs.</p>
+      <p>Thank you for considering {BRAND}. I look forward to the opportunity to work together.</p>
     </div>
   </div>
 </section>
 
 <section class="section" id="rib">
   <div class="wrap">
-    <div class="section-head"><h2>Why we knit in rib</h2></div>
+    <div class="section-head"><h2>Quality, comfort and responsibility</h2></div>
     <div class="facts">
       <div><h3>It stretches and recovers</h3><p>The ridges open as you move and close again afterwards, so cuffs, hems and necklines keep their shape.</p></div>
       <div><h3>It sits close and soft</h3><p>A fine rib hugs the body without pinching, which is why it works so well for children and for lounge wear.</p></div>
-      <div><h3>It lets the skin breathe</h3><p>Cotton knit moves air and moisture away from the body, keeping long days comfortable.</p></div>
+      <div><h3>Organic options</h3><p>Choose organic or conventional knitted garments, made using azo-free dyes.</p></div>
     </div>
   </div>
 </section>
@@ -301,11 +317,11 @@ about = f"""
     </div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-top:clamp(32px,4vw,56px)">
       <h2 style="margin:0;max-width:14em">Come and see how it is made</h2>
-      <div class="cta-actions"><a class="btn btn-wa" data-wa="Hello Rib Cotton, I would like to plan a visit to your unit." href="#">{icon("wa","i i-fill")} Plan a visit on WhatsApp</a><a class="btn btn-light" href="shop.html">Browse the collection</a></div>
+      <div class="cta-actions"><a class="btn btn-wa" data-wa="Hello RIB Cotton Exports, I would like to discuss a visit to your production unit." href="#">{icon("wa","i i-fill")} Discuss a visit on WhatsApp</a><a class="btn btn-light" href="shop.html">Browse the collection</a></div>
     </div>
   </div>
 </section>"""
-page("about.html", "About | Rib Cotton", "Rib Cotton is a knitwear maker in Tirupur. We cut, stitch and finish our garments under one roof.", about, active="about", pg="about")
+page("about.html", f"About | {BRAND}", f"{BRAND} is a certified knitted garment manufacturer and exporter based in Tirupur, South India.", about, active="about", pg="about")
 
 # ---------------------------------------------------------------- CONTACT
 faqs = [
@@ -320,10 +336,10 @@ contact = f"""
 <section class="section-tight">
   <div class="wrap contact-grid">
     <dl class="reach">
-      <div><dt>WhatsApp</dt><dd><a data-wa href="#">{PHONE_DISPLAY}</a><small>Daily, 9 AM to 9 PM</small></dd></div>
-      <div><dt>Phone</dt><dd><a data-tel href="#">{PHONE_DISPLAY}</a></dd></div>
-      <div><dt>Email</dt><dd><a data-mail href="#">{EMAIL}</a><small>For bulk and corporate enquiries</small></dd></div>
-      <div><dt>Visit us</dt><dd>{ADDRESS}<small>Monday to Saturday, 10 AM to 8 PM. Sunday, 11 AM to 6 PM.</small></dd></div>
+      <div><dt>WhatsApp</dt><dd><a data-wa href="#">{WHATSAPP_DISPLAY}</a></dd></div>
+      <div><dt>Mobile</dt><dd><a data-tel href="#">{PHONE_DISPLAY}</a></dd></div>
+      <div><dt>Website</dt><dd><a href="{WEBSITE}">www.ribcottonexports.in</a></dd></div>
+      <div><dt>Address</dt><dd>{ADDRESS}</dd></div>
     </dl>
     <form class="form" id="contactForm">
       <h2>Message us on WhatsApp</h2>
@@ -337,5 +353,5 @@ contact = f"""
 <section class="section" id="faq">
   <div class="wrap"><div class="section-head"><h2>Questions</h2></div>{faq_html}</div>
 </section>"""
-page("contact.html", "Contact | Rib Cotton", "Message Rib Cotton on WhatsApp, call, email or visit our unit in Tirupur.", contact, active="contact", pg="contact")
+page("contact.html", f"Contact | {BRAND}", f"Contact {BRAND} in Tirupur, South India, by phone or WhatsApp.", contact, active="contact", pg="contact")
 print("built")

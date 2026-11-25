@@ -1,4 +1,4 @@
-/* Rib Cotton catalogue. Edit names, categories and descriptions here. */
+/* RIB Cotton Exports catalogue. Edit names, categories and descriptions here. */
 window.PRODUCTS = [
  {
   "id": 1,

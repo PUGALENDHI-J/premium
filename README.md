@@ -1,4 +1,4 @@
-# Rib Cotton: premium website
+# RIB Cotton Exports website
 
 Open `index.html` in a browser to preview. To publish, upload the whole folder
 (everything except `_archive` and `_tools`) to any static host.
@@ -11,14 +11,13 @@ Open `index.html` in a browser to preview. To publish, upload the whole folder
 - `about.html`, `contact.html`
 
 ## Things to change first
-1. **Phone, WhatsApp and email.** Edit `CONTACT` at the top of `js/app.js`, and
-   `PHONE_DISPLAY`, `EMAIL`, `ADDRESS` at the top of `_tools/build.py`, then run
-   `python3 _tools/build.py` to refresh the pages. The numbers in the project
-   look like placeholders (+91 98400 12345).
+1. **Phone, WhatsApp and address.** Edit `CONTACT` at the top of `js/app.js`, and
+   `PHONE_DISPLAY`, `WHATSAPP_DISPLAY`, `WEBSITE`, `ADDRESS` at the top
+   of `_tools/build.py`, then run `python3 _tools/build.py` to refresh the pages.
 2. **Products.** Edit `js/products.js` (name, category, audience, fabric,
    description). Images live in `assets/products/` (garment cut-outs, WebP).
-3. **Facts to confirm.** Tirupur location, the "own unit" wording, opening
-   hours, shipping and returns answers on the contact page.
+3. **Company details.** Confirm certifications, organic garment availability,
+   production details and export destinations before publishing changes to them.
 
 ## Adding a product
 Add a cut-out image to `assets/products/` (transparent WebP, about 900px),

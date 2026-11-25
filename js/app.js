@@ -1,12 +1,11 @@
-/* Rib Cotton — site script
-   Edit CONTACT below to change the phone, WhatsApp number and email everywhere. */
+/* RIB Cotton Exports — site script
+   Edit CONTACT below to change the phone and WhatsApp number everywhere. */
 (function () {
   "use strict";
 
   var CONTACT = {
-    whatsapp: "919840012345",            // digits only, with country code
-    phoneDisplay: "+91 98400 12345",
-    email: "support@ribcotton.com"
+    whatsapp: "918012029452",            // digits only, with country code
+    phone: "919500573568"
   };
 
   var $ = function (s, c) { return (c || document).querySelector(s); };
@@ -79,11 +78,10 @@
     }
 
     $$("[data-wa]").forEach(function (a) {
-      a.href = wa(a.dataset.wa || "Hello Rib Cotton, I'd like to know more about your collection.");
+      a.href = wa(a.dataset.wa || "Hello RIB Cotton Exports, I'd like to know more about your collection.");
       a.target = "_blank"; a.rel = "noopener";
     });
-    $$("[data-tel]").forEach(function (a) { a.href = "tel:+" + CONTACT.whatsapp; });
-    $$("[data-mail]").forEach(function (a) { a.href = "mailto:" + CONTACT.email; });
+    $$("[data-tel]").forEach(function (a) { a.href = "tel:+" + CONTACT.phone; });
 
     document.addEventListener("click", function (e) {
       var b = e.target.closest("[data-add]");
@@ -99,7 +97,7 @@
   /* ---------- cards ---------- */
   var ICON_WA = '<svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>';
   function card(p) {
-    var msg = "Hello Rib Cotton, I'd like to enquire about " + p.name + " (" + p.code + ")." + (pageUrl(p) ? "\n" + pageUrl(p) : "") + "\nPlease share available sizes, price and minimum quantity.";
+    var msg = "Hello RIB Cotton Exports, I'd like to enquire about " + p.name + " (" + p.code + ")." + (pageUrl(p) ? "\n" + pageUrl(p) : "") + "\nPlease share available sizes, price and minimum quantity.";
     return '<article class="card">' +
       '<a class="panel rib" href="product.html?id=' + p.id + '" tabindex="-1" aria-hidden="true"><img src="' + p.image + '" alt="" loading="lazy" decoding="async"></a>' +
       '<div class="card-body">' +
@@ -162,8 +160,8 @@
     var q = new URLSearchParams(location.search);
     var p = byId(q.get("id")) || P.find(function (x) { return x.slug === q.get("slug"); });
     if (!p) { root.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>We can\'t find that piece</h2><p>It may have moved. Browse the full collection instead.</p><a class="btn" href="shop.html">View the collection</a></div>'; return; }
-    document.title = p.name + " | Rib Cotton";
-    var msg = "Hello Rib Cotton, I'd like to enquire about " + p.name + " (" + p.code + ")." + (pageUrl(p) ? "\n" + pageUrl(p) : "") + "\nPlease share available sizes, price and minimum quantity.";
+    document.title = p.name + " | RIB Cotton Exports";
+    var msg = "Hello RIB Cotton Exports, I'd like to enquire about " + p.name + " (" + p.code + ")." + (pageUrl(p) ? "\n" + pageUrl(p) : "") + "\nPlease share available sizes, price and minimum quantity.";
     $("#pdCrumb").textContent = p.name;
     root.innerHTML =
       '<div class="pd-stage rib"><img src="' + p.image + '" alt="' + p.name + '"></div>' +
@@ -210,7 +208,7 @@
     }
     function message(items) {
       var lines = items.map(function (i, n) { return (n + 1) + ". " + i.p.name + " (" + i.p.code + ") x " + i.qty; });
-      var t = "Hello Rib Cotton, I'd like to enquire about these pieces:\n\n" + lines.join("\n");
+      var t = "Hello RIB Cotton Exports, I'd like to enquire about these pieces:\n\n" + lines.join("\n");
       if (note.value.trim()) t += "\n\nNote: " + note.value.trim();
       return t + "\n\nPlease share sizes, prices and availability. Thank you.";
     }
@@ -229,7 +227,7 @@
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       var d = new FormData(f);
-      var t = "Hello Rib Cotton,\n\nName: " + d.get("name") + "\nTopic: " + d.get("topic") + "\n\n" + d.get("message");
+      var t = "Hello RIB Cotton Exports,\n\nName: " + d.get("name") + "\nTopic: " + d.get("topic") + "\n\n" + d.get("message");
       window.open(wa(t), "_blank", "noopener");
     });
   }

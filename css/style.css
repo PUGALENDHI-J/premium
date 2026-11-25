@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rib Cotton — design system
+   RIB Cotton Exports — design system
    Signature: garments laid on a fine vertical-rib "fabric". No text sits on photos.
    ========================================================================== */
 
@@ -223,7 +223,7 @@ h3,.h3{font-family:var(--text);font-weight:600;font-size:1.0625rem;line-height:1
 .foot-grid a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
 .foot-brand p{color:var(--mist);margin-top:16px;max-width:22em}
 .foot-brand .brand-mark{color:#fff}
-.foot-mark{font-family:var(--display);font-weight:800;font-size:calc((100vw - 2 * var(--gutter)) / 5.55);line-height:.84;letter-spacing:-.04em;white-space:nowrap;margin:clamp(48px,6vw,88px) 0 -.08em;background:repeating-linear-gradient(90deg,#2c3f75 0 3px,#1b2a52 3px 6px);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.foot-mark{font-family:var(--display);font-weight:800;font-size:clamp(2rem,10vw,8rem);line-height:.84;letter-spacing:-.04em;white-space:nowrap;margin:clamp(48px,6vw,88px) 0 -.08em;background:repeating-linear-gradient(90deg,#2c3f75 0 3px,#1b2a52 3px 6px);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
 .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px;border-top:1px solid rgba(255,255,255,.12);color:var(--mist);font-size:.92rem}
 
 /* page head (inner pages) */
