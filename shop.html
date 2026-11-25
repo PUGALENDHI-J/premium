@@ -1,556 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Shop All Collections | Rib Cotton E-Commerce Store</title>
-  <meta name="description" content="Explore our full collection of heavyweight rib cotton tees, pure linen shirts, Neapolitan Gurkha trousers, and knit polos.">
-  <meta name="theme-color" content="#0a2463">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The collection | Rib Cotton</title>
+<meta name="description" content="Browse every Rib Cotton style: tees and polos, hoodies and sweatshirts, sets, shorts and leggings, nightwear and tunics.">
+<meta name="theme-color" content="#0e1a38">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230e1a38'/%3E%3Cpath d='M5 8v8M8.7 5v14M12.5 8v8M16.3 5v14M20 8v8' stroke='%23fff' stroke-width='1.7' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+
 </head>
-<body id="top">
+<body data-page="shop">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-mark" viewBox="0 0 24 24"><path d="M4 7v10M8.5 4v16M13 7v10M17.5 4v16M22 7v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.14-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.24-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.06 1.03-1.06 2.5 0 1.49 1.08 2.92 1.23 3.12.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35zM12 2a10 10 0 0 0-8.56 15.17L2 22l4.98-1.39A10 10 0 1 0 12 2z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></symbol>
+</defs></svg>
 
-<!-- SVG Sprite -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="logo" viewBox="0 0 64 64">
-    <path fill="#3d9fd3" d="M20 6 4 14l6 14 8-4v34h28V24l8 4 6-14-16-8c-4 8-20 8-24 0z"/>
-    <path fill="#1d4f9c" d="M46 7c14 15 4 41-18 51 12-12 16-30 6-40 6 0 10-4 12-11z"/>
-    <path fill="#2f7ccb" d="M34 10c10 6 6 24-4 36 2-12 0-22-8-28z"/>
-  </symbol>
-  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.8-9.5-10C1.5 7 3.8 4 7 4c2 0 3.5 1.2 5 3.2C13.5 5.2 15 4 17 4c3.2 0 5.5 3 4.5 6.5-1.5 5.2-9.5 10-9.5 10z"/></symbol>
-  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7"/><circle cx="6" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.477-.15-.678.15-.201.301-.779.98-.955 1.18-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.352.452-.527.15-.176.201-.301.301-.502.101-.201.05-.377-.025-.527-.075-.15-.678-1.633-.93-2.236-.245-.588-.495-.508-.678-.518l-.578-.01c-.201 0-.527.075-.803.377-.276.301-1.054 1.03-1.054 2.512 0 1.482 1.079 2.912 1.23 3.113.15.201 2.123 3.242 5.143 4.547.718.311 1.279.497 1.716.636.721.229 1.377.197 1.896.119.578-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.17L2 22l4.98-1.39C8.42 21.49 10.16 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.3l1-6.2L3 9.7l6.2-.9L12 3z"/></symbol>
-  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
-</svg>
-
-<!-- Top Announcement Bar -->
-<div class="topbar">
-  <div class="wrap topbar-inner">
-    <div class="topbar-left">
-      <svg class="i i-xs"><use href="#i-truck"/></svg>
-      <span><strong>Free Shipping on Orders Above ₹999</strong> • Cash on Delivery Available</span>
-    </div>
-    <div class="topbar-right">
-      <a href="https://wa.me/919840012345?text=Hi%20Rib%20Cotton%2C%20I%20need%20help%20with%20sizing." target="_blank" rel="noopener" class="topbar-link">
-        <svg class="i i-xs"><use href="#i-whatsapp"/></svg> WhatsApp Stylist
-      </a>
-      <a href="tel:+919840012345" class="topbar-link">
-        <svg class="i i-xs"><use href="#i-phone"/></svg> +91 98400 12345
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap nav-row">
-    <a class="logo" href="index.html" aria-label="Rib Cotton Home">
-      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg>
-      <span class="logo-text">RIB COTTON</span>
-    </a>
-
-    <nav class="nav" id="nav" aria-label="Main Navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="has-sub">
-          <a href="shop.html" class="active">Shop <svg class="i i-xs"><use href="#i-chev"/></svg></a>
-          <ul class="sub">
-            <li><a href="shop.html">All Collections (24)</a></li>
-            <li><a href="shop.html?cat=T-Shirts">Heavyweight T-Shirts</a></li>
-            <li><a href="shop.html?cat=Casual+Shirts">Pure Linen Shirts</a></li>
-            <li><a href="shop.html?cat=Polo+T-Shirts">Rib Knit Polos</a></li>
-            <li><a href="shop.html?cat=Trousers">Gurkha Trousers</a></li>
-            <li><a href="shop.html?cat=Resort+Wear">Vacation Resort Wear</a></li>
-            <li><a href="shop.html?cat=Co-Ords+%26+Sets">Lounge Co-Ords</a></li>
-          </ul>
-        </li>
-        <li><a href="shop.html?sort=newest">New Arrivals</a></li>
-        <li><a href="shop.html?sort=bestseller">Bestsellers</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact &amp; Store</a></li>
-      </ul>
-    </nav>
-
+    <a class="brand" href="index.html" aria-label="Rib Cotton, home"><svg class="i brand-mark" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-mark"/></svg><span class="brand-name">Rib Cotton</span></a>
+    <nav class="nav" aria-label="Main"><ul><li><a href="shop.html" aria-current="page">Collection</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     <div class="nav-actions">
-      <a href="tel:+919840012345" class="header-phone-pill">
-        <svg class="i i-xs"><use href="#i-phone"/></svg>
-        <span>Call Stylist</span>
-      </a>
-
-      <button class="icon-btn" id="searchBtn" type="button" aria-label="Search Catalog" aria-expanded="false" aria-controls="searchbar">
-        <svg class="i"><use href="#i-search"/></svg>
-      </button>
-
-      <a class="icon-btn" href="wishlist.html" aria-label="View Wishlist">
-        <svg class="i"><use href="#i-heart"/></svg>
-        <span class="badge wish-count-badge" hidden>0</span>
-      </a>
-
-      <button class="icon-btn open-cart-trigger" data-action="open-cart" type="button" aria-label="Open Shopping Bag">
-        <svg class="i"><use href="#i-bag"/></svg>
-        <span class="badge cart-count-badge" hidden>0</span>
-      </button>
-
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav">
-        <svg class="i icon-open"><use href="#i-menu"/></svg>
-        <svg class="i icon-close"><use href="#i-close"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <div class="searchbar" id="searchbar" hidden>
-    <div class="wrap">
-      <form id="searchForm" role="search" onsubmit="event.preventDefault(); filterCatalog();">
-        <label class="sr-only" for="searchInput">Search products</label>
-        <svg class="i"><use href="#i-search"/></svg>
-        <input id="searchInput" type="search" placeholder="Search linen shirts, heavyweight tees, Gurkha trousers, knit polos…" autocomplete="off">
-        <button class="btn btn-primary btn-sm" type="submit">Search</button>
-      </form>
+      <a class="list-link" href="enquiry.html" aria-label="Your list"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-bag"/></svg><span class="label">Your list</span><span class="count js-count" hidden>0</span></a>
+      <a class="btn btn-ghost btn-sm" data-wa href="#"><svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-wa"/></svg> WhatsApp</a>
+      <button class="menu-btn" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-menu"/></svg></button>
     </div>
   </div>
 </header>
+<div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top"><a class="brand" href="index.html"><svg class="i brand-mark" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-mark"/></svg><span class="brand-name">Rib Cotton</span></a>
+    <button class="menu-btn" id="menuClose" type="button" aria-label="Close menu" style="display:grid;color:#fff"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-close"/></svg></button></div>
+  <nav class="menu-links" aria-label="Menu"><a href="index.html">Home</a><a href="shop.html">Collection</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="enquiry.html">Your list</a></nav>
+  <div class="menu-foot"><span>Questions about a style?</span><a data-wa href="#">Chat on WhatsApp</a><a data-tel href="#">+91 98400 12345</a></div>
+</div>
+<main id="main">
 
-<main>
-  <!-- Shop Banner -->
-  <section class="section section-tint" style="padding-block: 2.5rem 2rem;">
-    <div class="wrap">
-      <div class="reveal-up">
-        <p class="eyebrow">The Complete Collection</p>
-        <h1 style="font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin-top: 0.2rem;">All Apparel &amp; Menswear</h1>
-        <p class="sub-lead" style="max-width: 60ch;">Crafted with dense 260-280 GSM rib cotton, pure organic linen, and tailored fits. Every garment is bio-washed for silky touch and lifetime collar shape retention.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop Main Content -->
-  <section class="section" style="padding-top: 1.5rem;">
-    <div class="wrap">
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="breadcrumbs-sep">/</span>
-        <span id="breadcrumbCurrent">Shop All Collections</span>
-      </nav>
-
-      <div class="shop-layout">
-        <!-- Sidebar Filters -->
-        <aside class="shop-sidebar">
-          <div class="filter-group">
-            <h3 class="filter-title">
-              <span>Categories</span>
-              <button type="button" id="clearCategoryFilter" style="font-size:0.75rem; color:var(--blue); font-weight:600;" hidden>Reset</button>
-            </h3>
-            <ul class="filter-list" id="categoryFilterList">
-              <!-- Rendered via JS -->
-            </ul>
-          </div>
-
-          <!-- Price Range Filter REMOVED -->
-
-          <!-- Size Filter -->
-          <div class="filter-group">
-            <h3 class="filter-title">Sizes</h3>
-            <div class="size-chips" id="sizeChips">
-              <button type="button" class="size-chip-btn" data-size="S">S</button>
-              <button type="button" class="size-chip-btn" data-size="M">M</button>
-              <button type="button" class="size-chip-btn" data-size="L">L</button>
-              <button type="button" class="size-chip-btn" data-size="XL">XL</button>
-              <button type="button" class="size-chip-btn" data-size="XXL">XXL</button>
-            </div>
-          </div>
-
-          <!-- Fabric / Highlights Filter -->
-          <div class="filter-group">
-            <h3 class="filter-title">Highlights</h3>
-            <ul class="filter-list">
-              <li>
-                <label class="filter-checkbox-label">
-                  <span><input type="checkbox" class="tag-filter-check" value="Bestseller"> Bestsellers</span>
-                </label>
-              </li>
-              <li>
-                <label class="filter-checkbox-label">
-                  <span><input type="checkbox" class="tag-filter-check" value="New Arrival"> New Arrivals</span>
-                </label>
-              </li>
-              <li>
-                <label class="filter-checkbox-label">
-                  <span><input type="checkbox" class="tag-filter-check" value="Trending"> Trending Styles</span>
-                </label>
-              </li>
-              <li>
-                <label class="filter-checkbox-label">
-                  <span><input type="checkbox" class="tag-filter-check" value="Hot Deal"> Hot Deals (40%+ Off)</span>
-                </label>
-              </li>
-            </ul>
-          </div>
-
-          <button type="button" class="btn btn-outline btn-block btn-sm" id="resetAllFiltersBtn" style="margin-top: 1rem;">
-            Clear All Filters
-          </button>
-        </aside>
-
-        <!-- Product Grid & Toolbar Area -->
-        <div class="shop-main-content">
-          <!-- Toolbar -->
-          <div class="shop-toolbar">
-            <span class="shop-results-count" id="shopResultsCount">Showing 24 products</span>
-
-            <div class="shop-sort-box">
-              <label for="shopSort" style="font-size:0.85rem; font-weight:700; color:var(--navy);">Sort By:</label>
-              <select id="shopSort" class="shop-sort-select">
-                <option value="featured">Featured Picks</option>
-                <option value="bestseller">Best Selling</option>
-                <option value="rating">Highest Rated</option>
-                <option value="newest">New Arrivals</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Active Filter Tags Display -->
-          <div class="active-filters" id="activeFiltersContainer"></div>
-
-          <!-- Products Grid -->
-          <div class="product-grid" id="catalogProductGrid">
-            <!-- Dynamic products rendered via JS -->
-          </div>
-
-          <!-- Empty State -->
-          <div id="catalogEmptyState" class="mc-empty-state" style="display:none; padding:4rem 1rem;">
-            <div class="mc-empty-icon">🔍</div>
-            <h4>No Styles Matched Your Filter</h4>
-            <p>Try clearing some filters or searching with different keywords.</p>
-            <button type="button" class="btn btn-primary btn-sm" onclick="resetAllFilters()">Reset Filters</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div class="foot-brand">
-      <a class="logo logo-lg" href="index.html" aria-label="Rib Cotton Home">
-        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg>
-        <span class="logo-text">RIB COTTON</span>
-      </a>
-      <p>Wear the Comfort • Everyday Luxury Fashion</p>
-      <div style="margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.88rem; color: var(--muted);">
-        <span>Helpline: <strong>+91 98400 12345</strong></span>
-        <span>WhatsApp: <strong>+91 98400 12345</strong></span>
-        <span>Email: <strong>support@ribcotton.com</strong></span>
-      </div>
-    </div>
-
-    <nav class="foot-col" aria-label="Shop Links">
-      <h3>Shop</h3>
-      <ul>
-        <li><a href="shop.html?cat=T-Shirts">Heavyweight T-Shirts</a></li>
-        <li><a href="shop.html?cat=Casual+Shirts">Pure Linen Shirts</a></li>
-        <li><a href="shop.html?cat=Polo+T-Shirts">Knit Polos</a></li>
-        <li><a href="shop.html?cat=Trousers">Gurkha Trousers</a></li>
-        <li><a href="shop.html?cat=Resort+Wear">Resort Wear</a></li>
-        <li><a href="shop.html?cat=Co-Ords+%26+Sets">Lounge Co-Ords</a></li>
-      </ul>
-    </nav>
-
-    <nav class="foot-col" aria-label="Customer Care Links">
-      <h3>Customer Care</h3>
-      <ul>
-        <li><a href="contact.html">Track Order Status</a></li>
-        <li><a href="contact.html#faq">Shipping &amp; Delivery Policy</a></li>
-        <li><a href="contact.html#faq">7-Day Free Returns &amp; Exchanges</a></li>
-        <li><a href="contact.html#faq">Fabric Care Guide</a></li>
-        <li><a href="contact.html#faq">Frequently Asked Questions</a></li>
-      </ul>
-    </nav>
-
-    <nav class="foot-col" aria-label="Company Links">
-      <h3>Company</h3>
-      <ul>
-        <li><a href="about.html">About Rib Cotton</a></li>
-        <li><a href="about.html#science">Fabric Technology</a></li>
-        <li><a href="about.html#sustainability">Ethical Manufacturing</a></li>
-        <li><a href="contact.html">Store Location</a></li>
-        <li><a href="wishlist.html">My Wishlist</a></li>
-      </ul>
-    </nav>
-
-    <div class="foot-pay">
-      <h3><svg class="i i-sm"><use href="#i-lock"/></svg> 100% Secure Payment</h3>
-      <ul class="pay">
-        <li>UPI</li>
-        <li>GPay</li>
-        <li>PhonePe</li>
-        <li>VISA</li>
-        <li>Mastercard</li>
-        <li>Net Banking</li>
-        <li>COD Available</li>
-      </ul>
+<div class="wrap page-head">
+  <h1>The collection</h1>
+  <p class="lead">Every style we make. Add pieces to your list and send them to us on WhatsApp in one go.</p>
+</div>
+<div class="filters"><div class="wrap filters-row">
+  <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
+</div></div>
+<div class="wrap">
+  <div class="result-bar"><span id="count" aria-live="polite"></span>
+    <div class="filter-tools">
+      <label class="field search"><span class="sr-only">Search styles</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style='width:18px;height:18px'><use href="#i-search"/></svg><input id="search" type="search" placeholder="Search styles" autocomplete="off"></label>
+      <label class="sr-only" for="who">Filter by who it is for</label>
+      <select class="field" id="who"><option value="All">Everyone</option><option>Boys</option><option>Girls</option><option>Teens</option><option>Women</option><option>Men</option><option>Kids</option></select>
     </div>
   </div>
+  <div class="grid" id="shopGrid" style="padding-bottom:clamp(64px,8vw,112px)"></div>
+  <div class="empty" id="empty" hidden><h2>No styles match</h2><p>Try a different search, or clear the filters to see everything.</p><button class="btn" id="reset" type="button">Clear filters</button></div>
+</div>
+</main>
 
-  <div class="wrap foot-bottom">
-    <p>© 2026 Rib Cotton Apparel Private Limited. All rights reserved.</p>
-    <div class="social">
-      <span>Follow Us</span>
-      <a href="https://wa.me/919840012345" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg class="i i-xs"><use href="#i-whatsapp"/></svg>
-      </a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><svg class="i brand-mark" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-mark"/></svg><span class="brand-name">Rib Cotton</span></a>
+        <p>Knitwear for children, women and the whole family. Made in Tirupur.</p>
+      </div>
+      <nav aria-label="Shop"><h3>Shop</h3><ul><li><a href="shop.html?cat=Hoodies+%26+Sweatshirts">Hoodies & Sweatshirts</a></li><li><a href="shop.html?cat=Tees+%26+Polos">Tees & Polos</a></li><li><a href="shop.html?cat=Sets">Sets</a></li><li><a href="shop.html?cat=Tops+%26+Tunics">Tops & Tunics</a></li><li><a href="shop.html?cat=Shorts+%26+Leggings">Shorts & Leggings</a></li><li><a href="shop.html?cat=Nightwear">Nightwear</a></li></ul></nav>
+      <nav aria-label="Company"><h3>Company</h3><ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#faq">Questions</a></li><li><a href="enquiry.html">Your list</a></li></ul></nav>
+      <div><h3>Reach us</h3><ul><li><a data-wa href="#">WhatsApp</a></li><li><a data-tel href="#">+91 98400 12345</a></li><li><a data-mail href="#">support@ribcotton.com</a></li></ul></div>
     </div>
+    <div class="foot-mark" aria-hidden="true">Rib Cotton</div>
+    <div class="foot-bottom"><span>© 2026 Rib Cotton Apparel Private Limited</span><span>Tirupur, Tamil Nadu</span></div>
   </div>
 </footer>
 
-<!-- Core Scripts -->
-<script src="products.js"></script>
-<script src="store.js"></script>
-<script src="animations.js"></script>
-<script>
-  (function () {
-    "use strict";
-
-    // URL parameters setup
-    const urlParams = new URLSearchParams(window.location.search);
-    let selectedCategory = urlParams.get("cat") || "All";
-    let selectedSort = urlParams.get("sort") || "featured";
-    let searchQuery = (urlParams.get("q") || "").toLowerCase().trim();
-    let selectedSizes = [];
-    let selectedTags = [];
-
-    if (searchQuery) {
-      const searchInput = document.getElementById("searchInput");
-      if (searchInput) searchInput.value = searchQuery;
-    }
-
-    const sortSelect = document.getElementById("shopSort");
-    if (sortSelect && selectedSort) {
-      sortSelect.value = selectedSort;
-    }
-
-    // Populate category sidebar
-    function initCategoryFilterList() {
-      const listEl = document.getElementById("categoryFilterList");
-      if (!listEl || typeof PRODUCTS === "undefined") return;
-
-      const categories = ["All", ...new Set(PRODUCTS.map(p => p.category))];
-
-      listEl.innerHTML = categories.map(cat => {
-        const count = cat === "All" ? PRODUCTS.length : PRODUCTS.filter(p => p.category === cat).length;
-        const isActive = cat.toLowerCase() === selectedCategory.toLowerCase();
-        return `
-          <li>
-            <label class="filter-checkbox-label">
-              <span>
-                <input type="radio" name="catRadio" value="${cat}" ${isActive ? 'checked' : ''} onchange="selectCategory('${cat}')">
-                ${cat}
-              </span>
-              <span class="filter-count">(${count})</span>
-            </label>
-          </li>
-        `;
-      }).join("");
-    }
-
-    window.selectCategory = function (cat) {
-      selectedCategory = cat;
-      const bc = document.getElementById("breadcrumbCurrent");
-      if (bc) bc.textContent = cat === "All" ? "Shop All Collections" : cat;
-      filterCatalog();
-    };
-
-    window.resetAllFilters = function () {
-      selectedCategory = "All";
-      selectedSizes = [];
-      selectedTags = [];
-      searchQuery = "";
-      document.querySelectorAll(".size-chip-btn").forEach(b => b.classList.remove("active"));
-      document.querySelectorAll(".tag-filter-check").forEach(c => c.checked = false);
-      const searchInput = document.getElementById("searchInput");
-      if (searchInput) searchInput.value = "";
-      initCategoryFilterList();
-      filterCatalog();
-    };
-
-    // Filter and Sort Catalog
-    window.filterCatalog = function () {
-      if (typeof PRODUCTS === "undefined") return;
-
-      const qInput = document.getElementById("searchInput");
-      if (qInput) searchQuery = qInput.value.toLowerCase().trim();
-
-      let filtered = PRODUCTS.filter(p => {
-        // Category check
-        if (selectedCategory !== "All" && p.category.toLowerCase() !== selectedCategory.toLowerCase()) {
-          return false;
-        }
-        // Size check
-        if (selectedSizes.length > 0) {
-          const hasSize = selectedSizes.some(s => p.sizes.includes(s));
-          if (!hasSize) return false;
-        }
-        // Tags check
-        if (selectedTags.length > 0) {
-          const matchTag = selectedTags.some(t => {
-            if (t === "Bestseller") return p.bestseller || p.tag === "Bestseller";
-            return p.tag === t;
-          });
-          if (!matchTag) return false;
-        }
-        // Search text
-        if (searchQuery) {
-          const matchName = p.name.toLowerCase().includes(searchQuery);
-          const matchCat = p.category.toLowerCase().includes(searchQuery);
-          const matchDesc = p.description.toLowerCase().includes(searchQuery);
-          const matchFabric = p.fabric.toLowerCase().includes(searchQuery);
-          if (!matchName && !matchCat && !matchDesc && !matchFabric) return false;
-        }
-        return true;
-      });
-
-      // Sorting
-      const sortVal = document.getElementById("shopSort").value;
-      if (sortVal === "rating") filtered.sort((a, b) => b.rating - a.rating);
-      else if (sortVal === "newest") filtered.sort((a, b) => (b.id - a.id));
-      else if (sortVal === "bestseller") filtered.sort((a, b) => (b.reviews - a.reviews));
-
-      renderGrid(filtered);
-      renderActivePills(filtered.length);
-    };
-
-    function renderGrid(items) {
-      const grid = document.getElementById("catalogProductGrid");
-      const empty = document.getElementById("catalogEmptyState");
-      const countEl = document.getElementById("shopResultsCount");
-
-      if (countEl) countEl.textContent = `Showing ${items.length} of ${PRODUCTS.length} products`;
-
-      if (items.length === 0) {
-        grid.style.display = "none";
-        empty.style.display = "flex";
-        return;
-      }
-
-      grid.style.display = "grid";
-      empty.style.display = "none";
-
-      grid.innerHTML = items.map(p => `
-        <article class="product-card tilt-3d" data-id="${p.id}">
-          <div class="product-card-img-wrap">
-            <a href="product-detail.html?id=${p.id}" aria-label="View ${p.name}">
-              <img src="${p.image}" alt="${p.name}" class="product-card-img" loading="lazy" onerror="this.src='asserts/products/sumwon-wave-oversized-tee.jpg'">
-            </a>
-            <div class="card-badges">
-              ${p.tag ? `<span class="card-badge badge-${p.tag.toLowerCase().replace(/\s+/g, '-')}">${p.tag}</span>` : ""}
-            </div>
-            <button type="button" class="card-wishlist-btn ${window.RibStore && window.RibStore.isInWishlist(p.id) ? 'active' : ''}" data-wishlist-toggle="${p.id}" aria-label="Add ${p.name} to wishlist">
-              <svg class="i i-sm" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.8-9.5-10C1.5 7 3.8 4 7 4c2 0 3.5 1.2 5 3.2C13.5 5.2 15 4 17 4c3.2 0 5.5 3 4.5 6.5-1.5 5.2-9.5 10-9.5 10z"/></svg>
-            </button>
-            <div class="card-quick-overlay">
-              <button type="button" class="card-quick-btn" data-quick-view="${p.id}">
-                <svg class="i i-xs" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                Quick View
-              </button>
-              <button type="button" class="card-quick-btn card-wa-btn" data-whatsapp-inquire="${p.id}" title="Inquire on WhatsApp" aria-label="Inquire about ${p.name} on WhatsApp">
-                <svg class="i i-xs" viewBox="0 0 24 24"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.477-.15-.678.15-.201.301-.779.98-.955 1.18-.176.201-.352.226-.653.075-.301-.15-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.352.452-.527.15-.176.201-.301.301-.502.101-.201.05-.377-.025-.527-.075-.15-.678-1.633-.93-2.236-.245-.588-.495-.508-.678-.518l-.578-.01c-.201 0-.527.075-.803.377-.276.301-1.054 1.03-1.054 2.512 0 1.482 1.079 2.912 1.23 3.113.15.201 2.123 3.242 5.143 4.547.718.311 1.279.497 1.716.636.721.229 1.377.197 1.896.119.578-.087 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351z"/></svg>
-              </button>
-            </div>
-          </div>
-          <div class="product-card-body">
-            <span class="card-category">${p.category}</span>
-            <h3 class="card-title">
-              <a href="product-detail.html?id=${p.id}">${p.name}</a>
-            </h3>
-            <div class="card-rating">
-              <span class="stars" style="--r:${p.rating}">★★★★★</span>
-              <span>(${p.reviews})</span>
-            </div>
-            <div class="card-footer">
-              <div class="card-sizes-preview">
-                ${p.sizes.slice(0, 4).map(s => `<span class="card-size-tag">${s}</span>`).join("")}
-              </div>
-              <button type="button" class="card-add-btn" data-add-to-cart="${p.id}" aria-label="Add ${p.name} to shopping bag">
-                <span>+ Add</span>
-              </button>
-            </div>
-          </div>
-        </article>
-      `).join("");
-
-      if (window.RibAnimations && window.RibAnimations.reinitTilt) {
-        window.RibAnimations.reinitTilt();
-        window.RibAnimations.reinitReveals();
-      }
-    }
-
-    function renderActivePills(count) {
-      const container = document.getElementById("activeFiltersContainer");
-      if (!container) return;
-
-      const pills = [];
-      if (selectedCategory !== "All") pills.push({ label: `Category: ${selectedCategory}`, onRemove: () => selectCategory("All") });
-      if (maxPrice < 3000) pills.push({ label: `Budget Filter Active`, onRemove: () => { maxPrice = 3000; filterCatalog(); } });
-      selectedSizes.forEach(s => pills.push({ label: `Size: ${s}`, onRemove: () => { selectedSizes = selectedSizes.filter(x => x !== s); document.querySelectorAll(`.size-chip-btn[data-size="${s}"]`).forEach(b => b.classList.remove("active")); filterCatalog(); } }));
-      selectedTags.forEach(t => pills.push({ label: t, onRemove: () => { selectedTags = selectedTags.filter(x => x !== t); document.querySelectorAll(`.tag-filter-check[value="${t}"]`).forEach(c => c.checked = false); filterCatalog(); } }));
-      if (searchQuery) pills.push({ label: `Search: "${searchQuery}"`, onRemove: () => { searchQuery = ""; const si = document.getElementById("searchInput"); if (si) si.value = ""; filterCatalog(); } });
-
-      container.innerHTML = pills.map((p, idx) => `
-        <span class="filter-pill">
-          ${p.label}
-          <button type="button" onclick="window._removeFilter(${idx})" aria-label="Remove filter">&times;</button>
-        </span>
-      `).join("");
-
-      window._activePills = pills;
-      window._removeFilter = function (idx) {
-        if (window._activePills && window._activePills[idx]) {
-          window._activePills[idx].onRemove();
-        }
-      };
-    }
-
-    // Event listeners
-    document.querySelectorAll(".size-chip-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const size = btn.getAttribute("data-size");
-        btn.classList.toggle("active");
-        if (btn.classList.contains("active")) {
-          selectedSizes.push(size);
-        } else {
-          selectedSizes = selectedSizes.filter(s => s !== size);
-        }
-        filterCatalog();
-      });
-    });
-
-    document.querySelectorAll(".tag-filter-check").forEach(chk => {
-      chk.addEventListener("change", () => {
-        selectedTags = Array.from(document.querySelectorAll(".tag-filter-check:checked")).map(c => c.value);
-        filterCatalog();
-      });
-    });
-
-    document.getElementById("shopSort").addEventListener("change", () => filterCatalog());
-    document.getElementById("resetAllFiltersBtn").addEventListener("click", () => resetAllFilters());
-
-    // Initialize
-    initCategoryFilterList();
-    filterCatalog();
-  })();
-</script>
+<nav class="dock" aria-label="Quick actions">
+  <a class="dock-ghost" href="shop.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-grid"/></svg> Shop</a>
+  <a class="dock-wa" data-wa href="#"><svg class="i i-fill" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-wa"/></svg> WhatsApp</a>
+  <a class="dock-ghost" data-tel href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" ><use href="#i-phone"/></svg> Call</a>
+</nav>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
-
