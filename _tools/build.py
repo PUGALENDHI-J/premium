@@ -40,17 +40,17 @@ FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox=
 def icon(name, cls="i", extra=""):
     return f'<svg class="{cls}" viewBox="0 0 24 24" aria-hidden="true" {extra}><use href="#i-{name}"/></svg>'
 
-NAV = [("Collection", "shop.html", "shop"), ("About", "about.html", "about"), ("Contact", "contact.html", "contact")]
+NAV = [("About", "about.html", "about"), ("Collection", "shop.html", "shop"), ("Contact", "contact.html", "contact")]
 
 def header(active):
     links = "".join(
         f'<li><a href="{h}"{" aria-current=\"page\"" if k == active else ""}>{t}</a></li>' for t, h, k in NAV)
-    menu_links = "".join(f'<a href="{h}">{t}</a>' for t, h, _ in [("Home", "index.html", "")] + NAV + [("Your list", "enquiry.html", "")])
+    menu_links = "".join(f'<a href="{h}">{t}</a>' for t, h, _ in [("Home", "index.html", "")] + NAV)
     return f"""
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap nav-row">
-    <a class="brand" href="index.html" aria-label="{BRAND}, home">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
+    <a class="brand" href="index.html" aria-label="{BRAND}, home">{icon("mark","i brand-mark")}<span class="brand-name"><b>RIB</b> Cotton Exports</span></a>
     <nav class="nav" aria-label="Main"><ul>{links}</ul></nav>
     <div class="nav-actions">
       <a class="list-link" href="enquiry.html" aria-label="Your list">{icon("bag")}<span class="label">Your list</span><span class="count js-count" hidden>0</span></a>
@@ -60,7 +60,7 @@ def header(active):
   </div>
 </header>
 <div class="menu-sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
-  <div class="menu-top"><a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
+  <div class="menu-top"><a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name"><b>RIB</b> Cotton Exports</span></a>
     <button class="menu-btn" id="menuClose" type="button" aria-label="Close menu" style="display:grid;color:#fff">{icon("close")}</button></div>
   <nav class="menu-links" aria-label="Menu">{menu_links}</nav>
   <div class="menu-foot"><span>Questions about a style?</span><a data-wa href="#">Chat on WhatsApp {WHATSAPP_DISPLAY}</a><a data-tel href="#">{PHONE_DISPLAY}</a></div>
@@ -80,7 +80,7 @@ def footer():
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name">{BRAND}</span></a>
+        <a class="brand" href="index.html">{icon("mark","i brand-mark")}<span class="brand-name"><b>RIB</b> Cotton Exports</span></a>
         <p>Certified knitted garment manufacturing and exports from Tirupur, South India.</p>
       </div>
       <nav aria-label="Shop"><h3>Shop</h3><ul>{shop}</ul></nav>
@@ -137,6 +137,7 @@ audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
     ("Women", "assets/lifestyle/family-women-pexels-18379520.webp", "Parents and daughters spending time together in a park."),
     ("Kids", "assets/lifestyle/family-kids-pexels-27176613.webp", "Parents playing with their child outdoors at sunset."),
+    ("Factory", "assets/factory/f38.webp", "Sewing operators at work on the production floor."),
 ]
 audience_slides = "".join(
     f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{audience}, {i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
@@ -165,7 +166,7 @@ home = f"""
 <section class="section-tight" id="collection">
   <div class="wrap">
     <div class="section-head">
-      <div><h2>The collection</h2><p class="lead">{len(PRODUCTS)} styles across {len(CATS)} collections, from everyday tees to cosy sets.</p></div>
+      <div><h2>The collection</h2></div>
       <a class="link" href="shop.html">View every style {icon("arrow","i i-sm","style='width:18px;height:18px'")}</a>
     </div>
     <div class="tiles">{tiles}</div>
@@ -238,10 +239,9 @@ shop = f"""
   <p class="lead">Knitted garments for men, women and children. Add pieces to your list and send them to us on WhatsApp in one go.</p>
 </div>
 <section class="section-tight"><div class="wrap"><div class="audience-collections">
-  <div class="cta rib-deep"><div><h2>Men's collection</h2><p>Explore our men's knitted styles. Organic and conventional garment options are available.</p></div>
-    <a class="btn btn-light" href="shop.html?for=Men">Shop menswear</a></div>
-  <div class="cta rib-deep"><div><h2>Kids' collection</h2><p>Browse comfortable knitted styles for children, including tops and hoodies.</p></div>
-    <a class="btn btn-light" href="shop.html?for=Kids">Shop kids' styles</a></div>
+  <a class="cta rib-deep" href="shop.html?for=Men"><h2>Men's wear</h2></a>
+  <a class="cta rib-deep" href="shop.html?for=Women"><h2>Women's wear</h2></a>
+  <a class="cta rib-deep" href="shop.html?for=Kids"><h2>Kidswear</h2></a>
 </div></div></section>
 <div class="filters"><div class="wrap filters-row">
   <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
