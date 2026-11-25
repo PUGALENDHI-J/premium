@@ -112,7 +112,78 @@
   /* ---------- pages ---------- */
   var page = document.body.dataset.page;
 
+  function slideshow() {
+    var root = $("#audienceSlider");
+    if (!root) return;
+
+    var slides = $$("[data-slide]", root);
+    var dots = $$("[data-slide-to]", root);
+    var prev = $("[data-slide-prev]", root);
+    var next = $("[data-slide-next]", root);
+    var toggle = $("[data-slide-toggle]", root);
+    if (slides.length < 2 || !prev || !next || !toggle) return;
+
+    var active = 0;
+    var timer;
+    var hovered = false;
+    var focused = false;
+    var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var paused = Boolean(reducedMotion);
+
+    function show(index) {
+      active = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        slide.hidden = i !== active;
+        slide.setAttribute("aria-hidden", String(i !== active));
+      });
+      dots.forEach(function (dot, i) {
+        dot.setAttribute("aria-pressed", String(i === active));
+      });
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    function start() {
+      stop();
+      if (!paused && !hovered && !focused && !document.hidden) {
+        timer = window.setInterval(function () { show(active + 1); }, 5000);
+      }
+    }
+
+    function updateToggle() {
+      toggle.textContent = paused ? "Play" : "Pause";
+      toggle.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+    }
+
+    prev.addEventListener("click", function () { show(active - 1); });
+    next.addEventListener("click", function () { show(active + 1); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener("click", function () { show(i); });
+    });
+    toggle.addEventListener("click", function () {
+      paused = !paused;
+      if (!paused) { hovered = false; focused = false; }
+      updateToggle();
+      start();
+    });
+    root.addEventListener("mouseenter", function () { hovered = true; stop(); });
+    root.addEventListener("mouseleave", function () { hovered = false; start(); });
+    root.addEventListener("focusin", function () { focused = true; stop(); });
+    root.addEventListener("focusout", function (event) {
+      if (!root.contains(event.relatedTarget)) { focused = false; start(); }
+    });
+    document.addEventListener("visibilitychange", start);
+
+    show(0);
+    updateToggle();
+    start();
+  }
+
   function home() {
+    slideshow();
     var rail = $("#newRail");
     if (!rail) return;
     var ids = [24, 17, 7, 25, 18, 3, 8];

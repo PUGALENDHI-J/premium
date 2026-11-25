@@ -133,6 +133,23 @@ tiles = "".join(
     f'''<a class="tile" href="shop.html?cat={q(c)}"><div class="panel rib">{"".join(f'<img src="{img(i)}" alt="" loading="lazy">' for i in ids)}</div>
 <div class="tile-cap"><h3>{c}</h3><span>{COUNT[c]} styles</span></div></a>''' for c, ids in tile_defs)
 
+audience_slides_data = [
+    ("Men", 37, "Olive graphic T-shirt for men"),
+    ("Women", 36, "Yellow printed tunic modeled by a woman"),
+    ("Kids", 25, "Sky-blue New York sweatshirt for kids"),
+]
+audience_slides = "".join(
+    f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
+      <img src="{img(product_id)}" alt="{alt}" decoding="async" {"fetchpriority='high'" if i == 0 else "loading='lazy'"}>
+      <div class="audience-caption"><div><p>Explore the collection</p><h2>{audience}</h2></div><a href="shop.html?for={audience}">Shop {audience}</a></div>
+    </div>'''
+    for i, (audience, product_id, alt) in enumerate(audience_slides_data)
+)
+audience_dots = "".join(
+    f'<button class="audience-dot" type="button" data-slide-to="{i}" aria-label="Show {audience} collection" aria-controls="audience-slide-{i + 1}" aria-pressed="{str(i == 0).lower()}"></button>'
+    for i, (audience, _, _) in enumerate(audience_slides_data)
+)
+
 home = f"""
 <section class="hero">
   <div class="wrap hero-grid">
@@ -144,11 +161,14 @@ home = f"""
         <a class="btn btn-wa" data-wa href="#">{icon("wa","i i-fill")} Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="hero-stage rib" role="img" aria-label="A selection of RIB Cotton Exports hoodies, polos and tees laid flat">
-      <img class="hs-a" src="{img(24)}" alt="">
-      <img class="hs-b" src="{img(17)}" alt="">
-      <img class="hs-c" src="{img(7)}" alt="">
-      <img class="hs-d" src="{img(25)}" alt="">
+    <div class="hero-stage audience-slider rib" id="audienceSlider" role="region" aria-roledescription="carousel" aria-label="Shop by collection">
+      <div class="audience-slides" aria-live="off">{audience_slides}</div>
+      <div class="audience-controls">
+        <button class="audience-arrow" type="button" data-slide-prev aria-label="Previous collection">‹</button>
+        <div class="audience-dots" role="group" aria-label="Choose a collection">{audience_dots}</div>
+        <button class="audience-arrow" type="button" data-slide-next aria-label="Next collection">›</button>
+        <button class="audience-toggle" type="button" data-slide-toggle aria-label="Pause slideshow">Pause</button>
+      </div>
     </div>
   </div>
 </section>
