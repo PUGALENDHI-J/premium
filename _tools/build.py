@@ -88,7 +88,7 @@ def footer():
       <div><h3>Reach us</h3><ul><li><a data-wa href="#">WhatsApp {WHATSAPP_DISPLAY}</a></li><li><a data-tel href="#">{PHONE_DISPLAY}</a></li><li><a href="{WEBSITE}">ribcottonexports.in</a></li></ul></div>
     </div>
     <div class="foot-mark" aria-hidden="true">{BRAND}</div>
-    <div class="foot-bottom"><span>© 2026 {BRAND}</span><span>Tirupur, South India</span></div>
+    <div class="foot-bottom"><span>© 2019 {BRAND}</span><span>Tirupur, South India</span></div>
   </div>
 </footer>"""
 
