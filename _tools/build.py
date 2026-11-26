@@ -132,7 +132,7 @@ tiles = "".join(
 
 audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
-    ("Factory", "assets/factory/f38.webp", "Sewing operators at work on the production floor."),
+    ("Factory", "assets/factory/f39.webp", "Rows of sewing machines on the production floor."),
     ("Children", "assets/lifestyle/kids-playing.webp", "Children laughing and running together through a sunny meadow."),
 ]
 audience_slides = "".join(
@@ -190,8 +190,7 @@ home = f"""
       <p>Our compliant, certified production units manufacture high-quality knitted garments with strict quality control throughout the process.</p>
       <a class="link" href="about.html">Read our story {icon("arrow","i","style='width:18px;height:18px'")}</a>
     </div>
-    <div class="photo-trio">
-      <img src="assets/factory/f38.webp" alt="Sewing operators at work on the production floor" loading="lazy">
+    <div class="photo-trio two-up">
       <img src="assets/factory/f39.webp" alt="Rows of sewing machines under the ceiling fans" loading="lazy">
       <img src="assets/factory/f40.webp" alt="Folded garments stacked on the finishing table" loading="lazy">
     </div>
@@ -292,7 +291,7 @@ about = f"""
 
 <section class="section-tight">
   <div class="wrap split">
-    <div class="photo"><img src="assets/factory/f38.webp" alt="Operators at their sewing stations on our production floor"></div>
+    <div class="photo"><img src="assets/factory/f39.webp" alt="Workers sewing garments on the production floor"></div>
     <div class="prose">
       <h2 style="margin-bottom:24px">Quality knitwear for global customers</h2>
       <p class="lead">Fresh styles developed exclusively for your brand.</p>
@@ -318,10 +317,9 @@ about = f"""
 
 <section class="floor section">
   <div class="wrap">
-    <div class="photo-trio wide" style="aspect-ratio:2.1/1;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:1fr">
+    <div class="photo-trio wide" style="aspect-ratio:2.1/1;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr">
       <img src="assets/factory/f39.webp" alt="Rows of sewing machines on the production floor" style="grid-row:auto" loading="lazy">
       <img src="assets/factory/f40.webp" alt="Finished garments stacked for checking" loading="lazy">
-      <img src="assets/factory/f38.webp" alt="Operators stitching garments" loading="lazy">
     </div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-top:clamp(32px,4vw,56px)">
       <h2 style="margin:0;max-width:14em">Come and see how it is made</h2>
