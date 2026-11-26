@@ -133,6 +133,7 @@ tiles = "".join(
 audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
     ("Children", "assets/lifestyle/kids-playing.webp", "Children laughing and running together through a sunny meadow."),
+    ("Friends", "assets/lifestyle/friends-sunset.jpeg", "Four friends enjoying an evening outdoors."),
 ]
 audience_slides = "".join(
     f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{audience}, {i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
