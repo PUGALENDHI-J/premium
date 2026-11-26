@@ -162,6 +162,7 @@
 
   function shop() {
     var grid = $("#shopGrid"); if (!grid) return;
+    function inGroupOf(who, p) { return who === "All" || p.audience === who || (who === "Kids" && ["Boys", "Girls", "Teens"].indexOf(p.audience) > -1); }
     var q = new URLSearchParams(location.search);
     var state = { cat: q.get("cat") || "All", who: q.get("for") || "All", q: q.get("q") || "" };
     var cats = ["All"].concat(P.map(function (p) { return p.category; }).filter(function (v, i, a) { return a.indexOf(v) === i; }));
@@ -172,11 +173,11 @@
     function draw() {
       var list = P.filter(function (p) {
         return (state.cat === "All" || p.category === state.cat) &&
-               (state.who === "All" || p.audience === state.who) &&
+               inGroupOf(state.who, p) &&
                (!state.q || (p.name + " " + p.category + " " + p.audience + " " + p.code).toLowerCase().indexOf(state.q.toLowerCase()) > -1);
       });
       chips.innerHTML = cats.map(function (c) {
-        var n = P.filter(function (p) { return (c === "All" || p.category === c) && (state.who === "All" || p.audience === state.who); }).length;
+        var n = P.filter(function (p) { return (c === "All" || p.category === c) && inGroupOf(state.who, p); }).length;
         return '<button type="button" class="chip" data-cat="' + c + '" aria-pressed="' + (state.cat === c) + '">' + c + "<small>" + n + "</small></button>";
       }).join("");
       grid.innerHTML = list.map(card).join("");

@@ -122,21 +122,18 @@ def page(fname, title, desc, body, active="", pg="", extra_head=""):
 
 # ---------------------------------------------------------------- HOME
 tile_defs = [
-    ("Hoodies & Sweatshirts", [30, 25]),
-    ("Tees & Polos", [7, 17]),
-    ("Nightwear", [31]),
-    ("Shorts & Leggings", [14]),
-    ("Sets", [24, 26]),
-    ("Tops & Tunics", [11, 28]),
+    ("Kids", "assets/lifestyle/collection-kids.webp", "shop.html?for=Kids", 40, "Smiling girl in a white puff-sleeve top and jeans"),
+    ("Men", "assets/lifestyle/collection-men.webp", "shop.html?for=Men", 9, "Man in a black oversized graphic t-shirt"),
+    ("Women", "assets/lifestyle/collection-women.webp", "shop.html?for=Women", 10, "Woman in a white t-shirt and jeans"),
 ]
 tiles = "".join(
-    f'''<a class="tile" href="shop.html?cat={q(c)}"><div class="panel rib">{"".join(f'<img src="{img(i)}" alt="" loading="lazy">' for i in ids)}</div>
-<div class="tile-cap"><h3>{c}</h3><span>{COUNT[c]} styles</span></div></a>''' for c, ids in tile_defs)
+    f'''<a class="tile tile-photo" href="{h}"><div class="panel"><img src="{im}" alt="{alt}" loading="lazy"></div>
+<div class="tile-cap"><h3>{c}</h3><span>{n} styles</span></div></a>''' for c, im, h, n, alt in tile_defs)
 
 audience_slides_data = [
     ("Men", "assets/lifestyle/family-men-pexels-12969212.webp", "Parents and child sharing an outdoor family moment."),
     ("Factory", "assets/factory/f38.webp", "Sewing operators at work on the production floor."),
-    ("Production", "assets/factory/f39.webp", "Rows of sewing machines under the ceiling fans."),
+    ("Children", "assets/lifestyle/kids-playing.webp", "Children laughing and running together through a sunny meadow."),
 ]
 audience_slides = "".join(
     f'''<div class="audience-slide" id="audience-slide-{i + 1}" data-slide role="group" aria-roledescription="slide" aria-label="{audience}, {i + 1} of {len(audience_slides_data)}"{" hidden" if i else ""}>
